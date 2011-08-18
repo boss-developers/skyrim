@@ -1,0 +1,41 @@
+﻿\ Masterlist Syntax Notes
+\
+\ This masterlist should be written only using the MF2 syntax. Only the most commonly-used parts of the syntax are covered here.
+\ See http://code.google.com/p/better-oblivion-sorting-software/wiki/MasterlistFormatSyntax for full details.
+\
+\  * Use blank lines to separate mods that are grouped together or where it helps readability.
+\  * Use silent comments when you think something needs clarification to others reading the masterlist (such as when a mod looks like it is misspelled, but is correct).
+\  * Only make edits/additions you're confident about - otherwise discuss the issue on the official forum threads.
+\  * If you're unsure on how to write something in the correct syntax, check the masterlists for examples, and don't be afraid to ask other committers for help.
+\  * When you include a web link in a message, enclose it in double quotes "", for example: www.example.org should be written "www.example.org".
+\  * When you list Bash Tags for a mod, separate them using ", " and not just ",". Eg. {{BASH: Graphics,NoMerge}} should be written {{BASH: Graphics, NoMerge}}. This improves readability in the BOSSlog and the masterlist itself.
+\  * Don't include any HTML formatting in messages. In particular, web links do not need to be formatted as HTML hyperlinks, as BOSS will do this automatically.
+\
+\ Silent Comments:
+\
+\ Silent comments are ignored by BOSS, and may be written by starting a line with the backslash '\' character (as used by this block of text).
+\ You cannot start a silent comment part-way into a line, only whole lines may be silent.
+\
+\ Message Type                      Keyword      Description
+\ =====================================================================
+\ General message                   SAY          A general message for the mod above.
+\ Bash Tag suggestion               TAG          A Bash Tag suggestion for the mod above.
+\ Requirement                       REQ          An installation requirement for the mod above.
+\ Incompatibility                   INC          A specific incompatibility for the mod above.
+\ Dirty mod message                 DIRTY        A message relating to dirty edits in the mod above.
+\ Warning                           WARN         A message used to display a non-critical warning for the mod above.
+\ Error                             ERROR        A message used to display a critical (ie. install-breaking) error for the mod above.
+\
+\ Message keywords should be indented by a single space and followed by a colon ':' then the message string.
+\ Incompatibility and requirement message strings have a specific syntax. If you wish to use them, see the Masterlist Format Syntax wiki page for details. 
+\ 
+\
+\ Once again, see the Masterlist Format Syntax wiki page for information on BOSS's full masterlist functionality. 
+\ Items not covered here include: conditional messages, masterlist variables, plugin groups, regular expression matching and global messages.
+
+BEGINGROUP: ESMs
+
+Skyrim.esm
+ INC: "Oblivion.esm"="TES IV: Oblivion" | "Nehrim.esm"="Nehrim - At Fate's Edge" | "Fallout3.esm"="I don't know how you did this, but FO3 is installed to the same folder as Skyrim."
+
+ENDGROUP: ESMs
