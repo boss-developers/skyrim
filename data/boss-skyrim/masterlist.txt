@@ -43,8 +43,8 @@ BEGINGROUP: ESMs
 
 Skyrim.esm
 Update.esm
-LessTint.esm 
 NoTint.esm
+LessTint.esm
 DarkerNights.esm
 DarkerInteriors.esm
 DarkerInteriorsAdd.esm
@@ -536,15 +536,18 @@ ENDGROUP: Overrides L
 
 BEGINGROUP: Overrides M
 
-masser Size x2.0.esp
+REGEX: masser Size x\d\.\d\.esp
 More Powerful Dragons.esp
 REGEX: MoreTraining_\d\d\.esp
 MorokeiCirclet.esp
 moveit.esp
+IF ("moveitLWT.esp") ERROR: Use only one moveit.esp or moveitLWT.esp
+moveitLWT.esp
+IF ("moveit.esp") ERROR: Use only one moveit.esp or moveitLWT.esp
 StopBumpingIntoMe.esp
-REQ: moveit.esp
+REQ: moveit.esp or moveitLWT.esp
 HugMe.esp
-REQ: moveit.esp
+REQ: moveit.esp or moveitLWT.esp
 ENDGROUP: Overrides M
 
 BEGINGROUP: Overrides N
@@ -604,7 +607,7 @@ BEGINGROUP: Overrides S
 
 ScalingElementalRunes.esp
 ElementalRunesImpact100.esp
-secunda Size x2.0.esp
+REGEX: secunda Size x\d\.\d\.esp
 SensibleMerchants.esp
 REGEX: Skyrim Moon Size x\d\.\d\.esp
 Slightly Reduced Distance NPC Greetings.esp
@@ -701,6 +704,8 @@ BEGINGROUP: Spells Late
 
 5SecondShadowWarrior.esp
 AspectIllusionOnly.esp
+tSSSSS.esp
+tSSSSS - No Restoration.esp
 BetterDualCasting.esp
 BetterSpellFinishers.esp
 BetterMasterSpells.esp
@@ -735,8 +740,6 @@ BEGINGROUP: Enchantment
 
 enchant4effects.esp
 IPutASpellOnYou.esp
-tSSSSS.esp
-tSSSSS - No Restoration.esp
 HoodlessPsijicArchmageReplacement.esp
 \move this mod to items group with Graphics tag after it work in bashed patch for Skyrim
 Z_Enchantment.esp
