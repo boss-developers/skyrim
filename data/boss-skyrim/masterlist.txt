@@ -125,7 +125,6 @@ ENDGROUP: Music
 
 BEGINGROUP: Base A
 
-REGEX: Acquisitive Soul Gems( FR)?\.esp
 AlcoholRecipes.esp
 AllArmorsPlayable.esp
 ENG_All_In_One_v1.2.esp
@@ -367,7 +366,8 @@ ENDGROUP: Items C
 BEGINGROUP: Items D
 
 DaedricCorset.esp
-FluffkinsDaedricCorset.esp
+REGEX: FluffkinsDaedricCorset(0\.22)?\.esp
+REQ: Daedric Corset mod
 Dagger of time.esp
 Dark Crusader Reforged - Klingen-Set.esp
 DarkStringArmor.esp
@@ -596,8 +596,7 @@ ENDGROUP: Overrides C
 
 BEGINGROUP: Overrides D
 
-REGEX: DeadlyDragons( DV)?\.esp
-REGEX: DeadlyDragonsHard( DV)?\.esp
+REGEX: DeadlyDragons(Hard|Normal)?( DV)?\.esp
 DeadlyDragonsCraft.esp
 DeadlyDragonsCreature.esp
 DeadlyDragonsEF.esp
@@ -680,6 +679,10 @@ BEGINGROUP: Overrides I
 
 REGEX: iMaxPlayerRunes\d+\.esp
 SAY: This is actually iMaxPlayerRunes which is a game setting - you might be able to just set it in the .ini file and skip the plugin.
+LFox No Werewolf Form Cooldown.esp
+IF ("LFox Werewolf Improvements.esp") WARN: Disable and remove it. Already included in 'LFox Werewolf Improvements.esp'
+LFox Werewolf Improvements.esp
+SAY: Possible conflicts with other Werewolf-mods
 Improved Cloaks.esp
 Improved Mage Armor.esp
 Improved Runes.esp
@@ -814,8 +817,6 @@ TAG: {{Relev, Delev}}
 Skyrim Smithing Components Rebalanced Full Version.esp
 SSCR Hard Type.*\.esp
 Smithing Perks Overhaul.esp
-Soul Gems Differ.esp
-Soul Gems Glow When Full.esp
 SSyphon15vsAnimalsAndMonstersfix.esp
 StaffOfMagnusFix.esp
 Sunnie_AMQ_NoWindTunnel.esp
@@ -968,7 +969,10 @@ ENDGROUP: Alchemy
 
 BEGINGROUP: Enchantment
 
-Acquisitive Soul Gems.esp
+REGEX: Acquisitive Soul Gems( FR)?\.esp
+\Conflict with 
+Soul Gems Differ.esp
+Soul Gems Glow When Full.esp
 enchant4effects.esp
 IPutASpellOnYou.esp
 HoodlessPsijicArchmageReplacement.esp
@@ -984,6 +988,7 @@ BEGINGROUP: Thievery, Sneaking and Crime
 REGEX: cao_extrapockets_D.+\.esp
 ezpick.esp
 ezpicklite.esp
+LockpickingRedone.esp
 LFox Pickpocketing Chance Caps at 100.esp
 REGEX: Pickpocket Fixed \[\d{2}\]\.esp
 RoguePro.esp
