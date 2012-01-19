@@ -78,6 +78,7 @@ KeeningSmithing.esp
 REGEX: Magnus\d{2,3}\.esp
 MatchingSetFixes.esp
 Nocturnal Robes - 1st person mesh fix.esp
+PrometheusCapes_armorsfix.esp
 TalosShrineFix.esp
 Vulkanglas statt Malachit.esp
 ENDGROUP: Vanilla fixes
@@ -195,7 +196,6 @@ BEGINGROUP: Base D
 REGEX: .. - Enhanced Blood Main\.esp
 REGEX: dD-\w{4} Screen Blood\.esp
 REGEX: dD-.{4,9} Screen Blood Duration\.esp
-DeadlyDragonsSpells.esp
 DeadThrall.esp
 REGEX: Death Cam \(\d{2} Seconds\)\.esp
 ENDGROUP: Base D
@@ -508,6 +508,33 @@ BEGINGROUP: Overhauls
 Crafting300.esp
 LegionOverhaulV25.esp
 ProjectFrenzy.esp
+
+BEGINGROUP: PISE
+PISE.esp
+REGEX: Increased Spawns, Loot, and AI.esp
+\Sorted only with REGEX prefix in BOSS1.9
+PISE-Bartering Tweaks.esp
+PISE-Vendors.esp
+PISE-Vendor Tweaks Only.esp
+PISE-Misc Vendors.esp
+PISE-Difficult Bartering.esp
+PISE-Gold Tweaks Only.esp
+PISE-NPC Equipment Tweaks Only.esp
+PISE-NPC Tweaks and Potions.esp
+PISE-AI Overhaul.esp
+WeaponsOf3E 1-0 PISE Plugin.esp
+REGEX: .{0,5}Increased Level Scales\.esp
+REGEX: .{0,5}AI Tweaks Only\.esp
+REGEX: .{0,5}Loot Tweaks Only\.esp
+PISE-Less Intense Level Scaling.esp
+WARN: Outdated.
+PISE-More Intense Level Scaling.esp
+PISE-Dragon Weighting Only.esp
+PISE-Encounter Zones Only.esp
+WeaponsOf3E Beta PISE Compatibility Plugin.esp
+WeaponsOf3E PISE Compatibility Plugin.esp
+WeaponsOf3E PISE Plugin.esp
+ENDGROUP: PISE
 ENDGROUP: Overhauls
 
 BEGINGROUP: Quests and Locations
@@ -548,7 +575,9 @@ ENDGROUP: Quests P
 
 BEGINGROUP: Quests W
 
-
+WarinSkyrim.esp
+WarinSkyrimII.esp
+WiS2 Armory.esp
 ENDGROUP: Quests W
 
 BEGINGROUP: Quests XYZ
@@ -602,7 +631,11 @@ BEGINGROUP: Overrides D
 REGEX: DeadlyDragons(Hard|Normal)?( DV)?\.esp
 DeadlyDragonsCraft.esp
 DeadlyDragonsCreature.esp
+DeadlyDragonsSpells.esp
 DeadlyDragonsEF.esp
+REGEX: DeadlyDragonsPISE( DV)?\.esp
+REGEX: DeadlyDragonsHardPISE( DV)?\.esp
+REGEX: DeadlyDragonsSpawn.*\.esp
 Deadly Traps.esp
 Death Reload (30 Minutes).esp
 dD - Easy Lift Bodies and Objects.esp
@@ -690,6 +723,7 @@ Improved Cloaks.esp
 Improved Mage Armor.esp
 Improved Runes.esp
 Increase Torch Range.esp
+InvisibleHelmets.esp
 REGEX: LeatherWeightFix\(.{3}\)v1\.2\.esp
 Ish's Weighted Gold.esp
 ENDGROUP: Overrides I
@@ -762,37 +796,6 @@ ENDGROUP: Overrides O
 
 BEGINGROUP: Overrides P
 
-PISE.esp
-REGEX: Increased Spawns, Loot, and AI.esp
-\Sorted only with REGEX prefix in BOSS1.9
-PISE-Bartering Tweaks.esp
-PISE-Vendors.esp
-PISE-Vendor Tweaks Only.esp
-PISE-Misc Vendors.esp
-PISE-Difficult Bartering.esp
-PISE-Gold Tweaks Only.esp
-PISE-NPC Equipment Tweaks Only.esp
-PISE-NPC Tweaks and Potions.esp
-PISE-AI Overhaul.esp
-WeaponsOf3E 1-0 PISE Plugin.esp
-REGEX: .{0,5}Increased Level Scales\.esp
-REGEX: .{0,5}AI Tweaks Only\.esp
-REGEX: .{0,5}Loot Tweaks Only\.esp
-PISE-Less Intense Level Scaling.esp
-WARN: Outdated.
-PISE-More Intense Level Scaling.esp
-PISE-Dragon Weighting Only.esp
-PISE-Encounter Zones Only.esp
-WeaponsOf3E Beta PISE Compatibility Plugin.esp
-WeaponsOf3E PISE Compatibility Plugin.esp
-WeaponsOf3E PISE Plugin.esp
-REGEX: DeadlyDragonsPISE( DV)?\.esp
-REGEX: DeadlyDragonsHardPISE( DV)?\.esp
-REGEX: DeadlyDragonsSpawn.*\.esp
-WarinSkyrim.esp
-WarinSkyrimII.esp
-bloodcoins.esp
-WiS2 Armory.esp
 PerQ.esp
 posesivecorpses.esp
 PowerOfTheBeast.esp
@@ -908,6 +911,7 @@ Magicka Revamp - Destruction - Extra Spells - WIP.esp
 nighteye.esp
 NightEyeIllusionSpell.esp
 nighteyetoggle.esp
+togglevampiresight.esp
 Phenderix's Magic Evolved.esp
 Physic Magic 0.8v.esp
 Rune Expansion.esp
@@ -977,7 +981,7 @@ BEGINGROUP: Enchantment
 
 \>
 REGEX: Acquisitive Soul Gems( FR)?\.esp
-Soul Gems Differ.esp
+REGEX: Soul Gems Differ.*\.esp
 Soul Gems Glow When Full.esp
 \<Conflict with Weightless gems mods, moved to this position
 enchant4effects.esp
@@ -1007,6 +1011,7 @@ BEGINGROUP: Combat
 REGEX: CustomDifficultyP.*\.esp
 \Changes game difficulty, put here as initial position
 
+Chimera.esp
 combat.esp
 Duel.esp
 Duel_v2_1b.esp
@@ -1069,6 +1074,7 @@ REGEX: Improved Master Spells.*\.esp
 lcr.esp
 Leveling Destruction Perks.esp
 Leveling Destruction Perks - Only Perks.esp
+REGEX: MageArmor(Easy)?\.esp
 MBAxe.esp
 MBBow.esp
 MBDaggerAlone.esp
@@ -1084,6 +1090,17 @@ XPModNormal.esp
 Z_Skillpoints Matter.esp 
 ENDGROUP: Skills, Attributes and Leveling
 
+BEGINGROUP: Beauty Packs & Race Changes\Addons
+\
+\Hair, eyes, race addons & changes and other cosmetics.
+
+BEGINGROUP: Hair
+
+TelRedHair.esp
+TelDarkRedHair.esp
+ENDGROUP: Hair
+ENDGROUP: Beauty Packs & Race Changes\Addons
+
 BEGINGROUP: Companions
 \
 \Those related to companion mod systems. Most others in Quests section.
@@ -1091,6 +1108,7 @@ BEGINGROUP: Companions
 \
 
 Better Companions.esp
+DFB - Companion Bow Visible.esp
 Essential followers - all followers.esp
 followers alpha9.esp
 Hroki Wife Companion.esp
@@ -1114,6 +1132,7 @@ ENDGROUP: Message suppression/changing overrides
 
 BEGINGROUP: Respawn & day length overrides
 
+bloodcoins.esp
 NO_RESPAWN.esp
 REGEX: .{0,5}Increased Spawns Only\.esp
 REGEX: Respawn\w{3,5}Days{0,1}\.esp
