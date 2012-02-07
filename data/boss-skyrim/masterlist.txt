@@ -50,6 +50,7 @@ DarkerInteriors.esm
 DarkerInteriorsAdd.esm
 More Interactive Items.ESM
 basement.esm
+breezehomebasement.esm
 hideout.esm
 retreat.esm
 REGEX: Blood \(\w+\)\.ESM
@@ -164,7 +165,10 @@ REGEX: Better Sorting.*\.esp
 BlazesMassIngots.esp
 BookOfConsole.esp
 BrewABetterPotion.esp
+BreezehomeAnvil.esp
 BreezehomeEnchantingTable.esp
+BreezehomeEnchantingTable1.3.esp
+BreezehomeEnchantingTableFrench.esp
 BreezehomeGrindStone.esp
 Breezehomeshelves01.esp
 Breezehomeshelves02.esp
@@ -395,12 +399,14 @@ blackswordsman.esp
 Buckler DV.esp
 Bucklers.esp
 Bucklers - Complete.esp
+Bucklers-Complete.esp
 Bucklers - Buckler Only.esp
 ENDGROUP: Items B
 
 BEGINGROUP: Items C
 
 ClericCraftable.esp
+Craftable Triss armor.esp
 ENDGROUP: Items C
 
 BEGINGROUP: Items D
@@ -505,10 +511,17 @@ ENDGROUP: Items M
 BEGINGROUP: Items N
 
 Nightingale_with_DBenchants.esp
+Nightingale Shield.esp
+NobleFemaleClothes.esp
 Nocturnal's Accoutrements.esp
 Non-playable Armor.esp
 Northborn Fur Hoods.esp
 ENDGROUP: Items N
+
+BEGINGROUP: Items O
+
+OrcishMaskedHelmet.esp
+ENDGROUP: Items O
 
 BEGINGROUP: Items P
 
@@ -521,6 +534,7 @@ BEGINGROUP: Items R
 
 RangerArmor.esp
 REGEX: Raven Set v.*\.esp
+Redguard Shield.esp
 ReversedDaggers2.1.esp
 RingDwemer.esp
 RingOfAssassins.esp
@@ -692,6 +706,7 @@ BEGINGROUP: Quests B
 basement.esp
 Breezehome1stwing.esp
 SAY: No longer support, use Dovahkiin Hideout instead
+breezehomebasement.esp
 ENDGROUP: Quests B
 
 BEGINGROUP: Quests C
@@ -741,8 +756,10 @@ BEGINGROUP: Overrides Early
 
 \moved to this position because have conflicts with too many plugins
 \TAG: {{BASH: Stats}} for all
+Armor Weight Adjustment.esp
 GM-HMSPotions3SecsWeighted.esp
 IngredientReweight.esp
+Items Weight Adjustment.esp
 Lightweight Potions and Poisons.esp
 Realistic Gold Weight.esp
 Reweighed Potions.esp
@@ -751,6 +768,9 @@ REGEX: WeightedLockpicks.+\.esp
 REGEX: Weighted Items.*\.esp
 REGEX: PickaxeReduction.+\.esp
 REGEX: PickaxeWeightReduction.+\.esp
+Pickaxe & Woodcutter Axe Adjustment.esp
+Weapon Weight Adjustment.esp
+Weightless Gold Coin.esp
 weightless_potions.esp
 weightless_poisons.esp
 weightless_potions_poisons.esp
@@ -893,9 +913,6 @@ FollowerLongbow_12.esp
 FollowerOrcishBow12.esp
 Follower Healing Potion and Arrows.esp
 Follower Magicka and Healting Potion.esp
-BreezehomeAnvil.esp
-BreezehomeEnchantingTable1.3.esp
-BreezehomeEnchantingTableFrench.esp
 Shadowmere-Essential.esp
 PalominoHorse-Essential.esp
 GreyHorse-Essential.esp
@@ -1089,6 +1106,11 @@ WerewolfTweaksFeedRegen.esp
 WerewolfTweaksFear.esp
 WerewolfTweaks350Health_300AR_30MR.esp
 WiS IV - Double ArrowDamage.esp
+IF ("Bashed Patch, Skyrim.esp") WARN: DO NOT merge this esp into Bashed Patch
+\if merging the "doublearrowdamage" esp into wrye bash, this will cause all arrows in the game to display LOOKUP FAILED. This is because bashed patch is merging the esp but not the strings and thus anything in the strings will not be visible!!(from readme WIS)
+\TAG: {{BASH: Stats}}
+WiS IV - Double Arrow Damage.esp
+IF ("Bashed Patch, Skyrim.esp") WARN: DO NOT merge this esp into Bashed Patch
 \TAG: {{BASH: Stats}}
 WiS IV - Werewolf & Vampire.esp
 Woodelf Extended Animal Friend.esp
@@ -1125,7 +1147,7 @@ ENDGROUP: Alternative starts
 
 BEGINGROUP: Realism
 
-AdvancedFoodandRestENG lazy.esp
+REGEX: AdvancedFoodandRestENG( lazy)?\.esp
 REGEX: dD.?- Realistic Ragdoll Force.*\.esp
 REGEX: Jump\d{2,3}\.esp
 Realistic Weapon Weights.esp
