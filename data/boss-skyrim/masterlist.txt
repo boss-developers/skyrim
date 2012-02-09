@@ -159,7 +159,9 @@ BabettesFeast.esp
 BabettesFeastBalanced.esp
 BabettesFeastOverpowered.esp
 BabettesFeastWeakerEffects.esp
+
 Back off, Barbas!.esp
+Bag of Holding.esp
 BakingRecipes.esp
 bards sing everywhere v0.1.esp
 bards for all houses.esp
@@ -190,6 +192,7 @@ CarryWeightSpells.esp
 Collectors Edition in Brisenheim.esp
 Collectors Edition in Honigheim.esp
 CollectorsED.esp
+College lights.esp
 CookingExpanded.esp
 Cowardly horses.esp
 Cowardly essential horses.esp
@@ -636,6 +639,11 @@ BEGINGROUP: Overhauls
 \
 \Initial position for Overhaul mods
 
+IF ("Complete Crafting Overhaul.esp") MOD: Smithing Perks Overhaul.esp
+IF ("Complete Crafting Overhaul.esp") MOD: Smithing Perks Overhaul - Balanced.esp
+IF ("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
+IF ("Complete Crafting Overhaul.esp") MOD: Weapons and Armor Fixes.esp
+IF ("Complete Crafting Overhaul.esp") MOD: Weapons and Armor Fixes - Hacks.esp
 Complete Crafting Overhaul.esp
 SAY: will conflict with mods that modify existing recipes
 \tags no checked
@@ -821,8 +829,8 @@ WeightlessScrolls.esp
 \\
 
 Creaturestatsrevised.esp
-Weapons and Armor Fixes.esp
-Weapons and Armor Fixes - Hacks.esp
+IFNOT ("Complete Crafting Overhaul.esp") MOD: Weapons and Armor Fixes.esp
+IFNOT ("Complete Crafting Overhaul.esp") MOD: Weapons and Armor Fixes - Hacks.esp
 ENDGROUP: Overrides Early
 
 BEGINGROUP: Overrides #
@@ -970,6 +978,7 @@ Improved Mage Armor.esp
 Improved Runes.esp
 ImprovedArchMageRobes.esp 
 Increase Torch Range.esp
+IncreasedCartCosts.esp
 InvisibleHelmets.esp
 REGEX: LeatherWeightFix\(.{3}\)v1\.2\.esp
 Ish's Weighted Gold.esp
@@ -1091,9 +1100,9 @@ Skyrim Creatures Alive.esp
 % {{BASH: Relev, Delev}}
 Skyrim Smithing Components Rebalanced Full Version.esp
 SSCR Hard Type.*\.esp
-Smithing Perks Overhaul.esp
-Smithing Perks Overhaul - Balanced.esp
-INC: Smithing Perks Overhaul.esp
+IFNOT ("Complete Crafting Overhaul.esp") MOD: Smithing Perks Overhaul.esp
+IFNOT ("Complete Crafting Overhaul.esp") MOD: Smithing Perks Overhaul - Balanced.esp
+IF ("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
 SneakNamira.esp
 Snotgurg Useful Food.esp
 Soul Gems Rebalanced.esp
@@ -1162,6 +1171,8 @@ ENDGROUP: Overrides XYZ
 ENDGROUP: Overrides
 
 BEGINGROUP: Towns and Villages
+
+RiverWood Redux.esp
 ENDGROUOP: Towns and Villages
 
 BEGINGROUP: Landscaping
