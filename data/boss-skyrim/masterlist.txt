@@ -19,15 +19,15 @@ Silent Comments:
 Silent comments are ignored by BOSS, and may be written by starting a line with the backslash '\' character (as used by this block of text).
 You cannot start a silent comment part-way into a line, only whole lines may be silent.
 
- Message Type  Keyword  Description
+ Message Type                      Keyword      Description
  =====================================================================
- General message   SAY  A general message for the mod above.
- Bash Tag suggestion   TAG  A Bash Tag suggestion for the mod above.
- Requirement   REQ  An installation requirement for the mod above.
- Incompatibility   INC  A specific incompatibility for the mod above.
- Dirty mod message DIRTYA message relating to dirty edits in the mod above.
- Warning   WARN A message used to display a non-critical warning for the mod above.
- Error ERRORA message used to display a critical (ie. install-breaking) error for the mod above.
+ General message                   SAY          A general message for the mod above.
+ Bash Tag suggestion               TAG          A Bash Tag suggestion for the mod above.
+ Requirement                       REQ          An installation requirement for the mod above.
+ Incompatibility                   INC          A specific incompatibility for the mod above.
+ Dirty mod message                 DIRTY        A message relating to dirty edits in the mod above.
+ Warning                           WARN         A message used to display a non-critical warning for the mod above.
+ Error                             ERROR        A message used to display a critical (ie. install-breaking) error for the mod above.
 
 Message keywords should be indented by a single space and followed by a colon ':' then the message string.
 
@@ -781,6 +781,7 @@ BEGINGROUP: Overhauls
 \Initial position for Overhaul mods
 
 IF ("Complete Crafting Overhaul.esp") MOD: Smithing Perks Overhaul.esp
+IF ("PerkUP-Smithing.esp") SAY: Already included in PerkUP-Smithing.esp, use only one.
 IF ("Complete Crafting Overhaul.esp") MOD: Smithing Perks Overhaul - Balanced.esp
 IF ("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
 IF ("Complete Crafting Overhaul.esp") MOD: Weapons and Armor Fixes.esp
@@ -1342,9 +1343,6 @@ Skyrim Dark.esp
 Skyrim Smithing Components Rebalanced Full Version.esp
 REGEX: SkyrimCoinReplacer.*\.esp
 SSCR Hard Type.*\.esp
-IFNOT ("Complete Crafting Overhaul.esp") MOD: Smithing Perks Overhaul.esp
-IFNOT ("Complete Crafting Overhaul.esp") MOD: Smithing Perks Overhaul - Balanced.esp
-IF ("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
 SneakNamira.esp
 Snotgurg Useful Food.esp
 Soul Gems Rebalanced.esp
@@ -1734,11 +1732,17 @@ SlowerLevelingEnchanting.esp
 SlowerLevelingSmithing.esp
 REGEX: SlowerSkills_v.+\.esp
 SmithingMasteryPerks.esp
+IF ("PerkUP-Smithing.esp") SAY: Already included in PerkUP-Smithing.esp, use only one.
+IFNOT ("Complete Crafting Overhaul.esp") MOD: Smithing Perks Overhaul.esp
+IF ("PerkUP-Smithing.esp") SAY: Already included in PerkUP-Smithing.esp, use only one.
+IFNOT ("Complete Crafting Overhaul.esp") MOD: Smithing Perks Overhaul - Balanced.esp
+IF ("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
 The Fingersmith Mod + Perk Adjustments 1.2b.esp
 REGEX: training_costs_\d{1,2}_x\d_x\d\.esp
 train 10 times per level.esp
 TrueYield.esp
 Uncapped Perks.esp
+IF (r"PerkUP-.*\.esp") WARN: PerkUP-*.esp already replaces this, use only one.
 Uncapped Perks - Optional Magic Add-on.esp
 REGEX: Uncapped Perks.+\.esp
 XPModNormal.esp
@@ -1746,21 +1750,7 @@ Z_Skillpoints Matter.esp
 ZB - Simple Destruction Overhaul.esp
 perq_en.esp
 REGEX: PerkUP-.*\.esp
-SAY: Replaces...
-SAY: Powerful Perks Expanded - PPE by Slayerjerman
-SAY: Smithing Mastery Perks by darkknight098 AKA --Reaper
-SAY: Smithing Perks Overhaul by Headbomb
-SAY: Extra Effect Perk-Additional Rank by thedemoninside
-SAY: No Perk Prerequisites by ClassicalNoodle
-SAY: Deflect Arrows Perk Fix by JeffSteel
-SAY: Uncapped Perks by Liberta
-SAY: Caos Advanced Perk Ranks by CaoMengde777 (fixed bugs, naturally)
-SAY: Caos Extra Pockets Perk Upgrades by CaoMengde777
-SAY: Dead Aim perk x5 x10 x15 x20 by evi002 (rebalanced)
-SAY: Better archery Eagle Eye perk by Graxster
-SAY: Concentrated Poisons by kenevir1991
-SAY: Bugfix - Critical Charge with swords by Kevin Kidder ....
-SAY: ...check your mods.
+SAY: ReplacesExtra Effect Perk-Additional Rank by thedemoninside , No Perk Prerequisites by ClassicalNoodle , Deflect Arrows Perk Fix by JeffSteel , Caos Advanced Perk Ranks by CaoMengde777 (fixed bugs, naturally) , Caos Extra Pockets Perk Upgrades by CaoMengde777 , Dead Aim perk x5 x10 x15 x20 by evi002 (rebalanced) , Better archery Eagle Eye perk by Graxster , Concentrated Poisons by kenevir1991 , Bugfix - Critical Charge with swords by Kevin Kidder ....
 ENDGROUP: Skills, Attributes and Leveling
 
 BEGINGROUP: Pose and Animation Mods
