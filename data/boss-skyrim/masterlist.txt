@@ -66,6 +66,7 @@ EagleEyePerk_defStamina.esm
 FluxMOD_ArtifactEffectPerk.esm
 GetArrowsBack80.esm
 SpecializedFollowers.esm
+SAY: Obsolete. Update to latest verion.
 HuntersDiscipline.esm
 MBMaster.esm
 NoKillMoves.ESM
@@ -1988,12 +1989,18 @@ BetterCompanions.esp
 Better Followers.esp
 SAY: Obsolete. Upgrade to latest version.
 REGEX: Better Followers - (No C|P|NP|BP|BNP)\.esp
+IF (r"Better Followers - (BP|BNP)\.esp") WARN: Delete the esp and the folder "skyrim.esm" in Data/meshes/actors/characters/facegendata/facegeom and Data/meshes/actors/characters/character assets/hair, if exist
+IF (r"Better Followers - (BP|BNP)\.esp") WARN: Delete folder coolsims in Data/textures/actors and folder hair from Data/textures/actors/character
 SAY: Use only one Better Followers - *.esp
 IF ("SpecializedFollowers.esp") WARN: Specialized Followers is detected. Delete this and use SP or SNP or SBP or SBNP versions.
 SpecializedFollowers.esp
+IF (r"Better Followers - (SP|SNP|SBP|SBNP)\.esp") WARN: Delete perktransformeffectscript.pex and transformationsafetyscript.pex in scripts, if exist.
+IF (r"Better Followers - (SP|SNP|SBP|SBNP)\.esp") WARN: Delete perktransformeffectscript.psc and transformationsafetyscript.psc in scripts/source, if exist
+IF (r"Better Followers - (SP|SNP|SBP|SBNP)\.esp") WARN: Delete this esp, use Better Followers - S*.esp instead.
 REGEX: Better Followers - (SP|SNP|SBP|SBNP)\.esp
+IF (r"Better Followers - (SBP|SBNP)\.esp") WARN: Delete the esp and the folder "skyrim.esm" in Data/meshes/actors/characters/facegendata/facegeom and Data/meshes/actors/characters/character assets/hair, if exist
+IF (r"Better Followers - (SBP|SBNP)\.esp") WARN: Delete folder coolsims in Data/textures/actors and folder hair from Data/textures/actors/character
 SAY: Use only one Better Followers - S*.esp
-REQ: SpecializedFollowers.esp
 Better Followers - Specialized.esp
 SAY: Obsolete. Upgrade to latest version.
 Better Followers - Specialized - Not E.esp
