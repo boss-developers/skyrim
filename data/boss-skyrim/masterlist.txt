@@ -290,6 +290,7 @@ CollectorsED.esp
 College lights.esp
 Colored_Dragonscale_v1.esp
 \TAG: {{BASH: Invent}}
+Conjuration & Summoning fixes.esp
 Cooking Mod - Yummy in Your Tummy.esp
 CookingExpanded.esp
 Cowardly horses.esp
@@ -312,6 +313,8 @@ craftablelockpicks.esp
 craftable soulgems.esp
 CraftableHoods.esp
 CraftBoundWeaponsAndArrows.esp
+Crafting300.esp
+% {{BASH: Delev, Relev}}
 CraftingMaterialsRecipes.esp
 CraftingRecipesRevisited.esp
 craftplusweaponssteam.esp
@@ -342,10 +345,9 @@ DragonWithSoul.esp
 Dragons in the Wild.esp
 % {{BASH: Delev}}
 dropfixes.esp
-SMDropLitTorch.esp
+Dwemer Certified.esp
 dualcastingcostfixed.esp
 DungeonQuestAwareness.esp
-Dwemer Certified.esp
 DynamicTorches.esp
 ENDGROUP: Base D
 
@@ -421,6 +423,10 @@ BEGINGROUP: Base L
 
 LeatherWeightFix(0.5).esp
 leazeropenlock.esp
+LegendarySmithingUpgrades.esp
+Legendary Smithing Upgrades.esp
+CraftUniqueArtifactWEAP.esp
+REQ: LegendarySmithingUpgrades.esp
 LFox Alchemists Have Potions and Poisons.esp
 Linked Home Chests.esp
 Long lost smelters.esp
@@ -493,6 +499,8 @@ SAY: Use only one Realistic Wildlife Loot esp
 RecyclingMod.esp
 IF ("Crafting300.esp") SAY: Recommeded RecyclingModCrafting300.esp for Crafting300 mod. See RecyclingMod download page.
 IF (r"Weapons of the Third Era.+\.esp") SAY: Recommeded RecyclingModWo3E.esp for Weapons of the Third Era mod. See RecyclingMod download page.
+RecyclingModCrafting300.esp
+REQ: Crafting300.esp
 RevisedHorsesFeeding.esp
 riverwood flora.esp
 ENDGROUP: Base R
@@ -511,6 +519,7 @@ SkoomaModKidduffah v1.0.esp
 SkyMoMod.esp
 % {{BASH: Delev, Relev}}
 Sleep well.esp
+SMDropLitTorch.esp
 smeltable dwarven scrap metal.esp
 smelting mod by soto.esp
 smeltingtowns.esp
@@ -992,10 +1001,6 @@ SAY: will conflict with mods that modify existing recipes
 Complete Crafting Overhaul - BS version.esp
 \tags no checked
 % {{BASH: Delev, Relev}}
-Crafting300.esp
-% {{BASH: Delev, Relev}}
-RecyclingModCrafting300.esp
-REQ: Crafting300.esp
 Darwins_Hard_Times.esp
 EpicEndeavours.esp
 % {{BASH: Delev, Relev}}
@@ -1533,10 +1538,6 @@ ladiesofdaedric.esp
 Lawrens RNG Guards.esp
 LaFemmeLycana.esp
 Legendary Gauldur Amulet.esp
-LegendarySmithingUpgrades.esp
-Legendary Smithing Upgrades.esp
-CraftUniqueArtifactWEAP.esp
-REQ: LegendarySmithingUpgrades.esp
 LegionArmorVarietyOPTIONAL1.esp
 Lenhador.esp
 REGEX: LessTraining_\d\.esp
@@ -2077,9 +2078,16 @@ Balanced_Magic_Novice.esp
 Balanced_Magic_Master.esp
 Balanced_Magic_BETA_2_0.esp
 Balanced_Restoration.esp
+REGEX: PPE_Perk-.+\.esp
+SAY: Obsolete. Update to last version of 'PerkUP' mod
+REGEX: PerkUP-.{4,12}\.esp
+SAY: For users of included in this mod plugins. You will probably lose some already used perks, check this in game.
+SAY: ReplacesExtra Effect Perk-Additional Rank by thedemoninside , No Perk Prerequisites by ClassicalNoodle , Deflect Arrows Perk Fix by JeffSteel , Caos Advanced Perk Ranks by CaoMengde777 (fixed bugs, naturally) , Caos Extra Pockets Perk Upgrades by CaoMengde777 , Dead Aim perk x5 x10 x15 x20 by evi002 (rebalanced) , Better archery Eagle Eye perk by Graxster , Concentrated Poisons by kenevir1991 , Bugfix - Critical Charge with swords by Kevin Kidder ....
+\For Basic
+REGEX: PerkUP-.*\.esp
+\For Optional
 cao_PerkRanks.esp
 Conjuration Perks Overhaul Beta 0.1.esp
-Conjuration & Summoning fixes.esp
 Eld-betterLockpickPerks.esp
 GluRUS_magicscaling.esp
 HeavyArmorPerks v1.1.esp
@@ -2102,8 +2110,6 @@ REGEX: pace_\w_\d{2,4}_\d{1,2}.*\.esp
 PerksBalance.esp
 Perk_Soul_Siphon_100.esp
 PerQ_ReqSkillLevel.esp
-REGEX: PPE_Perk-.+\.esp
-SAY: Obsolete. Update to last version of 'PerkUP' mod
 RacialSkillBoost.esp
 SB - Level Scaling Mod.esp
 SB Skills and Leveling.esp
@@ -2124,16 +2130,15 @@ The Fingersmith Mod + Perk Adjustments 1.2b.esp
 REGEX: training_costs_\d{1,2}_x\d_x\d\.esp
 train 10 times per level.esp
 TrueYield.esp
+REGEX: Uncapped Perks - [CM].+\.esp
+IF (r"PerkUP-.*\.esp") WARN: PerkUP-*.esp already replaces this, use only one.
 Uncapped Perks.esp
 IF (r"PerkUP-.*\.esp") WARN: PerkUP-*.esp already replaces this, use only one.
 Uncapped Perks - Optional Magic Add-on.esp
-REGEX: Uncapped Perks.+\.esp
 XPModNormal.esp
 Z_Skillpoints Matter.esp
 ZB - Simple Destruction Overhaul.esp
 perq_en.esp
-REGEX: PerkUP-.*\.esp
-SAY: ReplacesExtra Effect Perk-Additional Rank by thedemoninside , No Perk Prerequisites by ClassicalNoodle , Deflect Arrows Perk Fix by JeffSteel , Caos Advanced Perk Ranks by CaoMengde777 (fixed bugs, naturally) , Caos Extra Pockets Perk Upgrades by CaoMengde777 , Dead Aim perk x5 x10 x15 x20 by evi002 (rebalanced) , Better archery Eagle Eye perk by Graxster , Concentrated Poisons by kenevir1991 , Bugfix - Critical Charge with swords by Kevin Kidder ....
 ENDGROUP: Skills, Attributes and Leveling
 
 BEGINGROUP: Pose and Animation Mods
