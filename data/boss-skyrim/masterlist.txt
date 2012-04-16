@@ -39,6 +39,12 @@ Items not covered here include: conditional messages, masterlist variables, plug
 \ Upgrade message for 1.7+ users:
  IF (<2.0.1.0|"BOSS") GLOBAL WARN: An update for BOSS (v2.0.1) has been released. Download it at "http://www.tesnexus.com/downloads/file.php?id=20516", "http://www.skyrimnexus.com/downloads/file.php?id=6", "http://www.fallout3nexus.com/downloads/file.php?id=10193" or "http://www.newvegasnexus.com/downloads/file.php?id=35999"
 
+\ Masterlist variable setup for BOSS v1.7+.
+\=====================================================================
+
+IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
+\=====================================================================
+
 BEGINGROUP: ESMs
 
 Skyrim.esm
@@ -381,8 +387,8 @@ ENDGROUP: Music
 BEGINGROUP: Base Early
 
 
-IFNOT (r"Complete Crafting Overhaul( - BS version)?\.esp") MOD: Weapons and Armor fixes.esp
-IFNOT (r"Complete Crafting Overhaul( - BS version)?\.esp") MOD: Weapons and Armor fixes - Hacks.esp
+IFNOT ($CCO) MOD: Weapons and Armor fixes.esp
+IFNOT ($CCO) MOD: Weapons and Armor fixes - Hacks.esp
 Shadow Striping Fix.esp
 SMIM_Fixes.esp
 REGEX: SpellFix.*\.esp
@@ -1858,12 +1864,12 @@ BEGINGROUP: Overhauls
 \
 \Initial position for Overhaul mods
 
-IF (r"Complete Crafting Overhaul( - BS version)?\.esp") MOD: Smithing Perks Overhaul.esp
+IF ($CCO) MOD: Smithing Perks Overhaul.esp
  IF ("PerkUP-Smithing.esp") INC: PerkUP, use only one.
-IF (r"Complete Crafting Overhaul( - BS version)?\.esp") MOD: Smithing Perks Overhaul - Balanced.esp
+IF ($CCO) MOD: Smithing Perks Overhaul - Balanced.esp
  IF ("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
-IF (r"Complete Crafting Overhaul( - BS version)?\.esp") MOD: Weapons and Armor fixes.esp
-IF (r"Complete Crafting Overhaul( - BS version)?\.esp") MOD: Weapons and Armor fixes - Hacks.esp
+IF ($CCO) MOD: Weapons and Armor fixes.esp
+IF ($CCO) MOD: Weapons and Armor fixes - Hacks.esp
 Complete Crafting Overhaul.esp
  SAY: will conflict with mods that modify existing recipes
 Complete Crafting Overhaul - BS version.esp
@@ -3636,9 +3642,9 @@ SlowerLevelingSmithing.esp
 REGEX: SlowerSkills_v.+\.esp
 SmithingMasteryPerks.esp
  IF ("PerkUP-Smithing.esp") INC: PerkUP, use only one.
-IFNOT (r"Complete Crafting Overhaul( - BS version)?\.esp") MOD: Smithing Perks Overhaul.esp
+IFNOT ($CCO) MOD: Smithing Perks Overhaul.esp
  IF ("PerkUP-Smithing.esp") INC: PerkUP, use only one.
-IFNOT (r"Complete Crafting Overhaul( - BS version)?\.esp") MOD: Smithing Perks Overhaul - Balanced.esp
+IFNOT ($CCO) MOD: Smithing Perks Overhaul - Balanced.esp
  IF ("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
 The Fingersmith Mod + Perk Adjustments 1.2b.esp
 REGEX: training_costs_\d{1,2}_x\d_x\d\.esp
