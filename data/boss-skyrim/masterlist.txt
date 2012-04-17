@@ -43,6 +43,7 @@ Items not covered here include: conditional messages, masterlist variables, plug
 \=====================================================================
 
 IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
+IF ("ASIS-Dependency.esp") || IF("ASIS.esp") || IF("Automatic Spells.esp") || IF("Automatic Variations.esp") || IF("Automatic Variants.esp") SET: DynamicPlugin
 \=====================================================================
 
 BEGINGROUP: ESMs
@@ -4106,6 +4107,8 @@ ENDGROUP: Bashed Patch
 
 BEGINGROUP: Post Bashed Patch
 
+/*How can this be displayed once*/
+/*If ($DynamicPlugin) SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.*/
 /* Bash makes an error message unless ASIS-Dependency is first */
 ASIS-Dependency.esp
 ASIS.esp
