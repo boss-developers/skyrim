@@ -46,6 +46,7 @@ IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
 IF ("ASIS-Dependency.esp") || IF ("ASIS.esp") || IF ("Automatic Spells.esp") || IF ("Automatic Variations.esp") || IF ("Automatic Variants.esp") SET: DynamicPlugin
 IF ("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
 IF ("DragonSwarms.esp") || IF ("DragonSwarms V3.1-Easy Mode.esp") SET: DSwarmInst
+IF (r"Noble_Artifacts_For_Skyrim_(Eng|Rus)?\.esp") SET: NobleArtInst
 \=====================================================================
 
 BEGINGROUP: ESMs
@@ -1316,6 +1317,7 @@ Darklilith.esp
 LFDarksidersWarArmor.esp
 darksiders_pack.esp
 darksiders_scythe.esp
+DarkwindCBBE3ByNausicaa.esp
 DB_Light_Armor_Robes.esp
 dbarrows.esp
 dbbownogloss.esp
@@ -1490,6 +1492,7 @@ BEGINGROUP: Items I
 
 InfernoGreatSword.esp
 ImperialArmor.esp
+Insanity's Sorrow.esp
 Insanity's Umbra Sword.esp
 InvisRing.esp
 InvisibleArmorSets.esp
@@ -1602,10 +1605,17 @@ ENDGROUP: Items M
 
 BEGINGROUP: Items N
 
-NA_Chrysamere_Eng.esp
-NA_Goldbrand_Eng.esp
-NA_IBOTM_Eng.esp
-NA_Scourge_Eng.esp
+REGEX: NA_BipolarBlade_(Eng|Rus)?\.esp
+ IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+REGEX: NA_Chrysamere_(Eng|Rus)?\.esp
+ IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+REGEX: NA_Goldbrand_(Eng|Rus)?\.esp
+ IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+REGEX: NA_IBOTM_(Eng|Rus)?\.esp
+ IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+REGEX: NA_Scourge_(Eng|Rus)?\.esp
+ IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+REGEX: Noble_Artifacts_For_Skyrim_(Eng|Rus)?\.esp
 NarquelionBow.esp
 NemonicDragonSlayer.esp
 Neo's Outlander.esp
@@ -1628,6 +1638,8 @@ NobleFemaleClothes.esp
 Nocturnal's Accoutrements.esp
 nomo1.esp
 Non-playable Armor.esp
+NordicSpears.esp
+/* {{BASH: Relev, Delev}} ? The NS_LItemWeaponSpear Leveled list is not in Skyrim.esm */
 Northborn Fur Hoods.esp
 notched.esp
 NorseMaille.esp
