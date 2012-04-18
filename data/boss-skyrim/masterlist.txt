@@ -43,7 +43,7 @@ Items not covered here include: conditional messages, masterlist variables, plug
 \=====================================================================
 
 IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
-IF ("ASIS-Dependency.esp") || IF ("ASIS.esp") || IF ("Automatic Spells.esp") || IF ("Automatic Variations.esp") || IF ("Automatic Variants.esp") SET: DynamicPlugin
+IF ("ASIS-Dependency.esp") || IF("ASIS.esp") || IF("Automatic Spells.esp") || IF("Automatic Variations.esp") || IF("Automatic Variants.esp") GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
 IF ("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
 IF ("DragonSwarms.esp") || IF ("DragonSwarms V3.1-Easy Mode.esp") SET: DSwarmInst
 IF (r"Noble_Artifacts_For_Skyrim_(Eng|Rus)?\.esp") SET: NobleArtInst
@@ -2385,6 +2385,7 @@ thundersnow1.esp
 Tired.esp
 Tomb ahranas.esp
 tomb of lucien lachance.esp
+tos_secretprayereng.esp
 TQC.esp
 Trees for Solitude V1.1.esp
 Trees for Solitude.esp
@@ -2903,6 +2904,11 @@ Mikaelarps Disenchantable armor.esp
 Mikaelarps disenchantable artifacts.esp
 MiningFaster.esp
 MODdisguises.esp
+MMOAlterationChanges.esp
+MMOConjurationChanges.esp
+MMODestructionChanges.esp
+MMOIllusionChanges.esp
+MMORestorationChanges.esp
 more dragons.esp
 More Dynamic Shadows.esp
 REGEX: More Dynamic Shadows.*\.esp
@@ -4162,9 +4168,6 @@ ENDGROUP: Bashed Patch
 
 BEGINGROUP: Post Bashed Patch
 
-/*How can this be displayed once*/
-/*If ($DynamicPlugin) SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.*/
-/* Bash makes an error message unless ASIS-Dependency is first */
 ASIS-Dependency.esp
 ASIS.esp
 Automatic Spells.esp
