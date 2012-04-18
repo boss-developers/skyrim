@@ -44,6 +44,8 @@ Items not covered here include: conditional messages, masterlist variables, plug
 
 IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
 IF ("ASIS-Dependency.esp") || IF ("ASIS.esp") || IF ("Automatic Spells.esp") || IF ("Automatic Variations.esp") || IF ("Automatic Variants.esp") SET: DynamicPlugin
+IF ("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
+IF ("DragonSwarms.esp") || IF ("DragonSwarms V3.1-Easy Mode.esp") SET: DSwarmInst
 \=====================================================================
 
 BEGINGROUP: ESMs
@@ -1933,6 +1935,24 @@ LegionOverhaulV25.esp
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
 
+/* Should this have it's own section */
+DragonSwarms.esp
+ IF ($IncDSwarmMorAgress) INC: Incompatible with DS-MoreAgressionForRemover.esp
+DragonSwarms V3.1-Easy Mode.esp
+ IF ($IncDSwarmMorAgress) INC: Incompatible with DS-MoreAgressionForRemover.esp
+DS-ExtendedDragonList.esp
+ IF ($DSwarmInst) WARN: Not Needed Already in v3.1
+ IF ($IncDSwarmMorAgress) INC: Incompatible with DS-MoreAgressionForRemover.esp
+DS-FlybyOpt.esp
+ IF ($DSwarmInst) WARN: Not Needed Already in v3.1
+ IF ($IncDSwarmMorAgress) INC: Incompatible with DS-MoreAgressionForRemover.esp
+DS-MoreAgressionForRemover.esp
+ IF ($DSwarmInst) WARN: Not Needed Already in v3.1
+DragonSwarmsOptRemoveTimerStable.esp
+ IF ($DSwarmInst) WARN: Not Needed Already in v3.1
+DS-VanillaTimer+MultipleEvents.esp
+ IF ($IncDSwarmMorAgress) INC: Incompatible with DS-MoreAgressionForRemover.esp
+
 BEGINGROUP: PISE
 PISE.esp
 % {{BASH: Delev, Relev}}
@@ -2360,6 +2380,12 @@ treehouse.esp
 Twilight Forest.esp
 Twilight Forest - Ambient Lighting.esp
 ENDGROUP: Quests T
+/*
+BEGINGROUP: Quests U
+
+unkeptunderstonekeep025.esp
+ENDGROUP: Quests U
+*/
 
 BEGINGROUP: Quests V
 
