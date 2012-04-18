@@ -47,6 +47,7 @@ IF ("ASIS-Dependency.esp") || IF("ASIS.esp") || IF("Automatic Spells.esp") || IF
 IF ("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
 IF ("DragonSwarms.esp") || IF ("DragonSwarms V3.1-Easy Mode.esp") SET: DSwarmInst
 IF (r"Noble_Artifacts_For_Skyrim_(Eng|Rus)?\.esp") SET: NobleArtInst
+IF ("tSSSSS.esp") SET: tSSSSS
 \=====================================================================
 
 BEGINGROUP: ESMs
@@ -2904,11 +2905,11 @@ Mikaelarps Disenchantable armor.esp
 Mikaelarps disenchantable artifacts.esp
 MiningFaster.esp
 MODdisguises.esp
-MMOAlterationChanges.esp
-MMOConjurationChanges.esp
-MMODestructionChanges.esp
-MMOIllusionChanges.esp
-MMORestorationChanges.esp
+IFNOT ($tSSSSS) MOD: MMOAlterationChanges.esp
+IFNOT ($tSSSSS) MOD: MMOConjurationChanges.esp
+IFNOT ($tSSSSS) MOD: MMODestructionChanges.esp
+IFNOT ($tSSSSS) MOD: MMOIllusionChanges.esp
+IFNOT ($tSSSSS) MOD: MMORestorationChanges.esp
 more dragons.esp
 More Dynamic Shadows.esp
 REGEX: More Dynamic Shadows.*\.esp
@@ -3411,6 +3412,11 @@ Battlemage's Arcanes.esp
 binding_spell.esp
 tSSSSS.esp
 tSSSSS - No Restoration.esp
+IF ($tSSSSS) MOD: MMOAlterationChanges.esp
+IF ($tSSSSS) MOD: MMOConjurationChanges.esp
+IF ($tSSSSS) MOD: MMODestructionChanges.esp
+IF ($tSSSSS) MOD: MMOIllusionChanges.esp
+IF ($tSSSSS) MOD: MMORestorationChanges.esp
 BetterDualCasting.esp
 BetterSpellFinishers.esp
 BetterMasterSpells.esp
