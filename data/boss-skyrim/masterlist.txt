@@ -43,11 +43,10 @@ Items not covered here include: conditional messages, masterlist variables, plug
 \=====================================================================
 
 IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
-IF ("ASIS-Dependency.esp") || IF("ASIS.esp") || IF("Automatic Spells.esp") || IF("Automatic Variations.esp") || IF("Automatic Variants.esp") GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
+IF ("ASIS-Dependency.esp") || IF ("ASIS.esp") || IF ("Automatic Spells.esp") || IF ("Automatic Variations.esp") || IF ("Automatic Variants.esp") GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
 IF ("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
 IF ("DragonSwarms.esp") || IF ("DragonSwarms V3.1-Easy Mode.esp") SET: DSwarmInst
 IF (r"Noble_Artifacts_For_Skyrim_(Eng|Rus)?\.esp") SET: NobleArtInst
-IF ("tSSSSS.esp") SET: tSSSSS
 \=====================================================================
 
 BEGINGROUP: ESMs
@@ -141,7 +140,6 @@ RaceCompatibility.esm
 BBLuxurySuite.esm
 GluRuSArtifactEffectPerk.esm
 Extended Colors.esm
-
 ENDGROUP: ESMs
 
 BEGINGROUP: Official DLC Files
@@ -1640,7 +1638,6 @@ Nocturnal's Accoutrements.esp
 nomo1.esp
 Non-playable Armor.esp
 NordicSpears.esp
-/* {{BASH: Relev, Delev}} ? The NS_LItemWeaponSpear Leveled list is not in Skyrim.esm */
 Northborn Fur Hoods.esp
 notched.esp
 NorseMaille.esp
@@ -1930,6 +1927,10 @@ Complete Crafting Overhaul - BS version.esp
 \tags no checked
 % {{BASH: Delev, Relev}}
 Lorecraft - Crafting Overhaul.esp
+Crafting 300 Basic.esp
+% {{BASH: Delev, Relev}}
+\tags as in original crafting 300 mod
+Crafting300_Basic_extras_v1.0.esp
 Darwins_Hard_Times.esp
 T3nd0sOverhaul.esp
 SAY: Only for non ENB users
@@ -2513,7 +2514,7 @@ ENDGROUP: Overrides #
 BEGINGROUP: Overrides A
 
 Accessible Vendor Chests.esp
- IFNOT ("EmpoweredMagic.esp") REGEX: Acquisitive Soul Gems( FR)?\.esp
+IFNOT ("EmpoweredMagic.esp") REGEX: Acquisitive Soul Gems( FR)?\.esp
 AddChoices01.esp
 Adoption.esp
 alcoholiceffect.esp
@@ -2607,8 +2608,6 @@ ClearWater.esp
 CloseFaceRobesAndHelm.esp
 Consistent Conjuration.esp
 \ TAG: {{BASH: Names}}
-Crafting 300 Basic.esp
-Crafting300_Basic_extras_v1.0.esp
 CriticalDamageRevised.esp
 crominteractionimprovement.esp
 CustomDifficultyEnemiesOnly.esp
@@ -2641,8 +2640,6 @@ disablefasttravel.esp
 disablelydiatradedialog.esp
 doublebounddmg.esp
 \ TAG: {{BASH: Stats}}
-DragonSwarms.esp
-REGEX: DragonSwarmsOptRemoveTimer(Stable)?\.esp
 droppablebarenziah.esp
  IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
 DS-FlybyOpt.esp
@@ -2905,11 +2902,6 @@ Mikaelarps Disenchantable armor.esp
 Mikaelarps disenchantable artifacts.esp
 MiningFaster.esp
 MODdisguises.esp
-IFNOT ($tSSSSS) MOD: MMOAlterationChanges.esp
-IFNOT ($tSSSSS) MOD: MMOConjurationChanges.esp
-IFNOT ($tSSSSS) MOD: MMODestructionChanges.esp
-IFNOT ($tSSSSS) MOD: MMOIllusionChanges.esp
-IFNOT ($tSSSSS) MOD: MMORestorationChanges.esp
 more dragons.esp
 More Dynamic Shadows.esp
 REGEX: More Dynamic Shadows.*\.esp
@@ -3412,11 +3404,11 @@ Battlemage's Arcanes.esp
 binding_spell.esp
 tSSSSS.esp
 tSSSSS - No Restoration.esp
-IF ($tSSSSS) MOD: MMOAlterationChanges.esp
-IF ($tSSSSS) MOD: MMOConjurationChanges.esp
-IF ($tSSSSS) MOD: MMODestructionChanges.esp
-IF ($tSSSSS) MOD: MMOIllusionChanges.esp
-IF ($tSSSSS) MOD: MMORestorationChanges.esp
+MMOAlterationChanges.esp
+MMOConjurationChanges.esp
+MMODestructionChanges.esp
+MMOIllusionChanges.esp
+MMORestorationChanges.esp
 BetterDualCasting.esp
 BetterSpellFinishers.esp
 BetterMasterSpells.esp
