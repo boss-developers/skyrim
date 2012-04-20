@@ -47,6 +47,10 @@ IF ("ASIS-Dependency.esp") || IF ("ASIS.esp") || IF ("Automatic Spells.esp") || 
 IF ("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
 IF ("DragonSwarms.esp") || IF ("DragonSwarms V3.1-Easy Mode.esp") SET: DSwarmInst
 IF (r"Noble_Artifacts_For_Skyrim_(Eng|Rus)?\.esp") SET: NobleArtInst
+IF ("GM-ForgeAdditions.esp") || IF ("GM-ForgeAdditionsLAotB.esp") SET: GMForgeAdd
+IF ("GM-ForgeAdditionsLevelledOutfits.esp") && IF ("GM-ForgeAdditionsLAotBLevelledOutfits.esp") SET: DualGMLevList
+IF ("GM-ForgeAdditions.esp") && IF ("GM-ForgeAdditionsLAotB.esp") SET: DualGMForgeAdd
+
 \=====================================================================
 
 BEGINGROUP: ESMs
@@ -675,8 +679,16 @@ GlassCrownCraftable.esp
 Gleaming Salvage Caravan.esp
 GM-Fletching04.esp
 REGEX: GM-Fletching(Harder|Standard)\.esp
-SAY: Use only one version of GM-Fletching*.esp
+ SAY: Use only one version of GM-Fletching*.esp
+GM-ForgeAdditions.esp
+ IF ($DualGMForgeAdd) SAY: Use Only One
+GM-ForgeAdditionsLevelledOutfits.esp
+ IF ($DualGMLevList) SAY: Use only one
+/* will work alongside The Lost Art of the Blacksmith */
+GM-ForgeAdditionsLAotB.esp
+ IF ($DualGMForgeAdd) SAY: Use Only One
 GM-ForgeAdditionsLAotBLevelledOutfits.esp
+ IF ($DualGMLevList) SAY: Use only one
 Grab Moveable Statics.esp
  SAY: Obsolete, consider upgrading
 GrandSoulGemOnly.esp
@@ -1481,6 +1493,7 @@ Gizmodian-Obliviweapons.esp
 Gizmodian Silver Swords.esp
 Gizmodian-Witchbane.esp
 GM-LeatherHood.esp
+ IF ($GMForgeAdd) INC: Gromits Smithing Forge Additions
 GoldRapier01.esp
 GoldTeraH17.esp
 GondorianArmour.esp
@@ -1994,6 +2007,8 @@ EpicEndeavours.esp
 % {{BASH: Delev, Relev}}
 EpicGlorySlowerLevelingByMadmole.esp
 LegionOverhaulV25.esp
+/* Designed to work with "Deadly Dragons" mod (v3.1.0) */
+megadragons.esp
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
 
@@ -3098,6 +3113,8 @@ REGEX: RichMerchants\w*\.esp
 /* ...adds a new objective per quest... They now have quest markers added. */
 RitualQuestMarkers.esp
 RunesAlwaysStagger.esp
+/* Will - and ; cause an issue ? Should REGEX be used?  REGEX: runes-?\cloak-fix.esp */
+runes-;cloak-fix.esp
 ENDGROUP: Overrides R
 
 BEGINGROUP: Overrides S
