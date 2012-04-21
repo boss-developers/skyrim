@@ -50,6 +50,7 @@ IF (r"Noble_Artifacts_For_Skyrim_(Eng|Rus)?\.esp") SET: NobleArtInst
 IF ("GM-ForgeAdditions.esp") || IF ("GM-ForgeAdditionsLAotB.esp") SET: GMForgeAdd
 IF ("GM-ForgeAdditionsLevelledOutfits.esp") && IF ("GM-ForgeAdditionsLAotBLevelledOutfits.esp") SET: DualGMLevList
 IF ("GM-ForgeAdditions.esp") && IF ("GM-ForgeAdditionsLAotB.esp") SET: DualGMForgeAdd
+IF ("EpicGloryByMadmole.esp") SET: EpicGloryInst
 
 \=====================================================================
 
@@ -57,6 +58,7 @@ BEGINGROUP: ESMs
 
 Skyrim.esm
 Update.esm
+3rdEraWeaponsMoS.esm
 All Housecarls Are Hunks.esm
 Lycanthropy_Music.esm
 REGEX: PersonalizedMusic.*\.esm
@@ -798,6 +800,7 @@ Loot_Overhaul_Rebalanced_v.04.esp
 Lore Friendly - Dwemer Names.esp
 \ TAG: {{BASH: Names}}
 lorecorrectvolendrung.esp
+Lorecraft - Cooking.esp
 Lorecraft - Vanilla.esp
 Lorecraft - Traps.esp
 Lorecraft - Perks.esp
@@ -827,6 +830,7 @@ MaybeHeartsAndFlesh.esp
 mcCampingLite.esp
 MD Skyrim Saddle Bags.esp
 mehrdrachenstufen.esp
+mintylightningmod.esp
 Mining Extended.esp
 Missing_Carriges.esp
 mm_AspectOfTheBeastPotion.esp
@@ -1220,6 +1224,8 @@ BEGINGROUP: Items #
 1handedWarhammers.esp
 3dmlingfsfs.esp
 1nivPantsArmor.esp
+3rdEraWeaponsMoS.esp
+3rdEraWeaponsMoS - Hacks.esp
 ENDGROUP: Items #
 
 BEGINGROUP: Items A
@@ -2008,6 +2014,7 @@ EpicEndeavours.esp
 \ TAG: {{BASH: Actors.ACBS, Actors.CombatStyle, Delev, Factions, Actors.AIData, Actors.Spells, NPC.Class, Relev}}
 % {{BASH: Delev, Relev}}
 EpicGlorySlowerLevelingByMadmole.esp
+ IF ($EpicGloryInst) INC: EpicGloryByMadmole.esp
 LegionOverhaulV25.esp
 /* Designed to work with "Deadly Dragons" mod (v3.1.0) */
 megadragons.esp
@@ -2578,6 +2585,11 @@ PrettyOres.esp
 \ TAG: {{BASH: Stats}}
 ENDGROUP: Overrides Early
 
+/* Oricinal Mods Required by Other Overhauls
+BEGINGROUP: ADU Mods
+ENDGROUP: ADU Mods
+*/
+
 BEGINGROUP: Overrides #
 
 00 friedlichere wilde tiere.esp
@@ -2597,10 +2609,13 @@ alcoholiceffect.esp
 AltarsRestoreMagicka.esp
 AlternateBreezehomePurchase.esp
 alternate sunglare.esp
+AmazingFollowerTweaks.esp
 Amulette der Neun.esp
 Another Shadowmere Mod.esp
 Another_Skooma.esp
 Arachnophobia.esp
+Archery Overhaul.esp
+REGEX: Improved Archery and Bows - Enemy Archers.*\.esp
 ArchmageTolfdir.esp
 ArchmageNecklace.esp
 Argonian Breathless Emerge.esp
@@ -2962,6 +2977,7 @@ Lore Friendly Ebony Mail.esp
 Lush Grass.esp
 lush grass and trees.esp
 LycantropyLesserPower.esp
+REGEX: LZA Incremental Difficulty.*\.esp
 ENDGROUP: Overrides L
 
 BEGINGROUP: Overrides M
@@ -3011,6 +3027,9 @@ BEGINGROUP: Overrides N
 
 NeutralHjerim.esp
 new_beautiful_sunglare_1.0.esp
+New Encounter zone Levels.esp
+/* Part of New Encounter zone Levels.esp */
+Tougher named NPCs.esp
 NGEC.esp
 Nightingale Maskless.esp
 REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg)\.esp
@@ -3157,6 +3176,26 @@ slowercompanions.esp
 Sickly Diseases.esp
 Simple Spell Scaling.esp
 skoomaeffect.esp
+SkyRe.esp
+ IF("SkyReNoLighting.esp") SAY: Choose SkyRe.esp or for ENB Users use SkyReNoLighting.esp 
+SkyReBaratheonArmorPlugin.esp
+ IF("BaratheonArmor.esp") SAY: Remember to delete BaratheonArmor.esp
+SkyReBetterBowsPlugin.esp
+ IF("HBetterBows.esp") SAY: Remember to delete HBetterBows.esp
+SkyReHedgeKnightArmorPlugin.esp
+ IF("HedgeKnight.esp") SAY: Remember to delete HedgeKnight.esp
+SkyReJaySuSwordsPlugin.esp
+  /* IF("SkyReNoLighting.esp") SAY: Remember to delete authors ESP */
+SkyReNicoroshiCreationsPlugin.esp
+ IF("Nicoroshi Creations.esp") SAY: Remember to delete Nicoroshi Creations.esp
+SkyReNoLighting.esp
+ IF("SkyRe.esp") SAY: Choose SkyRe.esp or for ENB Users use SkyReNoLighting.esp 
+SkyReRedguardKnightArmorPlugin.esp
+ IF("RedguardKnight.esp") SAY: Remember to delete RedguardKnight.esp
+SkyReVagabondArmorPlugin.esp
+ IF("VagabondArmor.esp") SAY: Remember to delete VagabondArmor.esp
+SkyReWarchiefArmorPlugin.esp
+ IF("warchiefarmor.esp") SAY: Remember to delete warchiefarmor.esp
 Skyrim Creatures Alive.esp
 % {{BASH: Relev, Delev}}
 Skyrim Dark.esp
@@ -3815,6 +3854,10 @@ Eld-betterLockpickPerks.esp
 EM-AllInOne.esp
 enchant3effects.esp
 EpicGloryByMadmole.esp
+EpicGlory-SkillsStartAtZeroByMadmole.esp
+ IF ($EpicGloryInst) INC: EpicGloryByMadmole.esp
+EpicGloryStatsStartAt50ByMadmole.esp
+ IF ($EpicGloryInst) INC: EpicGloryByMadmole.esp
 flexibleperktrees.esp
 GDTES5 Lockpick Perk Tree Reconfigure.esp
 GluRUS_magicscaling.esp
