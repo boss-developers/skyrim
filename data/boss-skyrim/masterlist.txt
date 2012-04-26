@@ -45,7 +45,7 @@ Items not covered here include: conditional messages, masterlist variables, plug
 IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
 IF ("ASIS-Dependency.esp") || IF ("ASIS.esp") || IF ("Automatic Spells.esp") || IF ("Automatic Variations.esp") || IF ("Automatic Variants.esp") GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
 IF ("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
-IF ("DragonSwarms.esp") || IF ("DragonSwarms V3.1-Easy Mode.esp") SET: DSwarmInst
+IF ("DragonSwarms.esp") || IF (r"DragonSwarms V...-Easy Mode.esp") SET: DSwarmInst
 IF (r"Noble_Artifacts_For_Skyrim_(Eng|Rus)?\.esp") SET: NobleArtInst
 IF ("GM-ForgeAdditions.esp") || IF ("GM-ForgeAdditionsLAotB.esp") SET: GMForgeAdd
 IF ("GM-ForgeAdditionsLevelledOutfits.esp") && IF ("GM-ForgeAdditionsLAotBLevelledOutfits.esp") SET: DualGMLevList
@@ -99,6 +99,7 @@ ANK_Castle_Main.esm
  SAY: Old version upgrade to version 5.0+
 Aurora.esm
 basement.esm
+BlackreachRailroad.ESM
 breezehomebasement.esm
 Domus_Dementis.esm
 Deus Mons.esm
@@ -113,6 +114,7 @@ Proudspire Manor Refurbished.esm
 REGEX: OverlookTower.*\.esm
 Ranger Ridge.esm
 retreat.esm
+Undercity.esm
 warehouse.esm
 kuerteeInventoryAndWeight.esm
 REGEX: Blood \(\w+\)\.ESM
@@ -223,6 +225,7 @@ GhorzaGraBagolInvestmentFix.esp
 GiantPhysicsFix.esp
 GM-KhajiitDSHFix.esp
 GrammaticalLoading.esp
+GreenWaterFix.esp
 HeadsmansAxeFixed.esp
 HelmetStackFix.esp
 HjerimMessFix.esp
@@ -531,6 +534,7 @@ cao_InventoryPacks.esp
 cao_DweSchematicsCheat.esp
 cao_ToolsTrade_BuyRL.esp
 CarryWeightSpells.esp
+Carriage1.esp
 Cart in Each Big Town.esp
 Cat_mount.esp
 CatFavMenu_ITA_HircineFIX.esp
@@ -825,6 +829,7 @@ Lore Friendly - Dwemer Names.esp
 lorecorrectvolendrung.esp
 Lorecraft - Cooking.esp
 Lorecraft - Crafting Complete.esp
+Lorecraft - MCraft.esp
 Lorecraft - Vanilla.esp
 Lorecraft - Traps.esp
 Lorecraft - Perks.esp
@@ -1093,6 +1098,7 @@ REGEX: TemperedIronwork\w*\.esp
 Testing Hall Door.esp
 tGBoA-4_volumes.esp
 The Bears.esp
+The Dead Bee Scrolls.esp
 The-Great-Book-of-Alchemy.esp
 thieves guild visitors (fixed).esp
 Third Era Attributes for Skyrim.esp
@@ -1281,6 +1287,7 @@ BEGINGROUP: Items A
 
 Actualize Apparel.esp
 AdditionalAmulets.esp
+ADEC_Chain&Ringmail.esp
 ADEC_HalfPlate.esp
 ADEC_DianoArmor.esp
 ADEC_Clothes.esp
@@ -1323,6 +1330,7 @@ ArmoredAlikrGarb.esp
 armorkits.esp
 % {{BASH: Relev}}
 REGEX: ArrowsNoGravity(_Fast)\.esp
+ArrowsOfLight.esp
 AsharaRomanticOutfit.esp
 AsharaDimonizedDress.esm
 Ashbringer.esp
@@ -1330,7 +1338,7 @@ aassassinscraftables.esp
 AssassinsCreedArmor.esp
 Atlantean Sword.esp
 AtlanteanDragonSlayer.esp
-AttTWeapons 1.esp
+REGEX: AttTWeapons.?\d\.esp
 AttTWeapons 2.esp
 AttTWeapons3.esp
 ARTOFMAGIC.esp
@@ -2114,7 +2122,7 @@ ProjectFrenzy.esp
 /* Should this have it's own section */
 DragonSwarms.esp
  IF ($IncDSwarmMorAgress) INC: DS-MoreAgressionForRemover.esp
-DragonSwarms V3.1-Easy Mode.esp
+REGEX: DragonSwarms V...-Easy Mode.esp
  IF ($IncDSwarmMorAgress) INC: DS-MoreAgressionForRemover.esp
 DS-ExtendedDragonList.esp
  IF ($DSwarmInst) WARN: Not Needed Already in v3.1
@@ -2277,6 +2285,7 @@ bardscollegewithoutfix.esp
 BaradMithost.esp
 basement.esp
 BBLuxurySuiteExt.esp
+BBLSapachii.esp
 Beautiful Whiterun.esp
 beforsworn.esp
 BertsBreezeRemodel.V.1.1.esp
@@ -2286,6 +2295,7 @@ BetterRiften.esp
 bettertameriel.esp
 BetterThievesGuild.esp
 blackmarsh.esp
+BlackreachRailroad.esp
 BlackTowerUpdate.esp
 bossdungeon.esp
 boss dungeon2.esp
@@ -2635,6 +2645,8 @@ WhitrunRebuild.esp
 WhiterunRebuilt .esp
 Whiteruntrees.esp
 whiterunMarket.esp
+WhiterunFortified.esp
+WhiterunREVISION.esp
 Winterhold repair.esp
 wizard.esp
 ENDGROUP: Quests W
@@ -2705,6 +2717,7 @@ PrettySkins.esp
 \ TAG: {{BASH: Stats}}
 PrettyOres.esp
 \ TAG: {{BASH: Stats}}
+zzALittleSexyApparelReplacer_looseNoUnderwear.esp
 ENDGROUP: Overrides Early
 
 /* Original Mods Required by Other Overhauls
@@ -3195,6 +3208,7 @@ NonEssentialChilds.esp
 NordResist-50stamina.esp
 NordResist-25%.esp
 NoResetZone.esp
+nosalt.esp
 NoSpiders - MudcrabSpiders.esp
 NothingSellsForZero.esp
 NoTraining.esp
@@ -3365,6 +3379,7 @@ stronger daedric artifacts.esp
 strongermagerewards.esp
 Spells Cast Light.esp
 Spell Tome price fix light.esp
+spellbreaker_300.esp
 SSyphon15vsAnimalsAndMonstersfix.esp
 StaffOfMagnusFix.esp
 strong carriages.esp
@@ -3405,6 +3420,7 @@ Skyrim Creatures Alive.esp
 UnlimitedBookshelves.esp
 SIUBPatch.esp
 Unlimited_Amulets.esp
+Unlimited Charge for Daedric Artifacts.esp
 Unlimited_Rings.esp
 Unlimited Rings Multilingual.esp
 UnlimitedSprint.esp
@@ -3596,7 +3612,7 @@ follow.esp
 ForcePush.esp
 Glowtastic.esp
 Grand Healing Mod.esp
-GriptzionTeleportMenuSpell.esp
+REGEX: GriptzionTeleportMenuSpell.*\.esp
 Heal Other Mod.esp
 horsecomehere.esp
 Invent.esp
@@ -3774,6 +3790,7 @@ ENDGROUP: Spells Late
 
 BEGINGROUP: Alchemy
 
+Alchemy Fixed Beta 0.02.esp
 AutoPotion.esp
 learn_alchemy.esp
 \ TAG: {{BASH: Scripts}}
@@ -3811,6 +3828,7 @@ Enchant_Me_items.esp
 Enchant_Me_perks.esp
 EnchantMagicPower.esp
 enchantmentoverhaul.esp
+Enchanting - IDWIW.esp
 enchanting freedom.esp
 EnchantmentPower.esp
 Enchant Plus.esp
@@ -3916,6 +3934,7 @@ firstPersonKillmoveOnly.esp
 killmove.esp
 Killmove +.esp
 Killmove + only player.esp
+kuerteeFightOrFly.esp
 REGEX: Epic Dual Wielding V.+\.esp
 REGEX: KillMoveRandom \d{2,3}\.esp
 newkillmoves.esp
@@ -4160,6 +4179,7 @@ BEGINGROUP: Eyes
 
 DorkDiva Elf Eye Additions.esp
 DorkDiva Eyes For Dark Characters pack one.esp
+FlansEyesForSkrim.esp
 KhajiitEyes.esp
 Krisan's Eyes.esp
 OrientalEyes.esp
@@ -4254,6 +4274,8 @@ Companion Followers.esp
 EnhancedCompanionGuildNoCosmetic.esp
 femcalder.esp
 Feralfade.esp
+XFLHorses.esp
+XFLTweaks.esp
 FionaValentine.esp
 followers alpha9.esp
 foxpet-petfox.esp
@@ -4489,6 +4511,7 @@ BEGINGROUP: Shader Removers
 Death Cam - No Blur.esp
 Duns_Inc_Shaders_Begone.esp
 Duns_Inc_Shaders_Begone_xWeapons.esp
+No Bloom.esp
 SkyrimSDR.esp
 ENDGROUP: Shader Removers
 
