@@ -1,4 +1,4 @@
-﻿/*
+/*
 ? Masterlist Information: $Revision$, $Date$, $LastChangedBy$
 
 Masterlist Syntax Notes
@@ -45,7 +45,7 @@ Items not covered here include: conditional messages, masterlist variables, plug
 IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
 IF ("ASIS-Dependency.esp") || IF ("ASIS.esp") || IF ("Automatic Spells.esp") || IF ("Automatic Variations.esp") || IF ("Automatic Variants.esp") GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
 IF ("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
-IF ("DragonSwarms.esp") || IF (r"DragonSwarms V...-Easy Mode.esp") SET: DSwarmInst
+IF ("DragonSwarms.*\.esp") SET: DSwarmInst
 IF (r"Noble_Artifacts_For_Skyrim_(Eng|Rus)?\.esp") SET: NobleArtInst
 IF ("GM-ForgeAdditions.esp") || IF ("GM-ForgeAdditionsLAotB.esp") SET: GMForgeAdd
 IF ("GM-ForgeAdditionsLevelledOutfits.esp") && IF ("GM-ForgeAdditionsLAotBLevelledOutfits.esp") SET: DualGMLevList
@@ -378,6 +378,7 @@ Bright Lights.esp
 CLO.esp
 ColorfulLightsNoShadows.esp
 Darker Nights.esp
+Darker Nights_20bl.esp
 Dark Nights.esp
 Dark Nights and Bright Skies.esp
 Darker Nights and Bright Skies.esp
@@ -707,6 +708,7 @@ GenebrisTreasureChests.esp
 % {{BASH: Delev, Relev}}
 \not sure about Delev
 genpeople.esp
+genpeople lite.esp
 getnpcinfo.esp
 gifts of akatosh.esp
 GiveADogAHome.esp
@@ -799,6 +801,7 @@ JenassaBarkeep&Bard.esp
 JewelCraft.esp
 REGEX: -?JK-ValsCraftingMeltdownModifiedv1.esp
 JK Crafting Breakdown.esp
+JokeMOD-KillerTomato.esp
 ENDGROUP: Base J
 
 BEGINGROUP: Base K
@@ -842,6 +845,7 @@ Loot_Overhaul_Rebalanced_v.04.esp
 % {{BASH: Delev, Relev}}
 Lore Friendly - Dwemer Names.esp
 \ TAG: {{BASH: Names}}
+Lunar Forge Patch.esp
 lorecorrectvolendrung.esp
 Lorecraft - Cooking.esp
 Lorecraft - Crafting Complete.esp
@@ -855,7 +859,7 @@ lovecraftbooks.esp
 lt_better_horses.esp
 SIBHPatch.esp
 lt_camping.esp
-Lunar Forge Patch.esp
+
 lush trees.esp
 lustymaidonehand.esp
 LydiaExchangeableArmor.esp
@@ -871,6 +875,7 @@ Malkavs Collection.esp
 malukahmainmenu.esp
 mammoth hide.esp
 Mannequins.esp
+Mini-Mannequins.esp
 marader.esp
 marijuana.esp
 MaybeHeartsAndFlesh.esp
@@ -953,7 +958,7 @@ Portable Campsite Craftable.esp
 potent food.esp
 Potions Renamed.esp
 psychosteve_stone of barenziah.esp
-REGEX: Prides of Skyrim( weak)?\.esp 
+REGEX: Prides of Skyrim( weak)?\.esp
 % {{BASH: Delev, Relev}}
 \not tested
 Pupetteer Master.esp
@@ -1495,6 +1500,7 @@ DGJewelryExtended.esp
 DMC_3&4.esp
 DMC Weapons.esp
 Doomshard Bow.esp
+Dovahkiin Mercenary Armor and Weapons CBBE.esp
 Dovahkiin's_Great_Sword.esp
 DPArmor.esp
 DraconicArmor.esp
@@ -1526,6 +1532,7 @@ DualSwords.esp
 Duel Craftable Arrows.esp
 Duel Craftable Arrows FIXED.esp
 DungeonGear01.esp
+DwarvenArmorWeapons.esp
 DwarvenMech.esp
 DwarvenShooter.esp
 Dwemer Scouter.esp
@@ -1629,7 +1636,8 @@ HeatWavev4.esp
 Heavy Stormcloak Officer Armor.esp
 HedgeKnight.esp
 HellionArrows_v1.15.esp
-Henrys Ring of Light v1-0.esp
+Henrys Ring of Light( v1-0)?\.esp
+IF ("Henrys Ring of Light v1-0.esp") SAY: Obsolete. Upgrade to latest version.
 Hana.esp
 Hentai_mixed_Armor.esp
 HentaiCasualWears.esp
@@ -1993,6 +2001,7 @@ Tera_HmF_L13.esp
 terafighter.esp
 TeraHeavy4.esp
 TeraHeavyArmor17.esp
+TeraHEFArmors.esp
 TERA Heavy Armor.esp
 TERX-Set.esp
 testfinal.esp
@@ -2168,6 +2177,7 @@ DragonSwarms.esp
  IF ($IncDSwarmMorAgress) INC: DS-MoreAgressionForRemover.esp
 REGEX: DragonSwarms V...-Easy Mode.esp
  IF ($IncDSwarmMorAgress) INC: DS-MoreAgressionForRemover.esp
+DragonSwarms - Insane Mode.esp
 DS-ExtendedDragonList.esp
  IF ($DSwarmInst) WARN: Not Needed Already in v3.1
  IF ($IncDSwarmMorAgress) INC: DS-MoreAgressionForRemover.esp
@@ -2477,6 +2487,12 @@ JKJsenhancedhotpools.esp
 Jorrvaskr Lofthome.esp
 ENDGROUP: Quests J
 
+BEGINGROUP: Quests K
+
+KatixasCiderhouse.esp
+ENDGROUP: Quests K
+
+
 BEGINGROUP: Quests L
 
 Landscaped_Breezehome.esp
@@ -2495,6 +2511,7 @@ BEGINGROUP: Quests M
 Magelight Grotto.esp
 Manor Dragonborn.esp
 Milan's PAck.esp
+MilansDungeonPack2.esp
 moonpath_questdata.esp
 MoreStables.esp
 More Winterhold Flora.esp
@@ -2627,6 +2644,7 @@ BEGINGROUP: Quests T
 
 HellayTalesOfTheDraugrLibrarian.esp
 TamagenManor.esp
+Taverns.esp
 teg_wizards_of_winterhold.esp
 TeleportRoom.esp
 TKratosteleports.esp
@@ -2923,7 +2941,8 @@ DescaledUniques.esp
 REGEX: DFB - Carry Weight Per Stamina - \d\d\.esp
 DFB - Companion Bow Visible.esp
 DirectorsTools_FogUnlocker.esp
-Disable Fast Travel Permanently - Carriages cost 20x more.esp
+Disable Fast Travel Permanently.*\.esp
+ SAY: Use only one 'Disable Fast Travel Permanently*.esp'
 disablefasttravel.esp
 disablelydiatradedialog.esp
 doublebounddmg.esp
@@ -3586,6 +3605,7 @@ ENDGROUP: Realism
 
 BEGINGROUP: Vampires and Werewolves
 
+UVO - Ultimate Vampirism Overhaul.esp
 better vampires.esp
 Better Weres and Vamps.esp
 dvampire.esp
@@ -3649,7 +3669,7 @@ REGEX: BetterMage(Alt)?\.esp
 BoundTools.esp
  INC: MiningFlames.esp and Midas Magic's Bound Pickaxe spell. You can have more than one mod enabled, but only one of the added methods will be able to "mine" ore.
 CallAssassins.esp
-Candlespell.esp 
+Candlespell.esp
 CandlelightToggle10NC.esp
 CarryWeightSpells(BetterSorting).esp
 Chameleon.esp
@@ -3700,11 +3720,13 @@ OpenUnlock.esp
 togglevampiresight.esp
 REGEX: Phenderix's Magic Evolved( No Perks| Cheat)?\.esp
 Phenderix AI Add-On.esp
+PJs_Spell_Compendium.esp
 TwinSoulsExpandedLevels.esp
 Physic Magic 0.8v.esp
 poisondestruction.esp
 PowerMasterTheTimeAndSpace.esp
 quiet conjuration.esp
+RamaTeleporterSystem_v1.esp
 Raj's Restoration 100.esp
 ReflectiveWard.esp
 room.esp
@@ -3734,6 +3756,7 @@ TriRoc Stripper Companion.esp
 TSO.esp
 UBW.esp
 UnplayableMadePlayable.esp
+Upgrade Leveled Items Spell.esp
 Upscaled Beginner Destruction Spells.esp
 vinis_transmute.esp
 Ward Shield.esp
@@ -3746,6 +3769,7 @@ BEGINGROUP: Shouts
 
 WoP - Dragon Language.esp
 BetterShoutingthroughSpeech.esp
+CanleLightToggle1NC.esp
 dovahkiinrelax.esp
 dragonbreathshouts.esp
 DragonRealShout.esp
@@ -4070,6 +4094,8 @@ REGEX: PerkUP-.*\.esp
 More Craftables - PerkUP compatibility.esp
  REQ: More Craftables and PerkUP
 NapalmPerkOverhaul.esp
+New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp
+ SAY: Use only one 'New Leveled Encounter Levels*.esp'
 Noredundantperks.esp
 ACE Archery.esp
 ACE Armor.esp
@@ -4527,6 +4553,7 @@ IF ("Extended Colors - Selection.esp") MOD: VampireEffectProject.esp
 Races and Doomstones.esp
 Khajiit Awesome.esp
 Khajiit Racial Tweek.esp
+More Hair Colors.esp
 Morrowind Races.esp
 mwcrh&w.esp
 RaRe.esp
