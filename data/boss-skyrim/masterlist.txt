@@ -52,6 +52,7 @@ IF ("GM-ForgeAdditionsLevelledOutfits.esp") && IF ("GM-ForgeAdditionsLAotBLevell
 IF ("GM-ForgeAdditions.esp") && IF ("GM-ForgeAdditionsLAotB.esp") SET: DualGMForgeAdd
 IF ("EpicGloryByMadmole.esp") SET: EpicGloryInst
 IF (r"(Headbomb's )?Better Sorting.*\.esp") || IF ($CCO) SET: HBSCCODetect
+IF ("UFO - Ultimate Follower Overhaul.esp") SET: UFO
 
 \=====================================================================
 
@@ -152,7 +153,7 @@ MTOH.esm
  SAY: Hair standalone mod for other mods which edit NPCs. If this one is used, MTOH.esp should be disabled.
 Farkasv2.esm
 XFLMain.esm
- IF ("UFO - Ultimate Follower Overhaul.esp") INC: UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
+ IF ($UFO) INC: UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
  IF ("BDO.esp") INC: BDO.esp, delete and use BDO instead
 Sirenia.esm
 Tyth.esm
@@ -345,7 +346,11 @@ BEGINGROUP: Weather mods and overhauls
 \Unlikely to be affected by anything but sound mods.
 
 Chesko_Frostfall.esp
-REGEX: enhanceddynamicweathersystem(normal|snowy)?\.esp
+IFNOT (r"Realistic Lighting.*\.esp") MOD: enhanceddynamicweathersystem.esp
+ SAY: Use only one enhanceddynamicweathersystem esp
+REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
+ SAY: Use only one enhanceddynamicweathersystem esp
+ INC: Realistic Lighting
 ENDGROUP: Weather mods and overhauls
 
 BEGINGROUP: Water and lava tweaks
@@ -418,6 +423,9 @@ slowereyeadapt.esp
 ZFixed Lights.esp
 Zfixed Lights RCRN.esp
 ENDGROUP: Lighting
+
+IF (r"Realistic Lighting.*\.esp") MOD: enhanceddynamicweathersystem.esp
+ \See readme for more info about load order
 
 BEGINGROUP: Music
 
@@ -2865,7 +2873,7 @@ BEGINGROUP: Overrides B
 Balanced and Split Sword Axe Mace Weapon Perks.esp
 BarenziahQuestMarkers_Droppable.esp
 BasicHorseRidingAI.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") WARN: included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
+ IF ($UFO) WARN: included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
 Better Bone Armor.esp
 Better Bound Weapons.esp
 Better Dragons.esp
@@ -3083,7 +3091,7 @@ Housecarl - Wear anything.esp
 housecarl_fem.esp
 Housecarls Can Wear Anything.esp
 REGEX: Housecarls improved AI( \+ higher lvl cap)?\.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") WARN: Improved AI included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+ IF ($UFO) WARN: Improved AI included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
 REGEX: Housecarls Mixed Feminine.*\.esp
 Housecarls V3 D for Deluxe.esp
 HT_traveltax.esp
@@ -4398,15 +4406,15 @@ HirelingBelrand.esp
 HirelingMarcurio.esp
 Natural Characters and Companions.esp
 TCG.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+ IF ($UFO) WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
 TCGStarterKit.esp
 HorseCompanions.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") WARN: HorseCompanions.es is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+ IF ($UFO) WARN: HorseCompanions.es is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
 REGEX: .*HorseRidingFollowers\.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") WARN: HorseRidingFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+ IF ($UFO) WARN: HorseRidingFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
 Horses for followers.esp
 voidMountedFollowers.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") WARN: MountedFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+ IF ($UFO) WARN: MountedFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
  IF ("BDO.esp") WARN: Delete. Included in BDO.esp
 Hroki Wife Companion.esp
 mercenariesplus.esp
@@ -4462,13 +4470,13 @@ SylgiaCompleteNopickaxe.esp
 Vilkas_v1.esp
 REGEX: Better Followers - [SBNP].*\.esp
  IF ("TCG.esp") INC: TCG.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") WARN: Do not use dialogue.esp and delete C01QuestScript.pex from data/scripts folder
+ IF ($UFO) WARN: Do not use dialogue.esp and delete C01QuestScript.pex from data/scripts folder
  IF (r"Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Better Followers - Armor Pack I & II, download it on BF page.
  SAY: Use only one Better Followers - *.esp
 REGEX: Better Follower(s -)? Dialogue-?(All|Dog|Reorder|Thane)?\.esp
  SAY: Obsolete. Update to latest version of Better Followers and use Big Dialod Overhaul(BDO) instead.
  IF ("BDO.esp") WARN: Delete. Included in BDO.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") WARN: Delete. Use UFO - Ultimate Follower Overhaul.esp instead
+ IF ($UFO) WARN: Delete. Use UFO - Ultimate Follower Overhaul.esp instead
 Better Follower Improvements.esp
 Better NPC - Faction Pack.esp
  IFNOT (r"Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty version of Better Followers, named BP or BNP or SBP or SBNP
@@ -4482,21 +4490,21 @@ Respectful_Lydia-Letsseeit_subtitle.esp
 Respectful_Lydia-Whatdoyouwantmetocarry_subtitle.esp
 Respectful_Lydia-Asyouwishmythane__subtitle.esp
 Followers Unlimited 11.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") WARN: Followers Unlimited is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+ IF ($UFO) WARN: Followers Unlimited is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
 XFLPlugins.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") INC: UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
+ IF ($UFO) INC: UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
  IF ("BDO.esp") INC: BDO.esp, delete and use BDO instead
 XFLDialogue.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") INC: UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
+ IF ($UFO) INC: UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
  IF ("BDO.esp") INC: BDO.esp, delete and use BDO instead
 Follower Trap Safety.esp
 FollowerWander2.esp
  IF ("BDO.esp") WARN: Delete. Included in BDO.esp
 MultipleFollowers.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") WARN: Multi followers functional is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+ IF ($UFO) WARN: Multi followers functional is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
  SAY: Make sure you dismiss any followers (except dogs) before installation.
 Follower Limit Increased.esp
- IF ("UFO - Ultimate Follower Overhaul.esp") WARN: Multi followers functional is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+ IF ($UFO) WARN: Multi followers functional is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
  IF ("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, use only one, not both.
 multimarriage.esp
 \must be load after multiple followers mods for wedding ceremony work.
