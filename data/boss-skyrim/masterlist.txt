@@ -437,7 +437,8 @@ ENDGROUP: Music
 BEGINGROUP: Base Early
 
 SFD_NumericQuality.esp
-IFNOT ($CCO) || IF ("Crafting300.esp") REGEX: Weapons and Armor fixes( - Hacks)?\.esp
+REGEX: Weapons and Armor fixes( - Hacks)?\.esp
+\Vanilla fixes. Must be load here(and also for CCO), for prevent to override new changes from mods in Base group. Too many conflicts with other mods in Base group.
 Shadow Striping Fix.esp
 SMIM_Fixes.esp
 REGEX: SpellFix.*\.esp
@@ -2145,15 +2146,14 @@ BEGINGROUP: Overhauls
 \
 \Initial position for Overhaul mods
 
-IF ($CCO) MOD: Smithing Perks Overhaul.esp
+REGEX: Smithing Perks Overhaul( - Balanced)?.esp
  IF ("PerkUP-Smithing.esp") INC: PerkUP, use only one.
-IF ($CCO) MOD: Smithing Perks Overhaul - Balanced.esp
- IF ("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
-IF ($CCO) && IFNOT ("Crafting300.esp") REGEX: Weapons and Armor fixes( - Hacks)?\.esp
-Complete Crafting Overhaul.esp
- SAY: will conflict with mods that modify existing recipes
-Complete Crafting Overhaul - BS version.esp
-% {{BASH: Delev, Relev}} not tested
+ SAY: Use only one Smithing Perks Overhaul esp
+ IF ($CCO) SAY: Use balanced version with Complete Crafting Overhaul mod
+REGEX: Complete Crafting Overhaul( - BS version)?\.esp
+% {{BASH: Delev, Relev}}
+ IF (r"(Headbomb's )?Better Sorting.*\.esp") && IF ("Complete Crafting Overhaul.esp") WARN: Use only BS-version for Better Sorting.
+ SAY: Will conflict with mods that modify existing recipes.
 Lorecraft - Crafting Overhaul.esp
 ScarabCraftingHacks.esp
 Crafting 300 Basic.esp
@@ -4214,10 +4214,6 @@ SlowerLevelingSmithing.esp
 REGEX: SlowerSkills_v.+\.esp
 SmithingMasteryPerks.esp
  IF ("PerkUP-Smithing.esp") INC: PerkUP, use only one.
-IFNOT ($CCO) MOD: Smithing Perks Overhaul.esp
- IF ("PerkUP-Smithing.esp") INC: PerkUP, use only one.
-IFNOT ($CCO) MOD: Smithing Perks Overhaul - Balanced.esp
- IF ("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
 The Fingersmith Mod + Perk Adjustments 1.2b.esp
 REGEX: training_costs_\d{1,2}_x\d_x\d\.esp
 train 10 times per level.esp
@@ -4477,6 +4473,28 @@ Sylgja.esp
 SylgjaUpgraded.esp
 SylgiaCompleteNopickaxe.esp
 Vilkas_v1.esp
+Halfling Race.Esp
+ REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
+ SAY: Use only one 'Halfling Race.Esp' or 'Sam Merry and Peppin.Esp' or 'Frodo Sam Merry & Peppin.Esp'
+REGEX: (Frodo )?Sam Merry \& Peppin\.Esp
+ REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
+ SAY: Use only one 'Halfling Race.Esp' or 'Sam Merry and Peppin.Esp' or 'Frodo Sam Merry & Peppin.Esp'
+Dwarf Race.Esp
+ REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
+ SAY: Use only one 'Dwarf Race.Esp' or 'Gimli.Esp'
+Gimli.Esp
+ REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
+ SAY: Use only one 'Dwarf Race.Esp' or 'Gimli.Esp'
+Aragorn.Esp
+ REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
+Boromir.Esp
+ REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
+Gandalf.Esp
+ REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
+Legolas.Esp
+ REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
+Gollum.Esp
+ REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
 REGEX: Better Followers - [SBNP].*\.esp
  IF ("TCG.esp") INC: TCG.esp
  IF ($UFO) WARN: Do not use dialogue.esp and delete C01QuestScript.pex from data/scripts folder
