@@ -120,6 +120,7 @@ retreat.esm
 SkyrimSewers.esm
 Undercity.esm
 warehouse.esm
+WinterholdDestruction.esm
 kuerteeInventoryAndWeight.esm
 REGEX: Blood \(\w+\)\.ESM
  SAY: Use only one Blood (*).ESM
@@ -254,6 +255,8 @@ REGEX: Magnus\d{2,3}\.esp
 MatchingSetCheat.esp
 MatchingSetFixes.esp
 Miner's Clothes Variant Fix.esp
+Minor Miner Fixes.esp
+ IF ("Unofficial Skyrim Patch.esp") WARN: Delete. Included in Unofficial Skyrim Patch 1.0+
 Muiri's Problem.esp
 Nocturnal Robes - 1st person mesh fix.esp
 noxx_skyrim_fixes.esp
@@ -659,6 +662,7 @@ Deflect Arrows Perk Fix.esp
 DenseGrass.esp
 DFB - Random Encounters.esp
 Diverse Faction Weapons.esp
+DivinePunishmentForArrowsToTheKnee.esp
 Domino_PerkBooks_Easy.esp
 DragonChristine.esp
 DragonCrownCraftable.esp
@@ -745,6 +749,7 @@ GenebrisTreasureChests.esp
 genpeople.esp
 genpeople lite.esp
 getnpcinfo.esp
+gettingitemsfaster.esp
 gifts of akatosh.esp
 GiveADogAHome.esp
 GlaiceLootMod.esp
@@ -1322,6 +1327,7 @@ accurate prison markers.esp
 Barenziah.esp
 BarenziahQuestMarkers.esp
  IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
+BetterMapMarkerPlacements.esp
 camp_map_markers.esp
 cartographers map markers.esp
 Compelling Treasure Maps.esp
@@ -1729,6 +1735,7 @@ ENDGROUP: Items H
 
 BEGINGROUP: Items I
 
+imp_guard_helm.esp
 imp_helm.esp
 ImperialArmor.esp
 InfernoGreatSword.esp
@@ -1824,6 +1831,7 @@ LostSecretsAllin1_v1dot3.esp
 LOTR Shield Pack.esp
 LubaSkyWings.esp
 ly ftgs.esp
+ly witch.esp
 ENDGROUP: Items L
 
 BEGINGROUP: Items M
@@ -1976,6 +1984,7 @@ ReversedDaggers2.1.esp
 RingDwemer.esp
 Ring of Change.esp
 Ring of Nighteye.esp
+RingOFNighteye.esp
 Rings of Sanguinare Vampiris.esp
 RingOfAssassins.esp
 RingofKhajiit.esp
@@ -2127,6 +2136,7 @@ ENDGROUP: Items T
 BEGINGROUP: Items U
 
 Ultima Weapon.esp
+UltraVision.esp
 Umbra (Two handed).esp
 umbra by r3van(one handed).esp
 UmbraSturmbringer.esp
@@ -2246,6 +2256,12 @@ FactionOverhaulV25.esp
 LegionOverhaulV25.esp
 /* Designed to work with "Deadly Dragons" mod (v3.1.0) */
 megadragons.esp
+Mighty Dragons.esp
+% {{BASH: Delev, Relev}} not tested
+ IF (r"REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") SAY: Use compatibility patch for deadly dragons:("http://skyrim.nexusmods.com/downloads/file.php?id=13423")
+ INC: Other dragon mods
+Mighty Dragons Unleveled.esp
+ INC: Mighty Dragons.esp , use only one.
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
 
@@ -2351,7 +2367,6 @@ REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp
 % {{BASH: Delev, Relev}}
 DeadlyDragonsX.esp
 % {{BASH: Delev, Relev}}
-DeadlyDragonsArmory.esp
 DeadlyDragonsCraft.esp
 % {{BASH: Delev, Relev}}
 DeadlyDragonsSpells.esp
@@ -2366,6 +2381,8 @@ REGEX: DeadlyDragonsHardPISE( DV)?\.esp
 REGEX: DeadlyDragonsSpawn.*\.esp
 DeadlyDiversifiedDragonsPatch.esp
 Dragonbone Weapons - Deadly Dragons Compatibility.esp
+MD compatible with DD.esp
+DeadlyDragonsArmory.esp
 ENDGROUP: Deadly Dragons
 ENDGROUP: Overhauls
 
@@ -2515,6 +2532,7 @@ Evil Lair of Hydra.esp
 Expanded Towns and Settlements.esp
 exo_WhiterunCaveHouse.esp
 ExRorikstead.esp
+ExpandedWinterholdRuins.esp
 ENDGROUP: Quests E
 
 BEGINGROUP: Quests F
@@ -2628,6 +2646,7 @@ BEGINGROUP: Quests O
 
 Ornhamir.esp
 orvarstomb2.esp
+owninggoldenglowestate.esp
 ENDGROUP: Quests O
 
 BEGINGROUP: Quests P
@@ -2672,6 +2691,7 @@ Review Studio.esp
 Riften Bivouac.esp
 riften_back_entrance.esp
 RiftenBetterDocks.esp
+MoreRiftenTrees.esp
 HellayRiseWaterEvil.esp
 riverside camp.esp
 RiversideLodge.esp
@@ -2723,6 +2743,7 @@ smelterinriverwood.esp
 SteepledHat's Riverwood Home.esp
 SolitudeCapitalCity.esp
 SolitudeBetterDocks.esp
+MoreSolitudeFlora V1.0.esp
 SoulForge.esp
 SpouseLife.esp
 SpouseStoreMod.esp
@@ -2948,6 +2969,7 @@ ENDGROUP: Overrides A
 BEGINGROUP: Overrides B
 
 Balanced and Split Sword Axe Mace Weapon Perks.esp
+Barenziah's Crown.esp
 BarenziahQuestMarkers_Droppable.esp
 BasicHorseRidingAI.esp
  IF ($UFO) WARN: included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
@@ -3263,9 +3285,10 @@ Legendary Gauldur Amulet.esp
 LegionArmorVarietyOPTIONAL1.esp
 LegionRequisition.esp
 Lenhador.esp
+LessDragons50.esp
 REGEX: LessTraining_\d\.esp
-Less Talkative NPCs Release - No Combat Speech Change - V1.esp
-Less Talkative NPCs Release - V1.esp
+REGEX: Less Talkative NPCs Release.+\.esp
+ SAY: Use only one Less Talkative NPCs Release esp
 lesssnowywinterhold.esp
 Lethal Archery.esp
 Leveled Smithing.esp
@@ -3317,9 +3340,6 @@ Melee Overhaul - Distinct Styles.esp
 Merchants Reply Only With Take A Look.esp
 Mercy.esp
 MH_ArchMageQuartersMinimalMod.esp
-Mighty Dragons.esp
- INC: Other dragon mods
-Mighty Dragons Unleveled.esp
 Mighty Dragon Priests.esp
 Mikaelarps Disenchantable armor.esp
 Mikaelarps disenchantable artifacts.esp
@@ -3365,6 +3385,7 @@ no_guard_warning_after_shouts.esp
 No Helmets Required.esp
 No More Arrows in the Knee.esp
 no more immortal childs.esp
+no nocturnal oath.esp
 No NPC Greetings.esp
 No Perk Prereqs.esp
 No Perk Prereqs - No Helmets Required.esp
@@ -3811,6 +3832,7 @@ Grand Healing Mod.esp
 REGEX: GriptzionTeleportMenuSpell.*\.esp
 Haste Spells.esp
 Heal Other Mod.esp
+Horse Whisper.esp
 horsecomehere.esp
 Invent.esp
 JSB-AdvancedDestruction.esp
@@ -3868,6 +3890,7 @@ SummonAncestorGuardian.esp
 SummonAnimalPets.esp
 SummonCraftingFurniture.esp
 SummonDarklings.esp
+ToggleSpells - MagicEffects.esp
 touchspells.esp
 transmutation.esp
 transmutesoulgem.esp
@@ -3878,6 +3901,7 @@ UnlockSpell.esp
 UnplayableMadePlayable.esp
 Upgrade Leveled Items Spell.esp
 Upscaled Beginner Destruction Spells.esp
+URWL_BNDN.esp
 vinis_transmute.esp
 Ward Shield.esp
 weatherchangespell.esp
@@ -4010,6 +4034,7 @@ alch5x.esp
 alchemyenhancedxp.esp
 AlchemyOrganization.esp
 ASX - Potions.esp
+BetterWhitePhialEffects.esp
 Black lightened Alchemy.esp
 Black lightened Alchemy ML.esp
 Eld-combinePotions.esp
@@ -4107,6 +4132,7 @@ REGEX: The Dance of Death.*\.esp
 Chimera.esp
 combat.esp
 combat fists.esp
+DamageMultiplier.esp
 DeadlyCombat.esp
 DeadlyCombos.esp
 REGEX: DeadlyCombat_.+\.esp
@@ -4533,6 +4559,7 @@ UFO - Ultimate Follower Overhaul.esp
  SAY: For safe install need dismiss all your followers, save, delete all included mods, load, save and install UFO. For safe uninstall or update see special instructions on mod page.
 UFO - AllwaysDrawWeapons.esp
 SIUFOPatch.esp
+ExtraBlades.esp
 Better Followers.esp
  SAY: Obsolete. Upgrade to latest version.
 SpecializedFollowers.esp
@@ -4715,6 +4742,7 @@ Expanded Eye Color Selection.esp
  SAY: Use only one Extended Colors - *.esp
 IF ("Extended Colors - Selection.esp") MOD: VampireOverhaul.esp
 IF ("Extended Colors - Selection.esp") MOD: VampireEffectProject.esp
+RaceRevamp.esp
 Races and Doomstones.esp
 Khajiit Awesome.esp
 Khajiit Racial Tweek.esp
