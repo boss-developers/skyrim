@@ -311,6 +311,8 @@ REGEX: Skyrim HD Full - .+\.esp
 BEGINGROUP: NPC face mods
 \TAG: {{BASH: NpcFaces}}
 
+SupermodelSkyrim.esp
+ REQ: ApachiiHair.esm
 AlfhildBattleBorn.esp
 AlternateUlfric.esp
 Aranea.esp
@@ -989,6 +991,10 @@ new guards.esp
 NewBeveragesAndMiscItems.esp
 NightingaleArmorTextureFix.esp
 Nightingale Equipment Tweaks.esp
+REGEX: NoAutoSkillBooks(Normal|Better)\.esp
+\ IF ("NoAutoSkillBooks(Better).esp") TAG: {{BASH: Names}}
+ SAY: Use only one (Normal) or (Better) version
+NoAutoSkillBooks(Normal).esp
 NoSaltRecipes.esp
 NPC Bartering.esp
 ENDGROUP: Base N
@@ -1380,9 +1386,6 @@ BEGINGROUP: Items #
 1handedWarhammers.esp
 3dmlingfsfs.esp
 1nivPantsArmor.esp
-3rdEraWeaponsMoS.esp
-% {{BASH: Relev}} - not tested
-3rdEraWeaponsMoS - Hacks.esp
 ENDGROUP: Items #
 
 BEGINGROUP: Items A
@@ -2215,6 +2218,10 @@ REGEX: Weapons of the Third Era.+\.esp
 REGEX: WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp
 % {{BASH: Relev}}
 WeaponsOf3E - No Leveled Lists.esp
+3rdEraWeaponsMoS.esp
+ INC: WeaponsOf3E*.esp
+% {{BASH: Delev, Relev}}
+3rdEraWeaponsMoS - Hacks.esp
 RecyclingModWo3E.esp
  REQ: Weapons of the Third Era
 Winterscale Armor.esp
@@ -3657,7 +3664,6 @@ spellbreaker_300.esp
 SSyphon15vsAnimalsAndMonstersfix.esp
 StaffOfMagnusFix.esp
 strong carriages.esp
-SupermodelSkyrim.esp
 Sunnie_AMQ_NoWindTunnel.esp
 ENDGROUP: Overrides S
 
