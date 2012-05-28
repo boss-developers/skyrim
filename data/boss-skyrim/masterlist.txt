@@ -391,12 +391,6 @@ REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
  INC: Realistic Lighting
 ENDGROUP: Weather mods and overhauls
 
-BEGINGROUP: Water and lava tweaks
-
-ImmersiveWater3.esp
-Purewaters.esp
-ENDGROUP: Water and lava tweaks
-
 BEGINGROUP: Sound mods
 
 Bardsoundsmalukah.esp
@@ -3341,8 +3335,6 @@ REGEX: GM-CookingRebalance.*\.esp
 GM-CookingEnhanced06b.esp
 GM-Smelting.esp
 GM-Tanning.esp
-GreenWaterFix.esp
-GreenWaterFix_Compatible.esp
 GSRDivorce.esp
 Guard Shields - Light.esp
 GuardDialogue.esp
@@ -3869,12 +3861,6 @@ ENDGROUP: Overrides V
 BEGINGROUP: Overrides W
 
 walk.esp
-WATER.esp
-GreenWaterFixForWATER.esp
-WATER - Get Wet.esp
-waterfxgetwet.esp
- IF ("WATER - Get Wet.esp") SAY: Use either waterfxgetwet.esp or WATER - Get Wet.esp
- IFNOT (r"ACE .*\.esp") MOD: WayOfTheMonk.esp
 Weapon Specialization - Generalized.esp
 Werewolves Plague in Skyrim.esp
 whiterun guard.esp
@@ -3899,6 +3885,24 @@ Ysolda.esp
 Zarias_Piercings1.esp
 zFreeRoamHC.esp
 ENDGROUP: Overrides XYZ
+
+BEGINGROUP: Water and lava Overrides
+
+ImmersiveWater3.esp
+Purewaters.esp
+WATER.esp
+WATER - Get Wet.esp
+waterfxgetwet.esp
+ IF ("WATER - Get Wet.esp") SAY: Use either waterfxgetwet.esp or WATER - Get Wet.esp
+ IFNOT (r"ACE .*\.esp") MOD: WayOfTheMonk.esp /* Is this supposed to be after waterfxgetwet.esp?? */
+GreenWaterFixForPureWaters.esp
+ SAY: OBsoleve upgrade to new version.
+GreenWaterFixForWATER.esp
+ SAY: Obsolete upgrade to new version.
+GreenWaterFix.esp
+ IF (7F378D8E|"GreenWaterFix.esp") SAY: Upgrade to vertion 1.1 (For Vanilla water ONLY)
+GreenWaterFix_Compatible.esp
+ENDGROUP: Water and lava Overrides
 ENDGROUP: Overrides
 
 BEGINGROUP: Towns and Villages
@@ -4531,7 +4535,7 @@ ACE Enchanting.esp
 ACE Melee.esp
 ACE Smithing.esp
 ACE Synergy.esp
-  IF (r"ACE .*\.esp") MOD: WayOfTheMonk.esp
+ IF (r"ACE .*\.esp") MOD: WayOfTheMonk.esp
 Actually A Deadly Verbal Debate.esp
 ASAP.esp
 ArcaneSmithsPerkTree15.esp
