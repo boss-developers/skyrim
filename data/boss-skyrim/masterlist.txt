@@ -1099,7 +1099,8 @@ REGEX: Real Wildlife Skyrim.*\.esp
 % {{BASH: Relev}}
 /* Does this Satisfy SIRWPach.esp and SIRWPatch.esp */
 REGEX: SIRWPat?ch.esp
-% {{BASH: Delev, Relev}} not tested
+% {{BASH: Delev, Relev}}
+\not tested
 Real Wildlife Skyrim 0.1 IMCN.esp
 realrain.esp
 recipeammoarrows.esp
@@ -1207,7 +1208,8 @@ SPTFemaleGuards.esp
 SPTFemaleGuardsInPlace.esp
  SAY: Obsolete. Update to SPTDiverseGuards
 SPTDiverseGuardsSkyrim.esp
- % {{BASH: Delev}} not tested
+ % {{BASH: Delev}}
+\not tested
 srmcompanioncart.esp
 StaRe.esp
  SAY: Obsolete. Update to 'SkyRe_StandingStones.esp'
@@ -2529,6 +2531,7 @@ ajd_skyrimbookstores.esp
 AlchemyChest.esp
 REGEX: alternativeCityAccess.*\.esp
 Amazing Riverwood Starter Home.esp
+Quest_AndTheRealmsOfDaedra.esp
 Ank_Castle_Main.esp
 Ank_Castle_Standalone.esp
 Ank_Castle_Addon.esp
@@ -2783,6 +2786,7 @@ Netch Fetcher Convoy.esp
 Nightingale Hall.esp
 NightingalePortal.esp
 NirnFallsManor.esp
+Quest_NoMercy.esp
 Nordricks Grave.esp
 nowellrocks.esp
 NPC - Shady Fences.esp
@@ -2815,15 +2819,13 @@ ENDGROUP: Quests P
 
 BEGINGROUP: Quests Q
 
-Quest_AndTheRealmsOfDaedra.esp
-Quest_NoMercy.esp
 Quick TG Entrance_Riften Well.esp
 ENDGROUP: Quests Q
 
 BEGINGROUP: Quests R
 
 RabbitOverkill.esp
-radiance.esp
+Radiance.esp
 raggedshortcut.esp
 Ranger Ridge.esp
 Ranger Cabins.esp
@@ -2868,6 +2870,7 @@ ENDGROUP: Quests R
 BEGINGROUP: Quests S
 
 SCA - Skyrim Character Archetypes (Beta).esp
+Quest_SeaOfGhosts.esp
 SkoomaShip.esp
 Scout Addon for ATIC.esp
 SeabreezeEstate.esp
@@ -2914,6 +2917,7 @@ TKratosteleports.esp
 Temporal Rift.esp
 The Arena.esp
 The Asteria - Dwemer Airship.esp
+Quest_TheBiggerTheyAre.esp
 TheClone Breezehome.esp
 TheClone Breezehome - alternative.esp
 TheClone Breezehome - housemarkerfasttravel fix.esp
@@ -3627,7 +3631,6 @@ ENDGROUP: Overrides P
 
 BEGINGROUP: Overrides Q
 
-quest_seaofghosts.esp
 Quieter_Dungeons.esp
 Quieter_Winds.esp
 ENDGROUP: Overrides Q
@@ -3638,12 +3641,8 @@ Real 1st Person View.esp
 realcarriage.esp
 Realistic werewolf speed.esp
 realisticskoomamodv1.esp
-RealisticWaterTextures.esp
- IF ("WATER.esp") WARN: DELETE. Use WATER.esp instead
- IFNOT ("WATER.esp") SAY: Old. Use WATER mod instead ("http://skyrim.nexusmods.com/downloads/file.php?id=13268")
 realrainBWRLWC.esp
  REQ: Realistic Lighting with Customization
-RWTT - Get Wet.esp
 ReallyGiantGiantsandMammoths.esp
 RebalanceMain.esp
 lessarrows.esp
@@ -3888,8 +3887,14 @@ BEGINGROUP: Water and lava Overrides
 
 ImmersiveWater3.esp
 Purewaters.esp
+RealisticWaterTextures.esp
+ IF ("WATER.esp") WARN: DELETE. Use WATER.esp instead
+ IFNOT ("WATER.esp") SAY: Old. Use WATER mod instead ("http://skyrim.nexusmods.com/downloads/file.php?id=13268")
+/* Not sure if this is obsolete */
+RWTT - Get Wet.esp
 WATER.esp
 WATER - Get Wet.esp
+/* Does WayOfTheMonk.esp need to go after waterfxgetwet.esp?? */
 waterfxgetwet.esp
  IF ("WATER - Get Wet.esp") SAY: Use either waterfxgetwet.esp or WATER - Get Wet.esp
  IFNOT (r"ACE .*\.esp") MOD: WayOfTheMonk.esp /* Is this supposed to be after waterfxgetwet.esp?? */
@@ -4974,7 +4979,6 @@ nordguardfollower.esp
 PetSabrecatJango.esp
 portal2mod.esp
 Pets.esp
-Quest_TheBiggerTheyAre.esp
 Sabretooth.esp
 Sabretoothmod_1_02.esp
 Get Out of my Bedroom Original.esp
@@ -4997,6 +5001,8 @@ StopBumpingIntoMe.esp
 HugMe.esp
  REQ: moveit.esp or moveitLWT.esp
 FriendlyFireTolerance99not4.esp
+throwingweapons.esp
+ INC: All mods that change the next NPC: Gerdur, Farkas, Athis, Erik the Slayer, Argis the Bulwark, Lydia, Jordis the Sword-Maiden, Calder, Iona, Vorstag, Marcurio, Belrand, Jenassa, Stenvar.
 ENDGROUP: Companions
 
 BEGINGROUP: Alternative starts
@@ -5010,11 +5016,9 @@ Necromancer Start.esp
 REGEX: QuickStart3_.+\.esp
  SAY: Use only one QuickStart3_*.esp
 Live Another Life.esp
+Quick Start - Skip the Opening Sequence.esp
 
 ENDGROUP: Alternative starts
-
-throwingweapons.esp
- INC: All mods that change the next NPC: Gerdur, Farkas, Athis, Erik the Slayer, Argis the Bulwark, Lydia, Jordis the Sword-Maiden, Calder, Iona, Vorstag, Marcurio, Belrand, Jenassa, Stenvar.
 
 BEGINGROUP: Race Overrides
 
@@ -5157,5 +5161,9 @@ Automatic Spells.esp
 Automatic Variations.esp
 Automatic Variants.esp
 Customized AI.esp
+
+/* Normaly only Dynamic plugins created by SkyProc go here.  Try to limit placing any plugins here.  
+Once WryeBash is updated this shouldn't be needed, since that's what its for. 
+*/
 EzEWorldMap.esp
 ENDGROUP: Post Bashed Patch
