@@ -46,7 +46,7 @@ IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
 IF ("ASIS-Dependency.esp") || IF ("ASIS.esp") || IF ("Automatic Spells.esp") || IF ("Automatic Variations.esp") || IF ("Automatic Variants.esp") GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
 IF ("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
 IF (r"DragonSwarms.*\.esp") SET: DSwarmInst
-IF (r"Noble_Artifacts_For_Skyrim_(Eng|Rus)?\.esp") SET: NobleArtInst
+IF (r"Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp") SET: NobleArtInst
 IF ("GM-ForgeAdditions.esp") || IF ("GM-ForgeAdditionsLAotB.esp") SET: GMForgeAdd
 IF ("GM-ForgeAdditionsLevelledOutfits.esp") && IF ("GM-ForgeAdditionsLAotBLevelledOutfits.esp") SET: DualGMLevList
 IF ("GM-ForgeAdditions.esp") && IF ("GM-ForgeAdditionsLAotB.esp") SET: DualGMForgeAdd
@@ -1970,7 +1970,7 @@ ENDGROUP: Items M
 
 BEGINGROUP: Items N
 
-REGEX: NA_BipolarBlade_(Eng|Rus)\.esp
+REGEX: NA_BipolarBlade_(Eng|Rus|Deu)\.esp
  IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
 REGEX: NA_Chrysamere_(Eng|Rus|Deu)\.esp
  IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
@@ -1980,7 +1980,7 @@ REGEX: NA_IBOTM_(Eng|Rus|Deu)\.esp
  IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
 REGEX: NA_Scourge_(Eng|Rus|Deu)\.esp
  IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
-REGEX: Noble_Artifacts_For_Skyrim_(Eng|Rus)\.esp
+REGEX: Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)\.esp
 NarquelionBow.esp
 NemonicDragonSlayer.esp
 Neo's Outlander.esp
@@ -3905,7 +3905,7 @@ Purewaters.esp
 RealisticWaterTextures.esp
  IF ("WATER.esp") WARN: DELETE. Use WATER.esp instead
  IFNOT ("WATER.esp") SAY: Old. Use WATER mod instead ("http://skyrim.nexusmods.com/downloads/file.php?id=13268")
-/* Not sure if this is obsolete */
+/* Not sure if this is obsolete its from Realistic Water Textures and Terrain */
 RWTT - Get Wet.esp
 WATER.esp
 WATER - Get Wet.esp
@@ -3920,6 +3920,8 @@ GreenWaterFixForWATER.esp
 GreenWaterFix.esp
  IF (7F378D8E|"GreenWaterFix.esp") SAY: Upgrade to vertion 1.1 (For Vanilla water ONLY)
 GreenWaterFix_Compatible.esp
+GreenWaterFix_CrystalClearPatch.esp
+GreenWaterFix_LesserBlurPatch.esp
 ENDGROUP: Water and lava Overrides
 ENDGROUP: Overrides
 
