@@ -3920,32 +3920,6 @@ Ysolda.esp
 Zarias_Piercings1.esp
 zFreeRoamHC.esp
 ENDGROUP: Overrides XYZ
-
-BEGINGROUP: Water and lava Overrides
-
-ImmersiveWater3.esp
-Purewaters.esp
-RealisticWaterTextures.esp
- IF ("WATER.esp") WARN: DELETE. Use WATER.esp instead
- IFNOT ("WATER.esp") SAY: Old. Use WATER mod instead ("http://skyrim.nexusmods.com/downloads/file.php?id=13268")
-/* Not sure if this is obsolete its from Realistic Water Textures and Terrain */
-RWTT - Get Wet.esp
-WATER.esp
-WATER - Get Wet.esp
-/* Does WayOfTheMonk.esp need to go after waterfxgetwet.esp?? */
-waterfxgetwet.esp
- IF ("WATER - Get Wet.esp") SAY: Use either waterfxgetwet.esp or WATER - Get Wet.esp
- IFNOT (r"ACE .*\.esp") MOD: WayOfTheMonk.esp /* Is this supposed to be after waterfxgetwet.esp?? */
-GreenWaterFixForPureWaters.esp
- SAY: OBsoleve upgrade to new version.
-GreenWaterFixForWATER.esp
- SAY: Obsolete upgrade to new version.
-GreenWaterFix.esp
- IF (7F378D8E|"GreenWaterFix.esp") SAY: Upgrade to vertion 1.1 (For Vanilla water ONLY)
-GreenWaterFix_Compatible.esp
-GreenWaterFix_CrystalClearPatch.esp
-GreenWaterFix_LesserBlurPatch.esp
-ENDGROUP: Water and lava Overrides
 ENDGROUP: Overrides
 
 BEGINGROUP: Towns and Villages
@@ -5190,6 +5164,33 @@ Showermod.esp
 spellstrip-skyrim.esp
 Vampire Sight no blur.esp
 ENDGROUP: Shader Replacers
+
+BEGINGROUP: Water and Lava
+
+ImmersiveWater3.esp
+Purewaters.esp
+RealisticWaterTextures.esp
+ IF ("WATER.esp") WARN: DELETE. Use WATER.esp instead
+ IFNOT ("WATER.esp") SAY: Old. Use WATER mod instead ("http://skyrim.nexusmods.com/downloads/file.php?id=13268")
+/* Not sure if this is obsolete its from Realistic Water Textures and Terrain */
+RWTT - Get Wet.esp
+WATER.esp
+WATER - Get Wet.esp
+/* Does WayOfTheMonk.esp need to go after waterfxgetwet.esp?? */
+waterfxgetwet.esp
+ IF ("WATER - Get Wet.esp") SAY: Use either waterfxgetwet.esp or WATER - Get Wet.esp
+ IFNOT (r"ACE .*\.esp") MOD: WayOfTheMonk.esp /* Is this supposed to be after waterfxgetwet.esp?? */
+GreenWaterFixForPureWaters.esp
+ SAY: OBsoleve upgrade to new version.
+GreenWaterFixForWATER.esp
+ SAY: Obsolete upgrade to new version.
+GreenWaterFix.esp
+ IF (7F378D8E|"GreenWaterFix.esp") SAY: Upgrade to vertion 1.1 (For Vanilla water ONLY)
+GreenWaterFix_Compatible.esp
+GreenWaterFix_CrystalClearPatch.esp
+GreenWaterFix_LesserBlurPatch.esp
+ENDGROUP: Water and Lava
+
 ENDGROUP: Shader Mods
 
 BEGINGROUP: Bashed Patch
