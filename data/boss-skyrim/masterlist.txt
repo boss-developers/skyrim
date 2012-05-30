@@ -3231,7 +3231,6 @@ BEGINGROUP: Overrides C
 Carga.esp
 Clavicus_Mask_Upgrade.esp
 CleanArrowPlayer.esp
-ClearWater.esp
 CloseFaceRobesAndHelm.esp
 CMFreeTimeMod.esp
 codifredsenhancedhunting.esp
@@ -3478,8 +3477,6 @@ ENDGROUP: Overrides J
 
 BEGINGROUP: Overrides K
 
-kerplunk.esp
- IF ("WATER.esp") WARN: DELETE. Included in 'WATER.esp'
 REGEX: killable.children(.V?\d.\d{1,2})?\.esp
 killable_children_qp_aventus.esp
 killable_children_qp_nelkir.esp
@@ -3894,6 +3891,7 @@ ENDGROUP: Overrides V
 BEGINGROUP: Overrides W
 
 walk.esp
+IFNOT (r"ACE .*\.esp") MOD: WayOfTheMonk.esp
 Weapon Specialization - Generalized.esp
 Werewolves Plague in Skyrim.esp
 whiterun guard.esp
@@ -5167,6 +5165,7 @@ ENDGROUP: Shader Replacers
 
 BEGINGROUP: Water and Lava
 
+ClearWater.esp
 ImmersiveWater3.esp
 Purewaters.esp
 RealisticWaterTextures.esp
@@ -5174,12 +5173,13 @@ RealisticWaterTextures.esp
  IFNOT ("WATER.esp") SAY: Old. Use WATER mod instead ("http://skyrim.nexusmods.com/downloads/file.php?id=13268")
 /* Not sure if this is obsolete its from Realistic Water Textures and Terrain */
 RWTT - Get Wet.esp
+ SAY: Originally for Realistic Water Textures and Terrain, may be obsolete.
 WATER.esp
 WATER - Get Wet.esp
-/* Does WayOfTheMonk.esp need to go after waterfxgetwet.esp?? */
+kerplunk.esp
+ IF ("WATER.esp") WARN: DELETE. Included in 'WATER.esp'
 waterfxgetwet.esp
  IF ("WATER - Get Wet.esp") SAY: Use either waterfxgetwet.esp or WATER - Get Wet.esp
- IFNOT (r"ACE .*\.esp") MOD: WayOfTheMonk.esp /* Is this supposed to be after waterfxgetwet.esp?? */
 GreenWaterFixForPureWaters.esp
  SAY: OBsoleve upgrade to new version.
 GreenWaterFixForWATER.esp
