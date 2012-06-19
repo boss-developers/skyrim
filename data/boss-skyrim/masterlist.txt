@@ -52,6 +52,7 @@ IF ("GM-ForgeAdditionsLevelledOutfits.esp") && IF ("GM-ForgeAdditionsLAotBLevell
 IF ("GM-ForgeAdditions.esp") && IF ("GM-ForgeAdditionsLAotB.esp") SET: DualGMForgeAdd
 IF ("EpicGloryByMadmole.esp") SET: EpicGloryInst
 IF ("UFO - Ultimate Follower Overhaul.esp") SET: UFO
+IF (r"Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") || IF ("Extended Slider Colors.esp") SET: ExtSlider
 
 \=====================================================================
 
@@ -4316,8 +4317,8 @@ UVO - Ultimate Vampirism Overhaul.esp
 better vampires.esp
 Better Weres and Vamps.esp
 dvampire.esp
-IFNOT ("Extended Slider Colors.esp") MOD: VampireOverhaul.esp
-IFNOT ("Extended Slider Colors.esp") MOD: VampireEffectProject.esp
+IFNOT ($ExtSlider) MOD: VampireOverhaul.esp
+IFNOT ($ExtSlider) MOD: VampireEffectProject.esp
 VampFX-OverhaulPatch.esp
 wild werewolves.esp
 Advanced Vampires.esp
@@ -5450,15 +5451,15 @@ True Giants.esp
 EnhancedCharacterEdit.esp
 Facelight.esp
 Extended Slider Colors.esp
-REGEX: Extended Colors - .+\.esp
+REGEX: Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp
  SAY: Obsolete. Upgrade to version 5
 /* Part of Extended Colors need to check v5*/
-VanillaRaces - Prepatched - English.esp
+REGEX: VanillaRaces( - Prepatched - English)?\.esp
 Expanded Eye Color Selection.esp
  SAY: Use only one Extended Colors - *.esp
  SAY: Obsolete. Upgrade to version 5
-IF ("Extended Slider Colors.esp") MOD: VampireOverhaul.esp
-IF ("Extended Slider Colors.esp") MOD: VampireEffectProject.esp
+IF ($ExtSlider) MOD: VampireOverhaul.esp
+IF ($ExtSlider) MOD: VampireEffectProject.esp
 MD - BMIVR.esp
 RaceRevamp.esp
 Races and Doomstones.esp
