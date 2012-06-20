@@ -3340,7 +3340,6 @@ BEGINGROUP: Overrides #
 00 friedlichere wilde tiere.esp
 0nk Better Gauldur and Saarthal Amulet Copy.esp
 1DayVendorRestockingV1.2.esp
-REGEX: .Sec(ond)?ShadowWarrior\.esp
 5_minute_candlelight.esp
 ENDGROUP: Overrides #
 
@@ -3819,8 +3818,8 @@ mjhKhajittSpeak.esp
 mjhReducedGoldRewards.esp
 MODdisguises.esp
 more dragons.esp
+/* v2.9.1 only one esp */
 More Dynamic Shadows.esp
-REGEX: More Dynamic Shadows.*\.esp
 More Powerful Daedric Artifacts.esp
 \ TAG: {{BASH: Stats}}
 More Powerful Dragons.esp
@@ -3861,7 +3860,6 @@ No Helmets Required.esp
 No More Arrows in the Knee.esp
 no more immortal childs.esp
 no nocturnal oath.esp
-No NPC Greetings.esp
 No Perk Prereqs.esp
 No Perk Prereqs - No Helmets Required.esp
 No Perk Prereqs - Smithing Excluded.esp
@@ -3944,7 +3942,6 @@ lessarrows.esp
 Recover Less Arrows.esp
 Recover More Arrows.esp
 Recover Much More Arrows.esp
-Reduced Distance NPC Greetings.esp
 Reduced Early Perk Skill Reqs.esp
 ReducedWardCost.esp
 respec.esp
@@ -3994,9 +3991,9 @@ SER Merchant fix.esp
 shadowyshadowmere.esp
 shut up dogs.esp
 ShutUP Guards.esp
-REGEX: Skyrim Moon Size x\d\.\d\.esp
-Slightly Reduced Distance NPC Greetings.esp
+REGEX: Skyrim Moon Size (x\d\.\d)\.esp
 slightly reduced npc greetings.esp
+REGEX: (No |(Slightly )?Reduced Distance )NPC Greetings.esp
 SlightlyIncreaseCarryWeight.esp
 slowercompanions.esp
 Sickly Diseases.esp
@@ -4363,6 +4360,7 @@ BEGINGROUP: Magic
 BEGINGROUP: General Spells
 
 1portalgun.esp
+REGEX: (\dSec(ond)?)ShadowWarrior.esp
 ActorBall.esp
 apocalypse.esp
 Apocalypse - The Spell Package.esp
@@ -4533,7 +4531,6 @@ ENDGROUP: Shouts
 
 BEGINGROUP: Spells Late
 
-5SecondShadowWarrior.esp
 Ancestor Guardian.esp
 AspectIllusionOnly.esp
 Battlemage's Arcanes.esp
@@ -4692,6 +4689,8 @@ NightEye_Ench+Potion+Spell.esp
 ENDGROUP: Enchantment
 ENDGROUP: Magic
 
+BEGINGROUP: Player Characteristics
+
 BEGINGROUP: Thievery, Sneaking and Crime
 \
 \Overrides overhauls.
@@ -4817,7 +4816,6 @@ ENDGROUP: Combat
 
 BEGINGROUP: Skills, Attributes and Leveling
 
-REGEX: ...?XCarryWeight\.esp
 Revised Character System.esp
 REGEX: ...?% Slower Leveling\.esp
 REGEX: 1 - NO Rebalance - \d{2,3}% Speed\.esp
@@ -5005,10 +5003,16 @@ CombinePotionsAlchemy.esp
 hokutoshinken.esp
 ArmorPerkHelmetRemover.esp
 vinis_alchemy_tree.esp
-Skyrim15SmithingFix.esp
-\must be load after any perk and/or smithing mods
- REQ: Skyrim patch 1.5
 ENDGROUP: Skills, Attributes and Leveling
+
+BEGINGROUP: Player Perks
+
+REGEX: (\d{1,3})XCarryWeight.esp
+/* must be load after any perk and/or smithing mods */
+Skyrim15SmithingFix.esp
+ IF (<1.5.24|"TES5") REQ: Skyrim 1.5.24+
+ENDGROUP: Player Perks
+ENDGROUP: Player Characteristics
 
 BEGINGROUP: Pose and Animation Mods
 \
