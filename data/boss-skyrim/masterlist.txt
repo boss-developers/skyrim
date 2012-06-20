@@ -411,6 +411,7 @@ REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
  INC: Realistic Lighting
 Longer Weather Transitions.esp
 Rainclip.esp
+RevampedExteriorFog.esp
 ENDGROUP: Weather mods and overhauls
 
 BEGINGROUP: Sound mods
@@ -463,13 +464,14 @@ Darkest Nights.esp
 DarkerSkyrimLighting.esp
 Encryptions Water Arrow.esp
 fixedeyeadaptation.esp
-Realistic Lighting - Full.esp
+REGEX: Realistic Lighting( - Full| - Addon)\.esp
+ Say Obsolete upgrade to latest version.
 REGEX: RL - .*\.esp
-Realistic Lighting - Addon.esp
+ Say Obsolete upgrade to latest version.
 Realistic Lighting.esp
 Realistic Lighting Patcher.esp
-IF ("Realistic Lighting.esp") MOD: Better Dynamic Snow.esp
-\Bethsoft9.187
+RemoveAmbientInteriorFog.esp
+ IF ("Realistic Lighting.esp") WARN: Removing the interior Fog will affect Realistic Lighting. Load before RL if you are experiencing errors.
 Dark Dungeons for ENB.esp
 Further Dark Dungeons for ENB.esp
 dimmed_torches.esp
@@ -3438,7 +3440,7 @@ mod1.esp
  IF ("Better Bone Armor.esp") SAY: Use either Better Bone Armor.esp or mod1.esp
 Better Bound Weapons.esp
 Better Dragons.esp
-IFNOT ("Realistic Lighting.esp") MOD: Better Dynamic Snow.esp
+Better Dynamic Snow.esp
 Better_Food_and_Sleep.esp
 Better House Carls.esp
 Better Honeyside.esp
@@ -3978,11 +3980,7 @@ Recover Much More Arrows.esp
 Reduced Distance NPC Greetings.esp
 Reduced Early Perk Skill Reqs.esp
 ReducedWardCost.esp
-RemoveAmbientInteriorFog.esp
- IF ("Realistic Lighting.esp") INC: Realistic Lighting, use only one
 respec.esp
-RevampedExteriorFog.esp
- IF ("Realistic Lighting.esp") INC: Realistic Lighting, use only one
 Revised.esp
 reworkedmannequins.esp
 REGEX: RichMerchants\w*\.esp
