@@ -412,6 +412,8 @@ REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
 Longer Weather Transitions.esp
 Rainclip.esp
 RevampedExteriorFog.esp
+PaperMapHeight-RemoveFog.esp
+ IF ("WATER.esp") WARN: Removing Fog will affect WATER. Load after WATER if you are experiencing errors.
 ENDGROUP: Weather mods and overhauls
 
 BEGINGROUP: Sound mods
@@ -1489,40 +1491,6 @@ skyui.esp
 REGEX: TimedAutoSave(\d\d)\.esp
 towAutoFP.esp
 ENDGROUP: Load Order Independent Mods
-
-BEGINGROUP: Map marker Tweaks
-
-accurate prison markers.esp
-Barenziah.esp
-BarenziahQuestMarkers.esp
- IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
-BetterMapMarkerPlacements.esp
-camp_map_markers.esp
-cartographers map markers.esp
-Compelling Treasure Maps.esp
-crimsonquestmarkers.esp
-detaillierte minen kartenmarkierungen.esp
-ext_mapm.esp
-FastTravelLocationsVAD1.1.esp
-follower map markers.esp
-HideMapMarkers.esp
-House Map Markers (RUS).esp
-House Markers.esp
-MapMarksProject.esp
-minemapmarkers.esp
-Necessary Map Markers (all files included).esp
-Necessary Map Markers with alternate house.esp
-Necessary Markers.esp
-Houses.esp
-Proudspire Manor - Map Marker.esp
-PlayerHomeMapMarkers.esp
-Secondary Locations Map Markers.esp
-skyforge_map_marker.esp
-REGEX: smakit_house_markers(_plus)?(_russian|_german)?\.esp
-REGEX: Unmarked Places - .+\.esp
-WorldMapInFull3D.esp
- SAY: If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)
-ENDGROUP: Map marker Tweaks
 
 BEGINGROUP: Items (armor and weapons)
 \
@@ -3938,7 +3906,6 @@ ENDGROUP: Overrides O
 BEGINGROUP: Overrides P
 
 Painful traps.esp
-PaperMapHeight-RemoveFog.esp
 PerQ.esp
 Passive dragons.esp
 playing_children.esp
@@ -4585,11 +4552,8 @@ BetterSpellFinishers.esp
 BetterMasterSpells.esp
 BetterMagic_FULL.esp
 BurnifiedEffects.esp
- SAY: Obsolete. Upgrade to latest version.
- IF ("BurntCorpse.esp") INC: BurntCorpse.esp
- INC: Any mod that modifies any fire spells
+ SAY: Obsolete. Upgrade to Burn Freeze Shock Effects
 BFSEffects.esp
- IF ("BurntCorpse.esp") INC: BurntCorpse.esp, use only one.
 DeadlySpellImpacts.esp
 DeadlySpellImpacts - Two Fire.esp
 DIRemoveStartSpellsFlamesHealing.esp
@@ -5613,6 +5577,40 @@ GreenWaterFix_CrystalClearPatch.esp
 GreenWaterFix_LesserBlurPatch.esp
 ENDGROUP: Water and Lava
 ENDGROUP: Shader Mods
+
+BEGINGROUP: Map marker Tweaks
+
+accurate prison markers.esp
+Barenziah.esp
+BarenziahQuestMarkers.esp
+ IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
+BetterMapMarkerPlacements.esp
+camp_map_markers.esp
+cartographers map markers.esp
+Compelling Treasure Maps.esp
+crimsonquestmarkers.esp
+detaillierte minen kartenmarkierungen.esp
+ext_mapm.esp
+FastTravelLocationsVAD1.1.esp
+follower map markers.esp
+HideMapMarkers.esp
+House Map Markers (RUS).esp
+House Markers.esp
+MapMarksProject.esp
+minemapmarkers.esp
+Necessary Map Markers (all files included).esp
+Necessary Map Markers with alternate house.esp
+Necessary Markers.esp
+Houses.esp
+Proudspire Manor - Map Marker.esp
+PlayerHomeMapMarkers.esp
+Secondary Locations Map Markers.esp
+skyforge_map_marker.esp
+REGEX: smakit_house_markers(_plus)?(_russian|_german)?\.esp
+REGEX: Unmarked Places - .+\.esp
+WorldMapInFull3D.esp
+ SAY: If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)
+ENDGROUP: Map marker Tweaks
 
 BEGINGROUP: Bashed Patch
 
