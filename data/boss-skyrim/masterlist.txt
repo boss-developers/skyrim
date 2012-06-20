@@ -463,21 +463,23 @@ Darkest Nights.esp
 DarkerSkyrimLighting.esp
 Encryptions Water Arrow.esp
 fixedeyeadaptation.esp
-IFNOT (r"Realistic Lighting.esp") MOD: Dark Dungeons for ENB.esp
-IFNOT (r"Realistic Lighting.esp") MOD: Further Dark Dungeons for ENB.esp
-real lights in dragonsreach.esp
-IF ("Realistic Lighting.esp") MOD: Better Dynamic Snow.esp
- \Bethsoft9.187
-Natural Skyrim Rain.esp
- \Bethsoft6.118,128and9.187,193
-Realistic Lighting.esp
- IF (r"Realistic Lighting.esp") MOD: Dark Dungeons for ENB.esp
- IF (r"Realistic Lighting.esp") MOD: Further Dark Dungeons for ENB.esp
 Realistic Lighting - Full.esp
 REGEX: RL - .*\.esp
 Realistic Lighting - Addon.esp
+Realistic Lighting.esp
 Realistic Lighting Patcher.esp
+IF ("Realistic Lighting.esp") MOD: Better Dynamic Snow.esp
+\Bethsoft9.187
+Dark Dungeons for ENB.esp
+Further Dark Dungeons for ENB.esp
+dimmed_torches.esp
 enhancedlightingforrealisticlighting.esp
+IF (r"Realistic Lighting.*\.esp") MOD: enhanceddynamicweathersystem.esp
+ \See readme for more info about load order
+ SAY: Use only one enhanceddynamicweathersystem esp
+real lights in dragonsreach.esp
+Natural Skyrim Rain.esp
+ \Bethsoft6.118,128and9.187,193
 REGEX: Warmer Magic Lights v.+\.esp
 IC-Lighting.esp
 NoTint.esp
@@ -497,10 +499,6 @@ ZFixed Lights.esp
 Zfixed Lights RCRN.esp
 /* Might need to be moved */
 LightRoom.esp
-
-IF (r"Realistic Lighting.*\.esp") MOD: enhanceddynamicweathersystem.esp
- \See readme for more info about load order
- SAY: Use only one enhanceddynamicweathersystem esp
 ENDGROUP: Lighting
 
 BEGINGROUP: Music
@@ -2844,8 +2842,8 @@ ENDGROUP: Quests B
 
 BEGINGROUP: Quests C
 
-CampingKitNorthernRanger.esp
-CampingKitNorthernRanger - Without Shop.esp
+REGEX: CampingKitNorthernRanger( - Without Amberwood| - Tent Not For Sale)?\.esp
+ SAY: Use only one CampingKitNorthernRanger
 Camps of the Wilderness.esp
 CampsAndShipwrecks.esp
 caos tools- ninjaweaps.esp
@@ -3903,7 +3901,6 @@ NoRandomDragons.esp
 NoCombatMusic.esp
 NoDeepCaveAmbianceLoops.esp
 NoDragonborn.esp
-NoNakedComments.esp
 Matching_Armor_Set_Fixed_-_No_Helmets_Required.esp
 noflickpulse.esp
 REGEX: NoHelmet.*\.esp
@@ -4040,6 +4037,8 @@ REGEX: Sinister Shadowmere.*\.esp
  SAY: Use only one
 Simple Spell Scaling.esp
 skoomaeffect.esp
+/* Contains BOOK, QUST */
+SkyNotebook.esp
 SkyRe_Main.esp
  TAG: {{BASH: Relev, Delev}}
  SAY: Make sure to get the Vampire HotFix. Optional Wot3E Resource Pack
@@ -4393,7 +4392,6 @@ ENDGROUP: Vampires and Werewolves
 BEGINGROUP: Magic
 \
 \Overrides overhauls. New spells and magic systems go here for convenience.
-
 
 BEGINGROUP: General Spells
 
@@ -5164,11 +5162,12 @@ ZazimelDrow.esp
 ENDGROUP: Race additions
 ENDGROUP: Beauty Packs & Race Changes\Addons
 
+
+BEGINGROUP: Companions and NPCs
+
 BEGINGROUP: Companions
-\
 \Those related to companion mod systems. Most others in Quests section.
 \Recommended by authors to load very late.
-\
 
 Althirs Companion and Carriage Command v1.1.esp
 animal_euphorium.esp
@@ -5421,9 +5420,14 @@ HugMe.esp
  REQ: moveit.esp or moveitLWT.esp
 FriendlyFireTolerance99not4.esp
 voidcraft_housecarls.esp
+ENDGROUP: Companions
+
+BEGINGROUP: Companions Load Late
+NoNakedComments.esp
 throwingweapons.esp
  INC: All mods that change the next NPC: Gerdur, Farkas, Athis, Erik the Slayer, Argis the Bulwark, Lydia, Jordis the Sword-Maiden, Calder, Iona, Vorstag, Marcurio, Belrand, Jenassa, Stenvar.
-ENDGROUP: Companions
+ENDGROUP: Companions Load Late
+ENDGROUP: Companions and NPCs
 
 BEGINGROUP: Alternative starts
 
