@@ -134,6 +134,7 @@ DragonsReach_Hideout.esm
 Evil Lair of Hydra.esm
 Grytewake.esm
 hideout.esm
+REGEX: Lanterns Of Skyrim - All In One( 2x brighter)?\.esm
 LevelersTower.esm
 Manantis.esm
 moonpath.esm
@@ -458,7 +459,7 @@ REGEX: CLARALUX - LightAdjuster - Medium Lights and Radius( w Shadows)?\.esp
  SAY: Use only one LightAdjuster.
 CLO.esp
 ColorfulLightsNoShadows.esp
-REGEX: Dark( |er+[ ]?|est )?Nights( and Bright Skies| No Weather)?\.esp 
+REGEX: Dark( |e[r|st]+[ ]?)?Nights( and Bright Skies| No Weather)?\.esp 
 REGEX: Dark(er)? Nights(B|_(\d{1,2})?(b+[lr])?)\.esp
 DarkerSkyrimLighting.esp
 Dark Dungeons for ENB.esp
@@ -1994,6 +1995,7 @@ KingOfWorms.esp
 Knight Of Thorns Armor.esp
 KO Katana.esp
 kokutou yoru.esp
+KTAAncientShroudedArmor.esp
 Kubikiri Ax Edition.esp
 ENDGROUP: Items K
 
@@ -2073,7 +2075,9 @@ mage robe hoods.esp
 Malo_Waffen.esp
 March Madness Standalone.esp
 maruMask.esp
-matys knights of the nine armor 2.1.esp
+matys knights of the nine armor (\d\.\d)\.esp
+kotn mage.esp
+matys medieval knights.esp
 MaceofAevar.esp
 Masters of Death - Sicarius Armor (Standalone).esp
 Maxwell Outfit.esp
@@ -2525,9 +2529,9 @@ ENDGROUP: Items Load Late
 ENDGROUP: Items (armor and weapons)
 
 BEGINGROUP: Overhauls
-\
 \Initial position for Overhaul mods
 
+BEGINGROUP: General Overhauls
 REGEX: Smithing Perks Overhaul( - Balanced)?.esp
  IF ("PerkUP-Smithing.esp") INC: PerkUP, use only one.
  IF ("Complete Crafting Overhaul - BS version.esp") && IF ("Complete Crafting Overhaul.esp") SAY: Use only one Smithing Perks Overhaul esp
@@ -2576,8 +2580,9 @@ Mighty Dragons Unleveled.esp
  INC: Mighty Dragons.esp , use only one.
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
+ENDGROUP:  General Overhauls
 
-/* Should this have it's own section */
+BEGINGROUP: Dragons hunt in Swarms
 DragonSwarms.esp
  IF ($IncDSwarmMorAgress) INC: DS-MoreAgressionForRemover.esp
 REGEX: DragonSwarms (V...)?-Easy Mode\.esp
@@ -2595,7 +2600,8 @@ DragonSwarmsOptRemoveTimerStable.esp
  IF ($DSwarmInst) WARN: Not Needed Already in v3.1
 DS-VanillaTimer+MultipleEvents.esp
  IF ($IncDSwarmMorAgress) INC: DS-MoreAgressionForRemover.esp
-
+ENDGROUP: Dragons hunt in Swarms
+ 
 BEGINGROUP: PISE
 PISE.esp
  TAG: {{BASH: Delev, Relev}}
@@ -2697,6 +2703,11 @@ REGEX: MD(\d)? compatible with DD\.esp
 MD with DeadlyD and DDiversified.esp
 DeadlyDragonsArmory.esp
 ENDGROUP: Deadly Dragons
+
+BEGINGROUP: Monster Wars
+
+Monster Wars.esp
+ENDGROUP: Monster Wars
 ENDGROUP: Overhauls
 
 BEGINGROUP: Quests and Locations
@@ -4245,7 +4256,8 @@ detailed cities.esp
 HoldStables.esp
 REGEX: Populated Cities.*\.esp
 Open Cities Skyrim.esp
-
+raggedshortcut_oc.esp
+ IF ("Open Cities Skyrim.esp") SAY: Remember to delete Open Cities Skyrim.esp
 ENDGROUP: City Overhauls
 
 BEGINGROUP: Realism
@@ -4599,6 +4611,7 @@ Permanent Blessing.esp
 power_nighteye.esp
 PowerfulIllusion.esp
 ShadowOfTheMagic.esp
+ SAY: Obsolete, upgrade to Summon Shadow Merchant
 REGEX: Silent khajiit night-eye improved( 2)?\.esp
 SkyrimBalancedMagicSystem.esp
 SkyrimBalancedMagicSystem - spells.esp
@@ -4612,6 +4625,7 @@ SpellSneak.esp
 Starting Spell Choice.esp
 Startingspells begone.esp
 StrongerSpells.esp
+SummonShadowMerchant.esp
 SummonSuccubus.esp
 SustainedSpells.esp
 TelekinesisImproved.esp
