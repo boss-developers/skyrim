@@ -53,6 +53,7 @@ IF ("GM-ForgeAdditions.esp") && IF ("GM-ForgeAdditionsLAotB.esp") SET: DualGMFor
 IF ("EpicGloryByMadmole.esp") SET: EpicGloryInst
 IF ("UFO - Ultimate Follower Overhaul.esp") SET: UFO
 IF (r"Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") || IF ("Extended Slider Colors.esp") SET: ExtSlider
+IFNOT (r"Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") || IF ("Extended Slider Colors.esp") SET: noExtSlider
 
 \=====================================================================
 
@@ -4307,8 +4308,9 @@ UVO - Ultimate Vampirism Overhaul.esp
 better vampires.esp
 Better Weres and Vamps.esp
 dvampire.esp
-IFNOT ($ExtSlider) MOD: VampireOverhaul.esp
-IFNOT ($ExtSlider) MOD: VampireEffectProject.esp
+asdf
+IF ($noExtSlider) MOD: VampireOverhaul.esp
+IF ($noExtSlider) MOD: VampireEffectProject.esp
 VampFX-OverhaulPatch.esp
 wild werewolves.esp
 Advanced Vampires.esp
