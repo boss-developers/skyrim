@@ -53,7 +53,7 @@ IF ("GM-ForgeAdditions.esp") && IF ("GM-ForgeAdditionsLAotB.esp") SET: DualGMFor
 IF ("EpicGloryByMadmole.esp") SET: EpicGloryInst
 IF ("UFO - Ultimate Follower Overhaul.esp") SET: UFO
 IF (r"Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") || IF ("Extended Slider Colors.esp") SET: ExtSlider
-IFNOT (r"Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") && IFNOT ("Extended Slider Colors.esp") SET: noExtSlider
+IF ("Lady Body.esp" SET: LB
 
 \=====================================================================
 
@@ -186,7 +186,7 @@ MTOH.esm
 Omegared99-Compilation.esm
 Farkasv2.esm
 XFLMain.esm
- REQ: Skyrim 1.3+
+ IF (<1.3.0|"TES5") REQ: Skyrim 1.3+
  IF ($UFO) INC: UFO - Ultimate Follower Overhaul.esp, has the same functional, use only one.
  IF ("BDO.esp") INC: BDO.esp, has the same functional, use only one.
 DrowCompanions.esm
@@ -2007,17 +2007,17 @@ Lady Rappelz.esp
 LanternHands.esp
 LayerBikini.esp
 LB Blood of the Divines.esp
- IFNOT ("Lady Body.esp") WARN: 'Lady Body' body replacer is required for mod work.
+ IFNOT ($LB) WARN: 'Lady Body' body replacer is required for mod work.
 LB Lady Bat.esp
- IFNOT ("Lady Body.esp") WARN: 'Lady Body' body replacer is required for mod work.
+ IFNOT ($LB) WARN: 'Lady Body' body replacer is required for mod work.
 LB_MuchAdoSnowElves.esp
- IFNOT ("Lady Body.esp") WARN: 'Lady Body' body replacer is required for mod work.
+ IFNOT ($LB) WARN: 'Lady Body' body replacer is required for mod work.
 LB Pantie & Boots.esp
- IFNOT ("Lady Body.esp") WARN: 'Lady Body' body replacer is required for mod work.
+ IFNOT ($LB) WARN: 'Lady Body' body replacer is required for mod work.
 LB Jewelry.esp
- IFNOT ("Lady Body.esp") WARN: 'Lady Body' body replacer is required for mod work.
+ IFNOT ($LB) WARN: 'Lady Body' body replacer is required for mod work.
 LBClosetMagician.esp
- IFNOT ("Lady Body.esp") WARN: 'Lady Body' body replacer is required for mod work.
+ IFNOT ($LB) WARN: 'Lady Body' body replacer is required for mod work.
 LeahArmor.esp
 leathercollar1mm.esp
 REGEX: LeatherBackpack.*\.esp
@@ -4081,7 +4081,7 @@ SkyReVagabondArmorPlugin.esp
 SkyReWarchiefArmorPlugin.esp
  SAY: Obsolete. Upgrade to latest version
 Signs and Guardians.esp
- REQ: Skyrim official patch v1.4.27 or newer
+ IF (<1.4.27|"TES5") REQ: Skyrim 1.4.27 or newer
 ESP.esp
  SAY: Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.
 Skyrim Creatures Alive.esp
@@ -4316,8 +4316,8 @@ UVO - Ultimate Vampirism Overhaul.esp
 better vampires.esp
 Better Weres and Vamps.esp
 dvampire.esp
-IF ($noExtSlider) MOD: VampireOverhaul.esp
-IF ($noExtSlider) MOD: VampireEffectProject.esp
+IFNOT ($ExtSlider) MOD: VampireOverhaul.esp
+IFNOT ($ExtSlider) MOD: VampireEffectProject.esp
 VampFX-OverhaulPatch.esp
 wild werewolves.esp
 Advanced Vampires.esp
