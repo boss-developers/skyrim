@@ -406,7 +406,7 @@ BEGINGROUP: Weather mods and overhauls
 \Unlikely to be affected by anything but sound mods.
 
 Chesko_Frostfall.esp
-IFNOT (r"Realistic Lighting.*\.esp") MOD: enhanceddynamicweathersystem.esp
+IFNOT ("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
  SAY: Use only one enhanceddynamicweathersystem esp
 REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
  SAY: Use only one enhanceddynamicweathersystem esp
@@ -420,6 +420,10 @@ PaperMapHeight-RemoveFog.esp
 ENDGROUP: Weather mods and overhauls
 
 BEGINGROUP: Sound mods
+\Sound plugins and sound packs that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
+\
+\Some Sounds.esp
+\  TES4 (Header only)
 
 addwinterholdmusic.esp
 Bardsoundsmalukah.esp
@@ -439,6 +443,7 @@ projectpew.esp
 the real fus ro dah.esp
 Rooster At Dawn v1.0.esp
 skyradio.esp
+Skyrim - Player Re-Voiced - Elven Races Complete - Male.esp
 SoS - The Dungeons.esp
 SoS - The Wilds.esp
 QuieterRestorationDrawnSound.esp
@@ -470,13 +475,16 @@ REGEX: Realistic Lighting( - Full| - Addon)\.esp
 REGEX: RL - .*\.esp
  Say Obsolete upgrade to latest version.
 Realistic Lighting.esp
+REGEX: [Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\.esp
+ IFNOT ("Realistic Lighting.esp") REQ: Realistic Lighting with Customization
+realrain.esp
 Realistic Lighting Patcher.esp
 RemoveAmbientInteriorFog.esp
  IF ("Realistic Lighting.esp") WARN: Removing the interior Fog will affect Realistic Lighting. Load before RL if you are experiencing errors.
 fixedeyeadaptation.esp
 dimmed_torches.esp
 enhancedlightingforrealisticlighting.esp
-IF (r"Realistic Lighting.*\.esp") MOD: enhanceddynamicweathersystem.esp
+IF ("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
  \See readme for more info about load order
  SAY: Use only one enhanceddynamicweathersystem esp
 real lights in dragonsreach.esp
@@ -508,9 +516,20 @@ BEGINGROUP: Music
 REGEX: Dawn_addon.*\.esp
 IF (r"Dawn_addon_part\d\.esp") SAY: Obsolete. Upgrade to latest version.
 dragonborn with lute.esp
-REGEX: enhanced soundtrack.+\.esp
+REGEX: enhanced soundtrack (\d{1,2})\.esp
+ SAY: Adds music but also contains textures and meshes. Loose files will override them
 REGEX: PersonalizedMusic.*\.esp
 ENDGROUP: Music
+
+BEGINGROUP: Textures
+\Textures that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
+\
+\Some Graphics.esp
+\  TES4 (Header only)
+
+/* texture packadge from Steam Workshop */
+thatsice.esp
+ENDGROUP: Textures
 
 BEGINGROUP: Base Early
 
@@ -1194,7 +1213,6 @@ REGEX: SIRWPat?ch.esp
  TAG: {{BASH: Delev, Relev}}
 \not tested
 Real Wildlife Skyrim 0.1 IMCN.esp
-realrain.esp
 recipeammoarrows.esp
 recipeingots.esp
 RecyclingMod.esp
@@ -1654,9 +1672,9 @@ ClericCraftable.esp
 REGEX: Cloaks( - No Imperial| - Player Only)?\.esp
  TAG: {{BASH: Relev}}
  SAY: Use only one cloaks*esp
-REGEX: Lorecraft - Cloaks09( No Imperial| PlayerOnly)?\.esp
+REGEX: Lorecraft - Cloaks(\d{1,3})( No Imperial| PlayerOnly)?\.esp
  TAG: {{BASH: Relev}}
- SAY: Use only one Lorecraft - Cloaks09
+ SAY: Use only one Lorecraft - Cloaks
 REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
  TAG: {{BASH: Relev}}
  SAY: Update to new version for Cloaks 09
@@ -1763,6 +1781,8 @@ Lorecraft - Dragonbone Weapons Complete.esp
 Lorecraft - Dragon Bone Weapons.esp
  REQ: Lorecraft 4.05b or higher.
 dragonborngarb.esp
+DragonHideRobeArmor.esp
+Lorecraft - Dragonhide.esp
 DragonplateHelmFix.esp
 dragonpriestmasks.esp
 REGEX: Dragonscale.?hood.*\.esp
@@ -2487,6 +2507,7 @@ WeaponsOf3E - No Leveled Lists.esp
 3rdEraWeaponsMoS - Hacks.esp
 RecyclingModWo3E.esp
  REQ: Weapons of the Third Era
+Werehide.esp
 Winterscale Armor.esp
 WoTES.esp
 Lorecraft - 3rdEra.esp
@@ -3951,8 +3972,6 @@ Real 1st Person View.esp
 realcarriage.esp
 Realistic werewolf speed.esp
 realisticskoomamodv1.esp
-realrainBWRLWC.esp
- REQ: Realistic Lighting with Customization
 ReallyGiantGiantsandMammoths.esp
 RebalanceMain.esp
 lessarrows.esp
@@ -4090,11 +4109,10 @@ Skyrim Dark.esp
 \ TAG: {{BASH: Names, Invent}}
 Skyrim Smithing Components Rebalanced Full Version.esp
 Skyrim Trade Guild.esp
-SkyTEST-RealPredators.esp
- SAY: Obsolete. Update to latest version
-SkyTEST-RealPredators&Animals.esp
+REGEX: SkyTEST-RealPredators(\&Animals)?\.esp
  SAY: Obsolete. Update to 1.20+
 SkyTEST-RealisticAnimals&Predators.esp
+SkyTEST-HarderCreatures.esp
 Slighty Mighty Dragons.esp
 Slighty Mighty Dragons Unleveled.esp
 Slighty Mighty Dragon Priests.esp
@@ -4135,8 +4153,6 @@ BEGINGROUP: Overrides T
 terrain bump.esp
 REGEX: Tougher Traps - \w{5,10}\.esp
 TCO - Travel Cost Overhaul.esp
-/* texture overide from Steam Workshop */
-thatsice.esp
 VariedGuards.esp
 VariedGuards2H.esp
 VariousGuardReplacer.esp
