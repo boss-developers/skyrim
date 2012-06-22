@@ -5163,10 +5163,17 @@ ENDGROUP: Race additions
 ENDGROUP: Beauty Packs & Race Changes\Addons
 
 BEGINGROUP: Companions and NPCs
-
-BEGINGROUP: Companions
 \Those related to companion mod systems. Most others in Quests section.
 \Recommended by authors to load very late.
+\Feedback from Tokc.D.K.
+\1) Mods loaded before UFO
+\2) UFO, BDO, XFL and other simular mods
+\3) Global Companions\Housecarls face\stats changing mods
+\4) Single Companions\Housecarls face\stats changing mods
+\5) mods that will be loaded after UFO
+\Companions\housecarls and NPC this is a different mods. Global mods in most variants must be load early. Single mods with minor changes must be load late.
+
+BEGINGROUP: Companions Load Early
 
 Althirs Companion and Carriage Command v1.1.esp
 animal_euphorium.esp
@@ -5201,6 +5208,9 @@ voidMountedFollowers.esp
 Hroki Wife Companion.esp
 mercenariesplus.esp
 NoFollowerTorch.esp
+ENDGROUP: Companions Load Early
+
+BEGINGROUP: Extensible Follower Framework 
 XFLDialogue.esp
  IF ($UFO) INC: UFO - Ultimate Follower Overhaul.esp, has the same functional, use only one.
  IF ("BDO.esp") INC: BDO.esp, has the same functional, use only one.
@@ -5211,6 +5221,10 @@ XFLHorses.esp
  REQ: XFLMain.esm
 XFLTweaks.esp
  REQ: XFLMain.esm
+ENDGROUP: Extensible Follower Framework 
+
+BEGINGROUP: Ultimate Follower Overhaul
+
 UFO - Ultimate Follower Overhaul.esp
  IF (<1.5.24|"TES5") REQ: Skyrim 1.5.24+
  IF ("BDO.esp") INC: BDO.esp, has the same functional, use only one.
@@ -5219,9 +5233,22 @@ UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
 TravellersOfSkyrim - UFO Compatibility Patch.esp
+ENDGROUP: Ultimate Follower Overhaul
+
+BEGINGROUP: NPC Distance, Face & Makeup Overrides
+\Distance Tweaks before Face & Makeup Overrides
+\Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
+
 REGEX: ([Nn]o |([Ss]lightly )?[Rr]educed Distance )(NPC|npc) Greetings.esp
 SupermodelSkyrim.esp
  REQ: ApachiiHair.esm
+ENDGROUP: NPC Distance, Face & Makeup Overrides
+
+BEGINGROUP: Companions
+/* Companions Load Early */
+/* Extensible Follower Framework */
+/* Ultimate Follower Overhaul */
+/* NPC Distance, Face & Makeup Overrides */
 Essential followers - all followers.esp
  IF ($UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
 essential followers.esp
@@ -5355,6 +5382,7 @@ Better NPC - Marriage Pack.esp
  IFNOT (r"Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty version of Better Followers, named BP or BNP or SBP or SBNP
 AskFollowerSkills.esp
  IF ("BDO.esp") WARN: Delete. Included in BDO.esp
+/* BDO.esp is located here */
 BDO.esp
  INC: Better Followers - Dialogue, Ask Follower Skills, Followers can Relax, CM's Level your Followers Skills, Mounted Followers -- included in BDO
 Respectful_Lydia-Letsseeit_subtitle.esp
@@ -5425,6 +5453,8 @@ voidcraft_housecarls.esp
 ENDGROUP: Companions
 
 BEGINGROUP: Companions Load Late
+\Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
+
 NoNakedComments.esp
 throwingweapons.esp
  INC: All mods that change the next NPC: Gerdur, Farkas, Athis, Erik the Slayer, Argis the Bulwark, Lydia, Jordis the Sword-Maiden, Calder, Iona, Vorstag, Marcurio, Belrand, Jenassa, Stenvar.
