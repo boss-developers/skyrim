@@ -4696,7 +4696,7 @@ power_nighteye.esp
 PowerfulIllusion.esp
 ShadowOfTheMagic.esp
  SAY: Obsolete, upgrade to Summon Shadow Merchant
-REGEX: Silent khajiit night-eye improved( 2)?\.esp
+IFNOT ("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
 SkyrimBalancedMagicSystem.esp
 SkyrimBalancedMagicSystem - spells.esp
  SAY: Old, consider updating
@@ -5643,6 +5643,8 @@ SkyRe_Races.esp
  INC: DSpSob - Duel Sheath plus Shields on Back (conflicts with skeletons)
  INC: ATT - Armed to the Teeth (Also conflicts with skeletons)
  INC: Gender and Race Heights (Once again, conflicts with skeletons)
+IF ("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
+\Must be loaded after SkyRe_Races.esp(if installed) for correct work
 ENDGROUP: Race Overrides
 
 BEGINGROUP: Message suppression/changing overrides
