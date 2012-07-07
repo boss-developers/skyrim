@@ -54,6 +54,7 @@ IF ("EpicGloryByMadmole.esp") SET: EpicGloryInst
 IF ("UFO - Ultimate Follower Overhaul.esp") SET: UFO
 IF (r"Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") || IF ("Extended Slider Colors.esp") SET: ExtSlider
 IF ("Lady Body.esp") SET: LB
+IF (r"BertsBreezehome.+\.es[pm]") SET: BertsBHInst
 
 \=====================================================================
 
@@ -1595,6 +1596,7 @@ Andragorn's Armoury.esp
 Angelic_Demonic.esp
 REGEX: Animetica.+\.esp
 AnotherBlackThievesGuildArmor_v2.1.esp
+ApotheusLightArmor_by_GuitunScarfin.esp
 Arcania_armory.esp
  TAG: {{BASH: Relev}}
 Arcania_armory (base).esp
@@ -1793,6 +1795,7 @@ DEATH-DEALER.esp
 Daedric Extra Armor.esp
 DeathSting.esp
 Demon Lord Armor Set.esp
+Demon Sword.esp
 Demothris.esp
 DesertWindByNausicaa.esp
 REGEX: DG Jewelry\d?\.esp
@@ -2870,8 +2873,9 @@ BertsBreezehomeRemodel(Update.3).esp
 Niire'sRe-RemodelForBertsBreezehomeRemodel.esp
 Niire'sPortstonesForBertsBreezehomeRemodel.esp
 BertsBreezehomeGardenConnecter(RemodelESP).esp
-beschuetzer von himmelsrand.esp
 betterbreezehome.esp
+ IF ($BertsBHInst) INC: BertsBreezeRemodel use only one
+beschuetzer von himmelsrand.esp
 BetterRiften.esp
 bettertameriel.esp
 BetterThievesGuild.esp
@@ -2889,8 +2893,11 @@ bossdungeon.esp
 boss dungeon2.esp
 bossdungeon3.esp
 breezehome enhanced.esp
+ IF ($BertsBHInst) INC: BertsBreezeRemodel use only one
 Breezehome_FullyUpgradable.esp
+ IF ($BertsBHInst) INC: BertsBreezeRemodel use only one
 Breezehome Remodeled Finely.esp
+ IF ($BertsBHInst) INC: BertsBreezeRemodel use only one
 Breezehome1stwing.esp
  SAY: No longer support, use Dovahkiin Hideout instead
 BreezehomeAnvil.esp
@@ -2911,6 +2918,8 @@ BreezehomeEnchantingTable1.3.esp
 BreezehomeEnchantingTableFrench.esp
 BreezehomeGrindStone.esp
 Breezehome PLUS.esp
+ IF ($BertsBHInst) INC: BertsBreezeRemodel use only one
+arcanebreeze.esp
 BuildableHouse.esp
 ENDGROUP: Quests B
 
@@ -4130,12 +4139,14 @@ skoomaeffect.esp
 /* Contains BOOK, QUST */
 SkyNotebook.esp
 SkyRe_Main.esp
- \maybe it must be moved to skills\perks group (see INC:... messages added from faq) and also other skyre-plugins must be moved after their masterfiles. I'll check it later. Tokc.D.K.
+\maybe it must be moved to skills\perks group (see INC:... messages added from faq) and also other skyre-plugins must be moved after their masterfiles. I'll check it later. Tokc.D.K.
  TAG: {{BASH: Relev, Delev}}
- INC: ACE (Every module that affects perks)
+ IF ("ACE Crafting.esp") || IF ("ACE Speech.esp") INC: ACE (Every module that affects perks)
  INC: Syynx's Perky
- INC: PerkUp
- INC: Uncapped perks
+ IF (r"PerkUP-.*\.esp") INC: PerkUP
+ IF (r"Uncapped Perks.*\.esp") INC: Uncapped perks
+ IF ($CCO) INC: Complete Crafting Overhaul
+ IF ("Crafting300.esp") INC: Crafting300.esp
  SAY: Make sure to get the Vampire HotFix. Optional Wot3E Resource Pack
 SkyRe_EncounterZones.esp
 SkyRe_EnemyAI.esp
@@ -5836,6 +5847,7 @@ House Map Markers (RUS).esp
 House Markers.esp
 MapMarksProject.esp
 minemapmarkers.esp
+moremapmarkers.esp
 Necessary Map Markers (all files included).esp
 Necessary Map Markers with alternate house.esp
 Necessary Markers.esp
