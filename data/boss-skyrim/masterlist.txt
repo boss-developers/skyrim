@@ -55,6 +55,7 @@ IF ("UFO - Ultimate Follower Overhaul.esp") SET: UFO
 IF (r"Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") || IF ("Extended Slider Colors.esp") SET: ExtSlider
 IF ("Lady Body.esp") SET: LB
 IF (r"BertsBreezehome.+\.es[pm]") SET: BertsBHInst
+IF ("SkyRe_Main.esp") SET: SkyRe
 
 \=====================================================================
 
@@ -4209,29 +4210,50 @@ SkyRe_StandingStones.esp
 SkyRe_Lighting.esp
  SAY: Only for non ENB users
 SkyRe_Plugin_BaratheonArmor_1.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF ("BaratheonArmor.esp") SAY: Remember to delete BaratheonArmor.esp
 SkyRe_Plugin_BetterBows_1.4.1.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF ("HBetterBows.esp") SAY: Remember to delete HBetterBows.esp
 SkyRe_Plugin_HedgeKnightArmor_1.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF ("HedgeKnight.esp") SAY: Remember to delete HedgeKnight.esp
 SkyRe_Plugin_JaySuSSwords_1.3D.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF (r"JSwords(DV)?\.esm") SAY: Remember to delete JSwords*.esp
 SkyRe_Plugin_NicoroshiCreations_1.1.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF ("Nicoroshi Creations.esp") SAY: Remember to delete Nicoroshi Creations.esp
 SkyRe_Plugin_RedguardKnightArmor_3.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF ("RedguardKnight.esp") SAY: Remember to delete RedguardKnight.esp
 SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF ("blackswordsman.esp") SAY: Remember to delete blackswordsman.esp
 SkyRe_Plugin_DaggerCraft_1.3.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF ("DaggerCraft.esp") SAY: Remember to delete DaggerCraft.esp
 SkyRe_DreadKnightWeaponSet_0.99.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
 SkyRe_Plugin_NordicHunterLightArmor_1.2.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
 SkyRe_Plugin_VagabondArmor_5.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF ("VagabondArmor.esp") SAY: Remember to delete VagabondArmor.esp
 SkyRe_Plugin_VanguardArmor_3.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF ("VanguardArmor.esp") SAY: Remember to delete VanguardArmor.esp
 SkyRe_Plugin_WarchiefArmor_4.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF ("warchiefarmor.esp") SAY: Remember to delete warchiefarmor.esp
+SkyRe_Plugin_BowofIorveth_1.2.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+SkyRe_Plugin_DreadKnightWeaponSet_0.99.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+SkyRe_Plugin_InsanitysCelticKatana_1.2.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
+ IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
 SkyRe.esp
  SAY: Obsolete. Upgrade to latest version
 SkyReBaratheonArmorPlugin.esp
@@ -5799,9 +5821,9 @@ REGEX: WiS IV( -)? Races?\.esp
 Gri_BeastFeet.esp
 SkyRe_Races.esp
  IF ("RaRe.esp") SAY: Remember to delete RaRe.esp
- INC: EnhancedCharacterEdit.esp
- INC: DSpSob - Duel Sheath plus Shields on Back (conflicts with skeletons)
- INC: ATT - Armed to the Teeth (Also conflicts with skeletons)
+ IF ("EnhancedCharacterEdit.esp") INC: EnhancedCharacterEdit.esp
+ IF ("DSpSoB.esp") INC: DSpSob - Duel Sheath plus Shields on Back (conflicts with skeletons)
+ IF ("ArmedttTeeth.esm") INC: ATT - Armed to the Teeth (Also conflicts with skeletons)
  INC: Gender and Race Heights (Once again, conflicts with skeletons)
 IF ("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
 \Must be loaded after SkyRe_Races.esp(if installed) for correct work
