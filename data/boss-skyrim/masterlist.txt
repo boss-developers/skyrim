@@ -555,6 +555,7 @@ BEGINGROUP: Base Early
 SFD_NumericQuality.esp
 /* Removed REGEX because specific load order is needed */
 Weapons and Armor fixes.esp
+ \TAG: {{BASH: Stats}}
  IF (r"REGEX: Smithing Perks Overhaul( - Balanced)?\.esp") && IF ($CCO) SAY: For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.(checked in FNVEdit)
 Weapons and Armor fixes - Hacks.esp
 \Vanilla fixes. Must be load here(and also for CCO and SPO), for prevent to override new changes from mods in Base group. Too many conflicts with other mods in Base group.
@@ -4192,6 +4193,7 @@ SkyNotebook.esp
 SkyRe_Main.esp
 \maybe it must be moved to skills\perks group (see INC:... messages added from faq) and also other skyre-plugins must be moved after their masterfiles. I'll check it later. Tokc.D.K.
  TAG: {{BASH: Relev, Delev}}
+ \Names
  IF ("ACE Crafting.esp") || IF ("ACE Speech.esp") INC: ACE (Every module that affects perks)
  INC: Syynx's Perky
  IF (r"PerkUP-.*\.esp") INC: PerkUP
@@ -4206,7 +4208,8 @@ SkyRe_Plugin_DragonBoneWeaponsComplete_1.03.esp
 SkyRe_Enemies.esp
 SkyRe_StandingStones.esp
  IF ("StaRe.esp") SAY: Remember to delete StaRe.esp
- INC: Drakian race
+ IF ("Drakian race.esp") INC: Drakian race
+ INC: Standing Stones and Guardians
 SkyRe_Lighting.esp
  SAY: Only for non ENB users
 SkyRe_Plugin_BaratheonArmor_1.esp
@@ -4219,6 +4222,7 @@ SkyRe_Plugin_HedgeKnightArmor_1.esp
  IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF ("HedgeKnight.esp") SAY: Remember to delete HedgeKnight.esp
 SkyRe_Plugin_JaySuSSwords_1.3D.esp
+ IFNOT ("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: JSwords.esm no installed!
  IFNOT ($SkyRe) ERROR: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
  IF (r"JSwords(DV)?\.esm") SAY: Remember to delete JSwords*.esp
 SkyRe_Plugin_NicoroshiCreations_1.1.esp
@@ -4518,6 +4522,7 @@ SkyRe_Vampirism.esp
  INC: Vampire Overhaul
  INC: Vampirism II
  INC: Imp's More Complex Needs
+ INC: Live another Life
 UVO - Ultimate Vampirism Overhaul.esp
 better vampires.esp
 Better Weres and Vamps.esp
