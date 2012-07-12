@@ -4119,9 +4119,6 @@ MorokeiCirclet.esp
 Morozik75_Better_Cooking_Rus.esp
 Morrowind-Colored Soul Gems.esp
 morrowind_skooma.esp
-Move it.esp
-moveitLWT.esp
- IF ("Move it.esp") Warn: Use only one Move it esp
 ENDGROUP: Overrides M
 
 BEGINGROUP: Overrides N
@@ -5884,9 +5881,9 @@ BBLSHousecarlsmovein.esp
 BBLSVisitors.esp
 BBLuxurySuiteClassier.esp
 LZA Follower Trade Priority.esp
-REGEX: moveit(LWT)?\.esp
+REGEX: move.?it(LWT)?\.esp
  IF (r"Better Followers - [SBNP].*\.esp") INC:  Better Followers, BF already have same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.
- SAY: Use only one moveit esp
+ IF (r"move.?it\.esp") && IF ("moveitLWT.esp") WARN: Use only one move it esp
 MrKrabs.esp
 MrSlackPants-DeadlyTraps.esp
 StopBumpingIntoMe.esp
