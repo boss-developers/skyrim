@@ -55,7 +55,7 @@ IF ("UFO - Ultimate Follower Overhaul.esp") SET: UFO
 IF (r"Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") || IF ("Extended Slider Colors.esp") SET: ExtSlider
 IF ("Lady Body.esp") SET: LB
 IF (r"BertsBreezehome.+\.es[pm]") SET: BertsBHInst
-IF ("SkyRe_Main.esp") SET: SkyRe
+IF (r"SkyRe_.+\.esp") SET: SkyRe
 
 \=====================================================================
 
@@ -3620,6 +3620,8 @@ LessAnnoyingItems.esp
 Masters of Death.esp
 Morrowloot.esp
  TAG: {{BASH: Delev, Relev}}
+ IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch and delete this.
+ IF ($SkyRe) && IF ("SkyRe_Plugin_Morrowloot.esp") WARN: Delete this and use SkyRe_Plugin_Morrowloot.esp instead, not both.
 xFenWSOWAFW3E.esp
  TAG: {{BASH: Delev, Relev}}
 \ TAG: {{BASH: Delev, Stats, Relev}}
