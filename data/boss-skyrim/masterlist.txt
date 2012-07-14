@@ -441,7 +441,7 @@ IFNOT ("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
 REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
  SAY: Use only one enhanceddynamicweathersystem esp
  INC: Realistic Lighting
-getSnowyV3.esp
+REGEX: getSnowyV.+\.esp
  IF ("Chesko_Frostfall.esp") INC: Chesko_Frostfall.esp
 Longer Weather Transitions.esp
 Rainclip.esp
@@ -1198,8 +1198,8 @@ MoreLanterns.esp
 REGEX: MoreRain(Windy)?(\d{2,3}percentLessView)?\.esp
 MoreRainHeavyandDarker.esp
 REGEX: MoreSnowWindyand\d{2,3}percentLessView\.esp
+ WARN: Incompatible with all lighting mods.
 MoreSnow.esp
-MoreSnowWindy.esp
 MoreVillageAnimals.esp
 Morozik75_Better_Skillbook_Rus.esp
 masser_and_secunda_from_morr.esp
@@ -1269,6 +1269,9 @@ Races.esp
 REGEX: random_bandits(_1.0)?\.esp
 rats.esp
 RaushanSayoran.esp
+REGEX: Radiant and Unique Potions (and )?Poisons.*\.esp
+ IF ("Radiant and Unique Potions and Poisons.esp") SAY: Obsolete. Update to latest version.
+ IF ("Radiant and Unique Potions Poisons and BOOZE.esp") && IF (r"Unique BOOZE Bottles.*\.esp") SAY: Uninstall Unique BOOZE Bottles
 Real Days.esp
 real glaciers.esp
  SAY: Old version update to Real Glaciers V2
@@ -1534,6 +1537,9 @@ valuablehidesandskins.esp
 Vampirefix3.esp
 VampireBlood.esp
 vibrantauroras.esp
+VinillaSnow.esp
+REGEX: VinillaSnowWindyand\d{2,3}percentLessView\.esp
+ WARN: Incompatible with all lighting mods.
 Villains Have Torches.esp
 VonwarrOneClickLoot.esp
 ENDGROUP: Base V
@@ -3904,7 +3910,6 @@ GauldurAmuletBoost.esp
 Get Out of my Bedroom with Chair.esp
 REGEX: GetArrowsBack(_50)?\.esp
 getdrunk.esp
-getSnowyV2.esp
 REGEX: Ghostly Shadowmere.*\.esp
  SAY: Use only one
 giant_giants_and_mammoths.esp
@@ -4590,6 +4595,7 @@ ENDGROUP: Overrides
 BEGINGROUP: Towns and Villages
 
 Better Villages.esp
+Blacksmith Chests.esp
 Expanded Towns - Riverwood.esp
 Expanded Towns - Ivarstead.esp
 Expanded Towns - Darkwater.esp
@@ -5028,6 +5034,8 @@ SeeYouSleepByMadmole.esp
 ShadowOfTheMagic.esp
  SAY: Obsolete, upgrade to Summon Shadow Merchant
 IFNOT ("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
+ShowRaceMenuAlternative.esp
+\Adds spell, doesn't override current race menu
 SkyrimBalancedMagicSystem.esp
 SkyrimBalancedMagicSystem - spells.esp
  SAY: Old, consider updating
@@ -5086,10 +5094,6 @@ PTAlchemyFoodOverhaul_BetterSorting.esp
 PTAlchemyOverhaul_ONLY.esp
 PTAlchemyOverhaul_ONLY_BetterSorting.esp
 PTFoodOverhaul_ONLY.esp
-Radiant and Unique Potions and Poisons.esp
- SAY: Obsolete. Update to the latest version.
-Radiant and Unique Potions and Poisons v2.0.esp
-Radiant and Unique Potions and Poisons v2.0 non glow.esp
 selbs_alchemybalance.esp
 SkyrimPowerfulPotions.esp
 ENDGROUP: Alchemy
@@ -5964,6 +5968,8 @@ BEGINGROUP: Companions Load Late
 followernoama.esp
 followerhavok.esp
 FollowersAlwaysEquipFromInventory.esp
+LylvieveSisters.esp
+ IFNOT ("ApachiiHair.esm") REQ: ApachiiSkyHair
 NoNakedComments.esp
 throwingweapons.esp
  INC: All mods that change the next NPC: Gerdur, Farkas, Athis, Erik the Slayer, Argis the Bulwark, Lydia, Jordis the Sword-Maiden, Calder, Iona, Vorstag, Marcurio, Belrand, Jenassa, Stenvar.
