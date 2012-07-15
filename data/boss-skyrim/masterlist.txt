@@ -4807,6 +4807,10 @@ E0TeleportSpells.esp
 Elementalist.esp
 elemballlightning.esp
 essential player character.esp
+ExtractOreSpell.esp
+ IF ("BoundTools.esp") INC: BoundTools.esp
+ IF ("MiningFlames.esp") INC: MiningFlames.esp
+ IF ("MidasSkyrim.esp") INC: MidasSkyrim.esp
 fcteResurrection.esp
 FeatherSpells.esp
 FlashStep.esp
@@ -6226,15 +6230,18 @@ WorldMapInFull3D.esp
  SAY: If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)
 ENDGROUP: Map marker Tweaks
 
-BEGINGROUP: Compatibility Patches
+BEGINGROUP: Load Late
 \Compatability Patches which must load after a certain mod go here
 \Only if no conflicts are made in between
+\Other general late loading plugins.
 \
 REGEX: Agony's Sorting Frenzy - .+\.esp
 dD-SkyrimMonsterMod EBT Patch.esp
 GeneralStores-SkyMoMod.esp
 The Asteria - Dwemer Airship(GS).esp
-ENDGROUP: Compatibility Patches
+FTFI Fast Travel From Indoors.esp
+\Must come after all cell altering mods.
+ENDGROUP: Load Late
 
 BEGINGROUP: Bashed Patch
 
