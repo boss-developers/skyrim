@@ -241,6 +241,7 @@ Agony's Sorting Frenzy.esp
 Die Skyrim-Lokalisierung - Director's Cut.esp
 Skyrim - Director's Cut.esp
 Zwerge zu Dwemer.esp
+LIAT - AI Packages.esp
 Malachit zu Vulkanglas.esp
 SLFC.esp
 VanillaReducedTextures.esp
@@ -444,6 +445,7 @@ REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
 REGEX: getSnowyV.+\.esp
  IF ("Chesko_Frostfall.esp") INC: Chesko_Frostfall.esp
 Longer Weather Transitions.esp
+MintyLightningMod.esp
 Rainclip.esp
 RevampedExteriorFog.esp
  IF ("Realistic Lighting.esp") INC: Realistic Lighting.esp
@@ -471,6 +473,7 @@ REGEX: Improved Combat Sounds v2\.\d\.esp
 IF ("Improved Combat Sounds v2.0.esp") SAY: Old. Update to 2.1 for a cleaned esp
 ICS Possible Fix 1.esp
 KR - Solitude No Sewer sound.esp
+LIAT - Sounds.esp 
 newheavyarmorsound.esp
 Nordic Natural Sound.esp
 Phenderix's Magic Sounds Improved.esp
@@ -553,6 +556,7 @@ ZFixed Lights.esp
 Zfixed Lights RCRN.esp
 /* Might need to be moved */
 LightRoom.esp
+WM_Warmer_Lights.esp 
 ENDGROUP: Lighting
 
 BEGINGROUP: Music
@@ -1093,6 +1097,8 @@ BEGINGROUP: Base L
 REGEX: Lanterns Of Skyrim - All In One - (2x Brighter|Default)?(RCRN )?(Hyper Purist|Classic|Legacy|Pure)?\.esp
 REGEX: Lanterns Of Skyrim - All In One( 2x brighter)?\.esp
  SAY: Obsolete upgrade to new version
+Lanterns Of Skyrim - All In One - Main.esm
+ IFNOT ("Lanterns Of Skyrim - All In One - Main.esm") SAY: REQ: Lanterns Of Skyrim - All In One - Main.esm
 REGEX: Lanterns Of Skyrim - Around Cities(_bright)?\.esp
  SAY: Obsolete upgrade to new version
 REGEX: Lanterns Of Skyrim - Bridges x2 - OnOff(_bright)?\.esp
@@ -1118,6 +1124,7 @@ LFox Alchemists Have Potions and Poisons.esp
 LFox Blacksmiths Have Metals.esp
  TAG: {{BASH: Delev, Relev}}
 LFox Bottle That Blood.esp
+REGEX:LIAT - .+\ NPCs.esp
 Linked Home Chests.esp
 lockBreaker_EV.esp
 Long lost smelters.esp
@@ -1167,7 +1174,6 @@ mcCampingLite.esp
 MD Skyrim Saddle Bags.esp
 mehrdrachenstufen.esp
 MightyDragonsHolyBook.esp
-mintylightningmod.esp
 Mining Extended.esp
 Missing_Carriges.esp
 MLLY - FEMALE.esp
@@ -2908,7 +2914,7 @@ WiS IV - Armors & Blocks.esp
 WiS IV - Fix FrostspiderGiant.esp
 ENDGROUP: War in Skyrim
 
-BEGINGROUP: Deadly Dragons
+BEGINGROUP: Deadly and Mighty Dragons
 
 REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp
  TAG: {{BASH: Delev, Relev}}
@@ -2928,18 +2934,18 @@ REGEX: DeadlyDragonsSpawn.*\.esp
 DragonsDiversified.esp
 DeadlyDiversifiedDragonsPatch.esp
 Dragonbone Weapons - Deadly Dragons Compatibility.esp
+REGEX: (Super )?(Slightly )?\Mighty Dragon Priests.esp
+\Mighty Dragon priests
 Odahviing Mighty Dragons.esp
  TAG: {{BASH: Delev, Relev}}
- \Same as below
 REGEX: (Soft)?(Super)?(Nightmare)?(Slighty| Slighty)?(Mighty| Mighty)? Dragons( Unleveled)?\.esp
  TAG: {{BASH: Delev, Relev}}
- \Might Dragons, moved here to stop incompatibility
  IF (r"REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT (r"MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Use compatibility patch for deadly dragons:("http://skyrim.nexusmods.com/mods/13423")
-REGEX: MD(\d)? compatible with DD\.esp
-/* Compatibility Patch for Mighty Dragons, Deadly Dragons, and Dragons Diversified */
+\Mighty Dragons main file
 REGEX: MD with DeadlyD and DDiversified( Unleveled)?\.esp
+\Compatibility patch for Mighty Dragons, Deadly Dragons and/or Dragons Diversified
 DeadlyDragonsArmory.esp
-ENDGROUP: Deadly Dragons
+ENDGROUP: Deadly and Mighty Dragons
 
 BEGINGROUP: Monster Wars
 
@@ -3458,6 +3464,7 @@ TheClone Breezehome Light fix.esp
 The Fancy Flagon.esp
 The Paarthurnax Dilemma.esp
  IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+
+The Secret Room of Breezehome (En).esp
 The Secret Room of Breezehome.esp
  IF ("secretroom-bh-en.esp") SAY: Use only one 'The Secret Room of Breezehome.esp' or 'secretroom-bh-en.esp'
 theMannysOutPost.esp
@@ -4136,7 +4143,6 @@ Melee Overhaul - Distinct Styles.esp
 Merchants Reply Only With Take A Look.esp
 Mercy.esp
 MH_ArchMageQuartersMinimalMod.esp
-Mighty Dragon Priests.esp
 Mikaelarps Disenchantable armor.esp
 Mikaelarps disenchantable artifacts.esp
 MiningFaster.esp
@@ -4459,10 +4465,7 @@ REGEX: SkyTEST-RealPredators(\&Animals)?\.esp
 SkyTEST-RealisticAnimals&Predators.esp
 SkyTEST-RealisticAnimalBehavior.esp
 SkyTEST-HarderCreatures.esp
-Slighty Mighty Dragon Priests.esp
-Mighty Dragon Priests.esp
 slowerstaminadrain.esp
-Super Mighty Dragon Priests.esp
 Speed Revised.esp
 Superjump_2x.esp
 REGEX: SSCR Hard Type.*\.esp
