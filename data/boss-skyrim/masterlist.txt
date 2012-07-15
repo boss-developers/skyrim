@@ -853,7 +853,6 @@ Domino_PerkBooks_Easy.esp
 DragonChristine.esp
 DragonCrownCraftable.esp
 DragonPlateCrownCraftable.esp
-DragonsDiversified.esp
 dremora armor looting.esp
 REGEX: .. - Enhanced Blood Main\.esp
 REGEX: dD-\w{4} Screen Blood\.esp
@@ -2807,14 +2806,6 @@ FactionOverhaulV25.esp
 LegionOverhaulV25.esp
 /* Designed to work with "Deadly Dragons" mod (v3.1.0) */
 megadragons.esp
-REGEX: (Soft)?(Super)?(Nightmare)?(Slighty| Slighty)?(Mighty| Mighty)? Dragons( Unleveled)?\.esp
- TAG: {{BASH: Delev, Relev}}
- \not tested
- IF (r"REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") SAY: Use compatibility patch for deadly dragons:("http://skyrim.nexusmods.com/mods/13423")
- INC: Other dragon mods
-Odahviing Mighty Dragons.esp
- TAG: {{BASH: Delev, Relev}}
- \not tested
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
 ENDGROUP:  General Overhauls
@@ -2920,10 +2911,6 @@ BEGINGROUP: Deadly Dragons
 
 REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp
  TAG: {{BASH: Delev, Relev}}
-\ IF ("DragonsDiversified.esp") MOD: DragonsDiversified.esp
-\ IF (r"(Soft)?(Super)?(Nightmare)?(Slighty| Slighty)?(Mighty| Mighty)? Dragons( Unleveled)?\.esp") MOD: (r"(Soft)?(Super)?(Nightmare)?(Slighty| Slighty)?(Mighty| Mighty)? Dragons( Unleveled)?\.esp")
-\I'm unsure of the syntax required to use REGEX after MOD:, presume it is this.
-\Also, both of these lines don't seem to work so I have left them as comments for others to check (Attemping to fix load order issue, see: "http://skyrim.nexusmods.com/mods/13423"
 DeadlyDragonsX.esp
  TAG: {{BASH: Delev, Relev}} not tested
 DeadlyDragonsCraft.esp
@@ -2937,8 +2924,16 @@ REGEX: DeadlyDragonsPISE( DV)?\.esp
 REGEX: DeadlyDragonsHardPISE( DV)?\.esp
  TAG: {{BASH: Delev, Relev}} not tested
 REGEX: DeadlyDragonsSpawn.*\.esp
+DragonsDiversified.esp
 DeadlyDiversifiedDragonsPatch.esp
 Dragonbone Weapons - Deadly Dragons Compatibility.esp
+Odahviing Mighty Dragons.esp
+ TAG: {{BASH: Delev, Relev}}
+ \Same as below
+REGEX: (Soft)?(Super)?(Nightmare)?(Slighty| Slighty)?(Mighty| Mighty)? Dragons( Unleveled)?\.esp
+ TAG: {{BASH: Delev, Relev}}
+ \Might Dragons, moved here to stop incompatibility
+ IF (r"REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT (r"MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Use compatibility patch for deadly dragons:("http://skyrim.nexusmods.com/mods/13423")
 REGEX: MD(\d)? compatible with DD\.esp
 /* Compatibility Patch for Mighty Dragons, Deadly Dragons, and Dragons Diversified */
 REGEX: MD with DeadlyD and DDiversified( Unleveled)?\.esp
