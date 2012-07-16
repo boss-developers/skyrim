@@ -656,6 +656,7 @@ ArcheryOverhaulFletcherArrowsOnly.esp
 Archmage Crafting - Enchanted Items.esp
 Archmage Crafting - Unenchanted Clothing.esp
 REGEX: Arrowsmith\w{0,2}\.esp
+Arrow Smithing.esp
 Ars Metallica.esp
  IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+
 arrowsstick.esp
@@ -861,6 +862,7 @@ DragonCrownCraftable.esp
 DragonPlateCrownCraftable.esp
 dremora armor looting.esp
 REGEX: .. - Enhanced Blood Main\.esp
+ IF (<1.6|"TES5") REQ: Skyrim 1.6+
 REGEX: dD-\w{4} Screen Blood\.esp
 REGEX: dD-.{4,9} Screen Blood Duration\.esp
 /* Both can be used at the same time */
@@ -1187,6 +1189,7 @@ MomoDash.esp
 Mononoke.esp
 Moonpath_TP.esp
 Moose&Carrie.esp
+More_Saddles.esp
 moulin.esp
 More Craftables.esp
  TAG: {{BASH: Relev}}
@@ -1370,6 +1373,8 @@ SIDT.esp
 sign.esp
 Silent Moon Forging 1.2.esp
 Silverupgrade.esp
+SimpleBleeding.esp
+ IF (r".. - Enhanced Blood Main\.esp") WARN: This mod is included in Enhanced Blood Textures
 SkBBP - Blacksmithing and Balance.esp
 SkBBP - Loot Drops and Leveled Lists.esp
  TAG: {{BASH: Delev, Relev}}
@@ -1983,6 +1988,7 @@ EternalShineArmorAndWeapons.esp
 EtherealEdge.esp
 Experimenter_Ring.esp
 expertandmasterhoods.esp
+ExplodingArrows.esp
 explosive arrows.esp
 ExtendedVanillaWeapons.esp
 Ezio's Armor.esp
@@ -3657,9 +3663,6 @@ REGEX: female mannequins( in homes)?\.esp
 Glowing Soul Gems.esp
 LessAnnoyingItems.esp
 Masters of Death.esp
-Morrowloot.esp
- TAG: {{BASH: Delev, Relev}}
- IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
 xFenWSOWAFW3E.esp
  TAG: {{BASH: Delev, Relev}}
 \ TAG: {{BASH: Delev, Stats, Relev}}
@@ -3738,6 +3741,7 @@ BEGINGROUP: Overrides B
 
 BalancedMode.esp
 Balanced and Split Sword Axe Mace Weapon Perks.esp
+balanced atronachs.esp
 BardSingOnRequestOnly.esp
 Barenziah's Crown.esp
 BarenziahQuestMarkers_Droppable.esp
@@ -3782,6 +3786,7 @@ REGEX: Bodies Stay Longer( \(Extreme\))?\.esp
 book prices fix.esp
 border.esp
 BorderRegionsDisabledEV.esp
+BORGAKH1a.esp
 BoundWpnScaleWithConj.esp
 bow x5.esp
 br_hoodcirclets.esp
@@ -3904,6 +3909,7 @@ FalmerHuntCrab.esp
 Fast Respawns And Rich Merchants.esp
  TAG: {{BASH: Relev}}
 /* Might be different from the mod below it. This is latest version */
+faster arrows.esp
 REGEX: FasterArrows(\d{1,3})?\.esp
 REGEX: Faster Arrows Improved (\d{1,3})?\.esp
 FastTravelFromIndoors.esp
@@ -5399,6 +5405,7 @@ Combat Perks Overhaul.esp
 Conjuration Perks Overhaul Beta 0.1.esp
 REGEX: Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp
  SAY: Use only one Deadly Torches - *.esp
+Destruction Scaling.esp
 Dual Flurry for all.esp
 EagleEye3x.esp
 Eld-betterLockpickPerks.esp
@@ -5443,6 +5450,7 @@ MD - Real Unleveled Skyrim.esp
 More Exp Chance.esp
 More Exp Change for cooking.esp
 MorePP.esp
+MorePerksPerLevel.esp
 no more ability perk tree.esp
 non-linear perk trees.esp
 REGEX: pace_\w_\d{2,4}_\d{1,2}.*\.esp
@@ -5571,6 +5579,7 @@ FallOut3Hairs.esp
 ForswornHAIR.esp
 Grimoa_83WillowsDreadlocks_Nonreplacing.esp
 hair.esp
+Hair-Specular Fix.esp
 LovelyHairstyles.esp
 mmkhajiithair11.esp
 MMhair.esp
@@ -5651,6 +5660,7 @@ playable dremora.esp
 qmod01shadowscale.esp
 race+.esp
 RGMsTattooedRaces.esp
+SPTConsistentOlderPeople.esp
 TemptressVixen.esp
 witcherinskyrim.esp
 Yaksha.esp
@@ -5674,10 +5684,12 @@ BEGINGROUP: Companions Load Early
 
 Althirs Companion and Carriage Command v1.1.esp
 animal_euphorium.esp
+Beyrana.esp
 followers keep up.esp
 AccurateCompanionGuild.esp
 DFB - Disable Hidden Follower Bows & Arrows.esp
  IF ($UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can remove all default followers equpment with UFO.
+Eileen.esp
 Eternal Bunny Pet (Gray Silent).esp
 FairKhajiit.esp
 Gabby Companion.esp
@@ -5699,6 +5711,7 @@ HorseCompanions.esp
 REGEX: .*HorseRidingFollowers\.esp
  IF ($UFO) WARN: HorseRidingFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
 Horses for followers.esp
+SelminaDArchon1.esp
 voidMountedFollowers.esp
  IF ($UFO) WARN: MountedFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
  IF ("BDO.esp") WARN: Delete. Included in BDO.esp
@@ -6254,11 +6267,14 @@ ENDGROUP: Map marker Tweaks
 BEGINGROUP: Load Late
 \Compatability Patches which must load after a certain mod go here
 \Only if no conflicts are made in between
-\Other general late loading plugins.
+\Other plugins which load late.
 \
 REGEX: Agony's Sorting Frenzy - .+\.esp
 dD-SkyrimMonsterMod EBT Patch.esp
 GeneralStores-SkyMoMod.esp
+Morrowloot.esp
+ TAG: {{BASH: Delev, Relev}}
+ IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
 The Asteria - Dwemer Airship(GS).esp
 FTFI Fast Travel From Indoors.esp
 \Must come after all cell altering mods.
