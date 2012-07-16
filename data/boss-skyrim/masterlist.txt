@@ -2515,6 +2515,7 @@ Shields_of_the_northern_kingdoms.esp
 Shining Paladin.esp
 shogo_laser_katana.esp
 ShShortswords.esp
+ IF ("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
  TAG: {{BASH: Delev, Relev}}
 Siege Bow & Backpacks.esp
 SilverDragonArmor.esp
@@ -2711,15 +2712,20 @@ The Way of the Voice.esp
 REGEX: WayoftheVoice\d\.esp
 weddingdresses.esp
 WeaponsOfTheShogunate.esp
+asdf
 REGEX: Weapons of the Third Era.+\.esp
+ WARN: Obsolete. Upgrade to latest version.
  TAG: {{BASH: Relev}}
 REGEX: WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp
+ IF ("3rdEraWeaponsMoS.esp") WARN: You have installed 3rdEraWeaponsMoS.esp. Use only one WeaponsOf3E or 3rdEraWeaponsMoS
+ IF ("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
  TAG: {{BASH: Relev}}
 WeaponsOf3E - No Leveled Lists.esp
 3rdEraWeaponsMoS.esp
  SAY: Obsolete. Update to the latest Weapons of the Third Era MoS edition
  TAG: {{BASH: Delev, Relev}} for versions <1.5
- INC: WeaponsOf3E*.esp
+ IF ("SkyRe_Main.esp") WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'
+ IF (r"WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp") INC: WeaponsOf3E*.esp
 3rdEraWeapMoS-lvlList.esp
  TAG: {{BASH: Delev, Relev}}
 3rdEraWeapMoS-rareCraft.esp
@@ -4356,9 +4362,9 @@ SkyNotebook.esp
 SkyRe_Main.esp
 \maybe it must be moved to skills\perks group (see INC:... messages added from faq) and also other skyre-plugins must be moved after their masterfiles. I'll check it later. Tokc.D.K.
  TAG: {{BASH: Relev, Delev}}
- \Names
+ \TAG: {{BASH: Delev, Names, Relev}}
  IF ("ACE Crafting.esp") || IF ("ACE Speech.esp") INC: ACE (Every module that affects perks)
- INC: Syynx's Perky
+ IF ("Perky.esp") INC: Perky.esp (Syynx's Perky)
  IF (r"PerkUP-.*\.esp") INC: PerkUP
  IF (r"Uncapped Perks.*\.esp") INC: Uncapped perks
  IF ($CCO) INC: Complete Crafting Overhaul
