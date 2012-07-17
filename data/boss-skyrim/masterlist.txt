@@ -812,8 +812,6 @@ Craftable Soulstoneswithforge.esp
 Craftable Torches.esp
 craftablescrolls.esp
 craft soul gems.esp
-Crafting300.esp
- TAG: {{BASH: Delev, Relev}}
 craftingplusv2.esp
 CraftingMaterialsRecipes.esp
 CraftingRecipesRevisited.esp
@@ -2111,7 +2109,7 @@ HoodlessDragonpriestMasks1_0.esp
 HoodlessDragonpriestMasksPlus1_0.esp
 REGEX: hothtro[op]per44_ArmorCompilation\.esp
  TAG: {{BASH: Relev}}
- \not tested
+\not tested
 HoodsAndCirclets.esp
 HUM_Armor.esp
 hunterarmor.esp
@@ -4630,6 +4628,7 @@ bathhouse.esp
 Better Villages.esp
 Blacksmith Chests.esp
 CK's Improved Windhelm.esp
+ WARN: This plugin is reported to cause frequent crashes. Use with caution.
 Expanded Towns - Riverwood.esp
 Expanded Towns - Ivarstead.esp
 Expanded Towns - Darkwater.esp
@@ -5385,9 +5384,7 @@ REGEX: New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp
  SAY: Use only one 'New Leveled Encounter Levels*.esp'
 Noredundantperks.esp
 ACE Archery.esp
- IF ("Crafting300.esp") && IF (FFCC056A|"Crafting300.esp") MOD: Crafting300.esp
- IF ("Crafting300.esp") && IF (50142D0D|"Crafting300.esp") MOD: Crafting300.esp
- IF ("Crafting300.esp") && IF (46C639C1|"Crafting300.esp") INC: Crafting300.esp, to fix this get the compatibility patch found here: "http://skyrim.nexusmods.com/download/70990"
+ IF (46C639C1|"Crafting300.esp") INC: Crafting300.esp, to fix this get the compatibility patch found here: "http://skyrim.nexusmods.com/download/70990"
 Lorecraft - Ace Archery.esp
 ACE Armor.esp
 ACE Enchanting.esp
@@ -5796,7 +5793,7 @@ conancompanion.esp
 CMNewCompanions.esp
 CMCompanionLevel.esp
  IF ("BDO.esp") WARN: Delete. Included in BDO.esp
-IFNOT (r"(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
+ IFNOT (r"(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 All Housecarls Are Hunks.esp
 MODNewfollowers.esp
 OneiroFollowers.esp
@@ -6189,6 +6186,9 @@ Animated Enchantments.esp
 BetterNightEye.esp
 Bound Weaponry.esp
 ccNightEye.esp
+Crafting300.esp
+ TAG: {{BASH: Delev, Relev}}
+\Includes new shaders for weapons. (Also moved to solve load order issues)
 REGEX: Different Invisibility Effects plus Eyes Fix( - Chameleon Version)?\.esp
 Glowtastic.esp
 LFox Improved Night Eye No Blur.esp
@@ -6271,19 +6271,28 @@ WorldMapInFull3D.esp
 ENDGROUP: Map marker Tweaks
 
 BEGINGROUP: Load Late
+\Plugins which load late or are more convieniently loaded late.
+\
+BBLSGuysApachii.esp
+ IFNOT ("ApachiiHair.esm") REQ: Apachii Sky Hair.
+ IFNOT ("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
+ IF (<0.1.6.89|"TES5") REQ: Skyrim 1.6.89+
+Lorecraft - Immersive Armors.esp
+Morrowloot.esp
+ TAG: {{BASH: Delev, Relev}}
+ IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
+ 
+BEGINGROUP: Compatibility Patches
 \Compatability Patches which must load after a certain mod go here
 \Only if no conflicts are made in between
-\Other plugins which load late.
 \
 REGEX: Agony's Sorting Frenzy - .+\.esp
 dD-SkyrimMonsterMod EBT Patch.esp
 GeneralStores-SkyMoMod.esp
-Morrowloot.esp
- TAG: {{BASH: Delev, Relev}}
- IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
 The Asteria - Dwemer Airship(GS).esp
 FTFI Fast Travel From Indoors.esp
 \Must come after all cell altering mods.
+ENDGROUP: Compatibility Patches
 ENDGROUP: Load Late
 
 BEGINGROUP: Bashed Patch
