@@ -1192,7 +1192,6 @@ More_Saddles.esp
 moulin.esp
 More Craftables.esp
  TAG: {{BASH: Relev}}
-More Craftables - Crafting 300 compatibility.esp
 More Craftables - Dwemer Certified compatibility.esp
 Convertible Azura's Star.esp
 more carriages.esp
@@ -1322,8 +1321,6 @@ recipeingots.esp
 RecyclingMod.esp
  IF ("Crafting300.esp") SAY: Recommeded RecyclingModCrafting300.esp for Crafting300 mod. See RecyclingMod download page.
  IF (r"Weapons of the Third Era.+\.esp") SAY: Recommeded RecyclingModWo3E.esp for Weapons of the Third Era mod. See RecyclingMod download page.
-RecyclingModCrafting300.esp
- REQ: Crafting300.esp
 RevisedHorsesFeeding.esp
 ribeable-broom.esp
 RiftenHQtexture-Part1.esp
@@ -2111,8 +2108,8 @@ HoodlessDragonpriestMasks1_0.esp
 HoodlessDragonpriestMasksPlus1_0.esp
 REGEX: hothtro[op]per44_ArmorCompilation\.esp
  TAG: {{BASH: Relev}}
- IF ("Lorecraft - Immersive Armors.esp") MOD: Lorecraft - Immersive Armors.esp
-\not tested
+ \not tested
+Lorecraft - Immersive Armors.esp
 HoodsAndCirclets.esp
 HUM_Armor.esp
 hunterarmor.esp
@@ -4393,8 +4390,8 @@ SkyRe_Main.esp
  IF (r"Uncapped Perks.*\.esp") INC: Uncapped perks
  IF ($CCO) INC: Complete Crafting Overhaul
  IF ("Crafting300.esp") INC: Crafting300.esp
- IF ("Lorecraft - SkyRe.esp") MOD: Lorecraft - SkyRe.esp
  SAY: Make sure to get the Vampire HotFix. Optional Wot3E Resource Pack
+Lorecraft - SkyRe.esp
 SkyRe_EncounterZones.esp
 SkyRe_EnemyAI.esp
 SkyRe_EnemyScaling.esp 
@@ -4460,9 +4457,6 @@ SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
  IF ("InsanitysDragonKatana.esp") SAY: Remember to delete InsanitysDragonKatana.esp
 SkyRe_Plugin_Omegared99sArmorCompilation_3.5a.esp
  SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
-SkyRe_Plugin_Morrowloot.esp
- SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
- IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
 SkyRe.esp
  SAY: Obsolete. Upgrade to latest version
 SkyReBaratheonArmorPlugin.esp
@@ -5804,7 +5798,7 @@ conancompanion.esp
 CMNewCompanions.esp
 CMCompanionLevel.esp
  IF ("BDO.esp") WARN: Delete. Included in BDO.esp
- IFNOT (r"(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
+IFNOT (r"(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 All Housecarls Are Hunks.esp
 MODNewfollowers.esp
 OneiroFollowers.esp
@@ -6200,6 +6194,10 @@ ccNightEye.esp
 Crafting300.esp
  TAG: {{BASH: Delev, Relev}}
 \Includes new shaders for weapons. (Also moved to solve load order issues)
+\SEE COMMENT FOR R4802 must be conditional load order for crafting300.esp and dont't forget about their patches
+RecyclingModCrafting300.esp
+ REQ: Crafting300.esp
+More Craftables - Crafting 300 compatibility.esp
 REGEX: Different Invisibility Effects plus Eyes Fix( - Chameleon Version)?\.esp
 Glowtastic.esp
 LFox Improved Night Eye No Blur.esp
@@ -6291,6 +6289,9 @@ BBLSGuysApachii.esp
 Morrowloot.esp
  TAG: {{BASH: Delev, Relev}}
  IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
+SkyRe_Plugin_Morrowloot.esp
+ SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+ IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
  
 BEGINGROUP: Compatibility Patches
 \Compatability Patches which must load after a certain mod go here
