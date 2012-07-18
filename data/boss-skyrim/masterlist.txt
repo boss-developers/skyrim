@@ -816,7 +816,7 @@ Craftable Soulstoneswithforge.esp
 Craftable Torches.esp
 craftablescrolls.esp
 craft soul gems.esp
-IF (46C639C1|"Crafting300.esp") MOD: Crafting300.esp
+IFNOT (FFCC056A|"Crafting300.esp") || IF (50142D0D|"Crafting300.esp") MOD: Crafting300.esp
  TAG: {{BASH: Delev, Relev}}
 craftingplusv2.esp
 CraftingMaterialsRecipes.esp
@@ -1198,7 +1198,12 @@ More_Saddles.esp
 moulin.esp
 More Craftables.esp
  TAG: {{BASH: Relev}}
+IFNOT (FFCC056A|"Crafting300.esp") || IF (50142D0D|"Crafting300.esp") MOD: More Craftables - Crafting 300 compatibility.esp
+ IFNOT ("Crafting300.esp") REQ: Crafting300.esp
+ IFNOT ("More Craftables.esp") REQ: More Craftables.esp
 More Craftables - Dwemer Certified compatibility.esp
+ IFNOT ("Dwemer Certified.esp") REQ: Dwemer Certified.esp
+ IFNOT ("More Craftables.esp") REQ: More Craftables.esp
 Convertible Azura's Star.esp
 more carriages.esp
 More Interactive Items.esp
@@ -1327,6 +1332,9 @@ recipeingots.esp
 RecyclingMod.esp
  IF ("Crafting300.esp") SAY: Recommeded RecyclingModCrafting300.esp for Crafting300 mod. See RecyclingMod download page.
  IF (r"Weapons of the Third Era.+\.esp") SAY: Recommeded RecyclingModWo3E.esp for Weapons of the Third Era mod. See RecyclingMod download page.
+IFNOT (FFCC056A|"Crafting300.esp") || IF (50142D0D|"Crafting300.esp") MOD: RecyclingModCrafting300.esp
+ IFNOT ("Crafting300.esp") REQ: Crafting300.esp
+ IFNOT ("RecyclingMod.esp") REQ: RecyclingMod.esp
 RevisedHorsesFeeding.esp
 ribeable-broom.esp
 RiftenHQtexture-Part1.esp
@@ -5389,9 +5397,11 @@ REGEX: New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp
 Noredundantperks.esp
 ACE Archery.esp
  IF (46C639C1|"Crafting300.esp") INC: Crafting300.esp, to fix this get the compatibility patch found here: "http://skyrim.nexusmods.com/download/70990"
-IF (FFCC056A|"Crafting300.esp") MOD: Crafting300.esp
-IF (50142D0D|"Crafting300.esp") MOD: Crafting300.esp
 Lorecraft - Ace Archery.esp
+IF (FFCC056A|"Crafting300.esp") || IF (50142D0D|"Crafting300.esp") MOD: Crafting300.esp
+IF (FFCC056A|"Crafting300.esp") || IF (50142D0D|"Crafting300.esp") MOD: More Craftables - Crafting 300 compatibility.esp
+IF (FFCC056A|"Crafting300.esp") || IF (50142D0D|"Crafting300.esp") MOD: RecyclingModCrafting300.esp
+ IFNOT ("Crafting300.esp") REQ: Crafting300.esp
 ACE Armor.esp
 ACE Enchanting.esp
 ACE Magic.esp
@@ -6317,9 +6327,6 @@ BEGINGROUP: Compatibility Patches
 REGEX: Agony's Sorting Frenzy - .+\.esp
 dD-SkyrimMonsterMod EBT Patch.esp
 GeneralStores-SkyMoMod.esp
-More Craftables - Crafting 300 compatibility.esp
-RecyclingModCrafting300.esp
- IFNOT ("Crafting300.esp") REQ: Crafting300.esp
 The Asteria - Dwemer Airship(GS).esp
 FTFI Fast Travel From Indoors.esp
 \Must come after all cell altering mods.
