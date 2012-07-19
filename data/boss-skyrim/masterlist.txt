@@ -33,13 +33,13 @@ You cannot start a silent comment part-way into a line, only whole lines may be 
 Message keywords should be indented by two spaces and followed by a colon ':' then the message string.
 */
 
-  // Upgrade message for 1.7+ users:
+// Upgrade message for 1.7+ users:
   IF (<2.0.1.0|"BOSS") GLOBAL WARN: An update for BOSS (v2.0.1) has been released. Download it at "http://oblivion.nexusmods.com/mods/20516", "http://skyrim.nexusmods.com/mods/6", "http://fallout3.nexusmods.com/mods/10193" or "http://newvegas.nexusmods.com/mods/35999"
       //IF LANG ("russian") && IF (<2.0.1.0|"BOSS") GLOBAL WARN: Вышло обновление для BOSS версии 2.0.1. Скачать его вы можете на "http://oblivion.nexusmods.com/mods/20516", "http://skyrim.nexusmods.com/mods/6", "http://fallout3.nexusmods.com/mods/10193" или "http://newvegas.nexusmods.com/mods/35999"
       //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 
-  // Masterlist variable setup for BOSS v1.7+.
-  //=====================================================================
+// Masterlist variable setup for BOSS v1.7+.
+//================================================================
 
 IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
 IF ("ASIS-Dependency.esp") || IF ("ASIS.esp") || IF ("Automatic Spells.esp") || IF ("Automatic Variations.esp") || IF ("Automatic Variants.esp") GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
@@ -56,11 +56,11 @@ IF ("Lady Body.esp") SET: LB
 IF (r"BertsBreezehome.+\.es[pm]") SET: BertsBHInst
 IF (r"SkyRe_.+\.esp") SET: SkyRe
 
-  //=====================================================================
+//================================================================
 
 /* Latest thread */
 GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1395580-relz-boss-for-skyrim/"
-      //IF LANG ("russian") GLOBAL SAY: Последняя BOSS: "http://forums.bethsoft.com/topic/1395580-relz-boss-for-skyrim/"
+      //IF LANG ("russian") GLOBAL SAY: Последняя ветка форума BOSS: "http://forums.bethsoft.com/topic/1395580-relz-boss-for-skyrim/"
       //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 
 BEGINGROUP: ESMs
@@ -420,7 +420,7 @@ REGEX: Skyrim HD Full - .+\.esp
   REQ: 4gb or more RAM, for full version.
 
 BEGINGROUP: NPC face mods
-  //TAG: {{BASH: NpcFaces}}
+//TAG: {{BASH: NpcFaces}}
 
 AlfhildBattleBorn.esp
 AlternateUlfric.esp
@@ -471,13 +471,13 @@ winterhold_female.esp
 ENDGROUP: NPC face mods
 
 BEGINGROUP: General Base Mods
-  //
-  //Includes nearly all new items (except weapons and armor).
-  //Low priority mods.
+//
+//Includes nearly all new items (except weapons and armor).
+//Low priority mods.
 
 BEGINGROUP: Weather mods and overhauls
-  //
-  //Unlikely to be affected by anything but sound mods.
+//
+//Unlikely to be affected by anything but sound mods.
 
 Chesko_Frostfall.esp
 IFNOT ("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
@@ -497,10 +497,10 @@ PaperMapHeight-RemoveFog.esp
 ENDGROUP: Weather mods and overhauls
 
 BEGINGROUP: Sound mods
-  //Sound plugins and sound packs that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
-  //
-  //Some Sounds.esp
-  //  TES4 (Header only)
+//Sound plugins and sound packs that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
+//
+//Some Sounds.esp
+//  TES4 (Header only)
 
 addwinterholdmusic.esp
 Bardsoundsmalukah.esp
@@ -615,10 +615,10 @@ REGEX: PersonalizedMusic.*\.esp
 ENDGROUP: Music
 
 BEGINGROUP: Textures
-  //Textures that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
-  //
-  //Some Graphics.esp
-  //  TES4 (Header only)
+//Textures that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
+//
+//Some Graphics.esp
+//  TES4 (Header only)
 
 /* texture packadge from Steam Workshop */
 thatsice.esp
@@ -1339,7 +1339,7 @@ Real Months.esp
 real mountains.esp
 realistic clouds.esp
 renameddragonclaws.esp
-  \TAG: {{BASH: Names}}
+  //TAG: {{BASH: Names}}
 REGEX: Realistic Wildlife Loot V.+\.esp
   TAG: {{BASH: Delev, Relev}}
 RWL Option - 3x Giant toes.esp
@@ -1348,16 +1348,16 @@ Realistic Wildlife Loot - IMCN.esp
   TAG: {{BASH: Delev, Relev}}
 Realistic Wildlife Loot - IMCN Realistic.esp
   TAG: {{BASH: Delev, Relev}}
-  \not tested
+  //not tested
 Realistic Wildlife Loot - IMCN Reduced.esp
   TAG: {{BASH: Delev, Relev}}
-  \not tested
+  //not tested
 Realistic Wildlife Loot - Realistic.esp
   TAG: {{BASH: Delev, Relev}}
-  \not tested
+  //not tested
 Realistic Wildlife Loot - Reduced.esp
   TAG: {{BASH: Delev, Relev}}
-  \not tested
+  //not tested
 REGEX: Real Wildlife Skyrim.*\.esp
   TAG: {{BASH: Relev}}
 /* Does this Satisfy SIRWPach.esp and SIRWPatch.esp */
@@ -2186,7 +2186,7 @@ HoodlessDragonpriestMasks1_0.esp
 HoodlessDragonpriestMasksPlus1_0.esp
 REGEX: hothtro[op]per44_ArmorCompilation\.esp
   TAG: {{BASH: Relev}}
-  \not tested
+  //not tested
 Lorecraft - Immersive Armors.esp
 SkyRe_Plugin_ImmersiveArmor_2.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
@@ -3105,13 +3105,13 @@ ENDGROUP: Monster Wars
 ENDGROUP: Overhauls
 
 BEGINGROUP: Quests and Locations
-  //
-  //All mods that add or change quests,
-  //add player houses,
-  //add or change dungeons,
-  //add or change towns, villiages, cities and/or landscape.
-  //
-  //Mods not in alphabetical order have been hand placed to avoid conflicts (as much as possible).
+//
+//All mods that add or change quests,
+//add player houses,
+//add or change dungeons,
+//add or change towns, villiages, cities and/or landscape.
+//
+//Mods not in alphabetical order have been hand placed to avoid conflicts (as much as possible).
 
 BEGINGROUP: Quests #
 
@@ -3713,14 +3713,14 @@ ENDGROUP: Quests XYZ
 ENDGROUP: Quests and Locations
 
 BEGINGROUP: Overrides
-  //
-  //Mods that deliberately change specific things about vanilla Skyrim, overhauls or other mods.
-  //Some late loading quests and locations in here too.
-  //Specific NPC behavior changes.  Follower mods go in Companions section.
+//
+//Mods that deliberately change specific things about vanilla Skyrim, overhauls or other mods.
+//Some late loading quests and locations in here too.
+//Specific NPC behavior changes.  Follower mods go in Companions section.
 
 BEGINGROUP: Weight Changes
-  //moved to this position because have conflicts with too many plugins in overrides groups
-  // TAG: {{BASH: Stats}} for all
+//moved to this position because have conflicts with too many plugins in overrides groups
+// TAG: {{BASH: Stats}} for all
 
 Armor Weight Adjustment.esp
 Axe and Pickaxe weight.esp
@@ -4857,8 +4857,8 @@ WiS IV - Werewolf & Vampire.esp
 ENDGROUP: Vampires and Werewolves
 
 BEGINGROUP: Magic
-  //
-  //Overrides overhauls. New spells and magic systems go here for convenience.
+//
+//Overrides overhauls. New spells and magic systems go here for convenience.
 
 BEGINGROUP: General Spells
 
@@ -5248,8 +5248,8 @@ ENDGROUP: Magic
 BEGINGROUP: Player Characteristics
 
 BEGINGROUP: Thievery, Sneaking and Crime
-  //
-  //Overrides overhauls.
+//
+//Overrides overhauls.
 
 Thievery.esp
 REGEX: cao_extrapockets_D.+\.esp
@@ -5586,7 +5586,7 @@ REGEX: WiS IV - leveld World X\d+\.esp
   SAY: Use only one WiS IV - leveld World esp
 SkyRe_Main.esp
   TAG: {{BASH: Relev, Delev}}
-  \TAG: {{BASH: Delev, Names, Relev}}
+  //TAG: {{BASH: Delev, Names, Relev}}
   IF ("ACE Crafting.esp") || IF ("ACE Speech.esp") INC: ACE (Every module that affects perks)
   IF ("Perky.esp") INC: Perky.esp (Syynx's Perky)
   IF (r"PerkUP-.*\.esp") INC: PerkUP
@@ -5639,9 +5639,9 @@ ENDGROUP: Player Perks
 ENDGROUP: Player Characteristics
 
 BEGINGROUP: Pose and Animation Mods
-  //
-  //new animations.
-  // TAG: {{BASH: Actors.Anims}}
+//
+//new animations.
+// TAG: {{BASH: Actors.Anims}}
 
 AP Skyrim.esp
 BySbire_FemaleBehavoir.esp
@@ -5657,11 +5657,11 @@ Skyhawk_eat_drink_animation.esp
 ENDGROUP: Pose and Animation Mods
 
 BEGINGROUP: Beauty Packs & Race Changes\Addons
-  //
-  //Hair, eyes, race addons & changes and other cosmetics.
+//
+//Hair, eyes, race addons & changes and other cosmetics.
 
 BEGINGROUP: Hair
-  // TAG: {{BASH: Hair}}
+// TAG: {{BASH: Hair}}
 
 AllHairs.esp
 ApachiiHair.esp
@@ -5695,7 +5695,7 @@ UseAllTheHairStyles.esp
 ENDGROUP: Hair
 
 BEGINGROUP: Eyes
-  //TAG: {{BASH: Eyes}}
+//TAG: {{BASH: Eyes}}
 
 DorkDiva Elf Eye Additions.esp
 DorkDiva Eyes For Dark Characters pack one.esp
@@ -5712,14 +5712,14 @@ Improved Eyes Skyrim.esp
 ENDGROUP: Eyes
 
 BEGINGROUP: EyeBrows
-  //new EyeBrows
+//new EyeBrows
 
 numenume femalebrows MARO.esp
 OrientalBrows.esp
 ENDGROUP: EyeBrows
 
 BEGINGROUP: Warpaints
-  //new warpaints.
+//new warpaints.
 
 ButterflyFemaleWarpaint_2_1.esp
 DragonWarpaint.esp
@@ -5730,11 +5730,11 @@ krimson'swarpaints.esp
 ENDGROUP: Warpaints
 
 BEGINGROUP: Mixed
-  // TAG: {{BASH: Hair, Eyes}}
+// TAG: {{BASH: Hair, Eyes}}
 ENDGROUP: Mixed
 
 BEGINGROUP: Race additions
-  // + hair + eyes etc
+// + hair + eyes etc
 
 mjhImprovedRaces.esp
   INC: Anything that changes the race descriptions or races.
@@ -5766,15 +5766,15 @@ ENDGROUP: Beauty Packs & Race Changes\Addons
 
 
 BEGINGROUP: Companions and NPCs
-  //Those related to companion mod systems. Most others in Quests section.
-  //Recommended by authors to load very late.
-  //Feedback from Tokc.D.K.
-  //1) Mods loaded before UFO
-  //2) UFO, BDO, XFL and other simular mods
-  //3) Global Companions\Housecarls face\stats changing mods
-  //4) Single Companions\Housecarls face\stats changing mods
-  //5) mods that will be loaded after UFO
-  //Companions\housecarls and NPC this is a different mods. Global mods in most variants must be load early. Single mods with minor changes must be load late.
+//Those related to companion mod systems. Most others in Quests section.
+//Recommended by authors to load very late.
+//Feedback from Tokc.D.K.
+//1) Mods loaded before UFO
+//2) UFO, BDO, XFL and other simular mods
+//3) Global Companions\Housecarls face\stats changing mods
+//4) Single Companions\Housecarls face\stats changing mods
+//5) mods that will be loaded after UFO
+//Companions\housecarls and NPC this is a different mods. Global mods in most variants must be load early. Single mods with minor changes must be load late.
 
 BEGINGROUP: Companions Load Early
 
@@ -5848,8 +5848,8 @@ TravellersOfSkyrim - UFO Compatibility Patch.esp
 ENDGROUP: Ultimate Follower Overhaul
 
 BEGINGROUP: NPC Distance, Face & Makeup Overrides
-  //Distance Tweaks before Face & Makeup Overrides
-  //Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
+//Distance Tweaks before Face & Makeup Overrides
+//Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 
 REGEX: ([Nn]o |([Ss]lightly )?[Rr]educed Distance )(NPC|npc) Greetings.esp
 SupermodelSkyrim.esp
@@ -6114,7 +6114,7 @@ voidcraft_housecarls.esp
 ENDGROUP: Companions
 
 BEGINGROUP: Companions Load Late
-  //Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
+//Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 
 followernoama.esp
 followerhavok.esp
@@ -6211,8 +6211,8 @@ IF ("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
 ENDGROUP: Race Overrides
 
 BEGINGROUP: Message suppression/changing overrides
-  //
-  //Best loaded late to override possible message additions from other mods.
+//
+//Best loaded late to override possible message additions from other mods.
 
 DisableNoFastTravelMessage.esp
 DragonWordsDisplayed.esp
@@ -6258,8 +6258,8 @@ REGEX: Timescale\d{1,2}\.esp
 ENDGROUP: Respawn & day length overrides
 
 BEGINGROUP: Shader Mods
-  //
-  //Need to go after new items to affect them.
+//
+//Need to go after new items to affect them.
 
 BEGINGROUP: Shader Removers
 
@@ -6365,23 +6365,23 @@ WorldMapInFull3D.esp
 ENDGROUP: Map marker Tweaks
 
 BEGINGROUP: Load Late
-  //Plugins which load late or are more convieniently loaded late.
-  //
+//Plugins which load late or are more convieniently loaded late.
+//
 BBLSGuysApachii.esp
   IFNOT ("ApachiiHair.esm") REQ: Apachii Sky Hair.
   IFNOT ("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
   IF (<0.1.6.89|"TES5") REQ: Skyrim 1.6.89+
   
 BEGINGROUP: Compatibility Patches
-  //Compatability Patches which must load after a certain mod go here
-  //Only if no conflicts are made in between
-  //
+//Compatability Patches which must load after a certain mod go here
+//Only if no conflicts are made in between
+//
 REGEX: Agony's Sorting Frenzy - .+\.esp
 dD-SkyrimMonsterMod EBT Patch.esp
 GeneralStores-SkyMoMod.esp
 The Asteria - Dwemer Airship(GS).esp
 FTFI Fast Travel From Indoors.esp
-  //Must come after all cell altering mods.
+//Must come after all cell altering mods.
 ENDGROUP: Compatibility Patches
 ENDGROUP: Load Late
 
