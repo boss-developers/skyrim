@@ -1,10 +1,9 @@
 ﻿/*
-? Masterlist Information: $Revision$, $Date$, $LastChangedBy$
+Masterlist Information: $Revision$, $Date$, $LastChangedBy$
 
 Masterlist Syntax Notes
 
-Unlike the other masterlists, this one should take full advantage of MF2.2 syntax. Only the most commonly-used parts of the syntax are covered here.
-See the BOSS Masterlist Syntax.html documentation file in data/boss-common/ on the Google Code repository for full details.
+Only the basics of the most commonly-used parts of the syntax are covered here. See the BOSS Masterlist Syntax.html documentation file in data/boss-common/ on the Google Code repository for full details.
 
   * Use blank lines to separate mods that are grouped together or where it helps readability.
   * Use silent comments when you think something needs clarification to others reading the masterlist (such as when a mod looks like it is misspelled, but is correct).
@@ -13,10 +12,12 @@ See the BOSS Masterlist Syntax.html documentation file in data/boss-common/ on t
   * When you include a web link in a message, enclose it in double quotes "", for example: www.example.org should be written "www.example.org".
   * When you list Bash Tags for a mod, separate them using ", " and not just ",". Eg. {{BASH: Graphics,NoMerge}} should be written {{BASH: Graphics, NoMerge}}. This improves readability in the BOSSlog and the masterlist itself.
   * Don't include any HTML formatting in messages. In particular, web links do not need to be formatted as HTML hyperlinks, as BOSS will do this automatically.
+  * Put variable lines at the top of the masterlist, just under this section of text.
+  * Put global messages at the top of the masterlist, just under any variable lines.
 
 Silent Comments:
 
-Silent comments are ignored by BOSS, and may be written by starting a line with the backslash '\' character (as used by this block of text).
+Silent comments are ignored by BOSS, and may be written by starting a line with  "//" (not including quotes).
 You cannot start a silent comment part-way into a line, only whole lines may be silent.
 
  Message Type                      Keyword      Description
@@ -29,18 +30,14 @@ You cannot start a silent comment part-way into a line, only whole lines may be 
  Warning                           WARN         A message used to display a non-critical warning for the mod above.
  Error                             ERROR        A message used to display a critical (ie. install-breaking) error for the mod above.
 
-Message keywords should be indented by a single space and followed by a colon ':' then the message string.
-
-
-Once again, see the Masterlist Format Syntax wiki page for information on BOSS's full masterlist functionality.
-Items not covered here include: conditional messages, masterlist variables, plugin groups, regular expression matching and global messages.
+Message keywords should be indented by two spaces and followed by a colon ':' then the message string.
 */
 
-\ Upgrade message for 1.7+ users:
+// Upgrade message for 1.7+ users:
  IF (<2.0.1.0|"BOSS") GLOBAL WARN: An update for BOSS (v2.0.1) has been released. Download it at "http://oblivion.nexusmods.com/mods/20516", "http://skyrim.nexusmods.com/mods/6", "http://fallout3.nexusmods.com/mods/10193" or "http://newvegas.nexusmods.com/mods/35999"
 
-\ Masterlist variable setup for BOSS v1.7+.
-\=====================================================================
+// Masterlist variable setup for BOSS v1.7+.
+//=====================================================================
 
 IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
 IF ("ASIS-Dependency.esp") || IF ("ASIS.esp") || IF ("Automatic Spells.esp") || IF ("Automatic Variations.esp") || IF ("Automatic Variants.esp") GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
@@ -57,7 +54,7 @@ IF ("Lady Body.esp") SET: LB
 IF (r"BertsBreezehome.+\.es[pm]") SET: BertsBHInst
 IF (r"SkyRe_.+\.esp") SET: SkyRe
 
-\=====================================================================
+//=====================================================================
 
 /* Latest thread */
 GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1395580-relz-boss-for-skyrim/"
@@ -242,8 +239,8 @@ ENDGROUP: Official DLC Files
 BEGINGROUP: Earliest mods
 
 Agony's Sorting Frenzy.esp
-\All Compatibility esp should be loaded after their respective mod.
-\See Group: Compatibility Patches
+//All Compatibility esp should be loaded after their respective mod.
+//See Group: Compatibility Patches
 Die Skyrim-Lokalisierung - Director's Cut.esp
 Skyrim - Director's Cut.esp
 Zwerge zu Dwemer.esp
@@ -288,7 +285,7 @@ Bugfix-NoFollowerTrespassDialog.esp
 bugfixalchemynoregeneration.esp
 bugfixenchanmentnoregeneration.esp
 Bullseye Perk Fix.esp
-\Possibly belongs in perks
+//Possibly belongs in perks
 Civil War Neutrality Fix.esp
 Conjuration Fix.esp
  IF ("Unofficial Skyrim Patch.esp") WARN: Delete. Included in Unofficial Skyrim Patch
@@ -388,7 +385,7 @@ REGEX: Skyrim HD Full - .+\.esp
  REQ: 4gb or more RAM, for full version.
 
 BEGINGROUP: NPC face mods
-\TAG: {{BASH: NpcFaces}}
+//TAG: {{BASH: NpcFaces}}
 
 AlfhildBattleBorn.esp
 AlternateUlfric.esp
@@ -439,13 +436,13 @@ winterhold_female.esp
 ENDGROUP: NPC face mods
 
 BEGINGROUP: General Base Mods
-\
-\Includes nearly all new items (except weapons and armor).
-\Low priority mods.
+//
+//Includes nearly all new items (except weapons and armor).
+//Low priority mods.
 
 BEGINGROUP: Weather mods and overhauls
-\
-\Unlikely to be affected by anything but sound mods.
+//
+//Unlikely to be affected by anything but sound mods.
 
 Chesko_Frostfall.esp
 IFNOT ("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
@@ -465,10 +462,10 @@ PaperMapHeight-RemoveFog.esp
 ENDGROUP: Weather mods and overhauls
 
 BEGINGROUP: Sound mods
-\Sound plugins and sound packs that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
-\
-\Some Sounds.esp
-\  TES4 (Header only)
+//Sound plugins and sound packs that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
+//
+//Some Sounds.esp
+//  TES4 (Header only)
 
 addwinterholdmusic.esp
 Bardsoundsmalukah.esp
@@ -583,10 +580,10 @@ REGEX: PersonalizedMusic.*\.esp
 ENDGROUP: Music
 
 BEGINGROUP: Textures
-\Textures that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
-\
-\Some Graphics.esp
-\  TES4 (Header only)
+//Textures that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
+//
+//Some Graphics.esp
+//  TES4 (Header only)
 
 /* texture packadge from Steam Workshop */
 thatsice.esp
@@ -600,7 +597,7 @@ Weapons and Armor fixes.esp
  \TAG: {{BASH: Stats}}
  IF (r"REGEX: Smithing Perks Overhaul( - Balanced)?\.esp") && IF ($CCO) SAY: For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.(checked in FNVEdit)
 Weapons and Armor fixes - Hacks.esp
-\Vanilla fixes. Must be load here(and also for CCO and SPO), for prevent to override new changes from mods in Base group. Too many conflicts with other mods in Base group.
+//Vanilla fixes. Must be load here(and also for CCO and SPO), for prevent to override new changes from mods in Base group. Too many conflicts with other mods in Base group.
 Shadow Striping Fix.esp
 SMIM_Fixes.esp
 REGEX: SpellFix.*\.esp
@@ -768,7 +765,7 @@ CCMainFile.esp
 chamberpotoftheageless.esp
 Chau.esp
 Chesko_MorrowindPotionNames.esp
-\ TAG: {{BASH: Names}}
+// TAG: {{BASH: Names}}
 Chesko_WearableLantern.esp
 Chesko_SwiftPotion.esp
 SIWLPatch.esp
@@ -784,7 +781,7 @@ Collectors Edition in Honigheim.esp
 CollectorsED.esp
 College lights.esp
 Colored_Dragonscale_v1.esp
-\ TAG: {{BASH: Invent}}
+// TAG: {{BASH: Invent}}
 Companions Visitors.esp
 Falkreath Visitors.esp
 Mages College Visitors 1.esp
@@ -974,7 +971,7 @@ GDAmulets.esp
 general npc fixes.esp
 GenebrisTreasureChests.esp
  TAG: {{BASH: Delev, Relev}}
-\not sure about Delev
+//not sure about Delev
 genpeople.esp
 genpeople lite.esp
 genpeopleliter.esp
@@ -1042,7 +1039,7 @@ BEGINGROUP: Base I
 I5K Skull Hunt.esp
 Icy.esp
 Improved Container Names.esp
-\ TAG: {{BASH: Names}}
+// TAG: {{BASH: Names}}
 ImprovedCraftableLockpicks.esp
 improvedskillbooks.esp
 improvedquestbooks.esp
@@ -1145,7 +1142,7 @@ Long lost smelters.esp
 Loot_Overhaul_Rebalanced_v.04.esp
  TAG: {{BASH: Delev, Relev}}
 Lore Friendly - Dwemer Names.esp
-\ TAG: {{BASH: Names}}
+// TAG: {{BASH: Names}}
 Lunar Forge Patch.esp
 UnlimitedBookshelves.esp
 SIUBPatch.esp
@@ -1234,7 +1231,7 @@ ENDGROUP: Base M
 BEGINGROUP: Base N
 
 Named bosses in skyrim I v1.1.esp
-\ TAG: {{BASH: Names}}
+// TAG: {{BASH: Names}}
 NamedSoulGems.esp
 navetsea female face preset.esp
 new guards.esp
@@ -1303,7 +1300,7 @@ real glaciers.esp
  SAY: Old version update to Real Glaciers V2
 real glaciers v2.esp
 Real Months.esp
-\tags not tested
+//tags not tested
 real mountains.esp
 realistic clouds.esp
 renameddragonclaws.esp
@@ -1331,7 +1328,7 @@ REGEX: Real Wildlife Skyrim.*\.esp
 /* Does this Satisfy SIRWPach.esp and SIRWPatch.esp */
 REGEX: SIRWPat?ch.esp
  TAG: {{BASH: Delev, Relev}}
-\not tested
+//not tested
 Real Wildlife Skyrim 0.1 IMCN.esp
 recipeammoarrows.esp
 recipeingots.esp
@@ -1348,7 +1345,7 @@ RiftenHQtexture-Part2.esp
 RiftenSmelter.esp
 riverwood flora.esp
 RuSort Potions & Poisons.esp
-\TAG: {{BASH: Names}}
+//TAG: {{BASH: Names}}
 Rusty Antler Caravan.esp
 ENDGROUP: Base R
 
@@ -1356,14 +1353,14 @@ BEGINGROUP: Base S
 
 S2C-All.esp
 SA Valuable Named Silverware.esp
-\ TAG: {{BASH: Names, Stats}}
+// TAG: {{BASH: Names, Stats}}
 SaderHorses.esp
 SabreFurBag.esp
 sanctuarycleanup.esp
 SaveHotKey.esp
 SB - Loot Mod.esp
  TAG: {{BASH: Delev, Relev}}
-\tags not tested
+//tags not tested
 SB Crafting.esp
 ScaledArmorFix.esp
 ScalingKhajiitClawDamage.esp
@@ -1385,7 +1382,7 @@ Shields_on_back.esp
 shMannequinDecorate_WBh.esp
 shrewsburyskyrimcookbook.esp
 SIDT.esp
-\ TAG: {{BASH: Names}}
+// TAG: {{BASH: Names}}
 sign.esp
 Silent Moon Forging 1.2.esp
 Silverupgrade.esp
@@ -1414,7 +1411,7 @@ SIMoMoCoPatch.esp
 SkyMoMod Extras Conjuration.esp
 Skyrim Barbers.esp
 Skyrim Expanded Loot Tables.esp
-\ TAG: {{BASH: Invent}}
+// TAG: {{BASH: Invent}}
 /* doubleloot.esp and moreloot(3v1)?\.esp change same chests as Skyrim Expanded Loot Tables.esp */
 doubleloot.esp
 REGEX: moreloot(3v1)?\.esp
@@ -1445,7 +1442,7 @@ Smithing Tailoring.esp
 /* from Steam Workshop */
 smithingextended.esp
  TAG: {{BASH: Delev, Relev}}
-\tag not tested
+//tag not tested
 SmithingTomes.esp
 solssecretstash.esp
 SortiertesInventar.esp
@@ -1460,7 +1457,7 @@ SPTFemaleGuardsInPlace.esp
  SAY: Obsolete. Update to SPTDiverseGuards
 SPTDiverseGuardsSkyrim.esp
   TAG: {{BASH: Delev}}
-\not tested
+//not tested
 srmcompanioncart.esp
 StaRe.esp
  SAY: Obsolete. Update to 'SkyRe_StandingStones.esp'
@@ -1484,7 +1481,7 @@ ENDGROUP: Base S
 BEGINGROUP: Base T
 
 Tamriel Compendium - Skill Books.esp
-\Requires TAG: {{BASH: Relev}} ?
+//Requires TAG: {{BASH: Relev}} ?
 REGEX: Tamriel Compendium( -)?( Skill Book Version)?\.esp
  TAG: {{BASH: Relev}}
 test silver.esp
@@ -1629,7 +1626,7 @@ REGEX: SIM.?- NPC.?Additions(HOSTILE|WEREWOLVES)?\.esp
 SIM - NPCSUBMITTED.esp
 SIM - Treasure Anywhere.esp
 REGEX: .+Waterbugfix\.esp
-\Only this REGEX work for SIM - Waterbugfix.esp
+//Only this REGEX work for SIM - Waterbugfix.esp
 ENDGROUP: Base Late
 ENDGROUP: General Base Mods
 
@@ -1661,9 +1658,9 @@ towAutoFP.esp
 ENDGROUP: Load Order Independent Mods
 
 BEGINGROUP: Items (armor and weapons)
-\
-\VITAL for overhaul mod users: Wrye Bash tag all armor replacers {{BASH: Graphics}}(After it work for Skyrim) to keep their new look.
-\Some items will need to go after overhaul or location altering mods to appear.
+//
+//VITAL for overhaul mod users: Wrye Bash tag all armor replacers {{BASH: Graphics}}(After it work for Skyrim) to keep their new look.
+//Some items will need to go after overhaul or location altering mods to appear.
 
 BEGINGROUP: Items #
 
@@ -2274,7 +2271,7 @@ LB Lady Bat.esp
 LB Lady Keaira.esp
  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
 REGEX: LB Lady .+\.esp
-\regex for all clothes for LB body replacer that named LB Lady *.esp
+//regex for all clothes for LB body replacer that named LB Lady *.esp
  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
 LB_MuchAdoSnowElves.esp
  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
@@ -2500,7 +2497,7 @@ psijic mage.esp
 Psiijic_Master_Outfits.esp
 PTMageArmor.esp
 puresteel.esp
-\ TAG: {{BASH: Invent}}
+// TAG: {{BASH: Invent}}
 Pushup-Bikini.esp
 ENDGROUP: Items P
 
@@ -2646,7 +2643,7 @@ SteelImperialArmor.esp
 SteelSoldiersWithCloaks.esp
 StorageHelpers.esp
 StormcloakArmorVariety.esp
-\tag not tested
+//tag not tested
  TAG: {{BASH: Relev}}
 StrapOnbyaeonv1.1.esp
 student clothes.esp
@@ -2690,7 +2687,7 @@ TERA Heavy Armor.esp
 TERX-Set.esp
 testfinal.esp
 REGEX: TH3WICK3D1-.+\.esp
-\REGEX because only items from this autor
+//REGEX because only items from this autor
 Thalmor Light Armor.esp
 ThalmorNoGlass.esp
  TAG: {{BASH: Delev}}
@@ -2883,7 +2880,7 @@ ENDGROUP: Items Load Late
 ENDGROUP: Items (armor and weapons)
 
 BEGINGROUP: Overhauls
-\Initial position for Overhaul mods
+//Initial position for Overhaul mods
 
 BEGINGROUP: General Overhauls
 ASIS-Encounter Zones.esp
@@ -2899,7 +2896,7 @@ Lorecraft - Crafting Overhaul.esp
 ScarabCraftingHacks.esp
 Crafting 300 Basic.esp
  TAG: {{BASH: Delev, Relev}}
-\tags as in original crafting 300 mod
+//tags as in original crafting 300 mod
 Crafting300_Basic_extras_v1.0.esp
 Darwins_Hard_Times.esp
 enhancedgameplay.esp
@@ -2919,7 +2916,7 @@ dragonnests.esp
 Dragon Overhaul.esp
  INC: Deadly Dragons and other Dragon overhaul mods
 EpicEndeavours.esp
-\ TAG: {{BASH: Actors.ACBS, Actors.CombatStyle, Delev, Factions, Actors.AIData, Actors.Spells, NPC.Class, Relev}}
+// TAG: {{BASH: Actors.ACBS, Actors.CombatStyle, Delev, Factions, Actors.AIData, Actors.Spells, NPC.Class, Relev}}
  TAG: {{BASH: Delev, Relev}}
 EpicGlorySlowerLevelingByMadmole.esp
  IF ($EpicGloryInst) INC: EpicGloryByMadmole.esp
@@ -2970,7 +2967,7 @@ PISE-Vendors.esp
 PISE-Misc Vendors.esp
 PISE-Vendor Tweaks Only.esp
 PISE-Dragon weighting only.esp
-\TAG: {{BASH: Stats}}
+//TAG: {{BASH: Stats}}
 PISE-Difficult Bartering.esp
 PISE-Bartering Tweaks.esp
 PISE-Bartering Tweaks Only.esp
@@ -3050,15 +3047,15 @@ DragonsDiversified.esp
 DeadlyDiversifiedDragonsPatch.esp
 Dragonbone Weapons - Deadly Dragons Compatibility.esp
 REGEX: (Super )?(Slighty )?Mighty Dragon Priests\.esp
-\Mighty Dragon priests
+//Mighty Dragon priests
 Odahviing Mighty Dragons.esp
  TAG: {{BASH: Delev, Relev}}
 REGEX: (Soft)?(Super)?(Nightmare)?(Slighty| Slighty)?(Mighty| Mighty)? Dragons( Unleveled)?\.esp
  TAG: {{BASH: Delev, Relev}}
  IF (r"REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT (r"MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Use compatibility patch for deadly dragons:("http://skyrim.nexusmods.com/mods/13423")
-\Mighty Dragons main file
+//Mighty Dragons main file
 REGEX: MD with DeadlyD and DDiversified( Unleveled)?\.esp
-\Compatibility patch for Mighty Dragons, Deadly Dragons and/or Dragons Diversified
+//Compatibility patch for Mighty Dragons, Deadly Dragons and/or Dragons Diversified
 DeadlyDragonsArmory.esp
 ENDGROUP: Deadly and Mighty Dragons
 
@@ -3073,13 +3070,13 @@ ENDGROUP: Monster Wars
 ENDGROUP: Overhauls
 
 BEGINGROUP: Quests and Locations
-\
-\All mods that add or change quests,
-\add player houses,
-\add or change dungeons,
-\add or change towns, villiages, cities and/or landscape.
-\
-\Mods not in alphabetical order have been hand placed to avoid conflicts (as much as possible).
+//
+//All mods that add or change quests,
+//add player houses,
+//add or change dungeons,
+//add or change towns, villiages, cities and/or landscape.
+//
+//Mods not in alphabetical order have been hand placed to avoid conflicts (as much as possible).
 
 BEGINGROUP: Quests #
 
@@ -3681,14 +3678,14 @@ ENDGROUP: Quests XYZ
 ENDGROUP: Quests and Locations
 
 BEGINGROUP: Overrides
-\
-\Mods that deliberately change specific things about vanilla Skyrim, overhauls or other mods.
-\Some late loading quests and locations in here too.
-\Specific NPC behavior changes.  Follower mods go in Companions section.
+//
+//Mods that deliberately change specific things about vanilla Skyrim, overhauls or other mods.
+//Some late loading quests and locations in here too.
+//Specific NPC behavior changes.  Follower mods go in Companions section.
 
 BEGINGROUP: Weight Changes
-\moved to this position because have conflicts with too many plugins in overrides groups
-\ TAG: {{BASH: Stats}} for all
+//moved to this position because have conflicts with too many plugins in overrides groups
+// TAG: {{BASH: Stats}} for all
 
 Armor Weight Adjustment.esp
 Axe and Pickaxe weight.esp
@@ -3743,7 +3740,7 @@ BEGINGROUP: Overrides Early
 
 AK- Azura's Black Star.esp
 ArmorSpeed.esp
-\Armies of Skyrim>
+//Armies of Skyrim>
 ---Riften, Falkreath, Morthal, Dawnstar Guards---.esp
 ---Stormcloaks, Windhelm, Sons & Ralof---.esp
 --Imperial soldiers & Legates--.esp
@@ -3751,7 +3748,7 @@ ArmorSpeed.esp
 --Penitus Oculatus--.esp
 --Solitude Guards--.esp
 Whiterunguards.esp
-\<Armies of Skyrim
+//<Armies of Skyrim
 Dragonbonestats.esp
 Creaturestatsrevised.esp
 ElementalGauldurAmulet.esp
@@ -3768,12 +3765,12 @@ SkyRe_Plugin_Morrowloot.esp
  IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
 xFenWSOWAFW3E.esp
  TAG: {{BASH: Delev, Relev}}
-\ TAG: {{BASH: Delev, Stats, Relev}}
+// TAG: {{BASH: Delev, Stats, Relev}}
 no_quest_items.esp
 PrettySkins.esp
-\ TAG: {{BASH: Stats}}
+// TAG: {{BASH: Stats}}
 PrettyOres.esp
-\ TAG: {{BASH: Stats}}
+// TAG: {{BASH: Stats}}
 UniqueWeapons.esp
 Way of the Sword.esp
 zzALittleSexyApparelReplacer_looseNoUnderwear.esp
@@ -3919,7 +3916,7 @@ CMFreeTimeMod.esp
 codifredsenhancedhunting.esp
 codifredsenhancedsmithing.esp
 Consistent Conjuration.esp
-\ TAG: {{BASH: Names}}
+// TAG: {{BASH: Names}}
 Crafting-MakeSteelFromIronIngots.esp
 CriticalDamageRevised.esp
 crominteractionimprovement.esp
@@ -3962,7 +3959,7 @@ disablelydiatradedialog.esp
 REGEX: DisableRangedKillCams(\d\.\d)\.esp
 DiversePriests.esp
 doublebounddmg.esp
-\ TAG: {{BASH: Stats}}
+// TAG: {{BASH: Stats}}
 droppablebarenziah.esp
  IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
 DS-FlybyOpt.esp
@@ -4203,7 +4200,7 @@ Lawrens RNG Guards.esp
 Lawren RNG Guards.esp
 LaFemmeLycana.esp
 LB Yarl Clothes.esp
-\single clothes replacer
+//single clothes replacer
  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
 Legendary Artifacts.esp
 Legendary Gauldur Amulet.esp
@@ -4220,10 +4217,10 @@ lesssnowywinterhold.esp
 Lethal Archery.esp
 Leveled Smithing.esp
  TAG: {{BASH: Delev, Relev}}
-\not tested
+//not tested
 levelingmerchantswallets.esp
  TAG: {{BASH: Delev, Relev}}
-\not tested
+//not tested
 LightShieldofSolitude.esp
 REGEX: LFox Alchemists Have Ingredients.+\.esp
  TAG: {{BASH: Relev}}
@@ -4292,7 +4289,7 @@ more dragons.esp
 /* v2.9.1 only one esp */
 More Dynamic Shadows.esp
 More Powerful Daedric Artifacts.esp
-\ TAG: {{BASH: Stats}}
+// TAG: {{BASH: Stats}}
 More Powerful Dragons.esp
 REGEX: MoreTraining_\d\d\.esp
 moredeathreloadtime.esp
@@ -4321,7 +4318,7 @@ NGEC.esp
 Nightingale Maskless.esp
 REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg)\.esp
 REGEX: NoAutoSkillBooks\((Normal|Better)\)\.esp
-\ IF ("NoAutoSkillBooks(Better).esp") TAG: {{BASH: Names}}
+// IF ("NoAutoSkillBooks(Better).esp") TAG: {{BASH: Names}}
  SAY: Use only one (Normal) or (Better) version
 No Axe or Pickaxe required.esp
 noBlurDOF.esp
@@ -4458,7 +4455,7 @@ Skyrim bigger trees.esp
 Sneak Tweak.esp
 Skyrim_Dragon Update.esp
  TAG: {{BASH: Delev, Relev}}
-\tags not tested
+//tags not tested
  INC: Other Dragon override mods, use only one.
 Sneak Tools Vanilla Hoods.esp
 Sneak Tools Vanilla Masks.esp
@@ -4514,7 +4511,7 @@ ESP.esp
 Skyrim Creatures Alive.esp
  TAG: {{BASH: Relev, Delev}}
 Skyrim Dark.esp
-\ TAG: {{BASH: Names, Invent}}
+// TAG: {{BASH: Names, Invent}}
 Skyrim Smithing Components Rebalanced Full Version.esp
 Skyrim Trade Guild.esp
 REGEX: SkyTEST-RealPredators(\&Animals)?\.esp
@@ -4540,7 +4537,7 @@ Standin Stonene's Value Fix V1.esp
 stop-being-a-creepy-stalker-aerin-1-0-pingy.esp
 stronger alduin.esp
 stronger daedric artifacts.esp
-\ TAG: {{BASH: Stats}}
+// TAG: {{BASH: Stats}}
 strongermagerewards.esp
 Spells Cast Light.esp
 Spell Tome price fix light.esp
@@ -4562,7 +4559,7 @@ TCO - Travel Cost Overhaul.esp
 VariedGuards.esp
 VariedGuards2H.esp
 VariousGuardReplacer.esp
-\ TAG: {{BASH: Graphics}}
+// TAG: {{BASH: Graphics}}
 The Skyrim conflict Medium Essential 1.1.esp
 The Skyrim conflict DE&O Essential 1.01.esp
 TheRiftenRangers.esp
@@ -4668,7 +4665,7 @@ Expanded Towns and Settlements.esp
 Expanded Towns and Villages.esp
 Long Lost Chopping Blocks.esp
 Long lost smelters by Hyralux.esp
-\Adds smelters and chopping blocks to towns/villages, correct group?
+//Adds smelters and chopping blocks to towns/villages, correct group?
 MoreOrganicCities.esp
 Riverwood Enhanced.esp
 Riverwood Enhanced - Detailed Cities.esp
@@ -4732,7 +4729,7 @@ NPCsUseAmmoAllBows.esp
 P-Froggys Rest and Eat.esp
 RealisticCarryWeight.esp
 Realistic Weapon Weights.esp
-\  TAG: {{BASH: Stats}}
+//  TAG: {{BASH: Stats}}
 Realistic Running Speed.esp
 Realistic Speed and Jump Fix.esp
 SkyrimSpeeds.esp
@@ -4825,8 +4822,8 @@ WiS IV - Werewolf & Vampire.esp
 ENDGROUP: Vampires and Werewolves
 
 BEGINGROUP: Magic
-\
-\Overrides overhauls. New spells and magic systems go here for convenience.
+//
+//Overrides overhauls. New spells and magic systems go here for convenience.
 
 BEGINGROUP: General Spells
 
@@ -5001,7 +4998,7 @@ wkyddResurrectionSpell.esp
 ENDGROUP: General Spells
 
 enchantthreeeffects.esp
-\Must be loaded after Phenderix's Magic Evolved, temporarily placed here
+//Must be loaded after Phenderix's Magic Evolved, temporarily placed here
 
 BEGINGROUP: Shouts
 
@@ -5110,7 +5107,7 @@ ShadowOfTheMagic.esp
  SAY: Obsolete, upgrade to Summon Shadow Merchant
 IFNOT ("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
 ShowRaceMenuAlternative.esp
-\Adds spell, doesn't override current race menu
+//Adds spell, doesn't override current race menu
 SkyrimBalancedMagicSystem.esp
 SkyrimBalancedMagicSystem - spells.esp
  SAY: Old, consider updating
@@ -5145,7 +5142,7 @@ Alchemy Fixed Beta 0.02.esp
 Alchemy Apparatuses .91.esp
 AutoPotion.esp
 learn_alchemy.esp
-\ TAG: {{BASH: Scripts}}
+// TAG: {{BASH: Scripts}}
 alch5x.esp
 alchemyenhancedxp.esp
 AlchemyOrganization.esp
@@ -5198,7 +5195,7 @@ Fortify Enchanting necklace.esp
 IPutASpellOnYou.esp
 hankyench.esp
 HoodlessPsijicArchmageReplacement.esp
-\move this mod to items group with Graphics tag after it work in bashed patch for Skyrim
+//move this mod to items group with Graphics tag after it work in bashed patch for Skyrim
 Backstab Enchantment new.esp
 stackableenchants.esp
 bootsofnimblespeed.esp
@@ -5216,8 +5213,8 @@ ENDGROUP: Magic
 BEGINGROUP: Player Characteristics
 
 BEGINGROUP: Thievery, Sneaking and Crime
-\
-\Overrides overhauls.
+//
+//Overrides overhauls.
 
 Thievery.esp
 REGEX: cao_extrapockets_D.+\.esp
@@ -5258,7 +5255,7 @@ BEGINGROUP: Combat
 
 ACE Realistic Fighting.esp 
 REGEX: CustomDifficultyP.*\.esp
-\Changes game difficulty, put here as initial position
+//Changes game difficulty, put here as initial position
 UCO.esp
 REGEX: Added_Killmoves_All_Weapons.+\.esp
 Added_Slow_Motion_to_1stPerson_with_1st_Person_Only.esp
@@ -5406,9 +5403,9 @@ REGEX: PPE_Perk-.+\.esp
 REGEX: PerkUP-.{4,12}\.esp
  SAY: For users of incompatible plugins in this mod plugins. You will probably lose some already used perks, check this in game.
  INC: Extra Effect Perk-Additional Rank by thedemoninside , No Perk Prerequisites by ClassicalNoodle , Deflect Arrows Perk Fix by JeffSteel , Caos Advanced Perk Ranks by CaoMengde777 (fixed bugs, naturally) , Caos Extra Pockets Perk Upgrades by CaoMengde777 , Dead Aim perk x5 x10 x15 x20 by evi002 (rebalanced) , Better archery Eagle Eye perk by Graxster , Concentrated Poisons by kenevir1991 , Bugfix - Critical Charge with swords by Kevin Kidder ....
-\For Basic
+//For Basic
 REGEX: PerkUP-.*\.esp
-\For Optional
+//For Optional
 More Craftables - PerkUP compatibility.esp
  REQ: More Craftables and PerkUP
 NapalmPerkOverhaul.esp
@@ -5553,7 +5550,7 @@ BlueStarPerkAdventure.esp
 REGEX: WiS IV - leveld World X\d+\.esp
  SAY: Use only one WiS IV - leveld World esp
 SkyRe_Main.esp
-\maybe it must be moved to skills\perks group (see INC:... messages added from faq) and also other skyre-plugins must be moved after their masterfiles. I'll check it later. Tokc.D.K.
+//maybe it must be moved to skills\perks group (see INC:... messages added from faq) and also other skyre-plugins must be moved after their masterfiles. I'll check it later. Tokc.D.K.
  TAG: {{BASH: Relev, Delev}}
  \TAG: {{BASH: Delev, Names, Relev}}
  IF ("ACE Crafting.esp") || IF ("ACE Speech.esp") INC: ACE (Every module that affects perks)
@@ -5608,9 +5605,9 @@ ENDGROUP: Player Perks
 ENDGROUP: Player Characteristics
 
 BEGINGROUP: Pose and Animation Mods
-\
-\new animations.
-\ TAG: {{BASH: Actors.Anims}}
+//
+//new animations.
+// TAG: {{BASH: Actors.Anims}}
 
 AP Skyrim.esp
 BySbire_FemaleBehavoir.esp
@@ -5626,11 +5623,11 @@ Skyhawk_eat_drink_animation.esp
 ENDGROUP: Pose and Animation Mods
 
 BEGINGROUP: Beauty Packs & Race Changes\Addons
-\
-\Hair, eyes, race addons & changes and other cosmetics.
+//
+//Hair, eyes, race addons & changes and other cosmetics.
 
 BEGINGROUP: Hair
-\ TAG: {{BASH: Hair}}
+// TAG: {{BASH: Hair}}
 
 AllHairs.esp
 ApachiiHair.esp
@@ -5664,7 +5661,7 @@ UseAllTheHairStyles.esp
 ENDGROUP: Hair
 
 BEGINGROUP: Eyes
-\TAG: {{BASH: Eyes}}
+//TAG: {{BASH: Eyes}}
 
 DorkDiva Elf Eye Additions.esp
 DorkDiva Eyes For Dark Characters pack one.esp
@@ -5681,14 +5678,14 @@ Improved Eyes Skyrim.esp
 ENDGROUP: Eyes
 
 BEGINGROUP: EyeBrows
-\new EyeBrows
+//new EyeBrows
 
 numenume femalebrows MARO.esp
 OrientalBrows.esp
 ENDGROUP: EyeBrows
 
 BEGINGROUP: Warpaints
-\new warpaints.
+//new warpaints.
 
 ButterflyFemaleWarpaint_2_1.esp
 DragonWarpaint.esp
@@ -5699,11 +5696,11 @@ krimson'swarpaints.esp
 ENDGROUP: Warpaints
 
 BEGINGROUP: Mixed
-\ TAG: {{BASH: Hair, Eyes}}
+// TAG: {{BASH: Hair, Eyes}}
 ENDGROUP: Mixed
 
 BEGINGROUP: Race additions
-\ + hair + eyes etc
+// + hair + eyes etc
 
 mjhImprovedRaces.esp
  INC: Anything that changes the race descriptions or races.
@@ -5735,15 +5732,15 @@ ENDGROUP: Beauty Packs & Race Changes\Addons
 
 
 BEGINGROUP: Companions and NPCs
-\Those related to companion mod systems. Most others in Quests section.
-\Recommended by authors to load very late.
-\Feedback from Tokc.D.K.
-\1) Mods loaded before UFO
-\2) UFO, BDO, XFL and other simular mods
-\3) Global Companions\Housecarls face\stats changing mods
-\4) Single Companions\Housecarls face\stats changing mods
-\5) mods that will be loaded after UFO
-\Companions\housecarls and NPC this is a different mods. Global mods in most variants must be load early. Single mods with minor changes must be load late.
+//Those related to companion mod systems. Most others in Quests section.
+//Recommended by authors to load very late.
+//Feedback from Tokc.D.K.
+//1) Mods loaded before UFO
+//2) UFO, BDO, XFL and other simular mods
+//3) Global Companions\Housecarls face\stats changing mods
+//4) Single Companions\Housecarls face\stats changing mods
+//5) mods that will be loaded after UFO
+//Companions\housecarls and NPC this is a different mods. Global mods in most variants must be load early. Single mods with minor changes must be load late.
 
 BEGINGROUP: Companions Load Early
 
@@ -5817,8 +5814,8 @@ TravellersOfSkyrim - UFO Compatibility Patch.esp
 ENDGROUP: Ultimate Follower Overhaul
 
 BEGINGROUP: NPC Distance, Face & Makeup Overrides
-\Distance Tweaks before Face & Makeup Overrides
-\Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
+//Distance Tweaks before Face & Makeup Overrides
+//Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 
 REGEX: ([Nn]o |([Ss]lightly )?[Rr]educed Distance )(NPC|npc) Greetings.esp
 SupermodelSkyrim.esp
@@ -6021,7 +6018,7 @@ Natalie - Healer Follower - Look 01.esp
 Natalie - Healer Follower - Look 02.esp
 Natalie - Healer Follower - Look 03.esp
 Natalie - Healer Follower - Ashen Race.esp
-\Natalie - Healer Follower.esp must be first in order
+//Natalie - Healer Follower.esp must be first in order
 Followers Unlimited 11.esp
  IF ($UFO) WARN: Followers Unlimited is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
 Follower Trap Safety.esp
@@ -6036,7 +6033,7 @@ Follower Limit Increased.esp
  IF ($UFO) WARN: Multi followers functional is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
  IF ("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, use only one, not both.
 multimarriage.esp
-\must be load after multiple followers mods for wedding ceremony work.
+//must be load after multiple followers mods for wedding ceremony work.
 marriagemod - alpha v3.esp
 DudestiaMultiMarriages.esp
 Spousetocustomhome.esp
@@ -6083,7 +6080,7 @@ voidcraft_housecarls.esp
 ENDGROUP: Companions
 
 BEGINGROUP: Companions Load Late
-\Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
+//Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 
 followernoama.esp
 followerhavok.esp
@@ -6176,12 +6173,12 @@ SkyRe_Races.esp
  IF ("ArmedttTeeth.esm") INC: ATT - Armed to the Teeth (Also conflicts with skeletons)
  INC: Gender and Race Heights (Once again, conflicts with skeletons)
 IF ("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
-\Must be loaded after SkyRe_Races.esp(if installed) for correct work
+//Must be loaded after SkyRe_Races.esp(if installed) for correct work
 ENDGROUP: Race Overrides
 
 BEGINGROUP: Message suppression/changing overrides
-\
-\Best loaded late to override possible message additions from other mods.
+//
+//Best loaded late to override possible message additions from other mods.
 
 DisableNoFastTravelMessage.esp
 DragonWordsDisplayed.esp
@@ -6227,8 +6224,8 @@ REGEX: Timescale\d{1,2}\.esp
 ENDGROUP: Respawn & day length overrides
 
 BEGINGROUP: Shader Mods
-\
-\Need to go after new items to affect them.
+//
+//Need to go after new items to affect them.
 
 BEGINGROUP: Shader Removers
 
@@ -6334,23 +6331,23 @@ WorldMapInFull3D.esp
 ENDGROUP: Map marker Tweaks
 
 BEGINGROUP: Load Late
-\Plugins which load late or are more convieniently loaded late.
-\
+//Plugins which load late or are more convieniently loaded late.
+//
 BBLSGuysApachii.esp
  IFNOT ("ApachiiHair.esm") REQ: Apachii Sky Hair.
  IFNOT ("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
  IF (<0.1.6.89|"TES5") REQ: Skyrim 1.6.89+
  
 BEGINGROUP: Compatibility Patches
-\Compatability Patches which must load after a certain mod go here
-\Only if no conflicts are made in between
-\
+//Compatability Patches which must load after a certain mod go here
+//Only if no conflicts are made in between
+//
 REGEX: Agony's Sorting Frenzy - .+\.esp
 dD-SkyrimMonsterMod EBT Patch.esp
 GeneralStores-SkyMoMod.esp
 The Asteria - Dwemer Airship(GS).esp
 FTFI Fast Travel From Indoors.esp
-\Must come after all cell altering mods.
+//Must come after all cell altering mods.
 ENDGROUP: Compatibility Patches
 ENDGROUP: Load Late
 
