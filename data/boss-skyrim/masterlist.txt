@@ -1173,7 +1173,9 @@ LFox Alchemists Have Potions and Poisons.esp
 LFox Blacksmiths Have Metals.esp
   TAG: {{BASH: Delev, Relev}}
 LFox Bottle That Blood.esp
-REGEX:LIAT - .+\ NPCs.esp
+LIAT - NPCs.esp
+ IFNOT (5887EDBA|"LIAT - NPCs.esp") WARN: Obsolete. Please update to latest version.
+ IF (r"LIAT -.+NPCs\.esp") WARN: Obsolete. Please update to latest version.
 Linked Home Chests.esp
 lockBreaker_EV.esp
 Long lost smelters.esp
@@ -4731,6 +4733,8 @@ PrimbyTown.esp
 riverwood gates.esp
 Riverwood R9D.esp
 RiverwoodEnhancedPlugin.esp
+Smelter_Riften.esp
+Smelter_Solitude.esp
 TAVERiften.esp
 TownsAndCitiesEnhanced.esp
 WhiterunInEnhanced.esp
@@ -6104,6 +6108,10 @@ Follower Limit Increased.esp
 multimarriage.esp
   //must be load after multiple followers mods for wedding ceremony work.
 marriagemod - alpha v3.esp
+CerwidenCompanion.esp
+ IF (<Skyrim 1.6.89|"TES5") REQ: Skyrim 1.6.89+
+MujuroStormbringer.esp
+ IF (<Skyrim 1.6.89|"TES5") REQ: Skyrim 1.6.89+
 DudestiaMultiMarriages.esp
 Spousetocustomhome.esp
 MyOwnRubee.esp
