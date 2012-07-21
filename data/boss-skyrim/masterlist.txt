@@ -99,6 +99,7 @@ Niire's Honeyside(esm).esm
   IFNOT ("GeneralStores.esm") REQ: General Stores - storage resource for packrats 
 Niire's Proudspire(esm).esm
   IFNOT ("GeneralStores.esm") REQ: General Stores - storage resource for packrats
+NPCs.esm
 Realistic Wildlife Loot.esm
 Imp's More Complex Needs.esm
   IF ("imp's more complex needs.esp") SAY: Use either Nexus or Steam Workshop version, not both.
@@ -150,11 +151,12 @@ CoD Waking Nightmare II.esm
 Domus_Dementis.esm
 Deus Mons.esm
 dovahkiin_sanctuary.esm
+mannyBlackRock.esm
 mannyDragonhead.esm
   IF ("mannyDragonhead.esp") SAY: Use either mannyDragonhead.esm or mannyDragonhead.esp
       //IF LANG ("russian") && IF ("mannyDragonhead.esp") SAY: Используйте либо mannyDragonhead.esm либо mannyDragonhead.esp
       //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
-Murder01.esm
+REGEX: Murder.?.?\.esm
 DragonsReach_Hideout.esm
 Evil Lair of Hydra.esm
 Grytewake.esm
@@ -180,6 +182,7 @@ Ranger Ridge.esm
 retreat.esm
 SkyrimSewers.esm
 SleepingTreeSanctuary.esm
+REGEX: Terramis_Dungeon.*\.esm
 Undercity.esm
 warehouse.esm
 WinterholdDestruction.esm
@@ -1038,6 +1041,7 @@ Grab Moveable Statics.esp
   SAY: Obsolete, consider upgrading
 GrandSoulGemOnly.esp
 greatwyrm.esp
+GSTH.esp
 guardedborders.esp
 GuardsGuardThePlayer.esp
 ENDGROUP: Base G
@@ -1769,6 +1773,7 @@ ArmoredCircletsQuickFox.esp
 ArmoredAlikrGarb.esp
 armorkits.esp
   TAG: {{BASH: Relev}}
+Armor of Justice.esp
 Arngrim_Evening_Dress.esp
 REGEX: ArrowsNoGravity(_Fast)\.esp
 ArrowsOfLight.esp
@@ -3296,6 +3301,8 @@ dawnstarsanctuaryslightexpansion.esp
 dbretreat.esp
 dbriverwoodsanctuary.esp
 REGEX: Dead.?Manor.*\.esp
+REGEX: Descentintomadness.*\.esp
+ IFNOT ("ApachiiHair.esm") REQ: ApachiiSkyHair
 DetailedCities.esp
 REGEX: Deus Mons(_WithNPCs)?\.esp
 Dice Game in Taverns.esp
@@ -3435,6 +3442,8 @@ BEGINGROUP: Quests M
 
 Magelight Grotto.esp
 Manor Dragonborn.esp
+mannyBlackRock.esp
+  IF ("mannyBlackRock.esm") SAY: Use either mannyBlackRock.esm or mannyBlackRock.esp
 mannyDragonhead.esp
   IF ("mannyDragonhead.esm") SAY: Use either mannyDragonhead.esm or mannyDragonhead.esp
 Markarth Dwemer Palace.esp
@@ -3452,6 +3461,8 @@ Mother_of_Tears_Contracts_Eng.esp
 Mother_of_Tears_Dungeons.esp
 Mother_of_Tears_Epics_Eng.esp
 mtHornrichHearth.esp
+REGEX: Murder.?.?\.esp
+ IF (r"Murder.?.?\.esm") Warn: Use either Murder*.esp or Murder*.esm
 Museum.esp
 My home is your home.esp
 Mystic Home.esp
