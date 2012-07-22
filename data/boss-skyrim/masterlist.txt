@@ -1179,7 +1179,7 @@ LFox Blacksmiths Have Metals.esp
   TAG: {{BASH: Delev, Relev}}
 LFox Bottle That Blood.esp
 LIAT - NPCs.esp
- IF (r"LIAT - .+NPCs\.esp") WARN: Obsolete. Please update to latest version.
+  IF (r"LIAT - .+NPCs\.esp") WARN: Obsolete. Please update to latest version.
 Linked Home Chests.esp
 lockBreaker_EV.esp
 Long lost smelters.esp
@@ -2208,6 +2208,9 @@ REGEX: hothtro[op]per44_ArmorCompilation\.esp
   TAG: {{BASH: Relev}}
   //not tested
 Lorecraft - Immersive Armors.esp
+//IFNOT ("BandolierForNPCsImmersiveArmorsPatch.esp") MOD: hothtro[op]per44_ArmorCompilation\.esp
+//IFNOT ("BandolierForNPCsImmersiveArmorsPatch.esp") MOD: Lorecraft - Immersive Armors.esp
+// Unsure of REGEX syntax after MOD:, or if regex is still/even required for plugin. Added as silent comments for now.
 SkyRe_Plugin_ImmersiveArmor_2.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
 HoodsAndCirclets.esp
@@ -2537,7 +2540,7 @@ PIVariety.esp
 PIVarietyNoEdittedlist.esp
 REGEX: plate hoods pack-(normal|lower|higher) armor\.esp
 plate hoods pack-fixed.esp
- WARN: Obsolete, update to latest version.
+  WARN: Obsolete, update to latest version.
 playable greybeard.esp
 Plush Backpack.esp
 Pony_Armor.esp
@@ -2930,11 +2933,15 @@ ENDGROUP: Items XYZ
 BEGINGROUP: Items Load Late
 
 BandolierForNPCMasterFile.esp
+//IF ("BandolierForNPCsImmersiveArmorsPatch.esp") MOD: hothtro[op]per44_ArmorCompilation\.esp
+//IF ("BandolierForNPCsImmersiveArmorsPatch.esp") MOD: Lorecraft - Immersive Armors.esp
+// See coment for other conditional lines. (Line 2213)
 BandolierForNPCs.esp
 BandolierForNPCsWIC_V2.esp
 BandolierForNPCsBanditsWearHelmets.esp
 BandolierForNPCsCloaksOfSkyrim.esp
 BandolierForNPCsCheaperBandoliers.esp
+BandolierForNPCsImmersiveArmorsPatch.esp
 calyps-dragonpriestmasks.esp
 ENDGROUP: Items Load Late
 ENDGROUP: Items (armor and weapons)
@@ -3034,7 +3041,7 @@ PISE-Bartering Tweaks Only.esp
   SAY: The next one conflicts with some equipment changes, but you'll get some of my changes with the rest of his in the case of a conflict. In most cases, do not use.
 PISE-NPC Equipment Tweaks Only.esp
 PISE-Less Intense Level Scaling.esp
-WARN: Obsolete. Remove this and update to latest version
+  WARN: Obsolete. Remove this and update to latest version
 PISE-More Intense Level Scaling.esp
 PISE-Dragon Weighting Only.esp
 
@@ -5928,7 +5935,7 @@ ChantelleV2.esp
 Deadeye.esp
 Demon Horse.esp
 REGEX: DFH_.+\.esp
- IFNOT ("ApachiiHair.esm") REQ: ApachiiSkyHair
+  IFNOT ("ApachiiHair.esm") REQ: ApachiiSkyHair
 DogCompanions.esp
 AmazonianKhajiitAlpha.esp
 REGEX: AnotherFollowerMod_.+\.esp
@@ -5944,7 +5951,7 @@ OneiroFollowers.esp
 housecarl_fem_plus.esp
 Hot_Male_Housecarls.esp
 Immersive Followers.esp
- IFNOT ("ApachiiHair.esm") REQ: ApachiiSkyHair
+  IFNOT ("ApachiiHair.esm") REQ: ApachiiSkyHair
 Khargra.esp
 Khargra - Ghorbash Replacer.esp
 LaciTheOrcMarksman.esp
