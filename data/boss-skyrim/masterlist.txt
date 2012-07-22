@@ -3832,12 +3832,11 @@ REGEX: female mannequins( in homes)?\.esp
 Glowing Soul Gems.esp
 LessAnnoyingItems.esp
 Masters of Death.esp
-Morrowloot.esp
+IFNOT ("SkyRe_Main.esp") MOD: Morrowloot.esp
+  //morrowloot loaded here only if skyre_main.esp is not installed
+  //Also recommend to load morrowloot after any plugins that have a Relev tag because their also add vanilla records removed by morrowloot
   TAG: {{BASH: Delev, Relev}}
   IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
-SkyRe_Plugin_Morrowloot.esp
-  SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
-  IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
 xFenWSOWAFW3E.esp
   TAG: {{BASH: Delev, Relev}}
   // TAG: {{BASH: Delev, Stats, Relev}}
@@ -5664,6 +5663,12 @@ SkyRe_StandingStones.esp
   IF ("StaRe.esp") SAY: Remember to delete StaRe.esp
   IF ("Drakian race.esp") INC: Drakian race
   INC: Standing Stones and Guardians
+IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
+  TAG: {{BASH: Delev, Relev}}
+  IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
+SkyRe_Plugin_Morrowloot.esp
+  SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+  IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
 Perk_Soul_Siphon_Full_Recharge.esp
 SynergyBonuses.esp
 XPModNormal.esp
