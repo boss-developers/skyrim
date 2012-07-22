@@ -55,6 +55,7 @@ IF (r"Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.es
 IF ("Lady Body.esp") SET: LB
 IF (r"BertsBreezehome.+\.es[pm]") SET: BertsBHInst
 IF (r"SkyRe_.+\.esp") SET: SkyRe
+IF ("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
 
 //================================================================
 
@@ -2204,14 +2205,11 @@ highric Armor.esp
 HighelfL17.esp
 HoodlessDragonpriestMasks1_0.esp
 HoodlessDragonpriestMasksPlus1_0.esp
-REGEX: hothtro[op]per44_ArmorCompilation\.esp
+IFNOT ($BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
   TAG: {{BASH: Relev}}
   //not tested
-Lorecraft - Immersive Armors.esp
-//IFNOT ("BandolierForNPCsImmersiveArmorsPatch.esp") MOD: hothtro[op]per44_ArmorCompilation\.esp
-//IFNOT ("BandolierForNPCsImmersiveArmorsPatch.esp") MOD: Lorecraft - Immersive Armors.esp
-// Unsure of REGEX syntax after MOD:, or if regex is still/even required for plugin. Added as silent comments for now.
-SkyRe_Plugin_ImmersiveArmor_2.esp
+IFNOT ($BFNIAP) MOD: Lorecraft - Immersive Armors.esp
+IFNOT ($BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
 HoodsAndCirclets.esp
 HUM_Armor.esp
@@ -2933,9 +2931,12 @@ ENDGROUP: Items XYZ
 BEGINGROUP: Items Load Late
 
 BandolierForNPCMasterFile.esp
-//IF ("BandolierForNPCsImmersiveArmorsPatch.esp") MOD: hothtro[op]per44_ArmorCompilation\.esp
-//IF ("BandolierForNPCsImmersiveArmorsPatch.esp") MOD: Lorecraft - Immersive Armors.esp
-// See coment for other conditional lines. (Line 2213)
+IF ($BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
+  TAG: {{BASH: Relev}}
+  //not tested
+IF ($BFNIAP) MOD: Lorecraft - Immersive Armors.esp
+IF ($BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
+  SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
 BandolierForNPCs.esp
 BandolierForNPCsWIC_V2.esp
 BandolierForNPCsBanditsWearHelmets.esp
