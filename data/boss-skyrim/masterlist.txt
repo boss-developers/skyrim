@@ -33,10 +33,16 @@ You cannot start a silent comment part-way into a line, only whole lines may be 
 Message keywords should be indented by two spaces and followed by a colon ':' then the message string.
 */
 
+//Language setup. Only for BOSS 2.1+
+/*
+  IFNOT LANG ("russian") SET: EN
+  IF LANG ("russian") SET: RU
+*/
+
 // Upgrade message for 1.7+ users:
   IF (<2.0.1.0|"BOSS") GLOBAL WARN: An update for BOSS (v2.0.1) has been released. Download it at "http://oblivion.nexusmods.com/mods/20516", "http://skyrim.nexusmods.com/mods/6", "http://fallout3.nexusmods.com/mods/10193" or "http://newvegas.nexusmods.com/mods/35999"
-      //IF LANG ("russian") && IF (<2.0.1.0|"BOSS") GLOBAL WARN: Вышло обновление для BOSS версии 2.0.1. Скачать его вы можете на "http://oblivion.nexusmods.com/mods/20516", "http://skyrim.nexusmods.com/mods/6", "http://fallout3.nexusmods.com/mods/10193" или "http://newvegas.nexusmods.com/mods/35999"
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) && IF (<2.0.1.0|"BOSS") GLOBAL WARN: Вышло обновление для BOSS версии 2.0.1. Скачать его вы можете на "http://oblivion.nexusmods.com/mods/20516", "http://skyrim.nexusmods.com/mods/6", "http://fallout3.nexusmods.com/mods/10193" или "http://newvegas.nexusmods.com/mods/35999"
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 
 // Masterlist variable setup for BOSS v1.7+.
 //================================================================
@@ -61,8 +67,8 @@ IF ("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
 
 /* Latest thread */
 GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1395580-relz-boss-for-skyrim/"
-      //IF LANG ("russian") GLOBAL SAY: Последняя ветка форума BOSS: "http://forums.bethsoft.com/topic/1395580-relz-boss-for-skyrim/"
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) GLOBAL SAY: Последняя ветка форума BOSS: "http://forums.bethsoft.com/topic/1395580-relz-boss-for-skyrim/"
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 
 BEGINGROUP: ESMs
 
@@ -105,8 +111,8 @@ NPCs.esm
 Realistic Wildlife Loot.esm
 Imp's More Complex Needs.esm
   IF ("imp's more complex needs.esp") SAY: Use either Nexus or Steam Workshop version, not both.
-      //IF LANG ("russian") && IF ("imp's more complex needs.esp") SAY: Используйте любую Nexus или Steam Workshop версию, не обе.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) && IF ("imp's more complex needs.esp") SAY: Используйте любую Nexus или Steam Workshop версию, не обе.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 LorecraftESM.esm
 Oblivion hair.esm
 Real Wildlife - IMCN.esm
@@ -134,8 +140,8 @@ Mother_of_Tears_Epics_Eng.esm
 AemersRefuge.esm
 ANK_Castle_Main.esm
   SAY: Old version upgrade to version 5.0+
-      //IF LANG ("russian") SAY: Устарело. Обновите до версии 5.0+.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до версии 5.0+.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Aurora.esm
 BertsBreezehomeGarden.esm
 BertsBreezehomeRemodel.V.1.0(esm).esm
@@ -156,8 +162,8 @@ dovahkiin_sanctuary.esm
 mannyBlackRock.esm
 mannyDragonhead.esm
   IF ("mannyDragonhead.esp") SAY: Use either mannyDragonhead.esm or mannyDragonhead.esp
-      //IF LANG ("russian") && IF ("mannyDragonhead.esp") SAY: Используйте либо mannyDragonhead.esm либо mannyDragonhead.esp
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) && IF ("mannyDragonhead.esp") SAY: Используйте либо mannyDragonhead.esm либо mannyDragonhead.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: Murder.?.?\.esm
 DragonsReach_Hideout.esm
 Evil Lair of Hydra.esm
@@ -167,12 +173,12 @@ Kyia.esm
 Lanterns Of Skyrim - All In One - Main.esm
 REGEX: Lanterns Of Skyrim - All In One( 2x brighter)?\.esm
   SAY: Obsolete, upgrade to new version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до новой версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 LevelersTower.esm
   SAY: Obsolete, upgrade to new version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до новой версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 MagicDuel.esm
 Manantis.esm
 moonpath.esm
@@ -190,21 +196,23 @@ warehouse.esm
 WinterholdDestruction.esm
 kuerteeInventoryAndWeight.esm
   SAY: Obsolete upgrade to new version
-      //IF LANG ("russian") SAY: Устарело. Обновите до новой версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: Blood \(\w+\)\.ESM
   SAY: Use only one Blood (*).ESM
+    //IF ($RU) SAY: Используйте только один Blood (*).ESM
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 ArmedttTeeth.esm
 DeadlyDragons.esm
   SAY: Obsolete. Upgrade to 4.2.1
-      //IF LANG ("russian") SAY: Устарело. Обновите до версии 4.2.1
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до версии 4.2.1
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Mannequin.esm
 alchstone5x.esm
 REGEX: EagleEyePerk(_defStamina|_half_stamina)?\.esm
   SAY: Use only one EagleEyePerk esm
-      //IF LANG ("russian") SAY: Используйте только одну версию EagleEyePerk esm
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Используйте только один EagleEyePerk esm
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 FluxMOD_ArtifactEffectPerk.esm
 GetArrowsBack80.esm
 vinis_food_and_rest.esm
@@ -213,18 +221,18 @@ Skyrim Adventurer's Tent.esm
 Skyrim Dark.esm
 SPTMuscularFemaleRaces.esm
   SAY: Obsolete. Update to latest version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до последней версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 SPTDiverseGuardsSkyrimResources.esm
   SAY: Obsolete. Update to latest version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до последней версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Natural Characters and Companions.esm
   REQ: ApachiiSkyHair, Lovely Hairstyles
 SpecializedFollowers.esm
   SAY: Obsolete. Update to latest verion.
-      //IF LANG ("russian") SAY: Устарело. Обновите до последней версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 DFB - Random Encounters.esm
 HuntersDiscipline.esm
 MBMaster.esm
@@ -235,8 +243,8 @@ ApachiiHair.esm
 Succubus.esm
 MTOH.esm
   SAY: Hair standalone mod for other mods which edit NPCs. If this one is used, MTOH.esp should be disabled.
-      //IF LANG ("russian") SAY: Автономный мод причесок, меняющий NPC. Если он использован, то MTOH.esp должен быть отключен.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Автономный мод причесок, меняющий NPC. Если он использован, то MTOH.esp должен быть отключен.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Ajen.esm
 Alicia.esm
 Farkasv2.esm
@@ -244,9 +252,9 @@ XFLMain.esm
   IF (<1.3.0|"TES5") REQ: Skyrim 1.3+
   IF ($UFO) INC: UFO - Ultimate Follower Overhaul.esp, has the same functional, use only one.
   IF ("BDO.esp") INC: BDO.esp, has the same functional, use only one.
-      //IF LANG ("russian") && IF ($UFO) INC: UFO - Ultimate Follower Overhaul.esp, имеет такой же функционал, используйте только один из них.
-      //IF LANG ("russian") && IF ("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) && IF ($UFO) INC: UFO - Ultimate Follower Overhaul.esp, имеет такой же функционал, используйте только один из них.
+    //IF ($RU) && IF ("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 DArchon.esm
 DrowCompanions.esm
 Sirenia.esm
@@ -266,8 +274,8 @@ ZZZ_Stenvar_Replacer_THAIDEN.esm
 Dual Wield for Followers.esm
 Extended Colors.esm
   SAY: Obsolete upgrade to version 5
-      //IF LANG ("russian") SAY: Устарело. Обновите до версии 5.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до версии 5.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 ENDGROUP: ESMs
 
 BEGINGROUP: Official DLC Files
@@ -487,8 +495,12 @@ BEGINGROUP: Weather mods and overhauls
 Chesko_Frostfall.esp
 IFNOT ("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
   SAY: Use only one enhanceddynamicweathersystem esp
+    //IF ($RU) SAY: Используйте только один enhanceddynamicweathersystem esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
   SAY: Use only one enhanceddynamicweathersystem esp
+    //IF ($RU) SAY: Используйте только один enhanceddynamicweathersystem esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   INC: Realistic Lighting
 REGEX: getSnowyV.+\.esp
   IF ("Chesko_Frostfall.esp") INC: Chesko_Frostfall.esp
@@ -541,15 +553,10 @@ BEGINGROUP: Lighting
 alvor's house dynamic.esp
 Bright Lights.esp
 CLARALUX - More and Brighter Lights.esp
-CLARALUX - LightAdjuster - Increased Bright Increased Radius.esp
+CLARALUX - LightAdjuster - (Vanilla/Increased) Bright (Increased Radius|Vanilla Lights|Medium Lights and Radius( w Shadows)?)\.esp
   SAY: Use only one LightAdjuster.
-CLARALUX - LightAdjuster - Vanilla Bright Increased Radius.esp
-  SAY: Use only one LightAdjuster.
-CLARALUX - LightAdjuster - Vanilla Lights.esp
-  SAY: Use only one LightAdjuster.
-REGEX: CLARALUX - LightAdjuster - Medium Lights and Radius( w Shadows)?\.esp
-  SAY: Use only one LightAdjuster.
-CLO.esp
+    //IF ($RU) SAY: Используйте только один LightAdjuster esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 ColorfulLightsNoShadows.esp
 REGEX: Dark( |e[r|st]+[ ]?)?Nights( and Bright Skies| No Weather)?\.esp 
 REGEX: Dark(er)? Nights(B|_(\d{1,2})?(b+[lr])?)\.esp
@@ -558,18 +565,28 @@ Dark Dungeons for ENB.esp
 Encryptions Water Arrow.esp
 Further Dark Dungeons for ENB.esp
 REGEX: Realistic Lighting( - Full| - Addon)\.esp
+    //IF ($RU) SAY: Используйте только один LightAdjuster esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   SAY: Obsolete upgrade to latest version.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: RL - .*\.esp
   SAY: Obsolete upgrade to latest version.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Realistic Lighting.esp
 REGEX: [Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\.esp
   IFNOT ("Realistic Lighting.esp") REQ: Realistic Lighting with Customization
 realrain.esp
   SAY: Use only one realrain.esp
+    //IF ($RU) SAY: Используйте только один realrain.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 realrainBWRLWC.esp
 realrainCoT.esp
 realrainextended.esp
   SAY: Use only one realrain.esp
+    //IF ($RU) SAY: Используйте только один realrain.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Realistic Lighting Patcher.esp
 RemoveAmbientInteriorFog.esp
   IF ("Realistic Lighting.esp") WARN: Removing the interior Fog will affect Realistic Lighting. Load before RL if you are experiencing errors.
@@ -579,6 +596,8 @@ enhancedlightingforrealisticlighting.esp
 IF ("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
   //See readme for more info about load order
   SAY: Use only one enhanceddynamicweathersystem esp
+    //IF ($RU) SAY: Используйте только один enhanceddynamicweathersystem esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 real lights in dragonsreach.esp
 Natural Skyrim Rain.esp
   //Bethsoft6.118,128and9.187,193
@@ -593,6 +612,8 @@ DarkerInteriors.esp
 DOF.esp
 REGEX: KatuLights.*\.esp
   SAY: Use only one KatuLights*.esp
+    //IF ($RU) SAY: Используйте только один KatuLights*.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 RealLights-Base.esp
 Real Lights - Cities.esp
 /* Darker Dungeons */
@@ -689,8 +710,8 @@ Als Treasure Vault Only.esp
 ancalagon.esp
 ARTOFMAGIC.esp
   SAY: Obsolete. Upgrade to latest version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до последней версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)..
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)..
 AOMGHOST.esp
 AOM.esp
 ApachiiHelmetWigs.esp
@@ -711,6 +732,8 @@ Ars Metallica.esp
 arrowsstick.esp
 REGEX: Arrows of Magicka.*\.esp
   SAY: Use only one Arrows of Magicka*.esp
+    //IF ($RU) SAY: Используйте только один Arrows of Magicka*.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 AThievesTreasure.esp
 Auto Unequip Helmet.esp
 AV1Dragon_Lords.esp
@@ -728,6 +751,8 @@ Back off, Barbas!.esp
 REGEX: (Vidani's )?Bag of Holding\.esp
 REGEX: BagofTrash\w*\.esp
   SAY: Use only one BagofTrash*.esp
+    //IF ($RU) SAY: Используйте только один BagofTrash*.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 BakingRecipes.esp
 Balanced Crafting Project - Smithing Part.esp
 Balanced Crafting Project - Enchanting Smithing.esp
@@ -885,6 +910,8 @@ dbmisc.esp
 dbtomisc.esp
 REGEX: Decorator Assistant.+\.esp
   SAY: Use only one Decorator Assistant*.esp
+    //IF ($RU) SAY: Используйте только один Decorator Assistant*.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 DecorativeTrophies.esp
   TAG: {{BASH: Relev}}
   //not sure about 'Relev' tag, maybe need 'Invent' tag(after it comp. in WB) need check
@@ -971,8 +998,10 @@ EnverCamoran.esp
 EquipableMap.esp
 EquivalentExchange.esp
 erweiterte schmiedekunst.esp
-Eternal Bunny Pet (Dark Silent).esp
-  WARN: Use only one Eternal Bunny Pet esp
+REGEX: Eternal Bunny Pet (Dark Silent)?\.esp
+  SAY: Use only one Eternal Bunny Pet esp
+    //IF ($RU) SAY: Используйте только один Eternal Bunny Pet esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 EternalTorch.esp
 EveryoneGetInside.esp
 expanded children.esp
@@ -1006,6 +1035,8 @@ FullyEquippedBlacksmiths.esp
 Furbag.esp
 REGEX: FurnitureLootOverhaul(_3.0)?\.esp
   SAY: Use only one Furniture Loot Overhaul
+    //IF ($RU) SAY: Используйте только один Furniture Loot Overhaul esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 ENDGROUP: Base F
 
 BEGINGROUP: Base G
@@ -1030,18 +1061,32 @@ Gleaming Salvage Caravan.esp
 GM-Fletching04.esp
 REGEX: GM-Fletching(Harder|Standard)\.esp
   SAY: Use only one version of GM-Fletching*.esp
+    //IF ($RU) SAY: Используйте только один GM-Fletching*.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 GM-ForgeAdditions.esp
-  IF ($DualGMForgeAdd) SAY: Use Only One GM-ForgeAdditions.esp GM-ForgeAdditionsLAotB.esp
+  IF ($DualGMForgeAdd) SAY: Use Only One GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp
+    //IF ($RU) SAY: Используйте только один GM-ForgeAdditions.esp или GM-ForgeAdditionsLAotB.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 GM-ForgeAdditionsLevelledOutfits.esp
   IF ($DualGMLevList) SAY: Use only one GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp
+    //IF ($RU) SAY: Используйте только один GM-ForgeAdditionsLevelledOutfits.esp или GM-ForgeAdditionsLevelledOutfits.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 /* will work alongside The Lost Art of the Blacksmith */
 GM-ForgeAdditionsLAotB.esp
-  IF ($DualGMForgeAdd) SAY: Use Only One GM-ForgeAdditions.esp GM-ForgeAdditionsLAotB.esp
+  IF ($DualGMForgeAdd) SAY: Use Only One GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp
+    //IF ($RU) SAY: Используйте только один GM-ForgeAdditions.esp или GM-ForgeAdditionsLAotB.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 GM-ForgeAdditionsLAotBLevelledOutfits.esp
   IF ($DualGMLevList) SAY: Use only one GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp
+    //IF ($RU) SAY: Используйте только один GM-ForgeAdditionsLevelledOutfits.esp или GM-ForgeAdditionsLevelledOutfits.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 GM-FletchingNoFeathers.esp
+    //IF ($RU) SAY: Используйте только один GM-ForgeAdditionsLevelledOutfits.esp или GM-ForgeAdditionsLevelledOutfits.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Grab Moveable Statics.esp
   SAY: Obsolete, consider upgrading
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 GrandSoulGemOnly.esp
 greatwyrm.esp
 GSTH.esp
@@ -1353,22 +1398,17 @@ renameddragonclaws.esp
   //TAG: {{BASH: Names}}
 REGEX: Realistic Wildlife Loot V.+\.esp
   TAG: {{BASH: Delev, Relev}}
+  SAY: Use only one Realistic Wildlife Loot V*.esp
+    //IF ($RU) SAY: Используйте только один Realistic Wildlife Loot V*.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 RWL Option - 3x Giant toes.esp
   SAY: Use only one Realistic Wildlife Loot esp
-Realistic Wildlife Loot - IMCN.esp
-  TAG: {{BASH: Delev, Relev}}
-Realistic Wildlife Loot - IMCN Realistic.esp
+Realistic Wildlife Loot - (IMCN)?( Realistic| Reduced)\.esp
   TAG: {{BASH: Delev, Relev}}
   //not tested
-Realistic Wildlife Loot - IMCN Reduced.esp
-  TAG: {{BASH: Delev, Relev}}
-  //not tested
-Realistic Wildlife Loot - Realistic.esp
-  TAG: {{BASH: Delev, Relev}}
-  //not tested
-Realistic Wildlife Loot - Reduced.esp
-  TAG: {{BASH: Delev, Relev}}
-  //not tested
+  SAY: Use only one Realistic Wildlife Loot - *.esp
+    //IF ($RU) SAY: Используйте только один Realistic Wildlife Loot - *.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: Real Wildlife Skyrim.*\.esp
   TAG: {{BASH: Relev}}
 /* Does this Satisfy SIRWPach.esp and SIRWPatch.esp */
@@ -1445,8 +1485,8 @@ SkyForge +.esp
 SkyHavenLightFix.esp
 SkyMoMod.esp
   SAY: Obsolete. Update to latest version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до последней версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   TAG: {{BASH: Delev, Relev}}
 SkyMoMod_lists.esp
   TAG: {{BASH: Delev, Relev}}
@@ -1515,6 +1555,8 @@ Frost Giants.esp
 stone_overhaul.esp
 REGEX: StormcloakArmorVariety(OPTION\d)?\.esp
   SAY: Use only one StormcloakArmorVariety esp
+    //IF ($RU) SAY: Используйте только один StormcloakArmorVariety esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 SweetRollin.esp
 SwordMelting.esp
 ClothesTearingAddition.esp
@@ -1564,8 +1606,8 @@ Transmute Iron First.esp
 transmuteironorefirst.esp
 TravellersOfSkyrim.esp
   SAY: Obsolete. Upgrade to latest version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до последней версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)..
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)..
 TravellersOfSkyrim - Vanilla.esp
 travelingargonians.esp
 treeplanting.esp
@@ -1636,6 +1678,8 @@ wildhorses.esp
 Winterlude's Arrowsmithing Mod.esp
 REGEX: WiS IV - Heroes & Villains( insane| Easy)?\.esp
   SAY: Use only one WiS IV - Heroes & villains esp
+    //IF ($RU) SAY: Используйте только один WiS IV - Heroes & villains esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: Wolfs_Buff_Recipes(_Rus)?\.esp
 Wolfs_Simple_Recipes.esp
 REGEX: Wolfs_Intermediate_Recipes(_Rus)?\.esp
@@ -1667,9 +1711,13 @@ BarberShop.esp
 CrowdedCities.esp
 REGEX: KoS_Outcast(_Lite)?\.esp
   SAY: Use only one KoS_Outcast*.esp
+    //IF ($RU) SAY: Используйте только один KoS_Outcast*.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 KoS_Land_at_War.esp
 REGEX: more_Travelers(_light)?\.esp
   SAY: Use only one more_Travelers*.esp
+    //IF ($RU) SAY: Используйте только один more_Travelers*.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 MoreUP.esp
 repopulatedskyrim.esp
 REGEX: SIM.?- NPC.?Additions(HOSTILE|WEREWOLVES)?\.esp
@@ -1765,6 +1813,8 @@ ApotheusLightArmor_by_GuitunScarfin.esp
 REGEX: Arcania_armory( \(base\))?\.esp
   TAG: {{BASH: Relev}}
   IF ("Arcania_armory.esp") && IF ("Arcania_armory (base).esp") SAY: Use only one Arcania_armory*.esp
+    //IF ($RU) && IF ("Arcania_armory.esp") && IF ("Arcania_armory (base).esp") SAY: Используйте только один Arcania_armory*.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Arcania bows.esp
 Archmage's Boots.esp
 Armor_Swaps_v1.00.esp
@@ -1825,6 +1875,8 @@ BelethorGoods.esp
 BellHammer.esp
 REGEX: Berserk Black Swordsman Armor( - No Arm)?\.esp
   SAY: Use only one version of Berserk Black Swordsman Armor
+    //IF ($RU) SAY: Используйте только один Berserk Black Swordsman Armor
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 BetterArchmagesRobes.esp
 BetterArchmagesRobesMedium2.esp
 BFPU Orcish Armor.esp
@@ -1889,9 +1941,13 @@ ClericCraftable.esp
 REGEX: Cloaks( - No Imperial| - Player Only)?\.esp
   TAG: {{BASH: Relev}}
   SAY: Use only one cloaks*esp
+    //IF ($RU) SAY: Используйте только один cloaks*esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: Lorecraft - Cloaks(\d{1,3})( No Imperial| PlayerOnly)?\.esp
   TAG: {{BASH: Relev}}
   SAY: Use only one Lorecraft - Cloaks
+    //IF ($RU) SAY: Используйте только один Lorecraft - Cloaks
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
   TAG: {{BASH: Relev}}
   SAY: Update to new version for Cloaks 09
@@ -1901,6 +1957,8 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
   TAG: {{BASH: Relev}}
 REGEX: 1nivWICSkyCloaksPatch(-No Imp)?\.esp
   SAY: Use only one 1nivWICSkyCloaksPatch esp
+    //IF ($RU) SAY: Используйте только один 1nivWICSkyCloaksPatch esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 1nivWICCloaksLorecraft.esp
 1nivWICCloaksCRAFTLorecraft.esp
 Collar.esp
@@ -1986,8 +2044,8 @@ DesertWindByNausicaa.esp
 df127enchantedarrows.esp
 REGEX: DG Jewelry\d?\.esp
   SAY: Obsolete. Update to latest version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до последней версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 UNP Jewelry.esp
 DGJewelryExtended.esp
 diamondweapons1.0.esp
@@ -2664,6 +2722,8 @@ Shining Paladin.esp
 shogo_laser_katana.esp
 ShShortswords.esp
   IF ("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
+    //IF ($RU) &&  IF ("SkyRe_Main.esp") WARN: Удалите. Уже входит в SkyRe_Main.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   TAG: {{BASH: Delev, Relev}}
 Siege Bow & Backpacks.esp
 SilverDragonArmor.esp
@@ -2881,11 +2941,16 @@ REGEX: Weapons of the Third Era.+\.esp
 REGEX: WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp
   IF ("3rdEraWeaponsMoS.esp") WARN: You have installed 3rdEraWeaponsMoS.esp. Use only one WeaponsOf3E or 3rdEraWeaponsMoS
   IF ("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
+    //IF ($RU) &&  IF ("SkyRe_Main.esp") WARN: Удалите. Уже входит в SkyRe_Main.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   TAG: {{BASH: Relev}}
 WeaponsOf3E - No Leveled Lists.esp
 3rdEraWeaponsMoS.esp
   SAY: Obsolete. Update to the latest Weapons of the Third Era MoS edition
-  TAG: {{BASH: Delev, Relev}} for versions <1.5
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+  TAG: {{BASH: Delev, Relev}}
+    //for versions <1.5
   IF ("SkyRe_Main.esp") WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'
   IF (r"WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp") INC: WeaponsOf3E*.esp
 3rdEraWeapMoS-lvlList.esp
@@ -5229,8 +5294,8 @@ BEGINGROUP: Alchemy
 
 Alchemy Fixed Beta 0.02.esp
   SAY: Obsolete. Update to latest version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до последней версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax).
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax).
 Alchemy Apparatuses .91.esp
 AutoPotion.esp
 learn_alchemy.esp
@@ -5982,14 +6047,14 @@ ExtraBlades.esp
 Better Followers.esp
   IF ("throwingweapons.esp") SAY: Some NPC changes not work with  'throwingweapons.esp'. See note for  IF ("throwingweapons.esp") INC: throwingweapons.esp.
   SAY: Obsolete. Upgrade to latest version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до последней версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)..
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)..
 SpecializedFollowers.esp
   IF (r"Better Followers - .+\.esp") WARN: Delete. Use Better Followers - S*.esp instead.
 REGEX: Better Followers - Specialized( - Not E)?\.esp
   SAY: Obsolete. Upgrade to latest version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до последней версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax). of Better Followers.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax). of Better Followers.
 BrelynaMaryon.esp
 CamillaValerius.esp
 CarlottaValentia.esp
@@ -6099,8 +6164,8 @@ REGEX: Better Followers - [SBNP].*\.esp
   SAY: Use only one Better Followers - *.esp
 REGEX: Better Follower(s -)? Dialogue-?(All|Dog|Reorder|Thane)?\.esp
   SAY: Obsolete. Update to latest version.
-      //IF LANG ("russian") SAY: Устарело. Обновите до последней версии.
-      //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax) of Better Followers and use Big Dialod Overhaul(BDO) instead.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax) of Better Followers and use Big Dialod Overhaul(BDO) instead.
   IF ("BDO.esp") WARN: Delete. Included in BDO.esp
   IF ($UFO) WARN: Delete. Use UFO - Ultimate Follower Overhaul.esp instead
 Better Follower Improvements.esp
