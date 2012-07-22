@@ -198,8 +198,6 @@ kuerteeInventoryAndWeight.esm
   SAY: Obsolete upgrade to new version
     //IF ($RU) SAY: Устарело. Обновите до новой версии.
     //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
-    //IF ($RU) SAY: Устарело. Обновите до новой версии.
-    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: Blood \(\w+\)\.ESM
   SAY: Use only one Blood (*).ESM
     //IF ($RU) SAY: Используйте только один Blood (*).ESM
@@ -2380,12 +2378,10 @@ JDRobedArmor.esp
 voidcraft_jewelry.esp
 Jojjos Warglaives.esp
 JSScomplete.esp
-T3nd0sOverhaulJSwordsPlugin.esp
-  SAY: For JSwords users
-  SAY: Obsolete. Update to latest 'SkyRe - Skyrim Redone'
 JSwords.esp
   SAY: Obselete, upgrade to v13+
-  
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Faster Combat-Jswords.esp
 JSwordsDistributionBalancePlugin.esp
 JSwords_FR_Plugin_V13C.esp
@@ -2393,6 +2389,10 @@ Deleveled Skyrim - JSwords.esp
   TAG: {{BASH: Delev, Relev}}
 AttTJSwords.esp
 Lorecraft - JSwords.esp
+T3nd0sOverhaulJSwordsPlugin.esp
+  SAY: Obsolete. Update to latest 'SkyRe - Skyrim Redone'
+    //IF ($RU) SAY: Устарело. Обновите до последней версии 'SkyRe - Skyrim Redone'.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 SkyRe_Plugin_JaySuSSwords_1.3D.esp
   IFNOT (r"JSwords(DV)?\.esm") ERROR: JSwords.esm no installed! DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
     //IF ($RU) && IFNOT (r"JSwords(DV)?\.esm") ERROR: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
@@ -2536,7 +2536,7 @@ Malo_Waffen.esp
 March Madness Standalone.esp
 maruMask.esp
 MashupUNP.esp
-matys knights of the nine armor (\d\.\d)\.esp
+REGEX: matys knights of the nine armor (\d\.\d)\.esp
 Matys Mithril armor Enhanced.esp
 kotn mage.esp
 matys medieval knights.esp
@@ -5620,19 +5620,33 @@ REGEX: ...?% Skill Speed\.esp
 REGEX: leveling_\dx_slower.+\.esp
 ACE BYOG.esp
 REGEX: ACE BYOG Carry Weight ([Dd]+\d{1,3})\.esp
-  SAY: Use only one ACE BYOG Carry Weight pugin
+  SAY: Use only one ACE BYOG Carry Weight plugin
+    //IF ($RU) SAY: Используйте только один ACE BYOG Carry Weight*esp.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: ACE BYOG - Attack Range ([du]+\d{1,3})\.esp
-  SAY: Use only one ACE BYOG Attack Range pugin
+  SAY: Use only one ACE BYOG Attack Range plugin
+    //IF ($RU) SAY: Используйте только один ACE BYOG Attack Range*esp.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: ACE BYOG - Enemy lvl ([du]+\d{1,3})\.esp
-  SAY: Use only one ACE BYOG Enemy lvl pugin
+  SAY: Use only one ACE BYOG Enemy lvl plugin
+    //IF ($RU) SAY: Используйте только один ACE BYOG Enemy lvl*esp.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: ACE BYOG - Jump Height (u\d{1,3})\.esp
-  SAY: Use only one ACE BYOG Jump Height pugin
+  SAY: Use only one ACE BYOG Jump Height plugin
+    //IF ($RU) SAY: Используйте только один ACE BYOG Jump Height*esp.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: ACE BYOG - Max Damage Resist (\d{1,3})\.esp
-  SAY: Use only one ACE BYOG Max Damage Resist pugin
+  SAY: Use only one ACE BYOG Max Damage Resist plugin
+    //IF ($RU) SAY: Используйте только один ACE BYOG Max Damage Resist*esp.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: ACE BYOG - Starting Skills (\d{1,3})\.esp
-  SAY: Use only one ACE BYOG Starting Skills pugin
+  SAY: Use only one ACE BYOG Starting Skills plugin
+    //IF ($RU) SAY: Используйте только один ACE BYOG Starting Skills*esp.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: ACE BYOG NPC Archers Miss-Rate ([du]+\d{1,3})\.esp
-  SAY: Use only one ACE BYOG NPC Archers Miss-Rate pugin
+  SAY: Use only one ACE BYOG NPC Archers Miss-Rate plugin
+    //IF ($RU) SAY: Используйте только один ACE BYOG NPC Archers Miss-Rate*esp.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 ACE Crafting.esp
 ACE Speech.esp
 Alternate_Birthstones.esp
@@ -5656,14 +5670,20 @@ Balanced_Restoration.esp
 Balanced Weapon Skill Perks.esp
 REGEX: Balanced_Magic_(Adept|Novice|Master)\.esp
   SAY: Choose only one of the below - optional if you prefer vanilla settings or other mods which adjust these values.
+    //IF ($RU) SAY: Выберете только один из нижестледующих, если вы предпочитаете ванильные настройки или другие моды, которые регулируют эти значения.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Balanced_Magic_BETA_2_0.esp
 BS-Balanced_Magic_BETA_2_0.esp
   REQ: Balanced_Magic_BETA_2_0.esp
 Perk_Deft_Movement_Power_25.esp
 REGEX: PPE_Perk-.+\.esp
   SAY: Obsolete. Update to last version of 'PerkUP' mod
+    //IF ($RU) SAY: Устарело. Обновите до последней версии мода 'PerkUP' .
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: PerkUP-.{4,12}\.esp
   SAY: For users of incompatible plugins in this mod plugins. You will probably lose some already used perks, check this in game.
+    //IF ($RU) SAY: Пользователи, уже использующие несовместимые с этим моды. Вы можете потерять уже использованные перки, проверьте это в игре.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   INC: Extra Effect Perk-Additional Rank by thedemoninside , No Perk Prerequisites by ClassicalNoodle , Deflect Arrows Perk Fix by JeffSteel , Caos Advanced Perk Ranks by CaoMengde777 (fixed bugs, naturally) , Caos Extra Pockets Perk Upgrades by CaoMengde777 , Dead Aim perk x5 x10 x15 x20 by evi002 (rebalanced) , Better archery Eagle Eye perk by Graxster , Concentrated Poisons by kenevir1991 , Bugfix - Critical Charge with swords by Kevin Kidder ....
   //For Basic
 REGEX: PerkUP-.*\.esp
@@ -5673,6 +5693,8 @@ More Craftables - PerkUP compatibility.esp
 NapalmPerkOverhaul.esp
 REGEX: New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp
   SAY: Use only one 'New Leveled Encounter Levels*.esp'
+    //IF ($RU) SAY: Используйте только один New Leveled Encounter Levels*.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Noredundantperks.esp
 ACE Archery.esp
   IF (46C639C1|"Crafting300.esp") INC: Crafting300.esp, to fix this get the compatibility patch found here: "http://skyrim.nexusmods.com/download/70990"
@@ -5735,6 +5757,8 @@ Leveling Destruction Perks.esp
 Leveling Destruction Perks - Only Perks.esp
 levelingperkslite.esp
   IF ("perksbymatope.esp") WARN: Delete. Already included in perksbymatope.esp
+    //IF ($RU) SAY: Удалите. Уже содержится в perksbymatope.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: MageArmor(Easy)?\.esp
 magicscaling.esp
 MagicSneakCrit.esp
