@@ -1210,6 +1210,8 @@ Lanterns on the Roads (50% less lanterns).esp
 LBInteriorDecorating.esp
 REGEX: LeatherWeightFix\(\d.\d\)\.esp
 leazeropenlock.esp
+IF ($LB) MOD: RingsOnTheLeftHand.esp
+  //load here for correct display of arm when 'lady body.esp' is installed
 Lady Body.esp
   INC: CBBE, UNP and other body replacers.
 LegendarySmithingUpgrades.esp
@@ -5732,12 +5734,13 @@ SkyRe_StandingStones.esp
   IF ("StaRe.esp") SAY: Remember to delete StaRe.esp
   IF ("Drakian race.esp") INC: Drakian race
   INC: Standing Stones and Guardians
+SkyRe_Plugin_Morrowloot.esp
+  //load order from autor of SkyRe (1-skyre main 2-morrowloot 3-skyre plugin morrowloot)
+  SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+  IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
 IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
   IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
-SkyRe_Plugin_Morrowloot.esp
-  SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
-  IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
 Perk_Soul_Siphon_Full_Recharge.esp
 SynergyBonuses.esp
 XPModNormal.esp
