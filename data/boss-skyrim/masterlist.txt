@@ -198,6 +198,8 @@ kuerteeInventoryAndWeight.esm
   SAY: Obsolete upgrade to new version
     //IF ($RU) SAY: Устарело. Обновите до новой версии.
     //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
+    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: Blood \(\w+\)\.ESM
   SAY: Use only one Blood (*).ESM
     //IF ($RU) SAY: Используйте только один Blood (*).ESM
@@ -1198,14 +1200,22 @@ BEGINGROUP: Base L
 REGEX: Lanterns Of Skyrim - All In One - (2x Brighter|Default)?(RCRN )?(Hyper Purist|Classic|Legacy|Pure)?\.esp
 REGEX: Lanterns Of Skyrim - All In One( 2x brighter)?\.esp
   SAY: Obsolete upgrade to new version
+    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Lanterns Of Skyrim - All In One - Main.esm
   IFNOT ("Lanterns Of Skyrim - All In One - Main.esm") SAY: REQ: Lanterns Of Skyrim - All In One - Main.esm
 REGEX: Lanterns Of Skyrim - Around Cities(_bright)?\.esp
   SAY: Obsolete upgrade to new version
+    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: Lanterns Of Skyrim - Bridges x2 - OnOff(_bright)?\.esp
   SAY: Obsolete upgrade to new version
+    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Lanterns Of Skyrim - Villages.esp
   SAY: Obsolete upgrade to new version
+    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Lanterns on the Roads (50% less lanterns).esp
 LBInteriorDecorating.esp
 REGEX: LeatherWeightFix\(\d.\d\)\.esp
@@ -1387,7 +1397,11 @@ rats.esp
 RaushanSayoran.esp
 REGEX: Radiant and Unique Potions (and )?Poisons.*\.esp
   IF ("Radiant and Unique Potions and Poisons.esp") SAY: Obsolete. Update to latest version.
+    //IF ($RU) && IF ("Radiant and Unique Potions and Poisons.esp") SAY: Устарело. Обновите до последней версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("Radiant and Unique Potions Poisons and BOOZE.esp") && IF (r"Unique BOOZE Bottles.*\.esp") SAY: Uninstall Unique BOOZE Bottles
+    //IF ($RU) && IF ("Radiant and Unique Potions Poisons and BOOZE.esp") && IF (r"Unique BOOZE Bottles.*\.esp") SAY: Деинсталируйте Unique BOOZE Bottles
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Real Days.esp
 real glaciers.esp
   SAY: Old version update to Real Glaciers V2
@@ -1476,6 +1490,8 @@ Silent Moon Forging 1.2.esp
 Silverupgrade.esp
 SimpleBleeding.esp
   IF (r".. - Enhanced Blood Main\.esp") WARN: This mod is included in Enhanced Blood Textures
+    //IF ($RU) && IF (r".. - Enhanced Blood Main\.esp") WARN: Этот мод уже входит в состав мода Enhanced Blood Textures
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 SkBBP - Blacksmithing and Balance.esp
 SkBBP - Loot Drops and Leveled Lists.esp
   TAG: {{BASH: Delev, Relev}}
@@ -1541,16 +1557,18 @@ spectralfrostdragon.esp
 SpeedPotionsV1.2.esp
 Speed booster.esp
 spellbreaker_material_fix.esp
-SPTFemaleGuards.esp
+REGEX: SPTFemaleGuards(InPlace)?\.esp
   SAY: Obsolete. Update to SPTDiverseGuards
-SPTFemaleGuardsInPlace.esp
-  SAY: Obsolete. Update to SPTDiverseGuards
+    //IF ($RU) SAY:  Устарело. Обновите до SPTDiverseGuards
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 SPTDiverseGuardsSkyrim.esp
   TAG: {{BASH: Delev}}
   //not tested
 srmcompanioncart.esp
 StaRe.esp
   SAY: Obsolete. Update to 'SkyRe_StandingStones.esp'
+    //IF ($RU) SAY:  Устарело. Обновите до 'SkyRe_StandingStones.esp'
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 StarX Frost Giants.esp
 Fire Giants.esp
 Frost Giants.esp
@@ -1655,6 +1673,8 @@ Arrows renamed for better sorting.esp
 REGEX: Valdacil's Item Sorting - .+\.esp
 Valdacil's Item Sorting - Smithing No Smelter Categories.esp
   IF ("Valdacil's Item Sorting - Smithing Smelter Categories.esp") WARN: Delete 'Valdacil's Item Sorting - Smithing Smelter Categories.esp' or use instead
+    //IF ($RU) && IF ("Valdacil's Item Sorting - Smithing Smelter Categories.esp") WARN:Удалите 'Valdacil's Item Sorting - Smithing Smelter Categories.esp' или используйте вместо этого.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Valdacil's Item Sorting - Smithing Smelter Categories.esp
 valuablehidesandskins.esp
 Vampirefix3.esp
@@ -1663,7 +1683,9 @@ vibrantauroras.esp
 VinillaSnow.esp
 VinillaSnowWindy.esp
 REGEX: VinillaSnowWindyand.+percentLessView\.esp
-  WARN: Incompatible with all lighting mods.
+  INC: all lighting mods.
+    //IF ($RU) INC: Все моды, меняющие освещение.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Villains Have Torches.esp
 VonwarrOneClickLoot.esp
 ENDGROUP: Base V
@@ -1738,8 +1760,10 @@ AutoLoot.esp
 AutomaticItemStorage.esp
 DEAsprint&jump.esp
   IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+ 
-  IF (<0.1.5.9|"SKSE") REQ: Requires SKSE 1.5.9 or higher.
+  IF (<0.1.5.9|"SKSE") REQ: SKSE 1.5.9 or higher.
   SAY: Won't work if sprint/jump key is remapped to mouse button.
+    //IF ($RU) SAY: Не работае, если кнопка бега\прыжка переназначена на кнопку мыши.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 DragonWarrior-Effects.esp
 Dynavision.esp
 WARN: DYNAVISION will work with most ENB configuations, however if you are using ENB, remember to turn OFF the ENB DOF feature in your graphics options
@@ -1864,6 +1888,8 @@ Barbarian Jewelry.esp
 BaratheonArmor.esp
 SkyRe_Plugin_BaratheonArmor_1.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("BaratheonArmor.esp") SAY: Remember to delete BaratheonArmor.esp
 Basara.esp
 /* bat3.esp, hawk2.esp, wyvern4.esp contain Item Records */
@@ -1894,6 +1920,8 @@ BlackLaceCutieDress.esp
 blackswordsman.esp
 SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("blackswordsman.esp") SAY: Remember to delete blackswordsman.esp
 Blade of Eplear.esp
 Blade_of_Olympus.esp
@@ -1915,6 +1943,8 @@ bound weapons redux.esp
 BowofIorveth.esp
 SkyRe_Plugin_BowofIorveth_1.2.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("BowofIorveth.esp") SAY: Remember to delete BowofIorveth.esp
 BowOfGunnar.esp
 BowOfShadows.esp
@@ -2028,7 +2058,11 @@ REGEX: FluffkinsDaedricCorset.*\.esp
 DaggerCraft.esp
 SkyRe_Plugin_DaggerCraft_1.3.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("DaggerCraft.esp") SAY: Remember to delete DaggerCraft.esp
+    //IF ($RU) && IF ("DaggerCraft.esp") SAY: Не забудьте удалить DaggerCraft.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Dagger of time.esp
 Dark Crusader Reforged - Klingen-Set.esp
 DarkStringArmor.esp
@@ -2076,6 +2110,8 @@ Lorecraft - Dragon Bone Weapons.esp
   REQ: Lorecraft 4.05b or higher.
 SkyRe_Plugin_DragonBoneWeaponsComplete_1.03.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 dragonborngarb.esp
 DragonHideRobeArmor.esp
 Lorecraft - Dragonhide.esp
@@ -2088,6 +2124,8 @@ Dread Knight Weapon Set.esp
 DreadKnightWeaponSet,esp
 REGEX: SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("DreadKnightWeaponSet,esp") || IF ("Dread Knight Weapon Set.esp") SAY: Remember to delete Dread Knight Weapon Set mod
 DreadWeapons_Fifthdreads_Weapon_Pack.esp
 Dreadweave Axes.esp
@@ -2231,6 +2269,8 @@ HartherzEnglish.esp
 HBetterBows.esp
 SkyRe_Plugin_BetterBows_1.4.1.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("HBetterBows.esp") SAY: Remember to delete HBetterBows.esp
 HealerRobes.esp
 heatershield.esp
@@ -2240,6 +2280,8 @@ Heavenly Legion Armor.esp
 HedgeKnight.esp
 SkyRe_Plugin_HedgeKnightArmor_1.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("HedgeKnight.esp") SAY: Remember to delete HedgeKnight.esp
 HellionArrows_v1.15.esp
 Hell Sword.esp
@@ -2273,6 +2315,8 @@ IFNOT ($BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
 IFNOT ($BFNIAP) MOD: Lorecraft - Immersive Armors.esp
 IFNOT ($BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 HoodsAndCirclets.esp
 HUM_Armor.esp
 hunterarmor.esp
@@ -2280,6 +2324,8 @@ hunterarmorv1.2.esp
 SkyRe_Plugin_NordicHunterLightArmor_1.2.esp
   IF ("hunterarmorv1.2.esp") SAY: Possible already include the hunterarmorv1.2.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 HuntersSight.esp
 HuntressArmor.esp
 Hvergelmir's Armor Retexture - HAR.esp
@@ -2309,9 +2355,13 @@ Insanity's Sorrow.esp
 Insanity's Umbra Sword.esp
 SkyRe_Plugin_InsanitysCelticKatana_1.2.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("InsanitysCelticKatana.esp") SAY: Remember to delete InsanitysCelticKatana.esp
 SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("InsanitysDragonKatana.esp") || IF ("Insanity's Dragon Katana.esp") SAY: Remember to delete Insanitys Dragon Katana mod
 InvisRing.esp
 InvisibleArmorSets.esp
@@ -2335,6 +2385,7 @@ T3nd0sOverhaulJSwordsPlugin.esp
   SAY: Obsolete. Update to latest 'SkyRe - Skyrim Redone'
 JSwords.esp
   SAY: Obselete, upgrade to v13+
+  
 Faster Combat-Jswords.esp
 JSwordsDistributionBalancePlugin.esp
 JSwords_FR_Plugin_V13C.esp
@@ -2344,7 +2395,11 @@ AttTJSwords.esp
 Lorecraft - JSwords.esp
 SkyRe_Plugin_JaySuSSwords_1.3D.esp
   IFNOT (r"JSwords(DV)?\.esm") ERROR: JSwords.esm no installed! DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) && IFNOT (r"JSwords(DV)?\.esm") ERROR: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF (r"JSwords(DV)?\.esm") SAY: Remember to delete JSwords*.esp
+    //IF ($RU) SAY: Не забудьте удалить JSwords*.esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 JulietByNausicaa.esp
 ENDGROUP: Items J
 
@@ -2379,26 +2434,46 @@ Lady Rappelz.esp
 LanternHands.esp
 LayerBikini.esp
 LBArmorPack.esp
-  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Blood Mage.esp
-  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 LB Blood of the Divines.esp
-  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 LB Lady Bat.esp
-  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 LB Lady Keaira.esp
-  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: LB Lady .+\.esp
   //regex for all clothes for LB body replacer that named LB Lady *.esp
-  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 LB_MuchAdoSnowElves.esp
-  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 LB Pantie & Boots.esp
-  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 LB Jewelry.esp
-  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 LBClosetMagician.esp
-  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 LeahArmor.esp
 leathercollar1mm.esp
 REGEX: LeatherBackpack.*\.esp
@@ -2505,14 +2580,24 @@ BEGINGROUP: Items N
 
 REGEX: NA_BipolarBlade_(Eng|Rus|Deu)\.esp
   IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    //IF ($RU) && IF ($NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: NA_Chrysamere_(Eng|Rus|Deu)\.esp
   IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    //IF ($RU) && IF ($NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: NA_Goldbrand_(Eng|Rus|Deu)\.esp
   IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    //IF ($RU) && IF ($NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: NA_IBOTM_(Eng|Rus|Deu)\.esp
   IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    //IF ($RU) && IF ($NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: NA_Scourge_(Eng|Rus|Deu)\.esp
   IF ($NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    //IF ($RU) && IF ($NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 REGEX: Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)\.esp
 NecroGuard Armor Set.esp
 NarquelionBow.esp
@@ -2534,6 +2619,8 @@ Nicos Scimitar.esp
 Nicoroshi Creations.esp
 SkyRe_Plugin_NicoroshiCreations_1.1.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("Nicoroshi Creations.esp") SAY: Remember to delete Nicoroshi Creations.esp
 NightasyBondageArmor.esp
 Night_Dweller_Armor.esp
@@ -2573,6 +2660,8 @@ Lorecraft - Omegared99-Compilation.esp
 SkyRe_Plugin_Omegared99sArmorCompilation_3.5a.esp
   IFNOT ("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Onechanbara Kagura Set.esp
 OrcishMaskedHelmet.esp
 Orgnum'sDagger.esp
@@ -2649,6 +2738,8 @@ RedguardKnight.esp
 Lorecraft - RedguardKnight.esp
 SkyRe_Plugin_RedguardKnightArmor_3.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("RedguardKnight.esp") SAY: Remember to delete RedguardKnight.esp
 RegentSword.esp
 Reinforced Hoods.esp
@@ -2895,12 +2986,16 @@ BEGINGROUP: Items V
 VagabondArmor.esp
 SkyRe_Plugin_VagabondArmor_5.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("VagabondArmor.esp") SAY: Remember to delete VagabondArmor.esp
 Valdacil's Light Armor Robes.esp
 VampiricDagger.esp
 VanguardArmor.esp
 SkyRe_Plugin_VanguardArmor_3.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("VanguardArmor.esp") SAY: Remember to delete VanguardArmor.esp
 Velvec Outfit.esp
 Veteran Nord Plate.esp
@@ -2927,6 +3022,8 @@ Lorecraft - hothtrooper44 armors.esp
   SAY: Do not load any of the original .ESP files that come with hothtrooper44's original mods.
 SkyRe_Plugin_WarchiefArmor_4.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IF ("warchiefarmor.esp") SAY: Remember to delete warchiefarmor.esp
 WarfighterArmory.esp
 Warglaive of Azzinoth.esp
@@ -3007,6 +3104,8 @@ IF ($BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
 IF ($BFNIAP) MOD: Lorecraft - Immersive Armors.esp
 IF ($BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 BandolierForNPCs.esp
 BandolierForNPCsWIC_V2.esp
 BandolierForNPCsBanditsWearHelmets.esp
@@ -4348,7 +4447,9 @@ Lawren RNG Guards.esp
 LaFemmeLycana.esp
 LB Yarl Clothes.esp
   //single clothes replacer
-  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work.
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Legendary Artifacts.esp
 Legendary Gauldur Amulet.esp
 REGEX: LegionArmorVariety(OPTIONAL\d)?\.esp
@@ -5737,6 +5838,8 @@ SkyRe_StandingStones.esp
 SkyRe_Plugin_Morrowloot.esp
   //load order from autor of SkyRe (1-skyre main 2-morrowloot 3-skyre plugin morrowloot)
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
+    //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
 IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
@@ -6470,7 +6573,9 @@ Blacksmithforge water fix.esp
 GreenWaterFixForPureWaters.esp
   SAY: OBsoleve upgrade to new version.
 GreenWaterFixForWATER.esp
-  SAY: Obsolete upgrade to new version.
+  SAY: Obsolete upgrade to new version
+    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax).
 GreenWaterFix.esp
   IF (7F378D8E|"GreenWaterFix.esp") SAY: Upgrade to vertion 1.1 (For Vanilla water ONLY)
 GreenWaterFix_Compatible.esp
