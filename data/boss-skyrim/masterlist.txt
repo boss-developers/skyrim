@@ -62,6 +62,7 @@ IF ("Lady Body.esp") SET: LB
 IF (r"BertsBreezehome.+\.es[pm]") SET: BertsBHInst
 IF (r"SkyRe_.+\.esp") SET: SkyRe
 IF ("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
+IF ("ApachiiHair.esm") SET: ApachiiHair
 
 //================================================================
 
@@ -450,7 +451,7 @@ eligible bachelors.esp
 Farkas.esp
 Fianna.esp
 REGEX: HousecarlSolitude A Jordis the Sword-Maiden v.+\.esp
-  IFNOT ("ApachiiHair.esm") REQ: Apachii Sky Hair
+  IFNOT ($ApachiiHair) REQ: Apachii Sky Hair
 HousecarlWindhelm.esp
 Lisette.esp
 marcurio1.1.esp
@@ -3483,7 +3484,7 @@ dbretreat.esp
 dbriverwoodsanctuary.esp
 REGEX: Dead.?Manor.*\.esp
 REGEX: Descentintomadness.*\.esp
- IFNOT ("ApachiiHair.esm") REQ: ApachiiSkyHair
+ IFNOT ($ApachiiHair) REQ: ApachiiSkyHair
 DetailedCities.esp
 REGEX: Deus Mons(_WithNPCs)?\.esp
 Dice Game in Taverns.esp
@@ -3781,7 +3782,7 @@ SilvercrestTomb.esp
 simplebreezehome.esp
 SkyHavenTempleEnhanced.esp
 SlavePack.esp
-  IFNOT ("ApachiiHair.esm") WARN: Before loading in, do confirm you have Apachii hair mod activated or game might crash.
+  IFNOT ($ApachiiHair) WARN: Before loading in, do confirm you have Apachii hair mod activated or game might crash.
 SleepingDangers-SandsofTime.esp
 SlightlyEnhancedBreezehome.esp
 SKY.esp
@@ -4187,7 +4188,7 @@ Death Reload (30 Minutes).esp
 REGEX: Default Torches - .+\.esp
 DefenderNoSpiders.esp
 Delphine.esp
-  IFNOT ("ApachiiHair.esm") REQ: Apachii Sky Hair
+  IFNOT ($ApachiiHair) REQ: Apachii Sky Hair
 dD - Easy Lift Bodies and Objects.esp
 dD - Easy Lift Bodies and Objects - Light Only.esp
 dD-Increase Fall Damage.esp
@@ -4235,7 +4236,7 @@ enhanced soul gems.esp
 EnduringDragons.esp
 enterablewindows.esp
 Eola.esp
-  IFNOT ("ApachiiHair.esm") REQ: Apachii Sky Hair
+  IFNOT ($ApachiiHair) REQ: Apachii Sky Hair
 REGEX: Equip more Rings( \(\d\))?.esp
 Essential dogs v2.esp
 Essential Frost.esp
@@ -4489,9 +4490,9 @@ Lush Grass.esp
 lush grass and trees.esp
 LycantropyLesserPower.esp
 Lydia_edited.esp
- IFNOT ("ApachiiHair.esm") REQ: ApachiiHair
+ IFNOT ($ApachiiHair) REQ: ApachiiHair
 Lydia_edited_without_scars.esp
- IFNOT ("ApachiiHair.esm") REQ: ApachiiHair
+ IFNOT ($ApachiiHair) REQ: ApachiiHair
  IF ("Lydia_edited.esp") WARN: Use only one Lydia_edited.esp
 Lyn_RealArrows_FasterArrows.esp
 LZA Incremental Difficulty.esp
@@ -6136,7 +6137,7 @@ ChantelleV2.esp
 Deadeye.esp
 Demon Horse.esp
 REGEX: DFH_.+\.esp
-  IFNOT ("ApachiiHair.esm") REQ: ApachiiSkyHair
+  IFNOT ($ApachiiHair) REQ: ApachiiSkyHair
 DogCompanions.esp
 AmazonianKhajiitAlpha.esp
 REGEX: AnotherFollowerMod_.+\.esp
@@ -6150,11 +6151,11 @@ All Housecarls Are Hunks.esp
 MODNewfollowers.esp
 OneiroFollowers.esp
 highfive.esp
-  IFNOT ("ApachiiHair.esm") REQ: ApachiiSkyHair
+  IFNOT ($ApachiiHair) REQ: ApachiiSkyHair
 housecarl_fem_plus.esp
 Hot_Male_Housecarls.esp
 Immersive Followers.esp
-  IFNOT ("ApachiiHair.esm") REQ: ApachiiSkyHair
+  IFNOT ($ApachiiHair) REQ: ApachiiSkyHair
 Khargra.esp
 Khargra - Ghorbash Replacer.esp
 LaciTheOrcMarksman.esp
@@ -6393,7 +6394,7 @@ followernoama.esp
 followerhavok.esp
 FollowersAlwaysEquipFromInventory.esp
 LylvieveSisters.esp
-  IFNOT ("ApachiiHair.esm") REQ: ApachiiSkyHair
+  IFNOT ($ApachiiHair) REQ: ApachiiSkyHair
 NoNakedComments.esp
 throwingweapons.esp
   INC: All mods that change the next NPC: Gerdur, Farkas, Athis, Erik the Slayer, Argis the Bulwark, Lydia, Jordis the Sword-Maiden, Calder, Iona, Vorstag, Marcurio, Belrand, Jenassa, Stenvar.
@@ -6643,7 +6644,7 @@ BEGINGROUP: Load Late
 //Plugins which load late or are more convieniently loaded late.
 //
 BBLSGuysApachii.esp
-  IFNOT ("ApachiiHair.esm") REQ: Apachii Sky Hair.
+  IFNOT ($ApachiiHair) REQ: Apachii Sky Hair.
   IFNOT ("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
   IF (<0.1.6.89|"TES5") REQ: Skyrim 1.6.89+
   
