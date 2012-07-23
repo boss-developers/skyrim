@@ -2815,8 +2815,8 @@ Shields_of_the_northern_kingdoms.esp
 Shining Paladin.esp
 shogo_laser_katana.esp
 ShShortswords.esp
-  IF ("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
-    //IF ($RU) &&  IF ("SkyRe_Main.esp") WARN: Удалите. Уже входит в SkyRe_Main.esp
+  IF ($SkyRe) WARN: Delete. Included in 'SkyRe_Main.esp'
+    //IF ($RU) &&  IF ($SkyRe) WARN: Удалите. Уже входит в SkyRe_Main.esp
     //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   TAG: {{BASH: Delev, Relev}}
 Siege Bow & Backpacks.esp
@@ -3040,8 +3040,8 @@ REGEX: Weapons of the Third Era.+\.esp
   TAG: {{BASH: Relev}}
 REGEX: WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp
   IF ("3rdEraWeaponsMoS.esp") WARN: You have installed 3rdEraWeaponsMoS.esp. Use only one WeaponsOf3E or 3rdEraWeaponsMoS
-  IF ("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
-    //IF ($RU) &&  IF ("SkyRe_Main.esp") WARN: Удалите. Уже входит в SkyRe_Main.esp
+  IF ($SkyRe) WARN: Delete. Included in 'SkyRe_Main.esp'
+    //IF ($RU) &&  IF ($SkyRe) WARN: Удалите. Уже входит в SkyRe_Main.esp
     //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   TAG: {{BASH: Relev}}
 WeaponsOf3E - No Leveled Lists.esp
@@ -3051,7 +3051,7 @@ WeaponsOf3E - No Leveled Lists.esp
     //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   TAG: {{BASH: Delev, Relev}}
     //for versions <1.5
-  IF ("SkyRe_Main.esp") WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'
+  IF ($SkyRe) WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'
   IF (r"WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp") INC: WeaponsOf3E*.esp
 3rdEraWeapMoS-lvlList.esp
   TAG: {{BASH: Delev, Relev}}
@@ -3128,7 +3128,7 @@ REGEX: Smithing Perks Overhaul( - Balanced)?.esp
   IF ($CCO) && IF ("Complete Crafting Overhaul.esp") SAY: Use balanced version with Complete Crafting Overhaul mod
 REGEX: Complete Crafting Overhaul( - BS version)?\.esp
   IF (r"(Headbomb's )?Better Sorting.*\.esp") && IF ("Complete Crafting Overhaul.esp") WARN: Use only BS-version for Better Sorting.
-  IF ("SkyRe_Main.esp") WARN: Possible doubles in crafting menu
+  IF ($SkyRe) WARN: Possible doubles in crafting menu
   SAY: Will conflict with mods that modify existing recipes.
 Lorecraft - Crafting Overhaul.esp
 ScarabCraftingHacks.esp
@@ -4003,7 +4003,7 @@ REGEX: female mannequins( in homes)?\.esp
 Glowing Soul Gems.esp
 LessAnnoyingItems.esp
 Masters of Death.esp
-IFNOT ("SkyRe_Main.esp") MOD: Morrowloot.esp
+IFNOT ($SkyRe) MOD: Morrowloot.esp
   //morrowloot loaded here only if skyre_main.esp is not installed
   //Also recommend to load morrowloot after any plugins that have a Relev tag because they also add vanilla records removed by morrowloot
   TAG: {{BASH: Delev, Relev}}
@@ -5866,7 +5866,7 @@ SkyRe_Plugin_Morrowloot.esp
     //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
     //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
-IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
+IF ($SkyRe) MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
   IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
 Perk_Soul_Siphon_Full_Recharge.esp
@@ -5995,6 +5995,7 @@ BEGINGROUP: Race additions
 
 mjhImprovedRaces.esp
   INC: Anything that changes the race descriptions or races.
+CherryRace.esp
 ChildRace.esp
 CustomRaces.esp
 DarkRaces.esp
