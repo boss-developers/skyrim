@@ -5882,15 +5882,17 @@ SkyRe_StandingStones.esp
   IF ("StaRe.esp") SAY: Remember to delete StaRe.esp
   IF ("Drakian race.esp") INC: Drakian race
   INC: Standing Stones and Guardians
-IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
-  TAG: {{BASH: Delev, Relev}}
-  IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
 SkyRe_Plugin_Morrowloot.esp
   //load order from autor of SkyRe (1-skyre main 2-morrowloot 3-skyre plugin morrowloot)
   SAY: DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
     //IF ($RU) SAY: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
     //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
   IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
+IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
+  TAG: {{BASH: Delev, Relev}}
+  IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
+    //IF ($RU) && IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для равильной работы мода с SkyRe.
+    //this test message displayed by boss only if russian language is selected(only for BOSS 2.1+ MF2.3 syntax)
 Perk_Soul_Siphon_Full_Recharge.esp
 SynergyBonuses.esp
 XPModNormal.esp
