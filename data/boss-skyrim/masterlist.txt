@@ -3958,7 +3958,6 @@ IFNOT ("SkyRe_Main.esp") MOD: Morrowloot.esp
   //morrowloot loaded here only if skyre_main.esp is not installed
   //Also recommend to load morrowloot after any plugins that have a Relev tag because they also add vanilla records removed by morrowloot
   TAG: {{BASH: Delev, Relev}}
-  IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") SAY: SkyRe compatibility patch required to work as intended.
 xFenWSOWAFW3E.esp
   TAG: {{BASH: Delev, Relev}}
   // TAG: {{BASH: Delev, Stats, Relev}}
@@ -5822,15 +5821,15 @@ SkyRe_StandingStones.esp
   IF ("StaRe.esp") SAY: Remember to delete StaRe.esp
   IF ("Drakian race.esp") INC: Drakian race
   INC: Standing Stones and Guardians
+IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
+  TAG: {{BASH: Delev, Relev}}
+  IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
+    //IF ($RU) && IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для равильной работы мода с SkyRe.
 SkyRe_Plugin_Morrowloot.esp
   //load order from autor of SkyRe (1-skyre main 2-morrowloot 3-skyre plugin morrowloot)
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
   IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
-IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
-  TAG: {{BASH: Delev, Relev}}
-  IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: You need to install SkyRe compatibility patch for work with SkyRe.
-    //IF ($RU) && IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для равильной работы мода с SkyRe.
 Perk_Soul_Siphon_Full_Recharge.esp
 SynergyBonuses.esp
 XPModNormal.esp
