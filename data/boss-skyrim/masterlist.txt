@@ -1182,8 +1182,11 @@ ENDGROUP: Base K
 
 BEGINGROUP: Base L
 
-REGEX: Lanterns Of Skyrim - All In One - (2x Brighter|Default)?(RCRN )?(Hyper Purist|Classic|Legacy|Pure)?\.esp
-REGEX: Lanterns Of Skyrim - All In One( 2x brighter)?\.esp
+REGEX: Lanterns Of Skyrim - All In One - (Climates of Tamriel - )?(2x Brighter|Default)?(RCRN )?(Hyper Purist|Classic|Legacy|Pure)?\.esp
+Lanterns Of Skyrim - All In One.esp
+  SAY: Obsolete upgrade to new version
+    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+Lanterns Of Skyrim - All In One 2x brighter.esp
   SAY: Obsolete upgrade to new version
     //IF ($RU) SAY: Устарело. Обновите до новой версии.
 Lanterns Of Skyrim - All In One - Main.esm
@@ -2357,6 +2360,7 @@ T3nd0sOverhaulJSwordsPlugin.esp
   SAY: Obsolete. Update to latest 'SkyRe - Skyrim Redone'
     //IF ($RU) SAY: Устарело. Обновите до последней версии 'SkyRe - Skyrim Redone'.
 SkyRe_Plugin_JaySuSSwords_1.3D.esp
+  TAG: {{BASH: Delev}}
   IFNOT (r"JSwords(DV)?\.esm") ERROR: JSwords.esm no installed! DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
     //IF ($RU) && IFNOT (r"JSwords(DV)?\.esm") ERROR: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
   IF (r"JSwords(DV)?\.esm") SAY: Remember to delete JSwords*.esp
@@ -2744,6 +2748,7 @@ REGEX: ScoutArmor(-armor|-capes)?\.esp
 scythecompilationpack.esp
 Scythe Weapon mingyannu.esp
 REGEX: ScoutArmorAddon\d\.esp
+Seadog.esp
 seethroughlook.esp
 SeraphimStandAlone.esp
 SeraticArmor.esp
@@ -5498,6 +5503,8 @@ SIDCPatch.esp
 DeadlyCombos.esp
 REGEX: DeadlyCombat_.+\.esp
 DisableAutoAim.esp
+dodge.esp
+  REQ: ScriptDragon
 Dual Wield Parrying.esp
 Dual Wield Parrying_DualAttack.esp
 Dual Wield Parrying_ScriptDragon.esp
@@ -6697,6 +6704,8 @@ Once WryeBash is updated this shouldn't be needed, since that's what its for.
 */
 BEGINGROUP: Non Dynamic Plugins
 
+// DeadlyCombat_PISE_Patch.esp
+// Must load after ASIS (Unconfirmed, as comment for now)
 EzEWorldMap.esp
 ENDGROUP: Non Dynamic Plugins
 ENDGROUP: Post Bashed Patch
