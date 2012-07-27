@@ -347,6 +347,7 @@ ElvBootEmStaFix.esp
 Farengar.esp
 Farm Wheat Height Fix.esp
 fFastTravelSpeedMult_4.esp
+fix-BelethorUnlocked.esp
 FixedEyeAdaption.esp
 FoodRestoreHealthFix.esp
 forsworn boots fix.esp
@@ -437,6 +438,8 @@ BEGINGROUP: NPC face mods
 AlfhildBattleBorn.esp
 AlternateUlfric.esp
 Aranea.esp
+BabetteReplacer.esp
+ IFNOT ($ApachiiHair) REQ: ApachiiSkyHair
 bellabetterfemales.esp
 BNPC.esp
 Carlotta.esp
@@ -2622,7 +2625,21 @@ Omegared99-Compilation.esp
 Omegared99-WeaponSets.esp
 Omegared99-LvLList-CompOnly.esp
   TAG: {{BASH: Relev}}
+High-75Percent.esp
+  TAG: {{BASH: Relev}}
+  SAY: Use only one optional leveled list. (High, Medium, Standard or Uber)
+Medium-40Percent.esp
+  TAG: {{BASH: Relev}}
+  SAY: Use only one optional leveled list. (High, Medium, Standard or Uber)
+Standard-15Percent.esp
+  TAG: {{BASH: Relev}}
+  SAY: Use only one optional leveled list. (High, Medium, Standard or Uber)
+Uber-75Percent+Random.esp
+  TAG: {{BASH: Relev}}
+  SAY: Use only one optional leveled list. (High, Medium, Standard or Uber)
+/* 4 above are leveled lists for Omegared99-Compilation */
 Omegared99-Compilation-NPC Plugin.esp
+  WARN: File is now obsolete. See optional files to update.
   TAG: {{BASH: Relev}}
 Lorecraft - Omegared99-Compilation.esp
 SkyRe_Plugin_Omegared99sArmorCompilation_3.5a.esp
@@ -5678,6 +5695,11 @@ REGEX: New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp
   SAY: Use only one 'New Leveled Encounter Levels*.esp'
     //IF ($RU) SAY: Используйте только один New Leveled Encounter Levels*.esp
 Noredundantperks.esp
+Crimson Tide - Blood.esp
+  IF (r".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Use Crimson Tide OR Enhanced Blood. Not both.
+/* Unaware if any other plugins depend on this.
+Has been repoted to cause issues if loaded after ACE Melee, will load here and see
+if any other issues crop up, can be relocated accordingly.*/
 ACE Archery.esp
   IF (46C639C1|"Crafting300.esp") INC: Crafting300.esp, to fix this get the compatibility patch found here: "http://skyrim.nexusmods.com/download/70990"
 Lorecraft - Ace Archery.esp
@@ -6450,6 +6472,7 @@ Basvanbeu MuscleTextureChanger with Navetsea set.esp
 REGEX: Better Racials- .+\.esp
   IF ("Better Racials- Altmer Edition.esp") && IF ("Better Racials- Altmer Edition - NW.esp") SAY: Use only one Better Racials- Altmer Edition.esp or Better Racials- Altmer Edition - NW.esp
 Better races V1,1.esp
+ChangeMyNordVoice.esp
 ClassicClasses.esp
 Feminine Female Orcs.esp
 REGEX: Height Adjusted Skyrim.*\.esp
@@ -6693,9 +6716,6 @@ ENDGROUP: Compatibility Patches
 BEGINGROUP: Extra Late
 // For plugins which must be after all others
 
-Crimson Tide - Blood.esp
-  IF (r".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Use Crimson Tide OR Enhanced Blood. Not both.
-// Unaware if any other plugins depend on this.  Mod author suggests always having this lowest.
 FTFI Fast Travel From Indoors.esp
 // Must come after all cell altering mods.
 ENDGROUP: Extra Late
