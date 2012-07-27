@@ -1186,7 +1186,7 @@ ENDGROUP: Base K
 
 BEGINGROUP: Base L
 
-REGEX: Lanterns Of Skyrim - All In One - (Climates of Tamriel - )?(2x Brighter|Default)?(RCRN )?(Magic Light|lvl-2|Hyper Purist|Classic|Legacy|Pure)?\.esp
+REGEX: Lanterns Of Skyrim - All In One - (Climates of Tamriel - )?(2x Brighter|Default)?(RCRN )?(Magic Light|lvl-\d|Hyper Purist|Classic|Legacy|Pure)?\.esp
 Lanterns Of Skyrim - All In One.esp
   SAY: Obsolete upgrade to new version
     //IF ($RU) SAY: Устарело. Обновите до новой версии.
@@ -1909,6 +1909,7 @@ SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
   IF ("blackswordsman.esp") SAY: Remember to delete blackswordsman.esp
+    //IF ($RU) && IF ("blackswordsman.esp") SAY: Не забудьте удалить blackswordsman.esp .
 Blade of Eplear.esp
 Blade_of_Olympus.esp
 Blades_of_Chaos.esp
@@ -1931,6 +1932,7 @@ SkyRe_Plugin_BowofIorveth_1.2.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
   IF ("BowofIorveth.esp") SAY: Remember to delete BowofIorveth.esp
+    //IF ($RU) && IF ("BowofIorveth.esp") SAY: Не забудьте удалить BowofIorveth.esp
 BowOfGunnar.esp
 BowOfShadows.esp
 Bows_of_the_Third_Era.esp
@@ -2248,6 +2250,7 @@ SkyRe_Plugin_BetterBows_1.4.1.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
   IF ("HBetterBows.esp") SAY: Remember to delete HBetterBows.esp
+    //IF ($RU) && IF ("HBetterBows.esp") SAY: Не забудьте удалить HBetterBows.esp
 HealerRobes.esp
 heatershield.esp
 HeatWavev4.esp
@@ -2258,6 +2261,7 @@ SkyRe_Plugin_HedgeKnightArmor_1.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
   IF ("HedgeKnight.esp") SAY: Remember to delete HedgeKnight.esp
+    //IF ($RU) && IF ("HedgeKnight.esp") SAY: Не забудьте удалить HedgeKnight.esp
 HellionArrows_v1.15.esp
 Hell Sword.esp
 REGEX: Henrys Ring of Light( v1-0)?\.esp
@@ -2298,6 +2302,7 @@ hunterarmor.esp
 hunterarmorv1.2.esp
 SkyRe_Plugin_NordicHunterLightArmor_1.2.esp
   IF ("hunterarmorv1.2.esp") SAY: Possible already include the hunterarmorv1.2.esp
+    //IF ($RU) && IF ("hunterarmorv1.2.esp") SAY: Возможно уже включено в hunterarmorv1.2.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
 HuntersSight.esp
@@ -2331,10 +2336,13 @@ SkyRe_Plugin_InsanitysCelticKatana_1.2.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
   IF ("InsanitysCelticKatana.esp") SAY: Remember to delete InsanitysCelticKatana.esp
+    //IF ($RU) && IF ("InsanitysCelticKatana.esp") SAY: Не забудьте удалить InsanitysCelticKatana.esp
 SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
+    //IF ($RU) SAY: Не забудьте установить оригинальный мод или это вызовет ошибку или вылет Скайрим, если он не сможет найти файлы оригинального мода.
   IF ("InsanitysDragonKatana.esp") || IF ("Insanity's Dragon Katana.esp") SAY: Remember to delete Insanitys Dragon Katana mod
+    //IF ($RU) && IF ("InsanitysDragonKatana.esp") || IF ("Insanity's Dragon Katana.esp") SAY: Не забудьте удалить мод Insanitys Dragon Katana
+      //it must be fixed later (asdf)
 InvisRing.esp
 InvisibleArmorSets.esp
 IsilGlamdring.esp
@@ -2433,6 +2441,9 @@ LB Jewelry.esp
   IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
     //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
 LBClosetMagician.esp
+  IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
+    //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
+LBGoldArmoredBikini.esp
   IFNOT ($LB) WARN: 'Lady Body' body replacer is requires for mod work!
     //IF ($RU) && IFNOT ($LB) WARN: Для работы мода требуется реплейсер 'Lady Body'!
 LeahArmor.esp
