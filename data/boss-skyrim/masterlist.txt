@@ -230,6 +230,7 @@ NoKillMoves.ESM
 AP Skyrim.esm
 customGraph.esm
 ApachiiHair.esm
+ApachiiHairFemales.esm
 Succubus.esm
 MTOH.esm
   SAY: Hair standalone mod for other mods which edit NPCs. If this one is used, MTOH.esp should be disabled.
@@ -463,7 +464,7 @@ NPC_Hair_Rep_Forsworn_Bandit.esp
 NPC_Hair_Rep_Necro.esp
   REQ: Apachii and Coolsims Hair
 NPC REDESIGN.esp
-  REQ: Apachii hair
+  IFNOT ($ApachiiHair) REQ: Apachii Sky Hair
 Gwendolyn.esp
 NPC_Hair_Replace_Bandit_Forsworn.esp
   REQ: Apachii and Coolsims Hair
@@ -4962,6 +4963,7 @@ MoreOrganicCities.esp
 Riverwood Enhanced.esp
 Riverwood Enhanced - Detailed Cities.esp
 PrimbyTown.esp
+Princess Riverwood Cottage.esp
 riverwood gates.esp
 Riverwood R9D.esp
 RiverwoodEnhancedPlugin.esp
@@ -6214,6 +6216,7 @@ AmazonianKhajiitAlpha.esp
 REGEX: AnotherFollowerMod_.+\.esp
 Barbarian Companions.esp
 conancompanion.esp
+CMBeautifulCompanions.esp
 CMNewCompanions.esp
 CMCompanionLevel.esp
   IF ("BDO.esp") WARN: Delete. Included in BDO.esp
@@ -6259,6 +6262,7 @@ REGEX: Better Followers - Specialized( - Not E)?\.esp
 BrelynaMaryon.esp
 CamillaValerius.esp
 CarlottaValentia.esp
+CMBoethiahSacrifice.esp
 dbaddmembers.esp
 EkkiiBreezeBasementAFMLydia.esp
 ElizaValentine.esp
@@ -6335,6 +6339,7 @@ SP_GameofThrones_Wolves.esp
 Sylgja.esp
 SylgjaUpgraded.esp
 SylgiaCompleteNopickaxe.esp
+TS_FallenAngels.esp
 Vilkas_v1.esp
 Halfling Race.Esp
   REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
@@ -6664,6 +6669,8 @@ REGEX: RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp
   INC: Original FXAA Post Process Injector and Realistic Lighting Without Post-Processing
 rcrnShaders.esp
   SAY: Make sure you have bEnableFileSelection=1 in SkyrimPrefs.ini under [Launcher].
+Volrath - Dragonreach - Brazier fix - 1.1.esp
+  IFNOT ("rcrnShaders.esp") && IFNOT (r"RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp")  ERROR: If using V1.1 RCRN is required, otherwise your game will crash.
 Animated Weapon Enchants.esp
 Animated Enchantments.esp
 BetterNightEye.esp
