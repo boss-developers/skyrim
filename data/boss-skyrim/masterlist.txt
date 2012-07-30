@@ -2373,8 +2373,8 @@ SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF ("InsanitysDragonKatana.esp") || IF ("Insanity's Dragon Katana.esp") SAY: Remember to delete Insanitys Dragon Katana mod
-    //IF ($RU) && IF ("InsanitysDragonKatana.esp") || IF ("Insanity's Dragon Katana.esp") SAY: Не забудьте удалить мод Insanitys Dragon Katana
-      //it must be fixed later (asdf)
+    //(IF ($RU) && IF ("InsanitysDragonKatana.esp")) || (IF ($RU) && IF ("Insanity's Dragon Katana.esp")) SAY: Не забудьте удалить мод Insanitys Dragon Katana
+      //asdfMaybe conditional is not correct. Need conditional for "AND AND OR"
 InvisRing.esp
 InvisibleArmorSets.esp
 IsilGlamdring.esp
@@ -2408,7 +2408,6 @@ T3nd0sOverhaulJSwordsPlugin.esp
     //IF ($RU) SAY: Устарело. Обновите до последней версии 'SkyRe - Skyrim Redone'.
 SkyRe_Plugin_JaySuSSwords_1.3D.esp
   TAG: {{BASH: Delev}}
-  asdf
   IFNOT (r"JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) && IFNOT (r"JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF (r"JSwords(DV)?\.esm") SAY: Remember to delete JSwords*.esp
