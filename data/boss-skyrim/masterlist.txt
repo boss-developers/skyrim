@@ -171,10 +171,10 @@ Kyia.esm
 Lanterns Of Skyrim - All In One - Main.esm
 REGEX: Lanterns Of Skyrim - All In One( 2x brighter)?\.esm
   SAY: Obsolete, upgrade to new version.
-    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 LevelersTower.esm
   SAY: Obsolete, upgrade to new version.
-    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 MagicDuel.esm
 Manantis.esm
 moonpath.esm
@@ -193,7 +193,7 @@ warehouse.esm
 WinterholdDestruction.esm
 kuerteeInventoryAndWeight.esm
   SAY: Obsolete upgrade to new version
-    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 REGEX: Blood \(\w+\)\.ESM
   SAY: Use only one Blood (*).ESM
     //IF ($RU) SAY: Используйте только один Blood (*).ESM
@@ -708,7 +708,7 @@ Alternate Clothing Names.esp
 Als Treasure Vault Only.esp
 ancalagon.esp
 ARTOFMAGIC.esp
-  SAY: Obsolete. Upgrade to latest version.
+  SAY: Obsolete. Update to latest version.
     //IF ($RU) SAY: Устарело. Обновите до последней версии..
 AOMGHOST.esp
 AOM.esp
@@ -1146,7 +1146,7 @@ Invulnerable Horses.esp
 Ish's Respec Mod.esp
   TAG: {{BASH: Relev}}
 Ish's Souls to Perks.esp
-  IF (<0.1.5.6|"SKSE") REQ: Requires SKSE 1.5.6 or higher.
+  IF (<0.1.5.6|"SKSE") REQ: SKSE 1.5.6+.
 ItemRewardsForBounties.esp
 Item Sorting by Saige.esp
 itsatrap!.esp
@@ -1159,6 +1159,7 @@ BEGINGROUP: Base J
 JAWS.esp
 JBS_banking.esp
   SAY: Obsolete.  Update to latest version.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 JBS_banking_redux.esp
 jbs_smithing_real_ext.esp
 jbs_smithing_soul.esp
@@ -1195,21 +1196,21 @@ BEGINGROUP: Base L
 REGEX: Lanterns Of Skyrim - All In One - (Climates of Tamriel - )?(2x Brighter|Default)?(RCRN )?(Magic Light|lvl-\d|Hyper Purist|Classic|Legacy|Pure)?\.esp
 Lanterns Of Skyrim - All In One.esp
   SAY: Obsolete upgrade to new version
-    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 Lanterns Of Skyrim - All In One 2x brighter.esp
   SAY: Obsolete upgrade to new version
-    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 Lanterns Of Skyrim - All In One - Main.esm
   IFNOT ("Lanterns Of Skyrim - All In One - Main.esm") SAY: REQ: Lanterns Of Skyrim - All In One - Main.esm
 REGEX: Lanterns Of Skyrim - Around Cities(_bright)?\.esp
   SAY: Obsolete upgrade to new version
-    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 REGEX: Lanterns Of Skyrim - Bridges x2 - OnOff(_bright)?\.esp
   SAY: Obsolete upgrade to new version
-    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 Lanterns Of Skyrim - Villages.esp
   SAY: Obsolete upgrade to new version
-    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 Lanterns on the Roads (50% less lanterns).esp
 LBInteriorDecorating.esp
 REGEX: LeatherWeightFix\(\d.\d\)\.esp
@@ -1232,7 +1233,8 @@ LFox Blacksmiths Have Metals.esp
   TAG: {{BASH: Delev, Relev}}
 LFox Bottle That Blood.esp
 LIAT - NPCs.esp
-  IF (r"LIAT - .+NPCs\.esp") WARN: Obsolete. Please update to latest version.
+  IF (r"LIAT - .+NPCs\.esp") WARN: Obsolete. Update to latest version.
+    //IF ($RU) && IF (r"LIAT - .+NPCs\.esp") WARN: Устарело. Обновите до последней версии.
 Linked Home Chests.esp
 LMNimmervollerBeutelDV.esp
 lockBreaker_EV.esp
@@ -1316,12 +1318,13 @@ moredragonloot.esp
 MoreFood.esp
 MoreGrass.esp
 MoreHeartsAndFlesh.esp
-// Possibly requires tags.
+  // Possibly requires tags.
 MoreLanterns.esp
 REGEX: MoreRain(Windy)?(\d{2,3}percentLessView)?\.esp
 MoreRainHeavyandDarker.esp
 REGEX: MoreSnowWindyand\d{2,3}percentLessView\.esp
-  WARN: Incompatible with all lighting mods.
+  INC: All lighting mods.
+    //IF ($RU) INC: Все моды, модифицирующие освещение.
 MoreSnow.esp
 MoreSnowWindy.esp
 MoreVillageAnimals.esp
@@ -1402,6 +1405,7 @@ REGEX: Radiant and Unique Potions (and )?Poisons.*\.esp
 Real Days.esp
 real glaciers.esp
   SAY: Old version update to Real Glaciers V2
+    //IF ($RU) WARN: Устарело. Обновите до версии 2 или выше.
 real glaciers v2.esp
 Real Months.esp
   //tags not tested
@@ -1519,6 +1523,7 @@ Skyrim Extended Potions.esp
 Skyrim Scaling Stopper - Misc Edits.esp
   TAG: {{BASH: Delev, Relev}}
   WARN: If using version 3+, Skyrim Monster Mod is required.
+    //IF ($RU) WARN: Для версий 3 или выше требуется Skyrim Monster Mod.
 Skyrim Scaling Stopper - Vanilla Dragon Scaling Patch.esp
   TAG: {{BASH: Delev, Relev}}
 SkyrimLive.esp
@@ -1543,7 +1548,7 @@ Smithing Tailoring.esp
 /* from Steam Workshop */
 smithingextended.esp
   TAG: {{BASH: Delev, Relev}}
-  //tag not tested
+    //tag not tested
 SmithingTomes.esp
 solssecretstash.esp
 SortiertesInventar.esp
@@ -1557,7 +1562,7 @@ REGEX: SPTFemaleGuards(InPlace)?\.esp
     //IF ($RU) SAY:  Устарело. Обновите до SPTDiverseGuards
 SPTDiverseGuardsSkyrim.esp
   TAG: {{BASH: Delev}}
-  //not tested
+    //not tested
 srmcompanioncart.esp
 StaRe.esp
   SAY: Obsolete. Update to 'SkyRe_StandingStones.esp'
@@ -1620,7 +1625,7 @@ training mannequin.esp
 Transmute Iron First.esp
 transmuteironorefirst.esp
 TravellersOfSkyrim.esp
-  SAY: Obsolete. Upgrade to latest version.
+  SAY: Obsolete. Update to latest version.
     //IF ($RU) SAY: Устарело. Обновите до последней версии..
 TravellersOfSkyrim - Vanilla.esp
 travelingargonians.esp
@@ -1668,7 +1673,7 @@ Arrows renamed for better sorting.esp
 REGEX: Valdacil's Item Sorting - .+\.esp
 Valdacil's Item Sorting - Smithing No Smelter Categories.esp
   IF ("Valdacil's Item Sorting - Smithing Smelter Categories.esp") WARN: Delete 'Valdacil's Item Sorting - Smithing Smelter Categories.esp' or use instead
-    //IF ($RU) && IF ("Valdacil's Item Sorting - Smithing Smelter Categories.esp") WARN:Удалите 'Valdacil's Item Sorting - Smithing Smelter Categories.esp' или используйте вместо этого.
+    //IF ($RU) && IF ("Valdacil's Item Sorting - Smithing Smelter Categories.esp") WARN: Удалите 'Valdacil's Item Sorting - Smithing Smelter Categories.esp' или используйте вместо этого.
 Valdacil's Item Sorting - Smithing Smelter Categories.esp
 valuablehidesandskins.esp
 Vampirefix3.esp
@@ -1750,11 +1755,12 @@ AutoLoot.esp
 AutomaticItemStorage.esp
 CAS.esp
   IF ("kuerteeAutoSaveAndTime.esp") WARN: Only use the save features of either "CAS" or "kuertee's auto-save and time"
+    //IF ($RU) && IF ("kuerteeAutoSaveAndTime.esp") WARN: Используйте функцию сохранения только  из одного мода: из "CAS" или "kuertee's auto-save and time"
 DEAsprint&jump.esp
   IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+ 
   IF (<0.1.5.9|"SKSE") REQ: SKSE 1.5.9 or higher.
   SAY: Won't work if sprint/jump key is remapped to mouse button.
-    //IF ($RU) SAY: Не работае, если кнопка бега\прыжка переназначена на кнопку мыши.
+    //IF ($RU) SAY: Может не работать, если кнопка бега\прыжка переназначена на кнопку мыши.
 DragonWarrior-Effects.esp
 Dynavision.esp
 WARN: DYNAVISION will work with most ENB configuations, however if you are using ENB, remember to turn OFF the ENB DOF feature in your graphics options
@@ -1775,14 +1781,16 @@ PC Exclusive Animation Path.esp
   IF ("AP Skyrim.esm") INC: AP Skyrim.esm
   IFNOT ($FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
   IF ($FNIS) SAY: Remember to run GenerateFNISforUsers.exe
+    //IF ($RU) && IF ($FNIS) SAY: Не забудьте запустить GenerateFNISforUsers.exe
 PC Exclusive Animation Path - Elder Race.esp
   IF ("AP Skyrim.esm") INC: AP Skyrim.esm
   IFNOT ($FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
   IF ($FNIS) SAY: Remember to run GenerateFNISforUsers.exe
+    //IF ($RU) && IF ($FNIS) SAY: Не забудьте запустить GenerateFNISforUsers.exe
 /* Two plugins above possibly require movement */
 VanillaUsesCustom.esp
   WARN: Obsolete.  Update to latest version.
-
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 ENDGROUP: Load Order Independent Mods
 
 BEGINGROUP: Items (armor and weapons)
@@ -2288,7 +2296,7 @@ SkyRe_Plugin_HedgeKnightArmor_1.esp
 HellionArrows_v1.15.esp
 Hell Sword.esp
 REGEX: Henrys Ring of Light( v1-0)?\.esp
-  IF ("Henrys Ring of Light v1-0.esp") SAY: Obsolete. Upgrade to latest version.
+  IF ("Henrys Ring of Light v1-0.esp") SAY: Obsolete. Update to latest version.
     //IF ($RU) && IF ("Henrys Ring of Light v1-0.esp") SAY: Устарело. Обновите до последней версии.
 Hana.esp
 hawk2.esp
@@ -2315,7 +2323,7 @@ HoodlessDragonpriestMasks1_0.esp
 HoodlessDragonpriestMasksPlus1_0.esp
 IFNOT ($BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
   TAG: {{BASH: Relev}}
-  //not tested
+    //not tested
 IFNOT ($BFNIAP) MOD: Lorecraft - Immersive Armors.esp
 IFNOT ($BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
@@ -2363,7 +2371,7 @@ SkyRe_Plugin_InsanitysCelticKatana_1.2.esp
     //IF ($RU) && IF ("InsanitysCelticKatana.esp") SAY: Не забудьте удалить InsanitysCelticKatana.esp
 SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    //IF ($RU) SAY: Не забудьте установить оригинальный мод или это вызовет ошибку или вылет Скайрим, если он не сможет найти файлы оригинального мода.
+    //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF ("InsanitysDragonKatana.esp") || IF ("Insanity's Dragon Katana.esp") SAY: Remember to delete Insanitys Dragon Katana mod
     //IF ($RU) && IF ("InsanitysDragonKatana.esp") || IF ("Insanity's Dragon Katana.esp") SAY: Не забудьте удалить мод Insanitys Dragon Katana
       //it must be fixed later (asdf)
@@ -2400,8 +2408,9 @@ T3nd0sOverhaulJSwordsPlugin.esp
     //IF ($RU) SAY: Устарело. Обновите до последней версии 'SkyRe - Skyrim Redone'.
 SkyRe_Plugin_JaySuSSwords_1.3D.esp
   TAG: {{BASH: Delev}}
-  IFNOT (r"JSwords(DV)?\.esm") ERROR: JSwords.esm no installed! DO NOT ACTIVATE A PATCH THAT YOU DO NOT HAVE THE ORIGINAL MOD FOR, IT CAN, AND WILL, CAUSE CRASHES!
-    //IF ($RU) && IFNOT (r"JSwords(DV)?\.esm") ERROR: НЕ АКТИВИРУЙТЕ ПАТЧ, ДЛЯ КОТОРОГО НЕ УСТАНОВЛЕН ОРИГИНАЛЬНЫЙ МОД. ЭТО МОЖЕТ И БУДЕТ ВЫЗЫВАТЬ ВЫЛЕТЫ!
+  asdf
+  IFNOT (r"JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    //IF ($RU) && IFNOT (r"JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF (r"JSwords(DV)?\.esm") SAY: Remember to delete JSwords*.esp
     //IF ($RU) SAY: Не забудьте удалить JSwords*.esp
 JulietByNausicaa.esp
@@ -2985,7 +2994,7 @@ UmbraSturmbringer.esp
 Unarmed Enhanced.esp
 Unenchanted Necromancer Amulet.esp
 REGEX: UniqueLeveledItemsUpgrade(1dot3)?\.esp
-  IF (r"UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Obsolete. Upgrade to latest version.
+  IF (r"UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Obsolete. Update to latest version.
     //IF ($RU) && IF (r"UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Устарело. Обновите до последней версии.
 UniqueRadiantAndPartyClothes.esp
 UNP Boots.esp
@@ -3051,7 +3060,7 @@ REGEX: WayoftheVoice\d\.esp
 weddingdresses.esp
 WeaponsOfTheShogunate.esp
 REGEX: Weapons of the Third Era.+\.esp
-  WARN: Obsolete. Upgrade to latest version.
+  WARN: Obsolete. Update to latest version.
   TAG: {{BASH: Relev}}
 REGEX: WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp
   IF ("3rdEraWeaponsMoS.esp") WARN: You have installed 3rdEraWeaponsMoS.esp. Use only one WeaponsOf3E or 3rdEraWeaponsMoS
@@ -4774,7 +4783,7 @@ skoomaeffect.esp
 SkyNotebook.esp
 /*Obsolete SkyRe Files*/
 SkyRe.esp
-  WARN: Obsolete. Upgrade to latest version
+  WARN: Obsolete. Update to latest version
 SkyReBaratheonArmorPlugin.esp
   WARN: Obsolete. Ugrade to latest version
 SkyReBetterBowsPlugin.esp
@@ -4790,13 +4799,13 @@ SkyRe_Plugin_JaySuSwords_1.3D.esp
 SkyReNicoroshiCreationsPlugin.esp
   WARN: Obsolete. Ugrade to latest version
 SkyReNoLighting.esp
-  WARN: Obsolete. Upgrade to latest version
+  WARN: Obsolete. Update to latest version
 SkyReRedguardKnightArmorPlugin.esp
-  WARN: Obsolete. Upgrade to latest version
+  WARN: Obsolete. Update to latest version
 SkyReVagabondArmorPlugin.esp
-  WARN: Obsolete. Upgrade to latest version
+  WARN: Obsolete. Update to latest version
 SkyReWarchiefArmorPlugin.esp
-  WARN: Obsolete. Upgrade to latest version
+  WARN: Obsolete. Update to latest version
 Signs and Guardians.esp
   IF (<1.4.27|"TES5") REQ: Skyrim 1.4.27 or newer
 ESP.esp
@@ -5866,7 +5875,7 @@ Skyrim Scaling Stopper.esp
   TAG: {{BASH: Delev, Relev}}
   WARN: If using version 3+, Skyrim Monster Mod is required.
 SkyXP.esp
-  IF (<0.1.5.6|"SKSE") REQ: Requires SKSE 1.5.6 or higher.
+  IF (<0.1.5.6|"SKSE") REQ: Requires SKSE 1.5.6+.
   IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
 REGEX: SleepFor.+xExp\.esp
 SlowerLevelingAlchemy.esp
@@ -5913,7 +5922,7 @@ SkyRe_EnemyAI.esp
 SkyRe_EnemyScaling.esp 
   TAG: {{BASH: Relev}}
 SkyRe_Enemies.esp
-  WARN: Obsolete. Upgrade to latest version of SkyRe and use SkyRe_EnemyScaling.esp instead
+  WARN: Obsolete. Update to latest version of SkyRe and use SkyRe_EnemyScaling.esp instead
   TAG: {{BASH: Relev}}
 SkyRe_Lighting.esp
   SAY: Only for non ENB users
@@ -6255,12 +6264,12 @@ timek_Damius.esp
 ExtraBlades.esp
 Better Followers.esp
   IF ("throwingweapons.esp") SAY: Some NPC changes not work with  'throwingweapons.esp'. See note for  IF ("throwingweapons.esp") INC: throwingweapons.esp.
-  SAY: Obsolete. Upgrade to latest version.
+  SAY: Obsolete. Update to latest version.
     //IF ($RU) SAY: Устарело. Обновите до последней версии.
 SpecializedFollowers.esp
   IF (r"Better Followers - .+\.esp") WARN: Delete. Use Better Followers - S*.esp instead.
 REGEX: Better Followers - Specialized( - Not E)?\.esp
-  SAY: Obsolete. Upgrade to latest version.
+  SAY: Obsolete. Update to latest version.
     //IF ($RU) SAY: Устарело. Обновите до последней версии.
 BrelynaMaryon.esp
 CamillaValerius.esp
@@ -6719,7 +6728,7 @@ GreenWaterFixForPureWaters.esp
   SAY: OBsoleve upgrade to new version.
 GreenWaterFixForWATER.esp
   SAY: Obsolete upgrade to new version
-    //IF ($RU) SAY: Устарело. Обновите до новой версии.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 GreenWaterFix.esp
   IF (7F378D8E|"GreenWaterFix.esp") SAY: Upgrade to vertion 1.1 (For Vanilla water ONLY)
 GreenWaterFix_Compatible.esp
