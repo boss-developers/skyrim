@@ -330,6 +330,7 @@ bugfixenchanmentnoregeneration.esp
 Bullseye Perk Fix.esp
   //Possibly belongs in perks
 Civil War Neutrality Fix.esp
+Chesko_MatchingSetPerkFix.esp
 Conjuration Fix.esp
   IF ("Unofficial Skyrim Patch.esp") WARN: Delete. Included in Unofficial Skyrim Patch 1.0+
     //IF ($RU) && IF ("Unofficial Skyrim Patch.esp") WARN: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
@@ -1995,11 +1996,17 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
   SAY: Update to new version for Cloaks 09
 1nivWICCloaks.esp
   TAG: {{BASH: Relev}}
+  IF ("Cloaks.esp") && IFNOT ("1nivWICSkyCloaksPatch.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
+  IF ("Cloaks - No Imperial.esp") && IFNOT ("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
 1nivWICCloaksCRAFT.esp
-  TAG: {{BASH: Relev}}
-REGEX: 1nivWICSkyCloaksPatch(-No Imp)?\.esp
-  SAY: Use only one 1nivWICSkyCloaksPatch esp
-    //IF ($RU) SAY: Используйте только один 1nivWICSkyCloaksPatch esp
+  IF ("1nivWICCloaks.esp") || IF ("1nivWICCloaksNoGuards.esp") WARN: Use only one WICCloaks esp.
+1nivWICCloaksNoGuards.esp
+  IF ("1nivWICCloaks.esp") WARN: Use only one WICCloaks esp.
+  IF (r"Cloaks( - No Imperial)?\.esp") INC: Cloaks of skyrim (even with compatibility patch). To fix this use another WICCloaks esp or uninstall cloaks of skyrim.
+1nivWICSkyCloaksPatch.esp
+1nivWICSkyCloaksPatch-No Imp.esp
+  IF ("1nivWICSkyCloaksPatch.esp") SAY: Use only one 1nivWICSkyCloaksPatch esp
+    //IF ($RU) && IF ("1nivWICSkyCloaksPatch.esp") SAY: Используйте только один 1nivWICSkyCloaksPatch esp
 1nivWICCloaksLorecraft.esp
 1nivWICCloaksCRAFTLorecraft.esp
 Collar.esp
@@ -2147,6 +2154,7 @@ DualSwords.esp
 Duel Craftable Arrows.esp
 Duel Craftable Arrows FIXED.esp
 DungeonGear01.esp
+Dusk Eaters Sword.esp
 DwarvenArmorWeapons.esp
 Dwarven Condenser.esp
 DwarvenMech.esp
