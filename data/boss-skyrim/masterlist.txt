@@ -1443,8 +1443,9 @@ recipeammoarrows.esp
 recipeingots.esp
 RecyclingMod.esp
   IF ("Crafting300.esp") SAY: Recommeded RecyclingModCrafting300.esp for Crafting300 mod. See RecyclingMod download page.
+    //IF ($RU) && IF ("Crafting300.esp") SAY: Рекомендуется патч RecyclingModCrafting300.esp для мода Crafting300. Ищите его на странице загрузки RecyclingMod.
   IF (r"Weapons of the Third Era.+\.esp") SAY: Recommed RecyclingModWo3E.esp for Weapons of the Third Era mod. See RecyclingMod download page.
-    //IF ($RU) && IF (r"Weapons of the Third Era.+\.esp") SAY: Рекомендуется мод RecyclingModWo3E.esp для мода Weapons of the Third Era. Ищите его на странице загрузки RecyclingMod.
+    //IF ($RU) && IF (r"Weapons of the Third Era.+\.esp") SAY: Рекомендуется патч RecyclingModWo3E.esp для мода Weapons of the Third Era. Ищите его на странице загрузки RecyclingMod.
 IFNOT (FFCC056A|"Crafting300.esp") && IFNOT (50142D0D|"Crafting300.esp") MOD: RecyclingModCrafting300.esp
   IFNOT ("Crafting300.esp") REQ: Crafting300.esp
   IFNOT ("RecyclingMod.esp") REQ: RecyclingMod.esp
@@ -1874,7 +1875,7 @@ armorkits.esp
   TAG: {{BASH: Relev}}
 Armor of Justice.esp
 Arngrim_Evening_Dress.esp
-REGEX: ArrowsNoGravity(_Fast)\.esp
+REGEX: ArrowsNoGravity(_Fast)?\.esp
 ArrowsOfLight.esp
 AsharaRomanticOutfit.esp
 AsharaDimonizedDress.esm
@@ -2351,7 +2352,9 @@ IFNOT ($BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
   TAG: {{BASH: Relev}}
     //not tested
 IFNOT ($BFNIAP) MOD: Lorecraft - Immersive Armors.esp
-IFNOT ($BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
+IFNOT ($BFNIAP) REGEX: SkyRe_Plugin_ImmersiveArmor_[24]\.esp
+  IFNOT ("hothtrooper44_ArmorCompilation.esp") SAY: Remember to delete hothtrooper44_ArmorCompilation.esp
+    //IF ($RU) && IFNOT ("hothtrooper44_ArmorCompilation.esp") SAY: Не забудьте удалить hothtrooper44_ArmorCompilation.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
 HoodsAndCirclets.esp
@@ -2650,6 +2653,7 @@ SkyRe_Plugin_NicoroshiCreations_1.1.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
   IF ("Nicoroshi Creations.esp") SAY: Remember to delete Nicoroshi Creations.esp
+    //IF ($RU) && IF ("Nicoroshi Creations.esp") SAY: Не забудьте удалить Nicoroshi Creations.esp
 NightasyBondageArmor.esp
 Night_Dweller_Armor.esp
 Nightingale Armor for Mages.esp
@@ -2681,29 +2685,33 @@ Obsidian.esp
 Obsidian Axe.esp
 REGEX: OchinClothingMod\d\d_.+\.esp
 Omegared99-Compilation.esp
-  SAY: Obsolete. Upgrade to version 3.3
+  SAY: Obsolete. Upgrade to latest version
+    //IF ($RU) SAY: Устарело обновите до последней версии.
 Omegared99-WeaponSets.esp
 Omegared99-LvLList-CompOnly.esp
   TAG: {{BASH: Relev}}
-High-75Percent.esp
+REGEX: (High|Medium|Standard|Uber)-..Percent\.esp
   TAG: {{BASH: Relev}}
   SAY: Use only one optional leveled list. (High, Medium, Standard or Uber)
-Medium-40Percent.esp
-  TAG: {{BASH: Relev}}
-  SAY: Use only one optional leveled list. (High, Medium, Standard or Uber)
-Standard-15Percent.esp
-  TAG: {{BASH: Relev}}
-  SAY: Use only one optional leveled list. (High, Medium, Standard or Uber)
-Uber-75Percent+Random.esp
-  TAG: {{BASH: Relev}}
-  SAY: Use only one optional leveled list. (High, Medium, Standard or Uber)
-/* 4 above are leveled lists for Omegared99-Compilation */
+    //IF ($RU) SAY: Используйте только один опциональный файл уровневых списков. (High, Medium, Standard или Uber)
 Omegared99-Compilation-NPC Plugin.esp
   WARN: File is now obsolete. See optional files to update.
+    //IF ($RU) WARN: Файл устарел. Смотрите опциональные файлы для обновления.
   TAG: {{BASH: Relev}}
 Lorecraft - Omegared99-Compilation.esp
 SkyRe_Plugin_Omegared99sArmorCompilation_3.5a.esp
+  SAY: Obsolete. Update to latest version of SkyRe.
+    //IF ($RU) SAY: Устарело обновите до последней версии SkyRe.
   IFNOT ("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
+  SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
+SkyRe_Plugin_Omegared99sArmorCompilation.esp
+  IFNOT ("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
+  SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
+SkyRe_Plugin_Omegared99-WeaponSets.esp
+  IF ("Omegared99-WeaponSets.esp") SAY: Remember to delete Omegared99-WeaponSets.esp
+    //IF ($RU) && IF ("Omegared99-WeaponSets.esp") SAY: Не забудьте удалить Omegared99-WeaponSets.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
 Onechanbara Kagura Set.esp
@@ -3154,8 +3162,10 @@ IF ($BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
   TAG: {{BASH: Relev}}
   //not tested
 IF ($BFNIAP) MOD: Lorecraft - Immersive Armors.esp
-IF ($BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
-  SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+IF ($BFNIAP) REGEX: SkyRe_Plugin_ImmersiveArmor_[24].esp
+  IFNOT ("hothtrooper44_ArmorCompilation.esp") SAY: Remember to delete hothtrooper44_ArmorCompilation.esp
+    //IF ($RU) && IFNOT ("hothtrooper44_ArmorCompilation.esp") SAY: Не забудьте удалить hothtrooper44_ArmorCompilation.esp
+    SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
 ImmersiveArmorsNPCs.esp
   IFNOT ("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
