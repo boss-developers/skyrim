@@ -68,7 +68,7 @@ IF ("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 
 /* Latest thread */
 GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1398450-relz-boss-for-skyrim/"
-    //IF ($RU) GLOBAL SAY: Последняя ветка форума BOSS: "http://forums.bethsoft.com/topic/1398450-relz-boss-for-skyrim/"
+    //IF ($RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft: "http://forums.bethsoft.com/topic/1398450-relz-boss-for-skyrim/"
 
 BEGINGROUP: ESMs
 
@@ -289,6 +289,7 @@ Eindeutige Regionsnamen.esp
 REGEX: NPCEssential - .+\.esp
   //Global set flag Essential for NPCs. Loaded before vanilla fixes and USKP
   SAY: Need to load before all mods that change npcs. This mod is set Essential flag for NPCs but with other vanilla stats.
+    //IF ($RU) SAY: Нужно загружать перед любыми модами, меняющими npc. Этот мод устанавливает делает бессмертными NPC, но оставляет другие характеристики, как в чистом Скайрим..
 ENDGROUP: Earliest mods
 
 BEGINGROUP: Vanilla fixes
@@ -468,7 +469,8 @@ NPC REDESIGN.esp
   IFNOT ($ApachiiHair) REQ: Apachii Sky Hair
 Gwendolyn.esp
 NPC_Hair_Replace_Bandit_Forsworn.esp
-  REQ: Apachii and Coolsims Hair
+  IFNOT ($ApachiiHair) REQ: Apachii and Coolsims Hair
+    //IF ($RU) REQ: Прически Apachii и Coolsims
 Riften Girl s Replacer v 0.1.esp
 Riften_Female.esp
 Cute Girl s Replacer Markarth v01.esp
@@ -478,6 +480,7 @@ Cute Girl s Replacer Witherun v 3.0.esp
 OlfinaGrayMane.esp
 OrientalbeautyMod.esp
   SAY: The OrientalbeautyMod.esp you use depends on which female body replacer (if any) you use.
+    //IF ($RU) SAY: Версия OrientalbeautyMod.esp зависит от реплейсера женского тела, который вы используете, если таковой имеется.
 RANs_CharGen_Morph_0.43a.esp
 RealisticEyeLighting.esp
 ShowRaceMenuOptions.esp
@@ -516,6 +519,7 @@ RevampedExteriorFog.esp
   IF ("Realistic Lighting.esp") INC: Realistic Lighting.esp
 PaperMapHeight-RemoveFog.esp
   IF ("WATER.esp") WARN: Removing Fog will affect WATER. Load after WATER if you are experiencing errors.
+    //IF ($RU) && IF ("WATER.esp") WARN: Удаление тумана повлияет на мод WATER. Загружайте после WATER если вы замечаете баги.
 ENDGROUP: Weather mods and overhauls
 
 BEGINGROUP: Sound mods
@@ -590,6 +594,7 @@ realrainextended.esp
 Realistic Lighting Patcher.esp
 RemoveAmbientInteriorFog.esp
   IF ("Realistic Lighting.esp") WARN: Removing the interior Fog will affect Realistic Lighting. Load before RL if you are experiencing errors.
+    //IF ($RU) && IF ("Realistic Lighting.esp") WARN: Удаление тумана внутри помещений повлияет на Realistic Lighting. Загружайте перед RL если вы замечаете баги.
 fixedeyeadaptation.esp
 dimmed_torches.esp
 enhancedlightingforrealisticlighting.esp
@@ -604,9 +609,7 @@ REGEX: Warmer Magic Lights v.+\.esp
 IC-Lighting.esp
 NoTint.esp
 ClimatesOfTamriel-Dungeons&Interiors.esp
-ClimatesOfTamriel-VanillaNights-Lvl-1.esp
-ClimatesOfTamriel-VanillaNights-Lvl-2.esp
-ClimatesOfTamriel-VanillaNights-Lvl-3.esp
+REGEX: ClimatesOfTamriel-VanillaNights-Lvl-[123]\.esp
 DarkerInteriors.esp
 DOF.esp
 REGEX: KatuLights.*\.esp
@@ -675,7 +678,7 @@ SIRW.esp
   TAG: {{BASH: Delev, Relev}} not tested
 SIMIIPatch.esp
 Economics of Skyrim.esp
-  TAG: {{ BASH: Delev, Relev }}
+  TAG: {{BASH: Delev, Relev}}
 ENDGROUP: Base Early
 
 BEGINGROUP: Base #
@@ -771,7 +774,8 @@ Behemoth Dragon.esp
 Better Alchemy Loot.esp
 Better Skill and Quest Books Names.esp
 BetterFishAdded.esp
-  TAG: {{BASH: Relev}} not tested
+  TAG: {{BASH: Relev}}
+    //not tested
 betterstartingitems.esp
 bbLager.esp
 guild battlemage.esp
@@ -896,7 +900,8 @@ CraftingMaterialsRecipes.esp
 CraftingRecipesRevisited.esp
 craftplusweaponssteam.esp
 Creepy Dungeons.esp
- WARN: Will most likely conflict with all dungeon altering mods.
+  WARN: Will most likely conflict with all dungeon altering mods.
+    //IF ($RU) WARN: В большинстве случаев будет конфликтовать со всеми модами, меняющими подземелья..
 /* Removes by hand all unrealistic and ambient lighting in dungeons only */
 GS.esp
 CS_SoulFragmentsToSoulGems.esp
@@ -1421,6 +1426,7 @@ REGEX: Realistic Wildlife Loot V.+\.esp
     //IF ($RU) SAY: Используйте только один Realistic Wildlife Loot V*.esp
 RWL Option - 3x Giant toes.esp
   SAY: Use only one Realistic Wildlife Loot esp
+    //IF ($RU) SAY: Используйте только один Realistic Wildlife Loot esp
 REGEX: Realistic Wildlife Loot -( IMCN)?( Realistic| Reduced)\.esp
   TAG: {{BASH: Delev, Relev}}
   //not tested
@@ -1431,13 +1437,14 @@ REGEX: Real Wildlife Skyrim.*\.esp
 /* Does this Satisfy SIRWPach.esp and SIRWPatch.esp */
 REGEX: SIRWPat?ch.esp
   TAG: {{BASH: Delev, Relev}}
-  //not tested
+    //not tested
 Real Wildlife Skyrim 0.1 IMCN.esp
 recipeammoarrows.esp
 recipeingots.esp
 RecyclingMod.esp
   IF ("Crafting300.esp") SAY: Recommeded RecyclingModCrafting300.esp for Crafting300 mod. See RecyclingMod download page.
-  IF (r"Weapons of the Third Era.+\.esp") SAY: Recommeded RecyclingModWo3E.esp for Weapons of the Third Era mod. See RecyclingMod download page.
+  IF (r"Weapons of the Third Era.+\.esp") SAY: Recommed RecyclingModWo3E.esp for Weapons of the Third Era mod. See RecyclingMod download page.
+    //IF ($RU) && IF (r"Weapons of the Third Era.+\.esp") SAY: Рекомендуется мод RecyclingModWo3E.esp для мода Weapons of the Third Era. Ищите его на странице загрузки RecyclingMod.
 IFNOT (FFCC056A|"Crafting300.esp") && IFNOT (50142D0D|"Crafting300.esp") MOD: RecyclingModCrafting300.esp
   IFNOT ("Crafting300.esp") REQ: Crafting300.esp
   IFNOT ("RecyclingMod.esp") REQ: RecyclingMod.esp
@@ -1765,9 +1772,11 @@ DEAsprint&jump.esp
     //IF ($RU) SAY: Может не работать, если кнопка бега\прыжка переназначена на кнопку мыши.
 DragonWarrior-Effects.esp
 Dynavision.esp
-WARN: DYNAVISION will work with most ENB configuations, however if you are using ENB, remember to turn OFF the ENB DOF feature in your graphics options
+  WARN: DYNAVISION will work with most ENB configuations, however if you are using ENB, remember to turn OFF the ENB DOF feature in your graphics options
+    //IF ($RU) WARN: DYNAVISION будет работать с большинством ENB конфигураций, однако, если вы используете  ENB, не забудьте выключить опцию ENB DOF , в настройках графики.
 DYNAVISION Dynamic Depth of Field.esp
   SAY: Make sure you have not switched DoF off in your ini file. If you don't see any effect, open you Skyrimprefs.ini and look for 'bDoDepthOfField'. Make sure it is set to 1.
+    //IF ($RU) SAY: Убедитесь, что вы не выключили DoF в вашем ini-файле. Если вы не видите эффекта, откройте ваш Skyrimprefs.ini и найдите строку 'bDoDepthOfField'. Убедитесь, что она имеет значение 1.
 horsefp.esp
 IMAGINATOR - Visual Control for Skyrim.esp
 iHUD.esp
@@ -1904,6 +1913,7 @@ SkyRe_Plugin_BaratheonArmor_1.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
   IF ("BaratheonArmor.esp") SAY: Remember to delete BaratheonArmor.esp
+    //IF ($RU) && IF ("BaratheonArmor.esp") SAY: Не забудьте удалить BaratheonArmor.esp
 Basara.esp
 /* bat3.esp, hawk2.esp, wyvern4.esp contain Item Records */
 bat3.esp
@@ -1995,15 +2005,21 @@ REGEX: Lorecraft - Cloaks(\d{1,3})( No Imperial| PlayerOnly)?\.esp
 REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
   TAG: {{BASH: Relev}}
   SAY: Update to new version for Cloaks 09
+    //IF ($RU) SAY: Обновите до новой версии Cloaks 09
 1nivWICCloaks.esp
   TAG: {{BASH: Relev}}
   IF ("Cloaks.esp") && IFNOT ("1nivWICSkyCloaksPatch.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
+    //IF ($RU) && IF ("Cloaks.esp") && IFNOT ("1nivWICSkyCloaksPatch.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
   IF ("Cloaks - No Imperial.esp") && IFNOT ("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
+    //IF ($RU) && IF ("Cloaks - No Imperial.esp") && IFNOT ("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
 1nivWICCloaksCRAFT.esp
   IF ("1nivWICCloaks.esp") || IF ("1nivWICCloaksNoGuards.esp") WARN: Use only one WICCloaks esp.
+    //IF ($RU) && IF ("1nivWICCloaks.esp") || IF ("1nivWICCloaksNoGuards.esp") WARN: Используйте только один WICCloaks esp.
 1nivWICCloaksNoGuards.esp
   IF ("1nivWICCloaks.esp") WARN: Use only one WICCloaks esp.
+    //IF ($RU) && IF ("1nivWICCloaks.esp") WARN: Используйте только один WICCloaks esp.
   IF (r"Cloaks( - No Imperial)?\.esp") INC: Cloaks of skyrim (even with compatibility patch). To fix this use another WICCloaks esp or uninstall cloaks of skyrim.
+    //IF ($RU) && IF (r"Cloaks( - No Imperial)?\.esp") INC: Cloaks of skyrim (даже с патчем совместимости). Для исправления этого используйте другой WICCloaks esp или удалите cloaks of skyrim.
 1nivWICSkyCloaksPatch.esp
 1nivWICSkyCloaksPatch-No Imp.esp
   IF ("1nivWICSkyCloaksPatch.esp") SAY: Use only one 1nivWICSkyCloaksPatch esp
@@ -2142,6 +2158,7 @@ REGEX: SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод до активации патча или Скайрима рухнет, когда он не может найти файлы поддержки.
   IF ("DreadKnightWeaponSet,esp") || IF ("Dread Knight Weapon Set.esp") SAY: Remember to delete Dread Knight Weapon Set mod
+    //IF ($RU) && IF ("DreadKnightWeaponSet,esp") || IF ("Dread Knight Weapon Set.esp") SAY: Не забудьте удалить мод Dread Knight Weapon Set.
 DreadWeapons_Fifthdreads_Weapon_Pack.esp
 Dreadweave Axes.esp
 DreamBurrowSageRetexture.esp
@@ -6572,7 +6589,7 @@ REGEX: Height Adjusted Races.*\.esp
   SAY: Use only one Height Adjusted Races*.esp
     //IF ($RU) SAY: Используйте только один Height Adjusted Races*.esp
 True Giants.esp
-  INC: Height Adjusted Races with True Giants
+  IF (r"Height Adjusted Races with True Giants.*\.esp") INC: Height Adjusted Races with True Giants
 EnhancedCharacterEdit.esp
 Facelight.esp
 Extended Slider Colors.esp
@@ -6602,7 +6619,8 @@ Morrowind Races.esp
 mwcrh&w.esp
 PrettyKhajiit.esp
 RaRe.esp
-  SAY: Obsolete. Upgrade to 'SkyRe_Races.esp'
+  SAY: Obsolete. Upgrade to 'SkyRe_Races.esp' included in Skyrim Redone ("http://skyrim.nexusmods.com/mods/9286")
+    //IF ($RU) SAY: Устарело, обновите до SkyRe_Races.esp, входящий в Skyrim Redone ("http://tes.ag.ru/skyrim/mods/global.shtml")
 REGEX: CBBELE.*\.esp
 Skyrim Sizes.esp
 ThatsRacist.esp
@@ -6692,10 +6710,13 @@ BEGINGROUP: Shader Replacers
 
 REGEX: RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp
   INC: Original FXAA Post Process Injector and Realistic Lighting Without Post-Processing
+    //IF ($RU) && INC: Оригинальный FXAA Post Process Injector и Realistic Lighting Without Post-Processing
 rcrnShaders.esp
   SAY: Make sure you have bEnableFileSelection=1 in SkyrimPrefs.ini under [Launcher].
+    //IF ($RU) SAY: Убедитесь, что строка bEnableFileSelection=1 в SkyrimPrefs.ini находитсся в секции [Launcher].
 Volrath - Dragonreach - Brazier fix - 1.1.esp
   IFNOT ("rcrnShaders.esp") && IFNOT (r"RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp")  ERROR: If using V1.1 RCRN is required, otherwise your game will crash.
+    //IF ($RU) && IFNOT ("rcrnShaders.esp") && IFNOT (r"RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp")  ERROR: Если используется версия 1.1, тогда требуется мод RCRN, иначе ваша игра может вылетать.
 Animated Weapon Enchants.esp
 Animated Enchantments.esp
 BetterNightEye.esp
@@ -6720,9 +6741,12 @@ ImmersiveWater3.esp
 Purewaters.esp
   IF ("Purewaters.esp") MOD: realrainextended.esp
   SAY: Use only one realrain.esp
+    //IF ($RU) SAY: Используйте только один realrain.esp
 RealisticWaterTextures.esp
   IF ("WATER.esp") WARN: DELETE. Use WATER.esp instead
+    //IF ($RU) && IF ("WATER.esp") WARN: Удалите. Используйте WATER.esp вместо этого.
   IFNOT ("WATER.esp") SAY: Old. Use WATER mod instead ("http://skyrim.nexusmods.com/mods/13268")
+    //IF ($RU) && IFNOT ("WATER.esp") SAY: Устарело. Используйте вместо этого мод WATER ("http://skyrim.nexusmods.com/mods/13268")
 /* Not sure if this is obsolete its from Realistic Water Textures and Terrain */
 RWTT - Get Wet.esp
   SAY: Originally for Realistic Water Textures and Terrain, may be obsolete.
@@ -6732,18 +6756,23 @@ WATER - Get Wet.esp
 Water F.X.esp
 Water FX - Get Wet.esp
   IF ("Chesko_Frostfall.esp") TAG: {{BASH: Deactivate, NoMerge}} already included in 'Chesko_Frostfall.esp'
+    //IF ($RU) && IF ("Chesko_Frostfall.esp") TAG: {{BASH: Deactivate, NoMerge}} уже включено в Chesko_Frostfall.esp
 kerplunk.esp
-  IF ("WATER.esp") WARN: Delete. Included in 'WATER.esp'
+  IF ("WATER.esp") WARN: Delete. Included in WATER.esp
+    //IF ($RU) && IF ("WATER.esp") WARN: Удалите входит в WATER.esp
 waterfxgetwet.esp
   IF ("WATER - Get Wet.esp") SAY: Use either waterfxgetwet.esp or WATER - Get Wet.esp
+    //IF ($RU) && IF ("WATER - Get Wet.esp") SAY: Используйте любой из waterfxgetwet.esp или WATER - Get Wet.esp
 Blacksmithforge water fix.esp
 GreenWaterFixForPureWaters.esp
-  SAY: OBsoleve upgrade to new version.
+  SAY: Obsoleve upgrade to new version.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 GreenWaterFixForWATER.esp
   SAY: Obsolete upgrade to new version
     //IF ($RU) SAY: Устарело. Обновите до последней версии.
 GreenWaterFix.esp
-  IF (7F378D8E|"GreenWaterFix.esp") SAY: Upgrade to vertion 1.1 (For Vanilla water ONLY)
+  IF (7F378D8E|"GreenWaterFix.esp") SAY: Upgrade to version 1.1 (For Vanilla water ONLY)
+    //IF ($RU) && IF (7F378D8E|"GreenWaterFix.esp") SAY: Обновите до версии 1.1+ (Только для воды из чистого Скайрим)
 GreenWaterFix_Compatible.esp
 GreenWaterFix_CrystalClearPatch.esp
 GreenWaterFix_LesserBlurPatch.esp
@@ -6756,6 +6785,7 @@ accurate prison markers.esp
 Barenziah.esp
 BarenziahQuestMarkers.esp
   IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
+    //IF ($RU) && IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp
 BetterMapMarkerPlacements.esp
 camp_map_markers.esp
 cartographers map markers.esp
@@ -6784,6 +6814,7 @@ tox Dragon Map Markers.esp
 REGEX: Unmarked Places - .+\.esp
 WorldMapInFull3D.esp
   SAY: If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)
+    //IF ($RU) SAY: Если вы используете другие моды. изменяющие карты, такие как Quality World Map with roads, измените параметр uLockedTerrainLOD на 32 для их отображения (только внутри помещений)
 ENDGROUP: Map marker Tweaks
 
 BEGINGROUP: Load Late
