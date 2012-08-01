@@ -5645,22 +5645,23 @@ Duel_v2_1b.esp
 Duel_Master.esp
 Duel Extension.esp
 Duel2_ArmorRating.esp
-  INC: Duel_Master.esp
+  IF ("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_Blocking.esp
-  INC: Duel_Master.esp
+  IF ("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_Knockback_Knockdown.esp
-  INC: Duel_Master.esp
+  IF ("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_ReducedReach.esp
-  INC: Duel_Master.esp
+  IF ("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_ShieldBash.esp
-  INC: Duel_Master.esp
+  IF ("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_Stagger.esp
-  INC: Duel_Master.esp
+  IF ("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_Stamina.esp
-  INC: Duel_Master.esp
+  IF ("Duel_Master.esp") INC: Duel_Master.esp
 Duel_NoArmorTweak.esp
 DukePatricks - CombatTweaks.esp
   SAY: Outdated use Duke Patricks - Heavy Weapons Combat.esp instead
+    //IF ($RU) SAY: Устарело. Используйте вместо этого Duke Patricks - Heavy Weapons Combat.esp
 Duke Patricks - Heavy Weapons Combat.esp
 decap50.esp
 decap 50.esp
@@ -5788,6 +5789,7 @@ REGEX: New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp
 Noredundantperks.esp
 Crimson Tide - Blood.esp
   IF (r".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Use Crimson Tide OR Enhanced Blood. Not both.
+    //IF ($RU) && IF (r".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Используйте Crimson Tide или Enhanced Blood. Не оба.
 /* Unaware if any other plugins depend on this.
 Has been repoted to cause issues if loaded after ACE Melee, will load here and see
 if any other issues crop up, can be relocated accordingly.*/
@@ -5819,6 +5821,7 @@ Combat Perks Overhaul.esp
 Conjuration Perks Overhaul Beta 0.1.esp
 REGEX: Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp
   SAY: Use only one Deadly Torches - *.esp
+    //IF ($RU) SAY: Используйте только один Deadly Torches - *.esp
 Destruction Scaling.esp
 Dual Flurry for all.esp
 EagleEye3x.esp
@@ -5877,6 +5880,7 @@ PerfectperksLocks.esp
 PerksBalance.esp
 perksbymatope.esp
   IF ("levelingperkslite.esp") WARN: Delete. Already included in levelingperkslite.esp
+    //IF ($RU) && IF ("levelingperkslite.esp") WARN: Удалите. Уже включено в levelingperkslite.esp
 Perk_Soul_Siphon_100.esp
 PerQ_ReqSkillLevel.esp
 pfeile schmieden perk.esp
@@ -5885,6 +5889,7 @@ proper_archery.esp
 ruestungstalente_ohne_helm.esp
 REGEX: PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp
   SAY: Use only one PTAlchemyOverhaul_SkillRate esp
+    //IF ($RU) SAY: Используйте только один PTAlchemyOverhaul_SkillRate esp
 CookingExpanded - PTAlchFood.esp
 RacialSkillBoost.esp
 Racial Traits Improved.esp
@@ -5895,6 +5900,7 @@ SkBBP - Enchanting Skill Gain Balanced.esp
 SmithingSmelter.esp
 SMLeveledItemSmithing.esp
   SAY: Conflict with other mods that modify the smithing perk tree.
+    //IF ($RU) SAY: Конфликтует с другими модами, которые меняют древо перков кузнечества.
 scale.esp
 scale-enemies.esp
 SkillGrindCap.esp
@@ -5903,6 +5909,7 @@ skillslevelfaster_less.esp
 Skyrim Scaling Stopper.esp
   TAG: {{BASH: Delev, Relev}}
   WARN: If using version 3+, Skyrim Monster Mod is required.
+    //IF ($RU) WARN: Если используется версия 3+, требуется также мод Skyrim Monster Mod.
 SkyXP.esp
   IF (<0.1.5.6|"SKSE") REQ: SKSE 1.5.6+.
   IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
@@ -5922,28 +5929,30 @@ TrueYield.esp
 Twili's Unarmed perk.esp
 Twili's Unarmored perk.esp
 REGEX: Uncapped Perks - [CM].+\.esp
-  REQ: Skyrim Uncapper
+  IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
   IF (r"PerkUP-.*\.esp") INC: PerkUP, use only one.
 Uncapped Perks.esp
-  REQ: Skyrim Uncapper
+  IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
   IF (r"PerkUP-.*\.esp") INC: PerkUP, use only one.
 Uncapped Perks - Optional Magic Add-on.esp
-  REQ: Skyrim Uncapper
+  IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
 REGEX: Uncapped Perks - .+\.esp
   IF (r"PerkUP-.*\.esp") INC: PerkUP, use only one.
 BlueStarPerkAdventure.esp
-  REQ: Skyrim Uncapper
+  IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
 REGEX: WiS IV - leveld World X\d+\.esp
   SAY: Use only one WiS IV - leveld World esp
 SkyRe_Main.esp
   TAG: {{BASH: Relev, Delev}}
   //TAG: {{BASH: Delev, Names, Relev}}
-  IF ("ACE Crafting.esp") || IF ("ACE Speech.esp") INC: ACE (Every module that affects perks)
+  IF ("ACE Crafting.esp") || IF ("ACE Speech.esp") INC: ACE Crafting.esp, ACE Speech.esp
   IF ("Perky.esp") INC: Perky.esp (Syynx's Perky)
   IF (r"PerkUP-.*\.esp") INC: PerkUP
   IF (r"Uncapped Perks.*\.esp") INC: Uncapped perks
   IF ($CCO) INC: Complete Crafting Overhaul (doubles in crafting)
+    //IF ($RU) && IF ($CCO) INC: Complete Crafting Overhaul (дубликаты в меню крафтинга)
   IF ("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
+    //IF ($RU) && IF ("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
 Lorecraft - SkyRe.esp
 SkyRe_Comp.esp
 SkyRe_EncounterZones.esp
@@ -5952,6 +5961,7 @@ SkyRe_EnemyScaling.esp
   TAG: {{BASH: Relev}}
 SkyRe_Enemies.esp
   WARN: Obsolete. Update to latest version of SkyRe and use SkyRe_EnemyScaling.esp instead
+    //IF ($RU) WARN: Устарело обновите до последней версии SkyRe и используйте SkyRe_EnemyScaling.esp вместо этого.
   TAG: {{BASH: Relev}}
 SkyRe_Lighting.esp
   SAY: Only for non ENB users
@@ -6009,6 +6019,7 @@ BEGINGROUP: Pose and Animation Mods
 
 AP Skyrim.esp
  WARN: Obsolete. Update to latest version.
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 BySbire_FemaleBehavoir.esp
 dD-No Spinning Death Animation.esp
 DIWS_SlowerWalk.esp
@@ -6030,7 +6041,8 @@ BEGINGROUP: Headparts
 
 AllHairs.esp
 ApachiiHair.esp
-  SAY: Do not use with ApachiiHair.esm, Obsolete upgrade to V1.1
+  SAY: Obsolete. Upgrade to latest version.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 ApachiiHairStyles.esp
 ApachiiHairStylesELVES.esp
 bald hair.esp
@@ -6072,7 +6084,8 @@ FlansEyesForSkrim.esp
 KhajiitEyes.esp
 Krisan's Eyes.esp
 MissAniThrope's Mystic Eyes.esp
-  IF ("MissAniThrope and chakaru11's C Eyes.esp") WARN: Delete. Already included in MissAniThrope and chakaru11's C Eyes.esp
+  IF ("MissAniThrope and chakaru11's C Eyes.esp") WARN: Delete. Already included in 'MissAniThrope and chakaru11's C Eyes.esp'
+    //IF ($RU) && IF ("MissAniThrope and chakaru11's C Eyes.esp") WARN: Удалите. Уже включено в 'MissAniThrope and chakaru11's C Eyes.esp'
 MissAniThrope and chakaru11's C Eyes.esp
 OrientalEyes.esp
 PurpleEyes.esp
@@ -6100,6 +6113,7 @@ BEGINGROUP: Race additions
 
 mjhImprovedRaces.esp
  INC: Anything that changes the race descriptions or races.
+    //IF ($RU) INC: Все моды, которые изменяют рассы или их описания.
 CherryRace.esp
 ChildRace.esp
 CustomRaces.esp
@@ -6148,6 +6162,7 @@ followers keep up.esp
 AccurateCompanionGuild.esp
 DFB - Disable Hidden Follower Bows & Arrows.esp
   IF ($UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can remove all default followers equpment with UFO.
+    //IF ($RU) && IF ($UFO) SAY: Этот мод избыточен для 'UFO - Ultimate Follower Overhaul.esp'. Вы можете удалить весь скрытый инвентарь у компаньенов с помощью UFO.
 Eileen.esp
 Eternal Bunny Pet (Gray Silent).esp
 FairKhajiit.esp
@@ -6164,11 +6179,14 @@ foxpet-petfox.esp
 REGEX: Vashira the Crimson Flash( shorter named)?\.esp
 TCG.esp
   IF ($UFO) WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+    //IF ($RU) && IF ($UFO) WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
 TCGStarterKit.esp
 HorseCompanions.esp
   IF ($UFO) WARN: HorseCompanions.es is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+    //IF ($RU) && IF ($UFO) WARN: HorseCompanions.es уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
 REGEX: .*HorseRidingFollowers\.esp
   IF ($UFO) WARN: HorseRidingFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+    //IF ($RU) && IF ($UFO) WARN: HorseRidingFollowers уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
 Horses for followers.esp
 SelminaDArchon1.esp
 REGEX: SPODUM v.+\.esp
@@ -6204,7 +6222,9 @@ BEGINGROUP: Ultimate Follower Overhaul
 UFO - Ultimate Follower Overhaul.esp
   IF (<1.5.24|"TES5") REQ: Skyrim 1.5.24+
   IF ("BDO.esp") INC: BDO.esp, has the same functional, use only one.
-  SAY: For safe install need dismiss all your followers, save, delete all included mods, load, save and install UFO. For safe uninstall or update see special instructions on mod page.
+    //IF ($RU) && IF ("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
+  SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on mod page.
+    //IF ($RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньенов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на странице мода.
 UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
@@ -6384,19 +6404,23 @@ SylgiaCompleteNopickaxe.esp
 TS_FallenAngels.esp
 Vilkas_v1.esp
 Halfling Race.Esp
+  SET: LOTRR1
   REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
-  SAY: Use only one 'Halfling Race.Esp' or 'Sam Merry and Peppin.Esp' or 'Frodo Sam Merry & Peppin.Esp'
-REGEX: (Frodo )?Sam Merry \& Peppin\.Esp
+Sam Merry and Peppin.Esp
   REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
-  SAY: Use only one 'Halfling Race.Esp' or 'Sam Merry and Peppin.Esp' or 'Frodo Sam Merry & Peppin.Esp'
+  IF ($LOTRR1) SAY: Use only one 'Halfling Race.Esp' or 'Sam Merry and Peppin.Esp' or 'Frodo Sam Merry & Peppin.Esp'
+    //IF ($RU) && IF ($LOTRR1) SAY: Используйте только один 'Halfling Race.Esp' или 'Sam Merry and Peppin.Esp' или 'Frodo Sam Merry & Peppin.Esp'
+  SET: LOTRR1
+Frodo Sam Merry & Peppin.Esp
+  IF ($LOTRR1) SAY: Use only one 'Halfling Race.Esp' or 'Sam Merry and Peppin.Esp' or 'Frodo Sam Merry & Peppin.Esp'
+    //IF ($RU) && IF ($LOTRR1) SAY: Используйте только один 'Halfling Race.Esp' или 'Sam Merry and Peppin.Esp' или 'Frodo Sam Merry & Peppin.Esp'
 Dwarf Race.Esp
   REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
-  SAY: Use only one 'Dwarf Race.Esp' or 'Gimli.Esp'
 Gimli.Esp
   REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
     //IF ($RU) REQ: 'Ultimate Follower Overhaul' и 'Better males - Beautiful nudes and faces - New hairstyles'
-  SAY: Use only one 'Dwarf Race.Esp' or 'Gimli.Esp'
-    //IF ($RU) SAY: Используйте только один 'Dwarf Race.Esp' или 'Gimli.Esp'
+  IF ("Dwarf Race.Esp") WARN: Use only one 'Dwarf Race.Esp' or 'Gimli.Esp'
+    //IF ($RU) WARN: Используйте только один 'Dwarf Race.Esp' или 'Gimli.Esp'
 Aragorn.Esp
   REQ: 'Ultimate Follower Overhaul' and 'Better males - Beautiful nudes and faces - New hairstyles'
     //IF ($RU) REQ: 'Ultimate Follower Overhaul' и 'Better males - Beautiful nudes and faces - New hairstyles'
@@ -6595,6 +6619,7 @@ Facelight.esp
 Extended Slider Colors.esp
 REGEX: Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp
   SAY: Obsolete. Upgrade to version 5
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 /* Part of Extended Colors need to check v5*/
 REGEX: VanillaRaces( - Prepatched - English)?\.esp
 Expanded Eye Color Selection.esp
@@ -6710,7 +6735,7 @@ BEGINGROUP: Shader Replacers
 
 REGEX: RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp
   INC: Original FXAA Post Process Injector and Realistic Lighting Without Post-Processing
-    //IF ($RU) && INC: Оригинальный FXAA Post Process Injector и Realistic Lighting Without Post-Processing
+    //IF ($RU) INC: Оригинальный FXAA Post Process Injector и Realistic Lighting Without Post-Processing
 rcrnShaders.esp
   SAY: Make sure you have bEnableFileSelection=1 in SkyrimPrefs.ini under [Launcher].
     //IF ($RU) SAY: Убедитесь, что строка bEnableFileSelection=1 в SkyrimPrefs.ini находитсся в секции [Launcher].
@@ -6750,6 +6775,7 @@ RealisticWaterTextures.esp
 /* Not sure if this is obsolete its from Realistic Water Textures and Terrain */
 RWTT - Get Wet.esp
   SAY: Originally for Realistic Water Textures and Terrain, may be obsolete.
+    //IF ($RU) SAY: В основном реалистичные текстуры воды и земли, вероятно устарело.
 WATER.esp
 WATER - Get Wet.esp
 /* I Think Water F.X. and Water FX - Get Wet are obsolete. */
