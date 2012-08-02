@@ -2708,11 +2708,6 @@ SkyRe_Plugin_Omegared99sArmorCompilation.esp
   IFNOT ("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_Omegared99-WeaponSets.esp
-  IF ("Omegared99-WeaponSets.esp") SAY: Remember to delete Omegared99-WeaponSets.esp
-    //IF ($RU) && IF ("Omegared99-WeaponSets.esp") SAY: Не забудьте удалить Omegared99-WeaponSets.esp
-  SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 Onechanbara Kagura Set.esp
 OrcishMaskedHelmet.esp
 Orgnum'sDagger.esp
@@ -4146,7 +4141,7 @@ Ash Pile Expiration.esp
 REGEX: AT - Loot Arrows (HARDCORE)?([-\+]?\d{1,3}%)?\.esp
 REGEX: AT - Faster Arrows Improved (\+\d{1,3}%)\.esp
 REGEX: AT - Merchants Arrows (HARDCORE)?([-\+]?\d{1,3}%)?\.esp
-REGEX: AT - Recover ([-\+]?\d{1,3}%)( Less)? Arrows.esp
+REGEX: AT - Recover ([-\+]?\d{1,3}%)( Less| More)? Arrows\.esp
 REGEX: AT -( Increased)? Progressive Damage( \(BS and CCO\)| \(with Nord Hero Arrow\))?( [-\+]?\d{1,3}%)?\.esp
 ATTTemplate.esp
 augmentedspells.esp
@@ -4175,11 +4170,12 @@ BarenziahQuestMarkers_Droppable.esp
 BertsBreezhomeRemodel(Perks).esp
 BasicHorseRidingAI.esp
   IF ($UFO) WARN: included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
+    //IF ($RU) && IF ($UFO) WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.
 Basic Smithing Perk.esp
 Better Bone Armor.esp
-  IF ("mod1.esp") SAY: Use either Better Bone Armor.esp or mod1.esp
 mod1.esp
   IF ("Better Bone Armor.esp") SAY: Use either Better Bone Armor.esp or mod1.esp
+    //IF ($RU) && IF ("Better Bone Armor.esp") SAY: Используйте или Better Bone Armor.esp или mod1.esp
 Better Bound Weapons.esp
 Better Dragons.esp
 Better Dynamic Snow.esp
@@ -4291,6 +4287,7 @@ doublebounddmg.esp
   // TAG: {{BASH: Stats}}
 droppablebarenziah.esp
   IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
+    //IF ($RU) && IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp
 DS-FlybyOpt.esp
 DS-MoreAgressionForRemover.esp
 Dr_ItemBones.esp
@@ -4361,6 +4358,7 @@ FreeRide.esp
 followersalpha7.esp
 REGEX: Follower Tweaks.*\.esp
   SAY: Only use one Follower Tweaks - plugin at once
+    //IF ($RU) SAY: Используйте одновременно только один плагин Follower Tweaks
 FollowerWander.esp
 forger.esp
 forsworn briarheart.esp
@@ -4368,6 +4366,7 @@ Fortify1H-Daggers.esp
 FrostHorseWhite.esp
 frostyfrost.esp
   INC: other horse mods
+    //IF ($RU) INC: Дуругие моды, меняющие лошадей
 FSS-No pause between lines.esp
 FSS-Slight pause between lines.esp
 Fullcamprespawn.esp
@@ -4382,7 +4381,8 @@ Get Out of my Bedroom with Chair.esp
 REGEX: GetArrowsBack(_50)?\.esp
 getdrunk.esp
 REGEX: Ghostly Shadowmere.*\.esp
-  SAY: Use only one
+  SAY: Use only one Ghostly Shadowmere*.esp
+    //IF ($RU) SAY: Use only one Ghostly Shadowmere*.esp
 giant_giants_and_mammoths.esp
 REGEX: Giant Mammoths( 50size)?([ ]+\dk HP)?\.esp
 GKorrPerks.esp
@@ -4421,7 +4421,8 @@ HeavyMetal.esp
 heimskrshutsup3.esp
 Hemet2CircletReplacer.esp
 REGEX: Hellspawn Shadowmere.*\.esp
-  SAY: Use only one
+  SAY: Use only one Hellspawn Shadowmere esp
+    //IF ($RU) SAY: Используйте только один Hellspawn Shadowmere esp
 Helmets - Khajiit Ears Hair.esp
 helmless_warrior.esp
 Helms and Circlets.esp
@@ -4439,6 +4440,7 @@ housecarl_fem.esp
 Housecarls Can Wear Anything.esp
 REGEX: Housecarls improved AI( \+ higher lvl cap)?\.esp
   IF ($UFO) WARN: Improved AI included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+    //IF ($RU) && IF ($UFO) WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
 REGEX: Housecarls Mixed Feminine.*\.esp
 Housecarls V3 D for Deluxe.esp
 HT_traveltax.esp
@@ -4471,8 +4473,10 @@ BEGINGROUP: Overrides I
 I work for Belethor.esp
 iLoveLydia.esp
   WARN: This mod will conflict with any female body altering mods.
+    //IF ($RU) WARN: Этот мод может конфликтовать с любыми реплейсерами женских тел.
 REGEX: iMaxPlayerRunes\d+\.esp
   SAY: This is actually iMaxPlayerRunes which is a game setting - you might be able to just set it in the .ini file and skip the plugin.
+    //IF ($RU) SAY: Это просто параметр iMaxPlayerRunes из настроек игры - вы можете просто поменять его значение в .ini файле и не использовать этот плагин.
 ImmediateDragons.esp
 Improved Archery and Bows.esp
 Improved Cloaks.esp
@@ -5992,8 +5996,24 @@ IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
   IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
     //IF ($RU) && IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для равильной работы мода с SkyRe.
 SkyRe_Plugin_ImmersiveArmor_4.esp
+  IF ("hothtrooper44_ArmorCompilation.esp") SAY: Remember to delete hothtrooper44_ArmorCompilation.esp
   //IF ACTIVE("hothtrooper44_ArmorCompilation.esp") SAY: Remember to delete (or uncheck) hothtrooper44_ArmorCompilation.esp
     //IF ($RU) && IF ACTIVE("hothtrooper44_ArmorCompilation.esp") SAY: Не забудьте удалить hothtrooper44_ArmorCompilation.esp
+  SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_Omegared99-WeaponSets.esp
+  IF ("Omegared99-WeaponSets.esp") SAY: Remember to delete Omegared99-WeaponSets.esp
+    //IF ($RU) && IF ("Omegared99-WeaponSets.esp") SAY: Не забудьте удалить Omegared99-WeaponSets.esp
+  SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_DragonBoneWeaponsComplete.esp
+  IF ("Dragonbone Weapons Complete.esp") SAY: Remember to delete 'Dragonbone Weapons Complete.esp'
+  SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_isilNarsil.esp
+  IF ("isilNarsil.esp") SAY: Remember to delete isilNarsil.esp
+  SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_Morrowloot.esp
   //load order from autor of SkyRe (1-skyre main 2-morrowloot 3-skyre plugin morrowloot)
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
