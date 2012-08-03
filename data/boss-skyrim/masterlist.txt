@@ -656,6 +656,7 @@ REGEX: enhanced soundtrack (\d{1,2})\.esp
   SAY: Adds music but also contains textures and meshes. Loose files will override them
     //IF ($RU) SAY: Добавляет музыку, но также включает тесктуры с моделями. Отдельные файлы перезапишут их.
 REGEX: PersonalizedMusic.*\.esp
+REGEX: PM_.+Music_(NoVanilla_)?v.+\.esp
 ENDGROUP: Music
 
 BEGINGROUP: Textures
@@ -3565,6 +3566,8 @@ Cavern Pitfalls.esp
 CavernIsles2.esp
 Cerebral Den.esp
 ChimneysV1.0.esp
+CK's Might of the Legion.esp
+  IFNOT ("WARZONES - Civil Unrest.esm") REQ: WARZONES - Civil Unrest
 Clam Farm.esp
 ClearFields.esp
 CliffCabinWinterhold_1-4.esp
@@ -3666,6 +3669,7 @@ ENDGROUP: Quests G
 
 BEGINGROUP: Quests H
 
+Haven.esp
 HelmsHaven.esp
 Hjerim_Blacksmith_English.esp
 HjerimExpansion.esp
@@ -3880,7 +3884,10 @@ ENDGROUP: Quests R
 
 BEGINGROUP: Quests S
 
+Saviors Lodge - Player Home.esp
+  IFNOT ("Scripts/IHWelcomeScript.pex") WARN: You still need to install the scripts for this mod. See download page.
 Saviors Lodge V1.0.esp
+  SAY: Obsolete. Update to latest version.
 SCA - Skyrim Character Archetypes (Beta).esp
 Quest_SeaOfGhosts.esp
 sec_friendsforever.esp
@@ -6106,6 +6113,7 @@ Hunting in Skyrim.esp
 /* must be load after any perk and/or smithing mods */
 Skyrim15SmithingFix.esp
   IF (<1.5.24|"TES5") REQ: Skyrim 1.5.24+
+Two-Handed Speed-Based Perks.esp
 ENDGROUP: Player Perks
 ENDGROUP: Player Characteristics
 
