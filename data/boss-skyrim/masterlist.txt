@@ -5170,8 +5170,8 @@ SIBNPatch.esp
 TR-Basic Needs & RWS Patch.esp
 CookingExpanded - TRO_BN.esp
 SkBBP - Lore-Friendly Stats and Encumbrance.esp
-vinis_food_and_rest.esp
-REGEX: vinis_food_and_rest.+\.esp
+IFNOT ("SkyRe_Main.esp") MOD: vinis_food_and_rest.esp
+IFNOT ("SkyRe_Main.esp") REGEX: vinis_food_and_rest.+\.esp
 /* Imps More Complex Needs - Vampirism to load after other vampire feeding mods */
 IMCN - Overrides.esp
 EOS - IMCN Compatibility.esp
@@ -6051,6 +6051,8 @@ SkyRe_Main.esp
     //IF ($RU) && IF ("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
 Lorecraft - SkyRe.esp
 SkyRe_Comp.esp
+IF ("SkyRe_Main.esp") MOD: vinis_food_and_rest.esp
+IF ("SkyRe_Main.esp") REGEX: vinis_food_and_rest.+\.esp
 SkyRe_EncounterZones.esp
 SkyRe_EnemyAI.esp
 SkyRe_EnemyScaling.esp 
