@@ -2039,7 +2039,7 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
     //IF ($RU) && IF ("Cloaks - No Imperial.esp") && IFNOT ("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
 1nivWICCloaksCRAFT.esp
   IF ("1nivWICCloaks.esp") || IF ("1nivWICCloaksNoGuards.esp") WARN: Use only one WICCloaks esp.
-    //IF ($RU) && IF ("1nivWICCloaks.esp") || IF ("1nivWICCloaksNoGuards.esp") WARN: Используйте только один WICCloaks esp.
+    //IF ($RU) && (IF ("1nivWICCloaks.esp") || IF ("1nivWICCloaksNoGuards.esp")) WARN: Используйте только один WICCloaks esp.
 1nivWICCloaksNoGuards.esp
   IF ("1nivWICCloaks.esp") WARN: Use only one WICCloaks esp.
     //IF ($RU) && IF ("1nivWICCloaks.esp") WARN: Используйте только один WICCloaks esp.
@@ -2429,8 +2429,7 @@ SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF ("InsanitysDragonKatana.esp") || IF ("Insanity's Dragon Katana.esp") SAY: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
-    //(IF ($RU) && IF ACTIVE ("InsanitysDragonKatana.esp")) || (IF ($RU) && IF ACTIVE ("Insanity's Dragon Katana.esp")) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
-      //asdfMaybe conditional is not correct. Need conditional for "AND AND OR"
+    //(IF ($RU) && (IF ACTIVE ("InsanitysDragonKatana.esp") || IF ACTIVE ("Insanity's Dragon Katana.esp")) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
 InvisRing.esp
 InvisibleArmorSets.esp
 ISDBlackSting.esp
