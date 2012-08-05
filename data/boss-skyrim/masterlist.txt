@@ -1375,7 +1375,7 @@ NightingaleArmorTextureFix.esp
 Nightingale Equipment Tweaks.esp
 NightsWatchArmor.esp
 NightsWatchArmorLight.esp
-NoAutoSkillBooks.esp
+
 NoSaltRecipes.esp
 NPC Bartering.esp
 ENDGROUP: Base N
@@ -4730,10 +4730,14 @@ Tougher named NPCs.esp
 NGEC.esp
 Nightingale Maskless.esp
 REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg)\.esp
-REGEX: NoAutoSkillBooks\((Normal|Better)\)\.esp
-  // IF ("NoAutoSkillBooks(Better).esp") TAG: {{BASH: Names}}
-  IF (r"NoAutoSkillBooks(Normal).esp") &&  IF (r"NoAutoSkillBooks(Better).esp") WARN: Use only one (Normal) or (Better) version
-    //IF ($RU) && IF (r"NoAutoSkillBooks(Normal).esp") &&  IF (r"NoAutoSkillBooks(Better).esp") WARN: Используйте только одну (Normal) или (Better) версию.
+NoAutoSkillBooks.esp
+  WARN: Obsolete. Update to latest version.
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
+    //Not sure about this
+NoAutoSkillBooks(Normal).esp
+NoAutoSkillBooks(Better).esp
+  IF (r"NoAutoSkillBooks(Normal).esp") WARN: Use only one (Normal) or (Better) version
+    //IF ($RU) && IF (r"NoAutoSkillBooks(Normal).esp") WARN: Используйте только одну (Normal) или (Better) версию.
 No Axe or Pickaxe required.esp
 noBlurDOF.esp
 noblur.esp
