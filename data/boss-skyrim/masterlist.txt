@@ -208,7 +208,7 @@ REGEX: Blood \(\w+\)\.ESM
 ArmedttTeeth.esm
 DeadlyDragons.esm
   SAY: Obsolete. Upgrade to 4.2.1
-    //IF ($RU) SAY: Устарело. Обновите до версии 4.2.1
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 Mannequin.esm
 alchstone5x.esm
 REGEX: EagleEyePerk(_defStamina|_half_stamina)?\.esm
@@ -271,7 +271,7 @@ ZZZ_Stenvar_Replacer_THAIDEN.esm
 Dual Wield for Followers.esm
 Extended Colors.esm
   SAY: Obsolete upgrade to version 5
-    //IF ($RU) SAY: Устарело. Обновите до версии 5.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 ENDGROUP: ESMs
 
 BEGINGROUP: Official DLC Files
@@ -679,7 +679,7 @@ Weapons and Armor fixes.esp
   //TAG: {{BASH: Stats}}
   IF (r"REGEX: Smithing Perks Overhaul( - Balanced)?\.esp") && IF ($CCO) SAY: For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.(checked in FNVEdit)
 Weapons and Armor fixes - Hacks.esp
-  //Vanilla fixes. Must be load here(and also for CCO and SPO), for prevent to override new changes from mods in Base group. Too many conflicts with other mods in Base group.
+  //Vanilla fixes. Must be load here(and also for CCO and SPO), for prevent overrides for new changes from mods in Base group. Too many conflicts with other mods in Base group.
 Shadow Striping Fix.esp
 SMIM_Fixes.esp
 REGEX: SpellFix.*\.esp
@@ -818,7 +818,8 @@ BookSortingUnpubs.esp
 BookSortingTitles.esp
 boss.esp
 BreezeDog.esp
-  SAY: Note this may not work with some breezehome altering mods.
+  SAY: This may not work with some breezehome altering mods.
+    //IF ($RU) SAY: Может не работать с некоторыми модами, меняющими Дом Теплых ветров(breezehome).
 BrewABetterPotion.esp
 Bring Out Your Dead.esp
   IF (<1.5.26|"TES5") REQ: Skyrim 1.5.26+
@@ -988,7 +989,7 @@ DPArmor_Scale.esp
 Dr_Bandolier.esp
 Lorecraft - Bandolier.esp
   IFNOT ("Dr_Bandolier.esp") WARN: Keep 'Dr_Bandolier.esp' aswell!
-    //IF ($RU) && IFNOT ("Dr_Bandolier.esp") WARN: 'Dr_Bandolier.esp' тоже нужен для работы!
+    //IF ($RU) && IFNOT ("Dr_Bandolier.esp") WARN: 'Dr_Bandolier.esp' также необходим для работы!
 dragoncurse_alpha_1.esp
 DragonsReachWineGlitch.esp
 dragonsoulstoperks.esp
@@ -1192,6 +1193,7 @@ jbs_smithing_real_ext.esp
 jbs_smithing_soul.esp
 jbs_item_breakdown_rev.esp
   IF ("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp use More Realistic Recipes [revised] instead
+    //IF ($RU) && IF ("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp используйте вместо этого мод  More Realistic Recipes [revised]
 jbs_smithing_real.esp
 /* -- Please Advise -- Should this be Base Early -- Check rev 4258 */
 jbs_weight_overhaul_complete.esp
@@ -3128,7 +3130,8 @@ REGEX: WayoftheVoice\d\.esp
 weddingdresses.esp
 WeaponsOfTheShogunate.esp
 REGEX: Weapons of the Third Era.+\.esp
-  WARN: Obsolete. Update to latest version.
+  WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии..
     //IF ($RU) WARN: Устарело обновите до последней версии.
   TAG: {{BASH: Relev}}
 REGEX: WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp
@@ -4649,15 +4652,11 @@ Lore Friendly Ebony Mail.esp
 Lush Grass.esp
 lush grass and trees.esp
 LycantropyLesserPower.esp
-Lydia_edited.esp
- IFNOT ($ApachiiHair) REQ: ApachiiHair
-Lydia_edited_without_scars.esp
- IFNOT ($ApachiiHair) REQ: ApachiiHair
- IF ("Lydia_edited.esp") WARN: Use only one Lydia_edited.esp
 Lyn_RealArrows_FasterArrows.esp
 LZA Incremental Difficulty.esp
 REGEX: LZA Incremental Difficulty_.*\.esp
   SAY: Use only one 'LZA Incremental Difficulty_*.esp'
+    //IF ($RU) SAY: Используйте только один 'LZA Incremental Difficulty_*.esp'
 ENDGROUP: Overrides L
 
 BEGINGROUP: Overrides M
@@ -4679,6 +4678,7 @@ MasterEnchanter.esp
 /* Companion file for MasterEnchanter.esp */
 REGEX: EnchantPowerX.*\.esp
   SAY: Use only One EnchantPowerX*.esp
+    //IF ($RU) SAY: Используйте только один EnchantPowerX*.esp
 MasterTrainers100.esp
 REGEX: MatsoImmersive(Rain|Sun)\.esp
 MD - Protected NPCs.esp
@@ -4695,8 +4695,7 @@ MiningFaster.esp
 MiningMore.esp
 mjhKhajiitSpeak.esp
   SAY: This mod overwrites all dialogue enable only when playing Khajiit.
-mjhKhajittSpeak.esp
-  SAY: This mod overwrites all dialogue enable only when playing Khajiit.
+    //IF ($RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
 mjhReducedGoldRewards.esp
 MODdisguises.esp
 more dragons.esp
@@ -4733,7 +4732,8 @@ Nightingale Maskless.esp
 REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg)\.esp
 REGEX: NoAutoSkillBooks\((Normal|Better)\)\.esp
   // IF ("NoAutoSkillBooks(Better).esp") TAG: {{BASH: Names}}
-  SAY: Use only one (Normal) or (Better) version
+  IF ("NoAutoSkillBooks(Normal).esp) &&  IF ("NoAutoSkillBooks(Better).esp") WARN: Use only one (Normal) or (Better) version
+    //IF ($RU) && IF ("NoAutoSkillBooks(Normal).esp) && IF ("NoAutoSkillBooks(Better).esp") WARN: Использйте только одну (Normal) или (Better) версию.
 No Axe or Pickaxe required.esp
 noBlurDOF.esp
 noblur.esp
@@ -4839,6 +4839,7 @@ reworkedmannequins.esp
 REGEX: RichMerchants\w*\.esp
   TAG: {{BASH: Relev}}
   IF ("MidasSkyrim.esp") WARN: Possible conflict with Vendor-version of Midas Magic in Skyrim, use Reactor-version.
+    //IF ($RU) && IF ("MidasSkyrim.esp") WARN: Возможны конфликты с Vendor-версией мода Магия мидаса в Скайриме, используйте Reactor-версию.
 /* ...adds a new objective per quest... They now have quest markers added. */
 Riften Bigger Trees.esp
 RingsOnTheLeftHand.esp
@@ -4871,8 +4872,9 @@ Skyrim bigger trees.esp
 Sneak Tweak.esp
 Skyrim_Dragon Update.esp
   TAG: {{BASH: Delev, Relev}}
-  //tags not tested
+    //tags not tested
   INC: Other Dragon override mods, use only one.
+    //IF ($RU) INC: Другие, изменяющие драконов моды, используйте только один.
 Sneak Tools Vanilla Hoods.esp
 Sneak Tools Vanilla Masks.esp
 Distant Detail.esp
@@ -4891,6 +4893,7 @@ slowercompanions.esp
 Sickly Diseases.esp
 REGEX: Sinister Shadowmere.*\.esp
   SAY: Use only one
+    //IF ($RU) SAY: Используйте только один Sinister Shadowmere*.esp
 Simple Spell Scaling.esp
 skoomaeffect.esp
 /* Contains BOOK, QUST */
@@ -4898,32 +4901,45 @@ SkyNotebook.esp
 /*Obsolete SkyRe Files*/
 SkyRe.esp
   WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 SkyReBaratheonArmorPlugin.esp
-  WARN: Obsolete. Ugrade to latest version
+  WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 SkyReBetterBowsPlugin.esp
-  WARN: Obsolete. Ugrade to latest version
+  WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 SkyReDaggerCraftPlugin.esp
-  WARN: Obsolete. Ugrade to latest version
+  WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 SkyReHedgeKnightArmorPlugin.esp
-  WARN: Obsolete. Ugrade to latest version
+  WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 SkyReJaySuSwordsPlugin.esp
-  WARN: Obsolete. Ugrade to latest version
+  WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 SkyRe_Plugin_JaySuSwords_1.3D.esp
-  WARN: Obsolete. Ugrade to latest version
+  WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 SkyReNicoroshiCreationsPlugin.esp
-  WARN: Obsolete. Ugrade to latest version
+  WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 SkyReNoLighting.esp
   WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 SkyReRedguardKnightArmorPlugin.esp
   WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 SkyReVagabondArmorPlugin.esp
   WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 SkyReWarchiefArmorPlugin.esp
   WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 Signs and Guardians.esp
-  IF (<1.4.27|"TES5") REQ: Skyrim 1.4.27 or newer
+  IF (<1.4.27|"TES5") REQ: Skyrim 1.4.27+
 ESP.esp
-  SAY: Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.
+  IF ("SkyRe.esp") && IF ("SkyReNoLighting.esp") SAY: Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.
+    //IF ($RU) && IF ("SkyRe.esp") && IF ("SkyReNoLighting.esp") SAY: Может перезаписать рассовую информаци. из SkyRe.esp или SkyReNoLighting.esp, но может быть бесопасно отключен, после использования рассового меню.
 Skyrim Creatures Alive.esp
   TAG: {{BASH: Relev, Delev}}
 Skyrim Dark.esp
@@ -4931,7 +4947,8 @@ Skyrim Dark.esp
 Skyrim Smithing Components Rebalanced Full Version.esp
 Skyrim Trade Guild.esp
 REGEX: SkyTEST-RealPredators(\&Animals)?\.esp
-  SAY: Obsolete. Update to 1.20+
+  SAY: Obsolete. Update to latest version.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии.
 SkyTEST-RealisticAnimals&Predators.esp
 SkyTEST-RealisticAnimalBehavior.esp
 SkyTEST-HarderCreatures.esp
@@ -5075,6 +5092,7 @@ Better Villages.esp
 Blacksmith Chests.esp
 CK's Improved Windhelm.esp
   WARN: This plugin is reported to cause frequent crashes. Use with caution.
+    //IF ($RU) WARN: Сообщалось, что этот плагин вызывал частые вылеты. Используйте с осторожностью.
 CM Merchants.esp
 Dawnstar_TheCoinsTide.esp
 Expanded Towns - Riverwood.esp
@@ -5143,6 +5161,7 @@ drink eat sleep.esp
 /* Steam network version is an esp and BSA */
 imp's more complex needs.esp
   IF ("Imp's More Complex Needs.esm") SAY: Use either Nexus or Steam Workshop version, not both.
+    //IF ($RU) && IF ("Imp's More Complex Needs.esm") SAY: Используйте любую Nexus или Steam Workshop версию, не обе.
 REGEX: Jump\d{2,3}\.esp
 kuerteeEncumberingLootArmourAndWeapons.esp
   IF (<0.1.5.4|"SKSE") REQ: SKSE 1.5.4+
@@ -5167,6 +5186,7 @@ THS - Base Module.esp
 TRO_BasicNeeds.esp
 SIBNPatch.esp
   IFNOT ("TRO_BasicNeeds.esp") ERROR: Requires TRO_BasicNeeds.esp
+    //IF ($RU) && IFNOT ("TRO_BasicNeeds.esp") ERROR: Требуется TRO_BasicNeeds.esp
 TR-Basic Needs & RWS Patch.esp
 CookingExpanded - TRO_BN.esp
 SkBBP - Lore-Friendly Stats and Encumbrance.esp
@@ -5205,6 +5225,7 @@ Derrax_Male_Werewolf_HUMANpenis.esp
 FemaleWerewolf.esp
 LFox No Werewolf Form Cooldown.esp
   IF ("LFox Werewolf Improvements.esp") WARN: Disable and remove it. Already included in 'LFox Werewolf Improvements.esp'
+    //IF ($RU) && IF ("LFox Werewolf Improvements.esp") WARN: Отключите или удалите это. Уже включено в 'LFox Werewolf Improvements.esp'
 LFox Werewolf Improvements.esp
 Lycanthropy_Main_by_Brevi.esp
 MaintainingVampireAppearance.esp
@@ -5271,6 +5292,8 @@ Battle_Mage_v1_1.esp
 REGEX: BetterMage(Alt)?\.esp
 BoundTools.esp
   INC: MiningFlames.esp and Midas Magic's Bound Pickaxe spell. You can have more than one mod enabled, but only one of the added methods will be able to "mine" ore.
+    //IF ($RU) && IF ("MiningFlames.esp") INC: MiningFlames.esp
+    //IF ($RU) && IF ("MidasSkyrim.esp") INC: Заклинание Призванная отмычка из Midas Magic.
 CallAssassins.esp
 Candlespell.esp
 REGEX: Candle[:alpha:]ight(Shadow|ToggleDefault(NC)?|Toggle\d\d(NC)?|Toggle\d(NC)?)?\.esp
@@ -5346,6 +5369,7 @@ mindcontrol.esp
 mm_HorseWhisperer.esp
 REGEGX: MYSpell(Hard)?\.esp
   IF ("MYSpell.esp") && IF ("MYSpellHard.esp") WARN: Use only one normal or hard version.
+    //IF ($RU) && IF ("MYSpell.esp") && IF ("MYSpellHard.esp") WARN: Используйте только одну, normal или hard, версию
 Necromimesis.esp
 nighteye.esp
 NightEyeIllusionSpell.esp
@@ -5454,7 +5478,8 @@ DraugrShoutFix.esp
 EnhancedShouts.esp
 Improved Dragon Shouts.esp
 InfernoStormShout.esp
-  WARN: See mod page for uninstallation instructions.
+ SAY: See mod page for uninstallation instructions.
+    //IF ($RU) SAY: Смотрите инструкции по удалению на странице мода.
 LetItAllOut.esp
 REGEX: LFox Improved Shouts( Master( Changes Only)?)?\.esp
 MorePowerfulShouts.esp
@@ -5500,6 +5525,7 @@ BetterMasterSpells.esp
 BetterMagic_FULL.esp
 BurnifiedEffects.esp
   SAY: Obsolete. Upgrade to Burn Freeze Shock Effects
+    //IF ($RU) SAY: Устарело. Обновите до Burn Freeze Shock Effects
 BFSEffects.esp
 DeadlySpellImpacts.esp
 DeadlySpellImpacts - Two Fire.esp
@@ -6052,19 +6078,22 @@ SkyRe_Main.esp
 Lorecraft - SkyRe.esp
 SkyRe_Comp.esp
 IF ("SkyRe_Main.esp") MOD: vinis_food_and_rest.esp
+    \\SAY: Используйте мод vinis_food_and_rest и не вкладывайте очки умений в  очки умений в перки "Мясоедство" и "Вегетарианство".
 IF ("SkyRe_Main.esp") REGEX: vinis_food_and_rest.+\.esp
 SkyRe_EncounterZones.esp
 SkyRe_EnemyAI.esp
 SkyRe_EnemyScaling.esp 
   TAG: {{BASH: Relev}}
 SkyRe_Enemies.esp
-  WARN: Obsolete. Update to latest version of SkyRe and use SkyRe_EnemyScaling.esp instead
+  WARN: Obsolete. Update to latest version
+    //IF ($RU) WARN: Устарело. Обновите до последней версии. of SkyRe and use SkyRe_EnemyScaling.esp instead
     //IF ($RU) WARN: Устарело обновите до последней версии SkyRe и используйте SkyRe_EnemyScaling.esp вместо этого.
   TAG: {{BASH: Relev}}
 SkyRe_Lighting.esp
   SAY: Only for non ENB users
 SkyRe_StandingStones.esp
   IF ("StaRe.esp") SAY: Remember not to load (or to simply delete) StaRe.esp
+    //IF ($RU) && IF ("StaRe.esp") SAY: Не забудьте удалить StaRe.esp
   IF ("Drakian race.esp") INC: Drakian race
   INC: Standing Stones and Guardians
 IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
@@ -6377,6 +6406,7 @@ BEGINGROUP: NPC Distance, Face & Makeup Overrides
 REGEX: ([Nn]o |([Ss]lightly )?[Rr]educed Distance )(NPC|npc) Greetings.esp
 SupermodelSkyrim.esp
   REQ: ApachiiHair.esm
+  SAY: Overrides faces for all NPC's, adds NPC's to all castles and naked NPC's to all player homes, also resetes all NPC's stats to vanilla.
 ENDGROUP: NPC Distance, Face & Makeup Overrides
 
 BEGINGROUP: Companions
@@ -6501,6 +6531,12 @@ Mjoll.esp
 Uthgerd.esp
 Lydia-TCG.esp
   IF ("throwingweapons.esp") INC: throwingweapons.esp.
+Lydia_edited.esp
+  IFNOT ($ApachiiHair) REQ: ApachiiHair
+Lydia_edited_without_scars.esp
+  IFNOT ($ApachiiHair) REQ: ApachiiHair
+  IF ("Lydia_edited.esp") WARN: Use only one Lydia_edited.esp
+    //IF ($RU) && IF ("Lydia_edited.esp") WARN: Используйте только один Lydia_edited.esp
 Iona-TCG.esp
 Mjoll-TCG.esp
 Sylgja-TCG.esp
