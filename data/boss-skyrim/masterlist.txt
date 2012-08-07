@@ -35,13 +35,13 @@ Message keywords should be indented by two spaces and followed by a colon ':' th
 
 //Language setup. Only for BOSS 2.1+
 /*
-  IF LANG ("english") SET: EN
+  IFNOT LANG ("russian") SET: EN
   IF LANG ("russian") SET: RU
 */
 
 // Upgrade message for 1.7+ users:
   IF (<2.1.0.0|"BOSS") GLOBAL WARN: An update for BOSS (v2.1.0) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list"
-    //IF ($RU) && IF (<2.0.1.0|"BOSS") GLOBAL WARN: Вышло обновление для BOSS версии 2.0.1. Скачать его вы можете на "http://oblivion.nexusmods.com/mods/20516", "http://skyrim.nexusmods.com/mods/6", "http://fallout3.nexusmods.com/mods/10193" или "http://newvegas.nexusmods.com/mods/35999"
+    ////notimportantforversion<2.1 IF ($RU) && IF (<2.1.1.0|"BOSS") GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list"
 
 // Masterlist variable setup for BOSS v1.7+.
 //================================================================
@@ -84,6 +84,7 @@ BEGINGROUP: ESMs
 Unofficial Skyrim Patch.esm
   ERROR: This esm file WILL damage your game. We strongly advise that you use the official version of Unofficial Skyrim Patch.
   //ERROR: This esm file WILL damage your game. We strongly advise that you use the official version of "http://skyrim.nexusmods.com/mods/19 Unofficial Skyrim Patch".
+    //IF (&RU) ERROR: Этот esm-файл может повредить вашу игру. Настоятельно рекомендуется использовать официальную версию патча ("http://skyrim.nexusmods.com/mods/19").
 Correctif - Skyrim.esm
 PerkReset.esm
 3rdEraWeaponsMoS.esm
@@ -151,7 +152,7 @@ Mother_of_Tears_Epics_Eng.esm
 AemersRefuge.esm
 ANK_Castle_Main.esm
   SAY: Old version upgrade to version 5.0+
-    //IF ($RU) SAY: Устарело. Обновите до версии 5.0+.
+    //IF ($RU) SAY: Устарело. Обновите до последней версии
 Aurora.esm
 BertsBreezehomeGarden.esm
 BertsBreezehomeRemodel.V.1.0(esm).esm
@@ -162,7 +163,8 @@ BertsBreezehomeRemodel(MiniBreeze).esm
 Niire'sPortstonesForBertsBreezehomeRemodel.esm
 basement.esm
 BecomeKingOfRiverHelm.esm
-  SAY: Now obsolete. Update to version 2.2+
+  SAY: Obsolete. Update to version 2.2+
+    //IF ($RU) SAY: Устарело. Обновите до последней версии
 BlackreachRailroad.ESM
 breezehomebasement.esm
 ClimatesOfTamriel.esm
@@ -1798,6 +1800,7 @@ Auto Unequip Ammo.esp
   IFNOT ("Dawnguard.esm") REQ: Dawnguard (Official DLC)
 Auto Unequip Arrows.esp
   IF ("Auto Unequip Ammo.esp") WARN: Redundant. Included in "Auto Unequip Ammo".
+    //IF ($RU) && IF ("Auto Unequip Ammo.esp") WARN: Избыточно. Уже включено в "Auto Unequip Ammo".
 AutoHarvest.esp
 AutoLoot.esp
 AutomaticItemStorage.esp
@@ -2837,7 +2840,13 @@ SkyRe_Plugin_RedguardKnightArmor_3.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF ("RedguardKnight.esp") SAY: Remember not to load (or to simply delete) RedguardKnight.esp
+    //IF ($RU) && IF ("RedguardKnight.esp") SAY: Не забудьте отключить или удалить RedguardKnight.esp
 RegentSword.esp
+SkyRe_Plugin_RegentSwords.esp
+  SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF ("RegentSword.esp") SAY: Remember not to load (or to simply delete) RegentSword.esp
+    //IF ($RU) && IF ("RegentSword.esp") SAY: Не забудьте отключить или удалить RegentSword.esp
 Reinforced Hoods.esp
 Remodeled Armor.esp
 Remodeled Armor - addon.esp
@@ -3096,6 +3105,7 @@ SkyRe_Plugin_VagabondArmor_5.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF ("VagabondArmor.esp") SAY: Remember not to load (or to simply delete) VagabondArmor.esp
+    //IF ($RU) && IF ACTIVE ("VagabondArmor.esp") SAY: Не забудьте отключить или удалить VagabondArmor.esp
 Valdacil's Light Armor Robes.esp
 VampiricDagger.esp
 VanguardArmor.esp
@@ -3103,6 +3113,7 @@ SkyRe_Plugin_VanguardArmor_3.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF ("VanguardArmor.esp") SAY: Remember not to load (or to simply delete) VanguardArmor.esp
+    //IF ($RU) && IF ACTIVE ("VanguardArmor.esp") SAY: Не забудьте отключить или удалить VanguardArmor.esp
 Velvec Outfit.esp
 Veteran Nord Plate.esp
 VHunterArmor.esp
@@ -3144,7 +3155,6 @@ WeaponsOfTheShogunate.esp
 REGEX: Weapons of the Third Era.+\.esp
   WARN: Obsolete. Update to latest version
     //IF ($RU) WARN: Устарело. Обновите до последней версии..
-    //IF ($RU) WARN: Устарело обновите до последней версии.
   TAG: {{BASH: Relev}}
 REGEX: WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp
   IF ("3rdEraWeaponsMoS.esp") WARN: You have installed 3rdEraWeaponsMoS.esp. Use only one WeaponsOf3E or 3rdEraWeaponsMoS
