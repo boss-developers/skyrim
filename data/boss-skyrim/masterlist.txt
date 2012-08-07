@@ -63,6 +63,10 @@ IF (r"SkyRe_.+\.esp") SET: SkyRe
 IF ("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
 IF ("ApachiiHair.esm") SET: ApachiiHair
 IF ("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
+//================================================================
+// DLC variable setup for BOSS v1.7+.
+// Added as many plugins are likely to require DLC.
+IF ("Dawnguard.esm") SET: Dawnguard
 
 //================================================================
 
@@ -452,7 +456,7 @@ BEGINGROUP: DLC Fixes
 // Doesn't exist yet, just reserving the name.
 Unofficial Dawnguard Patch.esp
 VampCanActivate.esp
-  IFNOT ("Dawnguard.esm") REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   // Not sure if classed as a fix per se
 HighResTexturePackFix.esp
 chopping_block_wood_fires.esp
@@ -757,6 +761,8 @@ ArcheryOverhaulFletcherArrowsOnly.esp
 Archmage Crafting - Enchanted Items.esp
 Archmage Crafting - Unenchanted Clothing.esp
 REGEX: Arrowsmith\w{0,2}\.esp
+arrowsmith-dawnguard.esp
+  IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Arrow Smithing.esp
 Ars Metallica.esp
   IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+
@@ -5240,7 +5246,7 @@ SkyRe_Vampirism.esp
   IF ("UVO - Ultimate Vampirism Overhaul.esp") INC: UVO - Ultimate Vampirism Overhaul.esp
   IF (r"Imp's More Complex Needs\.es[mp]") INC: Imp's More Complex Needs
   IF ("Alternate Start - Live Another Life.esp") INC: Alternate Start - Live Another Life.esp
-  IF ("Dawnguard.esm") INC: Dawnguard.esm
+  IF ($Dawnguard) INC: Dawnguard.esm
   SAY: Removed from SkyRe 0.99.15.2 
     //IF ($RU) SAY: Было удалено из SkyRe 0.99.15.2 .
   SAY: Possible conflicts with other mods that changes vampirism system.
