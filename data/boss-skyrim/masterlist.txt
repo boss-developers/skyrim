@@ -35,13 +35,15 @@ Message keywords should be indented by two spaces and followed by a colon ':' th
 
 //Language setup. Only for BOSS 2.1+
 /*
-  IFNOT LANG ("russian") SET: EN
   IF LANG ("russian") SET: RU
+    ELSE SET: EN
 */
 
 // Upgrade message for 1.7+ users:
   IF (<2.1.0.0|"BOSS") GLOBAL WARN: An update for BOSS (v2.1.0) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list"
     ////notimportantforversion<2.1 IF ($RU) && IF (<2.1.1.0|"BOSS") GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list"
+// Special message for Skyrim BOSS users. For fastest update to BOSS 2.1
+  IF (<2.1.0.0|"BOSS") GLOBAL ERROR: Versions lower than BOSS 2.1 will not work after enabling new features in Skyrim masterlist. It will be soon. Update to BOSS 2.1 is necessarily!
 
 // Masterlist variable setup for BOSS v1.7+.
 //================================================================
@@ -88,7 +90,7 @@ BEGINGROUP: ESMs
 Unofficial Skyrim Patch.esm
   ERROR: This esm file WILL damage your game. We strongly advise that you use the official version of Unofficial Skyrim Patch.
   //ERROR: This esm file WILL damage your game. We strongly advise that you use the official version of "http://skyrim.nexusmods.com/mods/19 Unofficial Skyrim Patch".
-    //IF (&RU) ERROR: Этот esm-файл может повредить вашу игру. Настоятельно рекомендуется использовать официальную версию патча ("http://skyrim.nexusmods.com/mods/19").
+    //IF (&RU) ERROR: Этот esm-файл может повредить вашу игру. Настоятельно рекомендуется использовать "http://skyrim.nexusmods.com/mods/19 официальную версию патча".
 Correctif - Skyrim.esm
 PerkReset.esm
 3rdEraWeaponsMoS.esm
@@ -282,7 +284,7 @@ GluRuSArtifactEffectPerk.esm
 ZZZ_Stenvar_Replacer_THAIDEN.esm
 Dual Wield for Followers.esm
 Extended Colors.esm
-  SAY: Obsolete upgrade to version 5
+  SAY: Obsolete upgrade to latest version.
     //IF ($RU) SAY: Устарело. Обновите до последней версии.
 ENDGROUP: ESMs
 
@@ -492,6 +494,7 @@ NPC_Hair_Replacer.esp
 NPC_Hair_Rep_Forsworn_Bandit.esp
 NPC_Hair_Rep_Necro.esp
   REQ: Apachii and Coolsims Hair
+    //IF ($RU) REQ: Прически Apachii и Coolsims
 NPC REDESIGN.esp
   IFNOT ($ApachiiHair) REQ: Apachii Sky Hair
 Gwendolyn.esp
@@ -900,7 +903,7 @@ thieves guild visitors.esp
 Conjuration & Summoning fixes.esp
   IF ("SpellFix.esp") ERROR: Delete. Alreasy included in SpellFix.esp.
     //IF ($RU) && IF ("SpellFix.esp") ERROR: Удалите. Уже включено в SpellFix.esp
-  IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+  IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch.esp.
     //IF ($RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 Console Books.esp 
 Convenient Horses.esp
@@ -7180,6 +7183,7 @@ REGEX: SSS .+ Patch\.esp
 SSS Deadly Dragons Patch A.esp
 SSS Deadly Dragons Patch B.esp
   IF ("SSS Deadly Dragons Patch A.esp") WARN: use only one SSS Deadly Dragons Patch.
+    //IF ($RU) && IF ("SSS Deadly Dragons Patch A.esp") WARN: Используйте только один SSS Deadly Dragons Patch.
 SSS Immersive Armors Add-on.esp
 The Asteria - Dwemer Airship(GS).esp
 TRO_BasicNeeds_WATERPatch.esp
