@@ -42,8 +42,8 @@ Message keywords should be indented by two spaces and followed by a colon ':' th
 // Upgrade message for 1.7+ users:
   IF (<2.1.0.0|"BOSS") GLOBAL WARN: An update for BOSS (v2.1.0) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list"
     ////notimportantforversion<2.1 IF ($RU) && IF (<2.1.1.0|"BOSS") GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list"
-// Special message for Skyrim BOSS users. For fastest update to BOSS 2.1
-  IF (<2.1.0.0|"BOSS") GLOBAL ERROR: Versions lower than BOSS 2.1 will not work after enabling new features in Skyrim masterlist. It will be soon. Update to BOSS 2.1 is necessary.
+// Wrye Bash solution message.
+  GLOBAL SAY: To use BOSS v2.1.0 with Wrye Bash v299, delete, move or rename the "API" folder in the BOSS folder.    
 
 // Masterlist variable setup for BOSS v1.7+.
 //================================================================
@@ -247,6 +247,7 @@ HuntersDiscipline.esm
 MBMaster.esm
 NoKillMoves.ESM
 AP Skyrim.esm
+  WARN: Obsolete. Update to the latest version. (The esm version produces a massive conflict error which can result in having no dialog.)
 customGraph.esm
 ApachiiHair.esm
 ApachiiHairFemales.esm
@@ -2134,6 +2135,7 @@ dantes rebellion.esp
 DarkAssassinArmor.esp
 DarkElvesArmory.esp
 Darklilith.esp
+DarkNemesis.esp
 LFDarksidersWarArmor.esp
 darksiders_pack.esp
 darksiders_scythe.esp
@@ -6322,8 +6324,6 @@ BEGINGROUP: Pose and Animation Mods
 // TAG: {{BASH: Actors.Anims}}
 
 AP Skyrim.esp
- WARN: Obsolete. Update to latest version.
-    //IF ($RU) WARN: Устарело. Обновите до последней версии.
 BySbire_FemaleBehavoir.esp
 dD-No Spinning Death Animation.esp
 DIWS_SlowerWalk.esp
@@ -6549,6 +6549,8 @@ UFO - Ultimate Follower Overhaul.esp
     //IF ($RU) && IF ("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
   SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on "http://skyrim.nexusmods.com/mods/14037 mod page".
     //IF ($RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньенов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода".
+UFO - Dawnguard AddOn.esp
+  IFNOT ($UFO) REQ: Ultimate follower overhaul's main file.
 UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
@@ -7232,12 +7234,12 @@ BEGINGROUP: Extra Late
 FTFI Fast Travel From Indoors.esp
 // Must come after all cell altering mods.
 PC Exclusive Animation Path.esp
-  IF ("AP Skyrim.esm") INC: AP Skyrim.esm
+  IF ("AP Skyrim.esp") INC: AP Skyrim.esp
   IFNOT ($FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
   IF ($FNIS) SAY: Remember to run GenerateFNISforUsers.exe
     //IF ($RU) && IF ($FNIS) SAY: Не забудьте запустить GenerateFNISforUsers.exe
 PC Exclusive Animation Path - Elder Race.esp
-  IF ("AP Skyrim.esm") INC: AP Skyrim.esm
+  IF ("AP Skyrim.esp") INC: AP Skyrim.esp
   IFNOT ($FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
   IF ($FNIS) SAY: Remember to run GenerateFNISforUsers.exe
     //IF ($RU) && IF ($FNIS) SAY: Не забудьте запустить GenerateFNISforUsers.exe
