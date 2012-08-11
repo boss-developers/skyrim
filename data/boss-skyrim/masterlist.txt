@@ -4268,7 +4268,9 @@ IFNOT ("SkyRe_Main.esp") MOD: Morrowloot.esp
   //Also recommend to load morrowloot after any plugins that have a Relev tag because they also add vanilla records removed by morrowloot
   TAG: {{BASH: Delev, Relev}}
 Morrowloot_nwah.esp
-  IF ("Morrowloot.esp") WARN: Do not use with original Morrowloot mod. && IF ("SkyRe_Main.esp") SAY: Incompatible with SkyRe_Main.
+  IF ("Morrowloot.esp") WARN: Do not use with original Morrowloot mod.
+    IF ($RU) && IF ("Morrowloot.esp") ERROR: Нельзя использовать с оригинальным модом Morrowloot.
+  IF ("SkyRe_Main.esp") INC: SkyRe_Main.esp
 xFenWSOWAFW3E.esp
   TAG: {{BASH: Delev, Relev}}
   // TAG: {{BASH: Delev, Stats, Relev}}
