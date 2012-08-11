@@ -381,6 +381,7 @@ REGEX: EbonyBladeFixed.*\.esp
 ElvBootEmStaFix.esp
 Farengar.esp
 Farm Wheat Height Fix.esp
+FemaleVampireEyeFix.esp
 fFastTravelSpeedMult_4.esp
 fix-BelethorUnlocked.esp
 FixedEyeAdaption.esp
@@ -975,6 +976,9 @@ BEGINGROUP: Base D
 
 d_b Whetstone.esp
 DamageEnchantBonus20v2.esp
+REGEX: DBCallingCard.+\.esp
+  SAY: Use only one DBCallingCard*.esp
+    //IF ($RU) SAY: Используйте только один DBCallingCard*.esp
 dbmisc.esp
 dbtomisc.esp
 REGEX: Decorator Assistant.+\.esp
@@ -1202,6 +1206,7 @@ ImprovedCraftableLockpicks.esp
 improvedskillbooks.esp
 improvedquestbooks.esp
 Immersive Patrols.esp
+Immersive Brigands.esp
 improvedrecipes.esp
 ImprovedScImpUniforms - Vanilla only.esp
 improvedskillbooksclassic.esp
@@ -1866,6 +1871,8 @@ Mart's Savegame DeBloatifier.esp
 NPCPhotoBooth.esp
 SKSE Hotkeys.esp
   IF (<0.1.5.11|"SKSE") REQ: Requires SKSE 1.5.11+
+REGEX: SkyRealism - Simple Save System.+\.esp
+  SAY: Only use one SkyRealism - Simple Save System*.esp
 Skyrim Timed AutoSave Helper
 skyui.esp
 REGEX: TimedAutoSave(\d\d)\.esp
@@ -2291,6 +2298,9 @@ EisenPlate.esp
 EI.esp
 Elculous.esp
 REGEX: ElementalBlade.(epicv|progression).\.esp
+ElementalXbowbolts.esp
+  IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  // TAG: {{BASH: Graphics}}
 Elemental Staves.esp
 ElvenGreatBlade.esp
 ElvenGilded.esp
@@ -4262,6 +4272,8 @@ IFNOT ("SkyRe_Main.esp") MOD: Morrowloot.esp
   //morrowloot loaded here only if skyre_main.esp is not installed
   //Also recommend to load morrowloot after any plugins that have a Relev tag because they also add vanilla records removed by morrowloot
   TAG: {{BASH: Delev, Relev}}
+Morrowloot_nwah.esp
+  IF ("Morrowloot.esp") WARN: Do not use with original Morrowloot mod. && IF ("SkyRe_Main.esp") SAY: Incompatible with SkyRe_Main.
 xFenWSOWAFW3E.esp
   TAG: {{BASH: Delev, Relev}}
   // TAG: {{BASH: Delev, Stats, Relev}}
@@ -5371,6 +5383,8 @@ naturalisticwerewolf.esp
 Revamped Vampire Lord.esp
   IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Scriptless werewolf bonus.esp
+StrongVampireLord.esp
+  IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ToL_Core_by_Brevi.esp
 ToL_SKSE_by_Brevi.esp
   IF (<0.1.5.11|"SKSE") REQ: SKSE 1.5.11+
@@ -5873,6 +5887,7 @@ SB - Lockpick.esp
 SB - Pickpocket.esp
 SB - Sneak Mod.esp
 ShadowPlay.esp
+SkyRealism - Detection Durations.esp
 Sneak Tools.esp
 NoSneakAttackSound.esp
 ENDGROUP: Thievery, Sneaking and Crime
@@ -6309,6 +6324,11 @@ SkyRe Masters of Death Sicarius Armor.esp
     //IF ($RU) && IF ACTIVE ("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Mystic Armor and Weapon Set.esp
+  IF ("Mystic.esp") SAY: Remember not to load (or to simply delete) Mystic.esp
+    //IF ($RU) && IF ACTIVE ("Mystic.esp") SAY: Не забудьте отключить или удалить Mystic.esp
+  SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 Tribunal for Skyre.esp
   IFNOT ("Tribunal Robes by Zairaam.esp") REQ Tribunal Robes by Zairaam.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
@@ -6715,7 +6735,17 @@ HirelingJenassa.esp
 HirelingBelrand.esp
 HirelingMarcurio.esp
 HousecarlBeauties.esp
+HousecarlMarkath.esp
+  IF ("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
+HousecarlRiften.esp
+  IF ("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
+HousecarlSolitude.esp
+  IF ("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
 HousecarlSolitude A Jordis the Sword-Maiden v0.2.esp
+HousecarlWhiterun.esp
+  IF ("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
+HousecarlWindhelm.esp
+  IF ("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
 SelminaDArchon.esp
 REGEX: aela1.3b?(alt)?(nowarpaint)?\.esp
 REGEX: aranea1.?\.esp
@@ -6776,6 +6806,7 @@ Viin.esp
 Uthgerd.esp
 katia.esp
 scar.esp
+Sexier Housecarls.esp
 Shady.esp
 /* They change clothes when they exit a player home */
 SHARPE Housecarls.esp
