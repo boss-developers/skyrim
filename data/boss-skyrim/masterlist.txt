@@ -65,6 +65,8 @@ IF (r"SkyRe_.+\.esp") SET: SkyRe
 IF ("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
 IF ("ApachiiHair.esm") SET: ApachiiHair
 IF ("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
+IF ("SKSE_Elys_Uncapper.dll") SET: SKCU
+IF ("..\ScriptDragon.dll") SET: SCDR
 //================================================================
 // DLC variable setup for BOSS v1.7+.
 // Added as many plugins are likely to require DLC.
@@ -75,7 +77,9 @@ IF ("Dawnguard.esm") SET: Dawnguard
 /* Latest thread */
 GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/"
     //IF ($RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1398450-relz-boss-for-skyrim/ здесь."
-
+// Other global messages
+  IF ($SKCU) && NOT ("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page("http://skse.silverlock.org/ ").
+    //IF ($RU) && IF ($SKCU) && NOT ("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
 BEGINGROUP: Official ESMs
 
 Skyrim.esm
@@ -1223,7 +1227,7 @@ Invulnerable Horses.esp
 Ish's Respec Mod.esp
   TAG: {{BASH: Relev}}
 Ish's Souls to Perks.esp
-  IF (<0.1.5.6|"SKSE") REQ: SKSE 1.5.6+.
+  IF (<0.1.5.6|"SKSE") || IFNOT ("SKSE") REQ: SKSE 1.5.6+.
 ItemRewardsForBounties.esp
 Item Sorting by Saige.esp
 itsatrap!.esp
@@ -1851,7 +1855,7 @@ Character Creation Overhaul.esp
 Chesko_LoreBasedLoadingScreens.esp 
 DEAsprint&jump.esp
   IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+ 
-  IF (<0.1.5.9|"SKSE") REQ: SKSE 1.5.9+
+  IF (<0.1.5.9|"SKSE") || IFNOT ("SKSE") REQ: SKSE 1.5.9+
   SAY: Won't work if sprint/jump key is remapped to mouse button.
     //IF ($RU) SAY: Может не работать, если кнопка бега\прыжка переназначена на кнопку мыши.
 DragonWarrior-Effects.esp
@@ -1869,7 +1873,7 @@ Mark Books as Read.esp
 Mart's Savegame DeBloatifier.esp
 NPCPhotoBooth.esp
 SKSE Hotkeys.esp
-  IF (<0.1.5.11|"SKSE") REQ: Requires SKSE 1.5.11+
+  IF (<0.1.5.11|"SKSE") || IFNOT ("SKSE") REQ: SKSE 1.5.11+
 REGEX: SkyRealism - Simple Save System.+\.esp
   SAY: Only use one SkyRealism - Simple Save System*.esp
     //IF ($RU) SAY: Используйте только один SkyRealism - Simple Save System*.esp
@@ -5288,7 +5292,7 @@ BEGINGROUP: Realism
 BasicHumanNeeds.esp
 Basic Human Needs - Food Drink and Sleep
 kuerteeBattleFatigueAndInjuries.esp
-  IF (<0.1.5.4|"SKSE") REQ: SKSE 1.5.4+
+  IF (<0.1.5.4|"SKSE") || IFNOT ("SKSE") REQ: SKSE 1.5.4+
   IF (<1.5.26|"TES5") REQ: Skyrim 1.5.26+
 REGEX: AdvancedFoodandRestENG( lazy)?\.esp
 Better Hunting.esp
@@ -5300,10 +5304,10 @@ imp's more complex needs.esp
     //IF ($RU) && IF ("Imp's More Complex Needs.esm") SAY: Используйте любую Nexus или Steam Workshop версию, не обе.
 REGEX: Jump\d{2,3}\.esp
 kuerteeEncumberingLootArmourAndWeapons.esp
-  IF (<0.1.5.4|"SKSE") REQ: SKSE 1.5.4+
+  IF (<0.1.5.4|"SKSE") || IFNOT ("SKSE") REQ: SKSE 1.5.4+
   IF (<1.5.26|"TES5") REQ: Skyrim 1.5.26+
 kuerteeEatAndSleep.esp
-  IF (<0.1.5.4|"SKSE") REQ: SKSE 1.5.4+
+  IF (<0.1.5.4|"SKSE") || IFNOT ("SKSE") REQ: SKSE 1.5.4+
   IF (<1.5.26|"TES5") REQ: Skyrim 1.5.26+
 npcuseammo.esp
 NPCsUseAmmoAllBows.esp
@@ -5386,7 +5390,7 @@ StrongVampireLord.esp
   IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ToL_Core_by_Brevi.esp
 ToL_SKSE_by_Brevi.esp
-  IF (<0.1.5.11|"SKSE") REQ: SKSE 1.5.11+
+  IF (<0.1.5.11|"SKSE") || IFNOT ("SKSE") REQ: SKSE 1.5.11+
 Tales_of_Lycanthropy.esp
 Werewolf Loot - ToL compatible.esp
 REGEX: True Vampirism - .+\.esp
@@ -5509,7 +5513,7 @@ LFFixTargetStats.esp
 LFContingency.esp
 LightMeter.esp
 lootninja.esp
-  IF (<0.1.5.4|"SKSE") REQ: SKSE 1.5.4+
+  IF (<0.1.5.4|"SKSE") || IFNOT ("SKSE") REQ: SKSE 1.5.4+
 Magic Box.esp
 Magicka Revamp - Destruction - Extra Spells - WIP.esp
 maintainedarmorspells.esp
@@ -5848,8 +5852,6 @@ NightEye_Ench+Potion+Spell.esp
 ENDGROUP: Enchantment
 ENDGROUP: Magic
 
-BEGINGROUP: Player Characteristics
-
 BEGINGROUP: Thievery, Sneaking and Crime
 //
 //Overrides overhauls.
@@ -5904,7 +5906,7 @@ REGEX: Added_Killmoves_All_Weapons.+\.esp
 Added_Slow_Motion_to_1stPerson_with_1st_Person_Only.esp
 REGEX: The Dance of Death.*\.esp
   IF (r"The Dance of Death V.+.esp") WARN: Obsolete. Update to latest version.
-        //IF ($RU) && IF (r"The Dance of Death V.+.esp") WARN: Устарело. Обновите до последней версии.
+    //IF ($RU) && IF (r"The Dance of Death V.+.esp") WARN: Устарело. Обновите до последней версии.
 Chimera.esp
 combat.esp
 combat fists.esp
@@ -5915,10 +5917,11 @@ DeadlyCombos.esp
 REGEX: DeadlyCombat_.+\.esp
 DisableAutoAim.esp
 dodge.esp
-  REQ: ScriptDragon
+  IFNOT ($SCDR)  REQ: ScriptDragon
 Dual Wield Parrying.esp
 Dual Wield Parrying_DualAttack.esp
 Dual Wield Parrying_ScriptDragon.esp
+  IFNOT ($SCDR)  REQ: ScriptDragon
 Dual Wield Parrying_RandomAttacks.esp
 Duel Combat Realism CK.esp
 Duel - Combat Realism FAST.esp
@@ -6053,7 +6056,7 @@ BS-Balanced_Magic_BETA_2_0.esp
   REQ: Balanced_Magic_BETA_2_0.esp
 Perk_Deft_Movement_Power_25.esp
 REGEX: PPE_Perk-.+\.esp
-  SAY: Obsolete. Update to last version of 'PerkUP' mod
+  SAY: Obsolete. Update to latest version of 'PerkUP' mod
     //IF ($RU) SAY: Устарело. Обновите до последней версии мода 'PerkUP' .
 REGEX: PerkUP-.{4,12}\.esp
   SAY: For users of incompatible plugins in this mod plugins. You will probably lose some already used perks, check this in game.
@@ -6140,7 +6143,7 @@ Improved Expert Spells.esp
 REGEX: Improved Master Spells.*\.esp
 JokeMOD-SilentRunning.esp
 kuerteeSkillBasedDamageMultipliers.esp
-  IF (<0.1.5.4|"SKSE") REQ: Requires SKSE 1.5.4+
+  IF (<0.1.5.4|"SKSE") || IFNOT ("SKSE") REQ: Requires SKSE 1.5.4+
 lcr.esp
 leveling_2x_slower1_5.esp
 Leveling Destruction Perks.esp
@@ -6203,7 +6206,7 @@ Skyrim Scaling Stopper.esp
   WARN: If using version 3+, Skyrim Monster Mod is required.
     //IF ($RU) WARN: Если используется версия 3+, требуется также мод Skyrim Monster Mod.
 SkyXP.esp
-  IF (<0.1.5.6|"SKSE") REQ: SKSE 1.5.6+.
+  IF (<0.1.5.6|"SKSE") || IFNOT ("SKSE") REQ: SKSE 1.5.6+
   IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
 REGEX: SleepFor.+xExp\.esp
 SlowerLevelingAlchemy.esp
@@ -6380,7 +6383,6 @@ Skyrim15SmithingFix.esp
   IF (<1.5.24|"TES5") REQ: Skyrim 1.5.24+
 Two-Handed Speed-Based Perks.esp
 ENDGROUP: Player Perks
-ENDGROUP: Player Characteristics
 
 BEGINGROUP: Pose and Animation Mods
 //
@@ -7294,9 +7296,9 @@ BEGINGROUP: Load Late
 Arrows renamed for better sorting.esp
 // Must load after arrow tweaks (AT - *)
 BBLSGuysApachii.esp
+  IF (<0.1.6.89|"TES5") REQ: Skyrim 1.6.89+
   IFNOT ($ApachiiHair) REQ: Apachii Sky Hair.
   IFNOT ("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
-  IF (<0.1.6.89|"TES5") REQ: Skyrim 1.6.89+
   
 BEGINGROUP: Compatibility Patches
 // Compatability Patches which must load after a certain mod go here
