@@ -4304,11 +4304,13 @@ LessAnnoyingItems.esp
 Masters of Death.esp
 IFNOT ("SkyRe_Main.esp") MOD: Morrowloot.esp
   //morrowloot loaded here only if skyre_main.esp is not installed
-  //Also recommend to load morrowloot after any plugins that have a Relev tag because they also add vanilla records removed by morrowloot
+  SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
+    //please fix grammar. )
+     IF ($RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в LL) и меняют оди и теже уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
   TAG: {{BASH: Delev, Relev}}
 Morrowloot_nwah.esp
   IF ("Morrowloot.esp") WARN: Do not use with original Morrowloot mod.
-    IF ($RU) && IF ("Morrowloot.esp") ERROR: Нельзя использовать с оригинальным модом Morrowloot.
+    IF ($RU) && IF ("Morrowloot.esp") ERROR: Не используйте с оригинальным модом Morrowloot.
   IF ("SkyRe_Main.esp") INC: SkyRe_Main.esp
 xFenWSOWAFW3E.esp
   TAG: {{BASH: Delev, Relev}}
@@ -6335,6 +6337,9 @@ SkyRe_StandingStones.esp
   INC: Standing Stones and Guardians
 IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
+  SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
+    //please fix grammar. )
+     IF ($RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в LL) и меняют оди и теже уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
   IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
     //IF ($RU) && IF ($SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для равильной работы мода с SkyRe.
 SkyRe_Plugin_ImmersiveArmor_4.esp
