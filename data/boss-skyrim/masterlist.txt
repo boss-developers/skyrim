@@ -1451,6 +1451,8 @@ Perk Books.esp
 Perks Unbound.esp
 PerkPointPotion.esp
 PerkReset.esp
+  WARN: Rename this file to PerkReset.esm.
+    //IF ($RU) WARN: Переименуйте этот файл в PerkReset.esm.
 PilgrimsDelight.esp
 Piratelords Loot Adjustments.esp
   TAG: {{BASH: Delev, Relev}}
@@ -6254,6 +6256,15 @@ SkyRe_Main.esp
     //IF ($RU) && IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper для полного функционирования перков.
 Lorecraft - SkyRe.esp
 SkyRe_Comp.esp
+  IFNOT ("PerkReset SkyRe Compatibility Patch.esp") SAY: Recommend to use "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp" instead.
+    //IF ($RU) && IFNOT ("PerkReset SkyRe Compatibility Patch.esp") SAY: Рекомендуется использовать вместо этого "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp".
+  IF ("PerkReset SkyRe Compatibility Patch.esp") ERROR: Delete and use 'PerkReset SkyRe Compatibility Patch.esp' instead.
+    //IF ($RU) && IF ("PerkReset SkyRe Compatibility Patch.esp") ERROR: Удалите и используйте вместо этого 'PerkReset SkyRe Compatibility Patch.esp'.
+  IF ("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
+    //IF ($RU) && IF ("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
+PerkReset SkyRe Compatibility Patch.esp
+  IF ("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
+    //IF ($RU) && IF ("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
 IF ("SkyRe_Main.esp") MOD: vinis_food_and_rest.esp
     //IF ($RU) SAY: Используйте мод vinis_food_and_rest и не вкладывайте очки умений в перки "Мясоедство" и "Вегетарианство", добавленные из SkyRe_Main.esp.
 IF ("SkyRe_Main.esp") REGEX: vinis_food_and_rest.+\.esp
