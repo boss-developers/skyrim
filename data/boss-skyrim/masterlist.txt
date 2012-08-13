@@ -42,9 +42,7 @@ Message keywords should be indented by two spaces and followed by a colon ':' th
 // Upgrade message for 1.7+ users:
   IF (<2.1.0.0|"BOSS") GLOBAL WARN: An update for BOSS (v2.1.0) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list"
     ////notimportantforversion<2.1 IF ($RU) && IF (<2.1.1.0|"BOSS") GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list"
-// Wrye Bash solution message.
-  GLOBAL SAY: To use BOSS v2.1.0 with Wrye Bash v299, delete, move or rename the "API" folder in the BOSS folder.    
-
+	
 // Masterlist variable setup for BOSS v1.7+.
 //================================================================
 
@@ -6123,7 +6121,7 @@ archeryperks 3-9.esp
 archeryperks 4-12.esp
 REGEX: AB?T - Loot Arrows (HARDCORE)?([-\+]?\d{1,3}%)?\.esp
 REGEX: AB?T - Faster (Arrows)?(Bolts)? Improved (\+\d{1,3}%)\.esp
-  IF (r"ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp) && IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF (r"ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp") && IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 REGEX: AB?T - Merchants Arrows (HARDCORE)?([-\+]?\d{1,3}%)?\.esp
 REGEX: AB?T -( Increased)? Progressive Damage( \(BS and CCO\)| \(with Nord Hero Arrow\))?( [-\+]?\d{1,3}%)?\.esp
 REGEX: AB?T - Recover ([-\+]?\d{1,3}%)( Less| More)? Arrows\.esp
