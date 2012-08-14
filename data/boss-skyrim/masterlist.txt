@@ -1023,8 +1023,8 @@ DragonPlateCrownCraftable.esp
 dremora armor looting.esp
 REGEX: .. - Enhanced Blood Main\.esp
   IF ($Dawnguard) && IF ("SkyMoMod.esm") && IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") INC: Dawnguard (Official Bethesda DLC) and Skyrim Monster Mod. Get the necessary compatibility patch from the enhanced blood textures page.
-  IF ("SkyMoMod.esm") && IFNOT ("dD-SkyrimMonsterMod EBT Patch.esp") || IF ("SkyMoMod.esm") && IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") INC: Skyrim Monster Mod. Get the necessary compatibility patch from the enhanced blood textures page.
-  IF ($Dawnguard) && IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") || IF ($Dawnguard) && IFNOT ("dD-Dawnguard-EBT Patch.esp") INC: Dawnguard (Official Bethesda DLC). Get the necessary compatibility patch from the enhanced blood textures page.
+  IFNOT ("dD-SkyrimMonsterMod EBT Patch.esp") || IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF ("SkyMoMod.esm") INC: Skyrim Monster Mod. Get the necessary compatibility patch from the enhanced blood textures page.
+  IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") || IFNOT ("dD-Dawnguard-EBT Patch.esp") && IF ($Dawnguard) INC: Dawnguard (Official Bethesda DLC). Get the necessary compatibility patch from the enhanced blood textures page.
   IF (<1.6|"TES5") REQ: Skyrim 1.6+
 REGEX: dD-\w{4} Screen Blood\.esp
 REGEX: dD-.{4,9} Screen Blood Duration\.esp
