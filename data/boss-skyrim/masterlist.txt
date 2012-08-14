@@ -1022,6 +1022,9 @@ DragonCrownCraftable.esp
 DragonPlateCrownCraftable.esp
 dremora armor looting.esp
 REGEX: .. - Enhanced Blood Main\.esp
+  IF ($Dawnguard) && IF ("SkyMoMod.esm") && IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") INC: Dawnguard (Official Bethesda DLC) and Skyrim Monster Mod. Get the necessary compatibility patch from the enhanced blood textures page.
+  IF ("SkyMoMod.esm") && IFNOT ("dD-SkyrimMonsterMod EBT Patch.esp") || IF ("SkyMoMod.esm") && IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") INC: Skyrim Monster Mod. Get the necessary compatibility patch from the enhanced blood textures page.
+  IF ($Dawnguard) && IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") || IF ($Dawnguard) && IFNOT ("dD-Dawnguard-EBT Patch.esp") INC: Dawnguard (Official Bethesda DLC). Get the necessary compatibility patch from the enhanced blood textures page.
   IF (<1.6|"TES5") REQ: Skyrim 1.6+
 REGEX: dD-\w{4} Screen Blood\.esp
 REGEX: dD-.{4,9} Screen Blood Duration\.esp
@@ -7402,7 +7405,15 @@ BEGINGROUP: Compatibility Patches
 // Only if no conflicts are made in between
 //
 REGEX: Agony's Sorting Frenzy - .+\.esp
+dD-Dawnguard-EBT Patch.esp
+  IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+dD-Dawnguard-MonsterMod EBT Patch.esp
+  IF ("dD-Dawnguard-EBT Patch.esp") || IF ("dD-SkyrimMonsterMod EBT Patch.esp") SAY: Use only one EBT patch
+  IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT ("SkyMoMod.esm") REQ: Skyrim Monster Mod
 dD-SkyrimMonsterMod EBT Patch.esp
+  IF ("dD-Dawnguard-EBT Patch.esp") SAY: Use only one EBT patch
+  IFNOT ("SkyMoMod.esm") REQ: Skyrim Monster Mod
 GeneralStores-SkyMoMod.esp
 REGEX: SSS .+ Patch\.esp
 SSS Deadly Dragons Patch A.esp
