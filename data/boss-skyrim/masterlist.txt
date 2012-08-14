@@ -2510,6 +2510,7 @@ ENDGROUP: Items H
 
 BEGINGROUP: Items I
 
+I5KWeaponOH.esp
 imp_guard_helm.esp
 imp_helm.esp
 REGEX: imp_helm_(night|imp)\.esp
@@ -3018,6 +3019,7 @@ SexyJersey.esp
 SexyKunoichi2ndByNausicaa.esp
 SF Poison.esp
 Shard of Azzinoth.esp
+ShieldsofSkyrimLists.esp
 Shields_of_the_northern_kingdoms.esp
 Shining Paladin.esp
 ShinKatana.esp
@@ -4339,6 +4341,7 @@ ENDGROUP: Overrides Early
 
 BEGINGROUP: Overrides #
 
+REGEX: .?.?.?.? (stamina)?(magicka)?regen\.esp
 00 friedlichere wilde tiere.esp
 0nk Better Gauldur and Saarthal Amulet Copy.esp
 1DayVendorRestockingV1.2.esp
@@ -5408,8 +5411,12 @@ SkyRe_Vampirism.esp
 UVO - Ultimate Vampirism Overhaul.esp
 better vampires.esp
   IF ($Dawnguard) && IFNOT ("Better Vampires DG.esp") WARN: You need the Dawnguard version of better vampires to work as intended with dawnguard.
+/* version above is now obsolete*/
 Better Vampires DG.esp
   IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+Better Vampires - No DawnGuard.esp
+  IF ("Better Vampires DG.esp") SAY: Use only one better vampires file.
+  IF ($Dawnguard) WARN: You need the Dawnguard version of better vampires to work as intended with dawnguard.
 Better Weres and Vamps.esp
 dvampire.esp
 IFNOT ($ExtSlider) MOD: VampireOverhaul.esp
@@ -6484,6 +6491,7 @@ NiruinsBusinessPlan.esp
     //IF ($RU) && IF ($FNIS) SAY: Не забудьте запустить GenerateFNISforUsers.exe
 Onehanded.esp
 REGEX: Pinups\d?\.esp
+psikoticsnecromancy.esp
 Shake it!.esp
 Skyhawk_eat_drink_animation.esp
 ENDGROUP: Pose and Animation Mods
