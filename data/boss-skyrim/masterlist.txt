@@ -5383,7 +5383,7 @@ BEGINGROUP: Vampires and Werewolves
 
 SkyRe_Vampirism.esp
   IF (r"MM_BeluaSangunaire.*\.esp") INC: Belua Sanguinare
-  IF ("Better Vampires.esp") INC: Better Vampires.esp
+  IF ("Better Vampires.esp") || IF ("Better Vampires DG.esp") INC: Better Vampires.esp
   IF ("VampireOverhaul.esp") INC: VampireOverhaul.esp
   IF ("UVO - Ultimate Vampirism Overhaul.esp") INC: UVO - Ultimate Vampirism Overhaul.esp
   IF (r"Imp's More Complex Needs\.es[mp]") INC: Imp's More Complex Needs
@@ -5395,6 +5395,9 @@ SkyRe_Vampirism.esp
     //IF ($RU) SAY: Возможны конфликты с другими модами, меняющими систему вампиризма.
 UVO - Ultimate Vampirism Overhaul.esp
 better vampires.esp
+  IF ($Dawnguard) && IFNOT ("Better Vampires DG.esp") WARN: You need the Dawnguard version of better vampires to work as intended with dawnguard.
+Better Vampires DG.esp
+  IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Better Weres and Vamps.esp
 dvampire.esp
 IFNOT ($ExtSlider) MOD: VampireOverhaul.esp
@@ -5816,6 +5819,7 @@ Teleport.esp
 Torchlight.esp
 transmute tweak make all silver first.esp
 TrueTransmutation.esp
+Vampire Predator Vision.esp
 Voice_of_the_Sky.esp
 REGEX: WiS IV - AI & Spells for NPC( - No Knockdown)?\.esp
   SAY: Use only one WiS IV - AI & Spells for NPC esp
