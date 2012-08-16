@@ -6293,7 +6293,7 @@ Skyrim Scaling Stopper.esp
     //IF ($RU) WARN: Если используется версия 3+, требуется также мод Skyrim Monster Mod.
 SkyXP.esp
   IF (<0.1.5.6|"SKSE") || IFNOT ("SKSE") REQ: SKSE 1.5.6+
-  IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
+  IFNOT ($SKCU) REQ: Skyrim -Community- Uncapper
 REGEX: SleepFor.+xExp\.esp
 SlowerLevelingAlchemy.esp
 SlowerLevelingEnchanting.esp
@@ -6311,17 +6311,17 @@ Steel an Iron perk.esp
 Twili's Unarmed perk.esp
 Twili's Unarmored perk.esp
 REGEX: Uncapped Perks - [CM].+\.esp
-  IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
+  IFNOT ($SKCU) REQ: Skyrim -Community- Uncapper
   IF (r"PerkUP-.*\.esp") INC: PerkUP
 Uncapped Perks.esp
-  IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
+  IFNOT ($SKCU) REQ: Skyrim -Community- Uncapper
   IF (r"PerkUP-.*\.esp") INC: PerkUP
 Uncapped Perks - Optional Magic Add-on.esp
-  IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
+  IFNOT ($SKCU) REQ: Skyrim -Community- Uncapper
 REGEX: Uncapped Perks - .+\.esp
   IF (r"PerkUP-.*\.esp") INC: PerkUP
 BlueStarPerkAdventure.esp
-  IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper
+  IFNOT ($SKCU) REQ: Skyrim -Community- Uncapper
 REGEX: WiS IV - leveld World X\d+\.esp
   SAY: Use only one WiS IV - leveld World esp
     //IF ($RU) SAY: Используйте только один WiS IV - leveld World esp
@@ -6336,8 +6336,8 @@ SkyRe_Main.esp
     //IF ($RU) && IF ($CCO) INC: Complete Crafting Overhaul (дубликаты в меню крафтинга)
   IF ("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
     //IF ($RU) && IF ("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
-  IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper for full perk functional
-    //IF ($RU) && IFNOT ("SKSE_Elys_Uncapper.dll") REQ: Skyrim -Community- Uncapper для полного функционирования перков.
+  IFNOT ($SKCU) REQ: Skyrim -Community- Uncapper for full perk functional
+    //IF ($RU) && IFNOT ($SKCU) REQ: Skyrim -Community- Uncapper для полного функционирования перков.
 Lorecraft - SkyRe.esp
 SkyRe_Comp.esp
   IFNOT ("PerkReset SkyRe Compatibility Patch.esp") SAY: Recommend to use "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp" instead.
