@@ -493,6 +493,7 @@ BNPC.esp
 Carlotta.esp
 CustomUthgerd.esp
 Cuter Essential Housecarls.esp
+Dibella's Beauty - NPC Overhaul.esp
 DW Followers.esp
 DW Commoners.esp
 DW Enemies and Wanderers.esp
@@ -528,6 +529,11 @@ RANs_CharGen_Morph_0.43a.esp
 RealisticEyeLighting.esp
 ShowRaceMenuOptions.esp
 Solitude Girl's Replacer.esp
+SupermodelSkyrim.esp
+  //moved back to npc faces because it's npc faces overhaul (too many conflicts)
+  IFNOT ($ApachiiHair) REQ: ApachiiSkyHair
+  SAY: Overrides faces for all NPC's, adds NPC's to all castles and naked NPC's to all player homes, also resetes all NPC's stats to vanilla. 
+    //IF ($RU) SAY: Меняет лица всех NPC's, добавляет NPC во все замки и обнаженных NPC во все дома игрока, также сбрасывает характеристики NPC на ванильные.
 TheCompanionShort.esp
 Vilkas.esp
 VilkasLongHair.esp
@@ -608,6 +614,7 @@ BEGINGROUP: Lighting
 
 alvor's house dynamic.esp
 Bright Lights.esp
+CityLights.esp
 CLARALUX - More and Brighter Lights.esp
 REGEX: CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius))|(Vanilla Lights|Medium Lights and Radius( w Shadows)?))\.esp
   SAY: Use only one LightAdjuster.
@@ -615,6 +622,7 @@ REGEX: CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius
 ColorfulLightsNoShadows.esp
 REGEX: Dark( |e[r|st]+[ ]?)?Nights( and Bright Skies| No Weather)?\.esp 
 REGEX: Dark(er)? Nights(B|_(\d{1,2})?(b+[lr])?)\.esp
+CLO.esp
 DarkerSkyrimLighting.esp
 Dark Dungeons for ENB.esp
 Encryptions Water Arrow.esp
@@ -685,6 +693,7 @@ AdditionalMusicPackI.esp
 AdditionalMusicPackII.esp 
 REGEX: Dawn_addon_part(\d)\.esp
 dragonborn with lute.esp
+esisbattlepack.esp
 FixCombatMusic.esp
 REGEX: enhanced soundtrack (\d{1,2})\.esp
   SAY: Adds music but also contains textures and meshes. Loose files will override them
@@ -706,6 +715,7 @@ ENDGROUP: Textures
 
 BEGINGROUP: Base Early
 
+Elemental Base.esp
 Less Fugly Female NPCs.esp
 // makes sense to load before mods which alter individual NPC
 SFD_NumericQuality.esp
@@ -741,7 +751,7 @@ _pocketcampsite.esp
 00EButterfliegenENGLISH.esp
 00SexyHouseVendors.esp
 5GiantToes.esp
-REGEX: 83Willows_101BUGs_.+\.esp
+REGEX: (83Willows_)?101BUGs.+\.esp
   TAG: {{BASH: Delev, Relev}}
 ENDGROUP: Base #
 
@@ -882,6 +892,7 @@ Cannabis.esp
 Cannibalism.esp
 cao_InventoryPacks.esp
 cao_DweSchematicsCheat.esp
+cao_goldbrand.esp
 cao_ToolsTrade_BuyRL.esp
 CarryWeightSpells.esp
 Carriage1.esp
@@ -1329,6 +1340,7 @@ LFox Bottle That Blood.esp
 LIAT - NPCs.esp
   IF (r"LIAT - .+NPCs\.esp") WARN: Obsolete. Update to latest version.
     //IF ($RU) && IF (r"LIAT - .+NPCs\.esp") WARN: Устарело. Обновите до последней версии.
+librarian - book sorting.esp
 Linked Home Chests.esp
 LMNimmervollerBeutelDV.esp
 lockBreaker_EV.esp
@@ -2043,6 +2055,7 @@ black mage armor.esp
 BlackHideArmor.esp
 BlackSacramentArmor.esp
 BlackSacramentDBreplacer.esp
+Blacksword.esp
 blackknight.esp
 BlackLaceCutieDress.esp
 blackswordsman.esp
@@ -2162,6 +2175,7 @@ CraftableBloodcrownbyDraco.esp
 CrainteVomir.esp
 Crane.esp
 CrazyVaclavsArrows.esp
+crimson dragon armor.esp
 ENDGROUP: Items C
 
 BEGINGROUP: Items D
@@ -2185,6 +2199,7 @@ DarkAssassinArmor.esp
 DarkElvesArmory.esp
 Darklilith.esp
 DarkNemesis.esp
+darkseraticheavyarmor.esp
 LFDarksidersWarArmor.esp
 darksiders_pack.esp
 darksiders_scythe.esp
@@ -2243,7 +2258,7 @@ Dovahkiin Mercenary Armored Horse.esp
 Dovahkiin's_Great_Sword.esp
 DPArmor.esp
 DraconicArmor.esp
-DragonAgeWeapons_1.esp
+REGEX: DragonAgeWeapons_\d\.esp
 DragonArrow.esp
 DragonBane2H.esp
 DragonboneCrossbow.esp
@@ -2402,6 +2417,7 @@ GattiQBCollection.esp
 GattiUNPCollection.esp
 REGEX: GDRanger(Armor|Dress)\.esp
 Gearblade.esp
+Genesis' Rapier.esp
 REGEX: Geralt_RavenArmor_v.*\.esp
 GeraltJacket.esp
 Ghost Rider.esp
@@ -2515,6 +2531,10 @@ ENDGROUP: Items H
 BEGINGROUP: Items I
 
 I5KWeaponOH.esp
+frost armour.esp
+  IFNOT ("Elemental Base.esp") REQ: "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 Elemental Base Pack".
+Ice Armour.esp
+  IFNOT ("Elemental Base.esp") REQ: "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 Elemental Base Pack".
 imp_guard_helm.esp
 imp_helm.esp
 REGEX: imp_helm_(night|imp)\.esp
@@ -2598,6 +2618,7 @@ Katharinian Armor.esp
 Kaw's Claws.esp
 Kaw's Cat Disguise.esp
 LadyKdCirclets.esp
+ket_fang.esp
 ket_goldbrand.esp
 ket_umbra.esp
 khajit-ears.esp
@@ -2734,6 +2755,7 @@ Memeru Outfit.esp
 MessiasDarkJester.esp
 mh3_mod.esp
 MHSNW.esp
+MinaArmor.esp
 Minotaur_Skin.esp
 Mjolnir.esp
 MK_Ermak Armor.esp
@@ -2959,6 +2981,7 @@ RiddicksClaw.esp
 RingDwemer.esp
 Ring of Change.esp
 Ring of Himalayan Hauling v1.0.esp
+RingOfEloquence.esp
 REGEX: Ring of Hircine - No Disease Werewolf AND Totem Selection.+\.esp
   SAY: Only use one Ring of Hircine - No Disease Werewolf AND Totem Selection*.esp
    //IF ($RU) SAY: Используйте только один Ring of Hircine - No Disease Werewolf AND Totem Selection*.esp
@@ -2977,7 +3000,9 @@ roadsidethief_simple_armor.esp
 RobedSteelPlateArmor.esp
 RogueArmor.esp
 RogueOutfit.esp
-  REQ: CBBE body
+  REQ: CBBE
+Rorona.esp
+Rorona3scabbard.esp
 rosegeant.esp
 royal_daedric.esp
 RoyalElven.esp
@@ -3385,6 +3410,9 @@ Crafting 300 Basic.esp
 Crafting300_Basic_extras_v1.0.esp
 Darwins_Hard_Times.esp
 enhancedgameplay.esp
+Harvest Overhaul.esp
+Harvest Overhaul Creatures.esp
+HarvestOverhaulCreatures_IMCN_Compatibility_Patch.esp
 MM_BeluaSangunaireRevisited.esp
 mm_BeluaSanguinareRevisitedDialogueFixes.esp
 MM_BeluaSangunaireRevisitedLootTables.esp
@@ -3634,6 +3662,7 @@ Bards Questing in Tombs.esp
 bardscollegewithfix.esp
 bardscollegewithoutfix.esp
 BaradMithost.esp
+Barrogshideout.esp
 basement.esp
 BBLuxurySuiteExt.esp
 BBLSMotseerOutfits.esp
@@ -3759,6 +3788,7 @@ darkbrotherhoodsanctuaries.esp
 darkbrotherhoodshield.esp
 darkstadt.esp
 Darkwater Estate.esp
+Dawnspire.esp
 DawnStarHome 0.2v.esp
 DawnstarBetterDocks.esp
 Dawnstar_Fortified.esp
@@ -3869,6 +3899,7 @@ Hunter.esp
   REQ: SkyMoMod.esm
 Hunter's Campsite v1.1.esp
 HuntForTheWayStones.esp
+hyrulecomplete03.esp
 ENDGROUP: Quests H
 
 BEGINGROUP: Quests I
@@ -3927,6 +3958,7 @@ mannyDragonhead.esp
     //IF ($RU) && IF ("mannyDragonhead.esm") SAY: Используйте или mannyDragonhead.esm или mannyDragonhead.esp
 Markarth Dwemer Palace.esp
 Markarth_plus.esp
+majoramoon.esp
 Milan's PAck.esp
 MilanDungeonPack2.esp
 moonpath_questdata.esp
@@ -3960,6 +3992,8 @@ Nchuzzrezar.esp
 neaextbromjunaar.esp
 Neiheleim.esp
 Netch Fetcher Convoy.esp
+newfalkreath.esp
+newmorthal.esp
 niflheim1.esp
 Nightingale Hall.esp
 NightingalePortal.esp
@@ -3993,6 +4027,7 @@ Pinewood Village.esp
 Pinewoods Cottage.esp
 Pirate Sharphook.esp
 PlayerMansion.esp
+_pocketcraftshop.esp
 Proudspire.esp
 Proudspire Manor - Dragonborn Edition.esp
 proudspire manor armory.esp
@@ -4095,6 +4130,7 @@ SlavePack.esp
 SleepingDangers-SandsofTime.esp
 SlightlyEnhancedBreezehome.esp
 SKY.esp
+Sky Haven Temple Teleporter (Immersion included).esp
 SkyrimSewers.esp
 SolitudeSKY.esp
 SkyHavenTempleEnhanced.esp
@@ -4160,6 +4196,7 @@ treasurehunt.esp
 Trees for Solitude V1.1.esp
 Trees for Solitude.esp
 treehouse.esp
+tukkordoshouse.esp
 Twilight Forest.esp
 Twilight Forest - Ambient Lighting.esp
 ENDGROUP: Quests T
@@ -4224,6 +4261,7 @@ whiterunMarket.esp
 WhiterunFortified.esp
 WhiterunREVISION.esp
 RRBetterWhiterunInt.esp
+windfall.esp
 Winterhold_Improvements.esp
 Winterhold repair.esp
 Winterlodge.esp
@@ -4319,6 +4357,7 @@ ElementalGauldurAmulet.esp
 EnhancedGauldurAmuletITA.esp
 REGEX: female mannequins( in homes)?\.esp
 Glowing Soul Gems.esp
+KDC - kevinsterable - Deadly Stronger Poisons.esp
 LessAnnoyingItems.esp
 Masters of Death.esp
 IFNOT ("SkyRe_Main.esp") MOD: Morrowloot.esp
@@ -4371,6 +4410,7 @@ AlternateTullius.esp
 AmazingFollowerTweaks.esp
 Amulette der Neun.esp
 AncientDBarmorTSedition.esp
+Ancient Nordarmor improved.esp
 Angel_of_Death.esp
 Another Shadowmere Mod.esp
 Another_Skooma.esp
@@ -4780,6 +4820,7 @@ REGEX: killable.children(.V?\d.\d{1,2})?\.esp
 killable_children_qp_aventus.esp
 killable_children_qp_nelkir.esp
 Killable Children - Quest Important Protected.esp
+Killable Children - Quest Protected.esp
 Killable Lootable Children.esp
 KillEssential.esp
 killkids.esp
@@ -4975,6 +5016,7 @@ ENDGROUP: Overrides N
 BEGINGROUP: Overrides O
 
 Oblivious Horses (Ess, Stam).esp
+Oblivious Horses (Ess Stam Speed).esp
 Oblivious Shadowmere (Clean).esp
 Odahviingisbetter.esp
 onfire.esp
@@ -5349,6 +5391,8 @@ raggedshortcut_oc.esp
 Open Cities Skyrim.esp
   IF (022AD2C8|"Open Cities Skyrim.esp") WARN: Stolen content. Please show respect for authors' rights and download from a "http://skyrim.nexusmods.com/mods/8058 legitimate source".
   IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+
+TQC-OC.esp
+  //Thieves Guild Shortcut - Open Cities compatible. Must be loaded after Open Cities.
 ENDGROUP: City Overhauls
 
 BEGINGROUP: Realism
@@ -5545,6 +5589,7 @@ conjureatronarchfix.esp
     //IF ($RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 conjure_chest.esp
 CurseSpell.esp
+DarkBrotherhoodAstrid.esp
 db_voidassassin.esp
 demonocus detect life spell.esp
 DirectorsTools.esp
@@ -5642,20 +5687,6 @@ ReflectiveWard.esp
 room.esp
 Rune Expansion.esp
 REGEX: SC_Modular Magic - .+\.esp
-  /*SC_Modular Magic - Alchemy Enchantment CostMod.esp
-  SC_Modular Magic - Item Enchantment PowerMod.esp
-  SC_Modular Magic - Skill Cost Base.esp
-  SC_Modular Magic - Combat Magicka Regen.esp
-  SC_Modular Magic - Dual Casting Cost.esp
-  SC_Modular Magic - Dual Casting Effectiveness.esp
-  SC_Modular Magic - Scaled Alteration Spells.esp
-  SC_Modular Magic - Scaled Conjuration Spells.esp
-  SC_Modular Magic - Scaled Destruction Spells.esp
-  SC_Modular Magic - Scaled Illusion Spells.esp
-  SC_Modular Magic - Scaled Restoration Spells.esp
-  SC_Modular Magic - Levelled Magicka.esp
-  SC_Modular Magic - Levelled Magicka - Entropic Addon.esp
-  SC_Modular Magic - Racial Power Scaling.esp*/
 Skyrim Spells Restored.esp
 SMARTS.esp
 SMEssentialKills.esp
@@ -5675,6 +5706,7 @@ spelltome conjurar las Naciones Unidas Tiger.esp
 SSAPBWK.esp
 StripNPCs.esp
 Succubus.esp
+Summon_Larvas.esp
 summonable_daedric_princes.esp
 SummonAncestorGuardian.esp
 SummonAnimalPets.esp
@@ -5746,6 +5778,7 @@ Space Wiking's Claws.esp
 fastershouts.esp
 True Dovahkiin Fire and Frost Breath Normal Cooldown Time.esp
 True Dovahkiin Breath.esp
+unlimited shouts.esp
 ENDGROUP: Shouts
 
 BEGINGROUP: Spells Late
@@ -6583,6 +6616,7 @@ warpaintattoo.esp
 REGEX: wyldtat\d\d?\.esp
 XCEMwW.esp
 krimson'swarpaints.esp
+Siamese Khajiit.esp
 ENDGROUP: Warpaints
 
 BEGINGROUP: Race additions
@@ -6737,10 +6771,6 @@ BEGINGROUP: NPC Distance, Face & Makeup Overrides
 //Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 
 REGEX: ([Nn]o |([Ss]lightly )?[Rr]educed Distance )(NPC|npc) Greetings.esp
-SupermodelSkyrim.esp
-  IFNOT ($ApachiiHair) REQ: ApachiiSkyHair
-  SAY: Overrides faces for all NPC's, adds NPC's to all castles and naked NPC's to all player homes, also resetes all NPC's stats to vanilla. 
-    //IF ($RU) SAY: Меняет лица всех NPC's, добавляет NPC во все замки и обнаженных NPC во все дома игрока, также сбрасывает характеристики NPC на ванильные.
 ENDGROUP: NPC Distance, Face & Makeup Overrides
 
 BEGINGROUP: Companions
@@ -6922,8 +6952,14 @@ ESFAela.esp
 Aelafacelift.esp
 AelaTheHuntress.esp
 AelaTheHuntressFacelift.esp
+AraneaIenithFacelift.esp
+JenassaHirelingFacelift.esp
+IlliaFacelift.esp
 LydiaHousecarlWhiterunFacelift.esp
+MjolltheLionessFacelift.esp
+NjadaStonearmFacelift.esp
 UthgerdtheUnbrokenFacelift.esp
+REGEX: .{2,30}Facelift\.esp
 Tyth.esp
 Sirenia.esp
 REGEX: Mjollfacelift-(blackhair|blondehair)\.esp
@@ -7129,6 +7165,7 @@ ENDGROUP: Companions and NPCs
 BEGINGROUP: Alternative starts
 
 SkBBP - Start on Level Zero.esp
+alteredbeginning.esp
 Alternative Startfraktionen - Abgeschworener.esp
 Alternative Startfraktionen - Bandit.esp
 Alternative Startfraktionen - Hexe.esp
