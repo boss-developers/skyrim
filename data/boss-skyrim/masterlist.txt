@@ -3558,6 +3558,7 @@ ENDGROUP: War in Skyrim
 
 BEGINGROUP: Deadly and Mighty Dragons
 
+IF ("DeadlyDiversifiedDragonsPatch.esp") MOD: DragonsDiversified.esp
 REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp
   TAG: {{BASH: Delev, Relev}}
 DeadlyDragonsX.esp
@@ -3575,7 +3576,7 @@ REGEX: DeadlyDragonsPISE( DV)?\.esp
 REGEX: DeadlyDragonsHardPISE( DV)?\.esp
   TAG: {{BASH: Delev, Relev}} not tested
 REGEX: DeadlyDragonsSpawn.*\.esp
-DragonsDiversified.esp
+IFNOT ("DeadlyDiversifiedDragonsPatch.esp") MOD: DragonsDiversified.esp
 DeadlyDiversifiedDragonsPatch.esp
 Dragonbone Weapons - Deadly Dragons Compatibility.esp
 REGEX: (Super )?(Slighty )?Mighty Dragon Priests\.esp
@@ -3584,8 +3585,8 @@ Odahviing Mighty Dragons.esp
   TAG: {{BASH: Delev, Relev}}
 REGEX: (Soft)?(Super)?(Nightmare)?(Slighty| Slighty)?(Mighty| Mighty)? Dragons( Unleveled)?\.esp
   TAG: {{BASH: Delev, Relev}}
-  IF (r"REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT (r"MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Use compatibility patch for deadly dragons:("http://skyrim.nexusmods.com/mods/13423")
-    //IF ($RU) && IF (r"REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT (r"MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Используйте "http://skyrim.nexusmods.com/mods/13423 патч совместимости для мода Deadly Dragons".
+  IF (r"DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT (r"MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Use compatibility patch for deadly dragons:("http://skyrim.nexusmods.com/mods/13423")
+    //IF ($RU) && IF (r"DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT (r"MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Используйте "http://skyrim.nexusmods.com/mods/13423 патч совместимости для мода Deadly Dragons".
   // Mighty Dragons main file
 D.S.I. Dragon Size Increase + MD.esp
 REGEX: MD with DeadlyD and DDiversified( Unleveled)?\.esp
