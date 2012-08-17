@@ -3984,9 +3984,8 @@ REGEX: Murder.?.?\.esp
  IF (r"Murder.?.?\.esm") WARN: Use either Murder*.esp or Murder*.esm
     //IF ($RU) && IF (r"Murder.?.?\.esm") WARN: Используйте любой или Murder*.esp или Murder*.esm
 Museum.esp
-My home is your home.esp
+IFNOT ($UFO) MOD: My home is your home.esp
 Mystic Home.esp
-My Home Is Your Home.esp
 My Place.esp
 ENDGROUP: Quests M
 
@@ -6771,6 +6770,13 @@ SIUFO.esp
 SIUFOPatch.esp
 TravellersOfSkyrim - UFO Compatibility Patch.esp
 ENDGROUP: Ultimate Follower Overhaul
+
+BEGINGROUP: Post UFO
+//Other mods that must loaded after UFO(if UFO is installed).
+
+IF ($UFO) MOD: My home is your home.esp
+  //Bethsoft thrd20#119
+ENDGROUP: Post UFO 
 
 BEGINGROUP: NPC Distance, Face & Makeup Overrides
 //Distance Tweaks before Face & Makeup Overrides
