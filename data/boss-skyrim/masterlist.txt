@@ -2138,7 +2138,7 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
     //IF ($RU) && IF ("Cloaks - No Imperial.esp") && IFNOT ("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
 1nivWICCloaksCRAFT.esp
   IF ("1nivWICCloaks.esp") || IF ("1nivWICCloaksNoGuards.esp") WARN: Use only one WICCloaks esp.
-    //IF ($RU) && (IF ("1nivWICCloaks.esp") || IF ("1nivWICCloaksNoGuards.esp")) WARN: Используйте только один WICCloaks esp.
+    //IF ("1nivWICCloaks.esp") || IF ("1nivWICCloaksNoGuards.esp") && IF ($RU) WARN: Используйте только один WICCloaks esp.
 1nivWICCloaksNoGuards.esp
   IF ("1nivWICCloaks.esp") WARN: Use only one WICCloaks esp.
     //IF ($RU) && IF ("1nivWICCloaks.esp") WARN: Используйте только один WICCloaks esp.
@@ -2539,8 +2539,10 @@ BEGINGROUP: Items I
 I5KWeaponOH.esp
 frost armour.esp
   IFNOT ("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://skyrim.nexusmods.com/mods/20868".
+    //IF ($RU) && IFNOT ("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
 Ice Armour.esp
   IFNOT ("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://skyrim.nexusmods.com/mods/20868".
+    //IF ($RU) && IFNOT ("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
 imp_guard_helm.esp
 imp_helm.esp
 REGEX: imp_helm_(night|imp)\.esp
@@ -2553,6 +2555,7 @@ Insanity's Chrysamere.esp
 Insanity's Craftable Dragonbane.esp
 Insanity's Dragonbane.esp
 Insanity's Dragon Katana.esp
+InsanitysDragonKatana.esp
 Insanity's Empire Longswords.esp
 Insanity's Goldbrand.esp
 Insanity's Ice Blade of the Monarch.esp
@@ -2568,7 +2571,7 @@ SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
   SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     //IF ($RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF ("InsanitysDragonKatana.esp") || IF ("Insanity's Dragon Katana.esp") SAY: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
-    //(IF ($RU) && (IF ACTIVE ("InsanitysDragonKatana.esp") || IF ACTIVE ("Insanity's Dragon Katana.esp")) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
+    //IF ($RU) && IF ACTIVE(r"Insanity'?s.?Dragon.?Katana\.esp") SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
 InvisRing.esp
 InvisibleArmorSets.esp
 ISDBlackSting.esp
