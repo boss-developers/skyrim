@@ -6420,7 +6420,8 @@ REGEX: WiS IV - leveld World X\d+\.esp
 SkyRe_Main.esp
   TAG: {{BASH: Relev, Delev}}
     //TAG: {{BASH: Delev, Names, Relev}}
-  IF ("ACE Crafting.esp") || IF ("ACE Speech.esp") INC: ACE Crafting.esp, ACE Speech.esp
+  IF ("ACE Crafting.esp") INC: ACE Crafting.esp
+  IF ("ACE Speech.esp") INC: ACE Speech.esp
   IF ("Perky.esp") INC: Perky.esp (Syynx's Perky)
   IF (r"PerkUP-.*\.esp") INC: PerkUP
   IF (r"Uncapped Perks.*\.esp") INC: Uncapped perks
@@ -6430,6 +6431,15 @@ SkyRe_Main.esp
     IF ($RU) && IF ("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
   IFNOT ($SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" for full perk functional
     IF ($RU) && IFNOT ($SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" для полного функционирования перков.
+  IF ($EN) SAY: To make aiming easier, recommend to add the following lines to Skyrim.ini:
+    IF ($RU) SAY: Чтобы сделать прицеливание проще, добавьте в ваш Skyrim.ini следующие строки:
+ SAY:   [Actor]
+ SAY:   fVisibleNavmeshMoveDist=12288.0000
+ SAY:   [Combat]
+ SAY:   f1PArrowTiltUpAngle=0.64
+ SAY:   f3PArrowTiltUpAngle=0.64
+ SAY:   fMagnetismStrafeHeadingMult=0.0
+ SAY:   fMagnetismLookingMult=0.0
 SkyRe_Combat.esp
   IFNOT ("SkyRe_Main.esp") REQ: SkyRe_Main.esp
 Lorecraft - SkyRe.esp
@@ -6549,7 +6559,7 @@ hokutoshinken.esp
 ArmorPerkHelmetRemover.esp
 vinis_alchemy_tree.esp
 BatTravel.esp
-  IFNOT ($Dawnguard) REQ: Dawnguard.esm
+  IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 xxxLvCap255Creatures.esp
 xxxLvCap255Enemy.esp
 ENDGROUP: Skills, Attributes and Leveling
@@ -6823,7 +6833,7 @@ UFO - Ultimate Follower Overhaul.esp
     IF ($RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньенов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода".
 UFO - Dawnguard AddOn.esp
   IFNOT ($UFO) REQ: UFO - Ultimate Follower Overhaul.esp
-  IFNOT ($Dawnguard) REQ: Dawnguard.esm
+  IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
