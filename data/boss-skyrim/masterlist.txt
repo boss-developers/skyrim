@@ -36,19 +36,19 @@ Message keywords should be indented by two spaces and followed by a colon ':' th
 //Language setup. Only for BOSS 2.1+
 
 IF LANG ("chinese") SET: EN
-  //Not translated. Set default EN.
+  // Not translated. Set default EN.
 IF LANG ("english") SET: EN
-  //Default EN.
+  // Default EN.
 IF LANG ("german") SET: EN
-  //Not translated. Set default EN.
+  // Not translated. Set default EN.
 IF LANG ("russian") SET: RU
-  //Translated. Set RU.
+  // Translated. Set RU.
 IF LANG ("spanish") SET: EN
-  //Not translated. Set default EN.
+  // Not translated. Set default EN.
 
 // Upgrade message for 1.7+ users:
-  IF (<2.1.0.0|"BOSS") GLOBAL WARN: An update for BOSS (v2.1.0) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
-    ////Not Important for versions <2.1.1 IF VAR(RU) && IF (<2.1.1.0|"BOSS") GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
+  IF VERSION("BOSS", "2.1.0.0", <) GLOBAL WARN: An update for BOSS (v2.1.0) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
+    ////Not Important for versions <2.1.1 IF VAR(RU) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
 	
 // Masterlist variable setup for BOSS v1.7+.
 //================================================================
@@ -90,7 +90,7 @@ BEGINGROUP: Official ESMs
 Skyrim.esm
 Update.esm
 Dawnguard.esm
-  IF (<1.7.7|"TES5") REQ: Skyrim 1.7.7+
+  IF VERSION("TES5", "1.7.7", <) REQ: Skyrim 1.7.7+
 
 ENDGROUP: Official ESMs
 
@@ -105,7 +105,7 @@ PerkReset.esm
 AIKhajiitCompanions.esm
 All Housecarls Are Hunks.esm
 AmethystHollowsMaster.esm
-  IF (<1.5.24|"TES5") REQ: Skyrim 1.5.24+
+  IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 Lycanthropy_Music.esm
 REGEX: PersonalizedMusic.*\.esm
 NoTint.esm
@@ -272,7 +272,7 @@ Ajen.esm
 Alicia.esm
 Farkasv2.esm
 XFLMain.esm
-  IF (<1.3.0|"TES5") REQ: Skyrim 1.3+
+  IF VERSION("TES5", "1.3.0", <) REQ: Skyrim 1.3+
   IF VAR(EN) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp, has the same functional, use only one.
     IF VAR(RU) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp, имеет такой же функционал, используйте только один из них.
   IF VAR(EN) && IF ("BDO.esp") INC: BDO.esp, has the same functional, use only one.
@@ -444,8 +444,8 @@ RiftenJailVisualFix.esp
     IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 RiverwoodTraderInvestorFix.esp
 SanguineRoseFix.esp
-  IF (>1.4.27|"TES5") ERROR: Delete. Fixed in official patch 1.5+
-    IF VAR(RU) && IF (>1.4.27|"TES5") ERROR: Удалите. Исправлено в патче 1.5+
+  IF VERSION("TES5", "1.4.27", <) ERROR: Delete. Fixed in official patch 1.5+
+    IF VAR(RU) && IF VERSION("TES5", "1.4.27", <) ERROR: Удалите. Исправлено в патче 1.5+
 sapphire_speak_fix.esp
 REGEX: Shadow.?Striping.?Fix\.esp
 Shrine of Azura LOD Fix.esp
@@ -811,9 +811,9 @@ arrowsmith-dawnguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Arrow Smithing.esp
 Ars Metallica.esp
-  IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 Ars Metallica - Dawnguard.esp
-  IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 arrowsstick.esp
 REGEX: Arrows of Magicka.*\.esp
@@ -896,7 +896,7 @@ BreezeDog.esp
     IF VAR(RU) SAY: Может не работать с некоторыми модами, меняющими Дом Теплых ветров(breezehome).
 BrewABetterPotion.esp
 Bring Out Your Dead.esp
-  IF (<1.5.26|"TES5") REQ: Skyrim 1.5.26+
+  IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 bulk merchant.esp
 buttplug-calyps.esp
 BuyPerk.esp
@@ -1057,7 +1057,7 @@ REGEX: .. - Enhanced Blood Main\.esp
     IFNOT ("dD-SkyrimMonsterMod EBT Patch.esp") || IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF ("SkyMoMod.esm") && IF VAR(RU) INC: Skyrim Monster Mod. Скачайте необходимый патч совместимости со страницы мода "http://skyrim.nexusmods.com/mods/60 enhanced blood textures".
   IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") || IFNOT ("dD-Dawnguard-EBT Patch.esp") && IF VAR(Dawnguard) && IF VAR(EN) INC: Dawnguard (Official Bethesda DLC). Get the necessary compatibility patch from the "http://skyrim.nexusmods.com/mods/60 enhanced blood textures" page.
     IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") || IFNOT ("dD-Dawnguard-EBT Patch.esp") && IF VAR(Dawnguard) && IF VAR(RU) INC: Dawnguard (Official Bethesda DLC). Скачайте необходимый патч совместимости со страницы мода "http://skyrim.nexusmods.com/mods/60 enhanced blood textures".
-  IF (<1.6|"TES5") REQ: Skyrim 1.6+
+  IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
 REGEX: dD-\w{4} Screen Blood\.esp
 REGEX: dD-.{4,9} Screen Blood Duration\.esp
 /* Both can be used at the same time */
@@ -1264,7 +1264,7 @@ Invulnerable Horses.esp
 Ish's Respec Mod.esp
   TAG: {{BASH: Relev}}
 Ish's Souls to Perks.esp
-  IF (<0.1.5.6|"SKSE") || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.6+.
+  IF VERSION("SKSE", "0.1.5.6", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.6+.
 ItemRewardsForBounties.esp
 Item Sorting by Saige.esp
 itsatrap!.esp
@@ -1899,8 +1899,8 @@ CAS.esp
 Character Creation Overhaul.esp
 Chesko_LoreBasedLoadingScreens.esp 
 DEAsprint&jump.esp
-  IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+ 
-  IF (<0.1.5.9|"SKSE") || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.9+
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+ 
+  IF VERSION("SKSE", "0.1.5.9", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.9+
   IF VAR(EN) SAY: Won't work if sprint/jump key is remapped to mouse button.
     IF VAR(RU) SAY: Может не работать, если кнопка бега\прыжка переназначена на кнопку мыши.
 DragonWarrior-Effects.esp
@@ -1919,7 +1919,7 @@ Mark Books as Read.esp
 Mart's Savegame DeBloatifier.esp
 NPCPhotoBooth.esp
 SKSE Hotkeys.esp
-  IF (<0.1.5.11|"SKSE") || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
+  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
 REGEX: SkyRealism - Simple Save System.+\.esp
   IF VAR(EN) SAY: Only use one SkyRealism - Simple Save System*.esp
     IF VAR(RU) SAY: Используйте только один SkyRealism - Simple Save System*.esp
@@ -3126,7 +3126,7 @@ SpectralWeaponPack.esp
 SpeedRings.esp
 Spring elven set.esp
 spyduckWands.esp
-  IF (<0.1.5.9|"SKSE") || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.9+
+  IF VERSION("SKSE", "0.1.5.9", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.9+
 sulundo.esp
 StaffBundle.esp
 stalhrimstandalone2.esp
@@ -3672,7 +3672,7 @@ adalmatar.esp
 AlchemyChest.esp
 REGEX: alternativeCityAccess.*\.esp
 AmethystHollowsUpdate.esp
-  IF (<1.5.24|"TES5") REQ: Skyrim 1.5.24+ 
+  IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+ 
 Amazing Riverwood Starter Home.esp
 Quest_AndTheRealmsOfDaedra.esp
 Ank_Castle_Main.esp
@@ -3705,7 +3705,7 @@ Barrogshideout.esp
 basement.esp
 BBLuxurySuiteExt.esp
 BBLSMotseerOutfits.esp
-  IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 BBLSmusic.esp
 BBLSapachii.esp
 Beautiful Riften.esp
@@ -3901,7 +3901,7 @@ BEGINGROUP: Quests G
 GardensOfWhiterun.esp
 Golden Egg Treasure Hunt.esp
 Gildergreen Regrown.esp
-  IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 golkar.esp
 Great House Barrow.esp
 aGreyLedgeManorLITE.esp
@@ -4215,7 +4215,7 @@ TheClone Breezehome - housemarkerfasttravel fix.esp
 TheClone Breezehome Light fix.esp
 The Fancy Flagon.esp
 The Paarthurnax Dilemma.esp
-  IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 The Secret Room of Breezehome (En).esp
 The Secret Room of Breezehome.esp
   IF VAR(EN) && IF ("secretroom-bh-en.esp") SAY: Use only one 'The Secret Room of Breezehome.esp' or 'secretroom-bh-en.esp'
@@ -4871,7 +4871,7 @@ REGEX: knc_resilient_dragons(_Vanillashout)?\.esp
   IF VAR(EN) INC: Other dragons mods(Deadly Dragons etc)
     IF VAR(RU) INC: Другие, меняющие драконов,  моды(Deadly Dragons и т.п.)
 kuerteeGoldAjustment.esp
-  IF (<1.5.26|"TES5") REQ: Skyrim 1.5.26+
+  IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 ENDGROUP: Overrides K
 
 BEGINGROUP: Overrides L
@@ -5219,7 +5219,7 @@ SkyReWarchiefArmorPlugin.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version
     IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 Signs and Guardians.esp
-  IF (<1.4.27|"TES5") REQ: Skyrim 1.4.27+
+  IF VERSION("TES5", "1.4.27", <) REQ: Skyrim 1.4.27+
 ESP.esp
   IF VAR(EN) && IF ("SkyRe.esp") && IF ("SkyReNoLighting.esp") SAY: Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.
     IF VAR(RU) && IF ("SkyRe.esp") && IF ("SkyReNoLighting.esp") SAY: Может перезаписать рассовую информаци. из SkyRe.esp или SkyReNoLighting.esp, но может быть бесопасно отключен, после использования рассового меню.
@@ -5435,7 +5435,7 @@ REGEX: Populated Cities.*\.esp
 raggedshortcut_oc.esp
 Open Cities Skyrim.esp
   IF (022AD2C8|"Open Cities Skyrim.esp") WARN: Stolen content. Please show respect for authors' rights and download from a "http://skyrim.nexusmods.com/mods/8058 legitimate source".
-  IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 TQC-OC.esp
   //Thieves Guild Shortcut - Open Cities compatible. Must be loaded after Open Cities.
 ENDGROUP: City Overhauls
@@ -5445,8 +5445,8 @@ BEGINGROUP: Realism
 BasicHumanNeeds.esp
 Basic Human Needs - Food Drink and Sleep
 kuerteeBattleFatigueAndInjuries.esp
-  IF (<0.1.5.4|"SKSE") || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
-  IF (<1.5.26|"TES5") REQ: Skyrim 1.5.26+
+  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 REGEX: AdvancedFoodandRestENG( lazy)?\.esp
 Better Hunting.esp
 REGEX: dD.?- Realistic Ragdoll Force.*\.esp
@@ -5457,11 +5457,11 @@ imp's more complex needs.esp
     IF VAR(RU) && IF ("Imp's More Complex Needs.esm") SAY: Используйте любую Nexus или Steam Workshop версию, не обе.
 REGEX: Jump\d{2,3}\.esp
 kuerteeEncumberingLootArmourAndWeapons.esp
-  IF (<0.1.5.4|"SKSE") || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
-  IF (<1.5.26|"TES5") REQ: Skyrim 1.5.26+
+  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 kuerteeEatAndSleep.esp
-  IF (<0.1.5.4|"SKSE") || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
-  IF (<1.5.26|"TES5") REQ: Skyrim 1.5.26+
+  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 npcuseammo.esp
 NPCsUseAmmoAllBows.esp
 P-Froggys Rest and Eat.esp
@@ -5557,7 +5557,7 @@ StrongVampireLord.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ToL_Core_by_Brevi.esp
 ToL_SKSE_by_Brevi.esp
-  IF (<0.1.5.11|"SKSE") || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
+  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
 Tales_of_Lycanthropy.esp
 Werewolf Loot - ToL compatible.esp
 REGEX: True Vampirism - .+\.esp
@@ -5629,7 +5629,7 @@ CarryWeightSpells(BetterSorting).esp
 Chameleon.esp
 chargemagicka.esp
 ColettesRevenge.esp
-  IF (<1.4.27|"TES5") REQ: Skyrim 1.4.27+
+  IF VERSION("TES5", "1.4.27", <) REQ: Skyrim 1.4.27+
 CommandHorse.esp
 CompanionSkjorSummon.esp
 conjurationmadnessmodv1.esp
@@ -5687,7 +5687,7 @@ LFContingency.esp
 LightMeter.esp
 longercandlelight.esp
 lootninja.esp
-  IF (<0.1.5.4|"SKSE") || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
 Magic Box.esp
 Magicka Revamp - Destruction - Extra Spells - WIP.esp
 maintainedarmorspells.esp
@@ -5784,7 +5784,7 @@ Ward Shield.esp
 waterwalking.esp
 weatherchangespell.esp
 Where's My Horse Gone.esp
-  IF (<1.5.24|"TES5") REQ: Skyrim 1.5.24+
+  IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 Wintercross Ancient Art of Magick 1.2.esp
 wkyddResurrectionSpell.esp
 ENDGROUP: General Spells
@@ -6071,7 +6071,7 @@ ENDGROUP: Thievery, Sneaking and Crime
 BEGINGROUP: Combat
 
 Duel - Combat Realism.esp
-  IF (<1.6|"TES5") REQ: Skyrim 1.6+
+  IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
   //Duel combat realism must load BEFORE Ace Reaistic fighting
 ACE Realistic Fighting.esp
 REGEX: CustomDifficultyP.*\.esp
@@ -6321,7 +6321,7 @@ Improved Expert Spells.esp
 REGEX: Improved Master Spells.*\.esp
 JokeMOD-SilentRunning.esp
 kuerteeSkillBasedDamageMultipliers.esp
-  IF (<0.1.5.4|"SKSE") || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
 lcr.esp
 leveling_2x_slower1_5.esp
 Leveling Destruction Perks.esp
@@ -6384,7 +6384,7 @@ Skyrim Scaling Stopper.esp
   IF VAR(EN) WARN: If using version 3+, Skyrim Monster Mod is required.
     IF VAR(RU) WARN: Если используется версия 3+, требуется также мод Skyrim Monster Mod.
 SkyXP.esp
-  IF (<0.1.5.6|"SKSE") || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.6+
+  IF VERSION("SKSE", "0.1.5.6", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.6+
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
 REGEX: SleepFor.+xExp\.esp
 SlowerLevelingAlchemy.esp
@@ -6588,7 +6588,7 @@ SpeechTree.esp
 Hunting in Skyrim.esp
 Skyrim15SmithingFix.esp
   //must be load after any perk and/or smithing mods
-  IF (<1.5.24|"TES5") REQ: Skyrim 1.5.24+
+  IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 Two-Handed Speed-Based Perks.esp
 ENDGROUP: Player Perks
 
@@ -6830,7 +6830,7 @@ ENDGROUP: Extensible Follower Framework
 BEGINGROUP: Ultimate Follower Overhaul
 
 UFO - Ultimate Follower Overhaul.esp
-  IF (<1.5.24|"TES5") REQ: Skyrim 1.5.24+
+  IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
   IF VAR(EN) && IF ("BDO.esp") INC: BDO.esp, has the same functional, use only one.
     IF VAR(RU) && IF ("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
   IF VAR(EN) SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on "http://skyrim.nexusmods.com/mods/14037 mod page".
@@ -7178,11 +7178,11 @@ multimarriage.esp
   //must be load after multiple followers mods for wedding ceremony work.
 marriagemod - alpha v3.esp
 CerwidenCompanion.esp
-  IF (<Skyrim 1.6.89|"TES5") REQ: Skyrim 1.6.89+
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 CerwidenAppearancePatch.esp
 // Must load after CerwidenCompanion.esp
 MujuroStormbringer.esp
-  IF (<Skyrim 1.6.89|"TES5") REQ: Skyrim 1.6.89+
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 DudestiaMultiMarriages.esp
 Spousetocustomhome.esp
 Merchant Follower Vyctara.esp
@@ -7267,7 +7267,7 @@ REGEX: QuickStart3_.+\.esp
   IF VAR(EN) SAY: Use only one QuickStart3_*.esp
     IF VAR(RU) SAY: Используйте только один QuickStart3_*.esp
 Alternate Start - Live Another Life.esp
-  IF (<1.6.89|"TES5") REQ: Skyrim 1.6.89+
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
   IF VAR(EN) && IF ("Live Another Life.esp") ERROR: Live Another Life.esp was detected. You must uninstall the old version of the mod before using the new one.
     IF VAR(RU) && IF ("Live Another Life.esp") ERROR: Обнаружена старая версия 'Live Another Life.esp'. Вы должны удалить старую версию, перед использованием этой новой.
 Live Another Life.esp
@@ -7549,7 +7549,7 @@ BEGINGROUP: Load Late
 Arrows renamed for better sorting.esp
 // Must load after arrow tweaks (AT - *)
 BBLSGuysApachii.esp
-  IF (<0.1.6.89|"TES5") REQ: Skyrim 1.6.89+
+  IF VERSION("TES5", "0.1.6.89", <) REQ: Skyrim 1.6.89+
   IFNOT VAR(ApachiiHair) REQ: Apachii Sky Hair.
   IFNOT ("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
   
