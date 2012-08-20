@@ -53,29 +53,29 @@ IF LANG ("spanish") SET: EN
 // Masterlist variable setup for BOSS v1.7+.
 //================================================================
 
-IF (r"Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
-IF ("ASIS-Dependency.esp") || IF ("ASIS.esp") || IF ("Automatic Spells.esp") || IF ("Automatic Variations.esp") || IF ("Automatic Variants.esp") GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
-IF ("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
-IF (r"DragonSwarms.*\.esp") SET: DSwarmInst
-IF (r"Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp") SET: NobleArtInst
-IF ("GM-ForgeAdditions.esp") || IF ("GM-ForgeAdditionsLAotB.esp") SET: GMForgeAdd
-IF ("GM-ForgeAdditionsLevelledOutfits.esp") && IF ("GM-ForgeAdditionsLAotBLevelledOutfits.esp") SET: DualGMLevList
-IF ("GM-ForgeAdditions.esp") && IF ("GM-ForgeAdditionsLAotB.esp") SET: DualGMForgeAdd
-IF ("EpicGloryByMadmole.esp") SET: EpicGloryInst
-IF ("UFO - Ultimate Follower Overhaul.esp") SET: UFO
-IF (r"Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") || IF ("Extended Slider Colors.esp") SET: ExtSlider
-IF ("Lady Body.esp") SET: LB
-IF (r"BertsBreezehome.+\.es[pm]") SET: BertsBHInst
-IF (r"SkyRe_.+\.esp") SET: SkyRe
-IF ("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
-IF ("ApachiiHair.esm") SET: ApachiiHair
-IF ("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
-IF ("SKSE_Elys_Uncapper.dll") SET: SKCU
-IF ("..\ScriptDragon.dll") SET: SCDR
+IF REGEX("Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
+IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
+IF FILE("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
+IF REGEX("DragonSwarms.*\.esp") SET: DSwarmInst
+IF REGEX("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp") SET: NobleArtInst
+IF FILE("GM-ForgeAdditions.esp") || IF FILE("GM-ForgeAdditionsLAotB.esp") SET: GMForgeAdd
+IF FILE("GM-ForgeAdditionsLevelledOutfits.esp") && IF FILE("GM-ForgeAdditionsLAotBLevelledOutfits.esp") SET: DualGMLevList
+IF FILE("GM-ForgeAdditions.esp") && IF FILE("GM-ForgeAdditionsLAotB.esp") SET: DualGMForgeAdd
+IF FILE("EpicGloryByMadmole.esp") SET: EpicGloryInst
+IF FILE("UFO - Ultimate Follower Overhaul.esp") SET: UFO
+IF REGEX("Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp") || IF FILE("Extended Slider Colors.esp") SET: ExtSlider
+IF FILE("Lady Body.esp") SET: LB
+IF REGEX("BertsBreezehome.+\.es[pm]") SET: BertsBHInst
+IF REGEX("SkyRe_.+\.esp") SET: SkyRe
+IF FILE("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
+IF FILE("ApachiiHair.esm") SET: ApachiiHair
+IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
+IF FILE("SKSE_Elys_Uncapper.dll") SET: SKCU
+IF FILE("..\ScriptDragon.dll") SET: SCDR
 //================================================================
 // DLC variable setup for BOSS v1.7+.
 // Added as many plugins are likely to require DLC.
-IF ("Dawnguard.esm") SET: Dawnguard
+IF FILE("Dawnguard.esm") SET: Dawnguard
 
 //================================================================
 
@@ -83,8 +83,8 @@ IF ("Dawnguard.esm") SET: Dawnguard
   IF VAR(EN) GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/"
     IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1398450-relz-boss-for-skyrim/ здесь."
 // Other global messages
-  IF VAR(EN) && IF VAR(SKCU) && IFNOT ("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
-    IF VAR(RU) && IF VAR(SKCU) && IFNOT ("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
+  IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
+    IF VAR(RU) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
 BEGINGROUP: Official ESMs
 
 Skyrim.esm
@@ -127,16 +127,16 @@ highfive.esm
 LB_MuchAdoSnowElves.esm
 More Interactive Items.ESM
 Niires Hjerim(esm).esm
-  IFNOT ("GeneralStores.esm") REQ: General Stores - storage resource for packrats
+  IFNOT FILE("GeneralStores.esm") REQ: General Stores - storage resource for packrats
 Niire's Honeyside(esm).esm
-  IFNOT ("GeneralStores.esm") REQ: General Stores - storage resource for packrats 
+  IFNOT FILE("GeneralStores.esm") REQ: General Stores - storage resource for packrats 
 Niire's Proudspire(esm).esm
-  IFNOT ("GeneralStores.esm") REQ: General Stores - storage resource for packrats
+  IFNOT FILE("GeneralStores.esm") REQ: General Stores - storage resource for packrats
 NPCs.esm
 Realistic Wildlife Loot.esm
 Imp's More Complex Needs.esm
-  IF VAR(EN) && IF ("imp's more complex needs.esp") SAY: Use either Nexus or Steam Workshop version, not both.
-    IF VAR(RU) && IF ("imp's more complex needs.esp") SAY: Используйте любую Nexus или Steam Workshop версию, не обе.
+  IF VAR(EN) && IF FILE("imp's more complex needs.esp") SAY: Use either Nexus or Steam Workshop version, not both.
+    IF VAR(RU) && IF FILE("imp's more complex needs.esp") SAY: Используйте любую Nexus или Steam Workshop версию, не обе.
 LorecraftESM.esm
 Oblivion hair.esm
 Real Wildlife - IMCN.esm
@@ -275,8 +275,8 @@ XFLMain.esm
   IF VERSION("TES5", "1.3.0", <) REQ: Skyrim 1.3+
   IF VAR(EN) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp, has the same functional, use only one.
     IF VAR(RU) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp, имеет такой же функционал, используйте только один из них.
-  IF VAR(EN) && IF ("BDO.esp") INC: BDO.esp, has the same functional, use only one.
-    IF VAR(RU) && IF ("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
+  IF VAR(EN) && IF FILE("BDO.esp") INC: BDO.esp, has the same functional, use only one.
+    IF VAR(RU) && IF FILE("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
 Daeas.esm
 DArchon.esm
 DrowCompanions.esm
@@ -346,27 +346,27 @@ BEGINGROUP: Vanilla fixes
 Amulet of Articulation Leveling Fix.esp
   TAG: {{BASH: Relev}}
 Ancient Knowledge Fix.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 Ancient Shrouded Cowl Beast Race Fix.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 Annoying Clipping Remover.esp
 Argonian Disarming Bash Bug Fix.esp
 AspectOfTerrorFixv1.0.esp
 AtronachEffectFix.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 AtronachForgeBootsFix.esp
 Bardfix.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 bardsfix.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 bard's_college_quests_fix.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 bookshelf_fix0.2.esp
 brandsheiprisonfix.esp
 breezehomelightfix.esp
@@ -381,8 +381,8 @@ Bullseye Perk Fix.esp
 Civil War Neutrality Fix.esp
 Chesko_MatchingSetPerkFix.esp
 Conjuration Fix.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 ArmorSetFixQuickFox.esp
 correctif ombres.esp
 CriticalChargeFix.esp
@@ -427,21 +427,21 @@ MatchingSetCheat.esp
 MatchingSetFixes.esp
 Miner's Clothes Variant Fix.esp
 Minor Miner Fixes.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 Muiri's Problem.esp
 Nocturnal Robes - 1st person mesh fix.esp
 noxx_skyrim_fixes.esp
 prisonerfix.esp
 PrometheusCapes_armorsfix.esp
 Proudspire Manor Bug Fixes.esp
-  IF VAR(EN) && IF ("ProudspireManorImprovements.esp") WARN: Delete. Included in 'ProudspireManorImprovements.esp'
-    IF VAR(RU) && IF ("ProudspireManorImprovements.esp") WARN: Удалите. Уже включено в 'ProudspireManorImprovements.esp'
+  IF VAR(EN) && IF FILE("ProudspireManorImprovements.esp") WARN: Delete. Included in 'ProudspireManorImprovements.esp'
+    IF VAR(RU) && IF FILE("ProudspireManorImprovements.esp") WARN: Удалите. Уже включено в 'ProudspireManorImprovements.esp'
 Quick Orc Fixes.esp
 regenfix.esp
 RiftenJailVisualFix.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 RiverwoodTraderInvestorFix.esp
 SanguineRoseFix.esp
   IF VERSION("TES5", "1.4.27", <) ERROR: Delete. Fixed in official patch 1.5+
@@ -449,11 +449,11 @@ SanguineRoseFix.esp
 sapphire_speak_fix.esp
 REGEX: Shadow.?Striping.?Fix\.esp
 Shrine of Azura LOD Fix.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 REGEX: Silent Moons Enchantment Fix.*\.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 StaggerFix.esp
 TalosShrineFix.esp
 teg_civilwar_restore.esp
@@ -483,7 +483,7 @@ Unofficial Dawnguard Patch.esp
 Dawnguard Breezehome Fix.esp
 HighResTexturePackFix.esp
 chopping_block_wood_fires.esp
-  IFNOT ("HighResTexturePack01.esp") || IFNOT ("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
+  IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
 ENDGROUP: DLC Fixes
 
 REGEX: Skyrim HD Full - .+\.esp
@@ -562,7 +562,7 @@ BEGINGROUP: Weather mods and overhauls
 
 Chesko_Frostfall.esp
 enbweather.esp
-IFNOT ("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
+IFNOT FILE("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
   IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp
     IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp
 REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
@@ -570,16 +570,16 @@ REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
     IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp
   INC: Realistic Lighting
 REGEX: getSnowyV.+\.esp
-  IF ("Chesko_Frostfall.esp") INC: Chesko_Frostfall.esp
+  IF FILE("Chesko_Frostfall.esp") INC: Chesko_Frostfall.esp
 Longer Weather Transitions.esp
 MintyLightningMod.esp
 MintyLightningMod_COT_Patch.esp
 Rainclip.esp
 RevampedExteriorFog.esp
-  IF ("Realistic Lighting.esp") INC: Realistic Lighting.esp
+  IF FILE("Realistic Lighting.esp") INC: Realistic Lighting.esp
 PaperMapHeight-RemoveFog.esp
-  IF VAR(EN) && IF ("WATER.esp") WARN: Removing Fog will affect WATER. Load after WATER if you are experiencing errors.
-    IF VAR(RU) && IF ("WATER.esp") WARN: Удаление тумана повлияет на мод WATER. Загружайте после WATER если вы замечаете баги.
+  IF VAR(EN) && IF FILE("WATER.esp") WARN: Removing Fog will affect WATER. Load after WATER if you are experiencing errors.
+    IF VAR(RU) && IF FILE("WATER.esp") WARN: Удаление тумана повлияет на мод WATER. Загружайте после WATER если вы замечаете баги.
 WMGAtmosphericENBPlugin.esp
 ENDGROUP: Weather mods and overhauls
 
@@ -600,8 +600,8 @@ DragonHitSoundFix - RAS.esp
 IceBreaker's Improved Reverb.esp
 immersive thunder.esp
 REGEX: Improved Combat Sounds v2\.\d\.esp
-  IF VAR(EN) && IF ("Improved Combat Sounds v2.0.esp") SAY: Old. Update to 2.1 for a cleaned esp
-    IF VAR(RU) && IF ("Improved Combat Sounds v2.0.esp") SAY: Устарело. Обновите до версии 2.1, для использования очищенного esp.
+  IF VAR(EN) && IF FILE("Improved Combat Sounds v2.0.esp") SAY: Old. Update to 2.1 for a cleaned esp
+    IF VAR(RU) && IF FILE("Improved Combat Sounds v2.0.esp") SAY: Устарело. Обновите до версии 2.1, для использования очищенного esp.
 indiemusicscene_la.esp
 ICS Possible Fix 1.esp
 KR - Solitude No Sewer sound.esp
@@ -647,7 +647,7 @@ REGEX: RL - .*\.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Realistic Lighting.esp
 REGEX: [Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\.esp
-  IFNOT ("Realistic Lighting.esp") REQ: Realistic Lighting with Customization
+  IFNOT FILE("Realistic Lighting.esp") REQ: Realistic Lighting with Customization
 realrain.esp
   IF VAR(EN) SAY: Use only one realrain.esp
     IF VAR(RU) SAY: Используйте только один realrain.esp
@@ -658,12 +658,12 @@ realrainextended.esp
     IF VAR(RU) SAY: Используйте только один realrain.esp
 Realistic Lighting Patcher.esp
 RemoveAmbientInteriorFog.esp
-  IF VAR(EN) && IF ("Realistic Lighting.esp") WARN: Removing the interior Fog will affect Realistic Lighting. Load before RL if you are experiencing errors.
-    IF VAR(RU) && IF ("Realistic Lighting.esp") WARN: Удаление тумана внутри помещений повлияет на Realistic Lighting. Загружайте перед RL если вы замечаете баги.
+  IF VAR(EN) && IF FILE("Realistic Lighting.esp") WARN: Removing the interior Fog will affect Realistic Lighting. Load before RL if you are experiencing errors.
+    IF VAR(RU) && IF FILE("Realistic Lighting.esp") WARN: Удаление тумана внутри помещений повлияет на Realistic Lighting. Загружайте перед RL если вы замечаете баги.
 fixedeyeadaptation.esp
 dimmed_torches.esp
 enhancedlightingforrealisticlighting.esp
-IF ("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
+IF FILE("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
   //See readme for more info about load order
   IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp
     IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp
@@ -735,15 +735,15 @@ SFD_NumericQuality.esp
 /* Removed REGEX because specific load order is needed */
 Weapons and Armor fixes.esp
   //TAG: {{BASH: Stats}}
-  IF VAR(EN) && IF (r"REGEX: Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.(checked in FNVEdit)
-    IF VAR(RU) && IF (r"REGEX: Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Для использующих 'WAF+SPO+CCO'. Конфиктов с 'Smithing Perks Overhaul' и 'Complete Crafting Overhaul' не обнаружено.(проверено в FNVEdit)
+  IF VAR(EN) && IF REGEX("REGEX: Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.(checked in FNVEdit)
+    IF VAR(RU) && IF REGEX("REGEX: Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Для использующих 'WAF+SPO+CCO'. Конфиктов с 'Smithing Perks Overhaul' и 'Complete Crafting Overhaul' не обнаружено.(проверено в FNVEdit)
 Weapons and Armor fixes - Hacks.esp
   //Vanilla fixes. Must be load here(and also for CCO and SPO), for prevent overrides for new changes from mods in Base group. Too many conflicts with other mods in Base group.
 Shadow Striping Fix.esp
 SMIM_Fixes.esp
 REGEX: SpellFix.*\.esp
 StaticMeshImprovementMod.esp
-    IF VAR(RU) && IF (8806A693|"StaticMeshImprovementMod.esp") SAY: Вы можете использовать данный esp для версии 1.20-1.24 и вероятно, более новых, если, в очередном обновлении SMIM, не последовало обновления esp.
+    IF VAR(RU) && IF CHECKSUM("StaticMeshImprovementMod.esp", 8806A693) SAY: Вы можете использовать данный esp для версии 1.20-1.24 и вероятно, более новых, если, в очередном обновлении SMIM, не последовало обновления esp.
 SkyrimImprovedChanges.esp
   TAG: {{BASH: Delev, Relev}}
 SurvivalistIngenuity.esp
@@ -858,9 +858,9 @@ Barrels and Crates.esp
 Behemoth Dragon.esp
 Belleza DiBella - PNJ Overhaul.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-  IFNOT ("ApachiiHairFemales.esm") REQ: ApachiiHairFemales.esm
-  IFNOT ("Cazy Hairs-by zzjay.esp") REQ: Cazy Hairs-by zzjay.esp
-  IFNOT ("Fh hairs-by zzjay.esp") REQ: Fh hairs-by zzjay.esp
+  IFNOT FILE("ApachiiHairFemales.esm") REQ: ApachiiHairFemales.esm
+  IFNOT FILE("Cazy Hairs-by zzjay.esp") REQ: Cazy Hairs-by zzjay.esp
+  IFNOT FILE("Fh hairs-by zzjay.esp") REQ: Fh hairs-by zzjay.esp
 Better Alchemy Loot.esp
 Better Skill and Quest Books Names.esp
 BetterFishAdded.esp
@@ -955,10 +955,10 @@ Falkreath Visitors.esp
 Mages College Visitors 1.esp
 thieves guild visitors.esp
 Conjuration & Summoning fixes.esp
-  IF VAR(EN) && IF ("SpellFix.esp") ERROR: Delete. Alreasy included in SpellFix.esp.
-    IF VAR(RU) && IF ("SpellFix.esp") ERROR: Удалите. Уже включено в SpellFix.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch.esp.
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("SpellFix.esp") ERROR: Delete. Alreasy included in SpellFix.esp.
+    IF VAR(RU) && IF FILE("SpellFix.esp") ERROR: Удалите. Уже включено в SpellFix.esp
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch.esp.
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 Console Books.esp 
 Convenient Horses.esp
 Cooking Mod - Yummy in Your Tummy.esp
@@ -989,7 +989,7 @@ Craftable Soulstoneswithforge.esp
 Craftable Torches.esp
 craftablescrolls.esp
 craft soul gems.esp
-IFNOT (FFCC056A|"Crafting300.esp") && IFNOT (50142D0D|"Crafting300.esp") MOD: Crafting300.esp
+IFNOT CHECKSUM("Crafting300.esp", FFCC056A) && IFNOT CHECKSUM("Crafting300.esp", 50142D0D) MOD: Crafting300.esp
   TAG: {{BASH: Delev, Relev}}
 craftingplusv2.esp
 CraftingMaterialsRecipes.esp
@@ -1051,12 +1051,12 @@ DragonCrownCraftable.esp
 DragonPlateCrownCraftable.esp
 dremora armor looting.esp
 REGEX: .. - Enhanced Blood Main\.esp
-  IF VAR(Dawnguard) && IF ("SkyMoMod.esm") && IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF VAR(EN) INC: Dawnguard (Official Bethesda DLC) and Skyrim Monster Mod. Get the necessary compatibility patch from the "http://skyrim.nexusmods.com/mods/60 enhanced blood textures" page.
-    IF VAR(Dawnguard) && IF ("SkyMoMod.esm") && IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF VAR(RU) INC: Dawnguard (Official Bethesda DLC) и Skyrim Monster Mod. Скачайте необходимый патч совместимости со страницы мода "http://skyrim.nexusmods.com/mods/60 enhanced blood textures".
-  IFNOT ("dD-SkyrimMonsterMod EBT Patch.esp") || IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF ("SkyMoMod.esm") && IF VAR(EN) INC: Skyrim Monster Mod. Get the necessary compatibility patch from the "http://skyrim.nexusmods.com/mods/60 enhanced blood textures" page.
-    IFNOT ("dD-SkyrimMonsterMod EBT Patch.esp") || IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF ("SkyMoMod.esm") && IF VAR(RU) INC: Skyrim Monster Mod. Скачайте необходимый патч совместимости со страницы мода "http://skyrim.nexusmods.com/mods/60 enhanced blood textures".
-  IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") || IFNOT ("dD-Dawnguard-EBT Patch.esp") && IF VAR(Dawnguard) && IF VAR(EN) INC: Dawnguard (Official Bethesda DLC). Get the necessary compatibility patch from the "http://skyrim.nexusmods.com/mods/60 enhanced blood textures" page.
-    IFNOT ("dD-Dawnguard-MonsterMod EBT Patch.esp") || IFNOT ("dD-Dawnguard-EBT Patch.esp") && IF VAR(Dawnguard) && IF VAR(RU) INC: Dawnguard (Official Bethesda DLC). Скачайте необходимый патч совместимости со страницы мода "http://skyrim.nexusmods.com/mods/60 enhanced blood textures".
+  IF VAR(Dawnguard) && IF FILE("SkyMoMod.esm") && IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF VAR(EN) INC: Dawnguard (Official Bethesda DLC) and Skyrim Monster Mod. Get the necessary compatibility patch from the "http://skyrim.nexusmods.com/mods/60 enhanced blood textures" page.
+    IF VAR(Dawnguard) && IF FILE("SkyMoMod.esm") && IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF VAR(RU) INC: Dawnguard (Official Bethesda DLC) и Skyrim Monster Mod. Скачайте необходимый патч совместимости со страницы мода "http://skyrim.nexusmods.com/mods/60 enhanced blood textures".
+  IFNOT FILE("dD-SkyrimMonsterMod EBT Patch.esp") || IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF FILE("SkyMoMod.esm") && IF VAR(EN) INC: Skyrim Monster Mod. Get the necessary compatibility patch from the "http://skyrim.nexusmods.com/mods/60 enhanced blood textures" page.
+    IFNOT FILE("dD-SkyrimMonsterMod EBT Patch.esp") || IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF FILE("SkyMoMod.esm") && IF VAR(RU) INC: Skyrim Monster Mod. Скачайте необходимый патч совместимости со страницы мода "http://skyrim.nexusmods.com/mods/60 enhanced blood textures".
+  IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") || IFNOT FILE("dD-Dawnguard-EBT Patch.esp") && IF VAR(Dawnguard) && IF VAR(EN) INC: Dawnguard (Official Bethesda DLC). Get the necessary compatibility patch from the "http://skyrim.nexusmods.com/mods/60 enhanced blood textures" page.
+    IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") || IFNOT FILE("dD-Dawnguard-EBT Patch.esp") && IF VAR(Dawnguard) && IF VAR(RU) INC: Dawnguard (Official Bethesda DLC). Скачайте необходимый патч совместимости со страницы мода "http://skyrim.nexusmods.com/mods/60 enhanced blood textures".
   IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
 REGEX: dD-\w{4} Screen Blood\.esp
 REGEX: dD-.{4,9} Screen Blood Duration\.esp
@@ -1143,10 +1143,10 @@ Fixsmith.esp
 floofy crafting.esp
 Food and Ingredient Overhaul.esp
 followerhuntingbowfix.esp
-  IF VAR(EN) && IF ("BDO.esp") WARN: Delete. Already included in BDO.esp
-    IF VAR(RU) && IF ("BDO.esp") WARN: Удалите. Уже включено в BDO.esp
-  IF VAR(EN) && IF (r"Better Followers - [SBNP].*\.esp") WARN: Delete. Already included in Better followers
-    IF VAR(RU) && IF (r"Better Followers - [SBNP].*\.esp") WARN: Удалите. Уже включено в мод Better followers
+  IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Already included in BDO.esp
+    IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже включено в BDO.esp
+  IF VAR(EN) && IF REGEX("Better Followers - [SBNP].*\.esp") WARN: Delete. Already included in Better followers
+    IF VAR(RU) && IF REGEX("Better Followers - [SBNP].*\.esp") WARN: Удалите. Уже включено в мод Better followers
 fpImmersiveMiningFull.esp
 fpImmersiveMiningLite.esp
 fpImmersiveMiningPickaxes.esp
@@ -1251,8 +1251,8 @@ improvedrecipes.esp
 ImprovedScImpUniforms - Vanilla only.esp
 improvedskillbooksclassic.esp
 REGEX: Invisibility_Spells(_Plus)?\.esp
-  IF VAR(EN) && IF ("Invisibility_Spells.esp") && IF ("Invisibility_Spells_Plus.esp") WARN: Only use one Invisibility_Spells plugin, not both.
-    IF VAR(RU) && IF ("Invisibility_Spells.esp") && IF ("Invisibility_Spells_Plus.esp") WARN: Используйте только один  плагин Invisibility_Spells , не оба.
+  IF VAR(EN) && IF FILE("Invisibility_Spells.esp") && IF FILE("Invisibility_Spells_Plus.esp") WARN: Only use one Invisibility_Spells plugin, not both.
+    IF VAR(RU) && IF FILE("Invisibility_Spells.esp") && IF FILE("Invisibility_Spells_Plus.esp") WARN: Используйте только один  плагин Invisibility_Spells , не оба.
 increasedbountyrewards.esp
 REGEX: increasedbountyrewards\((ultra-)?lite\)\.esp
 IngredientsOfTamriel.esp
@@ -1264,7 +1264,7 @@ Invulnerable Horses.esp
 Ish's Respec Mod.esp
   TAG: {{BASH: Relev}}
 Ish's Souls to Perks.esp
-  IF VERSION("SKSE", "0.1.5.6", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.6+.
+  IF VERSION("SKSE", "0.1.5.6", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.6+.
 ItemRewardsForBounties.esp
 Item Sorting by Saige.esp
 itsatrap!.esp
@@ -1282,13 +1282,13 @@ JBS_banking_redux.esp
 jbs_smithing_real_ext.esp
 jbs_smithing_soul.esp
 jbs_item_breakdown_rev.esp
-  IF VAR(EN) && IF ("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp use More Realistic Recipes [revised] instead
-    IF VAR(RU) && IF ("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp используйте вместо этого мод  More Realistic Recipes [revised]
+  IF VAR(EN) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp use More Realistic Recipes [revised] instead
+    IF VAR(RU) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp используйте вместо этого мод  More Realistic Recipes [revised]
 jbs_smithing_real.esp
 /* -- Please Advise -- Should this be Base Early -- Check rev 4258 */
 jbs_weight_overhaul_complete.esp
 jbs_item_breakdown.esp
-  IF ("jbs_smithing_real.esp") INC: jbs_smithing_real.esp
+  IF FILE("jbs_smithing_real.esp") INC: jbs_smithing_real.esp
 jbs_weight_overhaul_pot.esp
 jbs_smithing_overhaul.esp
 JenassaBarkeep&Bard.esp
@@ -1320,7 +1320,7 @@ Lanterns Of Skyrim - All In One 2x brighter.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Lanterns Of Skyrim - All In One - Main.esm
-  IFNOT ("Lanterns Of Skyrim - All In One - Main.esm") SAY: REQ: Lanterns Of Skyrim - All In One - Main.esm
+  IFNOT FILE("Lanterns Of Skyrim - All In One - Main.esm") SAY: REQ: Lanterns Of Skyrim - All In One - Main.esm
 REGEX: Lanterns Of Skyrim - Around Cities(_bright)?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -1355,8 +1355,8 @@ LFox Blacksmiths Have Metals.esp
   TAG: {{BASH: Delev, Relev}}
 LFox Bottle That Blood.esp
 LIAT - NPCs.esp
-  IF VAR(EN) && IF (r"LIAT - .+NPCs\.esp") WARN: Obsolete. Update to latest version.
-    IF VAR(RU) && IF (r"LIAT - .+NPCs\.esp") WARN: Устарело. Обновите до последней версии.
+  IF VAR(EN) && IF REGEX("LIAT - .+NPCs\.esp") WARN: Obsolete. Update to latest version.
+    IF VAR(RU) && IF REGEX("LIAT - .+NPCs\.esp") WARN: Устарело. Обновите до последней версии.
 librarian - book sorting.esp
 Linked Home Chests.esp
 LMNimmervollerBeutelDV.esp
@@ -1429,12 +1429,12 @@ More_Saddles.esp
 moulin.esp
 More Craftables.esp
   TAG: {{BASH: Relev}}
-IFNOT (FFCC056A|"Crafting300.esp") && IFNOT (50142D0D|"Crafting300.esp") MOD: More Craftables - Crafting 300 compatibility.esp
-  IFNOT ("Crafting300.esp") REQ: Crafting300.esp
-  IFNOT ("More Craftables.esp") REQ: More Craftables.esp
+IFNOT CHECKSUM("Crafting300.esp", FFCC056A) && IFNOT CHECKSUM("Crafting300.esp", 50142D0D) MOD: More Craftables - Crafting 300 compatibility.esp
+  IFNOT FILE("Crafting300.esp") REQ: Crafting300.esp
+  IFNOT FILE("More Craftables.esp") REQ: More Craftables.esp
 More Craftables - Dwemer Certified compatibility.esp
-  IFNOT ("Dwemer Certified.esp") REQ: Dwemer Certified.esp
-  IFNOT ("More Craftables.esp") REQ: More Craftables.esp
+  IFNOT FILE("Dwemer Certified.esp") REQ: Dwemer Certified.esp
+  IFNOT FILE("More Craftables.esp") REQ: More Craftables.esp
 Convertible Azura's Star.esp
 more carriages.esp
 More Interactive Items.esp
@@ -1527,10 +1527,10 @@ REGEX: random_bandits(_1.0)?\.esp
 rats.esp
 RaushanSayoran.esp
 REGEX: Radiant and Unique Potions (and )?Poisons.*\.esp
-  IF VAR(EN) && IF ("Radiant and Unique Potions and Poisons.esp") SAY: Obsolete. Update to latest version.
-    IF VAR(RU) && IF ("Radiant and Unique Potions and Poisons.esp") SAY: Устарело. Обновите до последней версии.
-  IF VAR(EN) && IF ("Radiant and Unique Potions Poisons and BOOZE.esp") && IF (r"Unique BOOZE Bottles.*\.esp") SAY: Uninstall Unique BOOZE Bottles
-    IF VAR(RU) && IF ("Radiant and Unique Potions Poisons and BOOZE.esp") && IF (r"Unique BOOZE Bottles.*\.esp") SAY: Деинсталируйте Unique BOOZE Bottles
+  IF VAR(EN) && IF FILE("Radiant and Unique Potions and Poisons.esp") SAY: Obsolete. Update to latest version.
+    IF VAR(RU) && IF FILE("Radiant and Unique Potions and Poisons.esp") SAY: Устарело. Обновите до последней версии.
+  IF VAR(EN) && IF FILE("Radiant and Unique Potions Poisons and BOOZE.esp") && IF REGEX("Unique BOOZE Bottles.*\.esp") SAY: Uninstall Unique BOOZE Bottles
+    IF VAR(RU) && IF FILE("Radiant and Unique Potions Poisons and BOOZE.esp") && IF REGEX("Unique BOOZE Bottles.*\.esp") SAY: Деинсталируйте Unique BOOZE Bottles
 Real Days.esp
 real glaciers.esp
   IF VAR(EN) SAY: Old version update to Real Glaciers V2
@@ -1564,13 +1564,13 @@ Real Wildlife Skyrim 0.1 IMCN.esp
 recipeammoarrows.esp
 recipeingots.esp
 RecyclingMod.esp
-  IF VAR(EN) && IF ("Crafting300.esp") SAY: Recommeded RecyclingModCrafting300.esp for Crafting300 mod. See RecyclingMod download page.
-    IF VAR(RU) && IF ("Crafting300.esp") SAY: Рекомендуется патч RecyclingModCrafting300.esp для мода Crafting300. Ищите его на странице загрузки RecyclingMod.
-  IF VAR(EN) && IF (r"Weapons of the Third Era.+\.esp") SAY: Recommed RecyclingModWo3E.esp for Weapons of the Third Era mod. See RecyclingMod download page.
-    IF VAR(RU) && IF (r"Weapons of the Third Era.+\.esp") SAY: Рекомендуется патч RecyclingModWo3E.esp для мода Weapons of the Third Era. Ищите его на странице загрузки RecyclingMod.
-IFNOT (FFCC056A|"Crafting300.esp") && IFNOT (50142D0D|"Crafting300.esp") MOD: RecyclingModCrafting300.esp
-  IFNOT ("Crafting300.esp") REQ: Crafting300.esp
-  IFNOT ("RecyclingMod.esp") REQ: RecyclingMod.esp
+  IF VAR(EN) && IF FILE("Crafting300.esp") SAY: Recommeded RecyclingModCrafting300.esp for Crafting300 mod. See RecyclingMod download page.
+    IF VAR(RU) && IF FILE("Crafting300.esp") SAY: Рекомендуется патч RecyclingModCrafting300.esp для мода Crafting300. Ищите его на странице загрузки RecyclingMod.
+  IF VAR(EN) && IF REGEX("Weapons of the Third Era.+\.esp") SAY: Recommed RecyclingModWo3E.esp for Weapons of the Third Era mod. See RecyclingMod download page.
+    IF VAR(RU) && IF REGEX("Weapons of the Third Era.+\.esp") SAY: Рекомендуется патч RecyclingModWo3E.esp для мода Weapons of the Third Era. Ищите его на странице загрузки RecyclingMod.
+IFNOT CHECKSUM("Crafting300.esp", FFCC056A) && IFNOT CHECKSUM("Crafting300.esp", 50142D0D) MOD: RecyclingModCrafting300.esp
+  IFNOT FILE("Crafting300.esp") REQ: Crafting300.esp
+  IFNOT FILE("RecyclingMod.esp") REQ: RecyclingMod.esp
 RevisedHorsesFeeding.esp
 ribeable-broom.esp
 RiftenHQtexture-Part1.esp
@@ -1622,8 +1622,8 @@ sign.esp
 Silent Moon Forging 1.2.esp
 Silverupgrade.esp
 SimpleBleeding.esp
-  IF VAR(EN) && IF (r".. - Enhanced Blood Main\.esp") WARN: This mod is included in Enhanced Blood Textures
-    IF VAR(RU) && IF (r".. - Enhanced Blood Main\.esp") WARN: Этот мод уже входит в состав мода Enhanced Blood Textures
+  IF VAR(EN) && IF REGEX(".. - Enhanced Blood Main\.esp") WARN: This mod is included in Enhanced Blood Textures
+    IF VAR(RU) && IF REGEX(".. - Enhanced Blood Main\.esp") WARN: Этот мод уже входит в состав мода Enhanced Blood Textures
 SkBBP - Blacksmithing and Balance.esp
 SkBBP - Loot Drops and Leveled Lists.esp
   TAG: {{BASH: Delev, Relev}}
@@ -1807,8 +1807,8 @@ ValsAlchRecipes.esp
 Valuable Foods and Misc.esp
 REGEX: Valdacil's Item Sorting - .+\.esp
 Valdacil's Item Sorting - Smithing No Smelter Categories.esp
-  IF VAR(EN) && IF ("Valdacil's Item Sorting - Smithing Smelter Categories.esp") WARN: Delete 'Valdacil's Item Sorting - Smithing Smelter Categories.esp' or use instead
-    IF VAR(RU) && IF ("Valdacil's Item Sorting - Smithing Smelter Categories.esp") WARN: Удалите 'Valdacil's Item Sorting - Smithing Smelter Categories.esp' или используйте вместо этого.
+  IF VAR(EN) && IF FILE("Valdacil's Item Sorting - Smithing Smelter Categories.esp") WARN: Delete 'Valdacil's Item Sorting - Smithing Smelter Categories.esp' or use instead
+    IF VAR(RU) && IF FILE("Valdacil's Item Sorting - Smithing Smelter Categories.esp") WARN: Удалите 'Valdacil's Item Sorting - Smithing Smelter Categories.esp' или используйте вместо этого.
 Valdacil's Item Sorting - Smithing Smelter Categories.esp
 valuablehidesandskins.esp
 Vampirefix3.esp
@@ -1886,21 +1886,21 @@ ENDGROUP: General Base Mods
 BEGINGROUP: Load Order Independent Mods
 
 Auto Unequip Ammo.esp
-  IFNOT ("Dawnguard.esm") REQ: Dawnguard (Official DLC)
+  IFNOT FILE("Dawnguard.esm") REQ: Dawnguard (Official DLC)
 Auto Unequip Arrows.esp
-  IF VAR(EN) && IF ("Auto Unequip Ammo.esp") WARN: Redundant. Included in "Auto Unequip Ammo".
-    IF VAR(RU) && IF ("Auto Unequip Ammo.esp") WARN: Избыточно. Уже включено в "Auto Unequip Ammo".
+  IF VAR(EN) && IF FILE("Auto Unequip Ammo.esp") WARN: Redundant. Included in "Auto Unequip Ammo".
+    IF VAR(RU) && IF FILE("Auto Unequip Ammo.esp") WARN: Избыточно. Уже включено в "Auto Unequip Ammo".
 AutoHarvest.esp
 AutoLoot.esp
 AutomaticItemStorage.esp
 CAS.esp
-  IF VAR(EN) && IF ("kuerteeAutoSaveAndTime.esp") WARN: Only use the save features of either "CAS" or "kuertee's auto-save and time"
-    IF VAR(RU) && IF ("kuerteeAutoSaveAndTime.esp") WARN: Используйте функцию сохранения только  из одного мода: из "CAS" или "kuertee's auto-save and time"
+  IF VAR(EN) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Only use the save features of either "CAS" or "kuertee's auto-save and time"
+    IF VAR(RU) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Используйте функцию сохранения только  из одного мода: из "CAS" или "kuertee's auto-save and time"
 Character Creation Overhaul.esp
 Chesko_LoreBasedLoadingScreens.esp 
 DEAsprint&jump.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+ 
-  IF VERSION("SKSE", "0.1.5.9", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.9+
+  IF VERSION("SKSE", "0.1.5.9", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.9+
   IF VAR(EN) SAY: Won't work if sprint/jump key is remapped to mouse button.
     IF VAR(RU) SAY: Может не работать, если кнопка бега\прыжка переназначена на кнопку мыши.
 DragonWarrior-Effects.esp
@@ -1919,7 +1919,7 @@ Mark Books as Read.esp
 Mart's Savegame DeBloatifier.esp
 NPCPhotoBooth.esp
 SKSE Hotkeys.esp
-  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
+  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
 REGEX: SkyRealism - Simple Save System.+\.esp
   IF VAR(EN) SAY: Only use one SkyRealism - Simple Save System*.esp
     IF VAR(RU) SAY: Используйте только один SkyRealism - Simple Save System*.esp
@@ -1991,8 +1991,8 @@ AoD - Overlord Armor.esp
 ApotheusLightArmor_by_GuitunScarfin.esp
 REGEX: Arcania_armory( \(base\))?\.esp
   TAG: {{BASH: Relev}}
-  IF VAR(EN) && IF ("Arcania_armory.esp") && IF ("Arcania_armory (base).esp") SAY: Use only one Arcania_armory*.esp
-    IF VAR(RU) && IF ("Arcania_armory.esp") && IF ("Arcania_armory (base).esp") SAY: Используйте только один Arcania_armory*.esp
+  IF VAR(EN) && IF FILE("Arcania_armory.esp") && IF FILE("Arcania_armory (base).esp") SAY: Use only one Arcania_armory*.esp
+    IF VAR(RU) && IF FILE("Arcania_armory.esp") && IF FILE("Arcania_armory (base).esp") SAY: Используйте только один Arcania_armory*.esp
 Arcania bows.esp
 Archmage's Boots.esp
 Armor_Rider.esp
@@ -2047,7 +2047,7 @@ BaratheonArmor.esp
 SkyRe_Plugin_BaratheonArmor_1.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("BaratheonArmor.esp") SAY: Remember not to load (or to simply delete) BaratheonArmor.esp
+  IF VAR(EN) && IF FILE("BaratheonArmor.esp") SAY: Remember not to load (or to simply delete) BaratheonArmor.esp
     IF VAR(RU) && IF ACTIVE ("BaratheonArmor.esp") SAY: Не забудьте отключить или удалить BaratheonArmor.esp
 Basara.esp
 /* bat3.esp, hawk2.esp, wyvern4.esp contain Item Records */
@@ -2083,7 +2083,7 @@ blackswordsman.esp
 SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("blackswordsman.esp") SAY: Remember not to load (or to simply delete) blackswordsman.esp
+  IF VAR(EN) && IF FILE("blackswordsman.esp") SAY: Remember not to load (or to simply delete) blackswordsman.esp
     IF VAR(RU) && IF ACTIVE ("blackswordsman.esp") SAY: Не забудьте отключить или удалить blackswordsman.esp .
 Blade of Eplear.esp
 Blade_of_Olympus.esp
@@ -2108,7 +2108,7 @@ BowofIorveth.esp
 SkyRe_Plugin_BowofIorveth_1.2.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("BowofIorveth.esp") SAY: Remember not to load (or to simply delete) BowofIorveth.esp
+  IF VAR(EN) && IF FILE("BowofIorveth.esp") SAY: Remember not to load (or to simply delete) BowofIorveth.esp
     IF VAR(RU) && IF ACTIVE ("BowofIorveth.esp") SAY: Не забудьте отключить или удалить BowofIorveth.esp
 BowOfGunnar.esp
 BowOfShadows.esp
@@ -2151,21 +2151,21 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
     IF VAR(RU) SAY: Обновите до новой версии Cloaks 09
 1nivWICCloaks.esp
   TAG: {{BASH: Relev}}
-  IF VAR(EN) && IF ("Cloaks.esp") && IFNOT ("1nivWICSkyCloaksPatch.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
-    IF VAR(RU) && IF ("Cloaks.esp") && IFNOT ("1nivWICSkyCloaksPatch.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
-  IF VAR(EN) && IF ("Cloaks - No Imperial.esp") && IFNOT ("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
-    IF VAR(RU) && IF ("Cloaks - No Imperial.esp") && IFNOT ("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
+  IF VAR(EN) && IF FILE("Cloaks.esp") && IFNOT FILE("1nivWICSkyCloaksPatch.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
+    IF VAR(RU) && IF FILE("Cloaks.esp") && IFNOT FILE("1nivWICSkyCloaksPatch.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
+  IF VAR(EN) && IF FILE("Cloaks - No Imperial.esp") && IFNOT FILE("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
+    IF VAR(RU) && IF FILE("Cloaks - No Imperial.esp") && IFNOT FILE("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
 1nivWICCloaksCRAFT.esp
-  IF ("1nivWICCloaks.esp") || IF ("1nivWICCloaksNoGuards.esp") && IF VAR(EN) WARN: Use only one WICCloaks esp.
-    IF ("1nivWICCloaks.esp") || IF ("1nivWICCloaksNoGuards.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
+  IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(EN) WARN: Use only one WICCloaks esp.
+    IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
 1nivWICCloaksNoGuards.esp
-  IF VAR(EN) && IF ("1nivWICCloaks.esp") WARN: Use only one WICCloaks esp.
-    IF VAR(RU) && IF ("1nivWICCloaks.esp") WARN: Используйте только один WICCloaks esp.
-  IF VAR(EN) && IF (r"Cloaks( - No Imperial)?\.esp") INC: Cloaks of skyrim (even with compatibility patch). To fix this use another WICCloaks esp or uninstall cloaks of skyrim.
-    IF VAR(RU) && IF (r"Cloaks( - No Imperial)?\.esp") INC: Cloaks of skyrim (даже с патчем совместимости). Для исправления этого используйте другой WICCloaks esp или удалите cloaks of skyrim.
+  IF VAR(EN) && IF FILE("1nivWICCloaks.esp") WARN: Use only one WICCloaks esp.
+    IF VAR(RU) && IF FILE("1nivWICCloaks.esp") WARN: Используйте только один WICCloaks esp.
+  IF VAR(EN) && IF REGEX("Cloaks( - No Imperial)?\.esp") INC: Cloaks of skyrim (even with compatibility patch). To fix this use another WICCloaks esp or uninstall cloaks of skyrim.
+    IF VAR(RU) && IF REGEX("Cloaks( - No Imperial)?\.esp") INC: Cloaks of skyrim (даже с патчем совместимости). Для исправления этого используйте другой WICCloaks esp или удалите cloaks of skyrim.
 1nivWICSkyCloaksPatch.esp
 1nivWICSkyCloaksPatch-No Imp.esp
-  IF ("1nivWICSkyCloaksPatch.esp") INC: 1nivWICSkyCloaksPatch esp
+  IF FILE("1nivWICSkyCloaksPatch.esp") INC: 1nivWICSkyCloaksPatch esp
 1nivWICCloaksLorecraft.esp
 1nivWICCloaksCRAFTLorecraft.esp
 Collar.esp
@@ -2245,7 +2245,7 @@ DaggerCraft.esp
 SkyRe_Plugin_DaggerCraft_1.3.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("DaggerCraft.esp") SAY: Remember not to load (or to simply delete) DaggerCraft.esp
+  IF VAR(EN) && IF FILE("DaggerCraft.esp") SAY: Remember not to load (or to simply delete) DaggerCraft.esp
     IF VAR(RU) && IF ACTIVE ("DaggerCraft.esp") SAY: Не забудьте отключить или удалить DaggerCraft.esp
 Dagger of time.esp
 Dark Crusader Reforged - Klingen-Set.esp
@@ -2311,15 +2311,15 @@ dragonslayer_dracula.esp
 DragonSword.esp
 Dr_Bandolier.esp
 Lorecraft - Bandolier.esp
-  IF VAR(EN) && IFNOT ("Dr_Bandolier.esp") WARN: Keep 'Dr_Bandolier.esp' aswell!
-    IF VAR(RU) && IFNOT ("Dr_Bandolier.esp") WARN: 'Dr_Bandolier.esp' также необходим для работы!
+  IF VAR(EN) && IFNOT FILE("Dr_Bandolier.esp") WARN: Keep 'Dr_Bandolier.esp' aswell!
+    IF VAR(RU) && IFNOT FILE("Dr_Bandolier.esp") WARN: 'Dr_Bandolier.esp' также необходим для работы!
 Dread Huntress Armor.esp
 Dread Knight Weapon Set.esp
 DreadKnightWeaponSet,esp
 REGEX: SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF ("DreadKnightWeaponSet.\esp") || IF ("Dread Knight Weapon Set.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Dread Knight Weapon Set mod
+  IF FILE("DreadKnightWeaponSet.\esp") || IF FILE("Dread Knight Weapon Set.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Dread Knight Weapon Set mod
     IF ACTIVE ("DreadKnightWeaponSet.\esp") || IF ACTIVE ("Dread Knight Weapon Set.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Dread Knight Weapon Set.
 DreadWeapons_Fifthdreads_Weapon_Pack.esp
 Dreadweave Axes.esp
@@ -2491,7 +2491,7 @@ HBetterBows.esp
 SkyRe_Plugin_BetterBows_1.4.1.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("HBetterBows.esp") SAY: Remember not to load (or to simply delete) HBetterBows.esp
+  IF VAR(EN) && IF FILE("HBetterBows.esp") SAY: Remember not to load (or to simply delete) HBetterBows.esp
     IF VAR(RU) && IF ACTIVE ("HBetterBows.esp") SAY: Не забудьте отключить или удалить HBetterBows.esp
 HealerRobes.esp
 heatershield.esp
@@ -2502,13 +2502,13 @@ HedgeKnight.esp
 SkyRe_Plugin_HedgeKnightArmor_1.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("HedgeKnight.esp") SAY: Remember not to load (or to simply delete) HedgeKnight.esp
+  IF VAR(EN) && IF FILE("HedgeKnight.esp") SAY: Remember not to load (or to simply delete) HedgeKnight.esp
     IF VAR(RU) && IF ACTIVE ("HedgeKnight.esp") SAY: Не забудьте отключить или удалить HedgeKnight.esp
 HellionArrows_v1.15.esp
 Hell Sword.esp
 REGEX: Henrys Ring of Light( v1-0)?\.esp
-  IF VAR(EN) && IF ("Henrys Ring of Light v1-0.esp") SAY: Obsolete. Update to latest version.
-    IF VAR(RU) && IF ("Henrys Ring of Light v1-0.esp") SAY: Устарело. Обновите до последней версии.
+  IF VAR(EN) && IF FILE("Henrys Ring of Light v1-0.esp") SAY: Obsolete. Update to latest version.
+    IF VAR(RU) && IF FILE("Henrys Ring of Light v1-0.esp") SAY: Устарело. Обновите до последней версии.
 Hana.esp
 hawk2.esp
 Hentai_mixed_Armor.esp
@@ -2547,8 +2547,8 @@ HUM_Armor.esp
 hunterarmor.esp
 hunterarmorv1.2.esp
 SkyRe_Plugin_NordicHunterLightArmor_1.2.esp
-  IF VAR(EN) && IF ("hunterarmorv1.2.esp") SAY: Possible already include the hunterarmorv1.2.esp
-    IF VAR(RU) && IF ("hunterarmorv1.2.esp") SAY: Возможно уже включено в hunterarmorv1.2.esp
+  IF VAR(EN) && IF FILE("hunterarmorv1.2.esp") SAY: Possible already include the hunterarmorv1.2.esp
+    IF VAR(RU) && IF FILE("hunterarmorv1.2.esp") SAY: Возможно уже включено в hunterarmorv1.2.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 HuntersSight.esp
@@ -2561,11 +2561,11 @@ BEGINGROUP: Items I
 
 I5KWeaponOH.esp
 frost armour.esp
-  IF VAR(EN) && IFNOT ("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://skyrim.nexusmods.com/mods/20868".
-    IF VAR(RU) && IFNOT ("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
+  IF VAR(EN) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://skyrim.nexusmods.com/mods/20868".
+    IF VAR(RU) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
 Ice Armour.esp
-  IF VAR(EN) && IFNOT ("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://skyrim.nexusmods.com/mods/20868".
-    IF VAR(RU) && IFNOT ("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
+  IF VAR(EN) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://skyrim.nexusmods.com/mods/20868".
+    IF VAR(RU) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
 imp_guard_helm.esp
 imp_helm.esp
 REGEX: imp_helm_(night|imp)\.esp
@@ -2588,13 +2588,13 @@ Insanity's Umbra Sword.esp
 SkyRe_Plugin_InsanitysCelticKatana_1.2.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("InsanitysCelticKatana.esp") SAY: Remember not to load (or to simply delete) InsanitysCelticKatana.esp
+  IF VAR(EN) && IF FILE("InsanitysCelticKatana.esp") SAY: Remember not to load (or to simply delete) InsanitysCelticKatana.esp
     IF VAR(RU) && IF ACTIVE ("InsanitysCelticKatana.esp") SAY: Не забудьте отключить или удалить InsanitysCelticKatana.esp
 SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF ("InsanitysDragonKatana.esp") || IF ("Insanity's Dragon Katana.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
-    IF ("InsanitysDragonKatana.esp") || IF ("Insanity's Dragon Katana.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
+  IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
+    IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
 InvisRing.esp
 InvisibleArmorSets.esp
 ISDBlackSting.esp
@@ -2632,10 +2632,10 @@ T3nd0sOverhaulJSwordsPlugin.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии 'SkyRe - Skyrim Redone'.
 SkyRe_Plugin_JaySuSSwords_1.3D.esp
   TAG: {{BASH: Delev}}
-  IF VAR(EN) && IFNOT (r"JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) && IFNOT (r"JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF (r"JSwords(DV)?\.esm") SAY: Remember not to load (or to simply delete) JSwords*.esp
-    IF VAR(RU) && IF (r"JSwords(DV)?\.esm") SAY: Не забудьте отключить или удалить JSwords*.esp
+  IF VAR(EN) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF REGEX("JSwords(DV)?\.esm") SAY: Remember not to load (or to simply delete) JSwords*.esp
+    IF VAR(RU) && IF REGEX("JSwords(DV)?\.esm") SAY: Не забудьте отключить или удалить JSwords*.esp
 JulietByNausicaa.esp
 ENDGROUP: Items J
 
@@ -2855,7 +2855,7 @@ Nicoroshi Creations.esp
 SkyRe_Plugin_NicoroshiCreations_1.1.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("Nicoroshi Creations.esp") SAY: Remember not to load (or to simply delete) Nicoroshi Creations.esp
+  IF VAR(EN) && IF FILE("Nicoroshi Creations.esp") SAY: Remember not to load (or to simply delete) Nicoroshi Creations.esp
     IF VAR(RU) && IF ACTIVE ("Nicoroshi Creations.esp") SAY: Не забудьте отключить или удалить Nicoroshi Creations.esp
 NightasyBondageArmor.esp
 Night_Dweller_Armor.esp
@@ -2908,12 +2908,12 @@ Lorecraft - Omegared99-Compilation.esp
 SkyRe_Plugin_Omegared99sArmorCompilation_3.5a.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version of SkyRe.
     IF VAR(RU) SAY: Устарело обновите до последней версии SkyRe.
-  IF VAR(EN) && IFNOT ("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
+  IF VAR(EN) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_Omegared99sArmorCompilation.esp
-  IF VAR(EN) && IFNOT ("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
-    IF VAR(RU) && IFNOT ("Omegared99-Compilation.esm") ERROR: Вам все еще нужен Omegared99-Compilation.esm
+  IF VAR(EN) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
+    IF VAR(RU) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: Вам все еще нужен Omegared99-Compilation.esm
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 Onechanbara Kagura Set.esp
@@ -3001,8 +3001,8 @@ Lorecraft - RedguardKnight.esp
 SkyRe_Plugin_RedguardKnightArmor_3.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("RedguardKnight.esp") SAY: Remember not to load (or to simply delete) RedguardKnight.esp
-    IF VAR(RU) && IF ("RedguardKnight.esp") SAY: Не забудьте отключить или удалить RedguardKnight.esp
+  IF VAR(EN) && IF FILE("RedguardKnight.esp") SAY: Remember not to load (or to simply delete) RedguardKnight.esp
+    IF VAR(RU) && IF FILE("RedguardKnight.esp") SAY: Не забудьте отключить или удалить RedguardKnight.esp
 RegentSword.esp
 Reinforced Hoods.esp
 Remodeled Armor.esp
@@ -3088,8 +3088,8 @@ Shining Paladin.esp
 ShinKatana.esp
 shogo_laser_katana.esp
 ShShortswords.esp
-  IF VAR(EN) && IF ("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
-    IF VAR(RU) && IF ("SkyRe_Main.esp") WARN: Удалите. Уже входит в SkyRe_Main.esp
+  IF VAR(EN) && IF FILE("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
+    IF VAR(RU) && IF FILE("SkyRe_Main.esp") WARN: Удалите. Уже входит в SkyRe_Main.esp
   TAG: {{BASH: Delev, Relev}}
 Siege Bow & Backpacks.esp
 Silencer's Vestments - Cloth.esp
@@ -3126,7 +3126,7 @@ SpectralWeaponPack.esp
 SpeedRings.esp
 Spring elven set.esp
 spyduckWands.esp
-  IF VERSION("SKSE", "0.1.5.9", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.9+
+  IF VERSION("SKSE", "0.1.5.9", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.9+
 sulundo.esp
 StaffBundle.esp
 stalhrimstandalone2.esp
@@ -3261,8 +3261,8 @@ UmbraSturmbringer.esp
 Unarmed Enhanced.esp
 Unenchanted Necromancer Amulet.esp
 REGEX: UniqueLeveledItemsUpgrade(1dot3)?\.esp
-  IF VAR(EN) && IF (r"UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Obsolete. Update to latest version.
-    IF VAR(RU) && IF (r"UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Устарело. Обновите до последней версии.
+  IF VAR(EN) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Obsolete. Update to latest version.
+    IF VAR(RU) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Устарело. Обновите до последней версии.
 UniqueRadiantAndPartyClothes.esp
 UNP Boots.esp
 UNP Simply Clothes.esp
@@ -3282,7 +3282,7 @@ VagabondArmor.esp
 SkyRe_Plugin_VagabondArmor_5.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("VagabondArmor.esp") SAY: Remember not to load (or to simply delete) VagabondArmor.esp
+  IF VAR(EN) && IF FILE("VagabondArmor.esp") SAY: Remember not to load (or to simply delete) VagabondArmor.esp
     IF VAR(RU) && IF ACTIVE ("VagabondArmor.esp") SAY: Не забудьте отключить или удалить VagabondArmor.esp
 Valdacil's Light Armor Robes.esp
 VampiricDagger.esp
@@ -3290,7 +3290,7 @@ VanguardArmor.esp
 SkyRe_Plugin_VanguardArmor_3.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("VanguardArmor.esp") SAY: Remember not to load (or to simply delete) VanguardArmor.esp
+  IF VAR(EN) && IF FILE("VanguardArmor.esp") SAY: Remember not to load (or to simply delete) VanguardArmor.esp
     IF VAR(RU) && IF ACTIVE ("VanguardArmor.esp") SAY: Не забудьте отключить или удалить VanguardArmor.esp
 Velvec Outfit.esp
 Veteran Nord Plate.esp
@@ -3320,7 +3320,7 @@ Lorecraft - hothtrooper44 armors.esp
 SkyRe_Plugin_WarchiefArmor_4.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("warchiefarmor.esp") SAY: Remember not to load (or to simply delete) warchiefarmor.esp
+  IF VAR(EN) && IF FILE("warchiefarmor.esp") SAY: Remember not to load (or to simply delete) warchiefarmor.esp
     IF VAR(RU) && IF ACTIVE ("warchiefarmor.esp") SAY: Не забудьте отключить или удалить warchiefarmor.esp
 WarfighterArmory.esp
 Warglaive of Azzinoth.esp
@@ -3336,10 +3336,10 @@ REGEX: Weapons of the Third Era.+\.esp
     IF VAR(RU) WARN: Устарело. Обновите до последней версии..
   TAG: {{BASH: Relev}}
 REGEX: WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp
-  IF VAR(EN) && IF ("3rdEraWeaponsMoS.esp") WARN: You have installed 3rdEraWeaponsMoS.esp. Use only one WeaponsOf3E or 3rdEraWeaponsMoS
-    IF VAR(RU) && IF ("3rdEraWeaponsMoS.esp") WARN: У вас уже установлен 3rdEraWeaponsMoS.esp. Используйте только один мод WeaponsOf3E или 3rdEraWeaponsMoS
-  IF VAR(EN) && IF ("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
-    IF VAR(RU) && IF ("SkyRe_Main.esp") WARN: Удалите. Уже входит в SkyRe_Main.esp
+  IF VAR(EN) && IF FILE("3rdEraWeaponsMoS.esp") WARN: You have installed 3rdEraWeaponsMoS.esp. Use only one WeaponsOf3E or 3rdEraWeaponsMoS
+    IF VAR(RU) && IF FILE("3rdEraWeaponsMoS.esp") WARN: У вас уже установлен 3rdEraWeaponsMoS.esp. Используйте только один мод WeaponsOf3E или 3rdEraWeaponsMoS
+  IF VAR(EN) && IF FILE("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
+    IF VAR(RU) && IF FILE("SkyRe_Main.esp") WARN: Удалите. Уже входит в SkyRe_Main.esp
   TAG: {{BASH: Relev}}
 WeaponsOf3E - No Leveled Lists.esp
 3rdEraWeaponsMoS.esp
@@ -3347,14 +3347,14 @@ WeaponsOf3E - No Leveled Lists.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   TAG: {{BASH: Delev, Relev}}
     //for versions <1.5
-  IF VAR(EN) && IF ("SkyRe_Main.esp") WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'
-    IF VAR(RU) && IF ("SkyRe_Main.esp") WARN: Удалите. WeaponsOf3E уже включен в 'SkyRe_Main.esp'
-  IF (r"WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp") INC: WeaponsOf3E*.esp
+  IF VAR(EN) && IF FILE("SkyRe_Main.esp") WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'
+    IF VAR(RU) && IF FILE("SkyRe_Main.esp") WARN: Удалите. WeaponsOf3E уже включен в 'SkyRe_Main.esp'
+  IF REGEX("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp") INC: WeaponsOf3E*.esp
 3rdEraWeapMoS-lvlList.esp
   TAG: {{BASH: Delev, Relev}}
 3rdEraWeapMoS-rareCraft.esp
 3rdEraWeaponsMoS-ACE-Patch.esp
-  IFNOT (r"3rdEraWeaponsMoS.esm") REQ: 3rdEraWeaponsMoS.esm
+  IFNOT REGEX("3rdEraWeaponsMoS.esm") REQ: 3rdEraWeaponsMoS.esm
 3rdEraWeaponsMoS - Hacks.esp
 Deleveled Skyrim - 3rdEraWeaponsMoS.esp
   TAG: {{BASH: Delev, Relev}}
@@ -3409,7 +3409,7 @@ IF VAR(BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
     IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 ImmersiveArmorsNPCs.esp
-  IFNOT ("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
+  IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
 BandolierForNPCs.esp
 BandolierForNPCsWIC_V2.esp
 BandolierForNPCsBanditsWearHelmets.esp
@@ -3426,16 +3426,16 @@ BEGINGROUP: Overhauls
 BEGINGROUP: General Overhauls
 ASIS-Encounter Zones.esp
 REGEX: Smithing Perks Overhaul( - Balanced)?.esp
-  IF ("PerkUP-Smithing.esp") INC: PerkUP-Smithing.esp
-  IF VAR(EN) && IF ("Complete Crafting Overhaul - BS version.esp") && IF ("Complete Crafting Overhaul.esp") SAY: Use only one Smithing Perks Overhaul esp
-    IF VAR(RU) && IF ("Complete Crafting Overhaul - BS version.esp") && IF ("Complete Crafting Overhaul.esp") SAY: Используйте только один Smithing Perks Overhaul esp
-  IF VAR(EN) && IF VAR(CCO) && IF ("Complete Crafting Overhaul.esp") SAY: Use balanced version with Complete Crafting Overhaul mod
-    IF VAR(RU) && IF VAR(CCO) && IF ("Complete Crafting Overhaul.esp") SAY: С модом Complete Crafting Overhaul используйте balanced-версию.
+  IF FILE("PerkUP-Smithing.esp") INC: PerkUP-Smithing.esp
+  IF VAR(EN) && IF FILE("Complete Crafting Overhaul - BS version.esp") && IF FILE("Complete Crafting Overhaul.esp") SAY: Use only one Smithing Perks Overhaul esp
+    IF VAR(RU) && IF FILE("Complete Crafting Overhaul - BS version.esp") && IF FILE("Complete Crafting Overhaul.esp") SAY: Используйте только один Smithing Perks Overhaul esp
+  IF VAR(EN) && IF VAR(CCO) && IF FILE("Complete Crafting Overhaul.esp") SAY: Use balanced version with Complete Crafting Overhaul mod
+    IF VAR(RU) && IF VAR(CCO) && IF FILE("Complete Crafting Overhaul.esp") SAY: С модом Complete Crafting Overhaul используйте balanced-версию.
 REGEX: Complete Crafting Overhaul( - BS version)?\.esp
-  IF VAR(EN) && IF (r"(Headbomb's )?Better Sorting.*\.esp") && IF ("Complete Crafting Overhaul.esp") WARN: Use only BS-version for Better Sorting.
-    IF VAR(RU) && IF (r"(Headbomb's )?Better Sorting.*\.esp") && IF ("Complete Crafting Overhaul.esp") WARN: Для Better Sorting используйте только BS-версию.
-  IF VAR(EN) && IF ("SkyRe_Main.esp") WARN: Possible doubles in crafting menu
-    IF VAR(RU) && IF ("SkyRe_Main.esp") WARN: Возможны дубликаты в меню крафтинга.
+  IF VAR(EN) && IF REGEX("(Headbomb's )?Better Sorting.*\.esp") && IF FILE("Complete Crafting Overhaul.esp") WARN: Use only BS-version for Better Sorting.
+    IF VAR(RU) && IF REGEX("(Headbomb's )?Better Sorting.*\.esp") && IF FILE("Complete Crafting Overhaul.esp") WARN: Для Better Sorting используйте только BS-версию.
+  IF VAR(EN) && IF FILE("SkyRe_Main.esp") WARN: Possible doubles in crafting menu
+    IF VAR(RU) && IF FILE("SkyRe_Main.esp") WARN: Возможны дубликаты в меню крафтинга.
   IF VAR(EN) SAY: Will conflict with mods that modify existing recipes.
     IF VAR(RU) SAY: Возможны конфликты с модами, модифицирующими существующие рецепты.
 Lorecraft - Crafting Overhaul.esp
@@ -3461,8 +3461,8 @@ T3nd0sOverhaul.esp
     IF VAR(RU) SAY: Для не ENB-пользователей.
 T3nd0sOverhaulNoLighting.esp
   IF VAR(EN) SAY: Obsolete. Update to latest 'SkyRe - Skyrim Redone'
-  IF VAR(EN) && IF ("T3nd0sOverhaul.esp") INC: T3nd0sOverhaul.esp use only one
-    IF VAR(RU) && IF ("T3nd0sOverhaul.esp") INC: T3nd0sOverhaul.esp. Используйте только один.
+  IF VAR(EN) && IF FILE("T3nd0sOverhaul.esp") INC: T3nd0sOverhaul.esp use only one
+    IF VAR(RU) && IF FILE("T3nd0sOverhaul.esp") INC: T3nd0sOverhaul.esp. Используйте только один.
   IF VAR(EN) SAY: Only for ENB users
     IF VAR(RU) SAY: Только для не ENB пользователей.
 Legendary Lore - Dragons.esp
@@ -3595,7 +3595,7 @@ ENDGROUP: War in Skyrim
 
 BEGINGROUP: Deadly and Mighty Dragons
 
-IF ("DeadlyDiversifiedDragonsPatch.esp") MOD: DragonsDiversified.esp
+IF FILE("DeadlyDiversifiedDragonsPatch.esp") MOD: DragonsDiversified.esp
 REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp
   TAG: {{BASH: Delev, Relev}}
 DeadlyDragonsX.esp
@@ -3613,7 +3613,7 @@ REGEX: DeadlyDragonsPISE( DV)?\.esp
 REGEX: DeadlyDragonsHardPISE( DV)?\.esp
   TAG: {{BASH: Delev, Relev}} not tested
 REGEX: DeadlyDragonsSpawn.*\.esp
-IFNOT ("DeadlyDiversifiedDragonsPatch.esp") MOD: DragonsDiversified.esp
+IFNOT FILE("DeadlyDiversifiedDragonsPatch.esp") MOD: DragonsDiversified.esp
 DeadlyDiversifiedDragonsPatch.esp
 Dragonbone Weapons - Deadly Dragons Compatibility.esp
 REGEX: (Super )?(Slighty )?Mighty Dragon Priests\.esp
@@ -3622,8 +3622,8 @@ Odahviing Mighty Dragons.esp
   TAG: {{BASH: Delev, Relev}}
 REGEX: (Soft)?(Super)?(Nightmare)?(Slighty| Slighty)?(Mighty| Mighty)? Dragons( Unleveled)?\.esp
   TAG: {{BASH: Delev, Relev}}
-  IF VAR(EN) && IF (r"DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT (r"MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Use "http://skyrim.nexusmods.com/mods/13423 compatibility patch" for deadly dragons.
-    IF VAR(RU) && IF (r"DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT (r"MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Используйте "http://skyrim.nexusmods.com/mods/13423 патч совместимости" для мода Deadly Dragons.
+  IF VAR(EN) && IF REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT REGEX("MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Use "http://skyrim.nexusmods.com/mods/13423 compatibility patch" for deadly dragons.
+    IF VAR(RU) && IF REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT REGEX("MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Используйте "http://skyrim.nexusmods.com/mods/13423 патч совместимости" для мода Deadly Dragons.
   // Mighty Dragons main file
 D.S.I. Dragon Size Increase + MD.esp
 REGEX: MD with DeadlyD and DDiversified( Unleveled)?\.esp
@@ -3737,8 +3737,8 @@ BetterThievesGuild.esp
 Better Thieves Guild.esp
 beyond_skyrim.esp
 REGEX: Bigger Cities and Villages.*\.esp
-  IF VAR(EN) && IF ("Bigger Cities and Villages0.1.1.esp") SAY: Obsolete. Upgrade to latest version.
-    IF VAR(RU) && IF ("Bigger Cities and Villages0.1.1.esp") SAY: Устарело. Обновите до последней версии.
+  IF VAR(EN) && IF FILE("Bigger Cities and Villages0.1.1.esp") SAY: Obsolete. Upgrade to latest version.
+    IF VAR(RU) && IF FILE("Bigger Cities and Villages0.1.1.esp") SAY: Устарело. Обновите до последней версии.
 BIGCitySolitude.esp
 BlackbroodHideout.esp
 blackmarsh.esp
@@ -3804,7 +3804,7 @@ CavernIsles2.esp
 Cerebral Den.esp
 ChimneysV1.0.esp
 CK's Might of the Legion.esp
-  IFNOT ("WARZONES - Civil Unrest.esm") REQ: WARZONES - Civil Unrest.esm
+  IFNOT FILE("WARZONES - Civil Unrest.esm") REQ: WARZONES - Civil Unrest.esm
 Clam Farm.esp
 ClearFields.esp
 CliffCabinWinterhold_1-4.esp
@@ -3990,11 +3990,11 @@ BEGINGROUP: Quests M
 Magelight Grotto.esp
 Manor Dragonborn.esp
 mannyBlackRock.esp
-  IF VAR(EN) && IF ("mannyBlackRock.esm") SAY: Use either mannyBlackRock.esm or mannyBlackRock.esp
-    IF VAR(RU) && IF ("mannyBlackRock.esm") SAY:  Используйте или mannyBlackRock.esm или mannyBlackRock.esp
+  IF VAR(EN) && IF FILE("mannyBlackRock.esm") SAY: Use either mannyBlackRock.esm or mannyBlackRock.esp
+    IF VAR(RU) && IF FILE("mannyBlackRock.esm") SAY:  Используйте или mannyBlackRock.esm или mannyBlackRock.esp
 mannyDragonhead.esp
-  IF VAR(EN) && IF ("mannyDragonhead.esm") SAY: Use either mannyDragonhead.esm or mannyDragonhead.esp
-    IF VAR(RU) && IF ("mannyDragonhead.esm") SAY: Используйте или mannyDragonhead.esm или mannyDragonhead.esp
+  IF VAR(EN) && IF FILE("mannyDragonhead.esm") SAY: Use either mannyDragonhead.esm or mannyDragonhead.esp
+    IF VAR(RU) && IF FILE("mannyDragonhead.esm") SAY: Используйте или mannyDragonhead.esm или mannyDragonhead.esp
 Markarth Dwemer Palace.esp
 Markarth_plus.esp
 majoramoon.esp
@@ -4014,8 +4014,8 @@ Mother_of_Tears_Epics_Eng.esp
 mtHornrichHearth.esp
 MU.esp
 REGEX: Murder.?.?\.esp
- IF (r"Murder.?.?\.esm") WARN: Use either Murder*.esp or Murder*.esm
-    IF VAR(RU) && IF (r"Murder.?.?\.esm") WARN: Используйте любой или Murder*.esp или Murder*.esm
+ IF REGEX("Murder.?.?\.esm") WARN: Use either Murder*.esp or Murder*.esm
+    IF VAR(RU) && IF REGEX("Murder.?.?\.esm") WARN: Используйте любой или Murder*.esp или Murder*.esm
 Museum.esp
 IFNOT VAR(UFO) MOD: My home is your home.esp
 Mystic Home.esp
@@ -4036,11 +4036,11 @@ niflheim1.esp
 Nightingale Hall.esp
 NightingalePortal.esp
 Niires Hjerim.esp
-  IFNOT ("Niires Hjerim(esm).esm") REQ: Niires Hjerim(esm).esm
+  IFNOT FILE("Niires Hjerim(esm).esm") REQ: Niires Hjerim(esm).esm
 Niires Honeyside.esp
-  IFNOT ("Niire's Honeyside(esm).esm") REQ: Niire's Honeyside(esm).esm
+  IFNOT FILE("Niire's Honeyside(esm).esm") REQ: Niire's Honeyside(esm).esm
 Niires Proudspire.esp
-  IFNOT ("Niire's Proudspire(esm).esm") REQ: Niire's Proudspire(esm).esm
+  IFNOT FILE("Niire's Proudspire(esm).esm") REQ: Niire's Proudspire(esm).esm
 NirnFallsManor.esp
 Quest_NoMercy.esp
 Nordricks Grave.esp
@@ -4139,8 +4139,8 @@ ENDGROUP: Quests R
 BEGINGROUP: Quests S
 
 Saviors Lodge - Player Home.esp
-  IF VAR(EN) && IFNOT ("Scripts/IHWelcomeScript.pex") WARN: You still need to install the scripts for this mod. See download page.
-    IF VAR(RU) && IFNOT ("Scripts/IHWelcomeScript.pex") WARN: Вам всё еще нужно установить скрипты для этого мода. Ищите их на странице загрузки мода..
+  IF VAR(EN) && IFNOT FILE("Scripts/IHWelcomeScript.pex") WARN: You still need to install the scripts for this mod. See download page.
+    IF VAR(RU) && IFNOT FILE("Scripts/IHWelcomeScript.pex") WARN: Вам всё еще нужно установить скрипты для этого мода. Ищите их на странице загрузки мода..
 Saviors Lodge V1.0.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -4151,8 +4151,8 @@ SkoomaShip.esp
 Scout Addon for ATIC.esp
 SeabreezeEstate.esp
 secretroom-bh-en.esp
-  IF VAR(EN) && IF ("The Secret Room of Breezehome.esp") SAY: Use only one 'The Secret Room of Breezehome.esp' or 'secretroom-bh-en.esp'
-    IF VAR(RU) && IF ("The Secret Room of Breezehome.esp") SAY: Используйте только один мод 'The Secret Room of Breezehome.esp' или 'secretroom-bh-en.esp'
+  IF VAR(EN) && IF FILE("The Secret Room of Breezehome.esp") SAY: Use only one 'The Secret Room of Breezehome.esp' or 'secretroom-bh-en.esp'
+    IF VAR(RU) && IF FILE("The Secret Room of Breezehome.esp") SAY: Используйте только один мод 'The Secret Room of Breezehome.esp' или 'secretroom-bh-en.esp'
 Sentinel Falls.esp
 Sevenkeys.esp
 Shack.esp
@@ -4218,8 +4218,8 @@ The Paarthurnax Dilemma.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 The Secret Room of Breezehome (En).esp
 The Secret Room of Breezehome.esp
-  IF VAR(EN) && IF ("secretroom-bh-en.esp") SAY: Use only one 'The Secret Room of Breezehome.esp' or 'secretroom-bh-en.esp'
-    IF VAR(RU) && IF ("secretroom-bh-en.esp") SAY: Используйте только один мод 'The Secret Room of Breezehome.esp' или 'secretroom-bh-en.esp'
+  IF VAR(EN) && IF FILE("secretroom-bh-en.esp") SAY: Use only one 'The Secret Room of Breezehome.esp' or 'secretroom-bh-en.esp'
+    IF VAR(RU) && IF FILE("secretroom-bh-en.esp") SAY: Используйте только один мод 'The Secret Room of Breezehome.esp' или 'secretroom-bh-en.esp'
 theMannysOutPost.esp
 thereserve.esp
 ThievesGuildTrapdoor.esp
@@ -4401,16 +4401,16 @@ Glowing Soul Gems.esp
 KDC - kevinsterable - Deadly Stronger Poisons.esp
 LessAnnoyingItems.esp
 Masters of Death.esp
-IFNOT ("SkyRe_Main.esp") MOD: Morrowloot.esp
+IFNOT FILE("SkyRe_Main.esp") MOD: Morrowloot.esp
   //morrowloot loaded here only if skyre_main.esp is not installed
   IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
     //please fix grammar. )
     IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в LL) и меняют оди и теже уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
   TAG: {{BASH: Delev, Relev}}
 Morrowloot_nwah.esp
-  IF VAR(EN) && IF ("Morrowloot.esp") WARN: Do not use with original Morrowloot mod.
-    IF VAR(RU) && IF ("Morrowloot.esp") ERROR: Не используйте с оригинальным модом Morrowloot.
-  IF ("SkyRe_Main.esp") INC: SkyRe_Main.esp
+  IF VAR(EN) && IF FILE("Morrowloot.esp") WARN: Do not use with original Morrowloot mod.
+    IF VAR(RU) && IF FILE("Morrowloot.esp") ERROR: Не используйте с оригинальным модом Morrowloot.
+  IF FILE("SkyRe_Main.esp") INC: SkyRe_Main.esp
 xFenWSOWAFW3E.esp
   TAG: {{BASH: Delev, Relev}}
   // TAG: {{BASH: Delev, Stats, Relev}}
@@ -4437,7 +4437,7 @@ ENDGROUP: Overrides #
 BEGINGROUP: Overrides A
 
 Accessible Vendor Chests.esp
-IFNOT ("EmpoweredMagic.esp") REGEX: Acquisitive Soul Gems( FR)?\.esp
+IFNOT FILE("EmpoweredMagic.esp") REGEX: Acquisitive Soul Gems( FR)?\.esp
 AdaptiveNightEye.esp
 AddChoices01.esp
 Adoption.esp
@@ -4477,7 +4477,7 @@ Ash Pile Expiration.esp
 ATTTemplate.esp
 augmentedspells.esp
 AutoAim.esp
-  IF VAR(EN) && IF ("NoAutoAim.esp") WARN: Use only one AutoAim.esp or NoAutoAim.esp
+  IF VAR(EN) && IF FILE("NoAutoAim.esp") WARN: Use only one AutoAim.esp or NoAutoAim.esp
     IF VAR(RU) WARN: Используйте только один AutoAim.esp или NoAutoAim.esp
 NoAutoAim.esp
 Proper Aiming.esp
@@ -4505,8 +4505,8 @@ BasicHorseRidingAI.esp
 Basic Smithing Perk.esp
 Better Bone Armor.esp
 mod1.esp
-  IF VAR(EN) && IF ("Better Bone Armor.esp") SAY: Use either Better Bone Armor.esp or mod1.esp
-    IF VAR(RU) && IF ("Better Bone Armor.esp") SAY: Используйте или Better Bone Armor.esp или mod1.esp
+  IF VAR(EN) && IF FILE("Better Bone Armor.esp") SAY: Use either Better Bone Armor.esp or mod1.esp
+    IF VAR(RU) && IF FILE("Better Bone Armor.esp") SAY: Используйте или Better Bone Armor.esp или mod1.esp
 Better Bound Weapons.esp
 Better Dragons.esp
 Better Dynamic Snow.esp
@@ -4519,7 +4519,7 @@ Better Necromancer's Amulet.esp
 Better Stormcloaks.esp
 BetterItemSorting.esp
 BetterStaffofCorruptionMED.esp
-IF (r"(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
+IF REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 REGEX: (Headbomb's )?Better Sorting.*\.esp
 Weightless Ingredients - Better Sorting.esp
 Weightless Soulgems and Fragments - Better Sorting (PseudoVanilla).esp
@@ -4623,8 +4623,8 @@ DiversePriests.esp
 doublebounddmg.esp
   // TAG: {{BASH: Stats}}
 droppablebarenziah.esp
-  IF VAR(EN) && IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
-    IF VAR(RU) && IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp
+  IF VAR(EN) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
+    IF VAR(RU) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp
 DS-FlybyOpt.esp
 DS-MoreAgressionForRemover.esp
 Dr_ItemBones.esp
@@ -5012,8 +5012,8 @@ NoAutoSkillBooks.esp
     //Not sure about this
 NoAutoSkillBooks(Normal).esp
 NoAutoSkillBooks(Better).esp
-  IF VAR(EN) && IF ("NoAutoSkillBooks(Normal).esp") WARN: Use only one (Normal) or (Better) version
-    IF VAR(RU) && IF ("NoAutoSkillBooks(Normal).esp") WARN: Используйте только одну (Normal) или (Better) версию.
+  IF VAR(EN) && IF FILE("NoAutoSkillBooks(Normal).esp") WARN: Use only one (Normal) or (Better) version
+    IF VAR(RU) && IF FILE("NoAutoSkillBooks(Normal).esp") WARN: Используйте только одну (Normal) или (Better) версию.
 No Axe or Pickaxe required.esp
 noBlurDOF.esp
 noblur.esp
@@ -5119,8 +5119,8 @@ Revised.esp
 reworkedmannequins.esp
 REGEX: RichMerchants\w*\.esp
   TAG: {{BASH: Relev}}
-  IF VAR(EN) && IF ("MidasSkyrim.esp") WARN: Possible conflict with Vendor-version of Midas Magic in Skyrim, use Reactor-version.
-    IF VAR(RU) && IF ("MidasSkyrim.esp") WARN: Возможны конфликты с Vendor-версией мода Магия мидаса в Скайриме, используйте Reactor-версию.
+  IF VAR(EN) && IF FILE("MidasSkyrim.esp") WARN: Possible conflict with Vendor-version of Midas Magic in Skyrim, use Reactor-version.
+    IF VAR(RU) && IF FILE("MidasSkyrim.esp") WARN: Возможны конфликты с Vendor-версией мода Магия мидаса в Скайриме, используйте Reactor-версию.
 /* ...adds a new objective per quest... They now have quest markers added. */
 Riften Bigger Trees.esp
 righthandspells.esp
@@ -5221,8 +5221,8 @@ SkyReWarchiefArmorPlugin.esp
 Signs and Guardians.esp
   IF VERSION("TES5", "1.4.27", <) REQ: Skyrim 1.4.27+
 ESP.esp
-  IF VAR(EN) && IF ("SkyRe.esp") && IF ("SkyReNoLighting.esp") SAY: Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.
-    IF VAR(RU) && IF ("SkyRe.esp") && IF ("SkyReNoLighting.esp") SAY: Может перезаписать рассовую информаци. из SkyRe.esp или SkyReNoLighting.esp, но может быть бесопасно отключен, после использования рассового меню.
+  IF VAR(EN) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.
+    IF VAR(RU) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Может перезаписать рассовую информаци. из SkyRe.esp или SkyReNoLighting.esp, но может быть бесопасно отключен, после использования рассового меню.
 Skyrim Creatures Alive.esp
   TAG: {{BASH: Relev, Delev}}
 Skyrim Dark.esp
@@ -5337,7 +5337,7 @@ ENDGROUP: Overrides V
 BEGINGROUP: Overrides W
 
 walk.esp
-IFNOT (r"ACE .*\.esp") MOD: WayOfTheMonk.esp
+IFNOT REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
 wealthymerchants.esp
 Weapon Specialization - Generalized.esp
 Werewolves Plague in Skyrim.esp
@@ -5415,8 +5415,8 @@ ENDGROUP: Towns and Villages
 BEGINGROUP: Landscaping
 
 REGEX: CityForest.*\.esp
-  IF VAR(EN) && IF ("CityForestv2.esp") WARN: Obsolete. Update to latest version.
-    IF VAR(RU) && IF ("CityForestv2.esp") WARN: Устарело. Обновите до последней версии.
+  IF VAR(EN) && IF FILE("CityForestv2.esp") WARN: Obsolete. Update to latest version.
+    IF VAR(RU) && IF FILE("CityForestv2.esp") WARN: Устарело. Обновите до последней версии.
 /* Changes FLOR Records */
 AIMP - Antz in my Pantz.esp
 Chesko_Step418.esp
@@ -5434,7 +5434,7 @@ HoldStables.esp
 REGEX: Populated Cities.*\.esp
 raggedshortcut_oc.esp
 Open Cities Skyrim.esp
-  IF (022AD2C8|"Open Cities Skyrim.esp") WARN: Stolen content. Please show respect for authors' rights and download from a "http://skyrim.nexusmods.com/mods/8058 legitimate source".
+  IF CHECKSUM("Open Cities Skyrim.esp", 022AD2C8) WARN: Stolen content. Please show respect for authors' rights and download from a "http://skyrim.nexusmods.com/mods/8058 legitimate source".
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 TQC-OC.esp
   //Thieves Guild Shortcut - Open Cities compatible. Must be loaded after Open Cities.
@@ -5445,7 +5445,7 @@ BEGINGROUP: Realism
 BasicHumanNeeds.esp
 Basic Human Needs - Food Drink and Sleep
 kuerteeBattleFatigueAndInjuries.esp
-  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
   IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 REGEX: AdvancedFoodandRestENG( lazy)?\.esp
 Better Hunting.esp
@@ -5453,14 +5453,14 @@ REGEX: dD.?- Realistic Ragdoll Force.*\.esp
 drink eat sleep.esp
 /* Steam network version is an esp and BSA */
 imp's more complex needs.esp
-  IF VAR(EN) && IF ("Imp's More Complex Needs.esm") SAY: Use either Nexus or Steam Workshop version, not both.
-    IF VAR(RU) && IF ("Imp's More Complex Needs.esm") SAY: Используйте любую Nexus или Steam Workshop версию, не обе.
+  IF VAR(EN) && IF FILE("Imp's More Complex Needs.esm") SAY: Use either Nexus or Steam Workshop version, not both.
+    IF VAR(RU) && IF FILE("Imp's More Complex Needs.esm") SAY: Используйте любую Nexus или Steam Workshop версию, не обе.
 REGEX: Jump\d{2,3}\.esp
 kuerteeEncumberingLootArmourAndWeapons.esp
-  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
   IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 kuerteeEatAndSleep.esp
-  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
   IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 npcuseammo.esp
 NPCsUseAmmoAllBows.esp
@@ -5480,13 +5480,13 @@ StealthImmFixv1.esp
 THS - Base Module.esp
 TRO_BasicNeeds.esp
 SIBNPatch.esp
-  IF VAR(EN) && IFNOT ("TRO_BasicNeeds.esp") ERROR: Requires TRO_BasicNeeds.esp
-    IF VAR(RU) && IFNOT ("TRO_BasicNeeds.esp") ERROR: Требуется TRO_BasicNeeds.esp
+  IF VAR(EN) && IFNOT FILE("TRO_BasicNeeds.esp") ERROR: Requires TRO_BasicNeeds.esp
+    IF VAR(RU) && IFNOT FILE("TRO_BasicNeeds.esp") ERROR: Требуется TRO_BasicNeeds.esp
 TR-Basic Needs & RWS Patch.esp
 CookingExpanded - TRO_BN.esp
 SkBBP - Lore-Friendly Stats and Encumbrance.esp
-IFNOT ("SkyRe_Main.esp") MOD: vinis_food_and_rest.esp
-IFNOT ("SkyRe_Main.esp") REGEX: vinis_food_and_rest.+\.esp
+IFNOT FILE("SkyRe_Main.esp") MOD: vinis_food_and_rest.esp
+IFNOT FILE("SkyRe_Main.esp") REGEX: vinis_food_and_rest.+\.esp
 /* Imps More Complex Needs - Vampirism to load after other vampire feeding mods */
 IMCN - Overrides.esp
 EOS - IMCN Compatibility.esp
@@ -5495,12 +5495,12 @@ ENDGROUP: Realism
 BEGINGROUP: Vampires and Werewolves
 
 SkyRe_Vampirism.esp
-  IF (r"MM_BeluaSangunaire.*\.esp") INC: Belua Sanguinare
-  IF ("Better Vampires.esp") || IF ("Better Vampires DG.esp") INC: Better Vampires.esp
-  IF ("VampireOverhaul.esp") INC: VampireOverhaul.esp
-  IF ("UVO - Ultimate Vampirism Overhaul.esp") INC: UVO - Ultimate Vampirism Overhaul.esp
-  IF (r"Imp's More Complex Needs\.es[mp]") INC: Imp's More Complex Needs
-  IF ("Alternate Start - Live Another Life.esp") INC: Alternate Start - Live Another Life.esp
+  IF REGEX("MM_BeluaSangunaire.*\.esp") INC: Belua Sanguinare
+  IF FILE("Better Vampires.esp") || IF FILE("Better Vampires DG.esp") INC: Better Vampires.esp
+  IF FILE("VampireOverhaul.esp") INC: VampireOverhaul.esp
+  IF FILE("UVO - Ultimate Vampirism Overhaul.esp") INC: UVO - Ultimate Vampirism Overhaul.esp
+  IF REGEX("Imp's More Complex Needs\.es[mp]") INC: Imp's More Complex Needs
+  IF FILE("Alternate Start - Live Another Life.esp") INC: Alternate Start - Live Another Life.esp
   IF VAR(Dawnguard) INC: Dawnguard.esm
   IF VAR(EN) SAY: Removed from SkyRe 0.99.15.2 
     IF VAR(RU) SAY: Было удалено из SkyRe 0.99.15.2 .
@@ -5513,8 +5513,8 @@ Better Vampires DG.esp
   IF VAR(EN) SAY: Now obsolete.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Better Vampires - No DawnGuard.esp
-  IF VAR(EN) && IF ("Better Vampires.esp") INC: Better Vampires.esp. Use only one better vampires file.
-    IF VAR(RU) && IF ("Better Vampires.esp") INC: Better Vampires.esp. Используйте только один файл better vampires.
+  IF VAR(EN) && IF FILE("Better Vampires.esp") INC: Better Vampires.esp. Use only one better vampires file.
+    IF VAR(RU) && IF FILE("Better Vampires.esp") INC: Better Vampires.esp. Используйте только один файл better vampires.
   IF VAR(EN) && IF VAR(Dawnguard) WARN: You need the Dawnguard version of better vampires to work as intended with dawnguard.
     IF VAR(RU) && IF VAR(Dawnguard) WARN: Вам нужна Dawnguard-версия better vampires для правильной работы с DLC Dawnguard.
 Better Weres and Vamps.esp
@@ -5533,8 +5533,8 @@ Derrax_Male_Werewolf_ANIMALpenis.esp
 Derrax_Male_Werewolf_HUMANpenis.esp
 FemaleWerewolf.esp
 LFox No Werewolf Form Cooldown.esp
-  IF VAR(EN) && IF ("LFox Werewolf Improvements.esp") WARN: Disable and remove it. Already included in 'LFox Werewolf Improvements.esp'
-    IF VAR(RU) && IF ("LFox Werewolf Improvements.esp") WARN: Отключите или удалите это. Уже включено в 'LFox Werewolf Improvements.esp'
+  IF VAR(EN) && IF FILE("LFox Werewolf Improvements.esp") WARN: Disable and remove it. Already included in 'LFox Werewolf Improvements.esp'
+    IF VAR(RU) && IF FILE("LFox Werewolf Improvements.esp") WARN: Отключите или удалите это. Уже включено в 'LFox Werewolf Improvements.esp'
 LFox Werewolf Improvements.esp
 Lycanthropy_Main_by_Brevi.esp
 MaintainingVampireAppearance.esp
@@ -5543,9 +5543,9 @@ NoWerewolfFormCooldown.esp
   IF VAR(EN) SAY: Possible conflicts with other Werewolf-mods
     IF VAR(RU) SAY: Возможны конфликты с другими модами, меняющими оборотней.
 OrientalRace_VampiricThirst_patch.esp
-  IFNOT ("RaceCompatibility.esm") REQ: RaceCompatibility.esm
-  IFNOT ("OrientalRace.esp") REQ: OrientalRace.esp
-  IFNOT ("mslVampiricThirst.esp") REQ: mslVampiricThirst.esp
+  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
+  IFNOT FILE("OrientalRace.esp") REQ: OrientalRace.esp
+  IFNOT FILE("mslVampiricThirst.esp") REQ: mslVampiricThirst.esp
 playervampirerearrange.esp
 power_of_blood.esp
 powerful_vampires.esp
@@ -5557,7 +5557,7 @@ StrongVampireLord.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ToL_Core_by_Brevi.esp
 ToL_SKSE_by_Brevi.esp
-  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
+  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
 Tales_of_Lycanthropy.esp
 Werewolf Loot - ToL compatible.esp
 REGEX: True Vampirism - .+\.esp
@@ -5619,8 +5619,8 @@ Battle_Mage_v1_1.esp
 REGEX: BetterMage(Alt)?\.esp
 BoundTools.esp
   IF VAR(EN) INC: MiningFlames.esp and Midas Magic's Bound Pickaxe spell. You can have more than one mod enabled, but only one of the added methods will be able to "mine" ore.
-    IF VAR(RU) && IF ("MiningFlames.esp") INC: MiningFlames.esp
-    IF VAR(RU) && IF ("MidasSkyrim.esp") INC: Заклинание Призванная отмычка из Midas Magic.
+    IF VAR(RU) && IF FILE("MiningFlames.esp") INC: MiningFlames.esp
+    IF VAR(RU) && IF FILE("MidasSkyrim.esp") INC: Заклинание Призванная отмычка из Midas Magic.
 CallAssassins.esp
 Candlespell.esp
 REGEX: Candle[:alpha:]ight(Shadow|ToggleDefault(NC)?|Toggle\d\d(NC)?|Toggle\d(NC)?)?\.esp
@@ -5634,8 +5634,8 @@ CommandHorse.esp
 CompanionSkjorSummon.esp
 conjurationmadnessmodv1.esp
 conjureatronarchfix.esp
-  IF VAR(EN) && IF ("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
-    IF VAR(RU) && IF ("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+  IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
+    IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 conjure_chest.esp
 CurseSpell.esp
 DarkBrotherhoodAstrid.esp
@@ -5654,9 +5654,9 @@ essential player character.esp
 excaliburEX.esp
 Expert Level Sparks, Flames, and Frostbite Spells.esp
 ExtractOreSpell.esp
-  IF ("BoundTools.esp") INC: BoundTools.esp
-  IF ("MiningFlames.esp") INC: MiningFlames.esp
-  IF ("MidasSkyrim.esp") INC: MidasSkyrim.esp
+  IF FILE("BoundTools.esp") INC: BoundTools.esp
+  IF FILE("MiningFlames.esp") INC: MiningFlames.esp
+  IF FILE("MidasSkyrim.esp") INC: MidasSkyrim.esp
 fcteResurrection.esp
 FeatherSpells.esp
 FlashStep.esp
@@ -5687,7 +5687,7 @@ LFContingency.esp
 LightMeter.esp
 longercandlelight.esp
 lootninja.esp
-  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
 Magic Box.esp
 Magicka Revamp - Destruction - Extra Spells - WIP.esp
 maintainedarmorspells.esp
@@ -5701,8 +5701,8 @@ MidasSkyrim.esp
 mindcontrol.esp
 mm_HorseWhisperer.esp
 REGEGX: MYSpell(Hard)?\.esp
-  IF VAR(EN) && IF ("MYSpell.esp") && IF ("MYSpellHard.esp") WARN: Use only one normal or hard version.
-    IF VAR(RU) && IF ("MYSpell.esp") && IF ("MYSpellHard.esp") WARN: Используйте только одну, normal или hard, версию
+  IF VAR(EN) && IF FILE("MYSpell.esp") && IF FILE("MYSpellHard.esp") WARN: Use only one normal or hard version.
+    IF VAR(RU) && IF FILE("MYSpell.esp") && IF FILE("MYSpellHard.esp") WARN: Используйте только одну, normal или hard, версию
 Necromimesis.esp
 nighteye.esp
 NightEyeIllusionSpell.esp
@@ -5869,7 +5869,7 @@ DualFlurrytoFlurry.esp
 ELEMEarthPrison.esp
 ElemIceWall.esp
 EmpoweredMagic.esp
-IF ("EmpoweredMagic.esp") REGEX: Acquisitive Soul Gems( FR)?\.esp
+IF FILE("EmpoweredMagic.esp") REGEX: Acquisitive Soul Gems( FR)?\.esp
 Even Smaller Spell Light Radius.esp
 FNISspells.esp
 ignitetheworld.esp
@@ -5908,7 +5908,7 @@ SeeYouSleepByMadmole.esp
 ShadowOfTheMagic.esp
   IF VAR(EN) SAY: Obsolete, upgrade to Summon Shadow Merchant
     IF VAR(RU) SAY: Устарело. Обновите до Summon Shadow Merchant
-IFNOT ("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
+IFNOT FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
 SimpleTeleport.esp
 SinisterSummoner.esp
 ShowRaceMenuAlternative.esp
@@ -5920,8 +5920,8 @@ SkyrimBalancedMagicSystem - spells.esp
 SkyrimBalancedMagicSystemSpellsOnly.esp
 SkyrimBalancedMagicSystem-Light.esp
 REGEX: Skyrim Improved Magic System( - No Race Spell Removal)?\.esp
-  IF VAR(EN) && IF ("Skyrim Improved Magic System.esp") && IF ("Skyrim Improved Magic System - No Race Spell Removal.esp") WARN: Use only one Skyrim Improved Magic System esp
-    IF VAR(RU) && IF ("Skyrim Improved Magic System.esp") && IF ("Skyrim Improved Magic System - No Race Spell Removal.esp") WARN: Используйте только один Skyrim Improved Magic System esp
+  IF VAR(EN) && IF FILE("Skyrim Improved Magic System.esp") && IF FILE("Skyrim Improved Magic System - No Race Spell Removal.esp") WARN: Use only one Skyrim Improved Magic System esp
+    IF VAR(RU) && IF FILE("Skyrim Improved Magic System.esp") && IF FILE("Skyrim Improved Magic System - No Race Spell Removal.esp") WARN: Используйте только один Skyrim Improved Magic System esp
 Smaller Spell Light Radius.esp
 SpellSneak.esp
 Starting Spell Choice.esp
@@ -5985,7 +5985,7 @@ ENDGROUP: Alchemy
 BEGINGROUP: Enchantment
 
 zzzAlmostUnlimitedWeaponEnchant.esp
-  IF (7F641330|"zzzAlmostUnlimitedWeaponEnchant.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 zzzEverlastingWeaponEnchant.esp
 infinitedaedricchargesbyfioran.esp
 Balanced Crafting Project - Enchanting Part.esp
@@ -6080,8 +6080,8 @@ UCO.esp
 REGEX: Added_Killmoves_All_Weapons.+\.esp
 Added_Slow_Motion_to_1stPerson_with_1st_Person_Only.esp
 REGEX: The Dance of Death.*\.esp
-  IF VAR(EN) && IF (r"The Dance of Death V.+.esp") WARN: Obsolete. Update to latest version.
-    IF VAR(RU) && IF (r"The Dance of Death V.+.esp") WARN: Устарело. Обновите до последней версии.
+  IF VAR(EN) && IF REGEX("The Dance of Death V.+.esp") WARN: Obsolete. Update to latest version.
+    IF VAR(RU) && IF REGEX("The Dance of Death V.+.esp") WARN: Устарело. Обновите до последней версии.
 Chimera.esp
 combat.esp
 combat fists.esp
@@ -6105,19 +6105,19 @@ Duel_v2_1b.esp
 Duel_Master.esp
 Duel Extension.esp
 Duel2_ArmorRating.esp
-  IF ("Duel_Master.esp") INC: Duel_Master.esp
+  IF FILE("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_Blocking.esp
-  IF ("Duel_Master.esp") INC: Duel_Master.esp
+  IF FILE("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_Knockback_Knockdown.esp
-  IF ("Duel_Master.esp") INC: Duel_Master.esp
+  IF FILE("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_ReducedReach.esp
-  IF ("Duel_Master.esp") INC: Duel_Master.esp
+  IF FILE("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_ShieldBash.esp
-  IF ("Duel_Master.esp") INC: Duel_Master.esp
+  IF FILE("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_Stagger.esp
-  IF ("Duel_Master.esp") INC: Duel_Master.esp
+  IF FILE("Duel_Master.esp") INC: Duel_Master.esp
 Duel2_Stamina.esp
-  IF ("Duel_Master.esp") INC: Duel_Master.esp
+  IF FILE("Duel_Master.esp") INC: Duel_Master.esp
 Duel_NoArmorTweak.esp
 DukePatricks - CombatTweaks.esp
   IF VAR(EN) SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/3646 Duke Patricks - Heavy Weapons Combat" instead.
@@ -6249,25 +6249,25 @@ REGEX: New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp
     IF VAR(RU) SAY: Используйте только один New Leveled Encounter Levels*.esp
 Noredundantperks.esp
 Crimson Tide - Blood.esp
-  IF VAR(EN) && IF (r".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Use Crimson Tide OR Enhanced Blood. Not both.
-    IF VAR(RU) && IF (r".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Используйте Crimson Tide или Enhanced Blood. Не оба.
+  IF VAR(EN) && IF REGEX(".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Use Crimson Tide OR Enhanced Blood. Not both.
+    IF VAR(RU) && IF REGEX(".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Используйте Crimson Tide или Enhanced Blood. Не оба.
 /* Unaware if any other plugins depend on this.
 Has been repoted to cause issues if loaded after ACE Melee, will load here and see
 if any other issues crop up, can be relocated accordingly.*/
 ACE Archery.esp
-  IF (46C639C1|"Crafting300.esp") INC: Crafting300.esp, to fix this get the compatibility patch found here: "http://skyrim.nexusmods.com/download/70990"
+  IF CHECKSUM("Crafting300.esp", 46C639C1) INC: Crafting300.esp, to fix this get the compatibility patch found here: "http://skyrim.nexusmods.com/download/70990"
 Lorecraft - Ace Archery.esp
-IF (FFCC056A|"Crafting300.esp") || IF (50142D0D|"Crafting300.esp") MOD: Crafting300.esp
-IF (FFCC056A|"Crafting300.esp") || IF (50142D0D|"Crafting300.esp") MOD: More Craftables - Crafting 300 compatibility.esp
-IF (FFCC056A|"Crafting300.esp") || IF (50142D0D|"Crafting300.esp") MOD: RecyclingModCrafting300.esp
-  IFNOT ("Crafting300.esp") REQ: Crafting300.esp
+IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: Crafting300.esp
+IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: More Craftables - Crafting 300 compatibility.esp
+IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: RecyclingModCrafting300.esp
+  IFNOT FILE("Crafting300.esp") REQ: Crafting300.esp
 ACE Armor.esp
 ACE Enchanting.esp
 ACE Magic.esp
 ACE Melee.esp
 ACE Smithing.esp
 ACE Synergy.esp
-  IF VAR(EN) && IF (r"ACE .*\.esp") MOD: WayOfTheMonk.esp
+  IF VAR(EN) && IF REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
 Actually A Deadly Verbal Debate.esp
 alan_extended archery perk tree.esp
 alan_guide for the perfect blacksmith.esp
@@ -6281,7 +6281,7 @@ archeryperks 3-9.esp
 archeryperks 4-12.esp
 REGEX: AB?T - Loot Arrows (HARDCORE)?([-\+]?\d{1,3}%)?\.esp
 REGEX: AB?T - Faster (Arrows)?(Bolts)? Improved (\+\d{1,3}%)\.esp
-  IF VAR(EN) && IF (r"ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF VAR(EN) && IF REGEX("ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 REGEX: AB?T - Merchants Arrows (HARDCORE)?([-\+]?\d{1,3}%)?\.esp
 REGEX: AB?T -( Increased)? Progressive Damage( \(BS and CCO\)| \(with Nord Hero Arrow\))?( [-\+]?\d{1,3}%)?\.esp
 REGEX: AB?T - Recover ([-\+]?\d{1,3}%)( Less| More)? Arrows( and Bolts)?\.esp
@@ -6321,14 +6321,14 @@ Improved Expert Spells.esp
 REGEX: Improved Master Spells.*\.esp
 JokeMOD-SilentRunning.esp
 kuerteeSkillBasedDamageMultipliers.esp
-  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
 lcr.esp
 leveling_2x_slower1_5.esp
 Leveling Destruction Perks.esp
 Leveling Destruction Perks - Only Perks.esp
 levelingperkslite.esp
-  IF VAR(EN) && IF ("perksbymatope.esp") WARN: Delete. Already included in perksbymatope.esp
-    IF VAR(RU) && IF ("perksbymatope.esp") WARN: Удалите. Уже включено в perksbymatope.esp
+  IF VAR(EN) && IF FILE("perksbymatope.esp") WARN: Delete. Already included in perksbymatope.esp
+    IF VAR(RU) && IF FILE("perksbymatope.esp") WARN: Удалите. Уже включено в perksbymatope.esp
 REGEX: MageArmor(Easy)?\.esp
 magicscaling.esp
 MagicSneakCrit.esp
@@ -6352,8 +6352,8 @@ PerfectperksSpells.esp
 PerfectperksLocks.esp
 PerksBalance.esp
 perksbymatope.esp
-  IF VAR(EN) && IF ("levelingperkslite.esp") WARN: Delete. Already included in levelingperkslite.esp
-    IF VAR(RU) && IF ("levelingperkslite.esp") WARN: Удалите. Уже включено в levelingperkslite.esp
+  IF VAR(EN) && IF FILE("levelingperkslite.esp") WARN: Delete. Already included in levelingperkslite.esp
+    IF VAR(RU) && IF FILE("levelingperkslite.esp") WARN: Удалите. Уже включено в levelingperkslite.esp
 Perk_Soul_Siphon_100.esp
 PerQ_ReqSkillLevel.esp
 pfeile schmieden perk.esp
@@ -6384,7 +6384,7 @@ Skyrim Scaling Stopper.esp
   IF VAR(EN) WARN: If using version 3+, Skyrim Monster Mod is required.
     IF VAR(RU) WARN: Если используется версия 3+, требуется также мод Skyrim Monster Mod.
 SkyXP.esp
-  IF VERSION("SKSE", "0.1.5.6", <) || IFNOT ("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.6+
+  IF VERSION("SKSE", "0.1.5.6", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.6+
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
 REGEX: SleepFor.+xExp\.esp
 SlowerLevelingAlchemy.esp
@@ -6392,7 +6392,7 @@ SlowerLevelingEnchanting.esp
 SlowerLevelingSmithing.esp
 REGEX: SlowerSkills_v.+\.esp
 SmithingMasteryPerks.esp
-  IF ("PerkUP-Smithing.esp") INC: PerkUP-Smithing.esp
+  IF FILE("PerkUP-Smithing.esp") INC: PerkUP-Smithing.esp
 The Fingersmith Mod + Perk Adjustments 1.2b.esp
 ToL Perk Tree.esp
 REGEX: training_costs_\d{1,2}_x\d_x\d\.esp
@@ -6404,14 +6404,14 @@ Twili's Unarmed perk.esp
 Twili's Unarmored perk.esp
 REGEX: Uncapped Perks - [CM].+\.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
-  IF VAR(EN) && IF (r"PerkUP-.*\.esp") INC: PerkUP
+  IF VAR(EN) && IF REGEX("PerkUP-.*\.esp") INC: PerkUP
 Uncapped Perks.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
-  IF VAR(EN) && IF (r"PerkUP-.*\.esp") INC: PerkUP
+  IF VAR(EN) && IF REGEX("PerkUP-.*\.esp") INC: PerkUP
 Uncapped Perks - Optional Magic Add-on.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
 REGEX: Uncapped Perks - .+\.esp
-  IF VAR(EN) && IF (r"PerkUP-.*\.esp") INC: PerkUP
+  IF VAR(EN) && IF REGEX("PerkUP-.*\.esp") INC: PerkUP
 BlueStarPerkAdventure.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
 REGEX: WiS IV - leveld World X\d+\.esp
@@ -6420,15 +6420,15 @@ REGEX: WiS IV - leveld World X\d+\.esp
 SkyRe_Main.esp
   TAG: {{BASH: Relev, Delev}}
     //TAG: {{BASH: Delev, Names, Relev}}
-  IF ("ACE Crafting.esp") INC: ACE Crafting.esp
-  IF ("ACE Speech.esp") INC: ACE Speech.esp
-  IF ("Perky.esp") INC: Perky.esp (Syynx's Perky)
-  IF (r"PerkUP-.*\.esp") INC: PerkUP
-  IF (r"Uncapped Perks.*\.esp") INC: Uncapped perks
+  IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
+  IF FILE("ACE Speech.esp") INC: ACE Speech.esp
+  IF FILE("Perky.esp") INC: Perky.esp (Syynx's Perky)
+  IF REGEX("PerkUP-.*\.esp") INC: PerkUP
+  IF REGEX("Uncapped Perks.*\.esp") INC: Uncapped perks
   IF VAR(EN) && IF VAR(CCO) INC: Complete Crafting Overhaul (doubles in crafting)
     IF VAR(RU) && IF VAR(CCO) INC: Complete Crafting Overhaul (дубликаты в меню крафтинга)
-  IF VAR(EN) && IF ("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
-    IF VAR(RU) && IF ("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
+  IF VAR(EN) && IF FILE("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
+    IF VAR(RU) && IF FILE("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" for full perk functional
     IF VAR(RU) && IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" для полного функционирования перков.
   IF VAR(EN) SAY: To make aiming easier, recommend to add the following lines to Skyrim.ini:
@@ -6441,21 +6441,21 @@ SkyRe_Main.esp
  SAY:   fMagnetismStrafeHeadingMult=0.0
  SAY:   fMagnetismLookingMult=0.0
 SkyRe_Combat.esp
-  IFNOT ("SkyRe_Main.esp") REQ: SkyRe_Main.esp
+  IFNOT FILE("SkyRe_Main.esp") REQ: SkyRe_Main.esp
 Lorecraft - SkyRe.esp
 SkyRe_Comp.esp
-  IF VAR(EN) && IFNOT ("PerkReset SkyRe Compatibility Patch.esp") SAY: Recommend to use "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp" instead.
-    IF VAR(RU) && IFNOT ("PerkReset SkyRe Compatibility Patch.esp") SAY: Рекомендуется использовать вместо этого "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp".
-  IF VAR(EN) && IF ("PerkReset SkyRe Compatibility Patch.esp") ERROR: Delete and use 'PerkReset SkyRe Compatibility Patch.esp' instead.
-    IF VAR(RU) && IF ("PerkReset SkyRe Compatibility Patch.esp") ERROR: Удалите и используйте вместо этого 'PerkReset SkyRe Compatibility Patch.esp'.
-  IF VAR(EN) && IF ("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
-    IF VAR(RU) && IF ("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
+  IF VAR(EN) && IFNOT FILE("PerkReset SkyRe Compatibility Patch.esp") SAY: Recommend to use "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp" instead.
+    IF VAR(RU) && IFNOT FILE("PerkReset SkyRe Compatibility Patch.esp") SAY: Рекомендуется использовать вместо этого "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp".
+  IF VAR(EN) && IF FILE("PerkReset SkyRe Compatibility Patch.esp") ERROR: Delete and use 'PerkReset SkyRe Compatibility Patch.esp' instead.
+    IF VAR(RU) && IF FILE("PerkReset SkyRe Compatibility Patch.esp") ERROR: Удалите и используйте вместо этого 'PerkReset SkyRe Compatibility Patch.esp'.
+  IF VAR(EN) && IF FILE("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
+    IF VAR(RU) && IF FILE("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
 PerkReset SkyRe Compatibility Patch.esp
-  IF VAR(EN) && IF ("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
-    IF VAR(RU) && IF ("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
-IF ("SkyRe_Main.esp") MOD: vinis_food_and_rest.esp
+  IF VAR(EN) && IF FILE("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
+    IF VAR(RU) && IF FILE("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
+IF FILE("SkyRe_Main.esp") MOD: vinis_food_and_rest.esp
     IF VAR(RU) SAY: Используйте мод vinis_food_and_rest и не вкладывайте очки умений в перки "Мясоедство" и "Вегетарианство", добавленные из SkyRe_Main.esp.
-IF ("SkyRe_Main.esp") REGEX: vinis_food_and_rest.+\.esp
+IF FILE("SkyRe_Main.esp") REGEX: vinis_food_and_rest.+\.esp
 SkyRe_EncounterZones.esp
 SkyRe_EnemyAI.esp
 SkyRe_EnemyScaling.esp 
@@ -6468,84 +6468,84 @@ SkyRe_Lighting.esp
   IF VAR(EN) SAY: Only for non ENB users
     IF VAR(RU) SAY: Только для не ENB пользователей.
 SkyRe_StandingStones.esp
-  IF VAR(EN) && IF ("StaRe.esp") SAY: Remember not to load (or to simply delete) StaRe.esp
-    IF VAR(RU) && IF ("StaRe.esp") SAY: Не забудьте отключить или удалить StaRe.esp
-  IF ("Drakian race.esp") INC: Drakian race
+  IF VAR(EN) && IF FILE("StaRe.esp") SAY: Remember not to load (or to simply delete) StaRe.esp
+    IF VAR(RU) && IF FILE("StaRe.esp") SAY: Не забудьте отключить или удалить StaRe.esp
+  IF FILE("Drakian race.esp") INC: Drakian race
   INC: Standing Stones and Guardians
-IF ("SkyRe_Main.esp") MOD: Morrowloot.esp
+IF FILE("SkyRe_Main.esp") MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
     //please fix grammar. )
     IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в LL) и меняют оди и теже уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
-  IF VAR(EN) && IF VAR(SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
-    IF VAR(RU) && IF VAR(SkyRe) && IFNOT ("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для равильной работы мода с SkyRe.
+  IF VAR(EN) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
+    IF VAR(RU) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для равильной работы мода с SkyRe.
 REGEX: SkyRe_Plugin_ImmersiveArmor_.+\.esp
   IF VAR(EN) && IF ACTIVE ("hothtrooper44_ArmorCompilation.esp") SAY: Remember not to load (or to simply delete) hothtrooper44_ArmorCompilation.esp
     IF VAR(RU) && IF ACTIVE ("hothtrooper44_ArmorCompilation.esp") SAY: Не забудьте отключить или удалить hothtrooper44_ArmorCompilation.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_Omegared99-WeaponSets.esp
-  IF VAR(EN) && IF ("Omegared99-WeaponSets.esp") SAY: Remember not to load (or to simply delete) Omegared99-WeaponSets.esp
+  IF VAR(EN) && IF FILE("Omegared99-WeaponSets.esp") SAY: Remember not to load (or to simply delete) Omegared99-WeaponSets.esp
     IF VAR(RU) && IF ACTIVE ("Omegared99-WeaponSets.esp") SAY: Не забудьте отключить или удалить Omegared99-WeaponSets.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_DragonBoneWeaponsComplete.esp
-  IF VAR(EN) && IFNOT ("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa") WARN: You need to rename "DragonBoneWeaponsComplete.bsa" to "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" or this mod won't work.
-    IF VAR(RU) && IFNOT ("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa") WARN: Вам нужно переименовать "DragonBoneWeaponsComplete.bsa" в "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" для подключения ресурсов мода..
-  IF VAR(EN) && IF ("Dragonbone Weapons Complete.esp") SAY: Remember not to load (or to simply delete) 'Dragonbone Weapons Complete.esp'
+  IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa") WARN: You need to rename "DragonBoneWeaponsComplete.bsa" to "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa") WARN: Вам нужно переименовать "DragonBoneWeaponsComplete.bsa" в "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" для подключения ресурсов мода..
+  IF VAR(EN) && IF FILE("Dragonbone Weapons Complete.esp") SAY: Remember not to load (or to simply delete) 'Dragonbone Weapons Complete.esp'
     IF VAR(RU) && IF ACTIVE ("Dragonbone Weapons Complete.esp") SAY: Не забудьте отключить или удалить 'Dragonbone Weapons Complete.esp'
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_DwemerAutoBlade.esp
-  IF VAR(EN) && IFNOT ("SkyRe_Plugin_DwemerAutoBlade.bsa") WARN: You need to rename "DwemerAutoBlade.bsa" to "SkyRe_Plugin_DwemerAutoBlade.bsa" or this mod won't work.
-    IF VAR(RU) && IFNOT ("SkyRe_Plugin_DwemerAutoBlade.bsa") WARN: Вам нужно переименовать "DwemerAutoBlade.bsa" в "SkyRe_Plugin_DwemerAutoBlade.bsa" или этот мод не будет работать.
-  IF VAR(EN) && IF ("DwemerAutoBlade.esp") SAY: Remember not to load (or to simply delete) DwemerAutoBlade.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_DwemerAutoBlade.bsa") WARN: You need to rename "DwemerAutoBlade.bsa" to "SkyRe_Plugin_DwemerAutoBlade.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_DwemerAutoBlade.bsa") WARN: Вам нужно переименовать "DwemerAutoBlade.bsa" в "SkyRe_Plugin_DwemerAutoBlade.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF FILE("DwemerAutoBlade.esp") SAY: Remember not to load (or to simply delete) DwemerAutoBlade.esp
     IF VAR(RU) && IF ACTIVE ("DwemerAutoBlade.esp") SAY: Не забудьте отключить или удалить DwemerAutoBlade.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_isilNarsil.esp
-  IF VAR(EN) && IF ("isilNarsil.esp") SAY: Remember not to load (or to simply delete) isilNarsil.esp
+  IF VAR(EN) && IF FILE("isilNarsil.esp") SAY: Remember not to load (or to simply delete) isilNarsil.esp
     IF VAR(RU) && IF ACTIVE ("isilNarsil.esp") SAY: Не забудьте отключить или удалить isilNarsil.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_Malo_Waffen_V3Bugfix.esp
-  IF VAR(EN) && IF ("Malo_Waffen.esp") SAY: Remember not to load (or to simply delete) Malo_Waffen.esp
+  IF VAR(EN) && IF FILE("Malo_Waffen.esp") SAY: Remember not to load (or to simply delete) Malo_Waffen.esp
     IF VAR(RU) && IF ACTIVE ("Malo_Waffen.esp") SAY: Не забудьте отключить или удалить Malo_Waffen.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_Oriental_Weapon&ArmorV1_10.esp
-  IF VAR(EN) && IF ("Oriental Weapon&Armor.esp") SAY: Remember not to load (or to simply delete) Oriental Weapon&Armor.esp
+  IF VAR(EN) && IF FILE("Oriental Weapon&Armor.esp") SAY: Remember not to load (or to simply delete) Oriental Weapon&Armor.esp
     IF VAR(RU) && IF ACTIVE ("Oriental Weapon&Armor.esp") SAY: Не забудьте отключить или удалить Oriental Weapon&Armor.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_viciousdawnbreaker.esp
-  IF VAR(EN) && IFNOT ("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa") WARN: You need to rename "viciousdawnbreaker.bsa" to "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" or this mod won't work.
-    IF VAR(RU) && IFNOT ("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa") WARN: Вам нужно переименовать "viciousdawnbreaker.bsa" в "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" или этот мод не будет работать.
-  IF VAR(EN) && IF ("viciousdawnbreaker.esp") SAY: Remember not to load (or to simply delete) viciousdawnbreaker.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa") WARN: You need to rename "viciousdawnbreaker.bsa" to "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa") WARN: Вам нужно переименовать "viciousdawnbreaker.bsa" в "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF FILE("viciousdawnbreaker.esp") SAY: Remember not to load (or to simply delete) viciousdawnbreaker.esp
     IF VAR(RU) && IF ACTIVE ("viciousdawnbreaker.esp") SAY: Не забудьте отключить или удалить viciousdawnbreaker.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe Masters of Death Sicarius Armor.esp
-  IF VAR(EN) && IF ("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp
+  IF VAR(EN) && IF FILE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp
     IF VAR(RU) && IF ACTIVE ("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe Mystic Armor and Weapon Set.esp
-  IF VAR(EN) && IF ("Mystic.esp") SAY: Remember not to load (or to simply delete) Mystic.esp
+  IF VAR(EN) && IF FILE("Mystic.esp") SAY: Remember not to load (or to simply delete) Mystic.esp
     IF VAR(RU) && IF ACTIVE ("Mystic.esp") SAY: Не забудьте отключить или удалить Mystic.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_RegentSwords.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ("RegentSword.esp") SAY: Remember not to load (or to simply delete) RegentSword.esp
-    IF VAR(RU) && IF ("RegentSword.esp") SAY: Не забудьте отключить или удалить RegentSword.esp
+  IF VAR(EN) && IF FILE("RegentSword.esp") SAY: Remember not to load (or to simply delete) RegentSword.esp
+    IF VAR(RU) && IF FILE("RegentSword.esp") SAY: Не забудьте отключить или удалить RegentSword.esp
 Tribunal for Skyre.esp
-  IFNOT ("Tribunal Robes by Zairaam.esp") REQ Tribunal Robes by Zairaam.esp
+  IFNOT FILE("Tribunal Robes by Zairaam.esp") REQ Tribunal Robes by Zairaam.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_Morrowloot.esp
-  IFNOT ("Morrowloot.esp") REQ:  Morrowloot.esp
+  IFNOT FILE("Morrowloot.esp") REQ:  Morrowloot.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 Perk_Soul_Siphon_Full_Recharge.esp
@@ -6668,8 +6668,8 @@ FlansEyesForSkrim.esp
 KhajiitEyes.esp
 Krisan's Eyes.esp
 MissAniThrope's Mystic Eyes.esp
-  IF VAR(EN) && IF ("MissAniThrope and chakaru11's C Eyes.esp") WARN: Delete. Already included in 'MissAniThrope and chakaru11's C Eyes.esp'
-    IF VAR(RU) && IF ("MissAniThrope and chakaru11's C Eyes.esp") WARN: Удалите. Уже включено в 'MissAniThrope and chakaru11's C Eyes.esp'
+  IF VAR(EN) && IF FILE("MissAniThrope and chakaru11's C Eyes.esp") WARN: Delete. Already included in 'MissAniThrope and chakaru11's C Eyes.esp'
+    IF VAR(RU) && IF FILE("MissAniThrope and chakaru11's C Eyes.esp") WARN: Удалите. Уже включено в 'MissAniThrope and chakaru11's C Eyes.esp'
 MissAniThrope and chakaru11's C Eyes.esp
 OrientalEyes.esp
 PurpleEyes.esp
@@ -6798,8 +6798,8 @@ REGEX: SPODUM v.+\.esp
 voidMountedFollowers.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO.
     IF VAR(RU) && IF VAR(UFO) WARN: Включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.
-  IF VAR(EN) && IF ("BDO.esp") WARN: Delete. Included in BDO.esp
-    IF VAR(RU) && IF ("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
+  IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
+    IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
 Hroki Wife Companion.esp
 mercenariesplus.esp
 NoFollowerTorch.esp
@@ -6814,25 +6814,25 @@ BEGINGROUP: Extensible Follower Framework
 XFLDialogue.esp
   IF VAR(EN) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp has the same functional, use only one.
     IF VAR(RU) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, используйте что-то одно.
-  IF VAR(EN) && IF ("BDO.esp") INC: BDO.esp has the same functional, use only one.
-    IF VAR(RU) && IF ("BDO.esp") INC: BDO.esp имеет похожий функционал, используйте что-то одно.
+  IF VAR(EN) && IF FILE("BDO.esp") INC: BDO.esp has the same functional, use only one.
+    IF VAR(RU) && IF FILE("BDO.esp") INC: BDO.esp имеет похожий функционал, используйте что-то одно.
 XFLPlugins.esp
   IF VAR(EN) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp has the same functional, use only one.
     IF VAR(RU) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, используйте что-то одно.
-  IF VAR(EN) && IF ("BDO.esp") INC: BDO.esp has the same functional, use only one.
-    IF VAR(RU) && IF ("BDO.esp") INC: BDO.esp имеет похожий функционал, используйте что-то одно.
+  IF VAR(EN) && IF FILE("BDO.esp") INC: BDO.esp has the same functional, use only one.
+    IF VAR(RU) && IF FILE("BDO.esp") INC: BDO.esp имеет похожий функционал, используйте что-то одно.
 XFLHorses.esp
-  IFNOT ("XFLMain.esm") REQ: XFLMain.esm
+  IFNOT FILE("XFLMain.esm") REQ: XFLMain.esm
 XFLTweaks.esp
-  IFNOT ("XFLMain.esm") REQ: XFLMain.esm
+  IFNOT FILE("XFLMain.esm") REQ: XFLMain.esm
 ENDGROUP: Extensible Follower Framework 
 
 BEGINGROUP: Ultimate Follower Overhaul
 
 UFO - Ultimate Follower Overhaul.esp
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
-  IF VAR(EN) && IF ("BDO.esp") INC: BDO.esp, has the same functional, use only one.
-    IF VAR(RU) && IF ("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
+  IF VAR(EN) && IF FILE("BDO.esp") INC: BDO.esp, has the same functional, use only one.
+    IF VAR(RU) && IF FILE("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
   IF VAR(EN) SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on "http://skyrim.nexusmods.com/mods/14037 mod page".
     IF VAR(RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньенов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода".
 UFO - Dawnguard AddOn.esp
@@ -6913,9 +6913,9 @@ conancompanion.esp
 CMBeautifulCompanions.esp
 CMNewCompanions.esp
 CMCompanionLevel.esp
-  IF VAR(EN) && IF ("BDO.esp") WARN: Delete. Included in BDO.esp
-    IF VAR(RU) && IF ("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
-IFNOT (r"(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
+  IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
+    IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
+IFNOT REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 All Housecarls Are Hunks.esp
 MODNewfollowers.esp
 OneiroFollowers.esp
@@ -6948,13 +6948,13 @@ timek_Damius.esp
 undyingcompanions.esp
 ExtraBlades.esp
 Better Followers.esp
-  IF ("throwingweapons.esp") INC: throwingweapons.esp. Some NPC changes not work with  'throwingweapons.esp'. See note for throwingweapons.esp
+  IF FILE("throwingweapons.esp") INC: throwingweapons.esp. Some NPC changes not work with  'throwingweapons.esp'. See note for throwingweapons.esp
     IF VAR(RU) && IF ACTIVE ("throwingweapons.esp") INC: throwingweapons.esp. Некоторые изменения NPC не будут работать с модам 'throwingweapons.esp'. Смотрите комментарий к моду throwingweapons.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SpecializedFollowers.esp
-  IF VAR(EN) && IF (r"Better Followers - .+\.esp") WARN: Delete. Use Better Followers - S*.esp instead.
-    IF VAR(RU) && IF (r"Better Followers - .+\.esp") WARN: Удалите. Используйте вместо этого Better Followers - S*.esp.
+  IF VAR(EN) && IF REGEX("Better Followers - .+\.esp") WARN: Delete. Use Better Followers - S*.esp instead.
+    IF VAR(RU) && IF REGEX("Better Followers - .+\.esp") WARN: Удалите. Используйте вместо этого Better Followers - S*.esp.
 REGEX: Better Followers - Specialized( - Not E)?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -6974,21 +6974,21 @@ HirelingBelrand.esp
 HirelingMarcurio.esp
 HousecarlBeauties.esp
 HousecarlMarkath.esp
-  IF VAR(EN) && IF ("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
-    IF VAR(RU) && IF ("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
+  IF VAR(EN) && IF FILE("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
+    IF VAR(RU) && IF FILE("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
 HousecarlRiften.esp
-  IF VAR(EN) && IF ("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
-    IF VAR(RU) && IF ("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
+  IF VAR(EN) && IF FILE("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
+    IF VAR(RU) && IF FILE("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
 HousecarlSolitude.esp
-  IF VAR(EN) && IF ("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
-    IF VAR(RU) && IF ("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
+  IF VAR(EN) && IF FILE("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
+    IF VAR(RU) && IF FILE("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
 HousecarlSolitude A Jordis the Sword-Maiden v0.2.esp
 HousecarlWhiterun.esp
-  IF VAR(EN) && IF ("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
-    IF VAR(RU) && IF ("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
+  IF VAR(EN) && IF FILE("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
+    IF VAR(RU) && IF FILE("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
 HousecarlWindhelm.esp
-  IF VAR(EN) && IF ("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
-    IF VAR(RU) && IF ("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
+  IF VAR(EN) && IF FILE("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
+    IF VAR(RU) && IF FILE("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
 SelminaDArchon.esp
 REGEX: aela1.3b?(alt)?(nowarpaint)?\.esp
 REGEX: aranea1.?\.esp
@@ -7011,21 +7011,21 @@ EmilieFrost.esp
 Froydis.esp
 Jaffar.esp
 Jenassa.esp
-  IF ("throwingweapons.esp") INC: throwingweapons.esp.
+  IF FILE("throwingweapons.esp") INC: throwingweapons.esp.
 Janne.esp
 Lydia.esp
-  IF ("throwingweapons.esp") INC: throwingweapons.esp.
+  IF FILE("throwingweapons.esp") INC: throwingweapons.esp.
 Martina.esp
 Mjoll.esp
 Uthgerd.esp
 Lydia-TCG.esp
-  IF ("throwingweapons.esp") INC: throwingweapons.esp.
+  IF FILE("throwingweapons.esp") INC: throwingweapons.esp.
 Lydia_edited.esp
   IFNOT VAR(ApachiiHair) REQ: ApachiiHair
 Lydia_edited_without_scars.esp
   IFNOT VAR(ApachiiHair) REQ: ApachiiHair
-  IF VAR(EN) && IF ("Lydia_edited.esp") WARN: Use only one Lydia_edited.esp
-    IF VAR(RU) && IF ("Lydia_edited.esp") WARN: Используйте только один Lydia_edited.esp
+  IF VAR(EN) && IF FILE("Lydia_edited.esp") WARN: Use only one Lydia_edited.esp
+    IF VAR(RU) && IF FILE("Lydia_edited.esp") WARN: Используйте только один Lydia_edited.esp
 Iona-TCG.esp
 Mjoll-TCG.esp
 Soriana.esp
@@ -7093,7 +7093,7 @@ Dwarf Race.Esp
   REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp", 'Better males - Beautiful nudes and faces - New hairstyles'
 Gimli.Esp
   REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp", 'Better males - Beautiful nudes and faces - New hairstyles'
-  IF VAR(EN) && IF ("Dwarf Race.Esp") WARN: Use only one 'Dwarf Race.Esp' or 'Gimli.Esp'
+  IF VAR(EN) && IF FILE("Dwarf Race.Esp") WARN: Use only one 'Dwarf Race.Esp' or 'Gimli.Esp'
     IF VAR(RU) WARN: Используйте только один 'Dwarf Race.Esp' или 'Gimli.Esp'
 Aragorn.Esp
   REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp", 'Better males - Beautiful nudes and faces - New hairstyles'
@@ -7108,30 +7108,30 @@ Gollum.Esp
 zzz_Jenassa_MAKEOVER_by83Willow.esp
 NewLiveNPC_Nal.esp
 REGEX: Better Followers - [SBNP].*\.esp
-  IF ("TCG.esp") INC: TCG.esp
+  IF FILE("TCG.esp") INC: TCG.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Delete C01QuestScript.pex from data/scripts folder, if exist.
     IF VAR(RU) && IF VAR(UFO) WARN: Удалите скрипт C01QuestScript.pex, из папки data/scripts, если он существует.
-  IF VAR(EN) && IF (r"Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Better Followers - Armor Pack I & II, download it on BF page.
-    IF VAR(RU) && IF (r"Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Better Followers - Armor Pack I & II, вы можете их загрузить на странице Better Followers.
+  IF VAR(EN) && IF REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Better Followers - Armor Pack I & II, download it on BF page.
+    IF VAR(RU) && IF REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Better Followers - Armor Pack I & II, вы можете их загрузить на странице Better Followers.
   IF VAR(EN) SAY: Use only one Better Followers - *.esp
     IF VAR(RU) SAY: Используйте только один Better Followers - *.esp
 REGEX: Better Follower(s -)? Dialogue-?(All|Dog|Reorder|Thane)?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version of Better Followers and use Big Dialod Overhaul(BDO) instead.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии Better Followers и используйте Big Dialod Overhaul(BDO) вместо этого. of Better Followers and use Big Dialod Overhaul(BDO) instead.
-  IF VAR(EN) && IF ("BDO.esp") WARN: Delete. Included in BDO.esp
-    IF VAR(RU) && IF ("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
+  IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
+    IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
   IF VAR(EN) && IF VAR(UFO) WARN: Delete. Use UFO - Ultimate Follower Overhaul.esp instead
     IF VAR(RU) && IF VAR(UFO) WARN: Удалите. Используйте вместо этого UFO - Ultimate Follower Overhaul.esp
 Better Follower Improvements.esp
 Better NPC - Faction Pack.esp
-  IF VAR(EN) && IFNOT (r"Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty version of Better Followers, named BP or BNP or SBP or SBNP
-    IF VAR(RU) && IFNOT (r"Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty-версия Better Followers, имеющая окончание BP или BNP или SBP или SBNP
+  IF VAR(EN) && IFNOT REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty version of Better Followers, named BP or BNP or SBP or SBNP
+    IF VAR(RU) && IFNOT REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty-версия Better Followers, имеющая окончание BP или BNP или SBP или SBNP
 Better NPC - Marriage Pack.esp
-  IF VAR(EN) && IFNOT (r"Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty version of Better Followers, named BP or BNP or SBP or SBNP
-    IF VAR(RU) && IFNOT (r"Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty-версия Better Followers, имеющая окончание BP или BNP или SBP или SBNP
+  IF VAR(EN) && IFNOT REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty version of Better Followers, named BP or BNP or SBP or SBNP
+    IF VAR(RU) && IFNOT REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty-версия Better Followers, имеющая окончание BP или BNP или SBP или SBNP
 AskFollowerSkills.esp
-  IF VAR(EN) && IF ("BDO.esp") WARN: Delete. Included in BDO.esp
-    IF VAR(RU) && IF ("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
+  IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
+    IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
 /* BDO.esp is located here */
 BDO.esp
 BFFAnimalCompanions.esp
@@ -7144,7 +7144,7 @@ Companion_Ria_Revised.esp
 Companion_Sooji.esp
 Daniele.esp
 Dryad companions.esp
-  IFNOT ("Dryad Race.esp") REQ: "http://skyrim.nexusmods.com/mods/21458 The Dryad(Dryad Race.esp)"
+  IFNOT FILE("Dryad Race.esp") REQ: "http://skyrim.nexusmods.com/mods/21458 The Dryad(Dryad Race.esp)"
 Eurydice.esp
 Get Out of my Bedroom Original.esp
 Golda.esp
@@ -7159,21 +7159,21 @@ Followers Unlimited 11.esp
     IF VAR(RU) && IF VAR(UFO) WARN: Уже включено в  UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
 Follower Trap Safety.esp
 FollowerWander2.esp
-  IF VAR(EN) && IF ("XFLMain.esm") SAY: XFLMain.esm has the same functional, but you can use FollowerWander2.esp on your choice.
-    IF VAR(RU) && IF ("XFLMain.esm") SAY: XFLMain.esm имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.
+  IF VAR(EN) && IF FILE("XFLMain.esm") SAY: XFLMain.esm has the same functional, but you can use FollowerWander2.esp on your choice.
+    IF VAR(RU) && IF FILE("XFLMain.esm") SAY: XFLMain.esm имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.
   IF VAR(EN) && IF VAR(UFO) SAY: UFO - Ultimate Follower Overhaul.esp has the same functional, but you can use FollowerWander2.esp on your choice.
     IF VAR(RU) && IF VAR(UFO) SAY: UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.
-  IF VAR(EN) && IF ("BDO.esp") WARN: Delete. Included in BDO.esp
-    IF VAR(RU) && IF ("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
+  IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
+    IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
 MultipleFollowers.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Multi followers functional is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
-    IF VAR(RU) && IF ("BDO.esp") WARN: Функционал нескольких компаньенов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.
+    IF VAR(RU) && IF FILE("BDO.esp") WARN: Функционал нескольких компаньенов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.
   IF VAR(EN) SAY: Make sure you dismiss any followers (except dogs) before installation.
 Follower Limit Increased.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Multi followers functional is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
-    IF VAR(RU) && IF ("BDO.esp") WARN: Функционал нескольких компаньенов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.
-  IF VAR(EN) && IF ("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, use only one, not both.
-    IF VAR(RU) && IF ("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, используйте что-то одно.
+    IF VAR(RU) && IF FILE("BDO.esp") WARN: Функционал нескольких компаньенов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.
+  IF VAR(EN) && IF FILE("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, use only one, not both.
+    IF VAR(RU) && IF FILE("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, используйте что-то одно.
 multimarriage.esp
   //must be load after multiple followers mods for wedding ceremony work.
 marriagemod - alpha v3.esp
@@ -7219,18 +7219,18 @@ BBLSVisitors.esp
 BBLuxurySuiteClassier.esp
 LZA Follower Trade Priority.esp
 REGEX: move.?it(LWT)?\.esp
-  IF VAR(EN) && IF (r"Better Followers - [SBNP].*\.esp") INC: Better Followers, BF already have same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.
-    IF VAR(RU) && IF ("Better Follower Improvements.esp") IF (r"Better Followers - [SBNP].*\.esp") INC: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.
-  IF VAR(EN) && IF (r"move.?it\.esp") && IF ("moveitLWT.esp") WARN: Use only one move it esp
-    IF VAR(RU) && IF (r"move.?it\.esp") && IF ("moveitLWT.esp") WARN: Используйте только один move it esp
+  IF VAR(EN) && IF REGEX("Better Followers - [SBNP].*\.esp") INC: Better Followers, BF already have same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.
+    IF VAR(RU) && IF FILE("Better Follower Improvements.esp") IF REGEX("Better Followers - [SBNP].*\.esp") INC: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.
+  IF VAR(EN) && IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") WARN: Use only one move it esp
+    IF VAR(RU) && IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") WARN: Используйте только один move it esp
 MrKrabs.esp
 MrSlackPants-DeadlyTraps.esp
 StopBumpingIntoMe.esp
-  IF VAR(EN) && IFNOT (r"moveit(LWT)?\.esp") REQ: moveit.esp or moveitLWT.esp
-    IF VAR(RU) && IFNOT (r"moveit(LWT)?\.esp") REQ: moveit.esp или moveitLWT.esp
+  IF VAR(EN) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp or moveitLWT.esp
+    IF VAR(RU) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp или moveitLWT.esp
 HugMe.esp
-  IF VAR(EN) && IFNOT (r"moveit(LWT)?\.esp") REQ: moveit.esp or moveitLWT.esp
-    IF VAR(RU) && IFNOT (r"moveit(LWT)?\.esp") REQ: moveit.esp или moveitLWT.esp
+  IF VAR(EN) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp or moveitLWT.esp
+    IF VAR(RU) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp или moveitLWT.esp
 REGEX: FollowMeNicely(AndHugMeMyLove)?(Dammit-)?(LetUsChat|AllOptionsOn)?(LessRepetitiveChatter)?\.esp
 REGEX: FollowMeNicelyDammit-(ShutUpAndFight|RunLittleRabbitRun|LetsUsChat)?\.esp
 FriendlyFireTolerance99not4.esp
@@ -7268,8 +7268,8 @@ REGEX: QuickStart3_.+\.esp
     IF VAR(RU) SAY: Используйте только один QuickStart3_*.esp
 Alternate Start - Live Another Life.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
-  IF VAR(EN) && IF ("Live Another Life.esp") ERROR: Live Another Life.esp was detected. You must uninstall the old version of the mod before using the new one.
-    IF VAR(RU) && IF ("Live Another Life.esp") ERROR: Обнаружена старая версия 'Live Another Life.esp'. Вы должны удалить старую версию, перед использованием этой новой.
+  IF VAR(EN) && IF FILE("Live Another Life.esp") ERROR: Live Another Life.esp was detected. You must uninstall the old version of the mod before using the new one.
+    IF VAR(RU) && IF FILE("Live Another Life.esp") ERROR: Обнаружена старая версия 'Live Another Life.esp'. Вы должны удалить старую версию, перед использованием этой новой.
 Live Another Life.esp
   IF VAR(EN) WARN: This version is not supported due to corruption caused by TESVSnip. Please upgrade as soon as possible to version 2.0+
     IF VAR(RU) WARN: Эта версия не поддерживается из за нарушений, вызванных программой TESVSnip. Пожалуйста, обновите так быстро как возможно до версии 2.0 или выше.
@@ -7282,7 +7282,7 @@ BEGINGROUP: Race Overrides
 XCE.esp
 xced.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IFNOT ("XCE.esp") REQ: XCE.esp (XCE - Xenius Character Enhancement)
+  IFNOT FILE("XCE.esp") REQ: XCE.esp (XCE - Xenius Character Enhancement)
 [mpx]raceheights.esp
 AllWarPaintRaces.esp
 argonianraptor.esp
@@ -7290,8 +7290,8 @@ AutoCastRacials.esp
 Barber.esp
 Basvanbeu MuscleTextureChanger with Navetsea set.esp
 REGEX: Better Racials- .+\.esp
-  IF VAR(EN) && IF ("Better Racials- Altmer Edition.esp") && IF ("Better Racials- Altmer Edition - NW.esp") SAY: Use only one Better Racials- Altmer Edition.esp or Better Racials- Altmer Edition - NW.esp
-    IF VAR(RU) && IF ("Better Racials- Altmer Edition.esp") && IF ("Better Racials- Altmer Edition - NW.esp") SAY: Используйте только один Better Racials- Altmer Edition.esp или Better Racials- Altmer Edition - NW.esp
+  IF VAR(EN) && IF FILE("Better Racials- Altmer Edition.esp") && IF FILE("Better Racials- Altmer Edition - NW.esp") SAY: Use only one Better Racials- Altmer Edition.esp or Better Racials- Altmer Edition - NW.esp
+    IF VAR(RU) && IF FILE("Better Racials- Altmer Edition.esp") && IF FILE("Better Racials- Altmer Edition - NW.esp") SAY: Используйте только один Better Racials- Altmer Edition.esp или Better Racials- Altmer Edition - NW.esp
 Better races V1,1.esp
 ChangeMyNordVoice.esp
 ClassicClasses.esp
@@ -7303,7 +7303,7 @@ REGEX: Height Adjusted Races.*\.esp
   IF VAR(EN) SAY: Use only one Height Adjusted Races*.esp
     IF VAR(RU) SAY: Используйте только один Height Adjusted Races*.esp
 REGEX: True Giants( v\d)?\.esp
-  IF (r"Height Adjusted Races with True Giants.*\.esp") INC: Height Adjusted Races with True Giants
+  IF REGEX("Height Adjusted Races with True Giants.*\.esp") INC: Height Adjusted Races with True Giants
 EnhancedCharacterEdit.esp
 Facelight.esp
 white argonian.esp
@@ -7347,16 +7347,16 @@ REGEX: WiS IV( -)? Races?\.esp
 Gri_BeastFeet.esp
 QuickKhajiits.esp
 SkyRe_Races.esp
-  IF VAR(EN) && IF ("RaRe.esp") SAY: Remember not to load (or to simply delete) RaRe.esp
+  IF VAR(EN) && IF FILE("RaRe.esp") SAY: Remember not to load (or to simply delete) RaRe.esp
     IF VAR(RU) && IF ACTIVE ("RaRe.esp") SAY: Не забудьте отключить или удалить RaRe.esp
-  IF ("EnhancedCharacterEdit.esp") INC: EnhancedCharacterEdit.esp
-  IF VAR(EN) && IF ("DSpSoB.esp") INC: DSpSob - Duel Sheath plus Shields on Back (conflicts with skeletons)
-    IF VAR(RU) && IF ("DSpSoB.esp") INC: DSpSob - Duel Sheath plus Shields on Back (конфликты со скелетами)
-  IF VAR(EN) && IF ("ArmedttTeeth.esm") INC: ATT - Armed to the Teeth (conflicts with skeletons)
-    IF VAR(RU) && IF ("ArmedttTeeth.esm") INC: ATT - Armed to the Teeth (конфликты со скелетами)
+  IF FILE("EnhancedCharacterEdit.esp") INC: EnhancedCharacterEdit.esp
+  IF VAR(EN) && IF FILE("DSpSoB.esp") INC: DSpSob - Duel Sheath plus Shields on Back (conflicts with skeletons)
+    IF VAR(RU) && IF FILE("DSpSoB.esp") INC: DSpSob - Duel Sheath plus Shields on Back (конфликты со скелетами)
+  IF VAR(EN) && IF FILE("ArmedttTeeth.esm") INC: ATT - Armed to the Teeth (conflicts with skeletons)
+    IF VAR(RU) && IF FILE("ArmedttTeeth.esm") INC: ATT - Armed to the Teeth (конфликты со скелетами)
   IF VAR(EN) INC: Gender and Race Heights (conflicts with skeletons)
     IF VAR(RU) INC: Gender and Race Heights (конфликты со скелетами)
-IF ("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
+IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   //Must be loaded after SkyRe_Races.esp(if installed) for correct work
 ENDGROUP: Race Overrides
 
@@ -7433,8 +7433,8 @@ rcrnShaders.esp
   IF VAR(EN) SAY: Make sure you have bEnableFileSelection=1 in SkyrimPrefs.ini under [Launcher].
     IF VAR(RU) SAY: Убедитесь, что строка bEnableFileSelection=1 в SkyrimPrefs.ini находитсся в секции [Launcher].
 Volrath - Dragonreach - Brazier fix - 1.1.esp
-  IF VAR(EN) && IFNOT ("rcrnShaders.esp") && IFNOT (r"RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") IF VAR(EN) ERROR: If using V1.1 RCRN is required, otherwise your game will crash.
-    IF VAR(RU) && IFNOT ("rcrnShaders.esp") && IFNOT (r"RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") IF VAR(EN) ERROR: Если используется версия 1.1, тогда требуется мод RCRN, иначе ваша игра может вылетать.
+  IF VAR(EN) && IFNOT FILE("rcrnShaders.esp") && IFNOT REGEX("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") IF VAR(EN) ERROR: If using V1.1 RCRN is required, otherwise your game will crash.
+    IF VAR(RU) && IFNOT FILE("rcrnShaders.esp") && IFNOT REGEX("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") IF VAR(EN) ERROR: Если используется версия 1.1, тогда требуется мод RCRN, иначе ваша игра может вылетать.
 Animated Weapon Enchants.esp
 Animated Weapon Enchants - Vanilla Sounds.esp
 Animated Enchantments.esp
@@ -7460,14 +7460,14 @@ better_water.esp
 ClearWater.esp
 ImmersiveWater3.esp
 Purewaters.esp
-IF ("Purewaters.esp") MOD: realrainextended.esp
+IF FILE("Purewaters.esp") MOD: realrainextended.esp
   IF VAR(EN) SAY: Use only one realrain.esp
     IF VAR(RU) SAY: Используйте только один realrain.esp
 RealisticWaterTextures.esp
-  IF VAR(EN) && IF ("WATER.esp") WARN: DELETE. Use WATER.esp instead
-    IF VAR(RU) && IF ("WATER.esp") WARN: Удалите. Используйте WATER.esp вместо этого.
-  IF VAR(EN) && IFNOT ("WATER.esp") SAY: Old. Use "http://skyrim.nexusmods.com/mods/13268 WATER" mod instead.
-    IF VAR(RU) && IFNOT ("WATER.esp") SAY: Устарело. Используйте вместо этого мод "http://skyrim.nexusmods.com/mods/13268 WATER".
+  IF VAR(EN) && IF FILE("WATER.esp") WARN: DELETE. Use WATER.esp instead
+    IF VAR(RU) && IF FILE("WATER.esp") WARN: Удалите. Используйте WATER.esp вместо этого.
+  IF VAR(EN) && IFNOT FILE("WATER.esp") SAY: Old. Use "http://skyrim.nexusmods.com/mods/13268 WATER" mod instead.
+    IF VAR(RU) && IFNOT FILE("WATER.esp") SAY: Устарело. Используйте вместо этого мод "http://skyrim.nexusmods.com/mods/13268 WATER".
 /* Not sure if this is obsolete its from Realistic Water Textures and Terrain */
 RWTT - Get Wet.esp
   IF VAR(EN) SAY: Originally for Realistic Water Textures and Terrain, may be obsolete.
@@ -7477,14 +7477,14 @@ WATER - Get Wet.esp
 /* I Think Water F.X. and Water FX - Get Wet are obsolete. */
 Water F.X.esp
 Water FX - Get Wet.esp
-  IF VAR(EN) && IF ("Chesko_Frostfall.esp") TAG: {{BASH: Deactivate, NoMerge}} already included in 'Chesko_Frostfall.esp'
-    IF VAR(RU) && IF ("Chesko_Frostfall.esp") TAG: {{BASH: Deactivate, NoMerge}} уже включено в Chesko_Frostfall.esp
+  IF VAR(EN) && IF FILE("Chesko_Frostfall.esp") TAG: {{BASH: Deactivate, NoMerge}} already included in 'Chesko_Frostfall.esp'
+    IF VAR(RU) && IF FILE("Chesko_Frostfall.esp") TAG: {{BASH: Deactivate, NoMerge}} уже включено в Chesko_Frostfall.esp
 kerplunk.esp
-  IF VAR(EN) && IF ("WATER.esp") WARN: Delete. Included in WATER.esp
-    IF VAR(RU) && IF ("WATER.esp") WARN: Удалите входит в WATER.esp
+  IF VAR(EN) && IF FILE("WATER.esp") WARN: Delete. Included in WATER.esp
+    IF VAR(RU) && IF FILE("WATER.esp") WARN: Удалите входит в WATER.esp
 waterfxgetwet.esp
-  IF VAR(EN) && IF ("WATER - Get Wet.esp") SAY: Use either waterfxgetwet.esp or WATER - Get Wet.esp
-    IF VAR(RU) && IF ("WATER - Get Wet.esp") SAY: Используйте любой из waterfxgetwet.esp или WATER - Get Wet.esp
+  IF VAR(EN) && IF FILE("WATER - Get Wet.esp") SAY: Use either waterfxgetwet.esp or WATER - Get Wet.esp
+    IF VAR(RU) && IF FILE("WATER - Get Wet.esp") SAY: Используйте любой из waterfxgetwet.esp или WATER - Get Wet.esp
 Blacksmithforge water fix.esp
 GreenWaterFixForPureWaters.esp
   IF VAR(EN) SAY: Obsoleve upgrade to new version.
@@ -7493,8 +7493,8 @@ GreenWaterFixForWATER.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 GreenWaterFix.esp
-  IF (7F378D8E|"GreenWaterFix.esp") SAY: Upgrade to version 1.1 (For Vanilla water ONLY)
-    IF VAR(RU) && IF (7F378D8E|"GreenWaterFix.esp") SAY: Обновите до версии 1.1+ (Только для воды из чистого Скайрим)
+  IF CHECKSUM("GreenWaterFix.esp", 7F378D8E) SAY: Upgrade to version 1.1 (For Vanilla water ONLY)
+    IF VAR(RU) && IF CHECKSUM("GreenWaterFix.esp", 7F378D8E) SAY: Обновите до версии 1.1+ (Только для воды из чистого Скайрим)
 GreenWaterFix_Compatible.esp
 GreenWaterFix_CrystalClearPatch.esp
 GreenWaterFix_LesserBlurPatch.esp
@@ -7507,8 +7507,8 @@ accurate prison markers.esp
 arvakskull-marker.esp
 Barenziah.esp
 BarenziahQuestMarkers.esp
-  IF VAR(EN) && IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
-    IF VAR(RU) && IF ("BarenziahQuestMarkers_Droppable.esp") WARN: Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp
+  IF VAR(EN) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
+    IF VAR(RU) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp
 BetterMapMarkerPlacements.esp
 camp_map_markers.esp
 cartographers map markers.esp
@@ -7551,7 +7551,7 @@ Arrows renamed for better sorting.esp
 BBLSGuysApachii.esp
   IF VERSION("TES5", "0.1.6.89", <) REQ: Skyrim 1.6.89+
   IFNOT VAR(ApachiiHair) REQ: Apachii Sky Hair.
-  IFNOT ("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
+  IFNOT FILE("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
   
 BEGINGROUP: Compatibility Patches
 // Compatability Patches which must load after a certain mod go here
@@ -7561,20 +7561,20 @@ REGEX: Agony's Sorting Frenzy - .+\.esp
 dD-Dawnguard-EBT Patch.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 dD-Dawnguard-MonsterMod EBT Patch.esp
-  IF ("dD-Dawnguard-EBT Patch.esp") || IF ("dD-SkyrimMonsterMod EBT Patch.esp") && IF VAR(EN) SAY: Use only one EBT patch
-    IF ("dD-Dawnguard-EBT Patch.esp") || IF ("dD-SkyrimMonsterMod EBT Patch.esp") && IF VAR(RU) WARN: Используйте только один EBT-патч.
+  IF FILE("dD-Dawnguard-EBT Patch.esp") || IF FILE("dD-SkyrimMonsterMod EBT Patch.esp") && IF VAR(EN) SAY: Use only one EBT patch
+    IF FILE("dD-Dawnguard-EBT Patch.esp") || IF FILE("dD-SkyrimMonsterMod EBT Patch.esp") && IF VAR(RU) WARN: Используйте только один EBT-патч.
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IFNOT ("SkyMoMod.esm") REQ: Skyrim Monster Mod
+  IFNOT FILE("SkyMoMod.esm") REQ: Skyrim Monster Mod
 dD-SkyrimMonsterMod EBT Patch.esp
-  IF VAR(EN) && IF ("dD-Dawnguard-EBT Patch.esp") SAY: Use only one EBT patch
-    IF VAR(RU) && IF ("dD-Dawnguard-EBT Patch.esp") WARN: Используйте только один EBT-патч.
-  IFNOT ("SkyMoMod.esm") REQ: Skyrim Monster Mod
+  IF VAR(EN) && IF FILE("dD-Dawnguard-EBT Patch.esp") SAY: Use only one EBT patch
+    IF VAR(RU) && IF FILE("dD-Dawnguard-EBT Patch.esp") WARN: Используйте только один EBT-патч.
+  IFNOT FILE("SkyMoMod.esm") REQ: Skyrim Monster Mod
 GeneralStores-SkyMoMod.esp
 REGEX: SSS .+ Patch\.esp
 SSS Deadly Dragons Patch A.esp
 SSS Deadly Dragons Patch B.esp
-  IF VAR(EN) && IF ("SSS Deadly Dragons Patch A.esp") WARN: use only one SSS Deadly Dragons Patch.
-    IF VAR(RU) && IF ("SSS Deadly Dragons Patch A.esp") WARN: Используйте только один SSS Deadly Dragons Patch.
+  IF VAR(EN) && IF FILE("SSS Deadly Dragons Patch A.esp") WARN: use only one SSS Deadly Dragons Patch.
+    IF VAR(RU) && IF FILE("SSS Deadly Dragons Patch A.esp") WARN: Используйте только один SSS Deadly Dragons Patch.
 SSS Immersive Armors Add-on.esp
 The Asteria - Dwemer Airship(GS).esp
 TRO_BasicNeeds_WATERPatch.esp
@@ -7588,19 +7588,19 @@ BEGINGROUP: Extra Late
 FTFI Fast Travel From Indoors.esp
 // Must come after all cell altering mods.
 PC Exclusive Animation Path.esp
-  IF ("AP Skyrim.esp") INC: AP Skyrim.esp
+  IF FILE("AP Skyrim.esp") INC: AP Skyrim.esp
   IFNOT VAR(FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
   IF VAR(EN) && IF VAR(FNIS) SAY: Remember to run GenerateFNISforUsers.exe
     IF VAR(RU) && IF VAR(FNIS) SAY: Не забудьте запустить GenerateFNISforUsers.exe
 PC Exclusive Animation Path - Elder Race.esp
-  IF ("AP Skyrim.esp") INC: AP Skyrim.esp
+  IF FILE("AP Skyrim.esp") INC: AP Skyrim.esp
   IFNOT VAR(FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
   IF VAR(EN) && IF VAR(FNIS) SAY: Remember to run GenerateFNISforUsers.exe
     IF VAR(RU) && IF VAR(FNIS) SAY: Не забудьте запустить GenerateFNISforUsers.exe
 Skyrim Performance MOD.esp
 Skyrim Performance MOD 5min.esp
-  IF VAR(EN) && IF ("Skyrim Performance MOD.esp") WARN: Use only one Skyrim performance Mod.esp
-    IF VAR(RU) && IF ("Skyrim Performance MOD.esp") WARN: Используйте только один Skyrim performance Mod.esp
+  IF VAR(EN) && IF FILE("Skyrim Performance MOD.esp") WARN: Use only one Skyrim performance Mod.esp
+    IF VAR(RU) && IF FILE("Skyrim Performance MOD.esp") WARN: Используйте только один Skyrim performance Mod.esp
 ENDGROUP: Extra Late
 
 ENDGROUP: Load Late
