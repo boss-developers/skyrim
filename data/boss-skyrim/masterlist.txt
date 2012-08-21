@@ -6086,7 +6086,7 @@ ACE Realistic Fighting.esp
 REGEX: CustomDifficultyP.*\.esp
   //Changes game difficulty, put here as initial position
 UCO.esp
-REGEX: Added_Killmoves_All_Weapons.+\.esp
+REGEX: Added_Killmoves_All_Weapons([+-])?(Last_Enemy_Limit_Removed)?([+-])?(Player_cannot_be_killmoved)?([+-])?(DWDecap-removed)?\.esp
 Added_Slow_Motion_to_1stPerson_with_1st_Person_Only.esp
 REGEX: The Dance of Death.*\.esp
   IF VAR(EN) && IF REGEX("The Dance of Death V.+.esp") WARN: Obsolete. Update to latest version.
@@ -6095,10 +6095,10 @@ Chimera.esp
 combat.esp
 combat fists.esp
 DamageMultiplier.esp
-DeadlyCombat.esp
+REGEX: DeadlyCombat(_.+)?\.esp
+ SAY: Use only one DeadlyCombat*.esp
 SIDCPatch.esp
 DeadlyCombos.esp
-REGEX: DeadlyCombat_.+\.esp
 DisableAutoAim.esp
 dodge.esp
   IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
@@ -6147,6 +6147,7 @@ Killmove Control.esp
 kuerteeFightOrFly.esp
 REGEX: Epic Dual Wielding V.+\.esp
 REGEX: KillMoveRandom \d{2,3}\.esp
+ SAY: Obsolete. Upgrade to new version.
 Locational Damage.esp
 MagicDuel.esm
 morechancetodecap.esp
@@ -6154,8 +6155,15 @@ More Dynamic Injuries.esp
 MountedCasting.esp
 newkillmoves.esp
 NewKillMovesKnight.esp
-REGEX: killmoverandom-.?.?.?-P-L\.esp
-REGEX: decap_chance_.?.?.?\.esp
+1stPerson_only_killcam.esp
+REGEX: killmoverandom-(\d{1,3})(-)?(P)?(-)?(L)?\.esp
+ SAY: Use only one killmoverandom-*.esp
+REGEX: No_3rd_Person_killcam(-)?(3rd_Person_only)?(-)?(Above-Behind|leftsideclose|rightsideclose)?\.esp
+ SAY: Use only one No_3rd_Person_killcam*.esp
+REGEX: Added_Slow_Motion_to_1stPerson(_with_1st_Person_Only)?(-slower_version)?\.esp
+ SAY: Use only one Added_Slow_Motion_to_1stPerson*.esp
+REGEX: decap_chance_(\d{1,3})\.esp
+ SAY: Use only one decap_chance_*.esp
 KillmoveSetRanger.esp
 AdvancedKillMoves.esp
 AKM_0.01b.esp
