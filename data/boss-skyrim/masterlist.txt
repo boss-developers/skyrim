@@ -3798,9 +3798,6 @@ ENDGROUP: Quests B
 
 BEGINGROUP: Quests C
 
-REGEX: CampingKitNorthernRanger( - Without Amberwood| - Tent Not For Sale)?\.esp
-  IF VAR(EN) SAY: Use only one CampingKitNorthernRanger
-    IF VAR(RU) SAY: Используйте только один CampingKitNorthernRanger
 Camps of the Wilderness.esp
 CampsAndShipwrecks.esp
 caos tools- ninjaweaps.esp
@@ -5422,6 +5419,10 @@ ENDGROUP: Towns and Villages
 
 BEGINGROUP: Landscaping
 
+REGEX: CampingKitNorthernRanger( - Without Amberwood| - Tent Not For Sale)?\.esp
+  IF VAR(EN) SAY: Use only one CampingKitNorthernRanger
+    IF VAR(RU) SAY: Используйте только один CampingKitNorthernRanger
+  // ^Moved below expanded towns and villages to prevent land tears
 REGEX: CityForest.*\.esp
   IF VAR(EN) && IF FILE("CityForestv2.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF FILE("CityForestv2.esp") WARN: Устарело. Обновите до последней версии.
