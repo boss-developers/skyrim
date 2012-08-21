@@ -54,7 +54,6 @@ IF LANG ("spanish") SET: EN
 //================================================================
 
 IF REGEX("Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
-IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
 IF FILE("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
 IF REGEX("DragonSwarms.*\.esp") SET: DSwarmInst
 IF REGEX("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp") SET: NobleArtInst
@@ -79,12 +78,14 @@ IF FILE("Dawnguard.esm") SET: Dawnguard
 
 //================================================================
 
-/* Latest thread */
-  IF VAR(EN) GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/"
-    IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1398450-relz-boss-for-skyrim/ здесь"(Eng). Русскоязычные пользователи могут также оставлять свои предложения и списки неопознанных модов "http://forums.ag.ru/?board=tes_mods&action=display&s=0&num=1277459020 здесь".
 // Other global messages
+  IF VAR(EN) GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/"
+    IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1398450-relz-boss-for-skyrim/ здесь"(Eng). Русскоязычные пользователи могут также оставлять свои предложения и списки неизвестных модов "http://forums.ag.ru/?board=tes_mods&action=display&s=0&num=1277459020 здесь".
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
     IF VAR(RU) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
+  IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(EN) GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
+    IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(RU)  GLOBAL SAY: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
+
 BEGINGROUP: Official ESMs
 
 Skyrim.esm
