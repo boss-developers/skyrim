@@ -305,6 +305,8 @@ CMNewCompanions.esm
 jkotf4oneofthelastdwarven.esm
 OneiroMoarFollowers.esm
 RaceCompatibility.esm
+CMHalfElf.esm
+  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
 Sanctum of the Fallen.esm
 SotF BETA v1-2.esm
 SC_Drow Race.esm
@@ -2276,6 +2278,10 @@ UNP Jewelry.esp
 DGJewelryExtended.esp
 diamondsword.esp
 diamondweapons1.0.esp
+DME.esp
+  IF FILE("DME_Light.esp") SAY: Only use one version of DME.
+DME_Light.esp
+  IF FILE("DME.esp") SAY: Only use one version of DME.
 DMC_3&4.esp
 DMC4 Trish.esp
 DMC Weapons.esp
@@ -3882,6 +3888,7 @@ EK_UnusualApplications.esp
 EkkiiBreeze.esp
 Elvenwood.esp
 EroticStatues.esp
+ESFCompanions.esp
 Everspring Grotto.esp
 Evil Lair of Hydra.esp
 exo_WhiterunCaveHouse.esp
@@ -3901,6 +3908,7 @@ FCKagrenacsInstantFortress.esp
 Fishers Farm.esp
 fjorinstomb.esp
 Fleetford.esp
+Fort Ironcrag.esp
 Free Mine.esp
 FrozenPeakLaboratory.esp
 ENDGROUP: Quests F
@@ -3923,6 +3931,7 @@ BEGINGROUP: Quests H
 
 Haven.esp
 HavenBag.esp 
+heartwoodcottageNM1_v2.esp
 HelmsHaven.esp
 Hjerim_Blacksmith_English.esp
 HjerimExpansion.esp
@@ -5075,6 +5084,8 @@ Oblivious Shadowmere (Clean).esp
 Odahviingisbetter.esp
 onfire.esp
 OpenFaceGuardHelmets.esp
+OpenFaceGuardHelmetsFR.esp
+  IF FILE("OpenFaceGuardHelmets.esp") SAY: Do not use with OpenFaceGuardHelmets.esp.
 OpenFaceHelmets.esp
 openfacehelmetsreplacer.esp
 OpenFaceHelmetsDwarven.esp
@@ -5258,6 +5269,7 @@ Soul Gems Rebalanced.esp
 REGEX: Soul Gems Differ.*\.esp
 Soul Gems Glow When Full.esp
 SoultrapSummons.esp
+sparse start.esp
 Standin Stonene's Value Fix V1.esp
 stop-being-a-creepy-stalker-aerin-1-0-pingy.esp
 stronger alduin.esp
@@ -6558,6 +6570,11 @@ SkyRe Masters of Death Sicarius Armor.esp
     IF VAR(RU) && IF ACTIVE ("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Masters of Death Sicarius Armor (Standalone).esp
+  IF VAR(EN) && IF FILE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp
+    IF VAR(RU) && IF ACTIVE ("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe Mystic Armor and Weapon Set.esp
   IF VAR(EN) && IF FILE("Mystic.esp") SAY: Remember not to load (or to simply delete) Mystic.esp
     IF VAR(RU) && IF ACTIVE ("Mystic.esp") SAY: Не забудьте отключить или удалить Mystic.esp
@@ -6585,6 +6602,7 @@ perq_en.esp
 CombinePotionsAlchemy.esp
 hokutoshinken.esp
 ArmorPerkHelmetRemover.esp
+Vampirelordroyal.esp
 vinis_alchemy_tree.esp
 BatTravel.esp
 <<<<<<< .mine
@@ -6931,6 +6949,9 @@ Caellon.esp
 ChantelleV2.esp
 ClaudiaVampireCompanion.esp
 Clyde.esp
+CMHalfElf.esp
+  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
+  IFNOT FILE("CMHalfElf.esm") REQ: CMHalfElf.esm
 Deadeye.esp
 Demon Horse.esp
 REGEX: DFH_.+\.esp
