@@ -743,7 +743,7 @@ SFD_NumericQuality.esp
 Weapons and Armor fixes.esp
   //TAG: {{BASH: Stats}}
   IF VAR(EN) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.(checked in FNVEdit)
-    IF VAR(RU) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Для использующих 'WAF+SPO+CCO'. Конфиктов с 'Smithing Perks Overhaul' и 'Complete Crafting Overhaul' не обнаружено.(проверено в FNVEdit)
+    IF VAR(RU) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Для использующих 'WAF+SPO+CCO'. Конфликтов с 'Smithing Perks Overhaul' и 'Complete Crafting Overhaul' не обнаружено.(проверено в FNVEdit)
 Weapons and Armor fixes - Hacks.esp
   //Vanilla fixes. Must be load here(and also for CCO and SPO), for prevent overrides for new changes from mods in Base group. Too many conflicts with other mods in Base group.
 Shadow Striping Fix.esp
@@ -2279,9 +2279,8 @@ DGJewelryExtended.esp
 diamondsword.esp
 diamondweapons1.0.esp
 DME.esp
-  IF FILE("DME_Light.esp") SAY: Only use one version of DME.
 DME_Light.esp
-  IF FILE("DME.esp") SAY: Only use one version of DME.
+  IF FILE("DME.esp") INC: DME.esp
 DMC_3&4.esp
 DMC4 Trish.esp
 DMC Weapons.esp
@@ -5085,7 +5084,7 @@ Odahviingisbetter.esp
 onfire.esp
 OpenFaceGuardHelmets.esp
 OpenFaceGuardHelmetsFR.esp
-  IF FILE("OpenFaceGuardHelmets.esp") SAY: Do not use with OpenFaceGuardHelmets.esp.
+  IF FILE("OpenFaceGuardHelmets.esp") INC: OpenFaceGuardHelmets.esp.
 OpenFaceHelmets.esp
 openfacehelmetsreplacer.esp
 OpenFaceHelmetsDwarven.esp
@@ -6605,11 +6604,7 @@ ArmorPerkHelmetRemover.esp
 Vampirelordroyal.esp
 vinis_alchemy_tree.esp
 BatTravel.esp
-<<<<<<< .mine
-  IFNOT VAR(Dawnguard) REQ: Dawnguard.esm
-=======
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
->>>>>>> .r5263
 xxxLvCap255Creatures.esp
 xxxLvCap255Enemy.esp
 ENDGROUP: Skills, Attributes and Leveling
@@ -6884,13 +6879,8 @@ UFO - Ultimate Follower Overhaul.esp
   IF VAR(EN) SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on "http://skyrim.nexusmods.com/mods/14037 mod page".
     IF VAR(RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньенов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода"(Eng).
 UFO - Dawnguard AddOn.esp
-<<<<<<< .mine
-  IFNOT VAR(UFO) REQ: UFO - Ultimate Follower Overhaul.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard.esm
-=======
   IFNOT VAR(UFO) REQ: UFO - Ultimate Follower Overhaul.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
->>>>>>> .r5263
 UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
