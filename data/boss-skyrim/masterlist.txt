@@ -49,7 +49,7 @@ IF LANG ("spanish") SET: EN
 // Upgrade message for 1.7+ users:
   IF VERSION("BOSS", "2.1.0.0", <) GLOBAL WARN: An update for BOSS (v2.1.0) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
     ////Not Important for versions <2.1.1 IF VAR(RU) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
-	
+
 // Masterlist variable setup for BOSS v1.7+.
 //================================================================
 
@@ -87,7 +87,7 @@ IF FILE("Dawnguard.esm") SET: Dawnguard
     IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(RU)  GLOBAL SAY: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
   IF VAR(RU) GLOBAL SAY: Если в сводке у вас отмечены неизвестные плагины, то откройте раздел 'Неизвестные плагины'. Если у вас имеются сообщения для плагинов(Тип сообщения Все не равен нулю), вам необходимо просмотреть раздел 'Известные плагины', для их просмотра, лаже если нет предупреждений и ошибок.
       //This is about what users need to look Unrecognized plugins category(if unrecognized plugins is detected) and need to look Recognized plugins category(if number of messages is't 0). Some users still think that not need to look on unrecognized plugins and if all is green in Summary. :)
-  IF FILE("Strings\Skyrim_RUSSIAN.STRINGS") && IFNOT VAR(RU) GLOBAL SAY: Don't worry if you use russian strings for SSL. If you use russian version then see it: Если вы используете русскую версию Скайрим, то вы можете включить русский язык в настройках BOSS GUI(Settings\General\Language), или изменив в BOSS.ini значение параметра sLanguage на russian. 
+  IF FILE("Strings\Skyrim_RUSSIAN.STRINGS") && IFNOT VAR(RU) GLOBAL SAY: Don't worry if you use russian strings for SSL. If you use russian version then see it: Если вы используете русскую версию Скайрим, то вы можете включить русский язык в настройках BOSS GUI(Settings\General\Language), или изменив в BOSS.ini значение параметра sLanguage на russian.
 
 BEGINGROUP: Official ESMs
 
@@ -131,11 +131,11 @@ highfive.esm
 LB_MuchAdoSnowElves.esm
 More Interactive Items.ESM
 Niires Hjerim(esm).esm
-  IFNOT FILE("GeneralStores.esm") REQ: General Stores - storage resource for packrats
+  IFNOT FILE("GeneralStores.esm") REQ: "http://skyrim.nexusmods.com/mods/18340 General Stores - storage resource for packrats"
 Niire's Honeyside(esm).esm
-  IFNOT FILE("GeneralStores.esm") REQ: General Stores - storage resource for packrats 
+  IFNOT FILE("GeneralStores.esm") REQ: "http://skyrim.nexusmods.com/mods/18340 General Stores - storage resource for packrats"
 Niire's Proudspire(esm).esm
-  IFNOT FILE("GeneralStores.esm") REQ: General Stores - storage resource for packrats
+  IFNOT FILE("GeneralStores.esm") REQ: "http://skyrim.nexusmods.com/mods/18340 General Stores - storage resource for packrats"
 NPCs.esm
 Realistic Wildlife Loot.esm
 Imp's More Complex Needs.esm
@@ -528,14 +528,12 @@ marcurio1.1.esp
 NPC_Hair_Replacer.esp
 NPC_Hair_Rep_Forsworn_Bandit.esp
 NPC_Hair_Rep_Necro.esp
-  IF VAR(EN) REQ: "http://skyrim.nexusmods.com/mods/10168 Apachii" and Coolsims Hair
-    IF VAR(RU) REQ: Прически "http://skyrim.nexusmods.com/mods/10168 Apachii" и Coolsims
+  IF VAR(EN) REQ: "http://skyrim.nexusmods.com/mods/10168 Apachii", Coolsims Hair
 NPC REDESIGN.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Gwendolyn.esp
 NPC_Hair_Replace_Bandit_Forsworn.esp
-  IF VAR(EN) REQ: "http://skyrim.nexusmods.com/mods/10168 Apachii" and Coolsims Hair
-    IF VAR(RU) REQ: Прически "http://skyrim.nexusmods.com/mods/10168 Apachii" и Coolsims
+  IF VAR(EN) REQ: "http://skyrim.nexusmods.com/mods/10168 Apachii", Coolsims Hair
 Riften Girl s Replacer v 0.1.esp
 Riften_Female.esp
 Cute Girl s Replacer Markarth v01.esp
@@ -553,7 +551,7 @@ Solitude Girl's Replacer.esp
 SupermodelSkyrim.esp
   //moved back to npc faces because it's npc faces overhaul (too many conflicts)
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-  IF VAR(EN) SAY: Overrides faces for all NPC's, adds NPC's to all castles and naked NPC's to all player homes, also resetes all NPC's stats to vanilla. 
+  IF VAR(EN) SAY: Overrides faces for all NPC's, adds NPC's to all castles and naked NPC's to all player homes, also resetes all NPC's stats to vanilla.
     IF VAR(RU) SAY: Меняет лица всех NPC's, добавляет NPC во все замки и обнаженных NPC во все дома игрока, также сбрасывает характеристики NPC на ванильные.
 TheCompanionShort.esp
 Vilkas.esp
@@ -611,12 +609,12 @@ DragonHitSoundFix - RAS.esp
 IceBreaker's Improved Reverb.esp
 immersive thunder.esp
 REGEX: Improved Combat Sounds v2\.\d\.esp
-  IF VAR(EN) && IF FILE("Improved Combat Sounds v2.0.esp") SAY: Old. Update to 2.1 for a cleaned esp
+  IF VAR(EN) && IF FILE("Improved Combat Sounds v2.0.esp") SAY: Obsolete. Update to 2.1 for a cleaned esp
     IF VAR(RU) && IF FILE("Improved Combat Sounds v2.0.esp") SAY: Устарело. Обновите до версии 2.1, для использования очищенного esp.
 indiemusicscene_la.esp
 ICS Possible Fix 1.esp
 KR - Solitude No Sewer sound.esp
-LIAT - Sounds.esp 
+LIAT - Sounds.esp
 newheavyarmorsound.esp
 Nordic Natural Sound.esp
 Phenderix's Magic Sounds Improved.esp
@@ -626,8 +624,17 @@ Rooster At Dawn v1.0.esp
 skyradio.esp
 Skyrim - Player Re-Voiced - Elven Races Complete - Male.esp
 SoS - The Dungeons.esp
+  IF VAR(EN) WARN: The Sounds of Skyrim collection have been causing a lot of bugs and corrupting saves, even when removed and caused stuttering.
+    IF VAR(RU) WARN: В Sounds of Skyrim найден серьёзный баг, приводящий к "раздуванию" файлов сохранений. Рекомендуется отключить все модули мода и удалить все их файлы.
 SoS - The Wilds.esp
-SoS - Civilization.esp
+    // Must be removed after fixing of bugs.
+  IF VAR(EN) WARN: The Sounds of Skyrim collection have been causing a lot of bugs and corrupting saves, even when removed and caused stuttering.
+    IF VAR(RU) WARN: В Sounds of Skyrim найден серьёзный баг, приводящий к "раздуванию" файлов сохранений. Рекомендуется отключить все модули мода и удалить все их файлы.
+SoS -Civilization.esp
+    // Must be removed after fixing of bugs.
+  IF VAR(EN) WARN: The Sounds of Skyrim collection have been causing a lot of bugs and corrupting saves, even when removed and caused stuttering.
+    IF VAR(RU) WARN: В Sounds of Skyrim найден серьёзный баг, приводящий к "раздуванию" файлов сохранений. Рекомендуется отключить все модули мода и удалить все их файлы.
+    // Must be removed after fixing of bugs.
 QuieterRestorationDrawnSound.esp
 ENDGROUP: Sound mods
 
@@ -641,7 +648,7 @@ REGEX: CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius
   IF VAR(EN) SAY: Use only one LightAdjuster.
     IF VAR(RU) SAY: Используйте только один LightAdjuster esp
 ColorfulLightsNoShadows.esp
-REGEX: Dark( |e[r|st]+[ ]?)?Nights( and Bright Skies| No Weather)?\.esp 
+REGEX: Dark( |e[r|st]+[ ]?)?Nights( and Bright Skies| No Weather)?\.esp
 REGEX: Dark(er)? Nights(B|_(\d{1,2})?(b+[lr])?)\.esp
 CLO.esp
 DarkerSkyrimLighting.esp
@@ -705,13 +712,13 @@ ZFixed Lights.esp
 Zfixed Lights RCRN.esp
 /* Might need to be moved */
 LightRoom.esp
-WM_Warmer_Lights.esp 
+WM_Warmer_Lights.esp
 ENDGROUP: Lighting
 
 BEGINGROUP: Music
 
 AdditionalMusicPackI.esp
-AdditionalMusicPackII.esp 
+AdditionalMusicPackII.esp
 REGEX: Dawn_addon_part(\d)\.esp
 dragonborn with lute.esp
 esisbattlepack.esp
@@ -970,7 +977,7 @@ Conjuration & Summoning fixes.esp
     IF VAR(RU) && IF FILE("SpellFix.esp") ERROR: Удалите. Уже включено в SpellFix.esp
   IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch.esp.
     IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
-Console Books.esp 
+Console Books.esp
 Convenient Horses.esp
 Cooking Mod - Yummy in Your Tummy.esp
 CookingExpanded.esp
@@ -1267,7 +1274,7 @@ REGEX: Invisibility_Spells(_Plus)?\.esp
 increasedbountyrewards.esp
 REGEX: increasedbountyrewards\((ultra-)?lite\)\.esp
 IngredientsOfTamriel.esp
-IngredientStore.esp 
+IngredientStore.esp
 ingridtheartist.esp
 invulnerablestandardhorses.esp
 invulnerableuniquehorses.esp
@@ -1442,11 +1449,11 @@ moulin.esp
 More Craftables.esp
   TAG: {{BASH: Relev}}
 IFNOT CHECKSUM("Crafting300.esp", FFCC056A) && IFNOT CHECKSUM("Crafting300.esp", 50142D0D) MOD: More Craftables - Crafting 300 compatibility.esp
-  IFNOT FILE("Crafting300.esp") REQ: Crafting300.esp
-  IFNOT FILE("More Craftables.esp") REQ: More Craftables.esp
+  IFNOT FILE("Crafting300.esp") REQ: "http://skyrim.nexusmods.com/mods/2933 Crafting 300 - Armoury of Tamriel"
+  IFNOT FILE("More Craftables.esp") REQ: "http://skyrim.nexusmods.com/mods/799 More Craftables"
 More Craftables - Dwemer Certified compatibility.esp
-  IFNOT FILE("Dwemer Certified.esp") REQ: Dwemer Certified.esp
-  IFNOT FILE("More Craftables.esp") REQ: More Craftables.esp
+  IFNOT FILE("Dwemer Certified.esp") REQ: "http://skyrim.nexusmods.com/mods/10442 Dwemer Certified"
+  IFNOT FILE("More Craftables.esp") REQ: "http://skyrim.nexusmods.com/mods/799 More Craftables"
 Convertible Azura's Star.esp
 more carriages.esp
 More Interactive Items.esp
@@ -1583,7 +1590,7 @@ RecyclingMod.esp
   IF VAR(EN) && IF REGEX("Weapons of the Third Era.+\.esp") SAY: Recommed RecyclingModWo3E.esp for Weapons of the Third Era mod. See RecyclingMod download page.
     IF VAR(RU) && IF REGEX("Weapons of the Third Era.+\.esp") SAY: Рекомендуется патч RecyclingModWo3E.esp для мода Weapons of the Third Era. Ищите его на странице загрузки RecyclingMod.
 IFNOT CHECKSUM("Crafting300.esp", FFCC056A) && IFNOT CHECKSUM("Crafting300.esp", 50142D0D) MOD: RecyclingModCrafting300.esp
-  IFNOT FILE("Crafting300.esp") REQ: Crafting300.esp
+  IFNOT FILE("Crafting300.esp") REQ: "http://skyrim.nexusmods.com/mods/2933 Crafting 300 - Armoury of Tamriel"
   IFNOT FILE("RecyclingMod.esp") REQ: RecyclingMod.esp
 RevisedHorsesFeeding.esp
 ribeable-broom.esp
@@ -1911,9 +1918,9 @@ CAS.esp
   IF VAR(EN) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Only use the save features of either "CAS" or "kuertee's auto-save and time"
     IF VAR(RU) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Используйте функцию сохранения только  из одного мода: из "CAS" или "kuertee's auto-save and time"
 Character Creation Overhaul.esp
-Chesko_LoreBasedLoadingScreens.esp 
+Chesko_LoreBasedLoadingScreens.esp
 DEAsprint&jump.esp
-  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+ 
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
   IF VERSION("SKSE", "0.1.5.9", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.9+
   IF VAR(EN) SAY: Won't work if sprint/jump key is remapped to mouse button.
     IF VAR(RU) SAY: Может не работать, если кнопка бега\прыжка переназначена на кнопку мыши.
@@ -2002,7 +2009,7 @@ Andragorn's Armoury.esp
 Angelic_Demonic.esp
 REGEX: Animetica.+\.esp
 AnotherBlackThievesGuildArmor_v2.1.esp
-AoD - Overlord Armor.esp 
+AoD - Overlord Armor.esp
 ApotheusLightArmor_by_GuitunScarfin.esp
 REGEX: Arcania_armory( \(base\))?\.esp
   TAG: {{BASH: Relev}}
@@ -2982,7 +2989,7 @@ Powder Bow.esp
 PracticeBowandArrows.esp
 private_singular_quivers.esp
 ProType - Cool Fever.esp
-PrometheusCapes.esp 
+PrometheusCapes.esp
 Prometheus_ConanOutfits.esp
 PrvtIChrysamere.esp
 PrvtI_HeavyArmory.esp
@@ -3415,7 +3422,7 @@ BEGINGROUP: Items XYZ
 XIVShanker.esp
 yangyang_BeautyQueen.esp
 YogWeapons.esp
-Ysmir's Fury v3_1.esp 
+Ysmir's Fury v3_1.esp
 zabswitchhat.esp
 zarias_restraints.esp
 ZaZ Gags.esp
@@ -3543,7 +3550,7 @@ DragonSwarmsOptRemoveTimerStable.esp
 DS-VanillaTimer+MultipleEvents.esp
   IF VAR(IncDSwarmMorAgress) INC: DS-MoreAgressionForRemover.esp
 ENDGROUP: Dragons hunt in Swarms
-  
+
 BEGINGROUP: PISE
 PISE.esp
   TAG: {{BASH: Delev, Relev}}
@@ -3706,7 +3713,7 @@ adalmatar.esp
 AlchemyChest.esp
 REGEX: alternativeCityAccess.*\.esp
 AmethystHollowsUpdate.esp
-  IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+ 
+  IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 Amazing Riverwood Starter Home.esp
 Quest_AndTheRealmsOfDaedra.esp
 Ank_Castle_Main.esp
@@ -3845,7 +3852,7 @@ College Of Winterhold Overhaul Release - V1.02.esp
 Creed Hills Estate.esp
 Creepy Hovel.esp
 CryptOfTheTongues.esp
-crystalis.esp 
+crystalis.esp
 CrystalRock.esp
 ENDGROUP: Quests C
 
@@ -3864,7 +3871,7 @@ DawnStarHome 0.2v.esp
 DawnstarBetterDocks.esp
 Dawnstar_Fortified.esp
 dawnstarsanctuaryoverhaul.esp
-dawnstarsanctuaryslightexpansion.esp 
+dawnstarsanctuaryslightexpansion.esp
 dbretreat.esp
 dbriverwoodsanctuary.esp
 DCR_Heavy_Weapons_Set.esp
@@ -3947,7 +3954,7 @@ ENDGROUP: Quests G
 BEGINGROUP: Quests H
 
 Haven.esp
-HavenBag.esp 
+HavenBag.esp
 heartwoodcottageNM1_v2.esp
 HelmsHaven.esp
 Hjerim_Blacksmith_English.esp
@@ -3968,7 +3975,7 @@ Homogenous Detailed Landscapes.esp
 honeyside jacuzzi.esp
 HoneySmithy2.esp
 House1.esp
-HouseOfHorrorsAlternateEnding.esp 
+HouseOfHorrorsAlternateEnding.esp
 Hunt01.esp
 Hunter.esp
   IFNOT FILE("SkyMoMod.esm") REQ: SkyMoMod.esm
@@ -4283,7 +4290,7 @@ ENDGROUP: Quests T
 
 BEGINGROUP: Quests U
 
-uluchenie ivarsteda.esp  
+uluchenie ivarsteda.esp
 uluchenie roriksteda.esp
 ulushenie folkrita.esp
 ulushenie riftena.esp
@@ -5547,7 +5554,7 @@ SkyRe_Vampirism.esp
   IF REGEX("Imp's More Complex Needs\.es[mp]") INC: Imp's More Complex Needs
   IF FILE("Alternate Start - Live Another Life.esp") INC: Alternate Start - Live Another Life.esp
   IF VAR(Dawnguard) INC: Dawnguard.esm
-  IF VAR(EN) SAY: Removed from SkyRe 0.99.15.2 
+  IF VAR(EN) SAY: Removed from SkyRe 0.99.15.2
     IF VAR(RU) SAY: Было удалено из SkyRe 0.99.15.2 .
   IF VAR(EN) SAY: Possible conflicts with other mods that changes vampirism system.
     IF VAR(RU) SAY: Возможны конфликты с другими модами, меняющими систему вампиризма.
@@ -5765,7 +5772,7 @@ power tomes nightvision - steam version.esp
 togglevampiresight.esp
 Paladin Spell Pack.esp
 REGEX: Phenderix's Magic Evolved( No Perks| Cheat)?\.esp
-  IF VAR(EN) SAY: This plugin is reported to cause frequent crashes. Use with caution. If You don't see frequent crashes in your game then You not need to delete this mod. 
+  IF VAR(EN) SAY: This plugin is reported to cause frequent crashes. Use with caution. If You don't see frequent crashes in your game then You not need to delete this mod.
     IF VAR(RU) SAY: Сообщалось, что этот плагин вызывал частые вылеты. Используйте с осторожностью. Если вы не видете частых вылетов в вашей игре, то вам не нужно удалять этот мод.
 Phenderix AI Add-On.esp
 PJs_Spell_Compendium.esp
@@ -6320,7 +6327,7 @@ Lorecraft - Ace Archery.esp
 IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: Crafting300.esp
 IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: More Craftables - Crafting 300 compatibility.esp
 IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: RecyclingModCrafting300.esp
-  IFNOT FILE("Crafting300.esp") REQ: Crafting300.esp
+  IFNOT FILE("Crafting300.esp") REQ: "http://skyrim.nexusmods.com/mods/2933 Crafting 300 - Armoury of Tamriel"
 ACE Armor.esp
 ACE Enchanting.esp
 ACE Magic.esp
@@ -6524,7 +6531,7 @@ IF FILE("SkyRe_Main.esp") MOD: vinis_food_and_rest.esp
 IF FILE("SkyRe_Main.esp") REGEX: vinis_food_and_rest.+\.esp
 SkyRe_EncounterZones.esp
 SkyRe_EnemyAI.esp
-SkyRe_EnemyScaling.esp 
+SkyRe_EnemyScaling.esp
   TAG: {{BASH: Relev}}
 SkyRe_Enemies.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version of SkyRe and use SkyRe_EnemyScaling.esp instead
@@ -6882,7 +6889,7 @@ BEGINGROUP: Questgiver NPCs
 awnuldthebold.esp
 ENDGROUP: Questgiver NPCs
 
-BEGINGROUP: Extensible Follower Framework 
+BEGINGROUP: Extensible Follower Framework
 XFLDialogue.esp
   IF VAR(EN) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp has the same functional, use only one.
     IF VAR(RU) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, используйте что-то одно.
@@ -6897,7 +6904,7 @@ XFLHorses.esp
   IFNOT FILE("XFLMain.esm") REQ: XFLMain.esm
 XFLTweaks.esp
   IFNOT FILE("XFLMain.esm") REQ: XFLMain.esm
-ENDGROUP: Extensible Follower Framework 
+ENDGROUP: Extensible Follower Framework
 
 BEGINGROUP: Ultimate Follower Overhaul
 
@@ -6921,7 +6928,7 @@ BEGINGROUP: Post UFO
 
 IF VAR(UFO) MOD: My home is your home.esp
   //Bethsoft thrd20#119
-ENDGROUP: Post UFO 
+ENDGROUP: Post UFO
 
 BEGINGROUP: NPC Distance, Face & Makeup Overrides
 //Distance Tweaks before Face & Makeup Overrides
@@ -6984,7 +6991,10 @@ Barbarian Companions.esp
 conancompanion.esp
 CMBeautifulCompanions.esp
 CMNewCompanions.esp
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 CMCompanionLevel.esp
+  IF VAR(EN) && IF VERSION("TES5", "1.5.26", >) ERROR: Delete. This mod is no longer necessary, since Skyrim Patch v.1.6 has fixed the bug. Companions will now level their skills every time the Player levels up. 
+    IF VAR(RU) && IF VERSION("TES5", "1.5.26", >) ERROR: Удалите. Этот мод больше не важен. Поскольку патч 1.6+ исправляет баг.  Компаньены теперь будут повышать свои навыки, каждый раз, при поднятии уровня игрока.
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
 IFNOT REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
@@ -7627,7 +7637,7 @@ BBLSGuysApachii.esp
   IF VERSION("TES5", "0.1.6.89", <) REQ: Skyrim 1.6.89+
   IFNOT VAR(ApachiiHair) REQ: Apachii Sky Hair.
   IFNOT FILE("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
-  
+
 BEGINGROUP: Compatibility Patches
 // Compatability Patches which must load after a certain mod go here
 // Only if no conflicts are made in between
@@ -7698,8 +7708,8 @@ Automatic Variations.esp
 Customized AI.esp
 ENDGROUP: Dynamic Plugins
 
-/* Normaly only Dynamic plugins created by SkyProc go here.  Try to limit placing any plugins here.  
-Once WryeBash is updated this shouldn't be needed, since that's what its for. 
+/* Normaly only Dynamic plugins created by SkyProc go here.  Try to limit placing any plugins here.
+Once WryeBash is updated this shouldn't be needed, since that's what its for.
 */
 BEGINGROUP: Non Dynamic Plugins
 
