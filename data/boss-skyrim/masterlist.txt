@@ -87,6 +87,7 @@ IF FILE("Dawnguard.esm") SET: Dawnguard
     IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(RU)  GLOBAL SAY: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
   IF VAR(RU) GLOBAL SAY: Если в сводке у вас отмечены неизвестные плагины, то откройте раздел 'Неизвестные плагины'. Если у вас имеются сообщения для плагинов(Тип сообщения Все не равен нулю), вам необходимо просмотреть раздел 'Известные плагины', для их просмотра, лаже если нет предупреждений и ошибок.
       //This is about what users need to look Unrecognized plugins category(if unrecognized plugins is detected) and need to look Recognized plugins category(if number of messages is't 0). Some users still think that not need to look on unrecognized plugins and if all is green in Summary. :)
+  IF FILE("Strings\Skyrim_RUSSIAN.STRINGS") && IFNOT VAR(RU) GLOBAL SAY: Don't worry if you use russian strings for SSL. If you use russian version then see it: Если вы используете русскую версию Скайрим, то вы можете включить русский язык в настройках BOSS GUI(Settings\General\Language), или изменив в BOSS.ini значение параметра sLanguage на russian. 
 
 BEGINGROUP: Official ESMs
 
@@ -4260,6 +4261,7 @@ The Secret Room of Breezehome.esp
     IF VAR(RU) && IF FILE("secretroom-bh-en.esp") SAY: Используйте только один мод 'The Secret Room of Breezehome.esp' или 'secretroom-bh-en.esp'
 theMannysOutPost.esp
 thereserve.esp
+theWatchTowers.esp
 ThievesGuildTrapdoor.esp
 ThistleCottage.esp
 thundersnow1.esp
@@ -4430,7 +4432,7 @@ ArmorSpeed.esp
 --Solitude Guards--.esp
 Whiterunguards.esp
   //<Armies of Skyrim
-Imperial Soldiers v 1.5( DE&O)?( Essential)?\.esp
+REGEX: Imperial Soldiers v 1.5( DE&O)?( Essential)?\.esp
   IF VAR(EN) SAY: Use only one Imperial Soldiers*.esp
     IF VAR(RU) SAY: Используйте только один Imperial Soldiers*.esp
 Dragonbonestats.esp
@@ -4605,6 +4607,7 @@ BEGINGROUP: Overrides C
 
 Carga.esp
 cbbecurvy.esp
+CCO - Oblivion Carry Weights.esp
 Children of Skyrim - NORD PRESETS.esp
 Circlet with Helms.esp
 Circlet with Hoods.esp
@@ -6282,7 +6285,9 @@ REGEX: Balanced_Magic_(Adept|Novice|Master)\.esp
     IF VAR(RU) SAY: Выберете только один из нижестледующих, если вы предпочитаете ванильные настройки или другие моды, которые регулируют эти значения.
 Balanced_Magic_BETA_2_0.esp
 BS-Balanced_Magic_BETA_2_0.esp
-  REQ: Balanced_Magic_BETA_2_0.esp
+  IFNOT FILE("BS-Balanced_Magic_BETA_2_0.esp") REQ: Balanced_Magic_BETA_2_0.esp
+  IFNOT REGEX("(Headbomb's )?Better Sorting.*\.esp") REQ: Better Sorting
+CCO - Dynamic Skill Progression.esp
 Perk_Deft_Movement_Power_25.esp
 REGEX: PPE_Perk-.+\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version of 'PerkUP' mod
@@ -6296,7 +6301,8 @@ REGEX: PerkUP-.*\.esp
   //For Optional
 More Craftables - PerkUP compatibility.esp
 MXMaxAllSkills.esp
-  REQ: More Craftables, PerkUP
+  IFNOT FILE("More Craftables.esp") REQ: More Craftables
+  IFNOT REGEX("REGEX: PerkUP-.*\.esp") REQ: PerkUP
 NapalmPerkOverhaul.esp
 REGEX: New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp
   IF VAR(EN) SAY: Use only one 'New Leveled Encounter Levels*.esp'
