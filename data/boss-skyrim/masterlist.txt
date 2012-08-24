@@ -79,15 +79,28 @@ IF FILE("Dawnguard.esm") SET: Dawnguard
 // ================================================================
 
 // Other global messages
+
+// BOSS Thread
   IF VAR(EN) GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/"
     IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1398450-relz-boss-for-skyrim/ здесь"(Eng). Русскоязычные пользователи могут также оставлять свои предложения и списки неизвестных модов "http://forums.ag.ru/?board=tes_mods&action=display&s=0&num=1277459020 здесь".
+
+// SKSE
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
     IF VAR(RU) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
+
+// Dynamic plugins
   IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(EN) GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
     IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(RU)  GLOBAL SAY: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
+
+// Messages for Russian users.
   IF VAR(RU) GLOBAL SAY: Если в сводке у вас отмечены неизвестные плагины, то откройте раздел 'Неизвестные плагины'. Если у вас имеются сообщения для плагинов(Тип сообщения Все не равен нулю), вам необходимо просмотреть раздел 'Известные плагины', для их просмотра, лаже если нет предупреждений и ошибок.
-      //This is about what users need to look Unrecognized plugins category(if unrecognized plugins is detected) and need to look Recognized plugins category(if number of messages is't 0). Some users still think that not need to look on unrecognized plugins and if all is green in Summary. :)
+     // This is about what users need to look Unrecognized plugins category(if unrecognized plugins is detected) and need to look Recognized plugins category(if number of messages is't 0). Some users still think that not need to look on unrecognized plugins and if all is green in Summary. :)
+  
   IF FILE("Strings\Skyrim_RUSSIAN.STRINGS") && IFNOT VAR(RU) GLOBAL SAY: Don't worry if you use russian strings for SSL. If you use russian version then see it: Если вы используете русскую версию Скайрим, то вы можете включить русский язык в настройках BOSS GUI(Settings\General\Language), или изменив в BOSS.ini значение параметра sLanguage на russian.
+
+// Fores New Idles in Skyrim
+  IF VAR(EN) && IF VAR(FNIS) SAY: It appears you have "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
+// Needs updated.    IF VAR(RU) && IF VAR(FNIS) SAY: Не забудьте запустить GenerateFNISforUsers.exe - every time you have installed or de-installed FNIS, or an FNIS based mod.
 
 BEGINGROUP: Official ESMs
 
@@ -6714,8 +6727,6 @@ effeminatenazeem.esp
 MoreUnarmedKillAnimations15.esp
 NiruinsBusinessPlan.esp
   IFNOT VAR(FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
-  IF VAR(EN) && IF VAR(FNIS) SAY: Remember to run GenerateFNISforUsers.exe
-    IF VAR(RU) && IF VAR(FNIS) SAY: Не забудьте запустить GenerateFNISforUsers.exe
 Onehanded.esp
 REGEX: Pinups\d?\.esp
 psikoticsnecromancy.esp
@@ -7705,13 +7716,9 @@ FTFI Fast Travel From Indoors.esp
 PC Exclusive Animation Path.esp
   IF FILE("AP Skyrim.esp") INC: AP Skyrim.esp
   IFNOT VAR(FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
-  IF VAR(EN) && IF VAR(FNIS) SAY: Remember to run GenerateFNISforUsers.exe
-    IF VAR(RU) && IF VAR(FNIS) SAY: Не забудьте запустить GenerateFNISforUsers.exe
 PC Exclusive Animation Path - Elder Race.esp
   IF FILE("AP Skyrim.esp") INC: AP Skyrim.esp
   IFNOT VAR(FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
-  IF VAR(EN) && IF VAR(FNIS) SAY: Remember to run GenerateFNISforUsers.exe
-    IF VAR(RU) && IF VAR(FNIS) SAY: Не забудьте запустить GenerateFNISforUsers.exe
 Skyrim Performance MOD.esp
 Skyrim Performance MOD 5min.esp
   IF VAR(EN) && IF FILE("Skyrim Performance MOD.esp") WARN: Use only one Skyrim performance Mod.esp
