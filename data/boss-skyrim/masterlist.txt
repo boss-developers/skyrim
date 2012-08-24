@@ -33,7 +33,7 @@ You cannot start a silent comment part-way into a line, only whole lines may be 
 Message keywords should be indented by two spaces and followed by a colon ':' then the message string.
 */
 
-//Language setup. Only for BOSS 2.1+
+// Language setup. Only for BOSS 2.1+
 
 IF LANG ("chinese") SET: EN
   // Not translated. Set default EN.
@@ -48,10 +48,10 @@ IF LANG ("spanish") SET: EN
 
 // Upgrade message for 1.7+ users:
   IF VERSION("BOSS", "2.1.0.0", <) GLOBAL WARN: An update for BOSS (v2.1.0) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
-    ////Not Important for versions <2.1.1 IF VAR(RU) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
+    // Not Important for versions <2.1.1 IF VAR(RU) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
 
 // Masterlist variable setup for BOSS v1.7+.
-//================================================================
+// ================================================================
 
 IF REGEX("Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
 IF FILE("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
@@ -71,12 +71,12 @@ IF FILE("ApachiiHair.esm") SET: ApachiiHair
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 IF FILE("SKSE_Elys_Uncapper.dll") SET: SKCU
 IF FILE("..\ScriptDragon.dll") SET: SCDR
-//================================================================
+// ================================================================
 // DLC variable setup for BOSS v1.7+.
 // Added as many plugins are likely to require DLC.
 IF FILE("Dawnguard.esm") SET: Dawnguard
 
-//================================================================
+// ================================================================
 
 // Other global messages
   IF VAR(EN) GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/"
@@ -331,8 +331,8 @@ ENDGROUP: Official DLC Files
 BEGINGROUP: Earliest mods
 
 Agony's Sorting Frenzy.esp
-  //All Compatibility esp should be loaded after their respective mod.
-  //See Group: Compatibility Patches
+  // All Compatibility esp should be loaded after their respective mod.
+  // See Group: Compatibility Patches
 Die Skyrim-Lokalisierung - Director's Cut.esp
 Skyrim - Director's Cut.esp
 Zwerge zu Dwemer.esp
@@ -342,7 +342,7 @@ SLFC.esp
 VanillaReducedTextures.esp
 Eindeutige Regionsnamen.esp
 REGEX: NPCEssential - .+\.esp
-  //Global set flag Essential for NPCs. Loaded before vanilla fixes and USKP
+  // Global set flag Essential for NPCs. Loaded before vanilla fixes and USKP
   IF VAR(EN) SAY: Need to load before all mods that change npcs. This mod is set Essential flag for NPCs but with other vanilla stats.
     IF VAR(RU) SAY: Нужно загружать перед любыми модами, меняющими npc. Этот мод устанавливает делает бессмертными NPC, но оставляет другие характеристики, как в чистом Скайрим.
 ENDGROUP: Earliest mods
@@ -384,7 +384,7 @@ Bugfix-NoFollowerTrespassDialog.esp
 bugfixalchemynoregeneration.esp
 bugfixenchanmentnoregeneration.esp
 Bullseye Perk Fix.esp
-  //Possibly belongs in perks
+  // Possibly belongs in perks
 Civil War Neutrality Fix.esp
 Chesko_MatchingSetPerkFix.esp
 Conjuration Fix.esp
@@ -500,7 +500,7 @@ REGEX: Skyrim HD Full - .+\.esp
     IF VAR(RU) REQ: 4 гигабайта оперативной памяти или более, для полной версии.
 
 BEGINGROUP: NPC face mods
-//TAG: {{BASH: NpcFaces}}
+// TAG: {{BASH: NpcFaces}}
 
 AlfhildBattleBorn.esp
 AlternateUlfric.esp
@@ -550,7 +550,7 @@ RealisticEyeLighting.esp
 ShowRaceMenuOptions.esp
 Solitude Girl's Replacer.esp
 SupermodelSkyrim.esp
-  //moved back to npc faces because it's npc faces overhaul (too many conflicts)
+  // moved back to npc faces because it's npc faces overhaul (too many conflicts)
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF VAR(EN) SAY: Overrides faces for all NPC's, adds NPC's to all castles and naked NPC's to all player homes, also resetes all NPC's stats to vanilla.
     IF VAR(RU) SAY: Меняет лица всех NPC's, добавляет NPC во все замки и обнаженных NPC во все дома игрока, также сбрасывает характеристики NPC на ванильные.
@@ -563,12 +563,12 @@ ENDGROUP: NPC face mods
 
 BEGINGROUP: General Base Mods
 //
-//Includes nearly all new items (except weapons and armor).
-//Low priority mods.
+// Includes nearly all new items (except weapons and armor).
+// Low priority mods.
 
 BEGINGROUP: Weather mods and overhauls
 //
-//Unlikely to be affected by anything but sound mods.
+// Unlikely to be affected by anything but sound mods.
 
 Chesko_Frostfall.esp
 enbweather.esp
@@ -594,9 +594,9 @@ WMGAtmosphericENBPlugin.esp
 ENDGROUP: Weather mods and overhauls
 
 BEGINGROUP: Sound mods
-//Sound plugins and sound packs that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
-//
-//Some Sounds.esp
+// Sound plugins and sound packs that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
+// 
+// Some Sounds.esp
 //  TES4 (Header only)
 
 addwinterholdmusic.esp
@@ -683,12 +683,12 @@ fixedeyeadaptation.esp
 dimmed_torches.esp
 enhancedlightingforrealisticlighting.esp
 IF FILE("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
-  //See readme for more info about load order
+  // See readme for more info about load order
   IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp
     IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp
 real lights in dragonsreach.esp
 Natural Skyrim Rain.esp
-  //Bethsoft6.118,128and9.187,193
+  // Bethsoft6.118,128and9.187,193
 REGEX: Warmer Magic Lights v.+\.esp
 IC-Lighting.esp
 NoTint.esp
@@ -736,9 +736,9 @@ sovngardesong.esp
 ENDGROUP: Music
 
 BEGINGROUP: Textures
-//Textures that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
-//
-//Some Graphics.esp
+// Textures that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
+// 
+// Some Graphics.esp
 //  TES4 (Header only)
 
 /* texture packadge from Steam Workshop */
@@ -753,11 +753,11 @@ Less Fugly Female NPCs.esp
 SFD_NumericQuality.esp
 /* Removed REGEX because specific load order is needed */
 Weapons and Armor fixes.esp
-  //TAG: {{BASH: Stats}}
+  // TAG: {{BASH: Stats}}
   IF VAR(EN) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.(checked in FNVEdit)
     IF VAR(RU) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Для использующих 'WAF+SPO+CCO'. Конфликтов с 'Smithing Perks Overhaul' и 'Complete Crafting Overhaul' не обнаружено.(проверено в FNVEdit)
 Weapons and Armor fixes - Hacks.esp
-  //Vanilla fixes. Must be load here(and also for CCO and SPO), for prevent overrides for new changes from mods in Base group. Too many conflicts with other mods in Base group.
+  // Vanilla fixes. Must be load here(and also for CCO and SPO), for prevent overrides for new changes from mods in Base group. Too many conflicts with other mods in Base group.
 Shadow Striping Fix.esp
 SMIM_Fixes.esp
 REGEX: SpellFix.*\.esp
@@ -884,7 +884,7 @@ Better Alchemy Loot.esp
 Better Skill and Quest Books Names.esp
 BetterFishAdded.esp
   TAG: {{BASH: Relev}}
-    //not tested
+    // not tested
 betterstartingitems.esp
 bbLager.esp
 guild battlemage.esp
@@ -1042,7 +1042,7 @@ REGEX: Decorator Assistant.+\.esp
     IF VAR(RU) SAY: Используйте только один Decorator Assistant*.esp
 DecorativeTrophies.esp
   TAG: {{BASH: Relev}}
-    //not sure about 'Relev' tag, maybe need 'Invent' tag(after it comp. in WB) need to check
+    // not sure about 'Relev' tag, maybe need 'Invent' tag(after it comp. in WB) need to check
 Daedric chain.esp
 DaedricCrownCraftable.esp
 Deeper Snow.esp
@@ -1184,7 +1184,7 @@ GDAmulets.esp
 general npc fixes.esp
 GenebrisTreasureChests.esp
   TAG: {{BASH: Delev, Relev}}
-  //not sure about Delev
+  // not sure about Delev
 genpeople.esp
 genpeople lite.esp
 genpeopleliter.esp
@@ -1240,7 +1240,7 @@ HigherLevelEnemies.esp
   TAG: {{BASH: Relev}}
 HighlandFarmMilk.esp
   TAG: {{BASH: Relev}}
-  //not tested
+  // not tested
 HillmanShack.esp
 HM MicroCraft.esp
 HorseFlute.esp
@@ -1356,7 +1356,7 @@ LB Jewelry Chest.esp
 REGEX: LeatherWeightFix\(\d.\d\)\.esp
 leazeropenlock.esp
 IF VAR(LB) MOD: RingsOnTheLeftHand.esp
-  //load here for correct display of arm when 'Lady body.esp' is installed
+  // load here for correct display of arm when 'Lady body.esp' is installed
 Lady Body.esp
   IF VAR(EN) WARN: Important: For Lady Body 1.5 is requires Skyrim 1.7.7 and DLC Dawnguard.
     IF VAR(RU) WARN: Важно: Для Lady Body 1.5 требуются Skyrim 1.7.7 и DLC Dawnguard.
@@ -1557,11 +1557,11 @@ real glaciers.esp
     IF VAR(RU) WARN: Устарело. Обновите до версии 2 или выше.
 real glaciers v2.esp
 Real Months.esp
-  //tags not tested
+  // tags not tested
 real mountains.esp
 realistic clouds.esp
 renameddragonclaws.esp
-  //TAG: {{BASH: Names}}
+  // TAG: {{BASH: Names}}
 REGEX: Realistic Wildlife Loot V.+\.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Use only one Realistic Wildlife Loot V*.esp
@@ -1571,7 +1571,7 @@ RWL Option - 3x Giant toes.esp
     IF VAR(RU) SAY: Используйте только один Realistic Wildlife Loot esp
 REGEX: Realistic Wildlife Loot -( IMCN)?( Realistic| Reduced)\.esp
   TAG: {{BASH: Delev, Relev}}
-  //not tested
+  // not tested
   IF VAR(EN) SAY: Use only one Realistic Wildlife Loot - *.esp
     IF VAR(RU) SAY: Используйте только один Realistic Wildlife Loot - *.esp
 REGEX: Real Wildlife Skyrim.*\.esp
@@ -1581,7 +1581,7 @@ Real Wildlife.esp
 /* Does this Satisfy SIRWPach.esp and SIRWPatch.esp */
 REGEX: SIRWPat?ch.esp
   TAG: {{BASH: Delev, Relev}}
-    //not tested
+    // not tested
 Real Wildlife Skyrim 0.1 IMCN.esp
 recipeammoarrows.esp
 recipeingots.esp
@@ -1600,7 +1600,7 @@ RiftenHQtexture-Part2.esp
 RiftenSmelter.esp
 riverwood flora.esp
 RuSort Potions & Poisons.esp
-  //TAG: {{BASH: Names}}
+  // TAG: {{BASH: Names}}
 Rusty Antler Caravan.esp
 ENDGROUP: Base R
 
@@ -1615,7 +1615,7 @@ sanctuarycleanup.esp
 SaveHotKey.esp
 SB - Loot Mod.esp
   TAG: {{BASH: Delev, Relev}}
-  //tags not tested
+  // tags not tested
 SB Crafting.esp
 ScaledArmorFix.esp
 ScalingKhajiitClawDamage.esp
@@ -1704,7 +1704,7 @@ Smithing Tailoring.esp
 /* from Steam Workshop */
 smithingextended.esp
   TAG: {{BASH: Delev, Relev}}
-    //tag not tested
+    // tag not tested
 SmithingTomes.esp
 solssecretstash.esp
 SortiertesInventar.esp
@@ -1718,7 +1718,7 @@ REGEX: SPTFemaleGuards(InPlace)?\.esp
     IF VAR(RU) SAY:  Устарело. Обновите до SPTDiverseGuards
 SPTDiverseGuardsSkyrim.esp
   TAG: {{BASH: Delev}}
-    //not tested
+    // not tested
 srmcompanioncart.esp
 StaRe.esp
   IF VAR(EN) SAY: Obsolete. Update to 'SkyRe_StandingStones.esp'
@@ -1749,7 +1749,7 @@ ENDGROUP: Base S
 BEGINGROUP: Base T
 
 Tamriel Compendium - Skill Books.esp
-  //Requires TAG: {{BASH: Relev}} ?
+  // Requires TAG: {{BASH: Relev}} ?
 REGEX: Tamriel Compendium( -)?( Skill Book Version)?\.esp
   TAG: {{BASH: Relev}}
 test silver.esp
@@ -1902,7 +1902,7 @@ REGEX: SIM.?- NPC.?Additions(HOSTILE|WEREWOLVES)?\.esp
 SIM - NPCSUBMITTED.esp
 SIM - Treasure Anywhere.esp
 REGEX: .+Waterbugfix\.esp
-  //Only this REGEX work for SIM - Waterbugfix.esp
+  // Only this REGEX work for SIM - Waterbugfix.esp
 ENDGROUP: Base Late
 ENDGROUP: General Base Mods
 
@@ -1933,6 +1933,7 @@ Dynavision.esp
 DYNAVISION Dynamic Depth of Field.esp
   IF VAR(EN) SAY: Make sure you have not switched DoF off in your ini file. If you don't see any effect, open you Skyrimprefs.ini and look for 'bDoDepthOfField'. Make sure it is set to 1.
     IF VAR(RU) SAY: Убедитесь, что вы не выключили DoF в вашем ini-файле. Если вы не видите эффекта, откройте ваш Skyrimprefs.ini и найдите строку 'bDoDepthOfField'. Убедитесь, что она имеет значение 1.
+Footprints.esp
 horsefp.esp
 IMAGINATOR - Visual Control for Skyrim.esp
 iHUD.esp
@@ -1958,8 +1959,8 @@ ENDGROUP: Load Order Independent Mods
 
 BEGINGROUP: Items (armor and weapons)
   //
-  //VITAL for overhaul mod users: Wrye Bash tag all armor replacers {{BASH: Graphics}}(After it work for Skyrim) to keep their new look.
-  //Some items will need to go after overhaul or location altering mods to appear.
+  // VITAL for overhaul mod users: Wrye Bash tag all armor replacers {{BASH: Graphics}}(After it work for Skyrim) to keep their new look.
+  // Some items will need to go after overhaul or location altering mods to appear.
 
 BEGINGROUP: Items #
 
@@ -2411,7 +2412,7 @@ Elculous.esp
 REGEX: ElementalBlade.(epicv|progression).\.esp
 ElementalXbowbolts.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  //TAG: {{BASH: Graphics}}
+  // TAG: {{BASH: Graphics}}
 Elemental Staves.esp
 ElvenGreatBlade.esp
 ElvenGilded.esp
@@ -2577,7 +2578,7 @@ HoodlessDragonpriestMasksPlus1_0.esp
 IFNOT VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
   TAG: {{BASH: Relev}}
   IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Deactivate}} and remove [Relev]
-    //not tested
+    // not tested
 IFNOT VAR(BFNIAP) MOD: Lorecraft - Immersive Armors.esp
 IFNOT VAR(BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
@@ -2734,7 +2735,7 @@ LB Lady Keaira.esp
   IF VAR(EN) && IFNOT VAR(LB) WARN: 'Lady Body' body replacer is requires for mod work!
     IF VAR(RU) && IFNOT VAR(LB) WARN: Для работы мода требуется реплейсер "http://modgames.net/load/252-1-0-11011 Lady Body"!
 REGEX: LB Lady .+\.esp
-  //regex for all clothes for LB body replacer that named LB Lady *.esp
+  // regex for all clothes for LB body replacer that named LB Lady *.esp
   IF VAR(EN) && IFNOT VAR(LB) WARN: 'Lady Body' body replacer is requires for mod work!
     IF VAR(RU) && IFNOT VAR(LB) WARN: Для работы мода требуется реплейсер "http://modgames.net/load/252-1-0-11011 Lady Body"!
 LB_MuchAdoSnowElves.esp
@@ -3073,7 +3074,7 @@ RingOfEloquence.esp
 ring of free casting.esp
 REGEX: Ring of Hircine - No Disease Werewolf AND Totem Selection.+\.esp
   IF VAR(EN) SAY: Only use one Ring of Hircine - No Disease Werewolf AND Totem Selection*.esp
-   //IF VAR(RU) SAY: Используйте только один Ring of Hircine - No Disease Werewolf AND Totem Selection*.esp
+   // IF VAR(RU) SAY: Используйте только один Ring of Hircine - No Disease Werewolf AND Totem Selection*.esp
 Ring of Nighteye.esp
 RingOFNighteye.esp
 Rings of Sanguinare Vampiris.esp
@@ -3193,7 +3194,7 @@ SteelImperialArmor.esp
 SteelSoldiersWithCloaks.esp
 StorageHelpers.esp
 StormcloakArmorVariety.esp
-  //tag not tested
+  // tag not tested
   TAG: {{BASH: Relev}}
 StrapOnbyaeonv1.1.esp
 student clothes.esp
@@ -3407,7 +3408,7 @@ WeaponsOf3E - No Leveled Lists.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest Weapons of the Third Era MoS edition
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   TAG: {{BASH: Delev, Relev}}
-    //for versions <1.5
+    // for versions <1.5
   IF VAR(EN) && IF FILE("SkyRe_Main.esp") WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'
     IF VAR(RU) && IF FILE("SkyRe_Main.esp") WARN: Удалите. WeaponsOf3E уже включен в 'SkyRe_Main.esp'
   IF REGEX("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp") INC: WeaponsOf3E*.esp
@@ -3486,7 +3487,7 @@ ENDGROUP: Items Load Late
 ENDGROUP: Items (armor and weapons)
 
 BEGINGROUP: Overhauls
-  //Initial position for Overhaul mods
+  // Initial position for Overhaul mods
 
 BEGINGROUP: General Overhauls
 ASIS-Encounter Zones.esp
@@ -3507,7 +3508,7 @@ Lorecraft - Crafting Overhaul.esp
 ScarabCraftingHacks.esp
 Crafting 300 Basic.esp
   TAG: {{BASH: Delev, Relev}}
-  //tags as in original crafting 300 mod
+  // tags as in original crafting 300 mod
 Crafting300_Basic_extras_v1.0.esp
 Darwins_Hard_Times.esp
 enhancedgameplay.esp
@@ -3595,7 +3596,7 @@ PISE-Vendors.esp
 PISE-Misc Vendors.esp
 PISE-Vendor Tweaks Only.esp
 PISE-Dragon weighting only.esp
-  //TAG: {{BASH: Stats}}
+  // TAG: {{BASH: Stats}}
 PISE-Difficult Bartering.esp
 PISE-Bartering Tweaks.esp
 PISE-Bartering Tweaks Only.esp
@@ -3709,13 +3710,13 @@ ENDGROUP: Monster Wars
 ENDGROUP: Overhauls
 
 BEGINGROUP: Quests and Locations
-//
-//All mods that add or change quests,
-//add player houses,
-//add or change dungeons,
-//add or change towns, villiages, cities and/or landscape.
-//
-//Mods not in alphabetical order have been hand placed to avoid conflicts (as much as possible).
+// 
+// All mods that add or change quests,
+// add player houses,
+// add or change dungeons,
+// add or change towns, villiages, cities and/or landscape.
+// 
+// Mods not in alphabetical order have been hand placed to avoid conflicts (as much as possible).
 
 BEGINGROUP: Quests #
 
@@ -4393,13 +4394,13 @@ ENDGROUP: Quests XYZ
 ENDGROUP: Quests and Locations
 
 BEGINGROUP: Overrides
-//
-//Mods that deliberately change specific things about vanilla Skyrim, overhauls or other mods.
-//Some late loading quests and locations in here too.
-//Specific NPC behavior changes.  Follower mods go in Companions section.
+// 
+// Mods that deliberately change specific things about vanilla Skyrim, overhauls or other mods.
+// Some late loading quests and locations in here too.
+// Specific NPC behavior changes.  Follower mods go in Companions section.
 
 BEGINGROUP: Weight Changes
-//moved to this position because have conflicts with too many plugins in overrides groups
+// moved to this position because have conflicts with too many plugins in overrides groups
 // TAG: {{BASH: Stats}} for all
 
 Armor Weight Adjustment.esp
@@ -4457,7 +4458,7 @@ BEGINGROUP: Overrides Early
 
 AK- Azura's Black Star.esp
 ArmorSpeed.esp
-  //Armies of Skyrim>
+  // Armies of Skyrim>
 ---Riften, Falkreath, Morthal, Dawnstar Guards---.esp
 ---Stormcloaks, Windhelm, Sons & Ralof---.esp
 --Imperial soldiers & Legates--.esp
@@ -4465,7 +4466,7 @@ ArmorSpeed.esp
 --Penitus Oculatus--.esp
 --Solitude Guards--.esp
 Whiterunguards.esp
-  //<Armies of Skyrim
+  // <Armies of Skyrim
 REGEX: Imperial Soldiers v 1.5( DE&O)?( Essential)?\.esp
   IF VAR(EN) SAY: Use only one Imperial Soldiers*.esp
     IF VAR(RU) SAY: Используйте только один Imperial Soldiers*.esp
@@ -4479,7 +4480,7 @@ KDC - kevinsterable - Deadly Stronger Poisons.esp
 LessAnnoyingItems.esp
 Masters of Death.esp
 IFNOT FILE("SkyRe_Main.esp") MOD: Morrowloot.esp
-  //morrowloot loaded here only if skyre_main.esp is not installed
+  // morrowloot loaded here only if skyre_main.esp is not installed
   IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
     IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в LL) и меняют оди и теже уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
   TAG: {{BASH: Delev, Relev}}
@@ -4543,7 +4544,7 @@ Argonian resist poison.esp
 armored-horses.esp
 armorLegion.esp
   TAG: {{BASH: Delev, Relev}}
-    //not tested
+    // not tested
 Dovahkiin Mercenary Armored Horse.esp
 Arrows Progressive Damage (BS and CCO).esp
   IF VAR(EN) SAY: Obsolete. Update to 'AT - Progressive Damage (BS and CCO).esp'
@@ -4956,7 +4957,7 @@ Lawrens RNG Guards.esp
 Lawren RNG Guards.esp
 LaFemmeLycana.esp
 LB Yarl Clothes.esp
-  //single clothes replacer
+  // single clothes replacer
   IF VAR(EN) && IFNOT VAR(LB) WARN: 'Lady Body' body replacer is requires for mod work!
     IF VAR(RU) && IFNOT VAR(LB) WARN: Для работы мода требуется реплейсер "http://modgames.net/load/252-1-0-11011 Lady Body"!
 Legendary Artifacts.esp
@@ -4976,10 +4977,10 @@ lesssnowywinterhold.esp
 Lethal Archery.esp
 Leveled Smithing.esp
   TAG: {{BASH: Delev, Relev}}
-    //not tested
+    // not tested
 levelingmerchantswallets.esp
   TAG: {{BASH: Delev, Relev}}
-    //not tested
+    // not tested
 LightShieldofSolitude.esp
 REGEX: LFox Alchemists Have Ingredients.+\.esp
   TAG: {{BASH: Relev}}
@@ -5084,7 +5085,7 @@ REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg)\.esp
 NoAutoSkillBooks.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version.
     IF VAR(RU) WARN: Устарело. Обновите до последней версии.
-    //Not sure about this
+    // Not sure about this
 NoAutoSkillBooks(Normal).esp
 NoAutoSkillBooks(Better).esp
   IF VAR(EN) && IF FILE("NoAutoSkillBooks(Normal).esp") WARN: Use only one (Normal) or (Better) version
@@ -5232,7 +5233,7 @@ Sneak Tweak.esp
 SkyJubs_Invisible_Helmets_English_Main_1_2.esp
 Skyrim_Dragon Update.esp
   TAG: {{BASH: Delev, Relev}}
-    //tags not tested
+    // tags not tested
   IF VAR(EN) INC: Other Dragon override mods, use only one.
     IF VAR(RU) INC: Другие, изменяющие драконов моды, используйте только один.
 Sneak Tools Vanilla Hoods.esp
@@ -5516,7 +5517,7 @@ Open Cities Skyrim.esp
   IF CHECKSUM("Open Cities Skyrim.esp", 022AD2C8) WARN: Stolen content. Please show respect for authors' rights and download from a "http://skyrim.nexusmods.com/mods/8058 legitimate source".
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 TQC-OC.esp
-  //Thieves Guild Shortcut - Open Cities compatible. Must be loaded after Open Cities.
+  // Thieves Guild Shortcut - Open Cities compatible. Must be loaded after Open Cities.
 ENDGROUP: City Overhauls
 
 BEGINGROUP: Realism
@@ -5677,8 +5678,8 @@ YetAnotherWerewolfImprovement.esp
 ENDGROUP: Vampires and Werewolves
 
 BEGINGROUP: Magic
-//
-//Overrides overhauls. New spells and magic systems go here for convenience.
+// 
+// Overrides overhauls. New spells and magic systems go here for convenience.
 
 BEGINGROUP: General Spells
 
@@ -5871,7 +5872,7 @@ wkyddResurrectionSpell.esp
 ENDGROUP: General Spells
 
 enchantthreeeffects.esp
-  //Must be loaded after Phenderix's Magic Evolved, temporarily placed here
+  // Must be loaded after Phenderix's Magic Evolved, temporarily placed here
 
 BEGINGROUP: Shouts
 
@@ -6090,7 +6091,7 @@ Fortify Enchanting necklace.esp
 IPutASpellOnYou.esp
 hankyench.esp
 HoodlessPsijicArchmageReplacement.esp
-  //move this mod to items group with Graphics tag after it work in bashed patch for Skyrim
+  // move this mod to items group with Graphics tag after it work in bashed patch for Skyrim
 Backstab Enchantment new.esp
 stackableenchants.esp
 bootsofnimblespeed.esp
@@ -6106,8 +6107,8 @@ ENDGROUP: Enchantment
 ENDGROUP: Magic
 
 BEGINGROUP: Thievery, Sneaking and Crime
-//
-//Overrides overhauls.
+// 
+// Overrides overhauls.
 
 Thievery.esp
 REGEX: cao_extrapockets_D.+\.esp
@@ -6152,10 +6153,10 @@ BEGINGROUP: Combat
 
 Duel - Combat Realism.esp
   IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
-  //Duel combat realism must load BEFORE Ace Reaistic fighting
+  // Duel combat realism must load BEFORE Ace Reaistic fighting
 ACE Realistic Fighting.esp
 REGEX: CustomDifficultyP.*\.esp
-  //Changes game difficulty, put here as initial position
+  // Changes game difficulty, put here as initial position
 UCO.esp
 REGEX: Added_Killmoves_All_Weapons([+-])?(Last_Enemy_Limit_Removed)?([+-])?(Player_cannot_be_killmoved)?([+-])?(DWDecap-removed)?\.esp
 REGEX: The Dance of Death.*\.esp
@@ -6332,9 +6333,9 @@ REGEX: PerkUP-.{4,12}\.esp
   IF VAR(EN) SAY: For users of incompatible plugins in this mod plugins. You will probably lose some already used perks, check this in game.
     IF VAR(RU) SAY: Пользователи, уже использующие несовместимые с этим моды. Вы можете потерять уже использованные перки, проверьте это в игре.
   IF VAR(EN) INC: Extra Effect Perk-Additional Rank by thedemoninside , No Perk Prerequisites by ClassicalNoodle , Deflect Arrows Perk Fix by JeffSteel , Caos Advanced Perk Ranks by CaoMengde777 (fixed bugs, naturally) , Caos Extra Pockets Perk Upgrades by CaoMengde777 , Dead Aim perk x5 x10 x15 x20 by evi002 (rebalanced) , Better archery Eagle Eye perk by Graxster , Concentrated Poisons by kenevir1991 , Bugfix - Critical Charge with swords by Kevin Kidder ....
-  //For Basic
+  // For Basic
 REGEX: PerkUP-.*\.esp
-  //For Optional
+  // For Optional
 More Craftables - PerkUP compatibility.esp
 MXMaxAllSkills.esp
   IFNOT FILE("More Craftables.esp") REQ: More Craftables
@@ -6577,7 +6578,7 @@ SkyRe_StandingStones.esp
 IF FILE("SkyRe_Main.esp") MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
-    //please fix grammar. )
+    // please fix grammar. )
     IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в LL) и меняют оди и теже уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
   IF VAR(EN) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
     IF VAR(RU) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для равильной работы мода с SkyRe.
@@ -6656,7 +6657,7 @@ SkyRe_Plugin_Morrowloot.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 REGEX: Acquisitive Soul Gems( FR)?\.esp
-  //must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
+  // must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
 Perk_Soul_Siphon_Full_Recharge.esp
 SynergyBonuses.esp
 XPModNormal.esp
@@ -6694,14 +6695,14 @@ Soulmaster 10.esp
 SpeechTree.esp
 Hunting in Skyrim.esp
 Skyrim15SmithingFix.esp
-  //must be load after any perk and/or smithing mods
+  // must be load after any perk and/or smithing mods
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 Two-Handed Speed-Based Perks.esp
 ENDGROUP: Player Perks
 
 BEGINGROUP: Pose and Animation Mods
-//
-//new animations.
+// 
+// new animations.
 // TAG: {{BASH: Actors.Anims}}
 
 AP Skyrim.esp
@@ -6766,7 +6767,7 @@ UseAllTheHairStyles.esp
 ENDGROUP: Headparts
 
 BEGINGROUP: Eyes
-//TAG: {{BASH: Eyes}}
+// TAG: {{BASH: Eyes}}
 
 DorkDiva Elf Eye Additions.esp
 DorkDiva Eyes For Dark Characters pack one.esp
@@ -6855,15 +6856,15 @@ ENDGROUP: Beauty Packs & Race Changes\Addons
 
 
 BEGINGROUP: Companions and NPCs
-//Those related to companion mod systems. Most others in Quests section.
-//Recommended by authors to load very late.
-//Feedback from Tokc.D.K.
-//1) Mods loaded before UFO
-//2) UFO, BDO, XFL and other simular mods
-//3) Global Companions\Housecarls face\stats changing mods
-//4) Single Companions\Housecarls face\stats changing mods
-//5) mods that will be loaded after UFO
-//Companions\housecarls and NPC this is a different mods. Global mods in most variants must be load early. Single mods with minor changes must be load late.
+// Those related to companion mod systems. Most others in Quests section.
+// Recommended by authors to load very late.
+// Feedback from Tokc.D.K.
+// 1) Mods loaded before UFO
+// 2) UFO, BDO, XFL and other simular mods
+// 3) Global Companions\Housecarls face\stats changing mods
+// 4) Single Companions\Housecarls face\stats changing mods
+// 5) mods that will be loaded after UFO
+// Companions\housecarls and NPC this is a different mods. Global mods in most variants must be load early. Single mods with minor changes must be load late.
 
 BEGINGROUP: Companions Load Early
 
@@ -6953,15 +6954,15 @@ TravellersOfSkyrim - UFO Compatibility Patch.esp
 ENDGROUP: Ultimate Follower Overhaul
 
 BEGINGROUP: Post UFO
-//Other mods that must loaded after UFO(if UFO is installed).
+// Other mods that must loaded after UFO(if UFO is installed).
 
 IF VAR(UFO) MOD: My home is your home.esp
-  //Bethsoft thrd20#119
+  // Bethsoft thrd20#119
 ENDGROUP: Post UFO
 
 BEGINGROUP: NPC Distance, Face & Makeup Overrides
-//Distance Tweaks before Face & Makeup Overrides
-//Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
+// Distance Tweaks before Face & Makeup Overrides
+// Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 
 REGEX: ([Nn]o |([Ss]lightly )?[Rr]educed Distance )(NPC|npc) Greetings.esp
 ENDGROUP: NPC Distance, Face & Makeup Overrides
@@ -7268,7 +7269,7 @@ Kyia.esp
 Natalie - Healer Follower.esp
 REGEX: Natalie - Healer Follower - Look 0\d\.esp
 Natalie - Healer Follower - Ashen Race.esp
-  //Natalie - Healer Follower.esp must be first in order
+  // Natalie - Healer Follower.esp must be first in order
 Followers Unlimited 11.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Already included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
     IF VAR(RU) && IF VAR(UFO) WARN: Уже включено в  UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
@@ -7290,7 +7291,7 @@ Follower Limit Increased.esp
   IF VAR(EN) && IF FILE("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, use only one, not both.
     IF VAR(RU) && IF FILE("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, используйте что-то одно.
 multimarriage.esp
-  //must be load after multiple followers mods for wedding ceremony work.
+  // must be load after multiple followers mods for wedding ceremony work.
 marriagemod - alpha v3.esp
 CerwidenCompanion.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
@@ -7355,7 +7356,7 @@ Xannon.esp
 ENDGROUP: Companions
 
 BEGINGROUP: Companions Load Late
-//Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
+// Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 
 followernoama.esp
 followerhavok.esp
@@ -7471,12 +7472,12 @@ SkyRe_Races.esp
   IF VAR(EN) INC: Gender and Race Heights (conflicts with skeletons)
     IF VAR(RU) INC: Gender and Race Heights (конфликты со скелетами)
 IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
-  //Must be loaded after SkyRe_Races.esp(if installed) for correct work
+  // Must be loaded after SkyRe_Races.esp(if installed) for correct work
 ENDGROUP: Race Overrides
 
 BEGINGROUP: Message suppression/changing overrides
-//
-//Best loaded late to override possible message additions from other mods.
+// 
+// Best loaded late to override possible message additions from other mods.
 
 DisableNoFastTravelMessage.esp
 DragonWordsDisplayed.esp
@@ -7524,8 +7525,8 @@ REGEX: Timescale\d{1,2}\.esp
 ENDGROUP: Respawn & day length overrides
 
 BEGINGROUP: Shader Mods
-//
-//Need to go after new items to affect them.
+// 
+// Need to go after new items to affect them.
 
 BEGINGROUP: Shader Removers
 
@@ -7670,7 +7671,7 @@ BBLSGuysApachii.esp
 BEGINGROUP: Compatibility Patches
 // Compatability Patches which must load after a certain mod go here
 // Only if no conflicts are made in between
-//
+// 
 REGEX: Agony's Sorting Frenzy - .+\.esp
 dD-Dawnguard-EBT Patch.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -7699,7 +7700,6 @@ ENDGROUP: Compatibility Patches
 BEGINGROUP: Extra Late
 // For plugins which must be after all others
 
-Footprints.esp
 FTFI Fast Travel From Indoors.esp
 // Must come after all cell altering mods.
 PC Exclusive Animation Path.esp
