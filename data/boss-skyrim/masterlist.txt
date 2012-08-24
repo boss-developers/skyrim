@@ -506,6 +506,9 @@ Aranea.esp
 BabetteReplacer.esp
  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 bellabetterfemales.esp
+betterfemalesbybella.esp
+betterfemalesbybellamakeup1.esp
+betterfemalesbybellanoshine.esp
 BNPC.esp
 Carlotta.esp
 CustomUthgerd.esp
@@ -1067,6 +1070,7 @@ REGEX: .. - Enhanced Blood Main\.esp
   IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
 REGEX: dD-\w{4} Screen Blood\.esp
 REGEX: dD-.{4,9} Screen Blood Duration\.esp
+dD-No Vanilla Hit Blood Decals Placement.esp
 /* Both can be used at the same time */
 dD-Reduced Splatter Size.esp
 dD-Reduced Wound Size.esp
@@ -1233,7 +1237,6 @@ HM MicroCraft.esp
 HorseFlute.esp
 HorseMarker.esp
 HotkeyMod.esp
-HousecarlWhiterun.esp
 hqsnow.esp
 humanblood.esp
 humans drop human parts.esp
@@ -1274,6 +1277,7 @@ Ish's Souls to Perks.esp
   IF VERSION("SKSE", "0.1.5.6", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.6+.
 ItemRewardsForBounties.esp
 Item Sorting by Saige.esp
+item sorting with weightless items.esp
 itsatrap!.esp
 itsatrapv1.0.esp
 Izvoschiki from Hiro.esp
@@ -1562,6 +1566,8 @@ REGEX: Realistic Wildlife Loot -( IMCN)?( Realistic| Reduced)\.esp
   IF VAR(EN) SAY: Use only one Realistic Wildlife Loot - *.esp
     IF VAR(RU) SAY: Используйте только один Realistic Wildlife Loot - *.esp
 REGEX: Real Wildlife Skyrim.*\.esp
+  TAG: {{BASH: Relev}}
+Real Wildlife.esp
   TAG: {{BASH: Relev}}
 /* Does this Satisfy SIRWPach.esp and SIRWPatch.esp */
 REGEX: SIRWPat?ch.esp
@@ -1930,6 +1936,7 @@ SKSE Hotkeys.esp
 REGEX: SkyRealism - Simple Save System.+\.esp
   IF VAR(EN) SAY: Only use one SkyRealism - Simple Save System*.esp
     IF VAR(RU) SAY: Используйте только один SkyRealism - Simple Save System*.esp
+SkyRealism - Skills and Statistics.esp
 Skyrim Timed AutoSave Helper
 skyui.esp
 REGEX: TimedAutoSave(\d\d)\.esp
@@ -2185,6 +2192,10 @@ ConanSwords.esp
 Lorecraft - Conan.esp
 CraftableTemplar.esp
 CraftableNocturnalRobes.esp
+Craftable Dragon Priest Masks.esp
+Craftable Ebony Mail and Blade.esp
+Craftable Nightingale Armor.esp
+Craftable Thieves Guild Armor.esp
 Craftable TPL Dagger.esp
 Craftable Triss armor.esp
 Craftable Arrows.esp
@@ -2522,6 +2533,7 @@ REGEX: Henrys Ring of Light( v1-0)?\.esp
 Hana.esp
 hawk2.esp
 Hentai_mixed_Armor.esp
+HentaiCasualByNausicaa.esp
 HentaiCasualWears.esp
 HentaiGaleArmor.esp
 HentaiGaleCBBE3ByNausicaa.esp
@@ -3273,6 +3285,7 @@ Umbra (Two handed).esp
 umbra by r3van(one handed).esp
 UmbraSturmbringer.esp
 Unarmed Enhanced.esp
+Unexpected Blades.esp
 Unenchanted Necromancer Amulet.esp
 REGEX: UniqueLeveledItemsUpgrade(1dot3)?\.esp
   IF VAR(EN) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Obsolete. Update to latest version.
@@ -3424,6 +3437,9 @@ IF VAR(BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
     IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 ImmersiveArmorsNPCs.esp
+  IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
+ImmersiveArmorsNPCsNoHelmets.esp
+  IFNOT FILE("ImmersiveArmorsNPCs.esp") INC: ImmersiveArmorsNPCs.esp
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
 BandolierForNPCs.esp
 BandolierForNPCsWIC_V2.esp
@@ -3839,6 +3855,7 @@ daelusdagger.esp
 Dalls_Proudspire_Castle.esp
 darkbrotherhoodsanctuaries.esp
 darkbrotherhoodshield.esp
+DarkSoulsBreezehome Mod 0.1.esp
 darkstadt.esp
 Darkwater Estate.esp
 Dawnspire.esp
@@ -4204,6 +4221,9 @@ SolitudeBetterDocks.esp
 MoreSolitudeFlora V1.0.esp
 solitude sanctuary.esp
 SoulForge.esp
+Sovngarde - completed main quest.esp
+  IF VAR(EN) SAY: This mod is not compatible with the last quest in the Main Quest chain. Either disable the .esp before you do it or wait until you complete the main quest.
+    IF VAR(RU) SAY: Этот мод не совместим с последним квестом в основной цепочке квестов. Либо отключите .esp, прежде чем сделать это, либо дождитесь, пока вы не завершите главный квест.
 SpouseLife.esp
 SpouseStoreMod.esp
 stonehenge11.esp
@@ -4585,6 +4605,7 @@ BEGINGROUP: Overrides C
 
 Carga.esp
 cbbecurvy.esp
+Children of Skyrim - NORD PRESETS.esp
 Circlet with Helms.esp
 Circlet with Hoods.esp
 Civil War Repairs.esp
@@ -4637,7 +4658,6 @@ REGEX: Disable Fast Travel Permanently.*\.esp
   IF VAR(EN) SAY: Use only one 'Disable Fast Travel Permanently*.esp'
     IF VAR(RU) SAY: Используйте только один 'Disable Fast Travel Permanently*.esp'
 disablefasttravel.esp
-disablelydiatradedialog.esp
 REGEX: DisableRangedKillCams(\d\.\d)\.esp
 DiversePriests.esp
 doublebounddmg.esp
@@ -4829,9 +4849,6 @@ ENDGROUP: Overrides H
 BEGINGROUP: Overrides I
 
 I work for Belethor.esp
-iLoveLydia.esp
-  IF VAR(EN) WARN: This mod will conflict with any female body altering mods.
-    IF VAR(RU) WARN: Этот мод может конфликтовать с любыми реплейсерами женских тел.
 REGEX: iMaxPlayerRunes\d+\.esp
   IF VAR(EN) SAY: This is actually iMaxPlayerRunes which is a game setting - you might be able to just set it in the .ini file and skip the plugin.
     IF VAR(RU) SAY: Это просто параметр iMaxPlayerRunes из настроек игры - вы можете просто поменять его значение в .ini файле и не использовать этот плагин.
@@ -4848,6 +4865,7 @@ Improved Potions.esp
 Improved Runes.esp
 ImprovedArchMageRobes.esp
 ImprovedFood.esp
+ImprovedRahgot.esp
 ImprovedScImpUniforms - Main.esp
 Increase Torch Range.esp
 Increased Arrow Damage.esp
@@ -5328,10 +5346,6 @@ Unlevelled World - War in Skyrim II Patch.esp
 Skyrim Creatures Alive.esp
   TAG: {{BASH: Relev, Delev}}
 UnderstandingShadowmarksV1.1.esp
-UniqueLydia.esp
-UniqueLydiaArmor.esp
-UniqueLydiaSF.esp
-UniqueLydiaSFArmor.esp
 UniqueNPCsProtected.esp
 Unlimited_Amulets.esp
 Unlimited Charge for Daedric Artifacts.esp
@@ -5371,6 +5385,7 @@ WiS IV - Double ArrowDamage.esp
   TAG: {{BASH: Stats}}
 WiS IV - Double Arrow Damage.esp
   TAG: {{BASH: Stats}}
+World_events_eighty_percent_more.esp
 Woodelf Extended Animal Friend.esp
 ENDGROUP: Overrides W
 
@@ -7038,9 +7053,19 @@ HousecarlWhiterun.esp
 HousecarlWindhelm.esp
   IF VAR(EN) && IF FILE("Sexier Housecarls.esp") SAY: Redundant. Already included in Sexier Housecarls.esp
     IF VAR(RU) && IF FILE("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
+HousecarlWhiterun.esp
+HousecarlWhiterun Sexy Lydia v0.5.esp
+iLoveLydia.esp
+  IF VAR(EN) WARN: This mod will conflict with any female body altering mods.
+    IF VAR(RU) WARN: Этот мод может конфликтовать с любыми реплейсерами женских тел.
+UniqueLydia.esp
+UniqueLydiaArmor.esp
+UniqueLydiaSF.esp
+UniqueLydiaSFArmor.esp
 SelminaDArchon.esp
 REGEX: aela1.3b?(alt)?(nowarpaint)?\.esp
 REGEX: aranea1.?\.esp
+belrand1a.esp
 brelyna1a.esp
 REGEX: illia1.?\.esp
 jordis1d.esp
@@ -7052,6 +7077,7 @@ njada1a.esp
 njada1b.esp
 ria1.esp
 SNMelissa.esp
+Aela_Plus.esp
 Annael.esp
 Annekke.esp
 Claire.esp
@@ -7243,6 +7269,7 @@ Taarie.esp
 The Lady Of Akatosh.esp
 timek_Laluna.esp
 Tuath.esp
+disablelydiatradedialog.esp
 Ultimate Witcher Experience - Follower Geralt.esp
 Ultimate Witcher Experience - Follower Iorveth.esp
 ultimate witcher Experiance - Followers.esp
