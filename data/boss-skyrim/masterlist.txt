@@ -92,12 +92,13 @@ IF FILE("Dawnguard.esm") SET: Dawnguard
   IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(EN) GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
     IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(RU)  GLOBAL SAY: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
 
-// Messages for Russian users.
+// Messages for Russian users
   IF VAR(RU) GLOBAL SAY: Если в сводке у вас отмечены неизвестные плагины, то откройте раздел 'Неизвестные плагины'. Если у вас имеются сообщения для плагинов(Тип сообщения Все не равен нулю), вам необходимо просмотреть раздел 'Известные плагины', для их просмотра, лаже если нет предупреждений и ошибок.
      // This is about what users need to look Unrecognized plugins category(if unrecognized plugins is detected) and need to look Recognized plugins category(if number of messages is't 0). Some users still think that not need to look on unrecognized plugins and if all is green in Summary. :)
   
-  IF FILE("Strings\Skyrim_RUSSIAN.STRINGS") && IFNOT VAR(RU) GLOBAL SAY: Don't worry if you use russian strings for SSL. If you use russian version then see it: Если вы используете русскую версию Скайрим, то вы можете включить русский язык в настройках BOSS GUI(Settings\General\Language), или изменив в BOSS.ini значение параметра sLanguage на russian.
-
+  IF FILE("Strings\Skyrim_RUSSIAN.STRINGS") && IFNOT VAR(RU) GLOBAL SAY: Don't worry if you use russian strings for SSL. Если вы используете русскую версию Скайрим, то вы можете включить русский язык в настройках BOSS GUI(Settings\General\Language), или изменив в BOSS.ini значение параметра sLanguage на russian.
+    //This is instructions for common users that are use english language for BOSS and russian Skyrim.
+    
 // Fores New Idles in Skyrim
   IF VAR(EN) && IF VAR(FNIS) SAY: It appears you have "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
     IF VAR(RU) && IF VAR(FNIS) SAY: У вас установлен "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim". Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой, основанный на FNIS, мод.
@@ -464,8 +465,8 @@ RiftenJailVisualFix.esp
     IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 RiverwoodTraderInvestorFix.esp
 SanguineRoseFix.esp
-  IF VERSION("TES5", "1.4.27", <) ERROR: Delete. Fixed in official patch 1.5+
-    IF VAR(RU) && IF VERSION("TES5", "1.4.27", <) ERROR: Удалите. Исправлено в патче 1.5+
+  IF VERSION("TES5", "1.4.27", >) ERROR: Delete. Fixed in official patch 1.5+
+    IF VAR(RU) && IF VERSION("TES5", "1.4.27", >) ERROR: Удалите. Исправлено в патче 1.5+
 sapphire_speak_fix.esp
 REGEX: Shadow.?Striping.?Fix\.esp
 Shrine of Azura LOD Fix.esp
@@ -494,7 +495,7 @@ Correctif - Skyrim.esp
 Unofficial Skyrim Patch.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) && IF FILE("Dawnguard.esm") && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Recommend to use the "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch" in addition to Dawnguard. This is need for correct work with Dawnguard.
-    IF VAR(RU) && IF FILE("Dawnguard.esm") && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Рекомендуется использовать "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch", в дополнение к Dawnguard. Это необходимо для корректной работы с Dawnguard.
+    IF VAR(RU) && IF FILE("Dawnguard.esm") && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Рекомендуется использовать "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch", в дополнение к Dawnguard. Это необходимо для корректной работы с Dawnguard. Русская версия "http://tes.ag.ru/skyrim/mods/files/rus/Unofficial_Dawnguard_Patch_v1_beta_ru.7z здесь".
 
 ENDGROUP: Vanilla fixes
 
