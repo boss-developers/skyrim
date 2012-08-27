@@ -2366,10 +2366,6 @@ REGEX: Dragonscale.?hood.*\.esp
 dragonslayer.esp
 dragonslayer_dracula.esp
 DragonSword.esp
-Dr_Bandolier.esp
-Lorecraft - Bandolier.esp
-  IF VAR(EN) && IFNOT FILE("Dr_Bandolier.esp") WARN: Keep 'Dr_Bandolier.esp' aswell!
-    IF VAR(RU) && IFNOT FILE("Dr_Bandolier.esp") WARN: 'Dr_Bandolier.esp' также необходим для работы!
 Dread Huntress Armor.esp
 Dread Knight Weapon Set.esp
 DreadKnightWeaponSet,esp
@@ -3484,8 +3480,12 @@ ENDGROUP: Items XYZ
 BEGINGROUP: Items Load Late
 
 BandolierForNPCMasterFile.esp
+Dr_Bandolier.esp
 Dr_BandolierDG.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+Lorecraft - Bandolier.esp
+  IF VAR(EN) && IFNOT FILE("Dr_Bandolier.esp") WARN: Keep 'Dr_Bandolier.esp' aswell!
+    IF VAR(RU) && IFNOT FILE("Dr_Bandolier.esp") WARN: 'Dr_Bandolier.esp' также необходим для работы!
 IF VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
   TAG: {{BASH: Relev}}
   IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Deactivate}} and remove [Relev]
@@ -5574,6 +5574,12 @@ Realistic Running Speed.esp
 Realistic Speed and Jump Fix.esp
 SkyRealism - Time and Travel.esp
 SkyRealism - Mass and Materials.esp
+SkyRealism - Capacity and Carry Weight.esp
+  IF VAR(Dawnguard) && IFNOT CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) WARN: Use the Dawnguard compatible version please.
+  IFNOT VAR(Dawnguard) && IF CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("Dr_Bandolier.esp") || IFNOT FILE("Dr_BandolierDG.esp") REQ: "http://skyrim.nexusmods.com/mods/16438 Bandolier - Bags and Pouches"
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT FILE("LeatherBackpack.esp") || IFNOT FILE("LeatherBackpackBrown.esp") || IFNOT FILE("LeatherBackpackBlack.esp") || IF FILE("LeatherBackpackDarkBrown.esp") REQ: "http://skyrim.nexusmods.com/mods/13732 Leather Backpack".  Install only the black, brown and original varients. Also be sure to choose "Regular" for all install options.
 SkyrimSpeeds.esp
 REGEX: Sprint\d\.esp
 REGEX: StaminaCarryWeight_\d{2}\.esp
@@ -7156,14 +7162,12 @@ Jenassa.esp
 Janne.esp
 Iona_CombatDual.esp
 Iona_CombatRanger.esp
-  IF FILE ("Iona_CombatDual.esp") INC: Iona_CombatDual.esp
+  IF FILE("Iona_CombatDual.esp") INC: Iona_CombatDual.esp
 Iona_CombatThief.esp
-  IF FILE ("Iona_CombatRanger.esp") INC: Iona_CombatRanger.esp
-  IF FILE ("Iona_CombatRanger.esp") INC: Iona_CombatRanger.esp
+  IF FILE("Iona_CombatRanger.esp") INC: Iona_CombatRanger.esp
 Iona_CombatStandart.esp
-  IF FILE ("Iona_CombatRanger.esp") INC: Iona_CombatRanger.esp
-  IF FILE ("Iona_CombatRanger.esp") INC: Iona_CombatRanger.esp
-  IF FILE ("Iona_CombatThief.esp") INC: Iona_CombatThief.esp
+  IF FILE("Iona_CombatRanger.esp") INC: Iona_CombatRanger.esp
+  IF FILE("Iona_CombatThief.esp") INC: Iona_CombatThief.esp
 Lydia.esp
 Martina.esp
 Mjoll.esp
