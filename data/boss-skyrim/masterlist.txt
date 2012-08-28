@@ -2919,8 +2919,8 @@ Nicos Gift.esp
 Nicos Raven Swords.esp
 Nicos Scimitar.esp
 Nicoroshi Creations.esp
-  IF FILE("SkyRe_Plugin_NicoroshiCreations_1.1.esp") TAG: {{BASH: Deactivate}}
-SkyRe_Plugin_NicoroshiCreations_1.1.esp
+  IF REGEX("SkyRe_Plugin_NicoroshiCreations.*\.esp") TAG: {{BASH: Deactivate}}
+REGEX: SkyRe_Plugin_NicoroshiCreations.*\.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF VAR(EN) && IF ACTIVE("Nicoroshi Creations.esp") SAY: Remember not to load (or to simply delete) Nicoroshi Creations.esp
