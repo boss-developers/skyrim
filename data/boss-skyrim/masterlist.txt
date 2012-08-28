@@ -5270,8 +5270,6 @@ Skyrim_Dragon Update.esp
     // tags not tested
   IF VAR(EN) INC: Other Dragon override mods, use only one.
     IF VAR(RU) INC: Другие, изменяющие драконов моды, используйте только один.
-Sneak Tools Vanilla Hoods.esp
-Sneak Tools Vanilla Masks.esp
 Distant Detail.esp
 REGEX: ElementalRunesImpact.*\.esp
 REGEX: secunda Size x\d\.\d\.esp
@@ -6186,6 +6184,11 @@ ShadowPlay.esp
 SkyRealism - Detection Durations.esp
 REGEX: Sneak Hand Bonus - X(\d\.\d|\d{1,2})\.esp
 Sneak Tools.esp
+  IF VAR(EN) && IF FILE("SkyRe_Main.esp") ERROR: Delete. Already included in SkyRe_Main.esp.
+    IF VAR(RU) && IF FILE("SkyRe_Main.esp") ERROR: Удалите. Уже включено в SkyRe_Main.esp.
+    // Info from SkyRe changes log.
+Sneak Tools Vanilla Hoods.esp
+Sneak Tools Vanilla Masks.esp
 SneakMult15.esp
 NoSneakAttackSound.esp
 ENDGROUP: Thievery, Sneaking and Crime
