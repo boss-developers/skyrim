@@ -4596,11 +4596,10 @@ Ash Pile Expiration.esp
 ATTTemplate.esp
 augmentedspells.esp
 AutoAim.esp
-  IF VAR(EN) && IF FILE("NoAutoAim.esp") WARN: Use only one AutoAim.esp or NoAutoAim.esp
-    IF VAR(RU) WARN: Используйте только один AutoAim.esp или NoAutoAim.esp
 NoAutoAim.esp
+  IF FILE("AutoAim.esp") INC: AutoAim.esp
 Proper Aiming.esp
-  INC: AutoAim.esp
+  IF FILE("AutoAim.esp") INC: AutoAim.esp
 Waterbreathing Breathless Emerge.esp
 REGEX: ArmorCap90.*\.esp
   IF VAR(EN) SAY: Use only one ArmorCap esp
