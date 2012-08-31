@@ -292,10 +292,10 @@ Alicia.esm
 Farkasv2.esm
 XFLMain.esm
   IF VERSION("TES5", "1.3.0", <) REQ: Skyrim 1.3+
-  IF VAR(EN) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp, has the same functional, use only one.
-    IF VAR(RU) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp, имеет такой же функционал, используйте только один из них.
-  IF VAR(EN) && IF FILE("BDO.esp") INC: BDO.esp, has the same functional, use only one.
-    IF VAR(RU) && IF FILE("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
+  IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
+  IF FILE("BDO.esp") INC: BDO.esp
+  IF VAR(EN) SAY: For safe mod uninstall see special uninstallation instructions on "http://skyrim.nexusmods.com/mods/12933 mod page".
+    IF VAR(RU) SAY: Для безопасного удаления мода смотрите инструкции по удалению на "http://skyrim.nexusmods.com/mods/12933 странице мода" или на "http://modgames.net/load/247-1-0-10650 странице локализации".
 Daeas.esm
 DArchon.esm
 DrowCompanions.esm
@@ -594,7 +594,7 @@ IFNOT FILE("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
 REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
   IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp
     IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp
-  INC: Realistic Lighting
+  IF FILE("Realistic Lighting.esp") INC: Realistic Lighting.esp
 REGEX: getSnowyV.+\.esp
   IF FILE("Chesko_Frostfall.esp") INC: Chesko_Frostfall.esp
 Longer Weather Transitions.esp
@@ -813,7 +813,7 @@ aDragonRide.esp
 ADV HB-Style.esp
 advancedcrafting.esp
 AjenHorseFIX.esp
-  REQ: Ajen.esm
+  IFNOT FILE("Ajen.esm") REQ: Ajen.esm
 AK- Achievements Unlocked.esp
 alchemistshack01.esp
 alchemysatchels.esp
@@ -1111,7 +1111,8 @@ death cam duration options.esp
 Diaries of Training.esp
 Disease Descriptions.esp
 REGEX: Don.?Juan.*\.esp
-  REQ: Apachis Hairs and Fores Idle Animations
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
 Dogsofskyrim.esp
 Domino_PerkBooks.esp
 Door_locker.esp
@@ -1387,7 +1388,7 @@ Legionettes.esp
   TAG: {{BASH: Relev}}
 Legs.esp
 CraftUniqueArtifactWEAP.esp
-  REQ: LegendarySmithingUpgrades.esp
+  IFNOT FILE("LegendarySmithingUpgrades.esp") REQ: "http://skyrim.nexusmods.com/mods/1690 LegendarySmithingUpgrades".esp
 LFHM expert.esp
 LFox Alchemists Have Potions and Poisons.esp
   TAG: {{BASH: Delev, Relev}}
@@ -1409,7 +1410,7 @@ Lore Friendly - Dwemer Names.esp
 Lunar Forge Patch.esp
 UnlimitedBookshelves.esp
 SIUBPatch.esp
-  REQ: UnlimitedBookshelves.esp
+  IFNOT FILE("UnlimitedBookshelves.esp") REQ: UnlimitedBookshelves.esp
 lorecorrectvolendrung.esp
 Lorecraft - Cooking.esp
 Lorecraft - Crafting Complete.esp
@@ -2294,7 +2295,7 @@ dbsword.esp
 DBZOutfit.esp
 DBZVegetaOutfit.esp
 REGEX: FluffkinsDaedricCorset.*\.esp
-  REQ: Daedric Corset mod
+  IFNOT FILE("DaedricCorset.esp") REQ: "http://skyrim.nexusmods.com/mods/4081 DaedricCorset".esp
 DaggerCraft.esp
   IF FILE("SkyRe_Plugin_DaggerCraft_1.3.esp") TAG: {{BASH: Deactivate}}
 SkyRe_Plugin_DaggerCraft_1.3.esp
@@ -2355,7 +2356,7 @@ REGEX: DragonBoneWeapons.+\.esp
   IF FILE("SkyRe_Plugin_DragonBoneWeaponsComplete.+\.esp") TAG: {{BASH: Deactivate}}
 Lorecraft - Dragonbone Weapons Complete.esp
 Lorecraft - Dragon Bone Weapons.esp
-  REQ: Lorecraft 4.05b+
+  IFNOT FILE("LorecraftESM.esm") REQ: "http://skyrim.nexusmods.com/mods/9959 Lorecraft" 4.05b+asdf
 SkyRe_Plugin_DragonBoneWeaponsComplete_1.03.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
@@ -2800,7 +2801,7 @@ LightArmorPack14.esp
 lilithscleaver.esp
 lilithsdecapitator1_0.esp
 lilithsdecapitator1h_allinone.esp
-  REQ: lilithsdecapitator1_0.esp
+  IFNOT FILE("lilithsdecapitator1_0.esp") REQ: lilithsdecapitator1_0.esp
 lilithsdisemboweler.esp
 lilithsrazor1_1.esp
 lilithsrazor_s.esp
@@ -2996,9 +2997,9 @@ Osare AutoMail.esp
 Osare GothicLolita.esp
 Osare HeadPhone.esp
 Osare KneeSocks.esp
-  REQ: DIMONIZED UNP female body
+  REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 Osare Maid Outfit.esp
-  REQ: DIMONIZED UNP female body
+  REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 Osare OnePiece.esp
 Osare Swimsuit.esp
 Osare Underwear.esp
@@ -3110,7 +3111,7 @@ roadsidethief_simple_armor.esp
 RobedSteelPlateArmor.esp
 RogueArmor.esp
 RogueOutfit.esp
-  REQ: CBBE
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
 Rorona.esp
 Rorona3scabbard.esp
 rosegeant.esp
@@ -3443,7 +3444,7 @@ WeaponsOf3E - No Leveled Lists.esp
 Deleveled Skyrim - 3rdEraWeaponsMoS.esp
   TAG: {{BASH: Delev, Relev}}
 RecyclingModWo3E.esp
-  REQ: Weapons of the Third Era
+  IFNOT REGEX("Weapons of the Third Era.+\.esp") REQ: "http://skyrim.nexusmods.com/mods/3871 Weapons of the Third Era"
 Werehide.esp
 whiteebony.esp
 Winterscale Armor.esp
@@ -5202,7 +5203,7 @@ playing_children.esp
 Usable lantern.esp
 Child Armor.esp
 pf_lightfootcompanions.esp
-  REQ: playing_children.esp
+  IFNOT FILE("playing_children.esp") REQ: playing_children.esp
 potions_0_1.esp
 poisons_0_1.esp
 posion.esp
@@ -5717,7 +5718,7 @@ WerewolfTweaksFear.esp
 WerewolfTweaks350Health_300AR_30MR.esp
 WerewolfUpgrade.esp
 Werewolf Loot.esp
-  REQ: WerewolfUpgrade.esp
+  IFNOT FILE("WerewolfUpgrade.esp") REQ: WerewolfUpgrade.esp
 Werewolf Loot - Edible Animals.esp
 Werewolves.esp
 WiS IV - Werewolf & Vampire.esp
@@ -6631,7 +6632,7 @@ SkyRe_StandingStones.esp
   IF VAR(EN) && IF FILE("StaRe.esp") SAY: Remember not to load (or to simply delete) StaRe.esp
     IF VAR(RU) && IF FILE("StaRe.esp") SAY: Не забудьте отключить или удалить StaRe.esp
   IF FILE("Drakian race.esp") INC: Drakian race
-  INC: Standing Stones and Guardians
+  IF FILE("Signs and Guardians.esp") INC: Signs and Guardians.esp
 IF FILE("SkyRe_Main.esp") MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
@@ -6770,7 +6771,7 @@ DynamicallyIncreasedWalkSpeed.esp
 effeminatenazeem.esp
 MoreUnarmedKillAnimations15.esp
 NiruinsBusinessPlan.esp
-  IFNOT VAR(FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
 Onehanded.esp
 REGEX: Pinups\d?\.esp
 psikoticsnecromancy.esp
@@ -6924,6 +6925,19 @@ BEGINGROUP: Companions and NPCs
 
 BEGINGROUP: Companions Load Early
 
+Essential followers - all followers.esp
+  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+essential followers.esp
+  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+essentialfollowers.esp
+  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+Essential Vigilance.esp
+  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+3DNPC.esp
 Althirs Companion and Carriage Command v1.1.esp
 animal_euphorium.esp
 Beyrana.esp
@@ -7031,19 +7045,6 @@ BEGINGROUP: Companions
 /* Extensible Follower Framework */
 /* Ultimate Follower Overhaul */
 /* NPC Distance, Face & Makeup Overrides */
-Essential followers - all followers.esp
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
-essential followers.esp
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
-essentialfollowers.esp
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
-Essential Vigilance.esp
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
-3DNPC.esp
 Better Companions.esp
 BetterCompanions.esp
 KCustomNPCs.esp
@@ -7270,7 +7271,7 @@ TS_FallenAngels.esp
 Vilkas_v1.esp
 Halfling Race.Esp
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
-    REQ: "http://skyrim.nexusmods.com/mods/2488 Better males - Beautiful nudes and faces - New hairstyles"
+  REQ: "http://skyrim.nexusmods.com/mods/2488 Better males - Beautiful nudes and faces - New hairstyles"
 Sam Merry and Peppin.Esp
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
   REQ: "http://skyrim.nexusmods.com/mods/2488 Better males - Beautiful nudes and faces - New hairstyles"
@@ -7788,10 +7789,10 @@ FTFI Fast Travel From Indoors.esp
 // Must come after all cell altering mods.
 PC Exclusive Animation Path.esp
   IF FILE("AP Skyrim.esp") INC: AP Skyrim.esp
-  IFNOT VAR(FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
 PC Exclusive Animation Path - Elder Race.esp
   IF FILE("AP Skyrim.esp") INC: AP Skyrim.esp
-  IFNOT VAR(FNIS) REQ: Fores New Idles in Skyrim (FNIS 3.1+)
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
 Skyrim Performance MOD.esp
 Skyrim Performance MOD 5min.esp
   IF VAR(EN) && IF FILE("Skyrim Performance MOD.esp") WARN: Use only one Skyrim performance Mod.esp
