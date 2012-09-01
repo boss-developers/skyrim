@@ -1687,11 +1687,13 @@ SkyMoMod_lists.esp
   TAG: {{BASH: Delev, Relev}}
 REGEX: SkyMoMod_morespawns_(animal|bandit|draugr|dwerven|falmer|forsworn|mage|vampire)\.esp
 SkyMoMod Extras Collectables.esp
+Skyrim_Monster_Mod_Additions-Collectables.esp 
+SkyMoMod Extras Conjuration.esp
+Skyrim_Monster_Mod_Additions-Conjuration.esp
 REGEX: Deleveled Skyrim - SkyMoMod_list( \(No EleTri\)| \(No EleTriSta\))\.esp
   TAG: {{BASH: Delev, Relev}}
 SSS Skyrim Monster Mod Purist Lore-Friendly Patch.esp
 SIMoMoCoPatch.esp
-SkyMoMod Extras Conjuration.esp
 Skyrim Barbers.esp
 Skyrim Expanded Loot Tables.esp
   // TAG: {{BASH: Invent}}
@@ -1750,6 +1752,7 @@ StaRe.esp
 StarX Frost Giants.esp
 Fire Giants.esp
 Frost Giants.esp
+Smithing_Tomes.esp
 Steel Bolts For All.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 stone_overhaul.esp
@@ -2995,7 +2998,7 @@ openfacehelmetsstandalone.esp
 OrcishMaskedHelmet.esp
 Orgnum'sDagger.esp
 Oriental Weapon&Armor.esp
-  IF FILE("SkyRe_Plugin_Oriental Weapon&Armor.esp") TAG: {{BASH: Deactivate}}
+  IF REGEX("SkyRe_Plugin_Oriental Weapon&Armor.*\.esp") TAG: {{BASH: Deactivate}}
 Osare AutoMail.esp
 Osare GothicLolita.esp
 Osare HeadPhone.esp
@@ -3155,6 +3158,7 @@ Scythe Weapon mingyannu.esp
 REGEX: ScoutArmorAddon\d\.esp
 Seadog.esp
 seethroughlook.esp
+REGEX: SED7-CBBE3.+\.esp
 SeraphimStandAlone.esp
 SeraticArmor.esp
 REGEX: SeraticHeavyArmor(Dark|Gray)\.esp
@@ -3348,7 +3352,10 @@ REGEX: UniqueLeveledItemsUpgrade(1dot3)?\.esp
   IF VAR(EN) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Устарело. Обновите до последней версии.
 UniqueRadiantAndPartyClothes.esp
-UNP Boots.esp
+UnKindBow.esp
+UNPArmoredBikini.esp
+UNP Pantyhose.esp
+REGEX: UNP Boots.*\.esp
 UNP Simply Clothes.esp
 UNPB Barbarian Armor.esp
 UNPPantyhose.esp
@@ -4274,6 +4281,7 @@ secretroom-bh-en.esp
   IF VAR(EN) && IF FILE("The Secret Room of Breezehome.esp") SAY: Use only one 'The Secret Room of Breezehome.esp' or 'secretroom-bh-en.esp'
     IF VAR(RU) && IF FILE("The Secret Room of Breezehome.esp") SAY: Используйте только один мод 'The Secret Room of Breezehome.esp' или 'secretroom-bh-en.esp'
 Sentinel Falls.esp
+REGEX: SBT Smal\d\.esp
 Sevenkeys.esp
 Shack.esp
 Shady_Tales.esp
@@ -5403,6 +5411,7 @@ BEGINGROUP: Overrides T
 terrain bump.esp
 REGEX: Tougher Traps - \w{5,10}\.esp
 TCO - Travel Cost Overhaul.esp
+REGEX: TheWitcher2-Ultimate Replace Mod.+\.esp
 VariedGuards.esp
 VariedGuards2H.esp
 VariousGuardReplacer.esp
@@ -6161,6 +6170,7 @@ NAEE.esp
 NewEnchancement.esp
 NightEye_Ench+Potion+Spell.esp
   TAG: {{BASH: Relev}}
+UniqueWeaponsUnlimitedEnchants.esp
 ENDGROUP: Enchantment
 ENDGROUP: Magic
 
@@ -6585,6 +6595,38 @@ REGEX: WiS IV - leveld World X\d+\.esp
 SkyRe_Main.esp
   TAG: {{BASH: Relev, Delev}}
     //TAG: {{BASH: Delev, Names, Relev}}
+  SAY: Requires DLC Dawnguard for versions 0.99.17+
+  IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
+  IF FILE("ACE Speech.esp") INC: ACE Speech.esp
+  IF FILE("Perky.esp") INC: Perky.esp (Syynx's Perky)
+  IF REGEX("PerkUP-.*\.esp") INC: PerkUP
+  IF REGEX("Uncapped Perks.*\.esp") INC: Uncapped perks
+  IF VAR(EN) && IF VAR(CCO) INC: Complete Crafting Overhaul (doubles in crafting)
+    IF VAR(RU) && IF VAR(CCO) INC: Complete Crafting Overhaul (дубликаты в меню крафтинга)
+  IF VAR(EN) && IF FILE("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
+    IF VAR(RU) && IF FILE("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
+  IF VAR(EN) WARN: The SkyRe has many conflicts with other mods.  Please read the readme before playing with mod. This will prevent many problems. Read it "http://skyrim.nexusmods.com/mods/9286 here".
+    IF VAR(RU) WARN: SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его "http://skyrim.nexusmods.com/mods/9286 здесь"(Англ.) или "http://tes.ag.ru/skyrim/mods/readme/SkyRe_readme_ru.shtml здесь".
+  IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" for full perk functional
+    IF VAR(RU) && IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" для полного функционирования перков.
+  IF VAR(EN) && IF FILE("interface\lockpickingmenu.swf") SAY: If lockpicikng is not work then try to delete 'interface\lockpickingmenu.swf'
+    IF VAR(RU) && IF FILE("interface\lockpickingmenu.swf") SAY: Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл 'interface\lockpickingmenu.swf'
+  IF VAR(EN) SAY: If you have a problem with aiming try to install "http://skyrim.nexusmods.com/mods/13652 this" mod.
+    IF VAR(RU) SAY: Если у вас проблемы с прицеливанием, попробуйте установить "http://skyrim.nexusmods.com/mods/13652 этот" мод.
+  IF VAR(EN) SAY: To make aiming easier, recommend to add the following lines to Skyrim.ini:
+    IF VAR(RU) SAY: Чтобы сделать прицеливание проще, добавьте в ваш Skyrim.ini следующие строки:
+ SAY:   [Actor]
+ SAY:   fVisibleNavmeshMoveDist=12288.0000
+ SAY:   [Combat]
+ SAY:   f1PArrowTiltUpAngle=0.64
+ SAY:   f3PArrowTiltUpAngle=0.64
+ SAY:   fMagnetismStrafeHeadingMult=0.0
+ SAY:   fMagnetismLookingMult=0.0
+SkyRe_Main_NoDawnguard.esp
+  TAG: {{BASH: Relev, Delev}}
+    //TAG: {{BASH: Delev, Names, Relev}}
+  IF VAR(Dawnguard) INC: Dawnguard.esm
+  IF FILE("SkyRe_Main.esp") INC: SkyRe_Main.esp
   IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
   IF FILE("ACE Speech.esp") INC: ACE Speech.esp
   IF FILE("Perky.esp") INC: Perky.esp (Syynx's Perky)
@@ -6684,7 +6726,7 @@ SkyRe_Plugin_Malo_Waffen_V3Bugfix.esp
     IF VAR(RU) && IF ACTIVE("Malo_Waffen.esp") SAY: Не забудьте отключить или удалить Malo_Waffen.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_Oriental_Weapon&ArmorV1_10.esp
+REGEX: SkyRe_Plugin_Oriental Weapon&Armor.*\.esp
   IF VAR(EN) && IF ACTIVE("Oriental Weapon&Armor.esp") SAY: Remember not to load (or to simply delete) Oriental Weapon&Armor.esp
     IF VAR(RU) && IF ACTIVE("Oriental Weapon&Armor.esp") SAY: Не забудьте отключить или удалить Oriental Weapon&Armor.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
@@ -6725,6 +6767,8 @@ SkyRe_Plugin_Morrowloot.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_Witcher 2 Style Dawnguard Armour.esp
+SkyRe_Dreamcloth.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 REGEX: Acquisitive Soul Gems( FR)?\.esp
   // must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
 Perk_Soul_Siphon_Full_Recharge.esp
@@ -6742,6 +6786,7 @@ BatTravel.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 xxxLvCap255Creatures.esp
 xxxLvCap255Enemy.esp
+Third Era Attributes for Skyrim - Perks.esp
 ENDGROUP: Skills, Attributes and Leveling
 
 BEGINGROUP: Player Perks
@@ -6948,6 +6993,7 @@ essentialfollowers.esp
 Essential Vigilance.esp
   IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
     IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+Unkillable Lydia.esp
 3DNPC.esp
 Althirs Companion and Carriage Command v1.1.esp
 animal_euphorium.esp
@@ -7184,6 +7230,17 @@ UniqueLydiaArmor.esp
 UniqueLydiaSF.esp
 UniqueLydiaSFArmor.esp
 SelminaDArchon.esp
+sneTobias.esp
+sneThorek.esp
+sneQueen.esp
+sneLola.esp
+sneLeodyn.esp
+sneErzsebettheWicked.esp
+sneEdalene.esp
+sneCosette.esp
+sneBrinna.esp
+sneAudmund.esp
+sneAmbrosine.esp 
 REGEX: aela1.3b?(alt)?(nowarpaint)?\.esp
 REGEX: aranea1.?\.esp
 belrand1a.esp
@@ -7569,6 +7626,7 @@ SkyRe_Races.esp
     IF VAR(RU) INC: Gender and Race Heights (конфликты со скелетами)
 IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   // Must be loaded after SkyRe_Races.esp(if installed) for correct work
+Third Era Attributes for Skyrim - Races.esp 
 ENDGROUP: Race Overrides
 
 BEGINGROUP: Message suppression/changing overrides
