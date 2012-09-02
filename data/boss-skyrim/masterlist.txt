@@ -5772,10 +5772,20 @@ Battle Mage.esp
 Battle_Mage_v1_1.esp
 REGEX: BetterMage(Alt)?\.esp
 MidasSkyrim.esp
+  IF FILE("MiningFlames.esp") || IF FILE("BoundTools.esp") || IF FILE("ExtractOreSpell.esp") && IF VAR(EN) INC: MiningFlames.esp, BoundTools.esp, ExtractOreSpell.esp. You can have more than one mod enabled, but only one of the added methods will be able to "mine" ore.
+    IF FILE("MiningFlames.esp") || IF FILE("BoundTools.esp") || IF FILE("ExtractOreSpell.esp") && IF VAR(RU) INC: MiningFlames.esp, BoundTools.esp, ExtractOreSpell.esp. Вы можете подключить данные моды вместе, но только один из добавленных методов добычи руды будет работать, тот, который добавлен нижестоящим модом.
+MiningFlames.esp
+  IF VAR(EN) && IF FILE("MidasSkyrim.esp") INC: MidasSkyrim.esp (Spell 'Bound Pickaxe')
+    IF VAR(RU) && IF FILE("MidasSkyrim.esp") INC: Midas Magic.esp (Заклинание 'Призыв кирки')
 BoundTools.esp
-  IF VAR(EN) INC: MiningFlames.esp and Midas Magic's Bound Pickaxe spell. You can have more than one mod enabled, but only one of the added methods will be able to "mine" ore.
-    IF VAR(RU) && IF FILE("MiningFlames.esp") INC: MiningFlames.esp
-    IF VAR(RU) && IF FILE("MidasSkyrim.esp") INC: Заклинание Призванная отмычка из Midas Magic.
+    IF FILE("MiningFlames.esp") INC: MiningFlames.esp
+  IF VAR(EN) && IF FILE("MidasSkyrim.esp") INC: MidasSkyrim.esp (Spell 'Bound Pickaxe')
+    IF VAR(RU) && IF FILE("MidasSkyrim.esp") INC: Midas Magic.esp (Заклинание 'Призыв кирки')
+ExtractOreSpell.esp
+  IF FILE("BoundTools.esp") INC: BoundTools.esp
+  IF FILE("MiningFlames.esp") INC: MiningFlames.esp
+  IF VAR(EN) && IF FILE("MidasSkyrim.esp") INC: MidasSkyrim.esp (Spell 'Bound Pickaxe')
+    IF VAR(RU) && IF FILE("MidasSkyrim.esp") INC: Midas Magic.esp (Заклинание 'Призыв кирки')
 CallAssassins.esp
 Candlespell.esp
 REGEX: Candle[:alpha:]ight(Shadow|ToggleDefault(NC)?|Toggle\d\d(NC)?|Toggle\d(NC)?)?\.esp
@@ -5809,10 +5819,6 @@ elemballlightning.esp
 essential player character.esp
 excaliburEX.esp
 Expert Level Sparks, Flames, and Frostbite Spells.esp
-ExtractOreSpell.esp
-  IF FILE("BoundTools.esp") INC: BoundTools.esp
-  IF FILE("MiningFlames.esp") INC: MiningFlames.esp
-  IF FILE("MidasSkyrim.esp") INC: MidasSkyrim.esp
 fcteResurrection.esp
 FeatherSpells.esp
 FlashStep.esp
@@ -6045,7 +6051,6 @@ REGEX: Mighty Magick - .+ Extras\.esp
 MiniLovers.esp
 MiniLoversSoundSpell.esp
 MiniLoversAlternative.esp
-MiningFlames.esp
 More Visible Soul Trap Effect.esp
 mpn.esp
 necromancy tweak.esp
