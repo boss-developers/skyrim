@@ -1,5 +1,5 @@
 ﻿/*
-Masterlist Information: $Revision$, $Date$, $LastChangedBy$
+Masterlist Revision: 5424 (2012-09-13)
 
 Masterlist Syntax Notes
 
@@ -571,8 +571,9 @@ RANs_CharGen_Morph_0.43a.esp
 RealisticEyeLighting.esp
 ShowRaceMenuOptions.esp
 Solitude Girl's Replacer.esp
-IFNOT VAR(UFO) MOD: SupermodelSkyrim.esp
+IFNOT VAR(UFO) REGEX: Supermodel(Skyrim|Dawnguard)\.esp
   // moved back to npc faces because it's npc faces overhaul (too many conflicts)
+  IF FILE("SupermodelDawnguard.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IFNOT VAR(ApachiiHair) || IFNOT FILE("ApachiiHairFemales.esm") REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair\ApachiiSkyHairFemales"
   IF VAR(EN) SAY: Overrides faces for all NPC's, adds NPC's to all castles and naked NPC's to all player homes, also resetes all NPC's stats to vanilla.
     IF VAR(RU) SAY: Меняет лица всех NPC's, добавляет NPC во все замки и обнаженных NPC во все дома игрока, также сбрасывает характеристики NPC на ванильные.
@@ -7125,8 +7126,9 @@ ENDGROUP: Ultimate Follower Overhaul
 BEGINGROUP: Post UFO
 // Other mods that must loaded after UFO(if UFO is installed).
 
-IF VAR(UFO) MOD: SupermodelSkyrim.esp
+IF VAR(UFO) REGEX: Supermodel(Skyrim|Dawnguard)\.esp
   // loaded after UFO only if UFO is installed. This is a compromise.
+  IF FILE("SupermodelDawnguard.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IFNOT VAR(ApachiiHair) || IFNOT FILE("ApachiiHairFemales.esm") REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair\ApachiiSkyHairFemales"
 IF VAR(UFO) MOD: My home is your home.esp
   // Bethsoft thrd20#119
