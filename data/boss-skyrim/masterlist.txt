@@ -573,7 +573,7 @@ ShowRaceMenuOptions.esp
 Solitude Girl's Replacer.esp
 IFNOT VAR(UFO) MOD: SupermodelSkyrim.esp
   // moved back to npc faces because it's npc faces overhaul (too many conflicts)
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IFNOT VAR(ApachiiHair) || IFNOT FILE("ApachiiHairFemales.esm") REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair\ApachiiSkyHairFemales"
   IF VAR(EN) SAY: Overrides faces for all NPC's, adds NPC's to all castles and naked NPC's to all player homes, also resetes all NPC's stats to vanilla.
     IF VAR(RU) SAY: Меняет лица всех NPC's, добавляет NPC во все замки и обнаженных NPC во все дома игрока, также сбрасывает характеристики NPC на ванильные.
 TheCompanionShort.esp
@@ -7127,7 +7127,7 @@ BEGINGROUP: Post UFO
 
 IF VAR(UFO) MOD: SupermodelSkyrim.esp
   // loaded after UFO only if UFO is installed. This is a compromise.
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IFNOT VAR(ApachiiHair) || IFNOT FILE("ApachiiHairFemales.esm") REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair\ApachiiSkyHairFemales"
 IF VAR(UFO) MOD: My home is your home.esp
   // Bethsoft thrd20#119
 ENDGROUP: Post UFO
