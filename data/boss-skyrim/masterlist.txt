@@ -464,6 +464,7 @@ PrometheusCapes_armorsfix.esp
 Proudspire Manor Bug Fixes.esp
   IF VAR(EN) && IF FILE("ProudspireManorImprovements.esp") WARN: Delete. Included in 'ProudspireManorImprovements.esp'
     IF VAR(RU) && IF FILE("ProudspireManorImprovements.esp") WARN: Удалите. Уже включено в 'ProudspireManorImprovements.esp'
+Prowler.esp
 Quick Orc Fixes.esp
 regenfix.esp
 RiftenJailVisualFix.esp
@@ -509,9 +510,10 @@ ENDGROUP: Vanilla fixes
 
 BEGINGROUP: DLC Fixes
 
-// Doesn't exist yet, just reserving the name.
 Unofficial Dawnguard Patch.esp
 Dawnguard Breezehome Fix.esp
+VLCollisionFix.esp
+  IFNOT ($Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 HighResTexturePackFix.esp
 chopping_block_wood_fires.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
@@ -4917,6 +4919,7 @@ Headtracking.esp
 Heavy Imperial Armor.esp
 HeavyImperialLegion.esp
 HeavyMetal.esp
+Heimskr_Graubart.esp
 heimskrshutsup3.esp
 Helmeted Skeletons.esp
 HelmetToggleVanillaHelmets.esp
@@ -6471,9 +6474,7 @@ Noredundantperks.esp
 Crimson Tide - Blood.esp
   IF VAR(EN) && IF REGEX(".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Use Crimson Tide OR Enhanced Blood. Not both.
     IF VAR(RU) && IF REGEX(".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Используйте Crimson Tide или Enhanced Blood. Не оба.
-/* Unaware if any other plugins depend on this.
-Has been repoted to cause issues if loaded after ACE Melee, will load here and see
-if any other issues crop up, can be relocated accordingly.*/
+/* Crimson Tide has been repoted to cause issues if loaded after ACE Melee */
 ACE Archery.esp
   IF CHECKSUM("Crafting300.esp", 46C639C1) INC: Crafting300.esp, to fix this get the compatibility patch found here: "http://skyrim.nexusmods.com/download/70990"
 Lorecraft - Ace Archery.esp
@@ -6508,6 +6509,7 @@ REGEX: AB?T - Recover ([-\+]?\d{1,3}%)( Less| More)? Arrows( and Bolts)?\.esp
 /* All AT plugins must load after *all* ACE modules */
 Balanced Armor Effects.esp
 cao_PerkRanks.esp
+DFB - Carry Weight Per Stamina Choice.esp
 Combat Perks Overhaul.esp
 Conjuration Perks Overhaul Beta 0.1.esp
 REGEX: Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp
