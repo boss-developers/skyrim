@@ -912,9 +912,9 @@ Barrels and Crates.esp
 Behemoth Dragon.esp
 Belleza DiBella - PNJ Overhaul.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-  IFNOT FILE("ApachiiHairFemales.esm") REQ: ApachiiHairFemales.esm
-  IFNOT FILE("Cazy Hairs-by zzjay.esp") REQ: Cazy Hairs-by zzjay.esp
-  IFNOT FILE("Fh hairs-by zzjay.esp") REQ: Fh hairs-by zzjay.esp
+  IFNOT FILE("ApachiiHairFemales.esm") REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm"
+  IFNOT FILE("Cazy Hairs-by zzjay.esp") REQ: "http://skyrim.nexusmods.com/mods/19623 Cazy Hairs-by zzjay.esp"
+  IFNOT FILE("Fh hairs-by zzjay.esp") REQ: "Fh hairs-by zzjay.esp"
 Better Alchemy Loot.esp
 Better Skill and Quest Books Names.esp
 BetterFishAdded.esp
@@ -951,6 +951,7 @@ BreezeDog.esp
 BrewABetterPotion.esp
 Bring Out Your Dead.esp
   IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
+Brown Mountains and Rocks HD.esp
 bulk merchant.esp
 buttplug-calyps.esp
 BuyPerk.esp
@@ -1108,14 +1109,13 @@ DragonChristine.esp
 DragonCrownCraftable.esp
 DragonPlateCrownCraftable.esp
 dremora armor looting.esp
-REGEX: .. - Enhanced Blood Main\.esp
-  IF VAR(Dawnguard) && IF FILE("SkyMoMod.esm") && IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF VAR(EN) INC: Dawnguard (Official Bethesda DLC) and Skyrim Monster Mod. Get the necessary compatibility patch from the "http://skyrim.nexusmods.com/mods/60 enhanced blood textures" page.
-    IF VAR(Dawnguard) && IF FILE("SkyMoMod.esm") && IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF VAR(RU) INC: Dawnguard (Official Bethesda DLC) и Skyrim Monster Mod. Скачайте необходимый патч совместимости со страницы мода "http://skyrim.nexusmods.com/mods/60 enhanced blood textures".
-  IFNOT FILE("dD-SkyrimMonsterMod EBT Patch.esp") || IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF FILE("SkyMoMod.esm") && IF VAR(EN) INC: Skyrim Monster Mod. Get the necessary compatibility patch from the "http://skyrim.nexusmods.com/mods/60 enhanced blood textures" page.
-    IFNOT FILE("dD-SkyrimMonsterMod EBT Patch.esp") || IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") && IF FILE("SkyMoMod.esm") && IF VAR(RU) INC: Skyrim Monster Mod. Скачайте необходимый патч совместимости со страницы мода "http://skyrim.nexusmods.com/mods/60 enhanced blood textures".
-  IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") || IFNOT FILE("dD-Dawnguard-EBT Patch.esp") && IF VAR(Dawnguard) && IF VAR(EN) INC: Dawnguard (Official Bethesda DLC). Get the necessary compatibility patch from the "http://skyrim.nexusmods.com/mods/60 enhanced blood textures" page.
-    IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") || IFNOT FILE("dD-Dawnguard-EBT Patch.esp") && IF VAR(Dawnguard) && IF VAR(RU) INC: Dawnguard (Official Bethesda DLC). Скачайте необходимый патч совместимости со страницы мода "http://skyrim.nexusmods.com/mods/60 enhanced blood textures".
+dD - Enhanced Blood Main.esp
   IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
+  IF VAR(Dawnguard) && IFNOT FILE("SkyMoMod.esm") && IFNOT FILE("dD-Dawnguard-EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Dawnguard Compatibility_Patch".
+  IFNOT VAR(Dawnguard) && IF FILE("SkyMoMod.esm") && IFNOT FILE("dD-SkyrimMonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Monster Mod.
+  IF VAR(Dawnguard) && IF FILE("SkyMoMod.esm") && IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Dawnguard and Monster Mod.
+dD-Dawnguard-EBT Patch.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 REGEX: dD-\w{4} Screen Blood\.esp
 REGEX: dD-.{4,9} Screen Blood Duration\.esp
 dD-No Vanilla Hit Blood Decals Placement.esp
@@ -1704,6 +1704,15 @@ SkyMoMod.esp
   TAG: {{BASH: Delev, Relev}}
 SkyMoMod_lists.esp
   TAG: {{BASH: Delev, Relev}}
+dD-Dawnguard-MonsterMod EBT Patch.esp
+  IF FILE("dD-Dawnguard-EBT Patch.esp") || IF FILE("dD-SkyrimMonsterMod EBT Patch.esp") && IF VAR(EN) SAY: Use only one EBT patch
+    IF FILE("dD-Dawnguard-EBT Patch.esp") || IF FILE("dD-SkyrimMonsterMod EBT Patch.esp") && IF VAR(RU) WARN: Используйте только один EBT-патч.
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("SkyMoMod.esm") REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
+dD-SkyrimMonsterMod EBT Patch.esp
+  IF VAR(EN) && IF FILE("dD-Dawnguard-EBT Patch.esp") SAY: Use only one EBT patch
+    IF VAR(RU) && IF FILE("dD-Dawnguard-EBT Patch.esp") WARN: Используйте только один EBT-патч.
+  IFNOT FILE("SkyMoMod.esm") REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
 REGEX: SkyMoMod_morespawns_(animal|bandit|draugr|dwerven|falmer|forsworn|mage|vampire)\.esp
 SkyMoMod Extras Collectables.esp
 Skyrim_Monster_Mod_Additions-Collectables.esp 
@@ -3989,6 +3998,8 @@ DoomstoneClasses.esp
 dovahkiin_sanctuary.esp
 Drakehelm.esp
 Dragon Falls Manor.esp
+DragonBornHouse - Casa del sangre de Dragon.esp
+DragonsReach_Hideout_Assassin_Redesign2_0.esp
 Dragonstand.esp
 Drelas_Cottage_0.5b.esp
 REGEX: DragonsReach_Hideout_(Plus|Assassin|Nightingale)\.esp
@@ -6178,6 +6189,7 @@ PTAlchemyOverhaul_ONLY_BetterSorting.esp
 PTFoodOverhaul_ONLY.esp
 selbs_alchemybalance.esp
 SkyrimPowerfulPotions.esp
+skoomacooking.esp
 ENDGROUP: Alchemy
 
 BEGINGROUP: Enchantment
@@ -7888,17 +7900,6 @@ BEGINGROUP: Compatibility Patches
 // Only if no conflicts are made in between
 // 
 REGEX: Agony's Sorting Frenzy - .+\.esp
-dD-Dawnguard-EBT Patch.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-dD-Dawnguard-MonsterMod EBT Patch.esp
-  IF FILE("dD-Dawnguard-EBT Patch.esp") || IF FILE("dD-SkyrimMonsterMod EBT Patch.esp") && IF VAR(EN) SAY: Use only one EBT patch
-    IF FILE("dD-Dawnguard-EBT Patch.esp") || IF FILE("dD-SkyrimMonsterMod EBT Patch.esp") && IF VAR(RU) WARN: Используйте только один EBT-патч.
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IFNOT FILE("SkyMoMod.esm") REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
-dD-SkyrimMonsterMod EBT Patch.esp
-  IF VAR(EN) && IF FILE("dD-Dawnguard-EBT Patch.esp") SAY: Use only one EBT patch
-    IF VAR(RU) && IF FILE("dD-Dawnguard-EBT Patch.esp") WARN: Используйте только один EBT-патч.
-  IFNOT FILE("SkyMoMod.esm") REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
 GeneralStores-SkyMoMod.esp
 REGEX: SSS .+ Patch\.esp
 SSS Deadly Dragons Patch A.esp
