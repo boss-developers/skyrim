@@ -6383,9 +6383,9 @@ REGEX: decap_chance_(\d{1,3})\.esp
     IF VAR(RU) SAY: Используйте только один decap_chance_*.esp
 KillmoveSetRanger.esp
 AdvancedKillMoves.esp
-  IF VAR(EN) && IFNOT VAR(Dawnguard) && IF VERSION("TES5", "1.5.24", >) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_English_Only_2-0b_fixed"
-  IF VAR(RU) && IFNOT VAR(Dawnguard) && IF VERSION("TES5", "1.5.24", >) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_Russian_2-0b_fixed"
-  IF VAR(Dawnguard) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_English_2-0b_Dawnguard"
+  IF VAR(EN) && IFNOT VAR(Dawnguard) && IF VERSION("TES5", "1.5.24", >) && IFNOT CHECKSUM("AdvancedKillMoves.esp", 257F870C) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_English_Only_2-0b_fixed"
+  IF VAR(RU) && IFNOT VAR(Dawnguard) && IF VERSION("TES5", "1.5.24", >) && IFNOT CHECKSUM("AdvancedKillMoves.esp", B27890A5) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_Russian_2-0b_fixed"
+  IF VAR(Dawnguard) && IFNOT CHECKSUM("AdvancedKillMoves.esp", 97C9E8CC) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_English_2-0b_Dawnguard"
 AKM_0.01b.esp
 only1stpfinishers.esp
 unarmed combat.esp
