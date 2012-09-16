@@ -505,7 +505,9 @@ Unofficial Skyrim Patch.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) && IF FILE("Dawnguard.esm") && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Recommend to use the "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch" in addition to Dawnguard. This is need for correct work with Dawnguard.
     IF VAR(RU) && IF FILE("Dawnguard.esm") && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Рекомендуется использовать "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch", в дополнение к Dawnguard. Это необходимо для корректной работы с Dawnguard. Русская версия "http://tes.ag.ru/skyrim/mods/patch.shtml здесь".
-
+USKP_addon.esp
+USKP_addon ENG.esp
+  IF FILE("USKP_addon.esp") INC: USKP_addon.esp
 ENDGROUP: Vanilla fixes
 
 BEGINGROUP: DLC Fixes
@@ -767,6 +769,10 @@ morrowind_mm_theme.esp
 REGEX: PersonalizedMusic.*\.esp
 REGEX: PM_.+Music_(NoVanilla_)?v.+\.esp
 sovngardesong.esp
+ts_deathbyerock.esp
+ts_erocktheme.esp
+ts_malukah.esp
+ts_malukah_stormcloak.esp
 ENDGROUP: Music
 
 BEGINGROUP: Textures
@@ -790,6 +796,7 @@ Weapons and Armor fixes.esp
   // TAG: {{BASH: Stats}}
   IF VAR(EN) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.(checked in FNVEdit)
     IF VAR(RU) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Для использующих 'WAF+SPO+CCO'. Конфликтов с 'Smithing Perks Overhaul' и 'Complete Crafting Overhaul' не обнаружено.(проверено в FNVEdit)
+Weapons and Armor Fixes-Hacks.esp 
 Weapons and Armor fixes - Hacks.esp
   // Vanilla fixes. Must be load here(and also for CCO and SPO), for prevent overrides for new changes from mods in Base group. Too many conflicts with other mods in Base group.
 Shadow Striping Fix.esp
@@ -1429,6 +1436,7 @@ Lore Friendly - Dwemer Names.esp
   // TAG: {{BASH: Names}}
 Lunar Forge Patch.esp
 UnlimitedBookshelves.esp
+UnlimitedBookshelves_FR.esp
 SIUBPatch.esp
   IFNOT FILE("UnlimitedBookshelves.esp") REQ: UnlimitedBookshelves.esp
 lorecorrectvolendrung.esp
@@ -1918,6 +1926,7 @@ REGEX: Wolfs_Buff_Recipes(_Rus)?\.esp
 Wolfs_Simple_Recipes.esp
 REGEX: Wolfs_Intermediate_Recipes(_Rus)?\.esp
 REGEX: Wolfs_Advanced_Recipes(_Rus)?\.esp
+REGEX: WolfsRecettes.+\.esp
 Woodcutter's Wife.esp
 WorkingBoats.esp
 WRenchant_rotated.esp
@@ -2514,6 +2523,7 @@ Forsworn Legwraps.esp
 Forsworn-Sabrecat.esp
 For the Brotherhood Daggers.esp
 REGEX: fox\d\d? Armor\.esp
+Fox Cafe_X.esp
 Frostmourne.esp
 FS_AngelsInSkyrim.esp
 FS_EveningStar.esp
@@ -3372,6 +3382,11 @@ UmbraSturmbringer.esp
 Unarmed Enhanced.esp
 Unexpected Blades.esp
 Unenchanted Necromancer Amulet.esp
+UnenchRobeSepHoodThalmor.esp
+UnenchantedTGArmors.esp
+UnenchantedRoyalVampireArmor.esp
+UnenchantedNightingaleSetMod.esp
+UnderC.esp
 REGEX: UniqueLeveledItemsUpgrade(1dot3)?\.esp
   IF VAR(EN) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Устарело. Обновите до последней версии.
@@ -3514,7 +3529,6 @@ zarias_restraints.esp
 ZaZ Gags.esp
 ZeldaMod.esp
 ZhaetheriaLegend.esp
-zzALittleSexyApparelReplacer.esp
 ENDGROUP: Items XYZ
 
 /* Temporary place holder for mods that need to be loaded after many other item mods */
@@ -4404,6 +4418,12 @@ treasurehunt.esp
 Trees for Solitude V1.1.esp
 Trees for Solitude.esp
 treehouse.esp
+ts_fetishwardrobe_characterbodysize.esp
+ts_fetishwardrobe_femalebodysize.esp
+TS_FetishPantyhoseOutfits.esp
+TS_SlickArmour_x5.esp
+TS_SlickArmourNoRogue.esp
+TSTheBlackLabyrinth.esp
 tukkordoshouse.esp
 Tundra Defense.esp
 Twilight Forest.esp
@@ -4420,6 +4440,7 @@ ulushenie rivervooda.esp
 ulushenie whitrana.esp
 uluchenie gorodov .esp
 Undercity.esp
+Understone Keep RepairV1_1.esp
 UniqueTaverns.esp
 unkeptunderstonekeep025.esp
 ENDGROUP: Quests U
@@ -4451,6 +4472,7 @@ WARZONES - Civil Unrest.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 WARZONES - Optional Performance Pack.esp
+WARZONES - Forsworn Variation.esp
 ScImpUniformsWARZONES.esp
 warehouse_landscape.esp
 Wayhouse.esp
@@ -4464,6 +4486,7 @@ Whispering Waters Barrow.esp
 whiterunexenhanced.esp
 Whiterun Ferns.esp
 WinterholdDestruction.esp
+Whiterun GREENized.esp
 WhitrunRebuild.esp
 WhiterunRebuilt .esp
 Whiteruntrees.esp
@@ -4584,6 +4607,7 @@ Morrowloot_nwah.esp
   IF VAR(EN) && IF FILE("Morrowloot.esp") WARN: Do not use with original Morrowloot mod.
     IF VAR(RU) && IF FILE("Morrowloot.esp") ERROR: Не используйте с оригинальным модом Morrowloot.
   IF FILE("SkyRe_Main.esp") INC: SkyRe_Main.esp
+REGEX: ThievesguildNPCOverhaul_byHarodath__.+\.esp
 xFenWSOWAFW3E.esp
   TAG: {{BASH: Delev, Relev}}
   // TAG: {{BASH: Delev, Stats, Relev}}
@@ -4595,7 +4619,9 @@ PrettyOres.esp
 TrMejDLAN.esp
 UniqueWeapons.esp
 Way of the Sword.esp
-zzALittleSexyApparelReplacer_looseNoUnderwear.esp
+REGEX: zzALittleSexyApparelReplacer.*\.esp
+  IF VAR(EN) SAY: Use only one zzALittleSexyApparelReplacer esp
+    IF VAR(RU) SAY: Используйте только один zzALittleSexyApparelReplacer esp
 ENDGROUP: Overrides Early
 
 BEGINGROUP: Overrides #
@@ -6041,6 +6067,7 @@ Space Wiking's Claws.esp
 fastershouts.esp
 True Dovahkiin Fire and Frost Breath Normal Cooldown Time.esp
 True Dovahkiin Breath.esp
+UndressShout.esp
 unlimited shouts.esp
 ENDGROUP: Shouts
 
@@ -6960,6 +6987,7 @@ OrientalEyes.esp
 PurpleEyes.esp
 TheEyesofBeauty.esp
 Improved Eyes Skyrim.esp
+underworld_eyes.esp
 ENDGROUP: Eyes
 
 Improved Freckles Skyrim.esp
@@ -7778,9 +7806,13 @@ REGEX: RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp
 rcrnShaders.esp
   IF VAR(EN) SAY: Make sure you have bEnableFileSelection=1 in SkyrimPrefs.ini under [Launcher].
     IF VAR(RU) SAY: Убедитесь, что строка bEnableFileSelection=1 в SkyrimPrefs.ini находитсся в секции [Launcher].
-Volrath - Dragonreach - Brazier fix - 1.1.esp
-  IF VAR(EN) && IFNOT FILE("rcrnShaders.esp") && IFNOT REGEX("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") IF VAR(EN) ERROR: If using V1.1 RCRN is required, otherwise your game will crash.
-    IF VAR(RU) && IFNOT FILE("rcrnShaders.esp") && IFNOT REGEX("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") IF VAR(EN) ERROR: Если используется версия 1.1, тогда требуется мод RCRN, иначе ваша игра может вылетать.
+Volrath - Enhanced Lights and Fixes - RCRN.esp
+Volrath - Enhanced Lights and Fixes - non-RCRN.esp
+Volrath - Enhanced Lights and Fixes - non-RCRN - Lanterns Of Skyrim.esp
+Volrath - Dragonreach - Brazier fix.esp
+REGEX: Volrath - Dragonreach - Brazier fix( - 1\.1)\.esp
+  IF VAR(EN) && IFNOT FILE("rcrnShaders.esp") && IFNOT REGEX("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") ERROR: If using V1.1 RCRN is required, otherwise your game will crash.
+    IF VAR(RU) && IFNOT FILE("rcrnShaders.esp") && IFNOT REGEX("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") ERROR: Если используется версия 1.1, тогда требуется мод RCRN, иначе ваша игра может вылетать.
 Animated Weapon Enchants.esp
 Animated Weapon Enchants - Vanilla Sounds.esp
 Animated Enchantments.esp
