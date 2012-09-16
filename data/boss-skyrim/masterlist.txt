@@ -6383,6 +6383,9 @@ REGEX: decap_chance_(\d{1,3})\.esp
     IF VAR(RU) SAY: Используйте только один decap_chance_*.esp
 KillmoveSetRanger.esp
 AdvancedKillMoves.esp
+  IF VAR(EN) && IFNOT VAR(Dawnguard) && IF VERSION("TES5", "1.5.24", >) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_English_Only_2-0b_fixed"
+  IF VAR(RU) && IFNOT VAR(Dawnguard) && IF VERSION("TES5", "1.5.24", >) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_Russian_2-0b_fixed"
+  IF VAR(Dawnguard) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_English_2-0b_Dawnguard"
 AKM_0.01b.esp
 only1stpfinishers.esp
 unarmed combat.esp
@@ -6686,7 +6689,7 @@ SkyRe_Main.esp
 SkyRe_Main_NoDawnguard.esp
   TAG: {{BASH: Relev, Delev}}
     //TAG: {{BASH: Delev, Names, Relev}}
-  IF VAR(Dawnguard) INC: Dawnguard.esm
+  IF VAR(Dawnguard) INC: Dawnguard DLC
   IF FILE("SkyRe_Main.esp") INC: SkyRe_Main.esp
   IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
   IF FILE("ACE Speech.esp") INC: ACE Speech.esp
