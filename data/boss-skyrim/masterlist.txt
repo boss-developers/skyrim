@@ -68,6 +68,8 @@ IF REGEX("BertsBreezehome.+\.es[pm]") SET: BertsBHInst
 IF REGEX("SkyRe_.+\.esp") SET: SkyRe
 IF FILE("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
 IF FILE("ApachiiHair.esm") SET: ApachiiHair
+IF FILE("ApachiiHairFemales.esm") SET: ApachiiHairF
+IF FILE("ApachiiHairMales.esm") SET: ApachiiHairM
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 IF FILE("SKSE_Elys_Uncapper.dll") SET: SKCU
 IF FILE("..\ScriptDragon.dll") SET: SCDR
@@ -580,10 +582,10 @@ ShowRaceMenuOptions.esp
 Solitude Girl's Replacer.esp
 IFNOT VAR(UFO) MOD: SupermodelSkyrim.esp
   // moved back to npc faces because it's npc faces overhaul (too many conflicts)
-  IFNOT VAR(ApachiiHair) || IFNOT FILE("ApachiiHairFemales.esm") REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
+  IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"asdf
 IFNOT VAR(UFO) MOD: SupermodelDawnguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IFNOT VAR(ApachiiHair) || IFNOT FILE("ApachiiHairFemales.esm") REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
+  IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
 TheCompanionShort.esp
 Vilkas.esp
 VilkasLongHair.esp
@@ -921,7 +923,7 @@ Barrels and Crates.esp
 Behemoth Dragon.esp
 Belleza DiBella - PNJ Overhaul.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-  IFNOT FILE("ApachiiHairFemales.esm") REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm"
+  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm"
   IFNOT FILE("Cazy Hairs-by zzjay.esp") REQ: "http://skyrim.nexusmods.com/mods/19623 Cazy Hairs-by zzjay.esp"
   IFNOT FILE("Fh hairs-by zzjay.esp") REQ: Fh hairs-by zzjay.esp
 Better Alchemy Loot.esp
@@ -995,6 +997,7 @@ CCTailoring.esp
 CCMainFile.esp
 chamberpotoftheageless.esp
 Chau.esp
+cheatguide.esp
 Chesko_MorrowindPotionNames.esp
   // TAG: {{BASH: Names}}
 Chesko_WearableLantern.esp
@@ -4056,6 +4059,7 @@ falkreath expansion.esp
 CabinInFalkreath.esp
 Fantasy Markarth.esp
 Farm House_V2.esp
+FarviewCabin.esp
 FCKagrenacsInstantFortress.esp
 Fishers Farm.esp
 fjorinstomb.esp
@@ -4198,6 +4202,7 @@ BEGINGROUP: Quests N
 
 REGEX: N333-BetterWindhelm-(V)([_-]\d(\.)?\d)\.esp
 N333-BetterWindhelm-V-03.esp
+NchargthandSecrets.esp
 Nchuzzrezar.esp
 neaextbromjunaar.esp
 Neiheleim.esp
@@ -5679,6 +5684,11 @@ kuerteeEncumberingLootArmourAndWeapons.esp
 kuerteeEatAndSleep.esp
   IF VERSION("SKSE", "0.1.5.4", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
   IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
+Medium hit.esp
+  IF REGEX("dD.?- Realistic Ragdoll Force.*\.esp") INC: Realistic Ragdoll Force
+Realistic hit.esp
+  IF FILE("Medium hit.esp") INC: Medium hit.esp
+  IF REGEX("dD.?- Realistic Ragdoll Force.*\.esp") INC: Realistic Ragdoll Force
 npcuseammo.esp
 NPCsUseAmmoAllBows.esp
 P-Froggys Rest and Eat.esp
@@ -7184,10 +7194,10 @@ BEGINGROUP: Post UFO
 
 IF VAR(UFO) MOD: SupermodelSkyrim.esp
   // loaded after UFO only if UFO is installed. This is a compromise.
-  IFNOT VAR(ApachiiHair) || IFNOT FILE("ApachiiHairFemales.esm") REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
+  IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
 IF VAR(UFO) MOD: SupermodelDawnguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IFNOT VAR(ApachiiHair) || IFNOT FILE("ApachiiHairFemales.esm") REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
+  IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
 IF VAR(UFO) MOD: My home is your home.esp
   // Bethsoft thrd20#119
 ENDGROUP: Post UFO
@@ -7206,6 +7216,7 @@ BEGINGROUP: Companions
 /* NPC Distance, Face & Makeup Overrides */
 Better Companions.esp
 BetterCompanions.esp
+Child Adoption.esp
 KCustomNPCs.esp
 KCustomMagesCollege-NDO.esp
 KCustomMoreNPCs.esp
@@ -7237,6 +7248,11 @@ REGEX: DFH_.+\.esp
 DogCompanions.esp
 Ellette.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+Esmeralda.esp
+  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemale"
+Etain the Shewolf.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemale"
 AmazonianKhajiitAlpha.esp
 REGEX: AnotherFollowerMod_.+\.esp
 Barbarian Companions.esp
@@ -7261,6 +7277,8 @@ Hot_Male_Housecarls.esp
 Immersive Followers.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 jeans2.esp
+Jezebel Simon.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 IsabelStandalone.esp
 Khargra.esp
 Khargra - Ghorbash Replacer.esp
@@ -7272,11 +7290,15 @@ Lunariana.esp
 Lyla.esp
 Manbreakerv1.esp
 Marcurio_Tair.esp
+Maerwen Briaerthorne.esp
+  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemale"
+  REQ: "http://skyrim.nexusmods.com/mods/195 Human eyes for Elves"
 Michelle.esp
 Misha.esp
 Mina.esp
 Morlock.esp
 Nirana.esp
+RC_Cara_v1.esp
 Salit.esp
 SNGakan.esp
 Superficial Companions - Belrand.esp
@@ -7335,6 +7357,13 @@ UniqueLydiaArmor.esp
 UniqueLydiaSF.esp
 UniqueLydiaSFArmor.esp
 SelminaDArchon.esp
+sneAnya.esp
+sneHaekwon.esp
+sneIsobel.esp
+sneKhargol.esp
+sneLagra.esp
+sneMaurinth1.esp
+sneMordyn.esp
 sneTobias.esp
 sneThorek.esp
 sneQueen.esp
@@ -7778,7 +7807,7 @@ REGEX: skyrimespawn\d{0,1}\.esp
 REGEX: Skyrim \d{1,2} Day Vendor Respawn\.esp
 NO_RESPAWN.esp
 SlowRespawn_NoClearedCellRespawn.esp
-
+Solnishko.esp
 REGEX: Dynamic.?Timescale\.esp
 longerdays_v1.esp
 RealSkyrimTimeScale - Medium Duration.esp
