@@ -515,7 +515,8 @@ BEGINGROUP: DLC Fixes
 USKP Dawnguard vampire face & eye fix.esp
 Unofficial Dawnguard Patch.esp
 Dawnguard Breezehome Fix.esp
-  IF FILE("Unofficial Dawnguard Patch.esp") SAY: Obsolete. This has been fixed by the Unofficial Dawnguard Patch.
+  IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") SAY: Obsolete. This has been fixed by the Unofficial Dawnguard Patch.
+    IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
 VLCollisionFix.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 HighResTexturePackFix.esp
@@ -797,7 +798,7 @@ Weapons and Armor fixes.esp
   // TAG: {{BASH: Stats}}
   IF VAR(EN) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.(checked in FNVEdit)
     IF VAR(RU) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Для использующих 'WAF+SPO+CCO'. Конфликтов с 'Smithing Perks Overhaul' и 'Complete Crafting Overhaul' не обнаружено.(проверено в FNVEdit)
-Weapons and Armor Fixes-Hacks.esp 
+Weapons and Armor Fixes-Hacks.esp
 Weapons and Armor fixes - Hacks.esp
   // Vanilla fixes. Must be load here(and also for CCO and SPO), for prevent overrides for new changes from mods in Base group. Too many conflicts with other mods in Base group.
 Shadow Striping Fix.esp
