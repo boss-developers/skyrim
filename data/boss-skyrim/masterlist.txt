@@ -73,6 +73,7 @@ IF FILE("ApachiiHairMales.esm") SET: ApachiiHairM
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 IF FILE("SKSE_Elys_Uncapper.dll") SET: SKCU
 IF FILE("..\ScriptDragon.dll") SET: SCDR
+IF FILE("SkyRe_Main_NoDawnguard.esp") || IF FILE("SkyRe_Main_NoDawnguard.esp") SET: SkyReM
 // ================================================================
 // DLC variable setup for BOSS v1.7+.
 // Added as many plugins are likely to require DLC.
@@ -397,6 +398,9 @@ bard's_college_quests_fix.esp
 bookshelf_fix0.2.esp
 brandsheiprisonfix.esp
 brawlbug-plugin.esp
+Brawl Bugs CE.esp
+  IF VAR(EN) && IF VAR(SkyReM) ERROR: Delete. Already included in SkyRe_main.esp v0.99.18
+    IF VAR(RU) && IF VAR(SkyReM) ERROR: Удалите. Уже включено в SkyRe_main.esp вер.0.99.18
 breezehomelightfix.esp
 BreezehomeLadderFix.esp
 BreezehomeLightingFix.esp
@@ -582,7 +586,7 @@ ShowRaceMenuOptions.esp
 Solitude Girl's Replacer.esp
 IFNOT VAR(UFO) MOD: SupermodelSkyrim.esp
   // moved back to npc faces because it's npc faces overhaul (too many conflicts)
-  IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"asdf
+  IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
 IFNOT VAR(UFO) MOD: SupermodelDawnguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
@@ -3077,7 +3081,7 @@ Prometheus_ConanOutfits.esp
 PrvtIChrysamere.esp
 PrvtI_HeavyArmory.esp
   TAG: {{BASH: Relev}}
-  IF FILE("SkyRe_Main.esp") INC: SkyRe_Main.esp
+  IF VAR(SkyReM) INC: SkyRe_Main.esp
   // included
 psijic mage.esp
 Psiijic_Master_Outfits.esp
@@ -3212,8 +3216,8 @@ Shining Paladin.esp
 ShinKatana.esp
 shogo_laser_katana.esp
 ShShortswords.esp
-  IF VAR(EN) && IF FILE("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
-    IF VAR(RU) && IF FILE("SkyRe_Main.esp") WARN: Удалите. Уже входит в SkyRe_Main.esp
+  IF VAR(EN) && IF VAR(SkyReM) WARN: Delete. Included in 'SkyRe_Main.esp'
+    IF VAR(RU) && IF VAR(SkyReM) WARN: Удалите. Уже входит в SkyRe_Main.esp
   TAG: {{BASH: Delev, Relev}}
 Siege Bow & Backpacks.esp
 Silencer's Vestments - Cloth.esp
@@ -3479,8 +3483,8 @@ REGEX: Weapons of the Third Era.+\.esp
 REGEX: WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp
   IF VAR(EN) && IF FILE("3rdEraWeaponsMoS.esp") WARN: You have installed 3rdEraWeaponsMoS.esp. Use only one WeaponsOf3E or 3rdEraWeaponsMoS
     IF VAR(RU) && IF FILE("3rdEraWeaponsMoS.esp") WARN: У вас уже установлен 3rdEraWeaponsMoS.esp. Используйте только один мод WeaponsOf3E или 3rdEraWeaponsMoS
-  IF VAR(EN) && IF FILE("SkyRe_Main.esp") WARN: Delete. Included in 'SkyRe_Main.esp'
-    IF VAR(RU) && IF FILE("SkyRe_Main.esp") WARN: Удалите. Уже входит в SkyRe_Main.esp
+  IF VAR(EN) && IF VAR(SkyReM) WARN: Delete. Included in 'SkyRe_Main.esp'
+    IF VAR(RU) && IF VAR(SkyReM) WARN: Удалите. Уже входит в SkyRe_Main.esp
   TAG: {{BASH: Relev}}
 WeaponsOf3E - No Leveled Lists.esp
 3rdEraWeaponsMoS.esp
@@ -3488,8 +3492,8 @@ WeaponsOf3E - No Leveled Lists.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   TAG: {{BASH: Delev, Relev}}
     // for versions <1.5
-  IF VAR(EN) && IF FILE("SkyRe_Main.esp") WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'
-    IF VAR(RU) && IF FILE("SkyRe_Main.esp") WARN: Удалите. WeaponsOf3E уже включен в 'SkyRe_Main.esp'
+  IF VAR(EN) && IF VAR(SkyReM) WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'
+    IF VAR(RU) && IF VAR(SkyReM) WARN: Удалите. WeaponsOf3E уже включен в 'SkyRe_Main.esp'
   IF REGEX("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp") INC: WeaponsOf3E*.esp
 3rdEraWeapMoS-lvlList.esp
   TAG: {{BASH: Delev, Relev}}
@@ -3584,8 +3588,8 @@ REGEX: Smithing Perks Overhaul( - Balanced)?.esp
 REGEX: Complete Crafting Overhaul( - BS version)?\.esp
   IF VAR(EN) && IF REGEX("(Headbomb's )?Better Sorting.*\.esp") && IF FILE("Complete Crafting Overhaul.esp") WARN: Use only BS-version for Better Sorting.
     IF VAR(RU) && IF REGEX("(Headbomb's )?Better Sorting.*\.esp") && IF FILE("Complete Crafting Overhaul.esp") WARN: Для Better Sorting используйте только BS-версию.
-  IF VAR(EN) && IF FILE("SkyRe_Main.esp") WARN: Possible doubles in crafting menu
-    IF VAR(RU) && IF FILE("SkyRe_Main.esp") WARN: Возможны дубликаты в меню крафтинга.
+  IF VAR(EN) && IF VAR(SkyReM) WARN: Possible doubles in crafting menu
+    IF VAR(RU) && IF VAR(SkyReM) WARN: Возможны дубликаты в меню крафтинга.
   IF VAR(EN) SAY: Will conflict with mods that modify existing recipes.
     IF VAR(RU) SAY: Возможны конфликты с модами, модифицирующими существующие рецепты.
 Lorecraft - Crafting Overhaul.esp
@@ -4615,7 +4619,7 @@ IFNOT FILE("SkyRe_Main.esp") MOD: Morrowloot.esp
 Morrowloot_nwah.esp
   IF VAR(EN) && IF FILE("Morrowloot.esp") WARN: Do not use with original Morrowloot mod.
     IF VAR(RU) && IF FILE("Morrowloot.esp") ERROR: Не используйте с оригинальным модом Morrowloot.
-  IF FILE("SkyRe_Main.esp") INC: SkyRe_Main.esp
+  IF VAR(SkyReM) INC: SkyRe_Main.esp
 REGEX: ThievesguildNPCOverhaul_byHarodath__.+\.esp
 xFenWSOWAFW3E.esp
   TAG: {{BASH: Delev, Relev}}
@@ -6316,8 +6320,8 @@ ShadowPlay.esp
 SkyRealism - Detection Durations.esp
 REGEX: Sneak Hand Bonus - X(\d\.\d|\d{1,2})\.esp
 Sneak Tools.esp
-  IF VAR(EN) && IF FILE("SkyRe_Main.esp") ERROR: Delete. Already included in SkyRe_Main.esp.
-    IF VAR(RU) && IF FILE("SkyRe_Main.esp") ERROR: Удалите. Уже включено в SkyRe_Main.esp.
+  IF VAR(EN) && IF VAR(SkyReM) ERROR: Delete. Already included in SkyRe_Main.esp.
+    IF VAR(RU) && IF VAR(SkyReM) ERROR: Удалите. Уже включено в SkyRe_Main.esp.
     // Info from SkyRe changes log.
 Sneak Tools Vanilla Hoods.esp
 Sneak Tools Vanilla Masks.esp
@@ -6700,6 +6704,7 @@ REGEX: WiS IV - leveld World X\d+\.esp
 SkyRe_Main.esp
   TAG: {{BASH: Relev, Delev}}
     //TAG: {{BASH: Delev, Names, Relev}}
+  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
   SAY: Requires DLC Dawnguard for versions 0.99.17+
   IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
   IF FILE("ACE Speech.esp") INC: ACE Speech.esp
@@ -6730,6 +6735,7 @@ SkyRe_Main.esp
 SkyRe_Main_NoDawnguard.esp
   TAG: {{BASH: Relev, Delev}}
     //TAG: {{BASH: Delev, Names, Relev}}
+  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
   IF VAR(Dawnguard) INC: Dawnguard DLC
   IF FILE("SkyRe_Main.esp") INC: SkyRe_Main.esp
   IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
@@ -6771,9 +6777,9 @@ SkyRe_Comp.esp
 PerkReset SkyRe Compatibility Patch.esp
   IF VAR(EN) && IF FILE("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
     IF VAR(RU) && IF FILE("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
-IF FILE("SkyRe_Main.esp") MOD: vinis_food_and_rest.esp
+IF VAR(SkyReM) MOD: vinis_food_and_rest.esp
     IF VAR(RU) SAY: Используйте мод vinis_food_and_rest и не вкладывайте очки умений в перки "Мясоедство" и "Вегетарианство", добавленные из SkyRe_Main.esp.
-IF FILE("SkyRe_Main.esp") REGEX: vinis_food_and_rest.+\.esp
+IF VAR(SkyReM) REGEX: vinis_food_and_rest.+\.esp
 SkyRe_EncounterZones.esp
 SkyRe_EnemyAI.esp
 SkyRe_EnemyScaling.esp
@@ -6790,7 +6796,7 @@ SkyRe_StandingStones.esp
     IF VAR(RU) && IF FILE("StaRe.esp") SAY: Не забудьте отключить или удалить StaRe.esp
   IF FILE("Drakian race.esp") INC: Drakian race
   IF FILE("Signs and Guardians.esp") INC: Signs and Guardians.esp
-IF FILE("SkyRe_Main.esp") MOD: Morrowloot.esp
+IF VAR(SkyReM) MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
     // please fix grammar. )
