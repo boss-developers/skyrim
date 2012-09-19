@@ -66,6 +66,7 @@ IF REGEX("Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?
 IF FILE("Lady Body.esp") SET: LB
 IF REGEX("BertsBreezehome.+\.es[pm]") SET: BertsBHInst
 IF REGEX("SkyRe_.+\.esp") SET: SkyRe
+IF FILE("SkyRe_Main_NoDawnguard.esp") || IF FILE("SkyRe_Main_NoDawnguard.esp") SET: SkyReM
 IF FILE("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
 IF FILE("ApachiiHair.esm") SET: ApachiiHair
 IF FILE("ApachiiHairFemales.esm") SET: ApachiiHairF
@@ -73,7 +74,6 @@ IF FILE("ApachiiHairMales.esm") SET: ApachiiHairM
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 IF FILE("SKSE_Elys_Uncapper.dll") SET: SKCU
 IF FILE("..\ScriptDragon.dll") SET: SCDR
-IF FILE("SkyRe_Main_NoDawnguard.esp") || IF FILE("SkyRe_Main_NoDawnguard.esp") SET: SkyReM
 // ================================================================
 // DLC variable setup for BOSS v1.7+.
 // Added as many plugins are likely to require DLC.
@@ -4615,7 +4615,7 @@ Glowing Soul Gems.esp
 KDC - kevinsterable - Deadly Stronger Poisons.esp
 LessAnnoyingItems.esp
 Masters of Death.esp
-IFNOT FILE("SkyRe_Main.esp") MOD: Morrowloot.esp
+IFNOT VAR(SkyReM) MOD: Morrowloot.esp
   // morrowloot loaded here only if skyre_main.esp is not installed
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
@@ -5729,8 +5729,8 @@ SIBNPatch.esp
 TR-Basic Needs & RWS Patch.esp
 CookingExpanded - TRO_BN.esp
 SkBBP - Lore-Friendly Stats and Encumbrance.esp
-IFNOT FILE("SkyRe_Main.esp") MOD: vinis_food_and_rest.esp
-IFNOT FILE("SkyRe_Main.esp") REGEX: vinis_food_and_rest.+\.esp
+IFNOT VAR(SkyReM) MOD: vinis_food_and_rest.esp
+IFNOT VAR(SkyReM) REGEX: vinis_food_and_rest.+\.esp
 /* Imps More Complex Needs - Vampirism to load after other vampire feeding mods */
 IMCN - Overrides.esp
 EOS - IMCN Compatibility.esp
@@ -6770,7 +6770,7 @@ SkyRe_Main_NoDawnguard.esp
  SAY:   fMagnetismStrafeHeadingMult=0.0
  SAY:   fMagnetismLookingMult=0.0
 SkyRe_Combat.esp
-  IFNOT FILE("SkyRe_Main.esp") REQ: SkyRe_Main.esp
+  IFNOT VAR(SkyReM) REQ: SkyRe_Main.esp
 Lorecraft - SkyRe.esp
 SkyRe_Comp.esp
   IF VAR(EN) && IFNOT FILE("PerkReset SkyRe Compatibility Patch.esp") SAY: Recommend to use "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp" instead.
