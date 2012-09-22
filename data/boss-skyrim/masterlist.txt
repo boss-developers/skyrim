@@ -4622,6 +4622,11 @@ Whiterunguards.esp
 REGEX: Imperial Soldiers v 1.5( DE&O)?( Essential)?\.esp
   IF VAR(EN) SAY: Use only one Imperial Soldiers*.esp
     IF VAR(RU) SAY: Используйте только один Imperial Soldiers*.esp
+dlc_armor_crafting.esp
+  IF VERSION("TES5", "1.7.7", <) REQ: Skyrim 1.7.7.0.6+
+  IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
+  IF VAR(EN) && IFNOT VAR(CCO) SAY: Recommend to install Complete Crafting Overhaul plugin, because this plugin developed in addition for CCO.
+    IF VAR(RU) && IFNOT VAR(CCO) SAY: Рекомендуется установить плагин Complete Crafting Overhaul, потому что этот плагин был разработан как дополнение к CCO.
 Dragonbonestats.esp
 Creaturestatsrevised.esp
 ElementalGauldurAmulet.esp
