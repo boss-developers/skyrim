@@ -1023,6 +1023,7 @@ College lights.esp
 Colored_Dragonscale_v1.esp
   // TAG: {{BASH: Invent}}
 Colorful Torches.esp
+commute.esp
 Companions Visitors.esp
 Falkreath Visitors.esp
 Mages College Visitors 1.esp
@@ -5514,7 +5515,8 @@ VariedGuards.esp
 VariedGuards2H.esp
 VariousGuardReplacer.esp
   // TAG: {{BASH: Graphics}}
-REGEX: The Skyrim conflict( Light| Medium| Hard)( DE&O)?( Essential)?.*\.esp
+REGEX: The Skyrim conflict( Light| Medium| Hard)?( DE&O)?( Essential)?.*\.esp
+  // TAG: {{BASH: Invent, Names}}
   IF VAR(EN) SAY: Use only one The Skyrim conflict *.esp
     IF VAR(RU) SAY: Используйте только один The Skyrim conflict *.esp
 TheRiftenRangers.esp
@@ -6416,6 +6418,7 @@ Fighting Stances(optional) EnemiesPack.esp
 fists of steel lvls.esp
 firstPersonKillmoveOnly.esp
 GluRuS_newkillmoves.esp
+Horsemen.esp
 killmove.esp
 Killmove +.esp
 Killmove + only player.esp
@@ -6801,7 +6804,7 @@ IF VAR(SkyReM) MOD: vinis_food_and_rest.esp
     IF VAR(RU) SAY: Используйте мод vinis_food_and_rest и не вкладывайте очки умений в перки "Мясоедство" и "Вегетарианство", добавленные из SkyRe_Main.esp.
 IF VAR(SkyReM) REGEX: vinis_food_and_rest.+\.esp
 SkyRe_EncounterZones.esp
-SkyRe_EnemyAI.esp
+IFNOT REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
 SkyRe_EnemyScaling.esp
   TAG: {{BASH: Relev}}
 SkyRe_Enemies.esp
@@ -8050,9 +8053,15 @@ BEGINGROUP: Dynamic Plugins
 Automatic Variants.esp
 ASIS-Dependency.esp
 ASIS.esp
+  IF VAR(EN) && IF VAR(SkyReM) WARN: Unmark Automatic Perks and Automatic Spells flags in ASIS patch options. Or you will have bugs and CTDs in game when using SkyRe and ASIS.
+    IF VAR(RU) && IF VAR(SkyReM) WARN: Отключите флажки Automatic Perks и Automatic Spells в опциях патча. Если этого не сделать, то будут серьезные проблемы с АИ, при использовании SkyRe и ASIS (патч наделит неписей и мобов перками и заклинаниями, приводящими к периодическому замораживанию неписей, а также вылетам на рабочий стол).
 Automatic Spells.esp
 Automatic Variations.esp
 Customized AI.esp
+IF REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
+  // must load after asis patch and deactivated before patch creation. (T3nd0's note from Bethesda SkyRe thread)
+  IF VAR(EN) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Deactivate 'SkyRe_EnemyAI.esp' before creation of ASIS patch and activate only after creation of ASIS patch.
+    IF VAR(RU) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Отключите 'SkyRe_EnemyAI.esp' перед созданием ASIS-патча и активируйте только после создания.
 ENDGROUP: Dynamic Plugins
 
 /* Normaly only Dynamic plugins created by SkyProc go here.  Try to limit placing any plugins here.
