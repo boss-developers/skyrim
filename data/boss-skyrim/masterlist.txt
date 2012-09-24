@@ -33,8 +33,10 @@ You cannot start a silent comment part-way into a line, only whole lines may be 
 Message keywords should be indented by two spaces and followed by a colon ':' then the message string.
 */
 
-// Language setup. Only for BOSS 2.1+
+// ================================================================
+// Variables
 
+// Language setup. Only for BOSS 2.1+
 IF LANG ("chinese") SET: EN
   // Not translated. Set default EN.
 IF LANG ("english") SET: EN
@@ -46,13 +48,17 @@ IF LANG ("russian") SET: RU
 IF LANG ("spanish") SET: EN
   // Not translated. Set default EN.
 
-// Upgrade message for 1.7+ users:
-  IF VERSION("BOSS", "2.1.0.0", <) GLOBAL WARN: An update for BOSS (v2.1.0) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
-    // Not Important for versions <2.1.1 IF VAR(RU) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
-
 // Masterlist variable setup for BOSS v1.7+.
-// ================================================================
-
+//
+// Dlls
+IF FILE("SKSE_Elys_Uncapper.dll") SET: SKCU
+IF FILE("..\ScriptDragon.dll") SET: SCDR
+//
+// DLC variable setup for BOSS v1.7+.
+// Added as many plugins are likely to require DLC.
+IF FILE("Dawnguard.esm") SET: Dawnguard
+//
+// Plugins
 IF REGEX("Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
 IF FILE("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
 IF REGEX("DragonSwarms.*\.esp") SET: DSwarmInst
@@ -72,16 +78,13 @@ IF FILE("ApachiiHair.esm") SET: ApachiiHair
 IF FILE("ApachiiHairFemales.esm") SET: ApachiiHairF
 IF FILE("ApachiiHairMales.esm") SET: ApachiiHairM
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
-IF FILE("SKSE_Elys_Uncapper.dll") SET: SKCU
-IF FILE("..\ScriptDragon.dll") SET: SCDR
-// ================================================================
-// DLC variable setup for BOSS v1.7+.
-// Added as many plugins are likely to require DLC.
-IF FILE("Dawnguard.esm") SET: Dawnguard
 
 // ================================================================
+// Global messages
 
-// Other global messages
+// Upgrade message for 1.7+ users:
+  IF VERSION("BOSS", "2.1.0.0", <) GLOBAL WARN: An update for BOSS (v2.1.0) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
+    // Not Important for versions <2.1.1 IF VAR(RU) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
 
 // BOSS Thread
   IF VAR(EN) GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1406341-rel-boss-for-skyrim/"
@@ -89,8 +92,8 @@ IF FILE("Dawnguard.esm") SET: Dawnguard
 
 // Recruitment
   IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions is still at over 2650+. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/ Nexus forums". 
-    IF VAR(RU) GLOBAL SAY: Коианда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 2650+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь, через личные сообщения, с WrinklyNinja, на "http://forums.bethsoft.com/ форумах Bethesda Softworks" или "http://forums.nexusmods.com/ форумах Nexus". Нужно хотя бы небольшое знание английского, что бы понимать, куда добавлять такие плагины. Для консультаций, по поводу добавления плагинов в мастерлист, с трекера bugzilla, можно будет обращаться к "http://code.google.com/p/better-oblivion-sorting-software/people/list Tokc.D.K.".
-	  // Also added links to Forums and added special info for russian users about base English requirements and link to BOSS project members page for send messages to Tokc.D.K. for consultations about load order  in russian language(only for russian users).
+    IF VAR(RU) GLOBAL SAY: Коианда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 2650+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на "http://forums.bethsoft.com/ форумах Bethesda Softworks" или "http://forums.nexusmods.com/ форумах Nexus". Нужно хотя бы небольшое знание английского, что бы понимать, куда добавлять такие плагины. Для консультаций, по поводу добавления плагинов в мастерлист, с трекера bugzilla, а также, если вы не можете самостоятельно связаться с WrinklyNinja, можно будет обратиться к Tokc.D.K., используя личные сообщения на форумах Bethsoft или "http://forums.ag.ru/?board=tes_mods&action=messageindex&start=0 форумах AG". 
+	  // Also added links to Forums and added special info for russian users about base English requirements and link to russian 'Absolute Games' TES forums page for send messages to Tokc.D.K. for consultations about load order in russian language(only for russian users).
 	
 // SKSE
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
@@ -101,8 +104,8 @@ IF FILE("Dawnguard.esm") SET: Dawnguard
     IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(RU)  GLOBAL SAY: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
 
 // Messages for Russian users
-  IF VAR(RU) GLOBAL SAY: Если в сводке у вас отмечены неизвестные плагины, то откройте раздел 'Неизвестные плагины'. Если у вас имеются сообщения для плагинов(Тип сообщения Все не равен нулю), вам необходимо просмотреть раздел 'Известные плагины', для их просмотра, даже если нет предупреждений и ошибок.
-     // This is about what users need to look Unrecognized plugins category(if unrecognized plugins is detected) and need to look Recognized plugins category(if number of messages is't 0). Some users still think that not need to look on unrecognized plugins and if all is green in Summary. :)
+  IF VAR(RU) GLOBAL SAY: Если вы нашли ошибки, неточности в переводе программы или сообщений лога, либо нашли в логе  непереведенные сообщения, просьба сообщить об этом на "http://forums.ag.ru/?board=tes_mods&action=display&s=0&num=1277459020 данный" форум.
+    //Info message. All grammar errors in russian messages and non translated messages must be reported to my russian BOSS thread. Tokc.D.K.
 
   IF FILE("Strings\Skyrim_RUSSIAN.STRINGS") && IFNOT VAR(RU) GLOBAL SAY: Don't worry if you use russian strings for SSL. Если вы используете русскую версию Скайрим, то вы можете включить русский язык в настройках BOSS GUI(Settings\General\Language), или изменив в BOSS.ini значение параметра sLanguage на russian.
     //This is instructions for common users that are use english language for BOSS and russian Skyrim.
@@ -111,6 +114,7 @@ IF FILE("Dawnguard.esm") SET: Dawnguard
   IF VAR(EN) && IF VAR(FNIS) SAY: It appears you have "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
     IF VAR(RU) && IF VAR(FNIS) SAY: У вас установлен "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim". Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой, основанный на FNIS, мод.
 
+	
 BEGINGROUP: Official ESMs
 
 Skyrim.esm
@@ -5722,6 +5726,8 @@ kuerteeBattleFatigueAndInjuries.esp
 REGEX: AdvancedFoodandRestENG( lazy)?\.esp
 Better Hunting.esp
 REGEX: dD.?- Realistic Ragdoll Force.*\.esp
+  IF VAR(EN) SAY: Ragdolls will conflict with other mods that change the skeleton.nif. Check "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers" for compatibly with other skeleton.nif.
+    IF VAR(RU) SAY: Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers", для поддержки других версий skeleton.nif.
 drink eat sleep.esp
 /* Steam network version is an esp and BSA */
 imp's more complex needs.esp
@@ -5751,11 +5757,13 @@ Rest_player.esp
 SkyRealism - Time and Travel.esp
 SkyRealism - Mass and Materials.esp
 SkyRealism - Capacity and Carry Weight.esp
-  IF VAR(Dawnguard) && IFNOT CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) WARN: Use the Dawnguard compatible version please.
-  IFNOT VAR(Dawnguard) && IF CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) REQ: Dawnguard (Official Bethesda DLC)
-  IFNOT FILE("Dr_Bandolier.esp") || IFNOT FILE("Dr_BandolierDG.esp") REQ: "http://skyrim.nexusmods.com/mods/16438 Bandolier - Bags and Pouches"
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
-  IFNOT FILE("LeatherBackpack.esp") || IFNOT FILE("LeatherBackpackBrown.esp") || IFNOT FILE("LeatherBackpackBlack.esp") || IF FILE("LeatherBackpackDarkBrown.esp") REQ: "http://skyrim.nexusmods.com/mods/13732 Leather Backpack".  Install only the black, brown and original varients. Also be sure to choose "Regular" for all install options.
+  IFNOT VAR(Dawnguard) && IF CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) REQ: Dawnguard (Official Bethesda DLC)
+  IF VAR(EN) && IF VAR(Dawnguard) && IFNOT CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) SAY: Use the Dawnguard compatible version please.
+    IF VAR(RU) && IF VAR(Dawnguard) && IFNOT CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) SAY: Рекомендуется использовать совместимую с Вфцтпгфкв версию.
+  IFNOT FILE("Dr_Bandolier.esp") || IFNOT FILE("Dr_BandolierDG.esp") REQ: "http://skyrim.nexusmods.com/mods/16438 Bandolier - Bags and Pouches"
+    IF VAR(EN) && IFNOT REGEX("LeatherBackpack(Brown|Black|DarkBrown)\.esp") REQ: "http://skyrim.nexusmods.com/mods/13732 Leather Backpack".  Install only the black, brown and original varients. Also be sure to choose "Regular" for all install options.
+      IF VAR(RU) && IFNOT REGEX("LeatherBackpack(Brown|Black|DarkBrown)\.esp") REQ: "http://skyrim.nexusmods.com/mods/13732 Leather Backpack".  Устанавливайте только черную(black) или коричневую(brown) и оригинальную версию. Также убедитесь, что выбрали "Regular", для всех опций установки.
 SkyRealism - Encumbrance.esp
 SkyrimSpeeds.esp
 REGEX: Sprint\d\.esp
