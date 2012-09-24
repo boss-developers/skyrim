@@ -683,6 +683,7 @@ SoS - Civilization.esp
     IF VAR(RU) WARN: В Sounds of Skyrim найден серьёзный баг, приводящий к "раздуванию" файлов сохранений. Рекомендуется отключить все модули мода и удалить все их файлы.
     // Must be removed after fixing of bugs.
 QuieterRestorationDrawnSound.esp
+zeldaaudio.esp
 ENDGROUP: Sound mods
 
 BEGINGROUP: Lighting
@@ -1975,6 +1976,8 @@ xgfPferdeKarren-en.esp
   IF FILE("xgfpferdekarren.esp") INC: xgfpferdekarren.esp
 xylozi_tougher_traps.esp
 yngolbarrowbuttonfix.esp
+ZaZ Gags.esp
+ZazResources.esp
 ZutatenAblegen.esp
 ENDGROUP: Base XYZ
 
@@ -3566,16 +3569,22 @@ ENDGROUP: Items W
 
 BEGINGROUP: Items XYZ
 
+x117 Blades Armor.esp
 XAC.esp
 XIVShanker.esp
 yangyang_BeautyQueen.esp
+yangyang_SavageArmor.esp
 YogWeapons.esp
+yoko.esp
+YoungTrap.esp
 Ysmir's Fury v3_1.esp
 zabswitchhat.esp
+Zabuzas.esp
 zarias_restraints.esp
 ZaZ Gags.esp
 ZeldaMod.esp
 ZhaetheriaLegend.esp
+zhanshen.esp
 ENDGROUP: Items XYZ
 
 /* Temporary place holder for mods that need to be loaded after many other item mods */
@@ -3858,6 +3867,7 @@ BEGINGROUP: Quests and Locations
 
 BEGINGROUP: Quests #
 
+[imc] secret entrances.esp
 01Dom.esp
 1 crazy home.esp
 10021_01Dom.v.3.0.esp
@@ -4566,6 +4576,7 @@ BEGINGROUP: Quests XYZ
 Zamfir's Archery Emporium.esp
 ZU_Refuse_Joining_The_Nightingales.esp
 Zwerge in Dwemer.esp
+zzzbasement.esp
 ENDGROUP: Quests XYZ
 ENDGROUP: Quests and Locations
 
@@ -5893,6 +5904,10 @@ Werewolf Loot - Edible Animals.esp
 Werewolves.esp
 WiS IV - Werewolf & Vampire.esp
 YetAnotherWerewolfImprovement.esp
+  IF VAR(Dawnguard) REQ: "http://skyrim.nexusmods.com/mods/19924 YetAnotherWerewolfImprovement_DG.esp"
+YetAnotherWerewolfImprovement_DG.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF FILE("YetAnotherWerewolfImprovement.esp") INC: YetAnotherWerewolfImprovement.esp
 DG-NoAttacks.esp
 ENDGROUP: Vampires and Werewolves
 
@@ -6251,12 +6266,12 @@ Teleport.esp
 Torchlight.esp
 transmute tweak make all silver first.esp
 TrueTransmutation.esp
-
 Voice_of_the_Sky.esp
 REGEX: WiS IV - AI & Spells for NPC( - No Knockdown)?\.esp
   IF VAR(EN) SAY: Use only one WiS IV - AI & Spells for NPC esp
     IF VAR(RU) SAY: Используйте только один WiS IV - AI & Spells for NPC esp
 Z_DualCasting_BeGood.esp
+ zinvestedmagicsteam.esp
 ENDGROUP: Spells Late
 
 BEGINGROUP: Alchemy
@@ -6496,6 +6511,7 @@ AdvancedKillMoves.esp
 AKM_0.01b.esp
 only1stpfinishers.esp
 unarmed combat.esp
+Zigurdz.esp
 WiS III realistic combat.esp
 WiS IV realistic combat.esp
 WiS IV - Realistic Combat.esp
@@ -6948,7 +6964,9 @@ REGEX: Acquisitive Soul Gems( FR)?\.esp
   // must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
 Perk_Soul_Siphon_Full_Recharge.esp
 SynergyBonuses.esp
+xpMedium.esp
 XPModNormal.esp
+XpModUltra.esp
 Z_Skillpoints Matter.esp
 ZB - Simple Destruction Overhaul.esp
 perq_en.esp
@@ -6985,6 +7003,7 @@ SpeechTree.esp
 Skyrim15SmithingFix.esp
   // must be load after any perk and/or smithing mods
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
+Zero Effort Lockpicking.esp
 Two-Handed Speed-Based Perks.esp
 ENDGROUP: Player Perks
 
@@ -7433,6 +7452,8 @@ UniqueLydia.esp
 UniqueLydiaArmor.esp
 UniqueLydiaSF.esp
 UniqueLydiaSFArmor.esp
+Zeeri.esp
+ZZ_DragonAgeCompanions.esp
 SelminaDArchon.esp
 sneAnya.esp
 sneHaekwon.esp
@@ -7766,6 +7787,7 @@ xced.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IFNOT FILE("XCE.esp") REQ: XCE.esp (XCE - Xenius Character Enhancement)
 [MPX]RaceHeights.esp
+[mpx] npc gender race heights v2.esp
 AllWarPaintRaces.esp
 argonianraptor.esp
 AutoCastRacials.esp
@@ -7836,6 +7858,7 @@ SkyRe_Races.esp
   IF FILE("DSpSoB.esp") INC: DSpSoB.esp
   IF FILE("ArmedttTeeth.esm") INC: ArmedttTeeth.esm
   IF FILE("[MPX]RaceHeights.esp") INC: [MPX]RaceHeights.esp
+  IF FILE("[mpx] npc gender race heights v2.esp") INC: [mpx] npc gender race heights v2.esp
 IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   // Must be loaded after SkyRe_Races.esp(if installed) for correct work
 Third Era Attributes for Skyrim - Races.esp
