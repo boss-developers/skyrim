@@ -4419,6 +4419,7 @@ skyrim trade guild.esp
 skyrim villages.esp
 smelterinriverwood.esp
 SteepledHat's Riverwood Home.esp
+Solitude A City Of Trade.esp
 SolitudeCapitalCity.esp
 SolitudeBetterDocks.esp
 MoreSolitudeFlora V1.0.esp
@@ -6271,7 +6272,7 @@ REGEX: WiS IV - AI & Spells for NPC( - No Knockdown)?\.esp
   IF VAR(EN) SAY: Use only one WiS IV - AI & Spells for NPC esp
     IF VAR(RU) SAY: Используйте только один WiS IV - AI & Spells for NPC esp
 Z_DualCasting_BeGood.esp
- zinvestedmagicsteam.esp
+zinvestedmagicsteam.esp
 ENDGROUP: Spells Late
 
 BEGINGROUP: Alchemy
@@ -7192,7 +7193,7 @@ essentialfollowers.esp
     IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
 Essential Vigilance.esp
   IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен, при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
 Unkillable Lydia.esp
 3DNPC.esp
 Althirs Companion and Carriage Command v1.1.esp
@@ -7298,16 +7299,18 @@ BEGINGROUP: NPC Distance, Face & Makeup Overrides
 // Distance Tweaks before Face & Makeup Overrides
 // Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 
-REGEX: ([Nn]o |([Ss]lightly )?[Rr]educed Distance )(NPC|npc) Greetings.esp
+REGEX: ([Nn]o |(slightly )?[Rr]educed Distance )(NPC|npc) Greetings.esp
 NoSkillComments.esp
 NoPanicComments.esp
 ENDGROUP: NPC Distance, Face & Makeup Overrides
 
 BEGINGROUP: Companions
-/* Companions Load Early */
-/* Extensible Follower Framework */
-/* Ultimate Follower Overhaul */
-/* NPC Distance, Face & Makeup Overrides */
+// Load after UFO, XFL
+// Companions face changes
+// Dialog changes
+// Unlimited followers
+// Multimarriage
+
 Better Companions.esp
 BetterCompanions.esp
 Child Adoption.esp
@@ -7400,6 +7403,8 @@ Thaiden.esp
 timek_Damius.esp
 undyingcompanions.esp
 ExtraBlades.esp
+// Better followers
+// Single companion change recommend to place after this
 Better Followers.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -7409,6 +7414,7 @@ SpecializedFollowers.esp
 REGEX: Better Followers - Specialized( - Not E)?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+// -----------------
 Sylvia.esp
   IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemale"
 BrelynaMaryon.esp
@@ -7446,8 +7452,8 @@ HousecarlWindhelm.esp
 HousecarlWhiterun.esp
 HousecarlWhiterun Sexy Lydia v0.5.esp
 iLoveLydia.esp
-  IF VAR(EN) WARN: This mod will conflict with any female body altering mods.
-    IF VAR(RU) WARN: Этот мод может конфликтовать с любыми реплейсерами женских тел.
+  IF VAR(EN) SAY: This mod will conflict with any female body altering mods.
+    IF VAR(RU) SAY: Этот мод может конфликтовать с любыми реплейсерами женских тел.
 UniqueLydia.esp
 UniqueLydiaArmor.esp
 UniqueLydiaSF.esp
@@ -7634,8 +7640,8 @@ Better NPC - Marriage Pack.esp
 AskFollowerSkills.esp
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
-/* BDO.esp is located here */
 BDO.esp
+  // Big Dialog Overhaul
 CompilationV1.esp
 BFFAnimalCompanions.esp
 Respectful_Lydia-Letsseeit_subtitle.esp
@@ -7655,12 +7661,9 @@ Iona.esp
 Kiera.esp
 Kyia.esp
 Natalie - Healer Follower.esp
+  // Natalie - Healer Follower.esp must be first in order of Natalie - Healer Follower*.esp mods
 REGEX: Natalie - Healer Follower - Look 0\d\.esp
 Natalie - Healer Follower - Ashen Race.esp
-  // Natalie - Healer Follower.esp must be first in order
-Followers Unlimited 11.esp
-  IF VAR(EN) && IF VAR(UFO) WARN: Already included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
-    IF VAR(RU) && IF VAR(UFO) WARN: Уже включено в  UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
 Follower Trap Safety.esp
 FollowerWander2.esp
   IF VAR(EN) && IF FILE("XFLMain.esm") SAY: XFLMain.esm has the same functional, but you can use FollowerWander2.esp on your choice.
@@ -7669,6 +7672,10 @@ FollowerWander2.esp
     IF VAR(RU) && IF VAR(UFO) SAY: UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, но вы можете использовать FollowerWander2.esp на ваш выбор.
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
+BEGINGROUP: Unlimited Companions
+Followers Unlimited 11.esp
+  IF VAR(EN) && IF VAR(UFO) WARN: Already included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+    IF VAR(RU) && IF VAR(UFO) WARN: Уже включено в  UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
 MultipleFollowers.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Multi followers functional is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.
@@ -7678,9 +7685,13 @@ Follower Limit Increased.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.
   IF VAR(EN) && IF FILE("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, use only one, not both.
     IF VAR(RU) && IF FILE("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, используйте что-то одно.
+// BEGINGROUP: Multimarriage
+// Must load after Unlimited companions mods
 multimarriage.esp
   // must be load after multiple followers mods for wedding ceremony work.
 marriagemod - alpha v3.esp
+// ENDGROUP: Multimarriage
+ENDGROUP: Unlimited Companions
 CerwidenCompanion.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 CerwidenAppearancePatch.esp
@@ -7703,10 +7714,10 @@ The Lady Of Akatosh.esp
 timek_Laluna.esp
 Tuath.esp
 disablelydiatradedialog.esp
+Ultimate Witcher Experience - Followers.esp
 Ultimate Witcher Experience - Follower Geralt.esp
 Ultimate Witcher Experience - Follower Iorveth.esp
-ultimate witcher Experiance - Followers.esp
-Ulyimate Witcher Exerience - Follower Triss.esp
+Ultimate Witcher Experiance - Follower Triss.esp
 VampireCompanionBetav1.esp
 Vashira The blood flash.esp
 WealtheowValentine.esp
