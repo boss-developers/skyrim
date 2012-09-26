@@ -1141,19 +1141,6 @@ DragonChristine.esp
 DragonCrownCraftable.esp
 DragonPlateCrownCraftable.esp
 dremora armor looting.esp
-dD - Enhanced Blood Main.esp
-  IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
-  IF VAR(Dawnguard) && IFNOT FILE("SkyMoMod.esm") && IFNOT FILE("dD-Dawnguard-EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Dawnguard Compatibility_Patch".
-  IFNOT VAR(Dawnguard) && IF FILE("SkyMoMod.esm") && IFNOT FILE("dD-SkyrimMonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Monster Mod.
-  IF VAR(Dawnguard) && IF FILE("SkyMoMod.esm") && IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Dawnguard and Monster Mod.
-dD-Dawnguard-EBT Patch.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-REGEX: dD-\w{4} Screen Blood\.esp
-REGEX: dD-.{4,9} Screen Blood Duration\.esp
-dD-No Vanilla Hit Blood Decals Placement.esp
-/* Both can be used at the same time */
-dD-Reduced Splatter Size.esp
-dD-Reduced Wound Size.esp
 DeadThrall.esp
 REGEX: Death Cam \(\d{2} Seconds\)\.esp
 death cam duration options.esp
@@ -1721,8 +1708,8 @@ SignTown_by_YURIL.esp
 Silent Moon Forging 1.2.esp
 Silverupgrade.esp
 SimpleBleeding.esp
-  IF VAR(EN) && IF REGEX(".. - Enhanced Blood Main\.esp") WARN: This mod is included in Enhanced Blood Textures
-    IF VAR(RU) && IF REGEX(".. - Enhanced Blood Main\.esp") WARN: Этот мод уже входит в состав мода Enhanced Blood Textures
+  IF VAR(EN) && IF FILE("dD - Enhanced Blood Main.esp") WARN: This mod is included in 'dD - Enhanced Blood Main.esp'
+    IF VAR(RU) && IF FILE("dD - Enhanced Blood Main.esp") WARN: Этот мод уже входит в состав 'dD - Enhanced Blood Main.esp'
 SkBBP - Blacksmithing and Balance.esp
 SkBBP - Loot Drops and Leveled Lists.esp
   TAG: {{BASH: Delev, Relev}}
@@ -1741,15 +1728,6 @@ SkyMoMod_lists.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-dD-Dawnguard-MonsterMod EBT Patch.esp
-  IF FILE("dD-Dawnguard-EBT Patch.esp") || IF FILE("dD-SkyrimMonsterMod EBT Patch.esp") && IF VAR(EN) SAY: Use only one EBT patch
-    IF FILE("dD-Dawnguard-EBT Patch.esp") || IF FILE("dD-SkyrimMonsterMod EBT Patch.esp") && IF VAR(RU) WARN: Используйте только один EBT-патч.
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IFNOT FILE("SkyMoMod.esm") REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
-dD-SkyrimMonsterMod EBT Patch.esp
-  IF VAR(EN) && IF FILE("dD-Dawnguard-EBT Patch.esp") SAY: Use only one EBT patch
-    IF VAR(RU) && IF FILE("dD-Dawnguard-EBT Patch.esp") WARN: Используйте только один EBT-патч.
-  IFNOT FILE("SkyMoMod.esm") REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
 REGEX: SkyMoMod_morespawns_(animal|bandit|draugr|dwerven|falmer|forsworn|mage|vampire)\.esp
 SkyMoMod Extras Collectables.esp
 Skyrim_Monster_Mod_Additions-Collectables.esp
@@ -4463,6 +4441,7 @@ Taverns.esp
 TDP-Karlu's refuge.esp
 TDP-Rivercave.esp
 TDP-Rivermine.esp
+teg_returntohelgen.esp
 teg_wizards_of_winterhold.esp
 TeleportRoom.esp
 theShrines.esp
@@ -5534,6 +5513,28 @@ REGEX: SkyTEST-RealPredators(\&Animals)?\.esp
 SkyTEST-RealisticAnimals&Predators.esp
 SkyTEST-RealisticAnimalBehavior.esp
 SkyTEST-HarderCreatures.esp
+dD - Enhanced Blood Main.esp
+  // moved after SkyTest for correct work.
+  IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
+  IF VAR(Dawnguard) && IFNOT FILE("SkyMoMod.esm") && IFNOT FILE("dD-Dawnguard-EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Dawnguard Compatibility_Patch".
+  IFNOT VAR(Dawnguard) && IF FILE("SkyMoMod.esm") && IFNOT FILE("dD-SkyrimMonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Monster Mod.
+  IF VAR(Dawnguard) && IF FILE("SkyMoMod.esm") && IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Dawnguard and Monster Mod.
+dD-Dawnguard-EBT Patch.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+dD-SkyrimMonsterMod EBT Patch.esp
+  IFNOT FILE("SkyMoMod.esm") REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
+  IF FILE("dD-Dawnguard-EBT Patch.esp") INC: dD-Dawnguard-EBT Patch.esp
+dD-Dawnguard-MonsterMod EBT Patch.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("SkyMoMod.esm") REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
+  IF FILE("dD-Dawnguard-EBT Patch.esp") INC: dD-Dawnguard-EBT Patch.esp
+  IF FILE("dD-SkyrimMonsterMod EBT Patch.esp") INC: dD-SkyrimMonsterMod EBT Patch.esp
+REGEX: dD-\w{4} Screen Blood\.esp
+REGEX: dD-.{4,9} Screen Blood Duration\.esp
+dD-No Vanilla Hit Blood Decals Placement.esp
+/* Both can be used at the same time */
+dD-Reduced Splatter Size.esp
+dD-Reduced Wound Size.esp
 slowerstaminadrain.esp
 Speed Revised.esp
 Superjump_2x.esp
@@ -6636,8 +6637,7 @@ REGEX: New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp
     IF VAR(RU) SAY: Используйте только один New Leveled Encounter Levels*.esp
 Noredundantperks.esp
 Crimson Tide - Blood.esp
-  IF VAR(EN) && IF REGEX(".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Use Crimson Tide OR Enhanced Blood. Not both.
-    IF VAR(RU) && IF REGEX(".. - Enhanced Blood Main\.esp") INC: Enhanced Blood. Используйте Crimson Tide или Enhanced Blood. Не оба.
+  IF FILE("dD - Enhanced Blood Main.esp") INC: dD - Enhanced Blood Main.esp
 /* Crimson Tide has been repoted to cause issues if loaded after ACE Melee */
 ACE Archery.esp
   IF CHECKSUM("Crafting300.esp", 46C639C1) INC: Crafting300.esp, to fix this get the compatibility patch found here: "http://skyrim.nexusmods.com/download/70990"
@@ -7003,6 +7003,7 @@ Vampirelordroyal.esp
 vinis_alchemy_tree.esp
 BatTravel.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+bandit raids on holds.esp
 xxxLvCap255Creatures.esp
 xxxLvCap255Enemy.esp
 Third Era Attributes for Skyrim - Perks.esp
