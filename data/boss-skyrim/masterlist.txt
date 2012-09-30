@@ -88,12 +88,11 @@ IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 
 // BOSS Thread
   IF VAR(EN) GLOBAL SAY: Latest BOSS thread: "http://forums.bethsoft.com/topic/1406341-rel-boss-for-skyrim/"
-    IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1406341-rel-boss-for-skyrim/ здесь"(Eng). Русскоязычные пользователи могут также оставлять свои предложения и списки неизвестных модов "http://forums.ag.ru/?board=tes_mods&action=display&s=0&num=1277459020 здесь".
+    IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1406341-rel-boss-for-skyrim/ здесь"(Eng).
 
 // Recruitment
   IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions is still at over 2650+. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus forums". 
-    IF VAR(RU) GLOBAL SAY: Коианда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 2650+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на "http://forums.bethsoft.com/user/359506-wrinklyninja/ форумах Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ форумах Nexus". Нужно хотя бы небольшое знание английского, что бы понимать, куда добавлять такие плагины. Для консультаций, по поводу добавления плагинов в мастерлист, с трекера bugzilla, а также, если вы не можете самостоятельно связаться с WrinklyNinja, можно будет обратиться к Tokc.D.K., используя личные сообщения на форумах Bethsoft или "http://forums.ag.ru/?board=tes_mods&action=messageindex&start=0 форумах AG". 
-	  // Also added links to Forums and added special info for russian users about base English requirements and link to russian 'Absolute Games' TES forums page for send messages to Tokc.D.K. for consultations about load order in russian language(only for russian users).
+    IF VAR(RU) GLOBAL SAY: Коианда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 2650+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на "http://forums.bethsoft.com/user/359506-wrinklyninja/ форумах Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ форумах Nexus".
 	
 // SKSE
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
@@ -102,13 +101,6 @@ IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 // Dynamic plugins
   IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(EN) GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
     IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(RU)  GLOBAL SAY: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
-
-// Messages for Russian users
-  IF VAR(RU) GLOBAL SAY: Если вы нашли ошибки, неточности в переводе программы или сообщений лога, либо нашли в логе  непереведенные сообщения, просьба сообщить об этом на "http://forums.ag.ru/?board=tes_mods&action=display&s=0&num=1277459020 данный" форум.
-    //Info message. All grammar errors in russian messages and non translated messages must be reported to my russian BOSS thread. Tokc.D.K.
-
-  IF FILE("Strings\Skyrim_RUSSIAN.STRINGS") && IFNOT VAR(RU) GLOBAL SAY: Don't worry if you use russian strings for SSL. Если вы используете русскую версию Скайрим, то вы можете включить русский язык в настройках BOSS GUI(Settings\General\Language), или изменив в BOSS.ini значение параметра sLanguage на russian.
-    //This is instructions for common users that are use english language for BOSS and russian Skyrim.
 
 // Fores New Idles in Skyrim
   IF VAR(EN) && IF VAR(FNIS) SAY: It appears you have "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
@@ -523,7 +515,7 @@ Correctif - Skyrim.esp
 Unofficial Skyrim Patch.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) && IF FILE("Dawnguard.esm") && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Recommend to use the "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch" in addition to Dawnguard. This is need for correct work with Dawnguard.
-    IF VAR(RU) && IF FILE("Dawnguard.esm") && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Рекомендуется использовать "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch", в дополнение к Dawnguard. Это необходимо для корректной работы с Dawnguard. Русская версия "http://tes.ag.ru/skyrim/mods/patch.shtml здесь".
+    IF VAR(RU) && IF FILE("Dawnguard.esm") && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Рекомендуется использовать "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch", в дополнение к Dawnguard. Это необходимо для корректной работы с Dawnguard. Русская версия "http://u.to/D5ZaAg здесь".
 USKP_addon.esp
 USKP_addon ENG.esp
   IF FILE("USKP_addon.esp") INC: USKP_addon.esp
@@ -551,6 +543,7 @@ REGEX: Skyrim HD Full - .+\.esp
 BEGINGROUP: NPC face mods
 // TAG: {{BASH: NpcFaces}}
 
+AdrianneAvenicci.esp
 AlfhildBattleBorn.esp
 AlternateUlfric.esp
 Aranea.esp
@@ -857,6 +850,7 @@ BEGINGROUP: Base A
 .armitage's mastercraft (eng).esp
 a perfect circle.esp
 ABCsforBarbarians.esp
+Activators.esp
 aDragonRide.esp
 ADV HB-Style.esp
 advancedcrafting.esp
@@ -2072,6 +2066,7 @@ ADEC_VanillaArmor_Wolf.esp
 ADEC_VanillaArmor_Stormcloak.esp
 ADEC_VanillaArmor_Elven.esp
 ADEC_Nocturnal.esp
+ADEC_SuccubusArmor.esp
 AEOR.esp
 Airy Armor.esp
 AK- Daedric Blue Weapons.esp
@@ -4713,6 +4708,7 @@ BEGINGROUP: Overrides A
 
 Accessible Vendor Chests.esp
 IFNOT FILE("EmpoweredMagic.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul Gems( FR)?\.esp
+Achievement Remover.esp
 AdaptiveNightEye.esp
 AddChoices01.esp
 Adoption.esp
@@ -5957,6 +5953,7 @@ BanishLight.esp
     IF VAR(RU) WARN: Может неверно работать с модами, меняющими освещение..
 EOS - Apocalypse Spells Compatibility.esp
 AddtionalLights.esp
+AddtionalLights_with_shadows.esp
 Ancient Spells.esp
   TAG: {{BASH: Relev}}
 REGEX: ASX( - |_)Spells.esp
@@ -6833,7 +6830,7 @@ SkyRe_Main.esp
   IF VAR(EN) && IF FILE("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
     IF VAR(RU) && IF FILE("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
   IF VAR(EN) WARN: The SkyRe has many conflicts with other mods.  Please read the readme before playing with mod. This will prevent many problems. Read it "http://skyrim.nexusmods.com/mods/9286 here".
-    IF VAR(RU) WARN: SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его "http://skyrim.nexusmods.com/mods/9286 здесь"(Англ.) или "http://tes.ag.ru/skyrim/mods/readme/SkyRe_readme_ru.shtml здесь".
+    IF VAR(RU) WARN: SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его "http://skyrim.nexusmods.com/mods/9286 здесь"(Англ.) или "http://u.to/EpZaAg здесь".
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" for full perk functional
     IF VAR(RU) && IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" для полного функционирования перков.
   IF VAR(EN) && IF FILE("interface\lockpickingmenu.swf") SAY: If lockpicikng is not work then try to delete 'interface\lockpickingmenu.swf'
@@ -6865,7 +6862,7 @@ SkyRe_Main_NoDawnguard.esp
   IF VAR(EN) && IF FILE("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
     IF VAR(RU) && IF FILE("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
   IF VAR(EN) WARN: The SkyRe has many conflicts with other mods.  Please read the readme before playing with mod. This will prevent many problems. Read it "http://skyrim.nexusmods.com/mods/9286 here".
-    IF VAR(RU) WARN: SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его "http://skyrim.nexusmods.com/mods/9286 здесь"(Англ.) или "http://tes.ag.ru/skyrim/mods/readme/SkyRe_readme_ru.shtml здесь".
+    IF VAR(RU) WARN: SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его "http://skyrim.nexusmods.com/mods/9286 здесь"(Англ.) или "http://u.to/EpZaAg здесь".
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" for full perk functional
     IF VAR(RU) && IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" для полного функционирования перков.
   IF VAR(EN) && IF FILE("interface\lockpickingmenu.swf") SAY: If lockpicikng is not work then try to delete 'interface\lockpickingmenu.swf'
@@ -7311,7 +7308,7 @@ UFO - Ultimate Follower Overhaul.esp
   IF VAR(EN) && IF FILE("BDO.esp") INC: BDO.esp, has the same functional, use only one.
     IF VAR(RU) && IF FILE("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
   IF VAR(EN) SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on "http://skyrim.nexusmods.com/mods/14037 mod page".
-    IF VAR(RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода"(Eng) или читайте "http://tes.ag.ru/skyrim/mods/readme/UFO_readme_ru.shtml это" локализованное ридми.
+    IF VAR(RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода"(Eng) или читайте "http://u.to/GJZaAg это" локализованное ридми.
 UFO - Dawnguard AddOn.esp
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
