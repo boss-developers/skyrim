@@ -1,4 +1,4 @@
-﻿/*
+/*
 Masterlist Information: $Revision$, $Date$, $LastChangedBy$
 
 Masterlist Syntax Notes
@@ -92,7 +92,7 @@ IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 
 // Recruitment
   IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions is still at over 2650+. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus forums". 
-    IF VAR(RU) GLOBAL SAY: Коианда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 2650+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на "http://forums.bethsoft.com/user/359506-wrinklyninja/ форумах Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ форумах Nexus".
+    IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 2650+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на "http://forums.bethsoft.com/user/359506-wrinklyninja/ форумах Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ форумах Nexus".
 	
 // SKSE
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
@@ -285,7 +285,7 @@ MBMaster.esm
 NoKillMoves.ESM
 AP Skyrim.esm
   IF VAR(EN) ERROR: Obsolete. Update to the latest version. (The esm version produces a massive conflict error which can result in having no dialog.)
-    IF VAR(RU) ERROR: Устарело. Обновите до последней версии. (esm версия приводит к многочисленным ошибкам, которые могут привести к отсутствию диалогов.)
+    IF VAR(RU) ERROR: Устарело. Обновите до последней версии. (Esm-версия приводит к многочисленным ошибкам, которые могут привести к отсутствию диалогов.)
 customGraph.esm
 ApachiiHair.esm
 ApachiiHairFemales.esm
@@ -369,7 +369,7 @@ Eindeutige Regionsnamen.esp
 REGEX: NPCEssential - .+\.esp
   // Global set flag Essential for NPCs. Loaded before vanilla fixes and USKP
   IF VAR(EN) SAY: Need to load before all mods that change npcs. This mod is set Essential flag for NPCs but with other vanilla stats.
-    IF VAR(RU) SAY: Нужно загружать перед любыми модами, меняющими npc. Этот мод устанавливает делает бессмертными NPC, но оставляет другие характеристики, как в чистом Скайрим.
+    IF VAR(RU) SAY: Нужно загружать перед любыми модами, меняющими npc. Этот мод устанавливает флаг бессмертия для NPC, но оставляет другие характеристики, как в чистом Скайрим.
 ENDGROUP: Earliest mods
 
 BEGINGROUP: Vanilla fixes
@@ -483,8 +483,8 @@ RiftenJailVisualFix.esp
     IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 RiverwoodTraderInvestorFix.esp
 SanguineRoseFix.esp
-  IF VERSION("TES5", "1.4.27", >) ERROR: Delete. Fixed in official patch 1.5+
-    IF VAR(RU) && IF VERSION("TES5", "1.4.27", >) ERROR: Удалите. Исправлено в патче 1.5+
+    IF VAR(EN) && IF VERSION("TES5", "1.4.27", >) ERROR: Delete. Fixed in official patch 1.5+
+      IF VAR(RU) && IF VERSION("TES5", "1.4.27", >) ERROR: Удалите. Исправлено в патче 1.5+
 sapphire_speak_fix.esp
 REGEX: Shadow.?Striping.?Fix\.esp
 Shrine of Azura LOD Fix.esp
@@ -821,7 +821,7 @@ Shadow Striping Fix.esp
 SMIM_Fixes.esp
 REGEX: SpellFix.*\.esp
 StaticMeshImprovementMod.esp
-    IF VAR(RU) && IF CHECKSUM("StaticMeshImprovementMod.esp", 8806A693) SAY: Вы можете использовать данный esp для версии 1.20-1.24 и вероятно, более новых, если, в очередном обновлении SMIM, не последовало обновления esp.
+    IF VAR(RU) && IF CHECKSUM("StaticMeshImprovementMod.esp", 8806A693) SAY: Вы можете использовать данный esp для версии 1.20-1.26 и вероятно, более новых, если, в очередном обновлении SMIM, не последовало обновления esp.
 SkyrimImprovedChanges.esp
   TAG: {{BASH: Delev, Relev}}
 SurvivalistIngenuity.esp
@@ -1339,7 +1339,7 @@ Invulnerable Horses.esp
 Ish's Respec Mod.esp
   TAG: {{BASH: Relev}}
 Ish's Souls to Perks.esp
-  IF VERSION("SKSE", "0.1.5.6", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.6+.
+  IF VERSION("SKSE", "0.1.5.6", <) REQ: "http://skse.silverlock.org SKSE" 1.5.6+.
 ItemRewardsForBounties.esp
 Item Sorting by Saige.esp
 item sorting with weightless items.esp
@@ -1416,9 +1416,9 @@ leazeropenlock.esp
 IF VAR(LB) MOD: RingsOnTheLeftHand.esp
   // load here for correct display of arm when 'Lady body.esp' is installed
 Lady Body.esp
-  IF VAR(EN) WARN: Important: For Lady Body 1.5 is requires Skyrim 1.7.7 and DLC Dawnguard.
-    IF VAR(RU) WARN: Важно: Для Lady Body 1.5 требуются Skyrim 1.7.7 и DLC Dawnguard.
-    IF VAR(RU) SAY: С данным модом аргониане и хаджиты становятся недоступны игрокам в виде игровых рас! Не ставьте этот мод, если играете/хотите играть зверорасами.
+  IF VAR(EN) && IF VERSION("TES5", "1.7.7", <) && IFNOT VAR(Dawnguard) WARN: For Lady Body 1.5 and highter is requires Skyrim 1.7.7 and DLC Dawnguard.
+    IF VAR(RU) && IF VERSION("TES5", "1.7.7", <) && IFNOT VAR(Dawnguard) WARN: Для Lady Body 1.5 и выше требуются Skyrim 1.7.7 и DLC Dawnguard.
+    IF VAR(RU) SAY: С данным модом женский вариант аргониан и хаджитов становятся недоступны игрокам в виде игровых рас! Не ставьте этот мод, если играете/хотите играть зверорасами.
 LegendarySmithingUpgrades.esp
 Legendary Smithing Upgrades.esp
 Legionettes.esp
@@ -2002,7 +2002,7 @@ Character Creation Overhaul.esp
 Chesko_LoreBasedLoadingScreens.esp
 DEAsprint&jump.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
-  IF VERSION("SKSE", "0.1.5.9", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.9+
+  IF VERSION("SKSE", "0.1.5.9", <) REQ: "http://skse.silverlock.org SKSE" 1.5.9+
   IF VAR(EN) SAY: Won't work if sprint/jump key is remapped to mouse button.
     IF VAR(RU) SAY: Может не работать, если кнопка бега\прыжка переназначена на кнопку мыши.
 DragonWarrior-Effects.esp
@@ -3281,7 +3281,7 @@ SpectralWeaponPack.esp
 SpeedRings.esp
 Spring elven set.esp
 spyduckWands.esp
-  IF VERSION("SKSE", "0.1.5.9", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.9+
+  IF VERSION("SKSE", "0.1.5.9", <) REQ: "http://skse.silverlock.org SKSE" 1.5.9+
 sulundo.esp
 StaffBundle.esp
 stalhrimstandalone2.esp
@@ -4090,7 +4090,7 @@ BEGINGROUP: Quests E
 
 Earthmist hollow.esp
   IF VAR(EN) SAY: The plugin is partially companion-friendly. However, they cannot pass through vine doors despite navmeshes.
-    IF VAR(RU) SAY: Плагин является частично дружественным к компаньонам. компаньоны не смогут проходить через двери.
+    IF VAR(RU) SAY: Плагин является частично дружественным к компаньонам. Компаньоны не смогут проходить через двери.
 Elvenwood.esp
 EK_UnusualApplications.esp
 EkkiiBreeze.esp
@@ -4678,7 +4678,7 @@ IFNOT VAR(SkyReM) MOD: Morrowloot.esp
   // morrowloot loaded here only if skyre_main.esp is not installed
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
-    IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и теже уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные вещи обратно - в списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
+    IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные вещи обратно - в списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
 Morrowloot_nwah.esp
   IF VAR(EN) && IF FILE("Morrowloot.esp") WARN: Do not use with original Morrowloot mod.
     IF VAR(RU) && IF FILE("Morrowloot.esp") ERROR: Не используйте с оригинальным модом Morrowloot.
@@ -5510,7 +5510,7 @@ Signs and Guardians.esp
   IF VERSION("TES5", "1.4.27", <) REQ: Skyrim 1.4.27+
 ESP.esp
   IF VAR(EN) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.
-    IF VAR(RU) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Может перезаписать рассовую информаци. из SkyRe.esp или SkyReNoLighting.esp, но может быть бесопасно отключен, после использования рассового меню.
+    IF VAR(RU) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Может перезаписать расовую информацию. из SkyRe.esp или SkyReNoLighting.esp, но может быть безопасно отключен, после использования расового меню.
 Skyrim Creatures Alive.esp
   TAG: {{BASH: Relev, Delev}}
 Skyrim Dark.esp
@@ -5767,7 +5767,7 @@ BEGINGROUP: Realism
 BasicHumanNeeds.esp
 Basic Human Needs - Food Drink and Sleep
 kuerteeBattleFatigueAndInjuries.esp
-  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
   IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 REGEX: AdvancedFoodandRestENG( lazy)?\.esp
 Better Hunting.esp
@@ -5781,10 +5781,10 @@ imp's more complex needs.esp
     IF VAR(RU) && IF FILE("Imp's More Complex Needs.esm") SAY: Используйте любую Nexus или Steam Workshop версию, не обе.
 REGEX: Jump\d{2,3}\.esp
 kuerteeEncumberingLootArmourAndWeapons.esp
-  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
   IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 kuerteeEatAndSleep.esp
-  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
   IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 Medium hit.esp
   IF REGEX("dD.?- Realistic Ragdoll Force.*\.esp") INC: Realistic Ragdoll Force
@@ -5903,7 +5903,7 @@ StrongVampireLord.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ToL_Core_by_Brevi.esp
 ToL_SKSE_by_Brevi.esp
-  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
+  IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
 Tales_of_Lycanthropy.esp
 Werewolf Loot - ToL compatible.esp
 REGEX: True Vampirism - .+\.esp
@@ -6047,7 +6047,7 @@ LFContingency.esp
 LightMeter.esp
 longercandlelight.esp
 lootninja.esp
-  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
 Magic Box.esp
 Magicka Revamp - Destruction - Extra Spells - WIP.esp
 maintainedarmorspells.esp
@@ -6722,7 +6722,7 @@ Improved Expert Spells.esp
 REGEX: Improved Master Spells.*\.esp
 JokeMOD-SilentRunning.esp
 kuerteeSkillBasedDamageMultipliers.esp
-  IF VERSION("SKSE", "0.1.5.4", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
 lcr.esp
 leveling_2x_slower1_5.esp
 Leveling Destruction Perks.esp
@@ -6787,7 +6787,7 @@ Skyrim Scaling Stopper.esp
   IF VAR(EN) WARN: If using version 3+, Skyrim Monster Mod is required.
     IF VAR(RU) WARN: Если используется версия 3+, требуется также мод Skyrim Monster Mod.
 SkyXP.esp
-  IF VERSION("SKSE", "0.1.5.6", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.6+
+  IF VERSION("SKSE", "0.1.5.6", <) REQ: "http://skse.silverlock.org SKSE" 1.5.6+
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
 REGEX: SleepFor.+xExp\.esp
 SlowerLevelingAlchemy.esp
@@ -6823,7 +6823,7 @@ REGEX: WiS IV - leveld World X\d+\.esp
 SkyRe_Main.esp
   TAG: {{BASH: Relev, Delev}}
     //TAG: {{BASH: Delev, Names, Relev}}
-  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
+  IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
   IFNOT VAR(Dawnguard) REQ: Dawnguard DLC (SkyRe 0.99.17+)
   IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
   IF FILE("ACE Speech.esp") INC: ACE Speech.esp
@@ -6854,7 +6854,7 @@ SkyRe_Main.esp
 SkyRe_Main_NoDawnguard.esp
   TAG: {{BASH: Relev, Delev}}
     //TAG: {{BASH: Delev, Names, Relev}}
-  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
+  IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
   IF VAR(Dawnguard) INC: Dawnguard DLC
   IF FILE("SkyRe_Main.esp") INC: SkyRe_Main.esp
   IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
@@ -6919,7 +6919,7 @@ IF VAR(SkyReM) MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
     // please fix grammar. )
-    IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и теже уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
+    IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
   IF VAR(EN) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
     IF VAR(RU) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для правильной работы мода с SkyRe.
 REGEX: SkyRe_Plugin_ImmersiveArmor_.+\.esp
@@ -7163,7 +7163,7 @@ BEGINGROUP: Race additions
 
 mjhImprovedRaces.esp
   IF VAR(EN) INC: Anything that changes the race descriptions or races.
-    IF VAR(RU) INC: Все моды, которые изменяют рассы или их описания.
+    IF VAR(RU) INC: Все моды, которые изменяют расы или их описания.
 CherryRace.esp
 ChildRace.esp
 CustomRaces.esp
@@ -7225,16 +7225,16 @@ BEGINGROUP: Companions Load Early
 
 Essential followers - all followers.esp
   IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
 essential followers.esp
   IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
 essentialfollowers.esp
   IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
 Essential Vigilance.esp
   IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен, при использовани  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен, при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
 Unkillable Lydia.esp
 3DNPC.esp
 Althirs Companion and Carriage Command v1.1.esp
@@ -8160,7 +8160,7 @@ PC Exclusive Animation Path - Elder Race.esp
   IF FILE("AP Skyrim.esp") INC: AP Skyrim.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
 SKSE Hotkeys.esp
-  IF VERSION("SKSE", "0.1.5.11", <) || IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 1.5.11+
+  IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
 Skyrim Performance MOD.esp
 Skyrim Performance MOD 5min.esp
   IF VAR(EN) && IF FILE("Skyrim Performance MOD.esp") WARN: Use only one Skyrim performance Mod.esp
