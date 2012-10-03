@@ -689,6 +689,14 @@ zeldaaudio.esp
 ENDGROUP: Sound mods
 
 BEGINGROUP: Lighting
+REGEX: MoreRain(Windy)?(\d{2,3}percentLessView)?\.esp
+MoreRainHeavyandDarker.esp
+REGEX: MoreSnowWindyand\d{2,3}percentLessView\.esp
+  IF VAR(EN) INC: All lighting mods.
+    IF VAR(RU) INC: Все моды, модифицирующие освещение.
+MoreSnow.esp
+MoreSnowWindy.esp
+// above must be loaded before realistic lighting due to issues with in game cinematic fog settings.
 
 alvor's house dynamic.esp
 Bright Lights.esp
@@ -1048,7 +1056,6 @@ Conjuration & Summoning fixes.esp
   IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch.esp.
     IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
 Console Books.esp
-Convenient Horses.esp
 Cooking Mod - Yummy in Your Tummy.esp
 CookingExpanded.esp
 CookingExpanded - EoS.esp
@@ -1529,13 +1536,6 @@ MoreGrass.esp
 MoreHeartsAndFlesh.esp
   // Possibly requires tags.
 MoreLanterns.esp
-REGEX: MoreRain(Windy)?(\d{2,3}percentLessView)?\.esp
-MoreRainHeavyandDarker.esp
-REGEX: MoreSnowWindyand\d{2,3}percentLessView\.esp
-  IF VAR(EN) INC: All lighting mods.
-    IF VAR(RU) INC: Все моды, модифицирующие освещение.
-MoreSnow.esp
-MoreSnowWindy.esp
 MoreVillageAnimals.esp
 Morozik75_Better_Skillbook_Rus.esp
 masser_and_secunda_from_morr.esp
@@ -1970,6 +1970,7 @@ adventurersandtravelers.esp
 AdventurersAndTravelersLight.esp
 BeastBanditsV1.esp
 BarberShop.esp
+Convenient Horses.esp
 CrowdedCities.esp
 REGEX: KoS_Outcast(_Lite)?\.esp
   IF VAR(EN) SAY: Use only one KoS_Outcast*.esp
