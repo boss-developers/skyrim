@@ -631,6 +631,13 @@ REGEX: getSnowyV.+\.esp
 Longer Weather Transitions.esp
 MintyLightningMod.esp
 MintyLightningMod_COT_Patch.esp
+REGEX: MoreRain(Windy)?(\d{2,3}percentLessView)?\.esp
+MoreRainHeavyandDarker.esp
+REGEX: MoreSnowWindyand\d{2,3}percentLessView\.esp
+  IF VAR(EN) INC: All lighting mods.
+    IF VAR(RU) INC: Все моды, модифицирующие освещение.
+MoreSnow.esp
+MoreSnowWindy.esp
 Rainclip.esp
 RevampedExteriorFog.esp
   IF FILE("Realistic Lighting.esp") INC: Realistic Lighting.esp
@@ -689,15 +696,6 @@ zeldaaudio.esp
 ENDGROUP: Sound mods
 
 BEGINGROUP: Lighting
-REGEX: MoreRain(Windy)?(\d{2,3}percentLessView)?\.esp
-MoreRainHeavyandDarker.esp
-REGEX: MoreSnowWindyand\d{2,3}percentLessView\.esp
-  IF VAR(EN) INC: All lighting mods.
-    IF VAR(RU) INC: Все моды, модифицирующие освещение.
-MoreSnow.esp
-MoreSnowWindy.esp
-// above must be loaded before realistic lighting due to issues with in game cinematic fog settings.
-
 alvor's house dynamic.esp
 Bright Lights.esp
 CityLights.esp
