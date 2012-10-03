@@ -37,6 +37,7 @@ Message keywords should be indented by two spaces and followed by a colon ':' th
 // Variables
 
 // Language setup. Only for BOSS 2.1+
+// Language conditional 'IF VAR(EN)' need to add only for translated messages.
 IF LANG ("chinese") SET: EN
   // Not translated. Set default EN.
 IF LANG ("english") SET: EN
@@ -527,6 +528,7 @@ BEGINGROUP: DLC Fixes
 
 USKP Dawnguard vampire face & eye fix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
+    IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
 Dawnguard Breezehome Fix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") SAY: Obsolete. This has been fixed by the Unofficial Dawnguard Patch.
     IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
