@@ -58,6 +58,7 @@ IF FILE("..\ScriptDragon.dll") SET: SCDR
 // DLC variable setup for BOSS v1.7+.
 // Added as many plugins are likely to require DLC.
 IF FILE("Dawnguard.esm") SET: Dawnguard
+IF FILE("Hearthfires.esm") SET: Hearthfire
 //
 // Plugins
 IF REGEX("Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
@@ -113,6 +114,8 @@ BEGINGROUP: Official ESMs
 Skyrim.esm
 Update.esm
 Dawnguard.esm
+  IF VERSION("TES5", "1.7.7", <) REQ: Skyrim 1.7.7+
+Hearthfires.esm
   IF VERSION("TES5", "1.7.7", <) REQ: Skyrim 1.7.7+
 
 ENDGROUP: Official ESMs
@@ -533,11 +536,14 @@ Dawnguard Breezehome Fix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") SAY: Obsolete. This has been fixed by the Unofficial Dawnguard Patch.
     IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
 Unofficial Dawnguard Patch.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 VLCollisionFix.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 HighResTexturePackFix.esp
 chopping_block_wood_fires.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
+Unofficial Hearthfire Patch.esp
+  IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
 ENDGROUP: DLC Fixes
 
 REGEX: Skyrim HD Full - .+\.esp
