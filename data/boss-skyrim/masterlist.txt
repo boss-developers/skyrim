@@ -1140,6 +1140,7 @@ Deleveled Skyrim - Enemies Wildlife.esp
 Deleveled Skyrim - Enemies (No Dragons).esp
   TAG: {{BASH: Delev, Relev}}
 Deleveled Skyrim - SkyMoMod_list.esp
+  TAG: {{BASH: Delev, Relev}}
 Deleveled Skyrim - TCOSS.esp
   TAG: {{BASH: Delev, Relev}}
 DenseGrass.esp
@@ -1730,8 +1731,8 @@ SkyMoMod.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SkyMoMod_lists.esp
   TAG: {{BASH: Delev, Relev}}
-  IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+  IF VAR(EN) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: Obsolete. Update to latest version.
+    IF VAR(RU) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: Устарело. Обновите до последней версии.
 REGEX: SkyMoMod_morespawns_(animal|bandit|draugr|dwerven|falmer|forsworn|mage|vampire)\.esp
 SkyMoMod Extras Collectables.esp
 Skyrim_Monster_Mod_Additions-Collectables.esp
