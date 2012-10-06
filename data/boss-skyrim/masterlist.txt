@@ -713,6 +713,7 @@ ColorfulLightsNoShadows.esp
 REGEX: Dark( |e[r|st]+[ ]?)?Nights( and Bright Skies| No Weather)?\.esp
 REGEX: Dark(er)? Nights(B|_(\d{1,2})?(b+[lr])?)\.esp
 CLO.esp
+CLO - Custom Lighting Overlay.esp
 DarkerSkyrimLighting.esp
 Dark Dungeons for ENB.esp
 Encryptions Water Arrow.esp
@@ -1560,7 +1561,7 @@ Nightingale Equipment Tweaks.esp
 NightsWatchArmor.esp
 NightsWatchArmorLight.esp
 Nocturnal Craftable Armors.esp
-  IF FILE("Vampirelordroyal.esp") WARN: Author states in Nexus description that Royal Bloodlines will break this mod.
+  IF VAR(EN) && IF FILE("Vampirelordroyal.esp") WARN: Author states in Nexus description that Royal Bloodlines (Vampirelordroyal.esp) will break this mod.
 NoSaltRecipes.esp
 NPC Bartering.esp
 ENDGROUP: Base N
@@ -4002,6 +4003,8 @@ Breezehome Basement.esp
 breezehomebasement.esp
 BreezehomeBasementRedux.esp
 breezehomebasementthief.esp
+scbb.esp
+// Download Name is 'Breezehome Basement - Single Cell - Demorus'
 breezehome balcony.esp
 breezehomedogfriend.esp
 BreezehomeEnchanter.esp
@@ -5582,6 +5585,10 @@ SoultrapSummons.esp
 sparse start.esp
 Standin Stonene's Value Fix V1.esp
 SteelShieldOfSolitude.esp
+-Stickier_Arrows- Fix.esp
+  // v1.5 - not a 'fix'.  Intentional gmst adjustment.
+Stickier_Arrows- Fix.esp
+  // v2 - not a 'fix'.  Intentional gmst adjustment more than v1.5.
 stop-being-a-creepy-stalker-aerin-1-0-pingy.esp
 stronger alduin.esp
 stronger daedric artifacts.esp
@@ -6080,7 +6087,7 @@ MaximumDrive.esp
 MECR_NightEye_DetectLife_Overhaul.esp
 mindcontrol.esp
 mm_HorseWhisperer.esp
-REGEGX: MYSpell(Hard)?\.esp
+REGEX: MYSpell(Hard)?\.esp
   IF VAR(EN) && IF FILE("MYSpell.esp") && IF FILE("MYSpellHard.esp") WARN: Use only one normal or hard version.
     IF VAR(RU) && IF FILE("MYSpell.esp") && IF FILE("MYSpellHard.esp") WARN: Используйте только одну, normal или hard, версию
 Necromimesis.esp
@@ -6495,11 +6502,11 @@ REGEX: decap_chance_\d\d\.esp
 DisableAutoAim.esp
 dodge.esp
   IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
-Dual Wield Parrying.esp
-Dual Wield Parrying_DualAttack.esp
-Dual Wield Parrying_ScriptDragon.esp
-  IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
-Dual Wield Parrying_RandomAttacks.esp
+REGEX: Dual Wield Parrying.*\.esp
+  IF VAR(EN) SAY: Use only one Dual Wield Parrying*.esp
+    IF File("Dual Wield Parrying_ScriptDragon.esp") && IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
+	IF File("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) ERROR: Dawnguard version required.  Remove this mod and install 'Dual Wield Parrying_RandomAttacks_Dawnuard.esp'.
+	IF File("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Duel Combat Realism CK.esp
 Duel - Combat Realism FAST.esp
 Duel.esp
@@ -7037,6 +7044,7 @@ CombinePotionsAlchemy.esp
 hokutoshinken.esp
 ArmorPerkHelmetRemover.esp
 Vampirelordroyal.esp
+ IF VAR(EN) && IF FILE("Nocturnal Craftable Armors.esp") WARN: Author of Nocturnal Caftable Armors states in Nexus description that this mod will break 'Nocturnal Craftable Armors.esp'.
 vinis_alchemy_tree.esp
 BatTravel.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
