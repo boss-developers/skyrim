@@ -37,7 +37,7 @@ Message keywords should be indented by two spaces and followed by a colon ':' th
 // Variables
 
 // Language setup. Only for BOSS 2.1+
-// Language conditional 'IF VAR(EN)' need to add only for translated messages.
+// Language conditional 'IF VAR(EN)' need only for translated messages.
 IF LANG ("chinese") SET: EN
   // Not translated. Set default EN.
 IF LANG ("english") SET: EN
@@ -1562,6 +1562,7 @@ NightsWatchArmor.esp
 NightsWatchArmorLight.esp
 Nocturnal Craftable Armors.esp
   IF VAR(EN) && IF FILE("Vampirelordroyal.esp") WARN: Author states in Nexus description that Royal Bloodlines (Vampirelordroyal.esp) will break this mod.
+    IF VAR(RU) && IF FILE("Vampirelordroyal.esp") WARN: Автор сообщает в описании на нексусе, что Royal Bloodlines (Vampirelordroyal.esp) может портить этот мод.
 NoSaltRecipes.esp
 NPC Bartering.esp
 ENDGROUP: Base N
@@ -6504,9 +6505,11 @@ dodge.esp
   IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
 REGEX: Dual Wield Parrying.*\.esp
   IF VAR(EN) SAY: Use only one Dual Wield Parrying*.esp
-    IF File("Dual Wield Parrying_ScriptDragon.esp") && IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
-	IF File("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) ERROR: Dawnguard version required.  Remove this mod and install 'Dual Wield Parrying_RandomAttacks_Dawnuard.esp'.
-	IF File("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+    IF VAR(RU) SAY: Используйте только один Dual Wield Parrying*.esp
+  IF File("Dual Wield Parrying_ScriptDragon.esp") && IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
+  IF VAR(EN) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) ERROR: Dawnguard version required. Remove this mod and install 'Dual Wield Parrying_RandomAttacks_Dawnuard.esp'.
+    IF VAR(RU) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) ERROR: Требуется Dawnguard-версия.  Удалите этот мод и установите 'Dual Wield Parrying_RandomAttacks_Dawnuard.esp'.
+  IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Duel Combat Realism CK.esp
 Duel - Combat Realism FAST.esp
 Duel.esp
@@ -7044,7 +7047,8 @@ CombinePotionsAlchemy.esp
 hokutoshinken.esp
 ArmorPerkHelmetRemover.esp
 Vampirelordroyal.esp
- IF VAR(EN) && IF FILE("Nocturnal Craftable Armors.esp") WARN: Author of Nocturnal Caftable Armors states in Nexus description that this mod will break 'Nocturnal Craftable Armors.esp'.
+//  IF FILE("Nocturnal Craftable Armors.esp") WARN: Author of Nocturnal Caftable Armors states in Nexus description that this mod will break 'Nocturnal Craftable Armors.esp'.
+  //redudant. already added for Nocturnal Craftable Armors.esp.
 vinis_alchemy_tree.esp
 BatTravel.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
