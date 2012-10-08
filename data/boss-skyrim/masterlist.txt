@@ -488,7 +488,7 @@ RiftenJailVisualFix.esp
 RiverwoodTraderInvestorFix.esp
 SanguineRoseFix.esp
     IF VAR(EN) && IF VERSION("TES5", "1.4.27", >) ERROR: Delete. Fixed in official patch 1.5+
-      IF VAR(RU) && IF VERSION("TES5", "1.4.27", >) ERROR: Удалите. Исправлено в патче 1.5+
+    IF VAR(RU) && IF VERSION("TES5", "1.4.27", >) ERROR: Удалите. Исправлено в патче 1.5+
 sapphire_speak_fix.esp
 REGEX: Shadow.?Striping.?Fix\.esp
 Shrine of Azura LOD Fix.esp
@@ -4750,16 +4750,16 @@ BEGINGROUP: Overrides #
 
 REGEX: .?.?.?.? magickaregen\.esp
   IF VAR(EN) SAY: Use only one _X magickaregen.esp or _X slowermagickaregen.esp
-      IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
+    IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
 3x slower magickaregen.esp
   IF VAR(EN) SAY: Use only one _X magickaregen.esp or _X slowermagickaregen.esp
-      IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
+    IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
 30x slowermagickaregen.esp
   IF VAR(EN) SAY: Use only one _X magickaregen.esp or _X slowermagickaregen.esp
-      IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
+    IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
 REGEX: .?.?.?.? staminaregen\.esp
   IF VAR(EN) SAY: Use only one _X magickaregen.esp or _X slowermagickaregen.esp
-      IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
+    IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
 00 friedlichere wilde tiere.esp
 0nk Better Gauldur and Saarthal Amulet Copy.esp
 1DayVendorRestockingV1.2.esp
@@ -5874,7 +5874,7 @@ SkyRealism - Capacity and Carry Weight.esp
     IF VAR(RU) && IF VAR(Dawnguard) && IFNOT CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) SAY: Рекомендуется использовать совместимую с Dawnguard версию.
   IFNOT FILE("Dr_Bandolier.esp") || IFNOT FILE("Dr_BandolierDG.esp") REQ: "http://skyrim.nexusmods.com/mods/16438 Bandolier - Bags and Pouches"
     IF VAR(EN) && IFNOT REGEX("LeatherBackpack(Brown|Black|DarkBrown)\.esp") REQ: "http://skyrim.nexusmods.com/mods/13732 Leather Backpack".  Install only the black, brown and original varients. Also be sure to choose "Regular" for all install options.
-      IF VAR(RU) && IFNOT REGEX("LeatherBackpack(Brown|Black|DarkBrown)\.esp") REQ: "http://skyrim.nexusmods.com/mods/13732 Leather Backpack".  Устанавливайте только черную(black) или коричневую(brown) и оригинальную версию. Также убедитесь, что выбрали "Regular", для всех опций установки.
+    IF VAR(RU) && IFNOT REGEX("LeatherBackpack(Brown|Black|DarkBrown)\.esp") REQ: "http://skyrim.nexusmods.com/mods/13732 Leather Backpack".  Устанавливайте только черную(black) или коричневую(brown) и оригинальную версию. Также убедитесь, что выбрали "Regular", для всех опций установки.
 SkyRealism - Encumbrance.esp
 SkyrimSpeeds.esp
 REGEX: Sprint\d\.esp
@@ -6544,8 +6544,8 @@ REGEX: Dual Wield Parrying.*\.esp
   IF VAR(EN) SAY: Use only one Dual Wield Parrying*.esp
     IF VAR(RU) SAY: Используйте только один Dual Wield Parrying*.esp
   IF FILE("Dual Wield Parrying_ScriptDragon.esp") && IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
-  IF VAR(EN) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) ERROR: Dawnguard version required. Remove and install 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
-    IF VAR(RU) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) ERROR: Требуется версия для Dawnguard. Удалите это и установите 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
+  IF VAR(EN) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) REQ: Dawnguard version. Remove and install 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
+    IF VAR(RU) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) REQ: Версия для Dawnguard. Удалите это и установите 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
   IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
 Duel Combat Realism CK.esp
 Duel - Combat Realism FAST.esp
