@@ -131,6 +131,7 @@ PerkReset.esm
 3rdEraWeaponsMoS.esm
 AIKhajiitCompanions.esm
 All Housecarls Are Hunks.esm
+Ambience Music Overhaul.esm
 AmethystHollowsMaster.esm
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 Lycanthropy_Music.esm
@@ -794,6 +795,8 @@ BEGINGROUP: Music
 
 AdditionalMusicPackI.esp
 AdditionalMusicPackII.esp
+Ambience Music Overhaul - Combat.esp
+Ambience Music Overhaul - Interiors and Special.esp
 REGEX: Dawn_addon_part(\d)\.esp
 dragonborn with lute.esp
 esisbattlepack.esp
@@ -6769,9 +6772,10 @@ archeryperks 3-9.esp
 archeryperks 4-12.esp
 REGEX: AB?T - Loot Arrows (HARDCORE)?([-\+]?\d{1,3}%)?\.esp
 REGEX: AB?T - Faster (Arrows)?(Bolts)? Improved (\+\d{1,3}%)\.esp
-  IF VAR(EN) && IF REGEX("ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF REGEX("ABT - Faster Bolts Improved (\+\d{1,3}%)\.esp")  REQ: Dawnguard (Official Bethesda DLC)
 REGEX: AB?T - Merchants Arrows (HARDCORE)?([-\+]?\d{1,3}%)?\.esp
-REGEX: AB?T -( Increased)? Progressive Damage( \(BS and CCO\)| \(with Nord Hero Arrow\))?( [-\+]?\d{1,3}%)?\.esp
+REGEX: ABT - Increased Bolts Damage (\(Vanilla\)|\(BS and CCO\))( [-\+]?\d{1,3}%)?\.esp
+REGEX: AB?T -( Increased)? Progressive Damage( \(BS and CCO\)| \(with Nord Hero Arrow\)| \(Vanilla\))?( [-\+]?\d{1,3}%)?\.esp
 REGEX: AB?T - Recover ([-\+]?\d{1,3}%)( Less| More)? Arrows( and Bolts)?\.esp
 /* All AT plugins must load after *all* ACE modules */
 Balanced Armor Effects.esp
@@ -7225,6 +7229,9 @@ TheEyesofBeauty.esp
 Improved Eyes Skyrim.esp
 underworld_eyes.esp
 ENDGROUP: Eyes
+
+XCES.esp
+// Adds complexions (which are used to add scars), not certain of placement
 
 Improved Freckles Skyrim.esp
 // Not certain where this ought to go.  Replaces freckles and adds for men.
