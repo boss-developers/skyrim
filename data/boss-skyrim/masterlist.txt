@@ -1078,7 +1078,13 @@ Cowardly skeevers.esp
 Cowardly Wolves and Skeevers.esp
 CPDisease.esp
 cplesourcelight.esp
+Craft, Temper, Smelt.esp
 CRAFT - Salvage Material.esp
+ IF FILE("Craft, Temper, Smelt.esp") WARN: Delete. Already included in Craft, Temper, Smelt.esp
+   SAY: Obsolete. Update to latest version - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+CRAFT - Forge Equipment.esp
+ IF FILE("Craft, Temper, Smelt.esp") WARN: Delete. Already included in Craft, Temper, Smelt.esp
+   SAY: Obsolete. Update to latest version - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
 craftable.esp
 Craftable and Placeable Havok-enabled Bedrolls .esp
 craftable - draugr.esp
@@ -1206,6 +1212,9 @@ enhanceddistantterrain.esp
 enhancedgameplay-extendedwe.esp
 EnverCamoran.esp
 EquipableMap.esp
+EQUIPMENT - Unarmed Spiked Gauntlets.esp
+  IF FILE("Craft, Temper, Smelt.esp") WARN: Delete. Already included in Craft, Temper, Smelt.esp
+	SAY: Obsolete. Update to latest version - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
 EquivalentExchange.esp
 erweiterte schmiedekunst.esp
 REGEX: Eternal Bunny Pet (Dark Silent)?\.esp
@@ -3253,6 +3262,8 @@ REGEX: ScoutArmorAddon\d\.esp
 Seadog.esp
 seethroughlook.esp
 REGEX: SED7-CBBE3.+\.esp
+selobl_Diano.esp
+	SAY: Requires UNPB-BBP 
 SeraphimStandAlone.esp
 SeraticArmor.esp
 REGEX: SeraticHeavyArmor(Dark|Gray)\.esp
@@ -3262,6 +3273,7 @@ SexyKunoichi2ndByNausicaa.esp
 SF Poison.esp
 Shard of Azzinoth.esp
 ShieldsofSkyrimLists.esp
+	TAG: {{BASH: Relev}}
 Shields_of_the_northern_kingdoms.esp
 Shining Paladin.esp
 ShinKatana.esp
@@ -3287,6 +3299,7 @@ SnakeBattleaxe.esp
 SnowLeopardForsworn.esp
 SnowyNightingale.esp
 So Hot.esp
+Song General Armor&weapon.esp
 sonia.esp
 sord.esp
 soulcalibur.esp
@@ -4729,7 +4742,14 @@ ENDGROUP: Overrides Early
 
 BEGINGROUP: Overrides #
 
-REGEX: .?.?.?.? (stamina)?(magicka)?regen\.esp
+REGEX: .?.?.?.? magickaregen\.esp
+	SAY: Use only one _X magickaregen.esp or _X slowermagickaregen.esp
+3x slower magickaregen.esp
+	SAY: Use only one _X magickaregen.esp or _X slowermagickaregen.esp
+30x slowermagickaregen.esp
+	SAY: Use only one _X magickaregen.esp or _X slowermagickaregen.esp
+REGEX: .?.?.?.? staminaregen\.esp
+	SAY: Use only one _X staminaregen.esp
 00 friedlichere wilde tiere.esp
 0nk Better Gauldur and Saarthal Amulet Copy.esp
 1DayVendorRestockingV1.2.esp
@@ -5258,6 +5278,7 @@ male_mannequins_skinned.esp
 Mannequin_Female_Vyctoria.esp
 Mannequin_Male_Vyktor.esp
 ManlyLonghammer.esp
+Mannequin Infinitus.esp
 Mannequin.esp
 MannequinReplacerImperial.esp
 Marriage Expanded.esp
@@ -5591,9 +5612,9 @@ sparse start.esp
 Standin Stonene's Value Fix V1.esp
 SteelShieldOfSolitude.esp
 -Stickier_Arrows- Fix.esp
-  // v1.5 - not a 'fix'.  Intentional gmst adjustment.
+  IF File("Stickier_Arrows- Fix.esp") SAY: Use only one Stickier Arrows esp.
 Stickier_Arrows- Fix.esp
-  // v2 - not a 'fix'.  Intentional gmst adjustment more than v1.5.
+  IF File("-Stickier_Arrows- Fix.esp") SAY: Use only one Stickier Arrows esp.
 stop-being-a-creepy-stalker-aerin-1-0-pingy.esp
 stronger alduin.esp
 stronger daedric artifacts.esp
@@ -6508,12 +6529,10 @@ DisableAutoAim.esp
 dodge.esp
   IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
 REGEX: Dual Wield Parrying.*\.esp
-  IF VAR(EN) SAY: Use only one Dual Wield Parrying*.esp
-    IF VAR(RU) SAY: Используйте только один Dual Wield Parrying*.esp
-  IF File("Dual Wield Parrying_ScriptDragon.esp") && IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
-  IF VAR(EN) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) ERROR: Dawnguard version required. Remove this mod and install 'Dual Wield Parrying_RandomAttacks_Dawnuard.esp'.
-    IF VAR(RU) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) ERROR: Требуется Dawnguard-версия.  Удалите этот мод и установите 'Dual Wield Parrying_RandomAttacks_Dawnuard.esp'.
-  IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  SAY: Use only one Dual Wield Parrying*.esp
+  IF FILE("Dual Wield Parrying_ScriptDragon.esp") && IFNOT VAR(SCDR) ERROR: Requires "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
+  IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) ERROR: Dawnguard version required. Remove and install 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
+  IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") && IFNOT VAR(Dawnguard) ERROR: Official Bethesda DLC Dawnguard required.
 Duel Combat Realism CK.esp
 Duel - Combat Realism FAST.esp
 Duel.esp
@@ -7451,6 +7470,8 @@ IFNOT REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 All Housecarls Are Hunks.esp
 MODNewfollowers.esp
 OneiroFollowers.esp
+FelixConstantine.esp
+	SAY: Requires Testure packs: "http://skyrim.nexusmods.com/mods/1971 Smooth Faces for Ladies and Gents" and "http://skyrim.nexusmods.com/mods/3424 Pretty Eyes"
 highfive.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 housecarl_fem_plus.esp
