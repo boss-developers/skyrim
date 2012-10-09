@@ -1908,6 +1908,9 @@ REGEX: Tytanis\w{0,2}(GER)?\.esp
 tytanis horse armo vendor stand alone.esp
 Tytanis - Horse Armor Vendor.esp
 Tytanis - Farming.esp
+TytanisDawnguardElementalBolts.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  // I don't have Dawnguard.  This may need to be placed elsewhere.
 ENDGROUP: Base T
 
 BEGINGROUP: Base U
@@ -2263,7 +2266,12 @@ BMC - Craftable Glove Alternatives.esp
 bobsarmory.esp
 boots_of_blinding_speed.esp
 boots of speed.esp
-bouncy_bodices_for_unpb_bbp.esp
+REGEX: bouncy_bodices.*\.esp
+  SAY: Be sure you have the correct body replacer installed for this esp.  Use only one version.
+bouncy_booties.esp
+  SAY: Be sure you have the correct bouncy_bodices mod installed for this esp.
+bouncy_belts_and_stockings.esp
+  SAY: Requires any UNP or UNPB body. Should work with all versions.
 bound weapons redux.esp
 BowofIorveth.esp
   IF FILE("SkyRe_Plugin_BowofIorveth_1.2.esp") TAG: {{BASH: Deactivate}}
@@ -2439,6 +2447,7 @@ DEATH-DEALER.esp
 Daedric Extra Armor.esp
 DeathSting.esp
 Dead Knight Armor.esp
+Decapitation-spell-and-raise-skull-minions.esp
 Demon Lord Armor Set.esp
 Demon Sword.esp
 Demothris.esp
@@ -3369,6 +3378,7 @@ SuccubusCBBE3GiftByNausicaa.esp
 Summon Animal Pets DV.esp
 SummonAnimalPets_immersive.esp
 SummonAnimalPets_immortal.esp
+SummonSkeletalHorde.esp
 sunder.esp
 Sun Glasses OE.esp
 survivor_armor.esp
@@ -6227,6 +6237,8 @@ TSO.esp
 UBW.esp
 UnlockSpell.esp
 UnplayableMadePlayable.esp
+Unspontaneous-combustion.esp
+  IFNOT FILE("SKSE") WARN: This mod requires "http://skse.silverlock.org SKSE" 
 Upgrade Leveled Items Spell.esp
 Upscaled Beginner Destruction Spells.esp
 URWL_BNDN.esp
@@ -7549,6 +7561,8 @@ Morlock.esp
 Nirana.esp
 RC_Cara_v1.esp
 Salit.esp
+Serana_Revised.esp
+  SAY: Author states meshes and textures from "http://skyrim.nexusmods.com/mods/21038 Girls of Skyrim - Michelle" are required.
 SeranaSecret.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 SNGakan.esp
@@ -7805,8 +7819,42 @@ AskFollowerSkills.esp
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
 BDO.esp
-  // Big Dialog Overhaul
-CompilationV1.esp
+  SAY: Big Dialog Overhaul
+REGEX: Compilation.*\.esp
+  IF FILE("CompilationV1.esp") && IF FILE("Compilationv1-clean.esp") SAY: Use only CompilationV1.esp or Compilationv1-clean.esp, not both.
+  SAY: Beans Badass Women Compilation
+pack1.esp
+  IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
+  IF FILE("pack1-clean.esp") && IF FILE("pack1.esp") SAY: Use only pack1.esp or pack1-clean.esp, not both.
+  SAY: Beans Badass Women Compilation
+pack2.esp
+  IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
+  IF FILE("pack2-clean.esp") && IF FILE("pack2.esp") SAY: Use only pack2.esp or pack2-clean.esp, not both.
+  SAY: Beans Badass Women Compilation
+pack3.esp
+  IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
+  IF FILE("pack3-clean.esp") && IF FILE("pack3.esp") SAY: Use only pack3.esp or pack3-clean.esp, not both.
+  SAY: Beans Badass Women Compilation
+pack4.esp
+  IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
+  IF FILE("pack4-clean.esp") && IF FILE("pack4.esp") SAY: Use only pack4.esp or Pack4-clean.esp, not both.
+  SAY: Beans Badass Women Compilation
+pack1-clean.esp
+  IF FILE("Compilationv1-clean.esp") SAY: Remove this file.  Compilationv1-clean.esp already contains these changes.
+  IF FILE("pack1-clean.esp") && IF FILE("pack1.esp") SAY: Use only pack1.esp or pack1-clean.esp, not both.
+  SAY: Beans Badass Women Compilation
+pack2-clean.esp
+  IF FILE("Compilationv1-clean.esp") SAY: Remove this file.  Compilationv1-clean.esp already contains these changes.
+  IF FILE("pack2-clean.esp") && IF FILE("pack2.esp") SAY: Use only pack2.esp or pack2-clean.esp, not both.
+  SAY: Beans Badass Women Compilation
+pack3-clean.esp
+  IF FILE("Compilationv1-clean.esp") SAY: Remove this file.  Compilationv1-clean.esp already contains these changes.
+  IF FILE("pack3-clean.esp") && IF FILE("pack3.esp") SAY: Use only pack3.esp or pack3-clean.esp, not both.
+  SAY: Beans Badass Women Compilation
+Pack4-clean.esp
+  IF FILE("Compilationv1-clean.esp") SAY: Remove this file.  Compilationv1-clean.esp already contains these changes.
+  IF FILE("pack4-clean.esp") && IF FILE("pack4.esp") SAY: Use only pack4.esp or Pack4-clean.esp, not both.
+  SAY: Beans Badass Women Compilation
 BFFAnimalCompanions.esp
 Respectful_Lydia-Letsseeit_subtitle.esp
 Respectful_Lydia-Whatdoyouwantmetocarry_subtitle.esp
