@@ -2267,11 +2267,15 @@ bobsarmory.esp
 boots_of_blinding_speed.esp
 boots of speed.esp
 REGEX: bouncy_bodices.*\.esp
-  SAY: Be sure you have the correct body replacer installed for this esp.  Use only one version.
-bouncy_booties.esp
-  SAY: Be sure you have the correct bouncy_bodices mod installed for this esp.
+  IF VAR(EN) SAY: Be sure you have the correct body replacer installed for this esp.  Use only one version.
+    IF VAR(RU) SAY: Убедитесь, что для этого esp у вас установлена корректная версия реплейсера тел.
 bouncy_belts_and_stockings.esp
-  SAY: Requires any UNP or UNPB body. Should work with all versions.
+bouncy_booties.esp
+  IF VAR(EN) SAY: Be sure you have the correct bouncy_bodices mod installed for this esp.
+    IF VAR(RU) SAY: Убедитесь, что для этого esp у вас установлена корректная версия мода bouncy_bodices.
+bouncy_belts_and_stockings.esp
+  IF VAR(EN) REQ: UNP or UNPB body. Should work with all versions.
+    IF VAR(RU) REQ: UNP или UNPB. Должно работать со всеми версиями.
 bound weapons redux.esp
 BowofIorveth.esp
   IF FILE("SkyRe_Plugin_BowofIorveth_1.2.esp") TAG: {{BASH: Deactivate}}
@@ -6238,7 +6242,7 @@ UBW.esp
 UnlockSpell.esp
 UnplayableMadePlayable.esp
 Unspontaneous-combustion.esp
-  IFNOT FILE("SKSE") WARN: This mod requires "http://skse.silverlock.org SKSE" 
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 
 Upgrade Leveled Items Spell.esp
 Upscaled Beginner Destruction Spells.esp
 URWL_BNDN.esp
@@ -7562,7 +7566,8 @@ Nirana.esp
 RC_Cara_v1.esp
 Salit.esp
 Serana_Revised.esp
-  SAY: Author states meshes and textures from "http://skyrim.nexusmods.com/mods/21038 Girls of Skyrim - Michelle" are required.
+  IF VAR(EN) REQ: Meshes and Textures from "http://skyrim.nexusmods.com/mods/21038 Girls of Skyrim - Michelle"
+    IF VAR(RU) REQ: Модели(Meshes) и тестуры мз мода "http://skyrim.nexusmods.com/mods/21038 Girls of Skyrim - Michelle"
 SeranaSecret.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 SNGakan.esp
@@ -7819,42 +7824,51 @@ AskFollowerSkills.esp
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
 BDO.esp
-  SAY: Big Dialog Overhaul
+// Big Dialog Overhaul
 REGEX: Compilation.*\.esp
-  IF FILE("CompilationV1.esp") && IF FILE("Compilationv1-clean.esp") SAY: Use only CompilationV1.esp or Compilationv1-clean.esp, not both.
-  SAY: Beans Badass Women Compilation
+// Beans Badass Women Compilation
+  IF VAR(EN) && IF FILE("CompilationV1.esp") && IF FILE("Compilationv1-clean.esp") SAY: Use only CompilationV1.esp or Compilationv1-clean.esp, not both.
+    IF VAR(RU) && IF FILE("CompilationV1.esp") && IF FILE("Compilationv1-clean.esp") SAY: Используйте или только  CompilationV1.esp или Compilationv1-clean.esp, не оба.
 pack1.esp
-  IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
-  IF FILE("pack1-clean.esp") && IF FILE("pack1.esp") SAY: Use only pack1.esp or pack1-clean.esp, not both.
-  SAY: Beans Badass Women Compilation
+// Beans Badass Women Compilation
+  IF VAR(EN) && IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
+    IF VAR(RU) && IF FILE("CompilationV1.esp") ERROR: Удалите.  CompilationV1.esp уже включает эти изменения.
 pack2.esp
-  IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
-  IF FILE("pack2-clean.esp") && IF FILE("pack2.esp") SAY: Use only pack2.esp or pack2-clean.esp, not both.
-  SAY: Beans Badass Women Compilation
+// Beans Badass Women Compilation
+  IF VAR(EN) && IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
+    IF VAR(RU) && IF FILE("CompilationV1.esp") ERROR: Удалите.  CompilationV1.esp уже включает эти изменения.
 pack3.esp
-  IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
-  IF FILE("pack3-clean.esp") && IF FILE("pack3.esp") SAY: Use only pack3.esp or pack3-clean.esp, not both.
-  SAY: Beans Badass Women Compilation
+// Beans Badass Women Compilation
+  IF VAR(EN) && IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
+    IF VAR(RU) && IF FILE("CompilationV1.esp") ERROR: Удалите.  CompilationV1.esp уже включает эти изменения.
 pack4.esp
-  IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
-  IF FILE("pack4-clean.esp") && IF FILE("pack4.esp") SAY: Use only pack4.esp or Pack4-clean.esp, not both.
-  SAY: Beans Badass Women Compilation
+// Beans Badass Women Compilation
+  IF VAR(EN) && IF FILE("CompilationV1.esp") SAY: Remove this file.  CompilationV1.esp already contains these changes.
+    IF VAR(RU) && IF FILE("CompilationV1.esp") ERROR: Удалите.  CompilationV1.esp уже включает эти изменения.
 pack1-clean.esp
-  IF FILE("Compilationv1-clean.esp") SAY: Remove this file.  Compilationv1-clean.esp already contains these changes.
-  IF FILE("pack1-clean.esp") && IF FILE("pack1.esp") SAY: Use only pack1.esp or pack1-clean.esp, not both.
-  SAY: Beans Badass Women Compilation
+// Beans Badass Women Compilation
+  IF VAR(EN) && IF FILE("Compilationv1-clean.esp") SAY: Remove this file. Compilationv1-clean.esp already contains these changes.
+    IF VAR(RU) && IF FILE("Compilationv1-clean.esp") ERROR: Удалите. Compilationv1-clean.esp уже включает эти изменения.
+  IF VAR(EN) && IF FILE("pack1-clean.esp") && IF FILE("pack1.esp") SAY: Use only pack1.esp or Pack1-clean.esp, not both.
+    IF VAR(RU) && IF FILE("pack1-clean.esp") && IF FILE("pack1.esp") SAY: Используйте или pack1.esp или Pack1-clean.esp, не оба.
 pack2-clean.esp
-  IF FILE("Compilationv1-clean.esp") SAY: Remove this file.  Compilationv1-clean.esp already contains these changes.
-  IF FILE("pack2-clean.esp") && IF FILE("pack2.esp") SAY: Use only pack2.esp or pack2-clean.esp, not both.
-  SAY: Beans Badass Women Compilation
+// Beans Badass Women Compilation
+  IF VAR(EN) && IF FILE("Compilationv1-clean.esp") SAY: Remove this file. Compilationv1-clean.esp already contains these changes.
+    IF VAR(RU) && IF FILE("Compilationv1-clean.esp") ERROR: Удалите. Compilationv1-clean.esp уже включает эти изменения.
+  IF VAR(EN) && IF FILE("pack2-clean.esp") && IF FILE("pack2.esp") SAY: Use only pack2.esp or Pack2-clean.esp, not both.
+    IF VAR(RU) && IF FILE("pack2-clean.esp") && IF FILE("pack2.esp") SAY: Используйте или pack2.esp или Pack2-clean.esp, не оба.
 pack3-clean.esp
-  IF FILE("Compilationv1-clean.esp") SAY: Remove this file.  Compilationv1-clean.esp already contains these changes.
-  IF FILE("pack3-clean.esp") && IF FILE("pack3.esp") SAY: Use only pack3.esp or pack3-clean.esp, not both.
-  SAY: Beans Badass Women Compilation
+// Beans Badass Women Compilation
+  IF VAR(EN) && IF FILE("Compilationv1-clean.esp") SAY: Remove this file. Compilationv1-clean.esp already contains these changes.
+    IF VAR(RU) && IF FILE("Compilationv1-clean.esp") ERROR: Удалите. Compilationv1-clean.esp уже включает эти изменения.
+  IF VAR(EN) && IF FILE("pack3-clean.esp") && IF FILE("pack3.esp") SAY: Use only pack3.esp or Pack3-clean.esp, not both.
+    IF VAR(RU) && IF FILE("pack3-clean.esp") && IF FILE("pack3.esp") SAY: Используйте или pack3.esp или Pack4-clean.esp, не оба.
 Pack4-clean.esp
-  IF FILE("Compilationv1-clean.esp") SAY: Remove this file.  Compilationv1-clean.esp already contains these changes.
-  IF FILE("pack4-clean.esp") && IF FILE("pack4.esp") SAY: Use only pack4.esp or Pack4-clean.esp, not both.
-  SAY: Beans Badass Women Compilation
+// Beans Badass Women Compilation
+  IF VAR(EN) && IF FILE("Compilationv1-clean.esp") SAY: Remove this file. Compilationv1-clean.esp already contains these changes.
+    IF VAR(RU) && IF FILE("Compilationv1-clean.esp") ERROR: Удалите. Compilationv1-clean.esp уже включает эти изменения.
+  IF VAR(EN) && IF FILE("pack4-clean.esp") && IF FILE("pack4.esp") SAY: Use only pack4.esp or Pack4-clean.esp, not both.
+    IF VAR(RU) && IF FILE("pack4-clean.esp") && IF FILE("pack4.esp") SAY: Используйте или pack4.esp или Pack4-clean.esp, не оба.
 BFFAnimalCompanions.esp
 Respectful_Lydia-Letsseeit_subtitle.esp
 Respectful_Lydia-Whatdoyouwantmetocarry_subtitle.esp
