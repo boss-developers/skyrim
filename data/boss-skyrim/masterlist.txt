@@ -534,10 +534,6 @@ BEGINGROUP: DLC Fixes
 
 invisible_shield_fix.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-EveryVampireEyesGrow.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF VAR(EN) SAY: This mod will not be compatible with any mods that alter humanoid(imperial, breton, nord, redguard) race. Also, not compatible with mods that have Babette's facegendata(0001D4B7.NIF).
-    IF VAR(RU) SAY: Этот мод может быть не совместим с любыми модами меняющих рассы гуманоидов(имперец, бретонец, норд, редгард). Также не совместим с модами, меняющими внешние данные Бабетты(Babette's facegendata(0001D4B7.NIF)).
 USKP Dawnguard vampire face & eye fix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
     IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
@@ -553,6 +549,11 @@ chopping_block_wood_fires.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
 Unofficial Hearthfire Patch.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
+EveryVampireEyesGrow.esp
+  // Only work when loaded after U*Ps
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF VAR(EN) SAY: This mod will not be compatible with any mods that alter humanoid(imperial, breton, nord, redguard) race. Also, not compatible with mods that have Babette's facegendata(0001D4B7.NIF).
+    IF VAR(RU) SAY: Этот мод может быть не совместим с любыми модами меняющих рассы гуманоидов(имперец, бретонец, норд, редгард). Также не совместим с модами, меняющими внешние данные Бабетты(Babette's facegendata(0001D4B7.NIF)).
 ENDGROUP: DLC Fixes
 
 REGEX: Skyrim HD Full - .+\.esp
