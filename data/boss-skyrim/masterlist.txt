@@ -1481,6 +1481,8 @@ Legendary Smithing Upgrades.esp
 Legionettes.esp
   TAG: {{BASH: Relev}}
 Legs.esp
+LeveledEnemies.esp
+LeveledGuardsImperialsStormcloaks.esp
 CraftUniqueArtifactWEAP.esp
   IFNOT FILE("LegendarySmithingUpgrades.esp") REQ: "http://skyrim.nexusmods.com/mods/1690 LegendarySmithingUpgrades".esp
 LFHM expert.esp
@@ -1594,6 +1596,7 @@ Named bosses in skyrim I v1.1.esp
   // TAG: {{BASH: Names}}
 NamedSoulGems.esp
 navetsea female face preset.esp
+NerfCreatureEffect.esp
 new guards.esp
 NewBeveragesAndMiscItems.esp
 NightingaleArmorTextureFix.esp
@@ -4324,6 +4327,7 @@ ENDGROUP: Quests L
 BEGINGROUP: Quests M
 
 Magelight Grotto.esp
+Mages College Quests.esp
 Manor Dragonborn.esp
 mannyBlackRock.esp
   IF VAR(EN) && IF FILE("mannyBlackRock.esm") SAY: Use either mannyBlackRock.esm or mannyBlackRock.esp
@@ -4822,7 +4826,7 @@ ENDGROUP: Overrides #
 BEGINGROUP: Overrides A
 
 Accessible Vendor Chests.esp
-IFNOT FILE("EmpoweredMagic.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul Gems( FR)?\.esp
+IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul Gems( FR)?\.esp
 Achievement Remover.esp
 AdaptiveNightEye.esp
 AddChoices01.esp
@@ -5380,6 +5384,7 @@ More Powerful Dragons.esp
 REGEX: MoreTraining_\d\d\.esp
 moredeathreloadtime.esp
 More Salt Please.esp
+
 MoreVendorGold_1_01.esp
 MorokeiFix.esp
 MorokeiFixNoHelmet.esp
@@ -5567,6 +5572,7 @@ selbs_combatfinesse.esp
 SensibleMerchants.esp
 SER Merchant fix.esp
 shadowyshadowmere.esp
+Shrine Donations.esp
 shut up dogs.esp
 ShutUP Guards.esp
 REGEX: Skyrim Moon Size (x\d\.\d)\.esp
@@ -6132,6 +6138,7 @@ DarkBrotherhoodAstrid.esp
 db_voidassassin.esp
 Dead Thrall on Anything level 100.esp
 demonocus detect life spell.esp
+DetectLifeDetectsMore.esp
 DirectorsTools.esp
 dovahkiin_bound_weapons.esp
 dovahkiin_levitate_spell.esp
@@ -6363,7 +6370,8 @@ Dual Casting - Time - X0.3.esp
 DualFlurrytoFlurry.esp
 ELEMEarthPrison.esp
 ElemIceWall.esp
-EmpoweredMagic.esp
+REGEX: EmpoweredMagic?.+\.esp
+ IF FILE("EmpoweredMagic.esp") && IF FILE("EmpoweredMagic_Dawnguard.esp") SAY: Use only one: EmpoweredMagic.esp or EmpoweredMagic_Dawnguard.esp (Requires Dawnguard DLC)
 Even Smaller Spell Light Radius.esp
 FNISspells.esp
 ignitetheworld.esp
@@ -8052,6 +8060,14 @@ xced.esp
 [mpx] npc gender race heights v2.esp
 AllWarPaintRaces.esp
 argonianraptor.esp
+REGEX: AROP- (Breton?|Bosmer?|Dunmer?|Khajit?|Nord?|Orsimer?|Imperial?).+\.esp
+REGEX: AROP- Altmer.+\.esp
+  IF FILE("AROP- Altmer Edition.esp") && IF FILE("AROP- Altmer Edition - NW.esp") SAY: Use only one: AROP- Altmer Edition.esp or AROP- Altmer Edition - NW.esp
+REGEX: AROP- Argonian.+\.esp
+  IF FILE("AROP- Argonian Edition.esp") && IF FILE("AROP- Argonian Edition - Poison.esp") SAY: Use only one: AROP- Argonian Edition.esp or AROP- Argonian Edition - Poison.esp
+REGEX: AROP- Redguard.+\.esp
+  IF FILE("AROP- Redguard Edition.esp") && IF FILE("AROP- Redguard Edition - SS.esp") SAY: Use only one: AROP- Redguard Edition.esp or AROP- Redguard Edition - SS.esp
+  // I suspect that this AROP is a replacement to the Better Racials- below...
 AsharaSkyrimCharacterPresetsReplacer.esp
 AutoCastRacials.esp
 Barber.esp
@@ -8098,6 +8114,7 @@ Nicer-Looking Khajiit.esp
 RaceRevamp.esp
 Races and Doomstones.esp
 Race Tweaks.esp
+ReducedCarryWeight - 150.esp
 SkyrimSizesLore.esp
 Khajiit Awesome.esp
 Khajiit Racial Tweek.esp
