@@ -143,10 +143,9 @@ DarkerNights.esm
 DarkerInteriors.esm
 DarkerInteriorsAdd.esm
 DirectorsTools.esm
-Expanded Towns - Ivarstead.esm
-Expanded Towns - Riverwood.esm
-Expanded Towns - Darkwater.esm
-Expanded Towns and Villages - Resource.esm
+REGEX: Expanded Towns.*\.esm
+  SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
+ETaC - Resources.esm
 FallOut3Hairs.esm
 GeneralStores.esm
 SCoL Main.esm
@@ -545,6 +544,9 @@ VLCollisionFix.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 HighResTexturePackFix.esp
 chopping_block_wood_fires.esp
+  IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
+HDtextures01.esp  
+Skyrim - Director's Cut - HD Pack Fix.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
 Unofficial Hearthfire Patch.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
@@ -1618,6 +1620,7 @@ ENDGROUP: Base O
 
 BEGINGROUP: Base P
 
+Passive Beast.esp
 PeopleofSkyrim v1.esp
 People Have Lanterns.esp
 People Have Torches.esp
@@ -2032,6 +2035,7 @@ AdventurersAndTravelersLight.esp
 BeastBanditsV1.esp
 BarberShop.esp
 Convenient Horses.esp
+Convenient Horses - Unique Frost.esp
 CrowdedCities.esp
 REGEX: KoS_Outcast(_Lite)?\.esp
   IF VAR(EN) SAY: Use only one KoS_Outcast*.esp
@@ -2524,6 +2528,7 @@ dragonborngarb.esp
 DragonHideRobeArmor.esp
 Lorecraft - Dragonhide.esp
 DragonplateHelmFix.esp
+DragonPriestMaskJournal.esp
 dragonpriestmasks.esp
 REGEX: Dragonscale.?hood.*\.esp
 dragonslayer.esp
@@ -2790,6 +2795,7 @@ BEGINGROUP: Items I
 
 I5KWeaponOH.esp
   TAG: {{BASH: Delev, Relev}}
+ibr_sedethul.esp
 frost armour.esp
   IF VAR(EN) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://skyrim.nexusmods.com/mods/20868".
     IF VAR(RU) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
@@ -5762,6 +5768,8 @@ BEGINGROUP: Overrides V
 valuablehidesandskinsvanilla.esp
 VampireLordFlys.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+vampire royal hood.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 REGEX: VendorsHaveMoreMoney\d*\.esp
 Veshi so Smislom from hiro.esp
 Vile Art of Necromancy.esp
@@ -5820,13 +5828,22 @@ CK's Improved Windhelm.esp
     IF VAR(RU) WARN: Сообщалось, что этот плагин вызывал частые вылеты. Используйте с осторожностью.
 CM Merchants.esp
 Dawnstar_TheCoinsTide.esp
-Expanded Towns - Riverwood.esp
-Expanded Towns - Rorikstead.esp
-Expanded Towns - Ivarstead.esp
-Expanded Towns - Darkwater.esp
-Expanded Towns - Dragon Bridge.esp
-Expanded Towns and Settlements.esp
-Expanded Towns and Villages.esp
+REGEX: Expanded Towns (- Riverwood?|- Rorikstead?|- Ivarstead?|- Darkwater?|- Dragon Bridge?|and Settlements?|and Villages?)\.esp
+  SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
+ETaC - Darkwater.esp
+  IF FILE("ETaC - Darkwater.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
+ETaC - Dragon Bridge.esp
+  IF FILE("ETaC - Dragon Bridge.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+ETaC - Ivarstead.esp
+  IF FILE("ETaC - Ivarstead.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+ETaC - Morthal.esp
+  IF FILE("ETaC - Morthal.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+ETaC - Riverwood.esp
+  IF FILE("ETaC - Riverwood.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+ETaC - Rorikstead.esp
+  IF FILE("ETaC - Rorikstead.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+ETaC - Villages Complete.esp
+ETaC Follower Add-On.esp
 ExpandedWinterholdRuins.esp
 ExpandedWinterholdRuinsExterior.esp
 Green and White Windhelm.esp
@@ -7969,8 +7986,10 @@ PetSabrecatJango.esp
 Pets.esp
 Sabretooth.esp
 Sabretoothmod_1_02.esp
+SNValeria.esp
 SphereBox.esp
 Taarie.esp
+Tauriel Standalone XCE v1_2.esp
 The Lady Of Akatosh.esp
 timek_Laluna.esp
 Tuath.esp
@@ -8070,6 +8089,7 @@ REGEX: AROP- Redguard.+\.esp
   // I suspect that this AROP is a replacement to the Better Racials- below...
 AsharaSkyrimCharacterPresetsReplacer.esp
 AutoCastRacials.esp
+AutoCastPowers.esp
 Barber.esp
 Basvanbeu MuscleTextureChanger with Navetsea set.esp
 REGEX: Better Racials- .+\.esp
