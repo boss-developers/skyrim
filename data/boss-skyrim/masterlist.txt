@@ -1936,6 +1936,8 @@ BEGINGROUP: Base U
 Ulfric Stormcloak - Allow Shouting.esp
 UltimatePotionsPoisons.esp
 Unicorn.esp
+UniqueBodies.esp
+ // ^ Not sure of this placement, file here: http://skyrim.nexusmods.com/mods/6041
 Unique BOOZE Bottles.esp
 Unique Booze Bottles Alternate Names Version.esp
 Unique Horse Textures.esp
@@ -4197,6 +4199,9 @@ Dwarvenhaven.esp
 dwemer.esp
 Dwemer Armory.esp
 dwemer_egg.esp
+Dwemer_Skyship_v1.esp
+  IF VERSION("SKSE", "0.1.5.2", <) REQ: "http://skse.silverlock.org SKSE" 1.5.2+
+  IF VERSION("TES5", "0.1.5.26", <) REQ: Skyrim 2.5.26+
 dwemerstatuetest.esp
 DwemerTower.esp
 Dynasty_Manor.esp
@@ -4788,7 +4793,7 @@ Masters of Death.esp
 IFNOT VAR(SkyReM) MOD: Morrowloot.esp
   // morrowloot loaded here only if skyre_main.esp is not installed
   TAG: {{BASH: Delev, Relev}}
-  IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
+  IF VAR(EN) SAY: It's recommend to load morrowloot after any plugins that have a Relev tag and change the same LeveledLists as morrowloot because they will add vanilla records removed by morrowloot
     IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные вещи обратно - в списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
 Morrowloot_nwah.esp
   IF VAR(EN) && IF FILE("Morrowloot.esp") WARN: Do not use with original Morrowloot mod.
@@ -7626,6 +7631,7 @@ Serana_Revised.esp
 SeranaSecret.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 SNGakan.esp
+SpectralHordeSpell.esp
 Superficial Companions - Belrand.esp
 Thaiden.esp
 timek_Damius.esp
@@ -8155,6 +8161,7 @@ WiS III races.esp
 REGEX: WiS IV( -)? Races?\.esp
 Gri_BeastFeet.esp
 QuickKhajiits.esp
+VRR.esp
 SkyRe_Races.esp
   IF FILE("EnhancedCharacterEdit.esp") INC: EnhancedCharacterEdit.esp
   IF FILE("DSpSoB.esp") INC: DSpSoB.esp
@@ -8162,7 +8169,7 @@ SkyRe_Races.esp
   IF FILE("[MPX]RaceHeights.esp") INC: [MPX]RaceHeights.esp
   IF FILE("[mpx] npc gender race heights v2.esp") INC: [mpx] npc gender race heights v2.esp
 IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
-  // Must be loaded after SkyRe_Races.esp(if installed) for correct work
+  // Must be loaded after SkyRe_Races.esp(if installed) to work correctly
 Third Era Attributes for Skyrim - Races.esp
 ethereal_elven_overhaul.esp
   IF FILE("SkyRe_Races.esp") && IFNOT CHECKSUM("ethereal_elven_overhaul.esp", 38515FFF) INC: SkyRe.  Get the compatible version "http://skyrim.nexusmods.com/mods/24273/ here".
