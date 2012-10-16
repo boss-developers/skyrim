@@ -144,7 +144,8 @@ DarkerInteriors.esm
 DarkerInteriorsAdd.esm
 DirectorsTools.esm
 REGEX: Expanded Towns.*\.esm
-  SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
+  IF VAR(EN) SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
+   IF VAR(RU) SAY: Устарело, обновите до последней версии Expanded Towns and Cities
 ETaC - Resources.esm
 FallOut3Hairs.esm
 GeneralStores.esm
@@ -433,7 +434,7 @@ DaedricShieldHiResFix.esp
 DaggerBowEnchantPotionFixes.esp
 DB_WitD Quest Fix.esp
 DBHoodFix.esp
-  IFNOT VAR(Dawnguard) REQ: Requires Dawnguard Official DLC
+  IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
 Deflect Arrows Fix - Realistic.esp
 Derkeethus_fix.esp
 Domus_Dementis_fixes.esp
@@ -857,7 +858,8 @@ ENDGROUP: Textures
 BEGINGROUP: Base Early
 
 REGEX: BorderRegionsDisabled(EV)?\.esp
-  SAY: Recommended to change Skyrim.ini bBorderRegionsEnabled=1 to bBorderRegionsEnabled=0 instead.
+  IF VAR(EN) SAY: Recommended to change Skyrim.ini bBorderRegionsEnabled=1 to bBorderRegionsEnabled=0 instead.
+    IF VAR(RU) SAY: Рекомендуется изменить параметр Skyrim.ini bBorderRegionsEnabled=1 на bBorderRegionsEnabled=0 и удалить этот мод.
 Elemental Base.esp
 Less Fugly Female NPCs.esp
 // makes sense to load before mods which alter individual NPC
@@ -1008,7 +1010,6 @@ BetterChestLoot.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 BetterFishAdded.esp
   TAG: {{BASH: Relev}}
-  IF FILE("ImprovedFish.esp") && IF FILE("BetterFishAdded.esp") SAY: Use only one, BetterFishAdded.esp or ImprovedFish.esp
 betterstartingitems.esp
 bbLager.esp
 guild battlemage.esp
@@ -1082,7 +1083,7 @@ Chesko_WearableLantern.esp
 Chesko_WearableLantern_Guards.esp
 Chesko_WearableLantern_Candle.esp
 Chesko_WearableLantern_CandleDG.esp
-  IF FILE("Chesko_WearableLantern_Candle.esp") SAY: Use only one Chesko_WearableLantern_Candle*.esp
+  IF FILE("Chesko_WearableLantern_Candle.esp") INC: Chesko_WearableLantern_Candle.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Chesko_SwiftPotion.esp
 SIWLPatch.esp
@@ -1125,6 +1126,7 @@ Cautious wolves.esp
 Cowardly wolves.esp
 Cowardly skeevers.esp
 Cowardly Wolves and Skeevers.esp
+Cowardly Skeevers and Wolves.esp
 CPDisease.esp
 cplesourcelight.esp
 CrabMeatShitaraba.esp
@@ -1402,7 +1404,7 @@ Improved Container Names.esp
 ImprovedCraftableLockpicks.esp
 ImprovedFish.esp
   TAG: {{BASH: Relev}}
-  IF FILE("ImprovedFish.esp") && IF FILE("BetterFishAdded.esp") SAY: Use only one, BetterFishAdded.esp or ImprovedFish.esp
+  IF FILE("BetterFishAdded.esp") INC: BetterFishAdded.esp
 improvedskillbooks.esp
 improvedquestbooks.esp
 Immersive Battles.esp
@@ -1645,7 +1647,8 @@ ENDGROUP: Base N
 BEGINGROUP: Base O
 
 REGEX: Oblivious Horses.+\.esp
-  SAY: Use only one Oblivious Horses esp.
+  IF VAR(EN) SAY: Use only one Oblivious Horses esp.
+    IF VAR(RU) SAY: Используйте только один Oblivious Horses esp
 Occupy Skyrim.esp
 outfitchanger.esp
 Owned.esp
@@ -2077,8 +2080,11 @@ REGEX: KoS_Outcast(_Lite)?\.esp
     IF VAR(RU) SAY: Используйте только один KoS_Outcast*.esp
 CiviliansWillNotDie.esp
 CiviliansWillNotDieChild.esp
-   IF VAR(RU) SAY: Данная версия мода убирает в детских расах пометку "Child". 
+  IF FILE("CiviliansWillNotDie.esp") INC: CiviliansWillNotDie.esp
+  IF VAR(RU) SAY: Данная версия мода убирает в детских расах пометку "Child". 
 CiviliansWillNotDiePatches.esp
+  IF FILE("CiviliansWillNotDie.esp") INC: CiviliansWillNotDie.esp
+  IF FILE("CiviliansWillNotDieChild.esp") INC: CiviliansWillNotDieChild.esp
   IF VAR(RU) SAY: Сделано с расчетом на версию игры 1.7 и установку всех неофициальных патчей и плагина UFO.
 item sorting dg by saige.esp
 KoS_Land_at_War.esp
@@ -2180,10 +2186,10 @@ ADEC_TeraArmor.esp
 ADEC_TeraArmorCollection.esp
 AdvancedGlassArmor.esp
 AdvancedGlassArmorPlus.esp
-  IF FILE("AdvancedGlassArmor.esp") SAY: Use only one AdvancedGlassArmor*.esp
+  IF FILE("AdvancedGlassArmor.esp") INC: AdvancedGlassArmor.esp
 AdvancedGlassWeapons.esp
 AdvancedGlassWeaponsPlus.esp
-  IF FILE("AdvancedGlassWeapons.esp") SAY: Use only one AdvancedGlassWeapons*.esp
+  IF FILE("AdvancedGlassWeapons.esp") INC: AdvancedGlassWeapons.esp
 AEOR.esp
 AetherialBow&Arrows.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -2540,11 +2546,9 @@ REGEX: DG Jewelry\d?\.esp
 UNP Jewelry.esp
 DGJewelryExtended.esp
 diamondsword.esp
-diamondweapons1.0.esp
-  SAY: Obsolete.  Update to newest version.
-DiamondWeapons1.2.esp
-  SAY: Obsolete.  Update to newest version.
-DiamondWeapons2.0N.esp
+REGEX: diamondweapons.*\.esp
+  IF VAR(EN) && IF REGEX("diamondweapons1\.[02]\.esp") SAY: Obsolete. Update to latest version.
+    IF VAR(RU) && IF REGEX("diamondweapons1\.[02]\.esp") SAY: Устарело. Обновите до последней версии.
 DME.esp
 DME_Light.esp
   IF FILE("DME.esp") INC: DME.esp
@@ -3168,12 +3172,14 @@ NightingaleBowDmgIncDEFAULT.esp
 NightsWatchArmor.esp
 NightsWatchArmorLight.esp
 Nine_Divines_Amulet.esp
-  SAY: Obsolete.  Update to latest version.
+  IF VAR(EN) SAY: Obsolete. Upgrade to latest version
+    IF VAR(RU) SAY: Устарело обновите до последней версии.
 Nine_Divines_Amulet_1.1.esp
 Nine_Divines_Amulet_nonOP.esp
-  SAY: Obsolete.  Update to latest version.
+  IF VAR(EN) SAY: Obsolete. Upgrade to latest version
+    IF VAR(RU) SAY: Устарело обновите до последней версии..
 Nine_Divines_Amulet_nonOP_1.1.esp
-  IF FILE("Nine_Divines_Amulet_1.1.esp") SAY: Use only one Nine_Divines_Amulet*.esp
+  IF FILE("Nine_Divines_Amulet_1.1.esp") INC: Nine_Divines_Amulet_1.1.esp
 ninjatos.esp
 NobleFemaleClothes.esp
 Nocturnal's Accoutrements.esp
@@ -4171,7 +4177,8 @@ BreezehomeLibrary.esp
 Breezehome Open Windows.esp
 BreezehomeRenovation.esp
 REGEX: Breezehome Revised.*\.esp
-  IF REGEX("Breezehome Revised -.+\.esp") SAY: Use only one variant of Breezehome Revised*.esp
+  IF VAR(EN) SAY: Use only one variant of Breezehome Revised*.esp
+    IF VAR(RU) SAY: Используйте только один Breezehome Revised*.esp
 Breezehomeshelves01.esp
 Breezehomeshelves02.esp
 BreezehomeEnchantingTable.esp
@@ -5067,7 +5074,6 @@ codifredsenhancedhunting.esp
 codifredsenhancedsmithing.esp
 Consistent Conjuration.esp
   // TAG: {{BASH: Names}}
-Cowardly Skeevers and Wolves.esp
 CraftTakesTime.esp
 Crafting-MakeSteelFromIronIngots.esp
 CriticalDamageRevised.esp
@@ -5126,11 +5132,14 @@ DragonsEnhanced.esp
 DragonflyNoFlee.esp
 Drelas_Cottage.esp
 REGEX: Dual Casting - Cost - .+\.esp
-  SAY: Use only one Dual Casting - Cost esp.
+  IF VAR(EN) SAY: Use only one Dual Casting - Cost esp.
+    IF VAR(RU) SAY: Используйте только один Dual Casting - Cost esp.
 REGEX: Dual Casting - Effectiveness - .+\.esp
-  SAY: Use only one Dual Casting - Effectiveness esp.
+  IF VAR(EN) SAY: Use only one Dual Casting - Effectiveness esp.
+    IF VAR(RU) SAY: Используйте только один Dual Casting - Effectiveness esp.
 REGEX: Dual Casting - Time - .+\.esp
-  SAY: Use only one Dual Casting - Time esp.
+  IF VAR(EN) SAY: Use only one Dual Casting - Time esp.
+    IF VAR(RU) SAY: Используйте только один Dual Casting - Time esp.
 Dwemer Stuff to Coins.esp
 dynamic fires.esp
 DynamicMerchants.esp
@@ -5189,7 +5198,8 @@ REGEX: Faster Arrows Improved (\d{1,3})?\.esp
 FastTravelFromIndoors.esp
 REGEX: FasterArrows\d*\.esp
 REGEX: fasterdragonbonearrows.+\.esp
-  SAY: Use only one fasterdragonbonearrows*.esp
+  IF VAR(EN) SAY: Use only one fasterdragonbonearrows*.esp
+    IF VAR(RU) SAY: Используйте только один fasterdragonbonearrows*.esp
 faster vanilla horses.esp
 Faster Wild Animals.esp
 Faster Woodland Creatures v1.2.esp
@@ -5205,7 +5215,7 @@ FreeRide.esp
 followersalpha7.esp
 REGEX: Follower Tweaks.*\.esp
   IF VAR(EN) SAY: Only use one Follower Tweaks - plugin at once
-    IF VAR(RU) SAY: Используйте одновременно только один плагин Follower Tweaks
+    IF VAR(RU) SAY: Используйте только один плагин Follower Tweaks
 FollowerWander.esp
 forger.esp
 forsworn briarheart.esp
@@ -5343,10 +5353,9 @@ Improved Runes.esp
 ImprovedArchMageRobes.esp
 ImprovedFood.esp
 improvedoverpowered.esp
-  IF FILE("improvedrealistic.esp") && IF FILE("improvedoverpowered.esp") SAY: Use only one improvedrealistic. esp or improvedoverpowered.esp.
 ImprovedRahgot.esp
 improvedrealistic.esp
-  IF FILE("improvedrealistic.esp") && IF FILE("improvedoverpowered.esp") SAY: Use only one improvedrealistic. esp or improvedoverpowered.esp.
+  IF FILE("improvedoverpowered.esp") INC: improvedoverpowered.esp
 ImprovedScImpUniforms - Main.esp
 Increase Torch Range.esp
 Increased Arrow Damage.esp
@@ -5438,11 +5447,11 @@ Long-Lasting Torches (Default Radius + 10min).esp
 Long-Lasting Torches - Warm Edition (2x Radius - Default Brightness).esp
 Longer Lasting Smith and Ench Potions.esp
 longercandlelight.esp
-  IF FILE("longercandlelight2min.esp") || IF FILE("longercandlelight5min.esp") SAY: Use only one, longercandlelight.esp or longercandlelight2min.esp or longercandlelight5min.esp
 longercandlelight2min.esp
-  IF FILE("longercandlelight.esp") || IF FILE("longercandlelight5min.esp") SAY: Use only one, longercandlelight.esp or longercandlelight2min.esp or longercandlelight5min.esp
+  IF FILE("longercandlelight.esp") INC: longercandlelight.esp
 longercandlelight5min.esp
-  IF FILE("longercandlelight.esp") || IF FILE("longercandlelight2min.esp") SAY: Use only one, longercandlelight.esp or longercandlelight2min.esp or longercandlelight5min.esp
+  IF FILE("longercandlelight.esp") INC: longercandlelight.esp
+  IF FILE("longercandlelight2min.esp") INC: longercandlelight2min.esp
 LongerCraftingDurations.esp
 longerblessings.esp
 LoreFriendlyArtifactRebalance.esp
@@ -5608,7 +5617,7 @@ Painful traps.esp
 PerQ.esp
 Paralyze.esp
 Paralyze-1.1b.esp
-  IF FILE("Paralyze.esp") SAY: Use only one Paralyze*.esp
+  IF FILE("Paralyze.esp") INC: Paralyze.esp
 Passive dragons.esp
 playing_children.esp
 Usable lantern.esp
@@ -5955,19 +5964,26 @@ CK's Improved Windhelm.esp
 CM Merchants.esp
 Dawnstar_TheCoinsTide.esp
 REGEX: Expanded Towns (- Riverwood?|- Rorikstead?|- Ivarstead?|- Darkwater?|- Dragon Bridge?|and Settlements?|and Villages?)\.esp
-  SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
+  IF VAR(EN) SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
+   IF VAR(RU) SAY: Устарело, обновите до последней версии Expanded Towns and Cities
 ETaC - Darkwater.esp
-  IF FILE("ETaC - Darkwater.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
+   IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Dragon Bridge.esp
-  IF FILE("ETaC - Dragon Bridge.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+   IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Ivarstead.esp
-  IF FILE("ETaC - Ivarstead.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+   IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Morthal.esp
-  IF FILE("ETaC - Morthal.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+   IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Riverwood.esp
-  IF FILE("ETaC - Riverwood.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Rorikstead.esp
-  IF FILE("ETaC - Rorikstead.esp") && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
+   IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Villages Complete.esp
 ETaC Follower Add-On.esp
 ExpandedWinterholdRuins.esp
@@ -6515,7 +6531,8 @@ ELEMEarthPrison.esp
 ElemIceWall.esp
 EmpoweredMagic.esp
 EmpoweredMagic_Dawnguard.esp
-  IFNOT FILE("EmpoweredMagic.esp") WARN: Requires EmpoweredMagic.esp and Dawnguard DLC
+  IFNOT FILE("EmpoweredMagic.esp") REQ: EmpoweredMagic.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
 Even Smaller Spell Light Radius.esp
 FNISspells.esp
 ignitetheworld.esp
@@ -6524,7 +6541,7 @@ LFox No Nightingale Power Cooldown.esp
 LFox No Racial Power Cooldown.esp
 Longer Conjuration Spells.esp
 Lost Magic.esp
-	TAG: {{BASH: Delev, Relev}}
+  TAG: {{BASH: Delev, Relev}}
 LZA Quieter Dremora Summons.esp
 Magelight Multi Cast.esp
 Magelight Multi Cast lower version.esp
@@ -6701,7 +6718,7 @@ improvedsneakdetection.esp
 LessLockpicks.esp
 LockpickingOverhaul.esp
 LockpickingOverhaulPerks.esp
-  IFNOT FILE("LockpickingOverhaul.esp") WARN: LockpickingOverhaul.esp
+  IFNOT FILE("LockpickingOverhaul.esp") REQ: LockpickingOverhaul.esp
 LockpickingRedone.esp
 lockpicksweetspot.esp
 REGEX: LFox Pickpocketing Chance Caps at .+\.esp
@@ -8217,11 +8234,14 @@ AllWarPaintRaces.esp
 argonianraptor.esp
 REGEX: AROP- (Breton?|Bosmer?|Dunmer?|Khajit?|Nord?|Orsimer?|Imperial?).+\.esp
 REGEX: AROP- Altmer.+\.esp
-  IF FILE("AROP- Altmer Edition.esp") && IF FILE("AROP- Altmer Edition - NW.esp") SAY: Use only one: AROP- Altmer Edition.esp or AROP- Altmer Edition - NW.esp
+  IF VAR(EN) && IF FILE("AROP- Altmer Edition.esp") && IF FILE("AROP- Altmer Edition - NW.esp") SAY: Use only one: AROP- Altmer Edition.esp or AROP- Altmer Edition - NW.esp
+    IF VAR(RU) && IF FILE("AROP- Altmer Edition.esp") && IF FILE("AROP- Altmer Edition - NW.esp") SAY: Используйте только один мод: AROP- Altmer Edition.esp или AROP- Altmer Edition - NW.esp
 REGEX: AROP- Argonian.+\.esp
-  IF FILE("AROP- Argonian Edition.esp") && IF FILE("AROP- Argonian Edition - Poison.esp") SAY: Use only one: AROP- Argonian Edition.esp or AROP- Argonian Edition - Poison.esp
+  IF VAR(EN) && IF FILE("AROP- Argonian Edition.esp") && IF FILE("AROP- Argonian Edition - Poison.esp") SAY: Use only one: AROP- Argonian Edition.esp or AROP- Argonian Edition - Poison.esp
+    IF VAR(RU) && IF FILE("AROP- Argonian Edition.esp") && IF FILE("AROP- Argonian Edition - Poison.esp") SAY: Используйте только один мод: AROP- Argonian Edition.esp или AROP- Argonian Edition - Poison.esp
 REGEX: AROP- Redguard.+\.esp
-  IF FILE("AROP- Redguard Edition.esp") && IF FILE("AROP- Redguard Edition - SS.esp") SAY: Use only one: AROP- Redguard Edition.esp or AROP- Redguard Edition - SS.esp
+  IF VAR(EN) && IF FILE("AROP- Redguard Edition.esp") && IF FILE("AROP- Redguard Edition - SS.esp") SAY: Use only one: AROP- Redguard Edition.esp or AROP- Redguard Edition - SS.esp
+    IF VAR(RU) && IF FILE("AROP- Redguard Edition.esp") && IF FILE("AROP- Redguard Edition - SS.esp") SAY: Используйте только один мод: AROP- Redguard Edition.esp или AROP- Redguard Edition - SS.esp
   // I suspect that this AROP is a replacement to the Better Racials- below...
 AsharaSkyrimCharacterPresetsReplacer.esp
 AutoCastRacials.esp
@@ -8301,7 +8321,8 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   // Must be loaded after SkyRe_Races.esp(if installed) to work correctly
 Third Era Attributes for Skyrim - Races.esp
 ethereal_elven_overhaul.esp
-  IF FILE("SkyRe_Races.esp") && IFNOT CHECKSUM("ethereal_elven_overhaul.esp", 38515FFF) INC: SkyRe.  Get the compatible version "http://skyrim.nexusmods.com/mods/24273/ here".
+  IF VAR(EN) && IF FILE("SkyRe_Races.esp") && IFNOT CHECKSUM("ethereal_elven_overhaul.esp", 38515FFF) INC: SkyRe.  Get the compatible version "http://skyrim.nexusmods.com/mods/24273/ here".
+    IF VAR(RU) && IF FILE("SkyRe_Races.esp") SAY: Убедитесь, что используете совместимую версию, которую можно скачать "http://skyrim.nexusmods.com/mods/24273/ отсюда".
 ENDGROUP: Race Overrides
 
 BEGINGROUP: Message suppression/changing overrides
