@@ -434,7 +434,7 @@ DaedricShieldHiResFix.esp
 DaggerBowEnchantPotionFixes.esp
 DB_WitD Quest Fix.esp
 DBHoodFix.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Deflect Arrows Fix - Realistic.esp
 Derkeethus_fix.esp
 Domus_Dementis_fixes.esp
@@ -912,7 +912,7 @@ aDragonRide.esp
 ADV HB-Style.esp
 advancedcrafting.esp
 Aetherial Forge Advanced.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Aetherium_byAlmazi.esp
 AjenHorseFIX.esp
   IFNOT FILE("Ajen.esm") REQ: Ajen.esm
@@ -2242,6 +2242,8 @@ Armor_Tera_HmF_L18.esp
 armored armwraps and footwraps.esp
 armored nocturnal robes.esp
 ArmoredCircletsQuickFox.esp
+ArmoredAlikrHoods.esp
+  SAY: Obsolete.  Update to renamed ArmoredAlikrGarb.esp
 ArmoredAlikrGarb.esp
 armorkits.esp
   TAG: {{BASH: Relev}}
@@ -2627,6 +2629,8 @@ DVd.esp
 DwarvenArmorWeapons.esp
 Dwarven Condenser.esp
 DwarvenMech.esp
+DwarvenRifle_Guilmonex.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 dwarvenscythe.esp
 DwarvenShooter.esp
 DwarvenSwords.esp
@@ -3181,6 +3185,8 @@ Nine_Divines_Amulet_nonOP.esp
 Nine_Divines_Amulet_nonOP_1.1.esp
   IF FILE("Nine_Divines_Amulet_1.1.esp") INC: Nine_Divines_Amulet_1.1.esp
 ninjatos.esp
+NobleArtifactsForSkyrim_0.6_Eng.esp
+NobleArtifactsForSkyrim_0.6_Rus.esp
 NobleFemaleClothes.esp
 Nocturnal's Accoutrements.esp
 nomo1.esp
@@ -3230,6 +3236,8 @@ SkyRe_Plugin_Omegared99sArmorCompilation.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 Onechanbara Kagura Set.esp
+One handed Crossbow.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 openfacehelmetsstandalone.esp
 OrcishMaskedHelmet.esp
 OreynBearclaw.esp
@@ -3366,6 +3374,7 @@ rosegeant.esp
 royal_daedric.esp
 RoyalArmorOfAragorn.esp
 RoyalElven.esp
+RRTheSword.esp
 ENDGROUP: Items R
 
 BEGINGROUP: Items S
@@ -3563,6 +3572,14 @@ Tona_airy.esp
 Tonas Oblivion Scarves.esp
 ToolCraft.esp
 Tools of Kagrenac.esp
+TorchArrow.esp
+  IF FILE("TorchArrow-Dawnguard.esp") SAY: Use Torch-Arrow.esp or TorchArrow-Dawnguard.esp, not both.
+TorchArrowBS.esp
+  IFNOT FILE("TorchArrow.esp") REQ: TorchArrow.esp
+TorchArrow-Dawnguard.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesada DLC)
+TorchArrowBS-Dawnguard.esp
+  IFNOT FILE("TorchArrow-Dawnguard.esp") REQ: TorchArrow-Dawnguard.esp
 TrenchKnives Dagger Edition.esp
 TribalMightArmor.esp
 Tribunal Robes by Zairaam.esp
@@ -3834,12 +3851,15 @@ Harvest Overhaul Creatures.esp
 HarvestOverhaulCreatures_IMCN_Compatibility_Patch.esp
 //Is Harvest Overhaul Creatures.esp obsolete as of 1.5? It isn't included in 1.5 at http://skyrim.nexusmods.com/mods/16553
 HarvestOverhaulCreaturesDogMeatFree.esp
+mm_BeluaSanguinareRevisitedVampireRace.esp
+  SAY: Obsolete.  Delete, no replacement in latest version.
 MM_BeluaSangunaireRevisited.esp
 mm_BeluaSanguinareRevisitedDialogueFixes.esp
 MM_BeluaSangunaireRevisitedLootTables.esp
 mm_BeluaSanguinareRevisitedLootTables.esp
 mm_BeluaSanguinareRevisitedRefuge.esp
 mm_BeluaSanguinareRevisitedStaminaSprintDrain.esp
+mm_BeluaSanguinareRevisitedDGCompatibility.esp
 T3nd0sOverhaul.esp
   IF VAR(EN) SAY: Obsolete. Update to latest 'SkyRe - Skyrim Redone'
     IF VAR(RU) SAY: Обновите до последней версии 'SkyRe - Skyrim Redone'
@@ -4066,6 +4086,8 @@ AbandonedStronghold - Gash Murug.esp
 ac2.esp
 Adam Adamowicz's Grave.esp
 AerafalEN.esp
+Aethernautics.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ajd_skyrimbookstores.esp
 adalmatar.esp
 AlchemyChest.esp
@@ -4312,6 +4334,7 @@ Fantasy Markarth.esp
 Farm House_V2.esp
 FarviewCabin.esp
 FCKagrenacsInstantFortress.esp
+FH_Plaguesword.esp
 Fishers Farm.esp
 fjorinstomb.esp
 Fleetford.esp
@@ -4431,6 +4454,8 @@ mannyDragonhead.esp
 Markarth Dwemer Palace.esp
 Markarth_plus.esp
 majoramoon.esp
+MeekoHusky.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Milan's PAck.esp
 MilanDungeonPack2.esp
 moonpath_questdata.esp
@@ -4573,6 +4598,7 @@ rooq.esp
 rooq_bathing_twocell.esp
 roseandthorn.esp
 royalmansion.esp
+RRLegendoftheLostSword.esp
 Run For Your Lives.esp
   IF FILE("EveryoneGetInside.esp") INC: EveryoneGetInside.esp
 rwhideout.esp
@@ -5095,7 +5121,7 @@ DarwinsPT_less_food75.esp
 DarwinsPT_runspeed.esp
 DarwinsPT_Infected.esp
 Dawnguard - Join As A Vampire.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 db-nightshade-replacer.esp
 Deadly Traps.esp
 Death Reload (30 Minutes).esp
@@ -6533,7 +6559,7 @@ ElemIceWall.esp
 EmpoweredMagic.esp
 EmpoweredMagic_Dawnguard.esp
   IFNOT FILE("EmpoweredMagic.esp") REQ: EmpoweredMagic.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Even Smaller Spell Light Radius.esp
 FNISspells.esp
 ignitetheworld.esp
@@ -6787,7 +6813,7 @@ REGEX: Dual Wield Parrying.*\.esp
   IF FILE("Dual Wield Parrying_ScriptDragon.esp") && IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
   IF VAR(EN) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) REQ: Dawnguard version. Remove and install 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
     IF VAR(RU) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) REQ: Версия для Dawnguard. Удалите это и установите 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
-  IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") && IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
+  IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") &&   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Duel Combat Realism CK.esp
 Duel - Combat Realism FAST.esp
 Duel.esp
@@ -8299,6 +8325,8 @@ Khajiit Racial Tweek.esp
 More Hair Colors.esp
 Morrowind Races.esp
 mwcrh&w.esp
+NormalVampireFaces.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 OCS OSR.esp
 PrettyKhajiit.esp
 RaRe.esp
