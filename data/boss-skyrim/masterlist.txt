@@ -856,6 +856,8 @@ ENDGROUP: Textures
 
 BEGINGROUP: Base Early
 
+REGEX: BorderRegionsDisabled(EV)?\.esp
+  SAY: Recommended to change Skyrim.ini bBorderRegionsEnabled=1 to bBorderRegionsEnabled=0 instead.
 Elemental Base.esp
 Less Fugly Female NPCs.esp
 // makes sense to load before mods which alter individual NPC
@@ -1125,6 +1127,7 @@ Cowardly skeevers.esp
 Cowardly Wolves and Skeevers.esp
 CPDisease.esp
 cplesourcelight.esp
+CrabMeatShitaraba.esp
 Craft, Temper, Smelt.esp
 CRAFT - Salvage Material.esp
   IF VAR(EN) && IF FILE("Craft, Temper, Smelt.esp") WARN: Delete. Already included in Craft, Temper, Smelt.esp
@@ -1146,6 +1149,7 @@ craftable soulgems.esp
 Craftable Soulstoneswithforge.esp
 Craftable Torches.esp
 craftablescrolls.esp
+Craftable Scrolls.esp
 craft soul gems.esp
 IFNOT CHECKSUM("Crafting300.esp", FFCC056A) && IFNOT CHECKSUM("Crafting300.esp", 50142D0D) MOD: Crafting300.esp
   TAG: {{BASH: Delev, Relev}}
@@ -1209,6 +1213,7 @@ DFB - Random Encounters.esp
 Diverse Faction Weapons.esp
 DivinePunishmentForArrowsToTheKnee.esp
 Domino_PerkBooks_Easy.esp
+Dragon Bridge Home.esp
 DragonChristine.esp
 DragonCrownCraftable.esp
 DragonPlateCrownCraftable.esp
@@ -2173,6 +2178,12 @@ ADEC_Nocturnal.esp
 ADEC_SuccubusArmor.esp
 ADEC_TeraArmor.esp
 ADEC_TeraArmorCollection.esp
+AdvancedGlassArmor.esp
+AdvancedGlassArmorPlus.esp
+  IF FILE("AdvancedGlassArmor.esp") SAY: Use only one AdvancedGlassArmor*.esp
+AdvancedGlassWeapons.esp
+AdvancedGlassWeaponsPlus.esp
+  IF FILE("AdvancedGlassWeapons.esp") SAY: Use only one AdvancedGlassWeapons*.esp
 AEOR.esp
 AetherialBow&Arrows.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -2274,6 +2285,7 @@ SkyRe_Plugin_BaratheonArmor_1.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF VAR(EN) && IF ACTIVE("BaratheonArmor.esp") SAY: Remember not to load (or to simply delete) BaratheonArmor.esp
     IF VAR(RU) && IF ACTIVE("BaratheonArmor.esp") SAY: Не забудьте отключить или удалить BaratheonArmor.esp
+Bard'sLeap.esp
 Basara.esp
 /* bat3.esp, hawk2.esp, wyvern4.esp contain Item Records */
 bat3.esp
@@ -3054,6 +3066,7 @@ Malo_Waffen.esp
 March Madness Standalone.esp
 maruMask.esp
 MashupUNP.esp
+master alchemy book.esp
 REGEX: matys knights of the nine armor (\d\.\d)\.esp
 Matys Mithril armor Enhanced.esp
 kotn mage.esp
@@ -3074,6 +3087,7 @@ Minotaur_Skin.esp
 Mjolnir.esp
 MK_Ermak Armor.esp
 mlr.esp
+mmmoveablesachel.esp
 mmpieceringparts1.esp
 mm_SenseLife.esp
 MM_SunniesWoe.esp
@@ -3153,6 +3167,13 @@ REGEX: nightshade_armor(_UNP|_UNPB|_CBBE)?\.esp
 NightingaleBowDmgIncDEFAULT.esp
 NightsWatchArmor.esp
 NightsWatchArmorLight.esp
+Nine_Divines_Amulet.esp
+  SAY: Obsolete.  Update to latest version.
+Nine_Divines_Amulet_1.1.esp
+Nine_Divines_Amulet_nonOP.esp
+  SAY: Obsolete.  Update to latest version.
+Nine_Divines_Amulet_nonOP_1.1.esp
+  IF FILE("Nine_Divines_Amulet_1.1.esp") SAY: Use only one Nine_Divines_Amulet*.esp
 ninjatos.esp
 NobleFemaleClothes.esp
 Nocturnal's Accoutrements.esp
@@ -3337,6 +3358,7 @@ Rorona.esp
 Rorona3scabbard.esp
 rosegeant.esp
 royal_daedric.esp
+RoyalArmorOfAragorn.esp
 RoyalElven.esp
 ENDGROUP: Items R
 
@@ -4148,6 +4170,8 @@ BreezehomeEnchanter.esp
 BreezehomeLibrary.esp
 Breezehome Open Windows.esp
 BreezehomeRenovation.esp
+REGEX: Breezehome Revised.*\.esp
+  IF REGEX("Breezehome Revised -.+\.esp") SAY: Use only one variant of Breezehome Revised*.esp
 Breezehomeshelves01.esp
 Breezehomeshelves02.esp
 BreezehomeEnchantingTable.esp
@@ -4186,6 +4210,7 @@ CliffCabinWinterhold_1-4.esp
 CoD Waking Nightmare II.esp
 collectors_chamber.esp
 College Of Winterhold Overhaul Release - V1.02.esp
+ColovianGunder.esp
 Commute.esp
 Creed Hills Estate.esp
 Creepy Hovel.esp
@@ -4283,6 +4308,7 @@ FCKagrenacsInstantFortress.esp
 Fishers Farm.esp
 fjorinstomb.esp
 Fleetford.esp
+Forrest's Diary.esp
 Fort Ironcrag.esp
 Free Mine.esp
 FrozenPeakLaboratory.esp
@@ -4365,6 +4391,7 @@ BEGINGROUP: Quests L
 
 LakesideHideaway.esp
 Landscaped_Breezehome.esp
+Landscaped_Honeyside.esp
 Landscaped_Homes_Honeyside.esp
 Landscaped_Homes_Proudspire.esp
 Landscaped_Proudspire.esp
@@ -4716,6 +4743,7 @@ WestbrookKeep.esp
 Whiterun Spruce by ReVan1199.esp
 Windhelm Dock FTP.esp
 WindhelmBetterDocks.esp
+windhelm_thane.esp
 warehouse_landscape.esp
 wheezesdungeonpack1.esp
 Whispering Waters Barrow.esp
@@ -5098,11 +5126,11 @@ DragonsEnhanced.esp
 DragonflyNoFlee.esp
 Drelas_Cottage.esp
 REGEX: Dual Casting - Cost - .+\.esp
-  IF REGEX("Dual Casting - Cost - .+\.esp") SAY: Use only one Dual Casting - Cost esp.
+  SAY: Use only one Dual Casting - Cost esp.
 REGEX: Dual Casting - Effectiveness - .+\.esp
-  IF REGEX("Dual Casting - Effectiveness - .+\.esp") SAY: Use only one Dual Casting - Effectiveness esp.
+  SAY: Use only one Dual Casting - Effectiveness esp.
 REGEX: Dual Casting - Time - .+\.esp
-  IF REGEX("Dual Casting - Time - .+\.esp") SAY: Use only one Dual Casting - Time esp.
+  SAY: Use only one Dual Casting - Time esp.
 Dwemer Stuff to Coins.esp
 dynamic fires.esp
 DynamicMerchants.esp
@@ -5118,6 +5146,7 @@ Eld-rareCostlyLockpicks.esp
 ElkHide.esp
 emSCChangeOfDress.esp
 Enhanced Auriel's Bow.esp
+REGEX: EnhancedGauldurAmulet.*\.esp
 Encryption - DoF.esp
 Encumbered Is Sacrosanct.esp
 ENG_Firewood_Ore_&_Ingot_weight_reduction_v1.0.esp
@@ -5357,6 +5386,7 @@ Killable Lootable Children.esp
 KillEssential.esp
 killkids.esp
 killkidsV2.esp
+Klimmek the Small Time Trader of Ivarstead.esp
 REGEX: knc_resilient_dragons(_Vanillashout)?\.esp
   IF VAR(EN) INC: Other dragons mods(Deadly Dragons etc)
     IF VAR(RU) INC: Другие, меняющие драконов,  моды(Deadly Dragons и т.п.)
@@ -5576,6 +5606,9 @@ BEGINGROUP: Overrides P
 
 Painful traps.esp
 PerQ.esp
+Paralyze.esp
+Paralyze-1.1b.esp
+  IF FILE("Paralyze.esp") SAY: Use only one Paralyze*.esp
 Passive dragons.esp
 playing_children.esp
 Usable lantern.esp
@@ -5871,6 +5904,7 @@ ENDGROUP: Overrides V
 
 BEGINGROUP: Overrides W
 
+Wabbajack Fix.esp
 walk.esp
 IFNOT REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
 wealthymerchants.esp
@@ -5979,6 +6013,7 @@ REGEX: CityForest.*\.esp
   IF VAR(EN) && IF FILE("CityForestv2.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF FILE("CityForestv2.esp") WARN: Устарело. Обновите до последней версии.
 /* Changes FLOR Records */
+Completed Forges.esp
 AIMP - Antz in my Pantz.esp
 Chesko_Step418.esp
 gkbforest.esp
@@ -6254,6 +6289,7 @@ dovahkiin_levitate_spell.esp
 dovahkiin_shieldward.esp
 DynamicWard.esp
 E0TeleportSpells.esp
+Elderman's Cure Disease Spell.esp
 ElementalFuryFix.esp
 Elementalist.esp
 elemballlightning.esp
