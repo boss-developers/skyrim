@@ -409,6 +409,7 @@ bard's_college_quests_fix.esp
 bookshelf_fix0.2.esp
 brandsheiprisonfix.esp
 brawlbug-plugin.esp
+  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/24020 Brawl Bugs CE"
 Brawl Bugs CE.esp
   IF VAR(EN) && IF VAR(SkyReM) ERROR: Delete. Already included in SkyRe_main.esp v0.99.18
     IF VAR(RU) && IF VAR(SkyReM) ERROR: Удалите. Уже включено в SkyRe_main.esp вер.0.99.18
@@ -1827,6 +1828,8 @@ REGEX: Deleveled Skyrim - SkyMoMod_list( \(No EleTri\)| \(No EleTriSta\))\.esp
   TAG: {{BASH: Delev, Relev}}
 SSS Skyrim Monster Mod Purist Lore-Friendly Patch.esp
 SIMoMoCoPatch.esp
+SkyRealism - Feast and Famine.esp
+  IFNOT FILE("BabbetesFeastBalanced.esp") REQ: BabbetesFeastBalanced.esp
 Skyrim Barbers.esp
 Skyrim Expanded Loot Tables.esp
   // TAG: {{BASH: Invent}}
@@ -1848,6 +1851,7 @@ Slaughterfish Monster.esp
 Sleep well.esp
 SMDropLitTorch.esp
 smeltable dwarven scrap metal.esp
+smeltdown_ingots_osr.esp
 smelting extended.esp
 smelting mod by soto.esp
 smeltingtowns.esp
@@ -2200,6 +2204,7 @@ AetheriumSwordsnArmor.esp
 Airy Armor.esp
 AK- Daedric Blue Weapons.esp
 Akaviri Dai-Katana.esp
+Alchemy Apparatuses .95.05.esp
 Alduin's son.esp
 AlduinWing.esp
 Alexia CatGarter.esp
@@ -2210,6 +2215,7 @@ Alienzerox_White_Fur_Robe&Hood_FEMALE_ONLY_0-1-01.esp
 Alienzerox_White_Fur_Robe&Hood_LA_FEMALE_ONLY_0-1-02.esp
 AllowAmuletRing.esp
 Alternate_Armor_Appearances_v1.20.esp
+aMagicalChest.esp
 AmazonArmor.esp
 Amiella Outfit.esp
 amk Border Lace Lingerie.esp
@@ -3683,6 +3689,8 @@ BEGINGROUP: Items W
 
 REGEX: W2_HelmetPack(-2)?\.esp
 WaterArrows.esp
+WaterArrowsAndBolts.esp
+  IF VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 waterwalkring.esp
 Wanderer Armor.esp
 wanlifu Dress.esp
@@ -3839,18 +3847,15 @@ Crafting300 - No Perk Tree Edits.esp
 Darwins_Hard_Times.esp
 enhancedgameplay.esp
 HarvestOverhaul.esp
-//Is Harvest Overhaul.esp obsolete? I can't find it at http://skyrim.nexusmods.com/mods/16553
-Harvest Overhaul.esp
-//1.5, 1.1
-HarvestOverhaul_100Chance.esp
-//1.5, 1.1, 1.0
+HarvestOverhaulDawnguard.esp
 HarvestOverhaulCreatures.esp
-//Is Harvest Overhaul Creatures.esp obsolete? I can't find it at http://skyrim.nexusmods.com/mods/16553
-Harvest Overhaul Creatures.esp
-//1.5, 1.1, 1.0
-HarvestOverhaulCreatures_IMCN_Compatibility_Patch.esp
-//Is Harvest Overhaul Creatures.esp obsolete as of 1.5? It isn't included in 1.5 at http://skyrim.nexusmods.com/mods/16553
+HarvestOverhaulCreaturesDawnguard.esp
+  IF FILE("HarvestOverhaulCreatures.esp") SAY: Use only one HarvestOverhaulCreatures esp
+// Harvest Overhaul Compatibility patches loacted after mods patched Skyre_main.esp and IMCN - Overrides.esp as author suggests
+HarvestOverhaul_100Chance.esp
+  SAY: Obsolete.  Delete, no replacement in latest version.
 HarvestOverhaulCreaturesDogMeatFree.esp
+  SAY: Obsolete.  Delete, no replacement in latest version.
 mm_BeluaSanguinareRevisitedVampireRace.esp
   SAY: Obsolete.  Delete, no replacement in latest version.
 MM_BeluaSangunaireRevisited.esp
@@ -4436,6 +4441,7 @@ LMSkyrimBetterPlayerHomes.esp
 LocalizedGuildJobs.esp
 Lost Paradise.esp
 Lost Prospect Mine Home.esp
+Luggage.esp
 LYRreachwindEyrieCrafting.esp
 LYRReachwindEyrieV100.esp
 ENDGROUP: Quests L
@@ -4629,6 +4635,7 @@ REGEX: SBT Smal\d\.esp
 Sevenkeys.esp
 Shack.esp
 Shady_Tales.esp
+Shady Fences.esp
 ShayksBAQ.esp
 ShipHome.esp
 SilvercrestTomb.esp
@@ -4691,6 +4698,7 @@ Temporal Rift.esp
 TezofTerrornorthsTomb.esp
 The Arena.esp
 The Asteria - Dwemer Airship.esp
+The Drunkard Drinks v1.00.esp
 the tree of vjaas.esp
 Quest_TheBiggerTheyAre.esp
 TheClone Breezehome.esp
@@ -4972,6 +4980,7 @@ Ancient Nordarmor improved.esp
 Angel_of_Death.esp
 Another Shadowmere Mod.esp
 Another_Skooma.esp
+Appropriately Attired Jarls Redux.esp
 Arachnophobia.esp
 Archery Overhaul.esp
 REGEX: Improved Archery and Bows - Enemy Archers.*\.esp
@@ -4980,6 +4989,7 @@ ArchmageNecklace.esp
 Argonian Breathless Emerge.esp
 Argonian Claws and Pugilist bonus.esp
 Argonian resist poison.esp
+Armored Skyrim.esp
 armored-horses.esp
 armorLegion.esp
   TAG: {{BASH: Delev, Relev}}
@@ -5023,6 +5033,11 @@ mod1.esp
   IF VAR(EN) && IF FILE("Better Bone Armor.esp") SAY: Use either Better Bone Armor.esp or mod1.esp
     IF VAR(RU) && IF FILE("Better Bone Armor.esp") SAY: Используйте или Better Bone Armor.esp или mod1.esp
 Better Bound Weapons.esp
+Better Deadly Bandits.esp
+  TAG: {{BASH: Relev}}
+Better Deadly Bandits Weapons Only.esp
+  TAG: {{BASH: Relev}}
+  IF FILE("Better Deadly Bandits.esp") SAY: Use only one Better Deadly Bandits esp.
 Better Dragons.esp
 Better Dynamic Snow.esp
 Better_Food_and_Sleep.esp
@@ -5287,6 +5302,8 @@ Guard Dialogue Overhaul Lite.esp
 GuardianStonesOverhaul-Candrian.esp
 guardskillcomments.esp
 GuardsNoShoutStop.esp
+GZD - Ancient Falmer Crown.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ENDGROUP: Overrides G
 
 BEGINGROUP: Overrides H
@@ -5520,6 +5537,18 @@ MasterTrainers100.esp
 REGEX: MatsoImmersive(Rain|Sun)\.esp
 MD - Protected NPCs.esp
 MD - Stop to Dragon Encounters.esp
+MD - EFCS with heights.esp
+  SAY: Obsolete.  Update to latest renamed version.
+MD - EFCS with heights also for mammoths.esp
+  SAY: Obsolete.  Update to latest renamed version.
+MD - Tough life with new heights.esp
+  SAY: Obsolete.  Update to latest renamed version.
+MD - EFCS.esp
+MD 07 - EFCS.esp
+  IF FILE("MD - EFCS.esp") SAY: Use only one EFCS esp.
+Only vampires&werewolves changes.esp
+  // from EFCS mod
+  IF FILE("MD - EFCS.esp") || IF FILE("MD 07 - EFCS.esp") SAY: Use only one EFCS esp.
 Mehrune's Razor Power.esp
 MehrunesRazorHigherKillChance.esp
 Melee Overhaul - Distinct Styles.esp
@@ -5993,25 +6022,25 @@ REGEX: Expanded Towns (- Riverwood?|- Rorikstead?|- Ivarstead?|- Darkwater?|- Dr
   IF VAR(EN) SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
     IF VAR(RU) SAY: Устарело, обновите до последней версии Expanded Towns and Cities
 ETaC - Darkwater.esp
-  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
-    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
+  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
 ETaC - Dragon Bridge.esp
-  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
-    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
+  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
 ETaC - Ivarstead.esp
-  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
-    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
+  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
 ETaC - Morthal.esp
-  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
-    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
+  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
 ETaC - Riverwood.esp
-  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
-    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
+  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
 ETaC - Rorikstead.esp
-  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  Villages Complete contains these changes.
-    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
+  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
 ETaC - Villages Complete.esp
 ETaC Follower Add-On.esp
+ETaC BFT Patch.esp
+  IFNOT FILE("Carriage1.esp") REQ: Carriage1.esp
+ETaC SkyRealFF Patch - Standard.esp
+  IFNOT FILE("SkyRealism - Feast and Famine.esp") REQ: SkyRealism - Feast and Famine.esp
+ETaC SkyRealFF Patch - Dawnguard.esp 
+  IFNOT FILE("SkyRealism - Feast and Famine.esp") REQ: SkyRealism - Feast and Famine.esp , Dawnguard version
 ExpandedWinterholdRuins.esp
 ExpandedWinterholdRuinsExterior.esp
 Green and White Windhelm.esp
@@ -6031,6 +6060,9 @@ RiverwoodEnhancedPlugin.esp
 Smelter_Riften.esp
 Smelter_Solitude.esp
 Solitude A City Of Trade.esp
+  IF FILE("Solitude A City Of Trade.esm") SAY: Use only one Solitude a City of Trade
+Solitude A City Of Trade LITE!.esp  
+  IF FILE("Solitude A City Of Trade.esm") || IF FILE("Solitude A City Of Trade.esp") SAY: Use only one Solitude a City of Trade
 TAVERiften.esp
 TAVESolitude.esp
 TAVEWindhelm.esp
@@ -6058,6 +6090,7 @@ REGEX: CityForest.*\.esp
 Completed Forges.esp
 AIMP - Antz in my Pantz.esp
 Chesko_Step418.esp
+Chesko_Step418_SN.esp
 gkbforest.esp
 Green Whiterun.esp
 ENDGROUP: Landscaping
@@ -6150,6 +6183,7 @@ IFNOT VAR(SkyReM) REGEX: vinis_food_and_rest.+\.esp
 /* Imps More Complex Needs - Vampirism to load after other vampire feeding mods */
 IMCN - Overrides.esp
 EOS - IMCN Compatibility.esp
+HarvestOverhaulCreatures_IMCN_Compatibility_Patch.esp
 ENDGROUP: Realism
 
 BEGINGROUP: Vampires and Werewolves
@@ -6325,6 +6359,7 @@ db_voidassassin.esp
 Dead Thrall on Anything level 100.esp
 demonocus detect life spell.esp
 DetectLifeDetectsMore.esp
+DFB - More Summons.esp
 DirectorsTools.esp
 dovahkiin_bound_weapons.esp
 dovahkiin_levitate_spell.esp
@@ -6347,6 +6382,7 @@ ForbiddenMagic.esp
 ForcePush.esp
 ForgottenMastery.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+frostflame spell.esp
 Ghostifish-Magical Alchemy Harvest-o-tron.esp
 gome.esp
 Grand Healing Mod.esp
@@ -7077,6 +7113,7 @@ MBDagger.esp
 MBSword.esp
 MD A better level progression.esp
 MD - Real Unleveled Skyrim.esp
+MD - Tougher named NPCs.esp
 More Exp Chance.esp
 More Exp Change for cooking.esp
 MorePP.esp
@@ -7338,6 +7375,7 @@ SkyRe_Dreamcloth.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 REGEX: Acquisitive Soul Gems( FR)?\.esp
   // must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
+HarvestOverhaulSkyReCompatibility.esp
 Perk_Soul_Siphon_Full_Recharge.esp
 SynergyBonuses.esp
 xpMedium.esp
@@ -7375,6 +7413,8 @@ Light Armor Unarmed Scaling (no armor requirement).esp
 LockpickTree.esp
 Necromancer.esp
 // Adds items, spells perks.  Placed in lowest suitable group.
+MoonLightPower.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Path of the Ranger.esp
 Shars Perks - 2HandSneak and DagCrit.esp
 Shars Perks - DW Savagery.esp
@@ -7600,6 +7640,7 @@ Gabby Companion.esp
 AIKhajiitCompanions.esp
 Ja´dirr + Kharjo Makeover.esp
 KCustomFollowers.esp
+Lively Followers.esp
 sec_goatfrey.esp
 EnhancedCompanionGuildNoCosmetic.esp
 femcalder.esp
