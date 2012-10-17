@@ -93,9 +93,9 @@ IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
     IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1415010-rel-boss-for-skyrim/ здесь"(Eng).
 
 // Recruitment
-  IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions is still at over 3100+. An increase of over 450 plugins in the last few weeks. Some dating as far back as Augest 7 of 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus forums". 
+  IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions is still at over 3100+. An increase of over 450 plugins in the last few weeks. Some dating as far back as Augest 7 of 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus forums".
     IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 3100+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на "http://forums.bethsoft.com/user/359506-wrinklyninja/ форумах Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ форумах Nexus".
-	
+
 // SKSE
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
     IF VAR(RU) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
@@ -108,7 +108,7 @@ IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
   IF VAR(EN) && IF VAR(FNIS) SAY: It appears you have "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
     IF VAR(RU) && IF VAR(FNIS) SAY: У вас установлен "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim". Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.
 
-	
+
 BEGINGROUP: Official ESMs
 
 Skyrim.esm
@@ -409,7 +409,8 @@ bard's_college_quests_fix.esp
 bookshelf_fix0.2.esp
 brandsheiprisonfix.esp
 brawlbug-plugin.esp
-  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/24020 Brawl Bugs CE"
+  IF VAR(EN) SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/24020 Brawl Bugs CE"
+    IF VAR(RU) SAY: Устарело. Используйте "http://skyrim.nexusmods.com/mods/24020 Brawl Bugs CE"
 Brawl Bugs CE.esp
   IF VAR(EN) && IF VAR(SkyReM) ERROR: Delete. Already included in SkyRe_main.esp v0.99.18
     IF VAR(RU) && IF VAR(SkyReM) ERROR: Удалите. Уже включено в SkyRe_main.esp вер.0.99.18
@@ -557,7 +558,7 @@ VLCollisionFix.esp
 HighResTexturePackFix.esp
 chopping_block_wood_fires.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
-HDtextures01.esp  
+HDtextures01.esp
 Skyrim - Director's Cut - HD Pack Fix.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
 Unofficial Hearthfire Patch.esp
@@ -1844,7 +1845,7 @@ Skyrim Scaling Stopper - Misc Edits.esp
     IF VAR(RU) WARN: Для версий 3 или выше требуется Skyrim Monster Mod.
 Skyrim Scaling Stopper - Vanilla Dragon Scaling Patch.esp
   TAG: {{BASH: Delev, Relev}}
-SkyrimGranary.esp 
+SkyrimGranary.esp
 SkyrimLive.esp
 SkyrimsUniqueTreasures.esp
 Slaughterfish Monster.esp
@@ -2060,7 +2061,7 @@ xgfpferdekarren.esp
 xgfPferdeKarren-en.esp
   IF FILE("xgfpferdekarren.esp") INC: xgfpferdekarren.esp
   IF VAR(EN) SAY: Actually for the version a mod 1.82: If you have errors at creation Bashed Patch you can use "http://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906 the corrected version".
-    IF VAR(RU) SAY: Актуально для версии мода 1.82: Если у Вас возникают ошибки при создании Bashed Patch Вы можете использовать "http://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906 исправленную версию". Русский исправленный esp с поддержкой Dawnguard "http://u.to/VsFgAg здесь". 
+    IF VAR(RU) SAY: Актуально для версии мода 1.82: Если у Вас возникают ошибки при создании Bashed Patch Вы можете использовать "http://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906 исправленную версию". Русский исправленный esp с поддержкой Dawnguard "http://u.to/VsFgAg здесь".
 xylozi_tougher_traps.esp
 yngolbarrowbuttonfix.esp
 ZazResources.esp
@@ -2085,7 +2086,7 @@ REGEX: KoS_Outcast(_Lite)?\.esp
 CiviliansWillNotDie.esp
 CiviliansWillNotDieChild.esp
   IF FILE("CiviliansWillNotDie.esp") INC: CiviliansWillNotDie.esp
-  IF VAR(RU) SAY: Данная версия мода убирает в детских расах пометку "Child". 
+  IF VAR(RU) SAY: Данная версия мода убирает в детских расах пометку "Child".
 CiviliansWillNotDiePatches.esp
   IF FILE("CiviliansWillNotDie.esp") INC: CiviliansWillNotDie.esp
   IF FILE("CiviliansWillNotDieChild.esp") INC: CiviliansWillNotDieChild.esp
@@ -2249,7 +2250,8 @@ armored armwraps and footwraps.esp
 armored nocturnal robes.esp
 ArmoredCircletsQuickFox.esp
 ArmoredAlikrHoods.esp
-  SAY: Obsolete.  Update to renamed ArmoredAlikrGarb.esp
+  IF VAR(EN) SAY: Obsolete.  Update to renamed ArmoredAlikrGarb.esp
+    IF VAR(RU) SAY: Устарело. Обновите до ArmoredAlikrGarb.esp
 ArmoredAlikrGarb.esp
 armorkits.esp
   TAG: {{BASH: Relev}}
@@ -3579,10 +3581,10 @@ Tonas Oblivion Scarves.esp
 ToolCraft.esp
 Tools of Kagrenac.esp
 TorchArrow.esp
-  IF FILE("TorchArrow-Dawnguard.esp") SAY: Use Torch-Arrow.esp or TorchArrow-Dawnguard.esp, not both.
 TorchArrowBS.esp
   IFNOT FILE("TorchArrow.esp") REQ: TorchArrow.esp
 TorchArrow-Dawnguard.esp
+  IF FILE("TorchArrow.esp") INC: TorchArrow.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesada DLC)
 TorchArrowBS-Dawnguard.esp
   IFNOT FILE("TorchArrow-Dawnguard.esp") REQ: TorchArrow-Dawnguard.esp
@@ -3850,14 +3852,17 @@ HarvestOverhaul.esp
 HarvestOverhaulDawnguard.esp
 HarvestOverhaulCreatures.esp
 HarvestOverhaulCreaturesDawnguard.esp
-  IF FILE("HarvestOverhaulCreatures.esp") SAY: Use only one HarvestOverhaulCreatures esp
+  IF FILE("HarvestOverhaulCreatures.esp") INC: HarvestOverhaulCreatures.esp
 // Harvest Overhaul Compatibility patches loacted after mods patched Skyre_main.esp and IMCN - Overrides.esp as author suggests
 HarvestOverhaul_100Chance.esp
-  SAY: Obsolete.  Delete, no replacement in latest version.
+  IF VAR(EN) SAY: Obsolete.  Delete, no replacement in latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 HarvestOverhaulCreaturesDogMeatFree.esp
-  SAY: Obsolete.  Delete, no replacement in latest version.
+  IF VAR(EN) SAY: Obsolete.  Delete, no replacement in latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 mm_BeluaSanguinareRevisitedVampireRace.esp
-  SAY: Obsolete.  Delete, no replacement in latest version.
+  IF VAR(EN) SAY: Устарело. Obsolete.  Delete, no replacement in latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 MM_BeluaSangunaireRevisited.esp
 mm_BeluaSanguinareRevisitedDialogueFixes.esp
 MM_BeluaSangunaireRevisitedLootTables.esp
@@ -3867,11 +3872,12 @@ mm_BeluaSanguinareRevisitedStaminaSprintDrain.esp
 mm_BeluaSanguinareRevisitedDGCompatibility.esp
 T3nd0sOverhaul.esp
   IF VAR(EN) SAY: Obsolete. Update to latest 'SkyRe - Skyrim Redone'
-    IF VAR(RU) SAY: Обновите до последней версии 'SkyRe - Skyrim Redone'
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии 'SkyRe - Skyrim Redone'
   IF VAR(EN) SAY: Only for non ENB users
     IF VAR(RU) SAY: Для не ENB-пользователей.
 T3nd0sOverhaulNoLighting.esp
   IF VAR(EN) SAY: Obsolete. Update to latest 'SkyRe - Skyrim Redone'
+    IF VAR(EN) SAY: Устарело. Обновите до последней версии 'SkyRe - Skyrim Redone'
   IF VAR(EN) && IF FILE("T3nd0sOverhaul.esp") INC: T3nd0sOverhaul.esp use only one
     IF VAR(RU) && IF FILE("T3nd0sOverhaul.esp") INC: T3nd0sOverhaul.esp. Используйте только один.
   IF VAR(EN) SAY: Only for ENB users
@@ -4254,7 +4260,7 @@ CrystalRock.esp
 ENDGROUP: Quests C
 
 BEGINGROUP: Quests D
- 
+
 DAMuseum.esp
 DaedricHideout.esp
 daelusdagger.esp
@@ -5037,7 +5043,7 @@ Better Deadly Bandits.esp
   TAG: {{BASH: Relev}}
 Better Deadly Bandits Weapons Only.esp
   TAG: {{BASH: Relev}}
-  IF FILE("Better Deadly Bandits.esp") SAY: Use only one Better Deadly Bandits esp.
+  IF FILE("Better Deadly Bandits.esp") INC: Better Deadly Bandits.esp
 Better Dragons.esp
 Better Dynamic Snow.esp
 Better_Food_and_Sleep.esp
@@ -5227,7 +5233,7 @@ FA Guard Helmet.esp
 Faendal-by-Axeface.esp
   IFNOT FILE("XCE.esp") REQ: "http://skyrim.nexusmods.com/mods/2356 XCE - Xenius Character Enhancement"
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-  IFNOT FILE("Improved Freckles Skyrim.esp") REQ: "http://skyrim.nexusmods.com/mods/16147 Improved Freckles Skyrim"  
+  IFNOT FILE("Improved Freckles Skyrim.esp") REQ: "http://skyrim.nexusmods.com/mods/16147 Improved Freckles Skyrim"
 FalmerHuntCrab.esp
 FantomUbistv.esp
 Fast Respawns And Rich Merchants.esp
@@ -5538,17 +5544,21 @@ REGEX: MatsoImmersive(Rain|Sun)\.esp
 MD - Protected NPCs.esp
 MD - Stop to Dragon Encounters.esp
 MD - EFCS with heights.esp
-  SAY: Obsolete.  Update to latest renamed version.
+  IF VAR(EN) SAY: Obsolete.  Update to latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 MD - EFCS with heights also for mammoths.esp
-  SAY: Obsolete.  Update to latest renamed version.
+  IF VAR(EN) SAY: Obsolete.  Update to latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 MD - Tough life with new heights.esp
-  SAY: Obsolete.  Update to latest renamed version.
+  IF VAR(EN) SAY: Obsolete.  Update to latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 MD - EFCS.esp
 MD 07 - EFCS.esp
-  IF FILE("MD - EFCS.esp") SAY: Use only one EFCS esp.
+  IF FILE("MD - EFCS.esp") INC: MD - EFCS.esp
 Only vampires&werewolves changes.esp
   // from EFCS mod
-  IF FILE("MD - EFCS.esp") || IF FILE("MD 07 - EFCS.esp") SAY: Use only one EFCS esp.
+  IF FILE("MD - EFCS.esp") INC: MD - EFCS.esp
+  IF FILE("MD 07 - EFCS.esp") INC: MD 07 - EFCS.esp
 Mehrune's Razor Power.esp
 MehrunesRazorHigherKillChance.esp
 Melee Overhaul - Distinct Styles.esp
@@ -6022,25 +6032,33 @@ REGEX: Expanded Towns (- Riverwood?|- Rorikstead?|- Ivarstead?|- Darkwater?|- Dr
   IF VAR(EN) SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
     IF VAR(RU) SAY: Устарело, обновите до последней версии Expanded Towns and Cities
 ETaC - Darkwater.esp
-  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
+    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Dragon Bridge.esp
-  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete.esp contains these changes.
+    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Ivarstead.esp
-  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete.esp contains these changes.
+    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Morthal.esp
-  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete.esp contains these changes.
+    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Riverwood.esp
-  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete.esp contains these changes.
+    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Rorikstead.esp
-  IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete contains these changes.
+  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") SAY: Remove.  ETaC - Villages Complete.esp contains these changes.
+    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Villages Complete.esp
 ETaC Follower Add-On.esp
 ETaC BFT Patch.esp
   IFNOT FILE("Carriage1.esp") REQ: Carriage1.esp
 ETaC SkyRealFF Patch - Standard.esp
   IFNOT FILE("SkyRealism - Feast and Famine.esp") REQ: SkyRealism - Feast and Famine.esp
-ETaC SkyRealFF Patch - Dawnguard.esp 
-  IFNOT FILE("SkyRealism - Feast and Famine.esp") REQ: SkyRealism - Feast and Famine.esp , Dawnguard version
+ETaC SkyRealFF Patch - Dawnguard.esp
+  IF FILE("ETaC SkyRealFF Patch - Standard.esp") INC: ETaC SkyRealFF Patch - Standard.esp
+  IFNOT FILE("SkyRealism - Feast and Famine.esp") REQ: SkyRealism - Feast and Famine.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
 ExpandedWinterholdRuins.esp
 ExpandedWinterholdRuinsExterior.esp
 Green and White Windhelm.esp
@@ -6060,9 +6078,10 @@ RiverwoodEnhancedPlugin.esp
 Smelter_Riften.esp
 Smelter_Solitude.esp
 Solitude A City Of Trade.esp
-  IF FILE("Solitude A City Of Trade.esm") SAY: Use only one Solitude a City of Trade
-Solitude A City Of Trade LITE!.esp  
-  IF FILE("Solitude A City Of Trade.esm") || IF FILE("Solitude A City Of Trade.esp") SAY: Use only one Solitude a City of Trade
+  IF FILE("Solitude A City Of Trade.esm") INC: Solitude A City Of Trade.esm
+Solitude A City Of Trade LITE!.esp
+  IF FILE("Solitude A City Of Trade.esm") INC: Solitude A City Of Trade.esm
+  IF FILE("Solitude A City Of Trade.esp") INC: Solitude A City Of Trade.esp
 TAVERiften.esp
 TAVESolitude.esp
 TAVEWindhelm.esp
@@ -6498,7 +6517,7 @@ UBW.esp
 UnlockSpell.esp
 UnplayableMadePlayable.esp
 Unspontaneous-combustion.esp
-  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE" 
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 Upgrade Leveled Items Spell.esp
 Upscaled Beginner Destruction Spells.esp
 URWL_BNDN.esp
