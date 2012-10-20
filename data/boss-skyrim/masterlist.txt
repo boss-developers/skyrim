@@ -30,7 +30,7 @@ You cannot start a silent comment part-way into a line, only whole lines may be 
   Warning                           WARN         A message used to display a non-critical warning for the mod above.
   Error                             ERROR        A message used to display a critical (ie. install-breaking) error for the mod above.
 
-Message keywords should be indented by two spaces and followed by a colon ':' then the message string.
+Message keywords should be indented by two spaces and followed by a colon ':' then the message string. But iwo spaces are not need for conditionals with 'MOD:' prefix because this is a mod line.
 */
 
 // ================================================================
@@ -38,15 +38,15 @@ Message keywords should be indented by two spaces and followed by a colon ':' th
 
 // Language setup. Only for BOSS 2.1+
 // Language conditional 'IF VAR(EN)' need only for translated messages.
-IF LANG ("chinese") SET: EN
+IF LANG("chinese") SET: EN
   // Not translated. Set default EN.
-IF LANG ("english") SET: EN
+IF LANG("english") SET: EN
   // Default EN.
-IF LANG ("german") SET: EN
+IF LANG("german") SET: EN
   // Not translated. Set default EN.
-IF LANG ("russian") SET: RU
+IF LANG("russian") SET: RU
   // Translated. Set RU.
-IF LANG ("spanish") SET: EN
+IF LANG("spanish") SET: EN
   // Not translated. Set default EN.
 
 // Masterlist variable setup for BOSS v1.7+.
@@ -94,15 +94,15 @@ IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 
 // Recruitment
   IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions is still at over 3100+. An increase of over 450 plugins in the last few weeks. Some dating as far back as Augest 7 of 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus forums".
-    IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 3100+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на "http://forums.bethsoft.com/user/359506-wrinklyninja/ форумах Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ форумах Nexus".
+    IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 3100+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на форумах  "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus".
 
 // SKSE
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
     IF VAR(RU) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
 
 // Dynamic plugins
-  IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(EN) GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
-    IF FILE("ASIS-Dependency.esp") || IF FILE("ASIS.esp") || IF FILE("Automatic Spells.esp") || IF FILE("Automatic Variations.esp") || IF FILE("Automatic Variants.esp") && IF VAR(RU)  GLOBAL SAY: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
+  IF REGEX("ASIS(-Dependency)?\.esp") || IF REGEX("Automatic (Spells|Variations|Variants)\.esp") && IF VAR(EN) GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
+    IF REGEX("ASIS(-Dependency)?\.esp") || IF REGEX("Automatic (Spells|Variations|Variants)\.esp") && IF VAR(RU) GLOBAL SAY: Установлен динамически созданный плагин. Смотрите заметки автора, для определения лучшего порядка загрузки для таких плагинов.
 
 // Fores New Idles in Skyrim
   IF VAR(EN) && IF VAR(FNIS) SAY: It appears you have "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
@@ -592,7 +592,7 @@ AdrianneAvenicci.esp
   IF CHECKSUM("AdrianneAvenicci.esp", 3F15FD93) DIRTY: 3 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Aela-1_1.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-Ahlam.esp  
+Ahlam.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("Ahlam.esp", 9C67BE65) DIRTY: 3 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 AlfhildBattleBorn.esp
@@ -608,7 +608,7 @@ AsharaFollowerFaces.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 BabetteReplacer.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-BalagogGroNolob.esp  
+BalagogGroNolob.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 bellabetterfemales.esp
 Benor.esp
@@ -622,10 +622,10 @@ BNPC.esp
 Borgakh.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("Borgakh.esp", 66F14B1B) DIRTY: 6 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-BrandShei.esp  
+BrandShei.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("BrandShei.esp", F5A4ACBE) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Bryling.esp  
+Bryling.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("Bryling.esp", 6531FFC7) DIRTY: 7 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Carlotta.esp
@@ -698,7 +698,7 @@ NPC_Hair_Replace_Bandit_Forsworn.esp
 Riften Girl s Replacer v 0.1.esp
 Riften_Female.esp
 Cute Girl s Replacer Markarth v01.esp
-Cute Girl s Replacer Riften v 0.2.esp 
+Cute Girl s Replacer Riften v 0.2.esp
 Cute Girl s Replacer Solitude v01.esp
 Cute Girl s Replacer Witherun v 3.0.esp
 OlfinaGrayMane.esp
@@ -714,10 +714,10 @@ Sigrid.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("Sigrid.esp", 72F4F16E) DIRTY: 4 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Solitude Girl's Replacer.esp
-  IFNOT VAR(UFO) MOD: SupermodelSkyrim.esp
+IFNOT VAR(UFO) MOD: SupermodelSkyrim.esp
   // moved back to npc faces because it's npc faces overhaul (too many conflicts)
   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
-  IFNOT VAR(UFO) MOD: SupermodelDawnguard.esp
+IFNOT VAR(UFO) MOD: SupermodelDawnguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
 Sven.esp
@@ -1914,6 +1914,8 @@ SkoomaModKidduffah v1.0.esp
 skyBirds - Airborne Perching Birds.esp
 Skyforge Smelter.esp
 Skyforge_Plus v2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version 3+.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии 3+.
 Skyforge_Plus v3.esp
 SkyForge +.esp
 SkyHavenLightFix.esp
@@ -2325,11 +2327,11 @@ Alienzerox_White_Fur_Robe&Hood_FEMALE_ONLY_0-1-01.esp
 Alienzerox_White_Fur_Robe&Hood_LA_FEMALE_ONLY_0-1-02.esp
 AllowAmuletRing.esp
 Alternate_Armor_Appearances_v1.20.esp
-Althirs Camping Tools English.esp 
+Althirs Camping Tools English.esp
   IF CHECKSUM("Althirs Camping Tools English.esp", C5346BE3) DIRTY: 1 ITM record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Althirs Camping Tools German.esp 
+Althirs Camping Tools German.esp
   IF CHECKSUM("Althirs Camping Tools German.esp", D1B56978) DIRTY: 1 ITM record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF FILE("Althirs Camping Tools English.esp") WARN: Use only one Althirs Camping Tools esp
+  IF FILE("Althirs Camping Tools English.esp") INC: Althirs Camping Tools English.esp
 aMagicalChest.esp
 AmazonArmor.esp
 Amiella Outfit.esp
@@ -2849,7 +2851,7 @@ FlameAtronachArmor.esp
 FioraArmor.esp
 Fitness Outfit OE.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
-Footwear OE.esp  
+Footwear OE.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 ForkOfHorripilation.esp
 Forsworn Boots Replacer.esp
@@ -3072,7 +3074,7 @@ JoOsSkyrimKnightlyArmory.esp
   IF CHECKSUM("JoOsSkyrimKnightlyArmory.esp", B77D7435) DIRTY: 10 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 JSScomplete.esp
 JSwords.esp
-  IF VAR(EN) SAY: Obsolete, upgrade to v13+
+  IF VAR(EN) SAY: Obsolete. Update to v13+
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Faster Combat-Jswords.esp
 JSwordsDistributionBalancePlugin.esp
@@ -3126,7 +3128,7 @@ LanternHands.esp
 LayerBikini.esp
 LBArmorPack.esp
   IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
-LB_GroveMatronStaff.esp  
+LB_GroveMatronStaff.esp
 Blood Mage.esp
   IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
 LB Blood of the Divines.esp
@@ -3575,14 +3577,15 @@ REGEX: ScoutArmorAddon\d\.esp
 Seadog.esp
 seethroughlook.esp
 REGEX: SED7-CBBE3.+\.esp
-  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"	
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
 SED7-BettermalesFLACID_SILVEREDITION_malePiercing_PA.esp
   REQ: "http://skyrim.nexusmods.com/mods/2488 Better males"
 selobl_Diano.esp
   REQ: UNPB-BBP
 SeraphimStandAlone.esp
-SeraphineHuntedArmor.esp  
-  SAY: Be sure you have the correct body mod for the esp.  UNP or CBBEv3
+SeraphineHuntedArmor.esp
+  IF VAR(EN) SAY: Be sure you have the correct body mod for the esp.  "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP" or "http://skyrim.nexusmods.com/mods/2666 CBBE".
+    IF VAR(RU) SAY: Убедитесь, что используете корректный реплейсер тел для этого esp. "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP" или "http://skyrim.nexusmods.com/mods/2666 CBBE".
 SeraticArmor.esp
 REGEX: SeraticHeavyArmor(Dark|Gray)\.esp
 Set.esp
@@ -3593,7 +3596,7 @@ Shard of Azzinoth.esp
 ShieldsofSkyrim.esp
 ShieldsofSkyrimLists.esp
   TAG: {{BASH: Relev}}
-  IF FILE("ShieldsofSkyrim.esp") SAY: Use only one ShieldsofSkyrim esp.
+  IF FILE("ShieldsofSkyrim.esp") INC: ShieldsofSkyrim.esp
 Shields_of_the_northern_kingdoms.esp
 Shining Paladin.esp
 ShinKatana.esp
@@ -4055,8 +4058,7 @@ T3nd0sOverhaul.esp
 T3nd0sOverhaulNoLighting.esp
   IF VAR(EN) SAY: Obsolete. Update to latest 'SkyRe - Skyrim Redone'
     IF VAR(EN) SAY: Устарело. Обновите до последней версии 'SkyRe - Skyrim Redone'
-  IF VAR(EN) && IF FILE("T3nd0sOverhaul.esp") INC: T3nd0sOverhaul.esp use only one
-    IF VAR(RU) && IF FILE("T3nd0sOverhaul.esp") INC: T3nd0sOverhaul.esp. Используйте только один.
+  IF FILE("T3nd0sOverhaul.esp") INC: T3nd0sOverhaul.esp
   IF VAR(EN) SAY: Only for ENB users
     IF VAR(RU) SAY: Только для не ENB пользователей.
 Legendary Lore - Dragons.esp
@@ -4338,8 +4340,7 @@ Niire'sRe-RemodelForBertsBreezehomeRemodel.esp
 Niire'sPortstonesForBertsBreezehomeRemodel.esp
 BertsBreezehomeGardenConnecter(RemodelESP).esp
 betterbreezehome.esp
-  IF VAR(EN) && IF VAR(BertsBHInst) INC: BertsBreezeRemodel use only one
-    IF VAR(RU) && IF VAR(BertsBHInst) INC: BertsBreezeRemodel Используйте что то одно.
+  IF VAR(BertsBHInst) INC: BertsBreezeRemodel
 beschuetzer von himmelsrand.esp
 BetterRiften.esp
 bettertameriel.esp
@@ -4362,15 +4363,12 @@ bossdungeon.esp
 boss dungeon2.esp
 bossdungeon3.esp
 breezehome enhanced.esp
-  IF VAR(EN) && IF VAR(BertsBHInst) INC: BertsBreezeRemodel use only one
-    IF VAR(RU) && IF VAR(BertsBHInst) INC: BertsBreezeRemodel Используйте что то одно.
-breezehome extended ~saqk.esp	
+  IF VAR(BertsBHInst) INC: BertsBreezeRemodel
+breezehome extended ~saqk.esp
 Breezehome_FullyUpgradable.esp
-  IF VAR(EN) && IF VAR(BertsBHInst) INC: BertsBreezeRemodel use only one
-    IF VAR(RU) && IF VAR(BertsBHInst) INC: BertsBreezeRemodel Используйте что то одно.
+  IF VAR(BertsBHInst) INC: BertsBreezeRemodel
 Breezehome Remodeled Finely.esp
-  IF VAR(EN) && IF VAR(BertsBHInst) INC: BertsBreezeRemodel use only one
-    IF VAR(RU) && IF VAR(BertsBHInst) INC: BertsBreezeRemodel Используйте что то одно.
+  IF VAR(BertsBHInst) INC: BertsBreezeRemodel
 Breezehome1stwing.esp
   IF VAR(EN) SAY: No longer support, use Dovahkiin Hideout instead
     IF VAR(RU) SAY: Больше не поддерживается, используйте вместо этого Dovahkiin Hideout.
@@ -4398,8 +4396,7 @@ BreezehomeEnchantingTable1.3.esp
 BreezehomeEnchantingTableFrench.esp
 BreezehomeGrindStone.esp
 Breezehome PLUS.esp
-  IF VAR(EN) && IF VAR(BertsBHInst) INC: BertsBreezeRemodel use only one
-    IF VAR(RU) && IF VAR(BertsBHInst) INC: BertsBreezeRemodel используйте что-то одно.
+  IF VAR(BertsBHInst) INC: BertsBreezeRemodel
 arcanebreeze.esp
 Broken Oar Grotto - Replayable.esp
 Brotherhood.esp
@@ -6679,9 +6676,9 @@ MaximumDrive.esp
 MECR_NightEye_DetectLife_Overhaul.esp
 mindcontrol.esp
 mm_HorseWhisperer.esp
-REGEX: MYSpell(Hard)?\.esp
-  IF VAR(EN) && IF FILE("MYSpell.esp") && IF FILE("MYSpellHard.esp") WARN: Use only one normal or hard version.
-    IF VAR(RU) && IF FILE("MYSpell.esp") && IF FILE("MYSpellHard.esp") WARN: Используйте только одну, normal или hard, версию
+MYSpell.esp
+MYSpellHard.esp
+  IF FILE("MYSpell.esp") INC: MYSpell.esp
 MystraTransmuteOreNoCooldown.esp
   IF CHECKSUM("MystraTransmuteOreNoCooldown.esp", EA66F549) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Necromimesis.esp
@@ -6898,7 +6895,7 @@ power_nighteye.esp
 PowerfulIllusion.esp
 SeeYouSleepByMadmole.esp
 ShadowOfTheMagic.esp
-  IF VAR(EN) SAY: Obsolete, upgrade to Summon Shadow Merchant
+  IF VAR(EN) SAY: Obsolete. Update to Summon Shadow Merchant
     IF VAR(RU) SAY: Устарело. Обновите до Summon Shadow Merchant
 IFNOT FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
 SimpleTeleport.esp
@@ -7108,7 +7105,6 @@ DamageMultiplier.esp
 DeadlyCombat.esp
 DeadlyCombat_HardcoreDamage.esp
   IFNOT FILE("DeadlyCombat.esp") REQ: DeadlyCombat.esp
-  IF FILE("DeadlyCombat_NoDamageChanges.esp") INC: DeadlyCombat_NoDamageChanges.esp
 DeadlyCombat_NoDamageChanges.esp
   IFNOT FILE("DeadlyCombat.esp") REQ: DeadlyCombat.esp
   IF FILE("DeadlyCombat_HardcoreDamage.esp") INC: DeadlyCombat_HardcoreDamage.esp
@@ -7298,14 +7294,14 @@ REGEX: PPE_Perk-.+\.esp
 REGEX: PerkUP-.{4,12}\.esp
   IF VAR(EN) SAY: For users of incompatible plugins in this mod plugins. You will probably lose some already used perks, check this in game.
     IF VAR(RU) SAY: Пользователи, уже использующие несовместимые с этим моды. Вы можете потерять уже использованные перки, проверьте это в игре.
-  IF VAR(EN) INC: Extra Effect Perk-Additional Rank by thedemoninside , No Perk Prerequisites by ClassicalNoodle , Deflect Arrows Perk Fix by JeffSteel , Caos Advanced Perk Ranks by CaoMengde777 (fixed bugs, naturally) , Caos Extra Pockets Perk Upgrades by CaoMengde777 , Dead Aim perk x5 x10 x15 x20 by evi002 (rebalanced) , Better archery Eagle Eye perk by Graxster , Concentrated Poisons by kenevir1991 , Bugfix - Critical Charge with swords by Kevin Kidder ....
+  INC: Extra Effect Perk-Additional Rank by thedemoninside , No Perk Prerequisites by ClassicalNoodle , Deflect Arrows Perk Fix by JeffSteel , Caos Advanced Perk Ranks by CaoMengde777 (fixed bugs, naturally) , Caos Extra Pockets Perk Upgrades by CaoMengde777 , Dead Aim perk x5 x10 x15 x20 by evi002 (rebalanced) , Better archery Eagle Eye perk by Graxster , Concentrated Poisons by kenevir1991 , Bugfix - Critical Charge with swords by Kevin Kidder ....
   // For Basic
 REGEX: PerkUP-.*\.esp
   // For Optional
 More Craftables - PerkUP compatibility.esp
 MXMaxAllSkills.esp
   IFNOT FILE("More Craftables.esp") REQ: More Craftables
-  IFNOT REGEX("REGEX: PerkUP-.*\.esp") REQ: PerkUP
+  IFNOT REGEX("PerkUP-.*\.esp") REQ: PerkUP
 NapalmPerkOverhaul.esp
 REGEX: New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp
   IF VAR(EN) SAY: Use only one 'New Leveled Encounter Levels*.esp'
@@ -7328,7 +7324,7 @@ ACE Magic.esp
 ACE Melee.esp
 ACE Smithing.esp
 ACE Synergy.esp
-  IF VAR(EN) && IF REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
+IF VAR(EN) && IF REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
 Actually A Deadly Verbal Debate.esp
 alan_extended archery perk tree.esp
 alan_guide for the perfect blacksmith.esp
@@ -7470,14 +7466,14 @@ Twili's Unarmed perk.esp
 Twili's Unarmored perk.esp
 REGEX: Uncapped Perks - [CM].+\.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
-  IF VAR(EN) && IF REGEX("PerkUP-.*\.esp") INC: PerkUP
+  IF REGEX("PerkUP-.*\.esp") INC: PerkUP
 Uncapped Perks.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
-  IF VAR(EN) && IF REGEX("PerkUP-.*\.esp") INC: PerkUP
+  IF REGEX("PerkUP-.*\.esp") INC: PerkUP
 Uncapped Perks - Optional Magic Add-on.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
 REGEX: Uncapped Perks - .+\.esp
-  IF VAR(EN) && IF REGEX("PerkUP-.*\.esp") INC: PerkUP
+  IF REGEX("PerkUP-.*\.esp") INC: PerkUP
 BlueStarPerkAdventure.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
 REGEX: WiS IV - leveld World X\d+\.esp
@@ -7692,7 +7688,6 @@ BEGINGROUP: Player Perks
 // Alters player perks or adds a new perk. Should not contain QUST entries if possible.
 
 10 extra effect.esp
-  IF FILE("12 extra effect.esp") INC: 12 extra effect.esp
 12 extra effect.esp
   IF FILE("10 extra effect.esp") INC: 10 extra effect.esp
 assassin pack.esp
@@ -7805,13 +7800,13 @@ OrientalEyes.esp
 PurpleEyes.esp
 serana1.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF FILE("serana1normaleyes.esp") || IF FILE("serana1demoneyes.esp") WARN: Use only one serana1 esp.
 serana1normaleyes.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF FILE("serana1.esp") || IF FILE("serana1demoneyes.esp") WARN: Use only one serana1 esp.
+  IF FILE("serana1.esp") INC: serana1.esp
 serana1demoneyes.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF FILE("serana1normaleyes.esp") || IF FILE("serana1.esp") WARN: Use only one serana1 esp.
+  IF FILE("serana1normaleyes.esp") INC: serana1normaleyes.esp
+  IF FILE("serana1.esp") INC: serana1.esp
 TheEyesofBeauty.esp
 Improved Eyes Skyrim.esp
 underworld_eyes.esp
@@ -7830,7 +7825,7 @@ BEGINGROUP: Warpaints
 additionalwarpaints.esp
 ButterflyFemaleWarpaint_2_1.esp
 DragonWarpaint.esp
-  IFNOT VAR(ExtSlider) MOD: Tribal Warpaint for Females.esp
+IFNOT VAR(ExtSlider) MOD: Tribal Warpaint for Females.esp
 Warpaint Immortal.esp
 warpaintattoo.esp
 REGEX: wyldtat\d\d?\.esp
@@ -7980,15 +7975,11 @@ ENDGROUP: Questgiver NPCs
 
 BEGINGROUP: Extensible Follower Framework
 XFLDialogue.esp
-  IF VAR(EN) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp has the same functional, use only one.
-    IF VAR(RU) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, используйте что-то одно.
-  IF VAR(EN) && IF FILE("BDO.esp") INC: BDO.esp has the same functional, use only one.
-    IF VAR(RU) && IF FILE("BDO.esp") INC: BDO.esp имеет похожий функционал, используйте что-то одно.
+  IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
+  IF FILE("BDO.esp") INC: BDO.esp
 XFLPlugins.esp
-  IF VAR(EN) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp has the same functional, use only one.
-    IF VAR(RU) && IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp имеет похожий функционал, используйте что-то одно.
-  IF VAR(EN) && IF FILE("BDO.esp") INC: BDO.esp has the same functional, use only one.
-    IF VAR(RU) && IF FILE("BDO.esp") INC: BDO.esp имеет похожий функционал, используйте что-то одно.
+  IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
+  IF FILE("BDO.esp") INC: BDO.esp
 XFLHorses.esp
   IFNOT FILE("XFLMain.esm") REQ: XFLMain.esm
 XFLTweaks.esp
@@ -8000,8 +7991,7 @@ BEGINGROUP: Ultimate Follower Overhaul
 
 UFO - Ultimate Follower Overhaul.esp
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
-  IF VAR(EN) && IF FILE("BDO.esp") INC: BDO.esp, has the same functional, use only one.
-    IF VAR(RU) && IF FILE("BDO.esp") INC: BDO.esp, имеет похожий функционал, используйте что-то одно.
+  IF FILE("BDO.esp") INC: BDO.esp
   IF VAR(EN) SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on "http://skyrim.nexusmods.com/mods/14037 mod page".
     IF VAR(RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода"(Eng) или читайте "http://u.to/GJZaAg это" локализованное ридми.
 UFO - Dawnguard AddOn.esp
@@ -8076,7 +8066,7 @@ Clyde.esp
 CMHalfElf.esp
   IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
   IFNOT FILE("CMHalfElf.esm") REQ: CMHalfElf.esm
-CompanionValfar.esp  
+CompanionValfar.esp
 Deadeye.esp
 Demon Horse.esp
 REGEX: DFH_.+\.esp
@@ -8084,7 +8074,7 @@ REGEX: DFH_.+\.esp
 DogCompanions.esp
 Ellette.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-eola1.3.esp  
+eola1.3.esp
 Esmeralda.esp
   IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemale"
 Etain the Shewolf.esp
@@ -8120,7 +8110,7 @@ Immersive Followers.esp
 jeans2.esp
 Jezebel Simon.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-jordis1.1a.esp  
+jordis1.1a.esp
 Inna.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 IsabelStandalone.esp
@@ -8199,7 +8189,7 @@ herman.esp
 SummerAutumn.esp
 HirelingBelrand.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-HirelingErikTheSlayer.esp  
+HirelingErikTheSlayer.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("HirelingErikTheSlayer.esp", 58542992) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HirelingJenassa.esp
@@ -8520,8 +8510,7 @@ MultipleFollowers.esp
 Follower Limit Increased.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Multi followers functional is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Функционал нескольких компаньонов уже включен в UFO - Ultimate Follower Overhaul.esp. Удалите этот плагин и используйте UFO.
-  IF VAR(EN) && IF FILE("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, use only one, not both.
-    IF VAR(RU) && IF FILE("Better Follower Improvements.esp") INC: Better Follower Improvements.esp, используйте что-то одно.
+  IF FILE("Better Follower Improvements.esp") INC: Better Follower Improvements.esp
 // BEGINGROUP: Multimarriage
 // Must load after Unlimited companions mods
 multimarriage.esp
