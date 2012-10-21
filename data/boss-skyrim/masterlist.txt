@@ -1550,7 +1550,7 @@ Isharas_BoH_StorageAndRetrieval.esp
   IFNOT FILE("Vidani's Bag of Holding.esp") REQ: "http://skyrim.nexusmods.com/mods/9085 Vidani's Bag of Holding.esp"
 IsharasAutoStorageForVidanisBoH.esp
   IFNOT FILE("Vidani's Bag of Holding.esp") REQ: "http://skyrim.nexusmods.com/mods/9085 Vidani's Bag of Holding.esp"
-  IF FILE("Isharas_BoH_StorageAndRetrieval.esp") WARN: Use only one Isharas BOH mod.
+  IF FILE("Isharas_BoH_StorageAndRetrieval.esp") INC: Isharas_BoH_StorageAndRetrieval.esp
 ItemRewardsForBounties.esp
 Item Sorting by Saige.esp
 item sorting with weightless items.esp
@@ -2795,11 +2795,15 @@ DwarvenSwords.esp
 Dwemer Artificer.esp
   IF CHECKSUM("Dwemer Artificer.esp", 939498B8) DIRTY: 6 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Dwemer Artificer v0.1.esp
-  IF FILE("Dwemer Artificer.esp") WARN: Obsolete. Update to latest version.
+asdf
+  IF VER(EN) && IF FILE("Dwemer Artificer.esp") WARN: Obsolete. Update to latest version.
+    IF VAR(RU) && IF FILE("Dwemer Artificer.esp") WARN: Устарело. Обновите до последней версии.
 Dwemer Artificer v0.2.esp
-  IF FILE("Dwemer Artificer.esp") WARN: Obsolete. Update to latest version.
+  IF VER(EN) && IF FILE("Dwemer Artificer.esp") WARN: Obsolete. Update to latest version.
+    IF VAR(RU) && IF FILE("Dwemer Artificer.esp") WARN: Устарело. Обновите до последней версии.
 Fun in a Box.esp
-  IF FILE("Dwemer Artificer.esp") WARN: Obsolete. Update to latest version.  Not included
+  IF VER(EN) && IF FILE("Dwemer Artificer.esp") WARN: Obsolete. Update to latest version.  Not included
+    IF VAR(RU) && IF FILE("Dwemer Artificer.esp") WARN: Устарело. Обновите до последней версии.  Not included
 Dwemer Scouter.esp
   IF VAR(EN) WARN: Obsolete.  Update to latest version - Dwemer Goggles & Scouter.esp
     IF VAR(RU) WARN: Устарело.  Обновите до последней версии - Dwemer Goggles & Scouter.esp
@@ -3217,9 +3221,11 @@ lilithsrazor1_1.esp
 lilithsrazor_s.esp
 lilithsreaver.esp
 lilithssickle_axe_1.esp
-  SAY: Obsolete.  Update to latest version.
+  IF VER(EN) SAY: Obsolete.  Update to latest version.
+    IF VER(RU) SAY: Устарело. Обновите до последней версии.
 lilithssickle_2_0.esp
-  SAY: Obsolete.  Update to latest version.
+  IF VER(EN) SAY: Obsolete.  Update to latest version.
+    IF VER(RU) SAY: Устарело. Обновите до последней версии.
 lilithssickle_2_1.esp
   IF CHECKSUM("lilithssickle_2_1.esp", 78270F6E) DIRTY:  1 ITM record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-
 _TES5Edit Cleaning guide")
@@ -3573,11 +3579,8 @@ ENDGROUP: Items R
 BEGINGROUP: Items S
 
 S&D outfit.esp
-<<<<<<< .mine
 Saber.esp
-=======
 S&D shadow walker.esp
->>>>>>> .r5723
 SabrecatGear_AncientArmor
 SabrecatGear_AncientArmorVs.esp
 SabrecatGear_AncientArmorVs_wFix.esp
@@ -6261,7 +6264,8 @@ BEGINGROUP: Overrides V
 valuablehidesandskinsvanilla.esp
 VanillaMonsterLootV1_5.esp
   TAG: {{BASH: Relev}}
-  WARN: Obsolete.  Update to latest version.
+  IF VER(EN) WARN: Obsolete.  Update to latest version.
+    IF VER(RU) WARN: Устарело. Обновите до последней версии.
 VanillaMonsterLoot.esp
   TAG: {{BASH: Relev}}
   IF CHECKSUM("VanillaMonsterLoot.esp", DCEE3E1E) DIRTY: 2 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -6636,12 +6640,16 @@ BEGINGROUP: General Spells
 1portalgun.esp
 ActorBall.esp
 AdoringFanSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("AdoringFanSummon.esp", 583BB026) DIRTY: 13 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 AlikrKematuSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("AlikrKematuSummon.esp", 6D6B36B6) DIRTY: 6 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 apocalypse.esp
 Apocalypse - The Spell Package.esp
@@ -6658,19 +6666,25 @@ Artillery_DFA.esp
 REGEX: ASX( - |_)Spells.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
 BardSvaknirSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("BardSvaknirSummon.esp", 0804A34E) DIRTY: 12 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Battle Mage.esp
 Battle_Mage_v1_1.esp
 REGEX: BetterMage(Alt)?\.esp
 BladesBaurusSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("BladesBaurusSummon.esp", 87C1BD13) DIRTY: 4 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BladesBolarSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
 MidasSkyrim.esp
   IF FILE("MiningFlames.esp") || IF FILE("BoundTools.esp") || IF FILE("ExtractOreSpell.esp") && IF VAR(EN) INC: MiningFlames.esp, BoundTools.esp, ExtractOreSpell.esp. You can have more than one mod enabled, but only one of the added methods will be able to "mine" ore.
     IF FILE("MiningFlames.esp") || IF FILE("BoundTools.esp") || IF FILE("ExtractOreSpell.esp") && IF VAR(RU) INC: MiningFlames.esp, BoundTools.esp, ExtractOreSpell.esp. Вы можете подключить данные моды вместе, но только один из добавленных методов добычи руды будет работать, тот, который добавлен нижестоящим модом.
@@ -6697,12 +6711,16 @@ ColettesRevenge.esp
   IF VERSION("TES5", "1.4.27", <) REQ: Skyrim 1.4.27+
 CommandHorse.esp
 CompanionSkjorSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("CompanionSkjorSummon.esp", 67E339E3) DIRTY: 6 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 CompanionKodlakSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
 conjurationmadnessmodv1.esp
 conjureatronarchfix.esp
   IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch 1.0+
@@ -6710,8 +6728,10 @@ conjureatronarchfix.esp
 conjure_chest.esp
 CurseSpell.esp
 DarkBrotherhoodAstrid.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("DarkBrotherhoodAstrid.esp", 20A8055D) DIRTY: 10 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 db_voidassassin.esp
 Dead Thrall on Anything level 100.esp
@@ -6720,8 +6740,10 @@ DetectLifeDetectsMore.esp
 DFB - More Summons.esp
 DirectorsTools.esp
 DismissSpell.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
 dovahkiin_bound_weapons.esp
 dovahkiin_levitate_spell.esp
 dovahkiin_shieldward.esp
@@ -6735,8 +6757,10 @@ essential player character.esp
 excaliburEX.esp
 Expert Level Sparks, Flames, and Frostbite Spells.esp
 FalmerSnowElf.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("FalmerSnowElf.esp", 98D86B17) DIRTY: 5 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 fcteResurrection.esp
 FeatherSpells.esp
@@ -6748,27 +6772,35 @@ ForcePush.esp
 ForgottenMastery.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ForswornFaolanSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("ForswornFaolanSummon.esp", 4AF28309) DIRTY: 7 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 frostflame spell.esp
 GamblerVashaSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("GamblerVashaSummon.esp", EC3B6A2A) DIRTY: 9 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Ghostifish-Magical Alchemy Harvest-o-tron.esp
 gome.esp
 Grand Healing Mod.esp
 GreybeardJurgenSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("GreybeardJurgenSummon.esp", 4A9199ED) DIRTY: 5 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: GriptzionTeleportMenuSpell.*\.esp
 Haste Spells.esp
 Heal Other Mod.esp
 HeroYsgramorSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("HeroYsgramorSummon.esp", 0AA174FF) DIRTY: 7 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HitStop.esp
 REGEX: Horse Whisper( - NO CALLING| - NO TRACKING)?\.esp
@@ -6790,15 +6822,21 @@ lootninja.esp
   IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
 Lownin.esp
 LucienLaChanceSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
 MagesArnielSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("MagesArnielSummon.esp", 9C386D04) DIRTY: 2 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MagesSavosSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("MagesSavosSummon.esp", 5CE9EC31) DIRTY: 1 ITM record.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Magic Box.esp
 Magicka Revamp - Destruction - Extra Spells - WIP.esp
@@ -6821,8 +6859,10 @@ nighteye.esp
 NightEyeIllusionSpell.esp
 nighteyetoggle.esp
 NightingaleGallusSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("NightingaleGallusSummon.esp", B93F275A) DIRTY: 2 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: NEO Optional - (Radial Blur)?( \+ )?(Tint \d)?\.esp
   IF VAR(EN) SAY: Use only one NEO Optional - *.esp
@@ -6831,8 +6871,10 @@ REGEX: NEO Optional - (Longer|Persistent|Prolonged) (Potions|Scroll|Spell)\.esp
    IF VAR(EN) SAY: Use only one NEO Optional - *.esp
     IF VAR(RU) SAY: Используйте только один мод NEO Optional - *.esp
 OblivionMankarSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("OblivionMankarSummon.esp", D62798D4) DIRTY: 6 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 OpenUnlock.esp
 REGEX: P1FlyingRing(\d)?\.esp
@@ -6846,11 +6888,15 @@ Phenderix AI Add-On.esp
 PJs_Spell_Compendium.esp
 PJs_ForgetSpell.esp
 PsijicIachesisSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
 QueenPotemaSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("QueenPotemaSummon.esp", B3F2FCD8) DIRTY: 6 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 TH_Storage_All.esp
 TwinSoulsExpandedLevels.esp
@@ -6890,8 +6936,10 @@ SSAPBWK.esp
 StripNPCs.esp
 Succubus.esp
 SummersetLinweSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
 Summon_Larvas.esp
 summonable_daedric_princes.esp
 SummonAncestorGuardian.esp
@@ -6901,16 +6949,22 @@ SummonDarklings.esp
 /* Not sure if they need to load in a specific order. */
 SummonLola.esp
 SynodSeptimusSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("SynodSeptimusSummon.esp", 259814E3) DIRTY: 6 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ThalmorAncanoSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("ThalmorAncanoSummon.esp", C8407CDA) DIRTY: 6 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ThievesGreyFoxSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("ThievesGreyFoxSummon.esp", 1595AF04) DIRTY: 6 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ToggleSpells - MagicEffects.esp
 ToggleSpells - Spells.esp
@@ -6935,8 +6989,10 @@ weatherchangespell.esp
 Where's My Horse Gone.esp
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 WhispersCallerSummon.esp
-  IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
-  WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+  IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
+    IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
+  IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+    IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") WARN: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("WhispersCallerSummon.esp", CD6E13F0) DIRTY: 6 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Wintercross Ancient Art of Magick 1.2.esp
 wkyddResurrectionSpell.esp
