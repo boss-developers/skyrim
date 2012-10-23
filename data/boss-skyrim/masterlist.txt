@@ -2422,7 +2422,8 @@ AetherialBow&Arrows.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 AetheriumSwords.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF FILE("AetheriumSwordsnArmor.esp") WARN: Do not use. Included in AetheriumSwordsnArmor.esp
+  IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") WARN: Do not use. Included in AetheriumSwordsnArmor.esp
+    IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp
 AetheriumSwordsnArmor.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Airy Armor.esp
@@ -2678,7 +2679,8 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
 1nivWICCloaksLorecraft.esp
 1nivWICCloaksCRAFTLorecraft.esp
 CMHood (Ashlander).esp
-  WARN: Obsolete. Update to latest renamed version - Chainmail Hood v2.2.esp
+  IF VAR(EN) WARN: Obsolete. Update to latest renamed version - Chainmail Hood v2.2.esp
+   IF VAR(RU) WARN: Устарело. Обновите до последней версии - Chainmail Hood v2.2.esp
 Collar.esp
 combinationVanillaOutfit.esp
 CombinedCraftingRingsv12.esp
@@ -2765,7 +2767,8 @@ Dark Souls Rings.esp
 DarkwindCBBE3ByNausicaa.esp
 DarkRangerArmor.esp
 DawnguardHelmetReplacer.esp
-  WARN: Obsolete. Update to latest renamed version - DawnguardHelmetReplacer-V1.1.esp
+  IF VAR(EN) WARN: Obsolete. Update to latest renamed version - DawnguardHelmetReplacer-V1.1.esp
+   IF VAR(RU) WARN: Устарело. Обновите до последней версии - DawnguardHelmetReplacer-V1.1.esp
 DawnguardHelmetReplacer-V1.1.esp
 DawnguardPaladinArmorCP.esp
 DB_Light_Armor_Robes.esp
@@ -2926,7 +2929,8 @@ Dwemer Goggles & Scouter.esp
 DwemerAutoBlade.esp
   IF FILE("SkyRe_Plugin_DwemerAutoBlade.esp") TAG: {{BASH: Deactivate}}
 DwarvenPowerArmor.esp
-  IF FILE("AetheriumSwordsnArmor.esp") WARN: Do not use. Included in AetheriumSwordsnArmor.esp
+  IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") WARN: Do not use. Included in AetheriumSwordsnArmor.esp
+    IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp
 DwemerRifle.esp
 DynamicLoot.esp
 Dynasty Armor.esp
@@ -3340,11 +3344,14 @@ Light Ebony Mail v1_1.esp
 LightAndHeavyCirclets.esp
 LightArmorPack14.esp
 lilithscarver1_0.esp
-  WARN: Obsolete. Update to the latest version.
+  IF VAR(EN) WARN: Obsolete. Update to the latest version.
+   IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 lilithscarver2_0.esp
-  WARN: Obsolete. Update to the latest version.
+  IF VAR(EN) WARN: Obsolete. Update to the latest version.
+   IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 lilithscarver2_1.esp
-  WARN: Obsolete. Update to the latest version.
+  IF VAR(EN) WARN: Obsolete. Update to the latest version.
+   IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 lilithscarver2_2.esp
 lilithscleaver.esp
 lilithsdecapitator1_0.esp
@@ -4186,28 +4193,30 @@ ImmersiveArmorsNPCsNoHelmets.esp
   IFNOT FILE("ImmersiveArmorsNPCs.esp") INC: ImmersiveArmorsNPCs.esp
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
 BandolierForNPCMasterFile.esp
-  IF CHECKSUM("BandolierForNPCMasterFile.esp", 112359C0) WARN: Obsolete. Update to the latest version.
-  IF CHECKSUM("BandolierForNPCMasterFile.esp", 53C8535D) WARN: Obsolete. Update to the latest version.
-  IF CHECKSUM("BandolierForNPCMasterFile.esp", C844F9AD) WARN: Obsolete. Update to the latest version.
-  IF CHECKSUM("BandolierForNPCMasterFile.esp", 112359C0) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
-  IF CHECKSUM("BandolierForNPCMasterFile.esp", 76E11697) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
-  IF CHECKSUM("BandolierForNPCMasterFile.esp", 0146A38B) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
+  IF CHECKSUM("BandolierForNPCMasterFile.esp", 112359C0) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 53C8535D) || IF CHECKSUM("BandolierForNPCMasterFile.esp", C844F9AD) WARN: Obsolete. Update to the latest version.
+  IF CHECKSUM("BandolierForNPCMasterFile.esp", 112359C0) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 76E11697) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 0146A38B) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
+  IF VAR(EN) && IF VAR(Dawnguard) SAY: Make sure you have Dawnguard-version of this mod.
+    IF VAR(RU) && IF VAR(Dawnguard) SAY: Убедитесь, что используете Dawnguard-версию этого мода.
 BandolierForNPCs.esp
 BandolierForNPCsWinterIsComing.esp
-  WARN: Obsolete. Update to the latest renamed version.
+  IF VAR(EN) WARN: Obsolete. Update to the latest renamed version.
+   IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 BandolierForNPCsWIC_V2.esp
 BandolierForNPCsCloaksOfSkyrim.esp
 BandolierForNPCsBanditsWearHelmets.esp
 BandolierForNPCsCheaperBandoliers.esp
-  IF VAR(Dawnguard) ERROR: Use Dawnguard version.
+  IF VAR(EN) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
+    IF VAR(RU) && IF VAR(Dawnguard) ERROR: Используйте версию для Dawnguard.
 BandolierForNPCsCheaperBandoliers_BalancedWeight.esp
-  IF VAR(Dawnguard) ERROR: Use Dawnguard version.
+  IF VAR(EN) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
+    IF VAR(RU) && IF VAR(Dawnguard) ERROR: Используйте версию для Dawnguard.
   IF FILE("BandolierForNPCsCheaperBandoliers.esp") INC: BandolierForNPCsCheaperBandoliers.esp
 BandolierForNPCsCheaperBandoliersDawnguard.esp
 BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp
   IF FILE("BandolierForNPCsCheaperBandoliersDawnguard.esp") INC: BandolierForNPCsCheaperBandoliersDawnguard.esp
 BandolierForNPCsImmersiveArmorsPatch.esp
-  WARN: Obsolete. Not included in latest version. Load ImmersiveArmors after all BandolierForNPCs esps.
+  IF VAR(EN) WARN: Obsolete. Not included in latest version. Load ImmersiveArmors after all BandolierForNPCs esps.
+    IF VAR(RU) WARN: Устарело. Не входит в состав последней версии. Загружайте ImmersiveArmors после всех BandolierForNPCs esps.
 calyps-dragonpriestmasks.esp
 ENDGROUP: Items Load Late
 ENDGROUP: Items
@@ -5283,9 +5292,10 @@ GM-HMSPotions3SecsWeighted.esp
 HuntersMod.esp
 KTGold.esp
 KTGold0.005.esp
-  IF FILE("KTGold.esp") || IF FILE("KTGold0.0005.esp") WARN: Use only one KTGold esp.
+  IF FILE("KTGold.esp") INC: KTGold.esp
 KTGold0.0005.esp
-  IF FILE("KTGold.esp") || IF FILE("KTGold0.005.esp") WARN: Use only one KTGold esp.
+  IF FILE("KTGold.esp") INC: KTGold.esp
+  IF FILE("KTGold0.005.esp") INC: KTGold0.005.esp
 ingots.esp
 IngredientReweight.esp
 Items Weight Adjustment.esp
@@ -5672,7 +5682,7 @@ Eld-emptyUrnsRicherDraugrChests.esp
 Eld-rareCostlyLockpicks.esp
 ElkHide.esp
 ElkHide - Basic.esp
-  IF FILE("ElkHide.esp") INC: Use only one ElkHide esp.
+  IF FILE("ElkHide.esp") INC: ElkHide.esp
 emSCChangeOfDress.esp
 Enhanced Auriel's Bow.esp
 REGEX: EnhancedGauldurAmulet.*\.esp
@@ -6048,7 +6058,7 @@ masteredmagicka.esp
 masteredmagickaalternative.esp
   IF REGEX("Mighty Magick .+\.esp") INC: Mighty Magic
   IF CHECKSUM("masteredmagickaalternative.esp", 89FF6FE5) DIRTY: 2 ITM. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF FILE("masteredmagicka.esp") WARN: Use masteredmagickaalternative.esp or masteredmagicka.esp, not both.
+  IF FILE("masteredmagicka.esp") INC: masteredmagicka.esp
 masteredmagickaboundweapons.esp
   IF REGEX("Mighty Magick .+\.esp") INC: Mighty Magic
 masteredmagickaenchantmentfix.esp
@@ -6279,7 +6289,8 @@ BEGINGROUP: Overrides S
 
 Sacred_Stones.esp
 Safely Thrall.esp
-  WARN: Obsolete.  Update to latest renamed version.
+  IF VAR(EN) WARN: Obsolete.  Update to latest version.
+    IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 Safely Thrall_v1_1.esp
 SameWalkRunSpeeds.esp
 STFU.esp
@@ -7104,7 +7115,8 @@ MasterTheTimeAndSpaceTOGGLE.esp
 MaximumDrive.esp
 MECR_NightEye_DetectLife_Overhaul.esp
 REGEX: Milestone Memoirs -.+\.esp
-  WARN: Obsolete.  Update to latest version.
+  IF VAR(EN) WARN: Obsolete.  Update to latest version.
+    IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 Milestone Memoirs.esp
   IF CHECKSUM("Milestone Memoirs.esp", 3722E902) DIRTY: 2 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 mindcontrol.esp
@@ -7802,7 +7814,8 @@ Crimson Tide - Blood.esp
   IF FILE("dD - Enhanced Blood Main.esp") INC: dD - Enhanced Blood Main.esp
 /* Crimson Tide has been repoted to cause issues if loaded after ACE Melee */
 ACE Archery Dawnguard Patch.esp
-  WARN: Obsolete. Update to latest version. Renamed to ACE Archery.esp
+  IF VAR(EN) WARN: Obsolete. Update to latest version. Renamed to ACE Archery.esp
+    IF VAR(RU) WARN: Устарело. Обновите до последней версии. Переименовано в ACE Archery.esp
 ACE Archery.esp
   IF CHECKSUM("Crafting300.esp", 46C639C1) INC: Crafting300.esp, to fix this get the compatibility patch found here: "http://skyrim.nexusmods.com/download/70990"
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
