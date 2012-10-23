@@ -525,9 +525,11 @@ Letrush Fix.esp
   IF VAR(EN) && IF VERSION("TES5", "1.7.7", >) ERROR: Delete. Fixed in official patch 1.8
     IF VAR(RU) && IF VERSION("TES5", "1.7.7", >) ERROR: Удалите. Исправлено в патче 1.8
 lightplacement.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+  IF VAR(EN) WARN: Obsolete. Update to latest renamed version.
+    IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 lightingfix.esp
+  IF CHECKSUM("lightingfix.esp", A534E1EA) WARN: Obsolete. Update to latest version.
+  IF CHECKSUM("lightingfix.esp", B22ED6C8) DIRTY: 9 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 lydia chair fix.esp
 MageRobesCommentFix.esp
 REGEX: Magnus\d{2,3}\.esp
