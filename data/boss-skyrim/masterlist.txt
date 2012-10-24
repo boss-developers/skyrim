@@ -226,6 +226,8 @@ CoD Waking Nightmare II.esm
 Domus_Dementis.esm
 Deus Mons.esm
 dovahkiin_sanctuary.esm
+DSpSoB.esm
+  WARN: Obsolete. Remove. Not for game play. Not in latest version 07
 mannyBlackRock.esm
 mannyDragonhead.esm
 REGEX: Murder.?.?\.esm
@@ -1338,15 +1340,15 @@ cplesourcelight.esp
 CrabMeatShitaraba.esp
 Craft, Temper, Smelt.esp
 CRAFT - Salvage Material.esp
-  IF VAR(EN) && IF FILE("Craft, Temper, Smelt.esp") WARN: Delete. Already included in Craft, Temper, Smelt.esp
-    IF VAR(RU) && IF FILE("Craft, Temper, Smelt.esp") WARN: Удалите. Уже включено в Craft, Temper, Smelt.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+  IF VAR(EN) && IF FILE("Craft, Temper, Smelt.esp") ERROR: Delete. Already included in Craft, Temper, Smelt.esp
+    IF VAR(RU) && IF FILE("Craft, Temper, Smelt.esp") ERROR: Удалите. Уже включено в Craft, Temper, Smelt.esp
+  IF VAR(EN) WARN: Obsolete. Update to latest version - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+    IF VAR(RU) WARN: Устарело. Обновите до последней версии - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
 CRAFT - Forge Equipment.esp
-  IF VAR(EN) && IF FILE("Craft, Temper, Smelt.esp") WARN: Delete. Already included in Craft, Temper, Smelt.esp
-    IF VAR(RU) && IF FILE("Craft, Temper, Smelt.esp") WARN: Удалите. Уже включено в Craft, Temper, Smelt.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+  IF VAR(EN) && IF FILE("Craft, Temper, Smelt.esp") ERROR: Delete. Already included in Craft, Temper, Smelt.esp
+    IF VAR(RU) && IF FILE("Craft, Temper, Smelt.esp") ERROR: Удалите. Уже включено в Craft, Temper, Smelt.esp
+  IF VAR(EN) WARN: Obsolete. Update to latest version - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+    IF VAR(RU) WARN: Устарело. Обновите до последней версии - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
 craftable.esp
 Craftable and Placeable Havok-enabled Bedrolls .esp
 craftable - draugr.esp
@@ -1457,6 +1459,9 @@ dremorabook.esp
 Drink JuiceMod.esp
 dropfixes.esp
 DSpSoB.esp
+  IF CHECKSUM("DSpSoB.esp", 44D3F30C) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF REGEX("dD.?- Realistic Ragdoll Force.*\.esp") && IFNOT FILE("Neovalen Race Compatibility.esp") WARN: Requires Neovalen Race Compatibility.esp if using dD - Realistic Force *.esp to insure correct operation.
+  IF VAR(Dawnguard) && IFNOT CHECKSUM("DSpSoB.esp", 8FAD1B41) ERROR: Use Dawnguard version of same name.
 Dwemer Certified.esp
 Dwemer Povazka from Hiro.esp
 Dwemer Spectres.esp
@@ -1861,6 +1866,9 @@ Nightingale Equipment Tweaks.esp
 Nocturnal Craftable Armors.esp
   IF VAR(EN) && IF FILE("Vampirelordroyal.esp") WARN: Author states in Nexus description that Royal Bloodlines (Vampirelordroyal.esp) will break this mod.
     IF VAR(RU) && IF FILE("Vampirelordroyal.esp") WARN: Автор сообщает в описании на нексусе, что Royal Bloodlines (Vampirelordroyal.esp) может портить этот мод.
+NordNeeds.esp
+Nord Needs + Cooking Expanded patch.esp
+  IFNOT FILE("NordNeeds.esp") || IFNOT FILE("CookingExpanded.esp") ERROR: Requires both "http://skyrim.nexusmods.com/mods/1409 Cooking Expanded" and "http://skyrim.nexusmods.com/mods/21384 NordNeeds"
 NoSaltRecipes.esp
 NPC Bartering.esp
 ENDGROUP: Base N
@@ -6134,7 +6142,9 @@ More Powerful Dragons.esp
 REGEX: MoreTraining_\d\d\.esp
 moredeathreloadtime.esp
 More Salt Please.esp
-
+MoreSalt.esp
+  IF CHECKSUM("MoreSalt.esp", 492E06A5) DIRTY: 1 ITM record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  TAG: {{BASH: Relev}}
 MoreVendorGold_1_01.esp
 MorokeiFix.esp
 MorokeiFixNoHelmet.esp
@@ -6176,6 +6186,7 @@ No Axe or Pickaxe required.esp
 noBlurDOF.esp
 noblur.esp
 nocollegetour.esp
+No Annoying Skeleton Sound.esp
 No Crime gold.esp
 No_dog_meat.esp
 No Fast Traveling.esp
@@ -8286,6 +8297,7 @@ ApachiiHairStyles-FemaleOnly.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 bald hair.esp
 Beautiful Hair.esp
+Black Hair Is Black.esp
 Cazy Hairs-by zzjay.esp
 FallOut3Hairs.esp
 Fh hairs-by zzjay.esp
@@ -8396,6 +8408,9 @@ Kaleen2.esp
 LunariRace.esp
 MysticalElvesV1.5.esp
 NedeRace.esp
+Neovalen Race Compatibility.esp 7BC64DD4  6E01C2F2
+  IF CHECKSUM("Neovalen Race Compatibility.esp", 6E01C2F2) WARN: Obsolete. Update to latest version.
+  IFNOT FILE("DSpSoB.esp") ERROR: Requires "http://skyrim.nexusmods.com/mods/17746 Duel Sheath plus Shields on Back"
 New Playable Races by Budcat v3.0.esp
 NewRaces.esp
 OhmesRaht.esp
@@ -9298,6 +9313,8 @@ First Person Messages.esp
 no_annoying_messages.esp
 NoMoreMessages.esp
 noSkillMessage.esp
+NymSkyrimGrammarHammer.esp
+  IF CHECKSUM("NymSkyrimGrammarHammer.esp", 90A68AA7) DIRTY: 1 ITM record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 quxxy - improved, sortable books.esp
 RacialBonusesOnCharacterCreation.esp
 sOverEncumbered.esp
