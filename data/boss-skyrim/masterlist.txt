@@ -7367,8 +7367,9 @@ sheogorath_shout.esp
 Shoo_WTFShout.esp
 shorter dragon shout cooldown.esp
 ShoutCD.esp
-  IF VAR(Dawnguard) ERROR: Use Dawnguard compatible renamed version TrueDragonblood-DawnguardV001.esp instead.
+  IF VAR(Dawnguard) && IFNOT FILE("ShoutCD.esp") REQ: TrueDragonblood-DawnguardV001.esp
 TrueDragonblood-DawnguardV001.esp
+  IF FILE("ShoutCD.esp") INC: ShoutCD.esp
 ShoutCD-V103-LessOP.esp
 Shout Mastery.esp
 shoutrecoverytimereduced.esp
@@ -7496,9 +7497,10 @@ TrueTransmutation.esp
 TS_VampireTweaks.esp
 Vampire Lord Serana Fixed.esp
 Vampiric_Drain_Fix.esp
-  IF FILE("Vampire Lord Serana Fixed.esp") IF FILE("Vampiric_Drain_Fix_BloodChalice.esp") WARN: Use only one: Vampire Lord Serana Fixed.esp or Vampiric_Drain_Fix.esp or Vampiric_Drain_Fix_BloodChalice.esp
+  IF FILE("Vampire Lord Serana Fixed.esp") INC: Vampire Lord Serana Fixed.esp
 Vampiric_Drain_Fix_BloodChalice.esp
-  IF FILE("Vampire Lord Serana Fixed.esp") || IF FILE("Vampiric_Drain_Fix.esp") WARN: Use only one: Vampire Lord Serana Fixed.esp or Vampiric_Drain_Fix.esp or Vampiric_Drain_Fix_BloodChalice.esp
+  IF FILE("Vampire Lord Serana Fixed.esp") INC: Vampire Lord Serana Fixed.esp
+  IF FILE("Vampiric_Drain_Fix.esp") INC: Vampiric_Drain_Fix.esp
 Voice_of_the_Sky.esp
 REGEX: WiS IV - AI & Spells for NPC( - No Knockdown)?\.esp
   IF VAR(EN) SAY: Use only one WiS IV - AI & Spells for NPC esp
@@ -8443,9 +8445,9 @@ Kaleen2.esp
 LunariRace.esp
 MysticalElvesV1.5.esp
 NedeRace.esp
-Neovalen Race Compatibility.esp 7BC64DD4  6E01C2F2
+Neovalen Race Compatibility.esp
   IF CHECKSUM("Neovalen Race Compatibility.esp", 6E01C2F2) WARN: Obsolete. Update to latest version.
-  IFNOT FILE("DSpSoB.esp") ERROR: Requires "http://skyrim.nexusmods.com/mods/17746 Duel Sheath plus Shields on Back"
+  IFNOT FILE("DSpSoB.esp") REQ: "http://skyrim.nexusmods.com/mods/17746 Duel Sheath plus Shields on Back"
 New Playable Races by Budcat v3.0.esp
 NewRaces.esp
 OhmesRaht.esp
@@ -9357,7 +9359,8 @@ quxxy - improved, sortable books.esp
 RacialBonusesOnCharacterCreation.esp
 sOverEncumbered.esp
 Vr - Guard Comment Tweak.esp
-  WARN: Obsolete. Update to latest renamed version - Vrx Guards Equipment Comment Tweaks.esp
+  IF VAR(EN) WARN: Obsolete. Update to latest renamed version - Vrx Guards Equipment Comment Tweaks.esp
+   IF VAR(RU) WARN: Устарело. Обновите до последней версии - Vrx Guards Equipment Comment Tweaks.esp
 Vrx Guards Equipment Comment Tweaks.esp
 You Are Over-encumbered.esp
 ENDGROUP: Message suppression/changing overrides
@@ -9427,8 +9430,8 @@ Volrath - Enhanced Lights and Fixes - non-RCRN.esp
 Volrath - Enhanced Lights and Fixes - non-RCRN - Lanterns Of Skyrim.esp
 Volrath - Dragonreach - Brazier fix.esp
 REGEX: Volrath - Dragonreach - Brazier fix( - 1\.1)\.esp
-  IF VAR(EN) && IFNOT FILE("rcrnShaders.esp") && IFNOT REGEX("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") ERROR: If using V1.1 RCRN is required, otherwise your game will crash.
-    IF VAR(RU) && IFNOT FILE("rcrnShaders.esp") && IFNOT REGEX("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") ERROR: Если используется версия 1.1, тогда требуется мод RCRN, иначе ваша игра может вылетать.
+  IF VAR(EN) && IFNOT FILE("rcrnShaders.esp") && IFNOT REGEX("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") ERROR: If using V1.1 "http://skyrim.nexusmods.com/mods/1875 RCRN" is required, otherwise your game will crash.
+    IF VAR(RU) && IFNOT FILE("rcrnShaders.esp") && IFNOT REGEX("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") ERROR: Если используется версия 1.1, тогда требуется мод "http://skyrim.nexusmods.com/mods/1875 RCRN", иначе ваша игра может вылетать.
 Animated Weapon Enchants.esp
 Animated Weapon Enchants - Vanilla Sounds.esp
 Animated Enchantments.esp
