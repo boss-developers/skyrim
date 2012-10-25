@@ -1033,6 +1033,7 @@ Ambience Music Overhaul - Addon - with vanilla music -.esp
 Ambience Music Overhaul - Combat.esp
 Ambience Music Overhaul - Combat - with vanilla music.esp
 Ambience Music Overhaul - Interiors and Special.esp
+Ambience Music Overhaul - Interiors and Special - with vanilla music.esp
 REGEX: Dawn_addon_part(\d)\.esp
 dragonborn with lute.esp
 esisbattlepack.esp
@@ -1507,6 +1508,21 @@ expanded children.esp
 ExpandedJewelryCrafting.esp
 REGEX: Lorecraft - ExpandedJewelry(Crafting|NoChaos).esp
 LORECRAFT-ExpandedJewelryCrafting.esp
+Expensive Transports 5x.esp
+  IF CHECKSUM("Expensive Transports 5x.esp", 58CC3897) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
+  IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") ERROR: Use only one of Expensive Transports*.esp
+Expensive Transports 10x.esp
+  IF CHECKSUM("Expensive Transports 10x.esp", 9AE20AC6) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
+  IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") ERROR: Use only one of Expensive Transports*.esp
+Expensive Transports 20x.esp
+  IF CHECKSUM("Expensive Transports 20x.esp", EA972067) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
+  IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") ERROR: Use only one of Expensive Transports*.esp
+Expensive Transports 5x.esp
+  IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") ERROR: Use only one of Expensive Transports*.esp
+Expensive Transports 10x.esp
+  IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") ERROR: Use only one of Expensive Transports*.esp
+Expensive Transports 20x.esp
+  IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") ERROR: Use only one of Expensive Transports*.esp
 ExpensiveCarriagesInns.esp
 ExpensiveCarriagesInns_x5.esp
 Expensive Investments.esp
@@ -1898,6 +1914,9 @@ People Have Torches.esp
 Perfect Legionnaire 3.0.esp
 Perk Books.esp
 Perks Unbound.esp
+  IF VAR(Dawnguard) ERROR: Use Dawnguard version, Perks Unbound - Dawnguard.esp
+Perks Unbound - Dawnguard.esp
+  IF FILE("Perks Unbound.esp") WARN: Use only one: Perks Unbound.esp or Perks Unbound - Dawnguard.esp
 PerkPointPotion.esp
 PerkReset.esp
   IF VAR(EN) WARN: Rename this file to PerkReset.esm.
@@ -2763,9 +2782,7 @@ BEGINGROUP: Items D
 d2Helmets.esp
 dadagjlx.esp
 Daeas.esp
-DaedricAssasinArmorLight.esp
 DaedricAssassinArmorLight.esp
-DaedricAssasinArmorHeavy.esp
 DaedricAssassinArmorHeavy.esp
 daedric longsword standalone crafting.esp
 Daedric Lord Armor.esp
@@ -6874,6 +6891,7 @@ Better Vampires - No DawnGuard.esp
     IF VAR(RU) && IF FILE("Better Vampires.esp") INC: Better Vampires.esp. Используйте только один файл better vampires.
   IF VAR(EN) && IF VAR(Dawnguard) WARN: You need the Dawnguard version of better vampires to work as intended with dawnguard.
     IF VAR(RU) && IF VAR(Dawnguard) WARN: Вам нужна Dawnguard-версия better vampires для правильной работы с DLC Dawnguard.
+
 Better Weres and Vamps.esp
 dvampire.esp
 IFNOT VAR(ExtSlider) MOD: VampireOverhaul.esp
@@ -7485,7 +7503,7 @@ REGEX: Skyrim Improved Magic System( - No Race Spell Removal)?\.esp
     IF VAR(RU) && IF FILE("Skyrim Improved Magic System.esp") && IF FILE("Skyrim Improved Magic System - No Race Spell Removal.esp") WARN: Используйте только один Skyrim Improved Magic System esp
 Smaller Spell Light Radius.esp
 SpellSneak.esp
-Starting Spell Choice.esp
+IFNOT FILE("Alternate Start - Live Another Life.esp") MOD: Starting Spell Choice.esp
 Startingspells begone.esp
 StrongerSpells.esp
 summon cap.esp
@@ -7924,6 +7942,7 @@ REGEX: ABT - Increased Bolts Damage (\(Vanilla\)|\(BS and CCO\))( [-\+]?\d{1,3}%
 REGEX: AB?T -( Increased)? Progressive Damage( \(BS and CCO\)| \(with Nord Hero Arrow\)| \(Vanilla\))?( [-\+]?\d{1,3}%)?\.esp
 REGEX: AB?T - Recover ([-\+]?\d{1,3}%)( Less| More)? Arrows( and Bolts)?\.esp
 /* All AT plugins must load after *all* ACE modules */
+ABT - Bolts Renamed for BS and CCO.esp
 Balanced Armor Effects.esp
 cao_PerkRanks.esp
 DFB - Carry Weight Per Stamina Choice.esp
@@ -9236,8 +9255,11 @@ Alternate Start - Live Another Life.esp
 Live Another Life.esp
   IF VAR(EN) WARN: This version is not supported due to corruption caused by TESVSnip. Please upgrade as soon as possible to version 2.0+
     IF VAR(RU) WARN: Эта версия не поддерживается из за нарушений, вызванных программой TESVSnip. Пожалуйста, обновите так быстро как возможно до версии 2.0 или выше.
-Quick Start - Skip the Opening Sequence.esp
 
+IF FILE("Alternate Start - Live Another Life.esp") MOD: Starting Spell Choice.esp
+Starting Spell Choice - Life Another Life Patch.esp
+  IFNOT FILE("Alternate Start - Live Another Life.esp") || IFNOT FILE("Starting Spell Choice.esp") ERROR: Requires both Starting Spell Choice.esp and Alternate Start - Live Another Life.esp
+Quick Start - Skip the Opening Sequence.esp
 ENDGROUP: Alternative starts
 
 BEGINGROUP: Race Overrides
