@@ -227,7 +227,8 @@ Domus_Dementis.esm
 Deus Mons.esm
 dovahkiin_sanctuary.esm
 DSpSoB.esm
-  WARN: Obsolete. Remove. Not for game play. Not in latest version 07
+  IF VAR(EN) WARN: Obsolete. Remove. Not for game play. Not in latest version 07
+    IF VAR(RU) WARN: Устарело. Удалите. Исключено из версий 07+
 mannyBlackRock.esm
 mannyDragonhead.esm
 REGEX: Murder.?.?\.esm
@@ -277,7 +278,7 @@ DeadlyDragons.esm
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Mannequin.esm
 Monster Hunter.esm
-  WARN: This mod may contain unathorized content.
+  IF VAR(EN) SAY: This mod may contain unauthorized content.
   IF CHECKSUM("Monster Hunter.esm", 51FB2723) DIRTY: 28 ITM, 19 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 alchstone5x.esm
 REGEX: EagleEyePerk(_defStamina|_half_stamina)?\.esm
@@ -1463,8 +1464,9 @@ Drink JuiceMod.esp
 dropfixes.esp
 DSpSoB.esp
   IF CHECKSUM("DSpSoB.esp", 44D3F30C) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF REGEX("dD.?- Realistic Ragdoll Force.*\.esp") && IFNOT FILE("Neovalen Race Compatibility.esp") WARN: Requires Neovalen Race Compatibility.esp if using dD - Realistic Force *.esp to insure correct operation.
-  IF VAR(Dawnguard) && IFNOT CHECKSUM("DSpSoB.esp", 8FAD1B41) ERROR: Use Dawnguard version of same name.
+  IF REGEX("dD.?- Realistic Ragdoll Force.*\.esp") && IFNOT FILE("Neovalen Race Compatibility.esp") REQ: Neovalen Race Compatibility.esp
+  IF VAR(EN) && IF VAR(Dawnguard) SAY: Make sure you use Dawnguard version.
+    IF VAR(RU) && IF VAR(Dawnguard) SAY: Убедитесь, что используете Dawnguard-версию.
 Dwemer Certified.esp
 Dwemer Povazka from Hiro.esp
 Dwemer Spectres.esp
@@ -1716,7 +1718,7 @@ Lanterns Of Skyrim - All In One 2x brighter.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Lanterns Of Skyrim - All In One - Main.esm
-  IFNOT FILE("Lanterns Of Skyrim - All In One - Main.esm") SAY: REQ: Lanterns Of Skyrim - All In One - Main.esm
+  IFNOT FILE("Lanterns Of Skyrim - All In One - Main.esm") REQ: Lanterns Of Skyrim - All In One - Main.esm
 REGEX: Lanterns Of Skyrim - Around Cities(_bright)?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -1871,7 +1873,8 @@ Nocturnal Craftable Armors.esp
     IF VAR(RU) && IF FILE("Vampirelordroyal.esp") WARN: Автор сообщает в описании на нексусе, что Royal Bloodlines (Vampirelordroyal.esp) может портить этот мод.
 NordNeeds.esp
 Nord Needs + Cooking Expanded patch.esp
-  IFNOT FILE("NordNeeds.esp") || IFNOT FILE("CookingExpanded.esp") ERROR: Requires both "http://skyrim.nexusmods.com/mods/1409 Cooking Expanded" and "http://skyrim.nexusmods.com/mods/21384 NordNeeds"
+  IFNOT FILE("CookingExpanded.esp") REQ: "http://skyrim.nexusmods.com/mods/1409 Cooking Expanded"
+  IFNOT FILE("NordNeeds.esp") REQ: "http://skyrim.nexusmods.com/mods/21384 NordNeeds"
 NoSaltRecipes.esp
 NPC Bartering.esp
 ENDGROUP: Base N
@@ -2492,7 +2495,7 @@ REGEX: Arcania_armory( \(base\))?\.esp
     IF VAR(RU) && IF FILE("Arcania_armory.esp") && IF FILE("Arcania_armory (base).esp") SAY: Используйте только один Arcania_armory*.esp
 Arcania bows.esp
 archdemonplushighdragon.esp
-  WARN: This mod may contain unathorized content.
+  IF VAR(EN) WARN: This mod may contain unathorized content.
   IF CHECKSUM("archdemonplushighdragon.esp", 84F7CB68) DIRTY: 3 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Archmage's Boots.esp
 Ariyan.esp
@@ -4067,8 +4070,8 @@ SkyRe_Plugin_VagabondArmor_5.esp
     IF VAR(RU) && IF ACTIVE("VagabondArmor.esp") SAY: Не забудьте отключить или удалить VagabondArmor.esp
 Valdacil's Light Armor Robes.esp
 VampireMasterHood.esp
-  IF FILE("VampireMasterSet.esp") WARN: Use only one VampireMaster*.esp.
 VampireMasterSet.esp
+  IF FILE("VampireMasterHood.esp") INC: VampireMasterHood.esp
 Vampiric Sword.esp
 VampiricDagger.esp
 VanguardArmor.esp
@@ -5271,9 +5274,10 @@ WestbrookKeep.esp
 Whiterun Spruce by ReVan1199.esp
 Whiterun Trees.esp
   IF CHECKSUM("Whiterun Trees.esp", D2995274) DIRTY: 1 ITM record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Whiterun Trees.esp", 226D7357)  WARN: Obsolete. Update to latest version "http://skyrim.nexusmods.com/mods/8240 Whiterun Trees 1.1.esp"
+  IF CHECKSUM("Whiterun Trees.esp", 226D7357)  IF VAR(EN) WARN: Obsolete. Update to latest version "http://skyrim.nexusmods.com/mods/8240 Whiterun Trees 1.1.esp"
+   IF VAR(RU) WARN: Устарело. Обновите до последней версии "http://skyrim.nexusmods.com/mods/8240 Whiterun Trees 1.1.esp"
 Whiterun Trees 1.1.esp
-  IF CHECKSUM("Whiterun Trees.esp", D2995274) WARN: Diiferent mod with same name. Probably incompatible.
+  IF CHECKSUM("Whiterun Trees.esp", D2995274) WARN: Different mod with same name. Probably incompatible.
 Windhelm Dock FTP.esp
 WindhelmBetterDocks.esp
 windhelm_thane.esp
@@ -5326,7 +5330,8 @@ BEGINGROUP: Weight Changes
 Armor Weight Adjustment.esp
 Axe and Pickaxe weight.esp
 A&P weight change only.esp
-  IF VAR(Skyre) WARN: Author states SkyRe will overlap this mod, rendering it useless.
+  IF VAR(EN) && IF VAR(SkyreM) WARN: Author states SkyRe will overlap this mod, rendering it useless.
+    IF VAR(RU) && IF VAR(SkyreM) WARN: Автор утверждает, что SkyRe будет перезаписывать этот мод, делая его бесполезным.
 Book_Weight_Correct.esp
 Domino_ReducedWeight_All.esp
 REGEX: DragonboneWeightRedux\(x\d\d?\)\.esp
@@ -5337,7 +5342,6 @@ HuntersMod.esp
 KTGold.esp
 KTGold0.005.esp
   IF FILE("KTGold.esp") INC: KTGold.esp
-  IF FILE("KTGold0.0005.esp") INC: KTGold0.0005.esp
 KTGold0.0005.esp
   IF FILE("KTGold.esp") INC: KTGold.esp
   IF FILE("KTGold0.005.esp") INC: KTGold0.005.esp
@@ -6257,7 +6261,7 @@ BEGINGROUP: Overrides O
 Oblivious Shadowmere (Clean).esp
 Odahviingisbetter.esp
 ogre_troll_replacement_v0_3.esp
-  WARN: This mod may contain unathorized content.
+  IF VAR(EN) WARN: This mod may contain unathorized content.
 onfire.esp
 OpenFaceGuardHelmets.esp
 OpenFaceGuardHelmetsFR.esp
@@ -6359,7 +6363,7 @@ scaredchildren.esp
 Shadow Remover.esp
 SilentRuneSpells_v100.esp
 SilentRuneSpellsUncap_v100.esp
-  IF FILE("SilentRuneSpells_v100.esp") WARN: Use only one SilentRuneSpells esp.
+  IF FILE("SilentRuneSpells_v100.esp") INC: SilentRuneSpells_v100.esp
 skooma.esp
 Skooma Incorporated.esp
 SkyHide Fur, Hide & Leather Only - Optional.esp
