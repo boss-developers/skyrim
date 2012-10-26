@@ -1914,9 +1914,12 @@ People Have Torches.esp
 Perfect Legionnaire 3.0.esp
 Perk Books.esp
 Perks Unbound.esp
-  IF VAR(Dawnguard) ERROR: Use Dawnguard version, Perks Unbound - Dawnguard.esp
+  IF VAR(Dawnguard) WARN: Dawnguard version needed also. Perks Unbound - Dawnguard.esp
+Perks Unbound - Helmless Warrior.esp
+  IF VAR(Dawnguard) WARN: Dawnguard version needed also. Perks Unbound - Dawnguard.esp
+  IF FILE("Perks Unbound.esp") WARN: Use only one - Perks Unbound.esp or Perks Unbound - Helmless Warrior.esp
 Perks Unbound - Dawnguard.esp
-  IF FILE("Perks Unbound.esp") WARN: Use only one: Perks Unbound.esp or Perks Unbound - Dawnguard.esp
+  IFNOT FILE("Perks Unbound.esp") && IFNOT FILE("Perks Unbound - Helmless Warrior.esp") WARN: Requires Perks Unbound.esp or Perks Unbound - Helmless Warrior.esp
 PerkPointPotion.esp
 PerkReset.esp
   IF VAR(EN) WARN: Rename this file to PerkReset.esm.
