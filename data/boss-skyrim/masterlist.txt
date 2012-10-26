@@ -1914,12 +1914,13 @@ People Have Torches.esp
 Perfect Legionnaire 3.0.esp
 Perk Books.esp
 Perks Unbound.esp
-  IF VAR(Dawnguard) WARN: Dawnguard version needed also. Perks Unbound - Dawnguard.esp
+  IF VAR(Dawnguard) && IFNOT("Perks Unbound - Dawnguard.esp") REQ: Perks Unbound - Dawnguard.esp
 Perks Unbound - Helmless Warrior.esp
-  IF VAR(Dawnguard) WARN: Dawnguard version needed also. Perks Unbound - Dawnguard.esp
-  IF FILE("Perks Unbound.esp") WARN: Use only one - Perks Unbound.esp or Perks Unbound - Helmless Warrior.esp
+  IF VAR(Dawnguard) && IFNOT("Perks Unbound - Dawnguard.esp") REQ: Perks Unbound - Dawnguard.esp
+  IF FILE("Perks Unbound.esp") INC: Perks Unbound.esp
 Perks Unbound - Dawnguard.esp
-  IFNOT FILE("Perks Unbound.esp") && IFNOT FILE("Perks Unbound - Helmless Warrior.esp") WARN: Requires Perks Unbound.esp or Perks Unbound - Helmless Warrior.esp
+  IF VAR(EN) && IFNOT FILE("Perks Unbound.esp") || IFNOT FILE("Perks Unbound - Helmless Warrior.esp") REQ: Perks Unbound - Helmless Warrior.esp or Perks Unbound - Helmless Warrior.esp
+    IF VAR(RU) && IFNOT FILE("Perks Unbound.esp") || IFNOT FILE("Perks Unbound - Helmless Warrior.esp") REQ: Perks Unbound - Helmless Warrior.esp или Perks Unbound - Helmless Warrior.esp
 PerkPointPotion.esp
 PerkReset.esp
   IF VAR(EN) WARN: Rename this file to PerkReset.esm.
@@ -2088,14 +2089,14 @@ REGEX: Deleveled Skyrim - SkyMoMod_list( \(No EleTri\)| \(No EleTriSta\))\.esp
 SSS Skyrim Monster Mod Purist Lore-Friendly Patch.esp
 SIMoMoCoPatch.esp
 SkyRealism - Feast and Famine.esp
-  IFNOT FILE("BabbetesFeastBalanced.esp") WARN: Requires BabbetesFeastBalanced.esp
+  IFNOT FILE("BabbetesFeastBalanced.esp") REQ: BabbetesFeastBalanced.esp
 Skyrim Barbers.esp
 Skyrim Expanded Loot Tables.esp
   IF CHECKSUM("Skyrim Expanded Loot Tables.esp", 24E08D9F) WARN: Obsolete. Update to latest version.
   // TAG: {{BASH: Invent}}
 /* doubleloot.esp and moreloot(3v1)?\.esp change same chests as Skyrim Expanded Loot Tables.esp */
 Skyrim Expanded Loot Tables - Lower Drop Rate.esp
-  IF FILE("Skyrim Expanded Loot Tables.esp") WARN: Use only one Skyrim Expanded Loot Tables esp.
+  IF FILE("Skyrim Expanded Loot Tables.esp") INC: Skyrim Expanded Loot Tables.esp
 doubleloot.esp
 REGEX: moreloot(3v1)?\.esp
 Skyrim Extended Potions.esp
@@ -2932,7 +2933,8 @@ DreadWeapons_Fifthdreads_Weapon_Pack.esp
 Dreadweave Axes.esp
 DreamBurrowsRegalAssassin.esp
 DreamBurrowSageRetexture.esp
-  WARN: Obsolete. Update to latest renamed version > DreamBurrowsSageOutfit.esp
+  IF VAR(EN) WARN: Obsolete. Update to latest renamed version > DreamBurrowsSageOutfit.esp
+   IF VAR(RU) WARN: Устарело. Обновите до последней версии > DreamBurrowsSageOutfit.esp
 DreamBurrowsSageOutfit.esp
 dreughhd.esp
   // must load after morrowind armor mod
