@@ -6096,9 +6096,10 @@ Long-Lasting Torches - Warm Edition (2x Radius - Default Brightness).esp
 Longer Lasting Smith and Ench Potions.esp
 longercandlelight.esp
 longercandlelight2min.esp
-  IF FILE("longercandlelight.esp") WARN: Use only one longercandlelight.esp
+  IF FILE("longercandlelight.esp") INC: longercandlelight.esp
 longercandlelight5min.esp
-  IF FILE("longercandlelight.esp") || IF FILE("longercandlelight2min.esp") WARN: Use only one longercandlelight esp.
+  IF FILE("longercandlelight.esp") INC: longercandlelight.esp
+  IF FILE("longercandlelight2min.esp") INC: longercandlelight2min.esp
 LongerCraftingDurations.esp
 longerblessings.esp
 Lord of Illusion Ring.esp
@@ -6366,9 +6367,7 @@ Riften Bigger Trees.esp
 righthandspells.esp
 Ring of Hircine - No Disease Werewolf AND Totem Selection.esp
 Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp
-  IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") WARN: Use only one Ring of Hircine esp.
-RoH - No Disease And Selection.esp
-  IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") WARN: Use only one Ring of Hircine esp.
+  IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") INC: Ring of Hircine - No Disease Werewolf AND Totem Selection.esp
 RingsOnTheLeftHand.esp
 RitualQuestMarkers.esp
 ruins clutter improvement hd.esp
@@ -6902,20 +6901,24 @@ UVO - Ultimate Vampirism Overhaul.esp
 Better Vampires.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Better Vampires DG.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IF VAR(EN) SAY: Now obsolete.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Better Vampires ML.esp
-  IF VAR(EN) && IF FILE("Better Vampires.esp") WARN: Use only one better vampires file.
-    IF VAR(RU) && IF FILE("Better Vampires.esp") WARN: Используйте только один файл better vampires.
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF FILE("Better Vampires.esp") INC: Better Vampires.esp
+  IF FILE("Better Vampires DG.esp") INC: Better Vampires DG.esp
 Better Vampires - No DawnGuard.esp
-  IF FILE("Better Vampires.esp") || IF FILE("Better Vampires ML.esp") && IF VAR(EN) WARN: Use only one better vampires file.
-    IF FILE("Better Vampires.esp") || IF FILE("Better Vampires ML.esp") && IF VAR(RU) WARN: Используйте только один файл better vampires.
+  IF FILE("Better Vampires.esp") INC: Better Vampires.esp
+  IF FILE("Better Vampires DG.esp") INC: Better Vampires DG.esp
+  IF FILE("Better Vampires ML.esp") INC: Better Vampires ML.esp
   IF VAR(EN) && IF VAR(Dawnguard) WARN: You need the Dawnguard version of better vampires to work as intended with dawnguard.
     IF VAR(RU) && IF VAR(Dawnguard) WARN: Вам нужна Dawnguard-версия better vampires для правильной работы с DLC Dawnguard.
 Better Vampires ML - No DawnGuard.esp
-  IF FILE("Better Vampires.esp") || IF FILE("Better Vampires ML.esp") || IF FILE("Better Vampires - No DawnGuard.esp") && IF VAR(EN) WARN: Use only one better vampires file.
-    IF FILE("Better Vampires.esp") || IF FILE("Better Vampires ML.esp") || IF FILE("Better Vampires - No DawnGuard.esp") && IF VAR(RU) WARN: Используйте только один файл better vampires.
+  IF FILE("Better Vampires.esp") INC: Better Vampires.esp
+  IF FILE("Better Vampires DG.esp") INC: Better Vampires DG.esp
+  IF FILE("Better Vampires ML.esp") INC: Better Vampires ML.esp
+  IF FILE("Better Vampires - No DawnGuard.esp") INC: Better Vampires - No DawnGuard.esp
   IF VAR(EN) && IF VAR(Dawnguard) WARN: You need the Dawnguard version of better vampires to work as intended with dawnguard.
     IF VAR(RU) && IF VAR(Dawnguard) WARN: Вам нужна Dawnguard-версия better vampires для правильной работы с DLC Dawnguard.
 Better Weres and Vamps.esp
@@ -8277,7 +8280,7 @@ Tribunal for Skyre.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_Morrowloot.esp
-  IFNOT FILE("Morrowloot.esp") REQ:  Morrowloot.esp
+  IFNOT FILE("Morrowloot.esp") REQ: Morrowloot.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_Witcher 2 Style Dawnguard Armour.esp
@@ -9285,7 +9288,8 @@ Live Another Life.esp
 
 IF FILE("Alternate Start - Live Another Life.esp") MOD: Starting Spell Choice.esp
 Starting Spell Choice - Life Another Life Patch.esp
-  IFNOT FILE("Alternate Start - Live Another Life.esp") || IFNOT FILE("Starting Spell Choice.esp") ERROR: Requires both Starting Spell Choice.esp and Alternate Start - Live Another Life.esp
+  IFNOT FILE("Alternate Start - Live Another Life.esp") REQ: Alternate Start - Live Another Life.esp
+  IFNOT FILE("Starting Spell Choice.esp") REQ: Starting Spell Choice.esp
 Quick Start - Skip the Opening Sequence.esp
 ENDGROUP: Alternative starts
 
@@ -9401,8 +9405,8 @@ BEGINGROUP: Message suppression/changing overrides
 // Best loaded late to override possible message additions from other mods.
 
 Chesko_LevelUp.esp
-  IF VERSION("SKSE", "0.1.6.1", <) ERROR: Requires "http://skse.silverlock.org SKSE" 1.6.1+.
-  IF VERSION("TES5", "1.7.7.0", <) ERROR: Requires Skyrim 1.7.7+
+  IF VERSION("SKSE", "0.1.6.1", <) REQ: "http://skse.silverlock.org SKSE" 1.6.1+.
+  IF VERSION("TES5", "1.7.7.0", <) REQ: Skyrim 1.7.7+
 DisableNoFastTravelMessage.esp
 DragonWordsDisplayed.esp
 First Person Messages.esp
