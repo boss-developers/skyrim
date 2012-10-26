@@ -2088,11 +2088,14 @@ REGEX: Deleveled Skyrim - SkyMoMod_list( \(No EleTri\)| \(No EleTriSta\))\.esp
 SSS Skyrim Monster Mod Purist Lore-Friendly Patch.esp
 SIMoMoCoPatch.esp
 SkyRealism - Feast and Famine.esp
-  IFNOT FILE("BabbetesFeastBalanced.esp") REQ: BabbetesFeastBalanced.esp
+  IFNOT FILE("BabbetesFeastBalanced.esp") WARN: Requires BabbetesFeastBalanced.esp
 Skyrim Barbers.esp
 Skyrim Expanded Loot Tables.esp
+  IF CHECKSUM("Skyrim Expanded Loot Tables.esp", 24E08D9F) WARN: Obsolete. Update to latest version.
   // TAG: {{BASH: Invent}}
 /* doubleloot.esp and moreloot(3v1)?\.esp change same chests as Skyrim Expanded Loot Tables.esp */
+Skyrim Expanded Loot Tables - Lower Drop Rate.esp
+  IF FILE("Skyrim Expanded Loot Tables.esp") WARN: Use only one Skyrim Expanded Loot Tables esp.
 doubleloot.esp
 REGEX: moreloot(3v1)?\.esp
 Skyrim Extended Potions.esp
@@ -2734,6 +2737,7 @@ Collar.esp
 combinationVanillaOutfit.esp
 CombinedCraftingRingsv12.esp
 CompanionsShields.esp
+Construct Dragonbone Crown.esp
 CoolItems1_1.esp
 CMStrongBoxes.esp
 Combat Remastered - 2H to 1H Dawnguard.esp
@@ -2928,6 +2932,8 @@ DreadWeapons_Fifthdreads_Weapon_Pack.esp
 Dreadweave Axes.esp
 DreamBurrowsRegalAssassin.esp
 DreamBurrowSageRetexture.esp
+  WARN: Obsolete. Update to latest renamed version > DreamBurrowsSageOutfit.esp
+DreamBurrowsSageOutfit.esp
 dreughhd.esp
   // must load after morrowind armor mod
 hdmorrowindglass.esp
@@ -3626,6 +3632,8 @@ SkyRe_Plugin_Omegared99sArmorCompilation.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 Onechanbara Kagura Set.esp
+1HDragonboneGreatsword.esp
+  IF CHECKSUM("1HDragonboneGreatsword.esp", 0AB9B894) || IF CHECKSUM("1HDragonboneGreatsword.esp", 1159E2EA) WARN: Obsolete. Update to latest version.
 One handed Crossbow.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 openfacehelmetsstandalone.esp
@@ -5035,7 +5043,7 @@ quest into the depths.esp
 Quick TG Entrance_Riften Well.esp
 quest_sorcery.esp
 questrewardleveler.esp
-  IF CHECKSUM("questrewardleveler.esp", B75E31AA) DIRTY:  4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide") 
+  IF CHECKSUM("questrewardleveler.esp", B75E31AA) DIRTY: 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide") 
 ENDGROUP: Quests Q
 
 BEGINGROUP: Quests R
@@ -5717,6 +5725,9 @@ disablefasttravel.esp
 REGEX: DisableRangedKillCams(\d\.\d)\.esp
 DiversePriests.esp
 draeath-NightingaleShadow-LesserPower.esp
+Dragon Souls To Attributes.esp
+  IF CHECKSUM("Dragon Souls To Attributes.esp", EC31C990) DIRTY: 3 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Dragon Souls To Attributes.esp", 4A52794E) || IF CHECKSUM("Dragon Souls To Attributes.esp", 646A5BB8) WARN: Obsolete. Update to the latest version.
 doublebounddmg.esp
   // TAG: {{BASH: Stats}}
 droppablebarenziah.esp
@@ -6085,10 +6096,9 @@ Long-Lasting Torches - Warm Edition (2x Radius - Default Brightness).esp
 Longer Lasting Smith and Ench Potions.esp
 longercandlelight.esp
 longercandlelight2min.esp
-  IF FILE("longercandlelight.esp") INC: longercandlelight.esp
+  IF FILE("longercandlelight.esp") WARN: Use only one longercandlelight.esp
 longercandlelight5min.esp
-  IF FILE("longercandlelight.esp") INC: longercandlelight.esp
-  IF FILE("longercandlelight2min.esp") INC: longercandlelight2min.esp
+  IF FILE("longercandlelight.esp") || IF FILE("longercandlelight2min.esp") WARN: Use only one longercandlelight esp.
 LongerCraftingDurations.esp
 longerblessings.esp
 Lord of Illusion Ring.esp
@@ -6343,7 +6353,7 @@ Reduced Early Perk Skill Reqs.esp
 ReducedWardCost.esp
 respec.esp
 RestoSpells.esp
-  IF CHECKSUM("RestoSpells.esp", 15B11D47) DIRTY:  11 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("RestoSpells.esp", 15B11D47) DIRTY: 11 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Revised.esp
 reworkedmannequins.esp
 REGEX: RichMerchants\w*\.esp
@@ -6354,6 +6364,11 @@ REGEX: RichMerchants\w*\.esp
 RidingDirty.esp
 Riften Bigger Trees.esp
 righthandspells.esp
+Ring of Hircine - No Disease Werewolf AND Totem Selection.esp
+Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp
+  IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") WARN: Use only one Ring of Hircine esp.
+RoH - No Disease And Selection.esp
+  IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") WARN: Use only one Ring of Hircine esp.
 RingsOnTheLeftHand.esp
 RitualQuestMarkers.esp
 ruins clutter improvement hd.esp
@@ -6873,7 +6888,7 @@ BEGINGROUP: Vampires and Werewolves
 
 SkyRe_Vampirism.esp
   IF REGEX("MM_BeluaSangunaire.*\.esp") INC: Belua Sanguinare
-  IF FILE("Better Vampires.esp") || IF FILE("Better Vampires DG.esp") INC: Better Vampires.esp
+  IF FILE("Better Vampires.esp") || IF FILE("Better Vampires - No DawnGuard.esp") || IF FILE("Better Vampires ML.esp") || IF FILE("Better Vampires ML - No DawnGuard.esp") INC: Better Vampires.esp
   IF FILE("VampireOverhaul.esp") INC: VampireOverhaul.esp
   IF FILE("UVO - Ultimate Vampirism Overhaul.esp") INC: UVO - Ultimate Vampirism Overhaul.esp
   IF REGEX("Imp's More Complex Needs\.es[mp]") INC: Imp's More Complex Needs
@@ -6884,17 +6899,25 @@ SkyRe_Vampirism.esp
   IF VAR(EN) SAY: Possible conflicts with other mods that changes vampirism system.
     IF VAR(RU) SAY: Возможны конфликты с другими модами, меняющими систему вампиризма.
 UVO - Ultimate Vampirism Overhaul.esp
-better vampires.esp
+Better Vampires.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Better Vampires DG.esp
   IF VAR(EN) SAY: Now obsolete.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+Better Vampires ML.esp
+  IF VAR(EN) && IF FILE("Better Vampires.esp") WARN: Use only one better vampires file.
+    IF VAR(RU) && IF FILE("Better Vampires.esp") WARN: Используйте только один файл better vampires.
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Better Vampires - No DawnGuard.esp
-  IF VAR(EN) && IF FILE("Better Vampires.esp") INC: Better Vampires.esp. Use only one better vampires file.
-    IF VAR(RU) && IF FILE("Better Vampires.esp") INC: Better Vampires.esp. Используйте только один файл better vampires.
+  IF FILE("Better Vampires.esp") || IF FILE("Better Vampires ML.esp") && IF VAR(EN) WARN: Use only one better vampires file.
+    IF FILE("Better Vampires.esp") || IF FILE("Better Vampires ML.esp") && IF VAR(RU) WARN: Используйте только один файл better vampires.
   IF VAR(EN) && IF VAR(Dawnguard) WARN: You need the Dawnguard version of better vampires to work as intended with dawnguard.
     IF VAR(RU) && IF VAR(Dawnguard) WARN: Вам нужна Dawnguard-версия better vampires для правильной работы с DLC Dawnguard.
-
+Better Vampires ML - No DawnGuard.esp
+  IF FILE("Better Vampires.esp") || IF FILE("Better Vampires ML.esp") || IF FILE("Better Vampires - No DawnGuard.esp") && IF VAR(EN) WARN: Use only one better vampires file.
+    IF FILE("Better Vampires.esp") || IF FILE("Better Vampires ML.esp") || IF FILE("Better Vampires - No DawnGuard.esp") && IF VAR(RU) WARN: Используйте только один файл better vampires.
+  IF VAR(EN) && IF VAR(Dawnguard) WARN: You need the Dawnguard version of better vampires to work as intended with dawnguard.
+    IF VAR(RU) && IF VAR(Dawnguard) WARN: Вам нужна Dawnguard-версия better vampires для правильной работы с DLC Dawnguard.
 Better Weres and Vamps.esp
 dvampire.esp
 IFNOT VAR(ExtSlider) MOD: VampireOverhaul.esp
@@ -9377,6 +9400,9 @@ BEGINGROUP: Message suppression/changing overrides
 //
 // Best loaded late to override possible message additions from other mods.
 
+Chesko_LevelUp.esp
+  IF VERSION("SKSE", "0.1.6.1", <) ERROR: Requires "http://skse.silverlock.org SKSE" 1.6.1+.
+  IF VERSION("TES5", "1.7.7.0", <) ERROR: Requires Skyrim 1.7.7+
 DisableNoFastTravelMessage.esp
 DragonWordsDisplayed.esp
 First Person Messages.esp
