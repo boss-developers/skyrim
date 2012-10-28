@@ -531,8 +531,8 @@ Letrush Fix.esp
   IF VAR(EN) && IF VERSION("TES5", "1.7.7", >) ERROR: Delete. Fixed in official patch 1.8
     IF VAR(RU) && IF VERSION("TES5", "1.7.7", >) ERROR: Удалите. Исправлено в патче 1.8
 lightplacement.esp
-  IF VAR(EN) WARN: Obsolete. Update to latest renamed version.
-    IF VAR(RU) WARN: Устарело. Обновите до последней версии.
+  IF VAR(EN) WARN: Obsolete. Update to latest renamed version. Renamed to lightingfix.esp
+    IF VAR(RU) WARN: Устарело. Обновите до последней версии. Переименовано в lightingfix.esp
 lightingfix.esp
   IF CHECKSUM("lightingfix.esp", A534E1EA) WARN: Obsolete. Update to latest version.
   IF CHECKSUM("lightingfix.esp", B22ED6C8) DIRTY: 9 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -2879,6 +2879,8 @@ diamondsword.esp
 REGEX: diamondweapons.*\.esp
   IF VAR(EN) && IF REGEX("diamondweapons1\.[02]\.esp") SAY: Obsolete. Update to latest version.
     IF VAR(RU) && IF REGEX("diamondweapons1\.[02]\.esp") SAY: Устарело. Обновите до последней версии.
+DIMclothes1.esp
+  REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 DME.esp
 DME_Light.esp
   IF FILE("DME.esp") INC: DME.esp
@@ -3054,6 +3056,7 @@ FA Hide Armor.esp
 Falmer Darkseeker.esp
 Falmer Crossbow.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+FamilyJewels.esp
 FangofHaynekhtnamet.esp
 FantasyWeapons.esp
 fenderhammer.esp
@@ -3351,6 +3354,10 @@ KO Katana.esp
 kokutou yoru.esp
 KTAAncientShroudedArmor.esp
 Kubikiri Ax Edition.esp
+KURESE Gloria conversion.esp
+  REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
+  IF VAR(EN) && IF FILE("DIMclothes1.esp") WARN: Redundant. Included in "DIMONIZED UNP clothing resources".
+    IF VAR(RU) && IF FILE("DIMclothes1.esp") WARN: Избыточно. Уже включено в "DIMONIZED UNP clothing resources".
 ENDGROUP: Items K
 
 BEGINGROUP: Items L
