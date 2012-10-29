@@ -6106,9 +6106,10 @@ Ish's Weighted Gold.esp
 Isharas_MLLY_FEMALES.esp
 Isharas_MLLY_FEMALES_SKSE.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
-  IF FILE("Isharas_MLLY_FEMALES.esp") WARN: Use only one Isharas_MLLY_* esp.
+  IF FILE("Isharas_MLLY_FEMALES.esp") INC: Isharas_MLLY_FEMALES.esp
 Isharas_MLLY_MALES.esp
-  IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") WARN: Use only one Isharas_MLLY_* esp.
+  IF FILE("Isharas_MLLY_FEMALES.esp") INC: Isharas_MLLY_FEMALES.esp
+  IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") INC: Isharas_MLLY_FEMALES_SKSE.esp
 Isharas_MLLY_MALES_SKSE.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") WARN: Use only one Isharas_MLLY_* esp.
@@ -6694,7 +6695,8 @@ ENDGROUP: Overrides T
 BEGINGROUP: Overrides U
 
 ultimateodahviing.esp
-  SAY: Incompatible with other mods that alter Odahviing.
+  IF VAR(EN) INC: other mods that alter Odahviing.
+    IF VAR(RU) INC: С другими модами, меняющими дракона по имени Одавинг.
 Unarmored_LightArmor.esp
 Uncle Sheo.esp
 UnderTows Alcohol Effects.esp
@@ -6707,7 +6709,7 @@ Skyrim Creatures Alive.esp
   TAG: {{BASH: Relev, Delev}}
 UnderstandingShadowmarksV1.1.esp
 Unique.esp
-  IF FILE("Unique.esm") INC: Use Unique.esm or Unique.esp, not both.
+  IF FILE("Unique.esm") INC: Unique.esm
 Unique - DLC Dawnguard.esp
 UniqueNPCsProtected.esp
 Unlimited_Amulets.esp
@@ -6726,7 +6728,8 @@ BEGINGROUP: Overrides V
 
 valuablehidesandskinsvanilla.esp
 vanillaarcheryimproved.esp
-  IF VAR(Dawnguard) ERROR: Use vanillaarcheryimproveddawnguard.esp
+  IF VAR(EN) && IF VAR(Dawnguard) && IFNOT FILE(vanillaarcheryimproveddawnguard.esp) ERROR: Use vanillaarcheryimproveddawnguard.esp instead
+    IF VAR(RU) && IF VAR(Dawnguard) && IFNOT FILE(vanillaarcheryimproveddawnguard.esp) ERROR: Используйте вместо этого vanillaarcheryimproveddawnguard.esp
 vanillaarcheryimproveddawnguard.esp
   IF FILE("vanillaarcheryimproved.esp") SAY: Use only one vanillaarcheryimproved esp.
 VanillaMonsterLootV1_5.esp
@@ -8469,9 +8472,6 @@ Shars Perks - 2HandSneak and DagCrit.esp
 Shars Perks - DW Savagery.esp
 Soulmaster 10.esp
 SpeechTree.esp
-Skyrim15SmithingFix.esp
-  // must be load after any perk and/or smithing mods
-  IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 IFNOT FILE("SkyRe_Main.esp") MOD: StavesofSkyrim.esp
 Two-Handed Speed-Based Perks.esp
 IF CHECKSUM("Werewolf Loot.esp", D83BDA8C) MOD: Werewolf Loot.esp
@@ -8479,6 +8479,10 @@ Werewolf Loot- Dawnguard version.esp
 wereControl.esp
   IFNOT CHECKSUM("Werewolf Loot.esp", D83BDA8C) REQ: Werewolf Loot.esp
 Zero Effort Lockpicking.esp
+
+Skyrim15SmithingFix.esp
+  // must be load after any perk and/or smithing mods
+  IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 ENDGROUP: Player Perks
 
 BEGINGROUP: Pose and Animation Mods
@@ -8849,7 +8853,7 @@ CMHalfElf.esp
   IFNOT FILE("CMHalfElf.esm") REQ: CMHalfElf.esm
 CompanionValfar.esp
 (TWE) Dandelion NPC.esp
-  SAY: This mod may contain unauthorized or illegal content.
+  IF VAR(EN) SAY: This mod may contain unauthorized or illegal content.
 Danicus.esp
 Deadeye.esp
 Demon Horse.esp
@@ -9654,7 +9658,8 @@ Clean Invisibility Effects plus Eyes Fix - Chameleon Version.esp
 Different Invisibility Effects plus Eyes Fix.esp
 Different Invisibility Effects plus Eyes Fix - Chameleon Version.esp
 REGEX: DTHSpellMageArmorEffectReplacer.+\.esp
-  SAY: Use only one DTHSpellMageArmorEffectReplacer*.esp
+  IF VAR(EN) SAY: Use only one DTHSpellMageArmorEffectReplacer*.esp
+    IF VAR(RU) SAY: Используйте только один DTHSpellMageArmorEffectReplacer*.esp
 getSnowy.esp
 Glowtastic.esp
 LFox Improved Night Eye No Blur.esp
