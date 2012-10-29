@@ -606,7 +606,6 @@ IFNOT VAR(ExtSlider) MOD: Vampire Eyes Fix.esp
 VampireInvisibleItemsFix.esp
 Vulkanglas statt Malachit.esp
 Wandering Dupe Mannequin Fix v1.2 SPODUM Vanilla.esp
-Whiterun Field Fix.esp
 Whiterun Lighting Fix.esp
 Whiterun Market Fixes.esp
 Whiterun_no_standing.esp
@@ -620,7 +619,6 @@ VampiresHoodFix.esp
   IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Delete. Included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
 Correctif - Skyrim.esp
-Skyrim Crafting Fixes.esp
 SkyrimFixes.esp
   IF VAR(EN) && IF FILE("Unofficial Skyrim Patch.esp") SAY: Some corrections already included in Unofficial Skyrim Patch.esp. In more details see "http://skyrim.nexusmods.com/mods/24807 mod page".
     IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") SAY: Некоторые исправления уже включены в Unofficial Skyrim Patch.esp. Подробности смотрите на "http://skyrim.nexusmods.com/mods/24807 странице мода".
@@ -1270,6 +1268,8 @@ ENDGROUP: Base B
 
 BEGINGROUP: Base C
 
+REGEX: Calendar - (Deutsch|English|Francais|Italiano|Spanish)\.esp
+  IF FILE("ModernDayCalendarNames.esp") || IF FILE("Modern Day Calendar Names_Learn Names.esp") INC: Modern Day Calendar Names
 CalienteVanillaArmorTweaks.esp
 CallingCardFence.esp
 calt.esp
@@ -1514,6 +1514,8 @@ REGEX: Eternal Bunny Pet (Dark Silent)?\.esp
 EternalTorch.esp
 EveryoneGetInside.esp
 expanded children.esp
+ExpandedJailCells.esp
+  IF CHECKSUM("ExpandedJailCells.esp", BA5A6F28) DIRTY: 1 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ExpandedJewelryCrafting.esp
 REGEX: Lorecraft - ExpandedJewelry(Crafting|NoChaos).esp
 LORECRAFT-ExpandedJewelryCrafting.esp
@@ -1730,6 +1732,7 @@ knownspells.esp
 Krisan's Children.esp
 ktxcompleteskyforge.esp
 kuerteeHorseCommands.esp
+kuerteeHorseCommandsVerB.esp
 kuerteeProfessions.esp
 ENDGROUP: Base K
 
@@ -1848,7 +1851,9 @@ MLLY - FEMALE.esp
 MLLY - MALE.esp
 mm_AspectOfTheBeastPotion.esp
 mmbedroll1.esp
+ModernDayCalendarNames.esp
 Modern Day Calendar Names_Learn Names.esp
+  IF FILE("ModernDayCalendarNames.esp") INC: Use only one ModernDayCalendarNames esp.
 MomoDash.esp
 Mononoke.esp
 Moonpath_TP.esp
@@ -2560,6 +2565,8 @@ Armor of Justice.esp
 Armures traditionnelles de Bordeciel III.esp
 Arngrim_Evening_Dress.esp
 REGEX: ArrowsNoGravity(_Fast)?\.esp
+AronsMechaDragons.esp
+  IF CHECKSUM("AronsMechaDragons.esp", 77A605C4) DIRTY: 10 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ArrowsOfLight.esp
 AsharaRomanticOutfit.esp
 AsharaDimonizedDress.esm
@@ -3470,7 +3477,7 @@ lilithssickle_2_1.esp
 _TES5Edit Cleaning guide")
 lilithsslasher2h.esp
 Lineage 2 Weapons.esp
-  IF VAR(EN) SAY: This mod may contain unauthorized or illegal content.
+  SAY: This mod may contain unauthorized or illegal content.
 lingling_gg.esp
 LinguistPack.esp
 Lion Heart Halberd.esp
@@ -3605,7 +3612,7 @@ REGEX: SkyRe_Plugin_NicoroshiCreations.*\.esp
   IF VAR(EN) && IF ACTIVE("Nicoroshi Creations.esp") SAY: Remember not to load (or to simply delete) Nicoroshi Creations.esp
     IF VAR(RU) && IF ACTIVE("Nicoroshi Creations.esp") SAY: Не забудьте отключить или удалить Nicoroshi Creations.esp
 (TWE) Nilfgaardian Sorcerer Pack.esp
-  IF VAR(EN) SAY: This mod may contain unauthorized or illegal content.
+  SAY: This mod may contain unauthorized or illegal content.
   IF CHECKSUM("(TWE) Nilfgaardian Sorcerer Pack.esp", 06610CC7) DIRTY: 3 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 NightasyBondageArmor.esp
 Night_Dweller_Armor.esp
@@ -4021,6 +4028,7 @@ TGBowsDrawFaster.esp
 // Adds gloves, doesn't alter bows.
 REGEX: TH3WICK3D1-.+\.esp
   // REGEX because only items from this autor
+ThaidensTreasure.esp
 Thalmor Light Armor.esp
 ThalmorNoGlass.esp
   TAG: {{BASH: Delev}}
@@ -4883,8 +4891,7 @@ CabinInFalkreath.esp
 Fantasy Markarth.esp
 Farm House_V2.esp
 farmeve-unlimited.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version - "http://skyrim.nexusmods.com/mods/25020 JobsofSkyrim.esp"
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии - "http://skyrim.nexusmods.com/mods/25020 JobsofSkyrim.esp"
+  SAY: Obsolete. Update to latest renamed version - "http://skyrim.nexusmods.com/mods/25020 JobsofSkyrim.esp"
 FarviewCabin.esp
 FCKagrenacsInstantFortress.esp
 FH_Plaguesword.esp
@@ -5142,7 +5149,7 @@ riften_back_entrance.esp
 RiftenBetterDocks.esp
 MoreRiftenTrees.esp
 (TWE) Riften Brothel..esp
-  IF VAR(EN) SAY: This mod may contain unauthorized or illegal content.
+  SAY: This mod may contain unauthorized or illegal content.
   IF CHECKSUM("(TWE) Riften Brothel..esp", 81F1B405) DIRTY: 14 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Riften Riverside Home.esp
 HellayRiseWaterEvil.esp
@@ -5401,14 +5408,12 @@ whiterunMarket.esp
 WhiterunFortified.esp
 WhiterunREVISION.esp
 RRBetterWhiterunInt.esp
-Wickwood.esp
 windfall.esp
 WindhelmMilitaryEnhancement.esp
 WinterholdCastle.esp
 Winterhold_Improvements.esp
 Winterhold repair.esp
-  IF VAR(EN) WARN: Obsolete. Update to latest renamed version.
-    IF VAR(RU) WARN: Устарело. Обновите до последней версии.
+  WARN: Obsolete. Update to latest renamed version.
 Winterhold repairV4.esp  
   IF CHECKSUM("Winterhold repairV4.esp", 1CB2273B) DIRTY: 11 ITM, 26 UDR, and 1 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Winterhold Fully Restored.esp
@@ -5788,8 +5793,7 @@ DarwinsPT_less_food75.esp
 DarwinsPT_runspeed.esp
 DarwinsPT_Infected.esp
 Dawnguard - Att.esp
-  IF VAR(EN) SAY: This esp has master file ArmmedttTeeth.esm placed before Dawnguard.esm (opposite BOSS).
-    IF VAR(RU) SAY: Вопреки порядку загрузкт BOSS, мастерфайл этого мода находится перед Dawnguard.esm
+  SAY: This esp has master file ArmmedttTeeth.esm placed before Dawnguard.esm (opposite BOSS).
 Dawnguard - Join As A Vampire.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 db-nightshade-replacer.esp
@@ -6110,10 +6114,9 @@ Ish's Weighted Gold.esp
 Isharas_MLLY_FEMALES.esp
 Isharas_MLLY_FEMALES_SKSE.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
-  IF FILE("Isharas_MLLY_FEMALES.esp") INC: Isharas_MLLY_FEMALES.esp
+  IF FILE("Isharas_MLLY_FEMALES.esp") WARN: Use only one Isharas_MLLY_* esp.
 Isharas_MLLY_MALES.esp
-  IF FILE("Isharas_MLLY_FEMALES.esp") INC: Isharas_MLLY_FEMALES.esp
-  IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") INC: Isharas_MLLY_FEMALES_SKSE.esp
+  IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") WARN: Use only one Isharas_MLLY_* esp.
 Isharas_MLLY_MALES_SKSE.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") WARN: Use only one Isharas_MLLY_* esp.
@@ -6699,8 +6702,7 @@ ENDGROUP: Overrides T
 BEGINGROUP: Overrides U
 
 ultimateodahviing.esp
-  IF VAR(EN) INC: other mods that alter Odahviing.
-    IF VAR(RU) INC: С другими модами, меняющими дракона по имени Одавинг.
+  SAY: Incompatible with other mods that alter Odahviing.
 Unarmored_LightArmor.esp
 Uncle Sheo.esp
 UnderTows Alcohol Effects.esp
@@ -6713,7 +6715,7 @@ Skyrim Creatures Alive.esp
   TAG: {{BASH: Relev, Delev}}
 UnderstandingShadowmarksV1.1.esp
 Unique.esp
-  IF FILE("Unique.esm") INC: Unique.esm
+  IF FILE("Unique.esm") INC: Use Unique.esm or Unique.esp, not both.
 Unique - DLC Dawnguard.esp
 UniqueNPCsProtected.esp
 Unlimited_Amulets.esp
@@ -6732,8 +6734,7 @@ BEGINGROUP: Overrides V
 
 valuablehidesandskinsvanilla.esp
 vanillaarcheryimproved.esp
-  IF VAR(EN) && IF VAR(Dawnguard) && IFNOT FILE("vanillaarcheryimproveddawnguard.esp") ERROR: Use vanillaarcheryimproveddawnguard.esp instead
-    IF VAR(RU) && IF VAR(Dawnguard) && IFNOT FILE("vanillaarcheryimproveddawnguard.esp") ERROR: Используйте вместо этого vanillaarcheryimproveddawnguard.esp
+  IF VAR(Dawnguard) ERROR: Use vanillaarcheryimproveddawnguard.esp
 vanillaarcheryimproveddawnguard.esp
   IF FILE("vanillaarcheryimproved.esp") SAY: Use only one vanillaarcheryimproved esp.
 VanillaMonsterLootV1_5.esp
@@ -8476,6 +8477,9 @@ Shars Perks - 2HandSneak and DagCrit.esp
 Shars Perks - DW Savagery.esp
 Soulmaster 10.esp
 SpeechTree.esp
+Skyrim15SmithingFix.esp
+  // must be load after any perk and/or smithing mods
+  IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 IFNOT FILE("SkyRe_Main.esp") MOD: StavesofSkyrim.esp
 Two-Handed Speed-Based Perks.esp
 IF CHECKSUM("Werewolf Loot.esp", D83BDA8C) MOD: Werewolf Loot.esp
@@ -8483,10 +8487,6 @@ Werewolf Loot- Dawnguard version.esp
 wereControl.esp
   IFNOT CHECKSUM("Werewolf Loot.esp", D83BDA8C) REQ: Werewolf Loot.esp
 Zero Effort Lockpicking.esp
-
-Skyrim15SmithingFix.esp
-  // must be load after any perk and/or smithing mods
-  IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 ENDGROUP: Player Perks
 
 BEGINGROUP: Pose and Animation Mods
@@ -8638,6 +8638,8 @@ FFRace.esp
 GreybeardRace.esp
 Kaleen2.esp
 LunariRace.esp
+Matera.esp
+  IF CHECKSUM("Matera.esp", 1E48287E) DIRTY: 1 ITM record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MysticalElvesV1.5.esp
 mxfrostelfrace.esp
 NedeRace.esp
@@ -8857,7 +8859,7 @@ CMHalfElf.esp
   IFNOT FILE("CMHalfElf.esm") REQ: CMHalfElf.esm
 CompanionValfar.esp
 (TWE) Dandelion NPC.esp
-  IF VAR(EN) SAY: This mod may contain unauthorized or illegal content.
+  SAY: This mod may contain unauthorized or illegal content.
 Danicus.esp
 Deadeye.esp
 Demon Horse.esp
@@ -8938,6 +8940,12 @@ MaleCompanions.esp
 Marque.esp
   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairM) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairMale"
 Michelle.esp
+MC-Fiona.esp
+  IFNOT FILE("FlansEyesForSkrim.esp") REQ: "http://skyrim.nexusmods.com/mods/14539 Flans Eyes for Skyrim"
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+MC-Synbios.esp
+  IFNOT FILE("FlansEyesForSkrim.esp") REQ: "http://skyrim.nexusmods.com/mods/14539 Flans Eyes for Skyrim"
+  IFNOT VAR(ApachiiHair) && IFNOT VAR(ApachiiHairM) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairMale"
 Misha.esp
 Mina.esp
 MonsterCompanion.esp
@@ -9544,7 +9552,6 @@ WiS III races.esp
 REGEX: WiS IV( -)? Races?\.esp
 Gri_BeastFeet.esp
 QuickKhajiits.esp
-GlowingEyeFix.esp
 VRR.esp
 SkyRe_Races.esp
   IF FILE("EnhancedCharacterEdit.esp") INC: EnhancedCharacterEdit.esp
@@ -9646,9 +9653,6 @@ rcrnShaders.esp
   IF VAR(EN) SAY: Make sure you have bEnableFileSelection=1 in SkyrimPrefs.ini under [Launcher].
     IF VAR(RU) SAY: Убедитесь, что строка bEnableFileSelection=1 в SkyrimPrefs.ini находитсся в секции [Launcher].
 Volrath - Enhanced Lights and Fixes - RCRN.esp
-  REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
-Volrath - Enhanced Lights and Fixes - RCRN - Lanterns Of Skyrim.esp
-  REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 Volrath - Enhanced Lights and Fixes - non-RCRN.esp
 Volrath - Enhanced Lights and Fixes - non-RCRN - Lanterns Of Skyrim.esp
 Volrath - Dragonreach - Brazier fix.esp
@@ -9666,8 +9670,7 @@ Clean Invisibility Effects plus Eyes Fix - Chameleon Version.esp
 Different Invisibility Effects plus Eyes Fix.esp
 Different Invisibility Effects plus Eyes Fix - Chameleon Version.esp
 REGEX: DTHSpellMageArmorEffectReplacer.+\.esp
-  IF VAR(EN) SAY: Use only one DTHSpellMageArmorEffectReplacer*.esp
-    IF VAR(RU) SAY: Используйте только один DTHSpellMageArmorEffectReplacer*.esp
+  SAY: Use only one DTHSpellMageArmorEffectReplacer*.esp
 getSnowy.esp
 Glowtastic.esp
 LFox Improved Night Eye No Blur.esp
@@ -9718,8 +9721,6 @@ GreenWaterFixForWATER.esp
 GreenWaterFix.esp
   IF CHECKSUM("GreenWaterFix.esp", 7F378D8E) SAY: Upgrade to version 1.1 (For Vanilla water ONLY)
 GreenWaterFix_Compatible.esp
-GreenWaterFix_CompWithWATER1_5b.esp
-  REQ: "http://skyrim.nexusmods.com/mods/13268 WATER v1.5b"
 GreenWaterFix_CrystalClearPatch.esp
 GreenWaterFix_LesserBlurPatch.esp
 ENDGROUP: Water and Lava
