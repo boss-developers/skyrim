@@ -7292,7 +7292,13 @@ YetAnotherWerewolfImprovement.esp
 YetAnotherWerewolfImprovement_DG.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IF FILE("YetAnotherWerewolfImprovement.esp") INC: YetAnotherWerewolfImprovement.esp
+REGEX: DawnguardDelayedStart\d\.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF FILE("DG-NoAttacks.esp") INC: DG-NoAttacks.esp	
+  IF VAR(EN) SAY: Use only one DawnguardDelayedStart esp
+    IF VAR(RU) SAY: Используйте только один DawnguardDelayedStart esp
 DG-NoAttacks.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ENDGROUP: Vampires and Werewolves
 
 BEGINGROUP: Magic
