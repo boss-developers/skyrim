@@ -972,7 +972,10 @@ REGEX: Realistic Lighting( - Full| - Addon)\.esp
 REGEX: RL - .*\.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version.
     IF VAR(RU) WARN: Устарело. Обновите до последней версии.
+Realistic Lighting - Dawnguard Patch.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Realistic Lighting.esp
+  IF CHECKSUM("Realistic Lighting.esp", 5F40F0F8) DIRTY: 40 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: [Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\.esp
   IFNOT FILE("Realistic Lighting.esp") REQ: Realistic Lighting with Customization
 realrain.esp
@@ -4964,6 +4967,7 @@ BEGINGROUP: Quests G
 GardensOfWhiterun.esp
 Gobland.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("Gobland.esp", 20858F47) DIRTY: 69 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Golden Egg Treasure Hunt.esp
 Gildergreen Regrown.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
@@ -5398,6 +5402,8 @@ ENDGROUP: Quests T
 
 BEGINGROUP: Quests U
 
+Ultimate training ground.esp
+  IF CHECKSUM("Ultimate training ground.esp", 2DE178EF) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 uluchenie ivarsteda.esp
 uluchenie roriksteda.esp
 ulushenie folkrita.esp
