@@ -140,6 +140,7 @@ Ambience Music Overhaul.esm
 Ambience Music Overhaul - with vanilla music.esm
 AmethystHollowsMaster.esm
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
+BSTamriel.esm
 Lycanthropy_Music.esm
 REGEX: PersonalizedMusic.*\.esm
 NoTint.esm
@@ -5280,6 +5281,8 @@ Riverwood Smelter.esp
 RiverwoodCabin.esp
 RiverwoodHouse.esp
 riverwoodhuntingcabin.esp
+RiverwoodRepose.esp
+  IF CHECKSUM("RiverwoodRepose.esp", 304711BC) DIRTY: 29 ITM, 4 UDR, 2 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RiverWoodShack.esp
 riverwoodpicnicarea.esp
 robbersroost.esp
@@ -7481,6 +7484,8 @@ conjureatronarchfix.esp
     IF VAR(RU) && IF FILE("Unofficial Skyrim Patch.esp") ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
 conjure_chest.esp
 CurseSpell.esp
+Darkness.esp
+  SAY: Obsolete. Update to latest renamed version, "http://skyrim.nexusmods.com/mods/21164/ Dark Powers"
 DarkBrotherhoodAstrid.esp
   IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
     IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
@@ -7572,6 +7577,7 @@ Leveled Concentrated Restoration Spells.esp
 LFDivineTarget.esp
 LFFixTargetStats.esp
 LFContingency.esp
+Light Voidmagic.esp
 LightMeter.esp
 lootninja.esp
   IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
@@ -7602,6 +7608,8 @@ MarkRecallCon.esp
 MasterTheTimeAndSpaceTOGGLE.esp
 MaximumDrive.esp
 MECR_NightEye_DetectLife_Overhaul.esp
+Medium Voidmagic.esp
+  IF FILE("Light Voidmagic.esp") INC: Light Voidmagic.esp, use only one Voidmagic esp.
 REGEX: Milestone Memoirs -.+\.esp
   IF VAR(EN) WARN: Obsolete.  Update to latest version.
     IF VAR(RU) WARN: Устарело. Обновите до последней версии.
@@ -7662,6 +7670,9 @@ QueenPotemaSummon.esp
     IF VAR(RU) && IFNOT FILE("LegendarySouls.esp") SAY: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("QueenPotemaSummon.esp", B3F2FCD8) DIRTY: 6 ITM records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 TH_Storage_All.esp
+Total Voidmagic.esp
+  IF FILE("Medium Voidmagic.esp") INC: Medium Voidmagic.esp, use only one Voidmagic esp.
+  IF FILE("Light Voidmagic.esp") INC: Light Voidmagic.esp, use only one Voidmagic esp.
 TwinSoulsExpandedLevels.esp
 Physic Magic 0.8v.esp
 poisondestruction.esp
@@ -8708,6 +8719,8 @@ REGEX: (\d{1,3})XCarryWeight.esp
 concentrated10.esp
 REGEX: addweight\d?0\.esp
 HeavyArmorTree.esp
+Improved Lower Level Smithing.esp
+  IF CHECKSUM("Improved Lower Level Smithing.esp", 2A7094CE) DIRTY: 5 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Light Armor Unarmed Scaling (no armor requirement).esp
 LockpickTree.esp
 MoreWerewolfPerks.esp
