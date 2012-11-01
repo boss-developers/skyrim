@@ -263,7 +263,8 @@ ORS_MorthalPain.esm
 ORS_SolitudeGate.esm
   IF CHECKSUM("ORS_SolitudeGate.esm", 31BACFAE) DIRTY: 26 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 pinewoodvillage.esm
-  SAY: Obsolete. Update to latest renamed version - Pinewood Village.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version - Pinewood Village.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии - Pinewood Village.esp
   IF CHECKSUM("pinewoodvillage.esm", DDA83B3F) DIRTY: 33 ITM, 25 UDR, 1 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Proudspire Manor Refurbished.esm
 REGEX: OverlookTower.*\.esm
@@ -666,10 +667,10 @@ Unofficial Dawnguard Patch.esp
 VLCollisionFix.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 HighResTexturePackFix.esp
-sh_HF_Falkr_fix.esp 
+sh_HF_Falkr_fix.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
 sh_HF_Falkr_noVamp&fix.esp
-  IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC) 
+  IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
 sh_HF_Hjaal_fix.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
 sh_HF_Hjaal_noVamp&fix.esp
@@ -2374,7 +2375,7 @@ xFenWSOWAF.esp
   TAG: {{BASH: Delev, Relev}}
 xgfpferdekarren.esp
 xgfPferdeKarren-en.esp
-  IF CHECKSUM("xgfPferdeKarren-en.esp", B56A25C1) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide") 
+  IF CHECKSUM("xgfPferdeKarren-en.esp", B56A25C1) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   /* I have the original 1.82 do not change the checksum */
   IF CHECKSUM("xgfPferdeKarren-en.esp", 99BFDF60) SAY: If you have errors at creation Bashed Patch you can use "http://forums.nexusmods.com/index.php?/topic/765759-dragonkiller-cart-question/page__gopid__6397906 the corrected version".
   IF FILE("xgfpferdekarren.esp") INC: xgfpferdekarren.esp
@@ -2694,7 +2695,7 @@ SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF VAR(EN) && IF ACTIVE("blackswordsman.esp") SAY: Remember not to load (or to simply delete) blackswordsman.esp
     IF VAR(RU) && IF ACTIVE("blackswordsman.esp") SAY: Не забудьте отключить или удалить blackswordsman.esp .
-Blade and Soul Qipao.esp	
+Blade and Soul Qipao.esp
 Blade of Eplear.esp
 Blade_of_Olympus.esp
 Blades_of_Chaos.esp
@@ -3234,7 +3235,7 @@ BEGINGROUP: Items H
 
 Hartherz1.2.esp
 HartherzEnglish.esp
-Hawke Armor.esp 
+Hawke Armor.esp
 HBetterBows.esp
   IF FILE("SkyRe_Plugin_BetterBows_1.4.1.esp") TAG: {{BASH: Deactivate}}
 SkyRe_Plugin_BetterBows_1.4.1.esp
@@ -3392,8 +3393,10 @@ JSwords.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Faster Combat-Jswords.esp
 JSwordsDistributionBalancePlugin.esp
-  IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Do not use - included in SkyRe_Plugin_JaySuSSwords_1.3D.esp.
-  IF FILE("Skyrim unleashed Xtra_items.esp") ERROR: Do not use - included in Skyrim unleashed Xtra_items.esp.
+  IF VAR(EN) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Do not use - included in SkyRe_Plugin_JaySuSSwords_1.3D.esp.
+    IF VAR(RU) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Удалите. Уже включено в SkyRe_Plugin_JaySuSSwords_1.3D.esp.
+  IF VAR(EN) && IF FILE("Skyrim unleashed Xtra_items.esp") ERROR: Do not use - included in Skyrim unleashed Xtra_items.esp.
+    IF VAR(RU) && IF FILE("Skyrim unleashed Xtra_items.esp") ERROR: Удалите. Уже включено в Skyrim unleashed Xtra_items.esp.
 JSwords_FR_Plugin_V13C.esp
 Deleveled Skyrim - JSwords.esp
   TAG: {{BASH: Delev, Relev}}
@@ -3904,7 +3907,7 @@ RobedSteelPlateArmor.esp
 RogueArmor.esp
 RogueOutfit.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
-Roman armor and weapons.esp  
+Roman armor and weapons.esp
 Roman armor and weapons replacer.esp
 Rorona.esp
 Rorona3scabbard.esp
@@ -4316,7 +4319,8 @@ WeaponsOf3E - No Leveled Lists.esp
 3rdEraWeapMoS-replacer.esp
 3rdEraWeapMoS-lvlList.esp
   TAG: {{BASH: Delev, Relev}}
-  IF FILE("Skyrim unleashed Xtra_items.esp") ERROR: Do not use - included in Skyrim unleashed Xtra_items.esp.
+  IF VAR(EN) && IF FILE("Skyrim unleashed Xtra_items.esp") ERROR: Do not use - included in Skyrim unleashed Xtra_items.esp.
+    IF VAR(RU) && IF FILE("Skyrim unleashed Xtra_items.esp") ERROR: Удалите. Уже включено в Skyrim unleashed Xtra_items.esp.
 3rdEraWeapMoS-rareCraft.esp
 3rdEraWeaponsMoS-ACE-Patch.esp
   IFNOT REGEX("3rdEraWeaponsMoS.esm") REQ: 3rdEraWeaponsMoS.esm
@@ -4422,7 +4426,7 @@ BandolierForNPCsImmersiveArmorsPatch.esp
     IF VAR(RU) WARN: Устарело. Не входит в состав последней версии. Загружайте ImmersiveArmors после всех BandolierForNPCs esps.
 calyps-dragonpriestmasks.esp
 CraftableODPM.esp
-  IF CHECKSUM("CraftableODPM.esp", 4804B647) REQ: "http://skyrim.nexusmods.com/mods/17707 calyps-dragonpriestmasks.esp" 
+  IF CHECKSUM("CraftableODPM.esp", 4804B647) REQ: "http://skyrim.nexusmods.com/mods/17707 calyps-dragonpriestmasks.esp"
   IF CHECKSUM("CraftableODPM.esp", 4804B647) WARN: Obsolete. Update to latest version.
   IF CHECKSUM("CraftableODPM.esp", B19B9231)  DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: Items Load Late
@@ -4786,7 +4790,7 @@ REGEX: Bigger Cities and Villages.*\.esp
   IF VAR(EN) && IF FILE("Bigger Cities and Villages0.1.1.esp") SAY: Obsolete. Update to latest version.
     IF VAR(RU) && IF FILE("Bigger Cities and Villages0.1.1.esp") SAY: Устарело. Обновите до последней версии.
 BIGCitySolitude.esp
-birna'soddmentssign.esp 
+birna'soddmentssign.esp
 BlackbroodHideout.esp
 blackmarsh.esp
 BlackreachRailroad.esp
@@ -4859,7 +4863,7 @@ Castle Strunmah.esp
 CastleGrey.esp
   IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
    // changes default stayatplace AI making horses not stay at dismount location
-CastlevaniaData.esp    
+CastlevaniaData.esp
 Cavern Pitfalls.esp
 CavernIsles2.esp
 Cerebral Den.esp
@@ -5151,7 +5155,8 @@ NewBlade01.esp
 newfalkreath.esp
 newmorthal.esp
 niflheim1.esp
-  SAY: Obsolete. Update to latest renamed version. ("http://skyrim.nexusmods.com/mods/13351 Forfeoranna Heim")
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version. ("http://skyrim.nexusmods.com/mods/13351 Forfeoranna Heim")
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии. ("http://skyrim.nexusmods.com/mods/13351 Forfeoranna Heim")
 Nightingale Hall.esp
 NightingalePortal.esp
 Niires Hjerim.esp
@@ -5206,7 +5211,7 @@ quest into the depths.esp
 Quick TG Entrance_Riften Well.esp
 quest_sorcery.esp
 questrewardleveler.esp
-  IF CHECKSUM("questrewardleveler.esp", B75E31AA) DIRTY: 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide") 
+  IF CHECKSUM("questrewardleveler.esp", B75E31AA) DIRTY: 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: Quests Q
 
 BEGINGROUP: Quests R
@@ -5334,7 +5339,7 @@ skyrim villages.esp
 smelterinriverwood.esp
 SteepledHat's Riverwood Home.esp
 Soleis.esp
-Solitude Military Enhancement.esp 
+Solitude Military Enhancement.esp
 Solitude Blue Palace Military Enhancement.esp
 SolitudeCapitalCity.esp
 SolitudeBetterDocks.esp
@@ -5520,7 +5525,7 @@ Winterhold_Improvements.esp
 Winterhold repair.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-Winterhold repairV4.esp  
+Winterhold repairV4.esp
   IF CHECKSUM("Winterhold repairV4.esp", 1CB2273B) DIRTY: 11 ITM, 26 UDR, and 1 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Winterhold Fully Restored.esp
   IF CHECKSUM("Winterhold Fully Restored.esp", 5725E884) DIRTY: 17 ITM, 356 UDR, and 3 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -6651,18 +6656,23 @@ Skyrim_Best Daedric Artifacts.esp
 Skyrim bigger trees.esp
 Sneak Tweak.esp
 SkyJubs_Invisible_Helmets_English_Main_1_2.esp
-  SAY: Obsolete. Update to the latest renamed version.
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SkyJubs_Invisible_Helmets_German_Main_1_2.esp
-  SAY: Obsolete. Update to the latest renamed version.
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SkyJubs_Invisible_Helmets_English_Main_1_3.esp
-  SAY: Obsolete. Update to the latest renamed version.
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SkyJubs_Invisible_Helmets_English_Main_1_3v.esp
-  SAY: Obsolete. Update to the latest renamed version.
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SkyJubs_Invisible_Helmets_English_Main_1_4.esp
 SkyJubs_Invisible_Helmets_English_Main_1_4v.esp
-  IF FILE("SkyJubs_Invisible_Helmets_English_Main_1_4.esp") INC: SkyJubs_Invisible_Helmets_English_Main_1_4.esp. Use only one Skyjubs esp.
+  IF FILE("SkyJubs_Invisible_Helmets_English_Main_1_4.esp") INC: SkyJubs_Invisible_Helmets_English_Main_1_4.esp
 SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_2.esp
-  SAY: Obsolete. Update to the latest renamed version.
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_3.esp
   SAY: This mod does not have any of the HothTrooper44 Armor mods as a master. It will create duplicates instead of modifying the originals.
 Skyrim_Dragon Update.esp
@@ -6878,7 +6888,7 @@ UsefulDetectLife.esp
 Ustengrav gate removal.esp
   IF CHECKSUM("Ustengrav gate removal.esp", A680BE35) DIRTY: 6 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Ustengrav gate removal - alternate.esp
-  IF FILE("Ustengrav gate removal.esp") INC: Ustengrav gate removal.esp, use one or the other, not both.
+  IF FILE("Ustengrav gate removal.esp") INC: Ustengrav gate removal.esp
 ENDGROUP: Overrides U
 
 BEGINGROUP: Overrides V
@@ -6982,7 +6992,7 @@ csmod.esp
   IF CHECKSUM("csmod.esp", 5E095749) DIRTY: 19 ITM. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Dawnstar_TheCoinsTide.esp
 Drinking Fountains of Skyrim.esp
-  IF CHECKSUM("Drinking Fountains of Skyrim.esp", 5A348F0C) WARN: Obsolete. Update to latest version.  
+  IF CHECKSUM("Drinking Fountains of Skyrim.esp", 5A348F0C) WARN: Obsolete. Update to latest version.
   IF CHECKSUM("Drinking Fountains of Skyrim.esp", 1A86291B) DIRTY: 1 ITM. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: Expanded Towns (- Riverwood?|- Rorikstead?|- Ivarstead?|- Darkwater?|- Dragon Bridge?|and Settlements?|and Villages?)\.esp
   IF VAR(EN) SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
@@ -7032,12 +7042,13 @@ MerchantsGuild.esp
   IF CHECKSUM("MerchantsGuild.esp", CBAA3162) DIRTY: 11 ITM, 2 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MoreOrganicCities.esp
 ORS_SolitudeGate.esp
-  SAY: Obsolete. Update date to latest version.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Riverwood Enhanced.esp
 Riverwood Enhanced - Detailed Cities.esp
 Pinewood Village.esp
   IF CHECKSUM("Pinewood Village.esp", 4A26EA6A) DIRTY: 33 ITM, 25 UDR, 1 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF FILE("pinewoodvillage.esm") INC: pinewoodvillage.esm, use one or the other, not both.
+  IF FILE("pinewoodvillage.esm") INC: pinewoodvillage.esm
 PrimbyTown.esp
 Princess Riverwood Cottage.esp
 riverwood gates.esp
@@ -7314,7 +7325,8 @@ vampire sight.esp
 Vampire Toggle.esp
 VampireFaction.esp
 VampireInveterDG.esp
-  SAY: Obsolete. Update to latest renamed version, VampireInverterDG.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, VampireInverterDG.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, VampireInverterDG.esp
 VampireInverterDG.esp
 VampireUpgrade.esp
 REGEX: Vampirism Inverter( B)?\.esp
@@ -7345,7 +7357,7 @@ YetAnotherWerewolfImprovement_DG.esp
   IF FILE("YetAnotherWerewolfImprovement.esp") INC: YetAnotherWerewolfImprovement.esp
 REGEX: DawnguardDelayedStart(20|30|40|50|999)\.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF FILE("DG-NoAttacks.esp") INC: DG-NoAttacks.esp	
+  IF FILE("DG-NoAttacks.esp") INC: DG-NoAttacks.esp
   IF VAR(EN) SAY: Use only one DawnguardDelayedStart esp
     IF VAR(RU) SAY: Используйте только один DawnguardDelayedStart esp
 DG-NoAttacks.esp
@@ -9117,11 +9129,11 @@ IFNOT REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 All Housecarls Are Hunks.esp
 MODNewfollowers.esp
 OneiroFollowers.esp
-fenrir-follower.esp 
+fenrir-follower.esp
 FelixConstantine.esp
   REQ: "http://skyrim.nexusmods.com/mods/1971 Smooth Faces for Ladies and Gents"
   REQ: "http://skyrim.nexusmods.com/mods/3424 Pretty Eyes"
-Frost_Elves.esp  
+Frost_Elves.esp
   REQ: "http://www.loverslab.com/showthread.php?tid=10635 Custom Race Mods by Trykz"
 highfive.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
@@ -9188,17 +9200,19 @@ Serana_Revised.esp
 SeranaSecret.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Serafina & co.esp
-  SAY: This esp's master files are not in BOSS sort order.
+  IF VAR(EN) SAY: This esp's master files are not in BOSS sort order.
+    IF VAR(RU) SAY: Мастерфайлы этого esp расположены не в порядке загрузки BOSS.
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IFNOT FILE("TheEyesOfBeauty.esp") REQ: "http://skyrim.nexusmods.com/mods/13722 The Eyes of Beauty"
 Serafina & co complete.esp
-  SAY: This esp's master files are not in BOSS sort order.
+  IF VAR(EN) SAY: This esp's master files are not in BOSS sort order.
+    IF VAR(RU) SAY: Мастерфайлы этого esp расположены не в порядке загрузки BOSS.
   IF FILE("Serafina & co.esp") INC: Serafina & co.esp, do not use both.
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IFNOT FILE("TheEyesOfBeauty.esp") REQ: "http://skyrim.nexusmods.com/mods/13722 The Eyes of Beauty"
   IFNOT FILE("monster_hunter.esp") REQ: "http://skyrim.nexusmods.com/mods/6429 Monster Hunter"
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: "http://skyrim.nexusmods.com/mods/19733 Immersive Armors"
-Sneaky_Serana.esp 
+Sneaky_Serana.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC))
 SNGakan.esp
 SpectralHordeSpell.esp
@@ -9469,8 +9483,8 @@ REGEX: Better Followers - [SBNP].*\.esp
   IF VAR(EN) SAY: Use only one Better Followers - *.esp
     IF VAR(RU) SAY: Используйте только один Better Followers - *.esp
 REGEX: Better Follower(s -)? Dialogue-?(All|Dog|Reorder|Thane)?\.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version of Better Followers and use Big Dialod Overhaul(BDO) instead.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии Better Followers и используйте Big Dialod Overhaul(BDO) вместо этого. of Better Followers and use Big Dialod Overhaul(BDO) instead.
+  IF VAR(EN) WARN: Obsolete. Update to latest version of Better Followers and use Big Dialod Overhaul(BDO) instead.
+    IF VAR(RU) WARN: Устарело. Обновите до последней версии Better Followers и используйте Big Dialod Overhaul(BDO) вместо этого.
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
   IF VAR(EN) && IF VAR(UFO) WARN: Delete. Use UFO - Ultimate Follower Overhaul.esp instead
@@ -9563,7 +9577,7 @@ FollowerWander2.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
 FollowerWander2Serana.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-	
+
 BEGINGROUP: Unlimited Companions
 
 Followers Unlimited 11.esp
