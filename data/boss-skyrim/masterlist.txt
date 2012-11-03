@@ -264,6 +264,8 @@ Manantis.esm
 MiniLovers Idles.esm
 MiniLoversSound.esm
 moonpath.esm
+MTAutoStorage.esm
+  IF CHECKSUM("MTAutoStorage.esm", 7C0F98CA) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Nchuzzrezar.esm
 Night Eye Overhaul.esm
 okaazah.esm
@@ -1300,13 +1302,14 @@ Bible.esp
 Birds.esp
 BirdsFlocks_FR_2.3.esp
 Birdsofskyrim.esp
+  IF CHECKSUM("Birdsofskyrim.esp", CF25ED24) DIRTY: 31 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Blade Temple Visitors.esp
 bladesfactionfix.esp
 BlazesMassIngots.esp
 BLESSINGS - Altar Descriptions.esp
 bloodierCombatv1.1.esp
 Bob The Merchant.esp
-  IF CHECKSUM("Bob The Merchant.esp", 05F9D7C3) DIRTY: 1 ITM record.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Bob The Merchant.esp", 05F9D7C3) DIRTY: 1 ITM record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Bolts For Weapon Vendors.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 bondolf a rich merchant.esp
@@ -1849,6 +1852,12 @@ LeveledGuardsImperialsStormcloaks.esp
 CraftUniqueArtifactWEAP.esp
   IFNOT FILE("LegendarySmithingUpgrades.esp") REQ: "http://skyrim.nexusmods.com/mods/1690 LegendarySmithingUpgrades".esp
 LFHM expert.esp
+LFox Alchemists Have Poisons.esp
+  TAG: {{BASH: Delev, Relev}}
+  IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Delete. Included in LFox Alchemists Have Potions and Poisons.esp
+LFox Alchemists Have Potions.esp
+  TAG: {{BASH: Delev, Relev}}
+  IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Delete. Included in LFox Alchemists Have Potions and Poisons.esp
 LFox Alchemists Have Potions and Poisons.esp
   TAG: {{BASH: Delev, Relev}}
 LFox Blacksmiths Have Metals.esp
@@ -2174,6 +2183,7 @@ SkyMoMod Extras Conjuration.esp
 Skyrim_Monster_Mod_Additions-Conjuration.esp
 REGEX: Deleveled Skyrim - SkyMoMod_list( \(No EleTri\)| \(No EleTriSta\))\.esp
   TAG: {{BASH: Delev, Relev}}
+SkyscraperGiants.esp
 SSS Skyrim Monster Mod Purist Lore-Friendly Patch.esp
 SIMoMoCoPatch.esp
 SkyRealism - Feast and Famine.esp
@@ -2570,7 +2580,7 @@ AetherialBow&Arrows.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 AetheriumSwords.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") WARN: Do not use. Included in AetheriumSwordsnArmor.esp
+  IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Do not use. Included in AetheriumSwordsnArmor.esp
     IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp
 AetheriumSwordsnArmor.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -3132,7 +3142,7 @@ Dwemer Goggles & Scouter.esp
 DwemerAutoBlade.esp
   IF FILE("SkyRe_Plugin_DwemerAutoBlade.esp") TAG: {{BASH: Deactivate}}
 DwarvenPowerArmor.esp
-  IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") WARN: Do not use. Included in AetheriumSwordsnArmor.esp
+  IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Do not use. Included in AetheriumSwordsnArmor.esp
     IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp
 DwemerRifle.esp
 DynamicLoot.esp
@@ -3736,6 +3746,13 @@ REGEX: NA_IBOTM_(Eng|Rus|Deu)\.esp
 REGEX: NA_Scourge_(Eng|Rus|Deu)\.esp
   IF VAR(EN) && IF VAR(NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
     IF VAR(RU) && IF VAR(NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+REGEX: NA_Trueflame_(Eng|Rus)\.esp
+  IF VAR(EN) && IF VAR(NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    IF VAR(RU) && IF VAR(NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+REGEX: NA_Trueflame_Unenchanted_(Eng|Rus)\.esp
+  IF REGEX("NA_Trueflame_(Eng|Rus)\.esp") INC: NA_Trueflame_Eng or Rus esp
+  IF VAR(EN) && IF VAR(NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    IF VAR(RU) && IF VAR(NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
 REGEX: Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)\.esp
 NecroGuard Armor Set.esp
 necromancer's blade.esp
@@ -4079,6 +4096,7 @@ SkimpySilverlight.esp
 SkyforgeWeapons.esp
 SkyHeels.esp
 SkyPortals.esp
+Skyrim - Chests Of Fun.esp
 skyrule.esp
 SleekSteel_StandAlone.esp
 SLW_Armours.esp
@@ -4974,6 +4992,8 @@ Clam Farm.esp
 ClearFields.esp
 CliffCabinWinterhold_1-4.esp
 CLWhiterunExt.esp
+cMKPowerBooks.esp
+  IF CHECKSUM("cMKPowerBooks.esp", C9035ECB) DIRTY: 14 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 CoD Waking Nightmare II.esp
 collectors_chamber.esp
 College Of Winterhold Overhaul Release - V1.02.esp
@@ -5062,6 +5082,10 @@ ESFCompanions.esp
 Everspring Grotto.esp
 Evil Lair of Hydra.esp
 exo_WhiterunCaveHouse.esp
+ExplorerDungeonPack.esp
+  IF CHECKSUM("ExplorerDungeonPack.esp", 4D76065C) DIRTY: 61 ITM, 10 UDR, 1 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("ExplorerDungeonPack.esp", 03B99039) DIRTY: 8 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("ExplorerDungeonPack.esp", 4D76065C) && IF FILE("ExplorerDungeonPack.esm") INC: ExplorerDungeonPack.esm.  Use the correct version.
 ExRorikstead.esp
 ENDGROUP: Quests E
 
@@ -5120,7 +5144,15 @@ Haafingar Schneehutte.esp
 HallsOfDovahndor.esp
 Haven.esp
 HavenBag.esp
+heartwoodcottage1_v1.esp
+  SAY: Obsolete. Update to latest renamed version, heartwoodcottage1_v2.esp
+heartwoodcottageNM1_v1.esp
+  SAY: Obsolete. Update to latest renamed version, heartwoodcottageNM1_v2.esp
+heartwoodcottage1_v2.esp
+  IF CHECKSUM("heartwoodcottage1_v2.esp", B5808D60) DIRTY: 20 ITM, 9 UDR, 3 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 heartwoodcottageNM1_v2.esp
+  IF FILE("heartwoodcottage1_v2.esp") INC: heartwoodcottage1_v2.esp
+  IF CHECKSUM("heartwoodcottageNM1_v2.esp", 4BFDE1C5) DIRTY: 43 ITM, 9 UDR, 3 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HelmsHaven.esp
 Hjerim_Blacksmith_English.esp
 HjerimExpansion.esp
@@ -5163,6 +5195,8 @@ JKJsenhancedhotpools.esp
 JobsofSkyrim.esp
   TAG: {{BASH: Delev, Relev}}
   IF CHECKSUM("JobsofSkyrim.esp", 8C1C50BA) DIRTY: 71 ITM. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Jornheim.esp
+  IF CHECKSUM("Jornheim.esp", 65C2481F) DIRTY: 15 ITM, 3 UDR, 2 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Jorrvaskr Lofthome.esp
 jrfarm13.esp
 ENDGROUP: Quests J
@@ -5190,6 +5224,8 @@ LB_MuchAdoSnowElves_Quest.esp
 LetsGetRich.esp
 LevelersTower.esp
 LFox Moon Sugar Manor.esp
+Liberation Beacon.esp
+  IF CHECKSUM("Liberation Beacon.esp", EAC2C978) DIRTY: 10 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 lighthouse.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
 lighthousefull.esp
@@ -5318,6 +5354,8 @@ ENDGROUP: Quests Q
 
 BEGINGROUP: Quests R
 
+R0R0N0 Stable.esp
+  IF CHECKSUM("R0R0N0 Stable.esp", 17D01A7C) DIRTY: 6 ITM, 3 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RabbitOverkill.esp
 Radiance.esp
 raggedshortcut.esp
@@ -5356,6 +5394,8 @@ Riverwatch.esp
 RiverWood_Beautiful.esp
 RiverwoodImprovement.esp
 riverwood creek.esp
+RiverWood Dungeons.esp
+  IF CHECKSUM("RiverWood Dungeons.esp", 2983C01D) DIRTY: 20 ITM, 71 UDR, 1 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Riverwood Lakehouse 1_6.esp
 Riverwood R9.esp
 RiverWood Redux.esp
@@ -5554,8 +5594,13 @@ ulushenie whitrana.esp
 uluchenie gorodov .esp
 Undercity.esp
 Understone Keep RepairV1_1.esp
+unicorncave.esp
+  IF FILE("UnicornCave.esm") INC: UnicornCave.esm, use one or the other, do not use both.
+  IF CHECKSUM("unicorncave.esp", 40169648) DIRTY: 37 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Universal Trainer.esp
 unkeptunderstonekeep025.esp
+UpkeptUnderkeep.esp
+  IF CHECKSUM("UpkeptUnderkeep.esp", F6E10E47) DIRTY: 120 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: Quests U
 
 BEGINGROUP: Quests V
@@ -7214,32 +7259,17 @@ Completed Forges.esp
 AIMP - Antz in my Pantz.esp
 Chesko_Step418.esp
 Chesko_Step418_SN.esp
-ExplorerDungeonPack.esp
-  IF CHECKSUM("ExplorerDungeonPack.esp", 4D76065C) DIRTY: 61 ITM, 10 UDR, 1 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("ExplorerDungeonPack.esp", 03B99039) DIRTY: 8 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("ExplorerDungeonPack.esp", 4D76065C) && IF FILE("ExplorerDungeonPack.esm") INC: ExplorerDungeonPack.esm.  Use the correct version.
 forested_skyrim.esp
 gkbforest.esp
 grass & ground fixes.esp
   IF CHECKSUM("grass & ground fixes.esp", CE13BA2A) DIRTY: 15 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Green Whiterun.esp
-Liberation Beacon.esp
-  IF CHECKSUM("Liberation Beacon.esp", EAC2C978) DIRTY: 10 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Jornheim.esp
-  IF CHECKSUM("Jornheim.esp", 65C2481F) DIRTY: 15 ITM, 3 UDR, 2 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Oblivion Gates.esp
   IF CHECKSUM("Oblivion Gates.esp", EEBBFF41) || IF CHECKSUM("Oblivion Gates.esp", ED42650C) DIRTY: 82 ITM, 1 UDR, 3 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-R0R0N0 Stable.esp
-  IF CHECKSUM("R0R0N0 Stable.esp", 17D01A7C) DIRTY: 6 ITM, 3 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-RiverWood Dungeons.esp
-  IF CHECKSUM("RiverWood Dungeons.esp", 2983C01D) DIRTY: 20 ITM, 71 UDR, 1 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SummerSkyrim.esp
   IF CHECKSUM("SummerSkyrim.esp", C5BF6C9D) DIRTY: 1 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Tundra to forest.esp
   IF CHECKSUM("Tundra to forest.esp", 12D6056D) DIRTY: 20 ITM, 11 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-unicorncave.esp
-  IF FILE("UnicornCave.esm") INC: UnicornCave.esm, use one or the other, do not use both.
-  IF CHECKSUM("unicorncave.esp", 40169648) DIRTY: 37 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Yamato Transform and Summon.esp
   IF CHECKSUM("Yamato Transform and Summon.esp", D7668232) DIRTY: 12 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: Landscaping
@@ -8202,7 +8232,15 @@ ACE Realistic Fighting.esp
 REGEX: CustomDifficultyP.*\.esp
   // Changes game difficulty, put here as initial position
 UCO.esp
-REGEX: Added_Killmoves_All_Weapons([+-])?(Last_Enemy_Limit_Removed)?([+-])?(Player_cannot_be_killmoved)?([+-])?(DWDecap-removed)?\.esp
+
+REGEX: Added_Killmoves_All_Weapon.+\.esp
+ // REGEX: Added_Killmoves_All_Weapons([+-])?(Last_Enemy_Limit_Removed)?([+-])?(Player_cannot_be_killmoved)?([+-])?(DWDecap-removed)?\.esp
+REGEX: Added_Slow_Motion_.+\.esp
+REGEX: 1stPerson_onl.+\.esp
+3rdPerson_only_killcam.esp
+Added_SneakDecap_Only.esp
+Warhammer_Killmoved_By_Enemy.esp
+
 REGEX: The Dance of Death.*\.esp
   IF VAR(EN) && IF REGEX("The Dance of Death V.+.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF REGEX("The Dance of Death V.+.esp") WARN: Устарело. Обновите до последней версии.
@@ -9233,6 +9271,9 @@ AshenFollowers.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 AshenFollower.esp
 Atvir.esp
+Bald_Jiub.esp
+Barsukov.esp
+  IF CHECKSUM("Barsukov.esp", F191D03B) DIRTY: 3 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Blaze Of Eventide.esp
 BreezeHomeChildren.esp
 Caellon.esp
