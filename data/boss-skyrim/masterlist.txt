@@ -406,6 +406,7 @@ ENDGROUP: ESMs
 BEGINGROUP: Official DLC Files
 
 portal2mod.esp
+  IF CHECKSUM("portal2mod.esp", F0C49703) DIRTY: 5 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HighResTexturePack01.esp
 HighResTexturePack02.esp
 
@@ -2823,6 +2824,7 @@ BEGINGROUP: Items C
 Caius Sword.esp
 Calmdefir.esp
 calyps-investigator.esp
+calyps-razorarmor.esp
 CaneKatana.esp
 Casual Outfit OE.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
@@ -4962,6 +4964,8 @@ BreezehomeGrindStone.esp
 Breezehome PLUS.esp
   IF VAR(BertsBHInst) INC: BertsBreezeRemodel
 Bridge Farm.esp
+Bridge Farm Hearthfire version.esp
+  IF FILE("Bridge Farm.esp") INC: Bridge Farm.esp
 arcanebreeze.esp
 Broken Oar Grotto - Replayable.esp
 Brotherhood.esp
@@ -5012,6 +5016,9 @@ ENDGROUP: Quests C
 
 BEGINGROUP: Quests D
 
+DA_Skyship.esp
+  IF CHECKSUM("DA_Skyship.esp", FE8D1C12) DIRTY: 30 ITM, 1 UDR, 3 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("DA_Skyship.esp", 5B03BF9A) DIRTY: 30 ITM, 1 UDR, 3 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DAMuseum.esp
 DaedricHideout.esp
 daelusdagger.esp
@@ -5461,6 +5468,12 @@ Shack.esp
 Shady_Tales.esp
 Shady Fences.esp
 ShayksBAQ.esp
+ShezriesHFKitchen.esp
+  IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("ShezriesHFKitchen.esp", 9E35B611) DIRTY: 6 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+ShezriesHFKitchenHel.esp
+  IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("ShezriesHFKitchenHel.esp", DC5FE37C) DIRTY: 6 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ShipHome.esp
 SilvercrestTomb.esp
 simplebreezehome.esp
@@ -7156,8 +7169,8 @@ Drinking Fountains of Skyrim.esp
   IF CHECKSUM("Drinking Fountains of Skyrim.esp", 5A348F0C) WARN: Obsolete. Update to latest version.
   IF CHECKSUM("Drinking Fountains of Skyrim.esp", 1A86291B) DIRTY: 1 ITM. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: Expanded Towns (- Riverwood?|- Rorikstead?|- Ivarstead?|- Darkwater?|- Dragon Bridge?|and Settlements?|and Villages?)\.esp
-  IF VAR(EN) SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
-    IF VAR(RU) SAY: Устарело, обновите до последней версии Expanded Towns and Cities
+  IF VAR(EN) SAY: Obsolete - update to current version renamed to "http://skyrim.nexusmods.com/mods/13608 Expanded Towns and Cities"
+    IF VAR(RU) SAY: Устарело, обновите до последней версии "http://skyrim.nexusmods.com/mods/13608 Expanded Towns and Cities"
 ETaC - Darkwater.esp
   IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") ERROR: Remove.  ETaC - Villages Complete contains these changes.
     IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
@@ -7167,9 +7180,6 @@ ETaC - Dragon Bridge.esp
 ETaC - Ivarstead.esp
   IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") ERROR: Remove.  ETaC - Villages Complete.esp contains these changes.
     IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
-ETaC - Morthal.esp
-  IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") ERROR: Remove.  ETaC - Villages Complete.esp contains these changes.
-    IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Riverwood.esp
   IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") ERROR: Remove.  ETaC - Villages Complete.esp contains these changes.
     IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
@@ -7177,6 +7187,7 @@ ETaC - Rorikstead.esp
   IF VAR(EN) && IF FILE("ETaC - Villages Complete.esp") ERROR: Remove.  ETaC - Villages Complete.esp contains these changes.
     IF VAR(RU) && IF FILE("ETaC - Villages Complete.esp") ERROR: Удалите. Уже включено в ETaC - Villages Complete.esp
 ETaC - Villages Complete.esp
+ETaC - Morthal.esp
 ETaC Follower Add-On.esp
 ETaC BFT Patch.esp
   IFNOT FILE("Carriage1.esp") REQ: Carriage1.esp
@@ -8937,9 +8948,9 @@ AllHairs.esp
 ApachiiHair.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-ApachiiHairStyles.esp
-ApachiiHairStylesELVES.esp
-ApachiiHairStyles-FemaleOnly.esp
+IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles.esp
+IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStylesELVES.esp
+IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles-FemaleOnly.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 bald hair.esp
 Beautiful Hair.esp
@@ -9233,6 +9244,13 @@ IF VAR(UFO) MOD: SupermodelDawnguard.esp
 IF VAR(UFO) MOD: My home is your home.esp
   // Bethsoft thrd20#119
 ENDGROUP: Post UFO
+
+// dont't know where these sould go.  To be loaded after UFO when UFO is present
+IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles.esp
+IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStylesELVES.esp
+IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles-FemaleOnly.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+
 
 BEGINGROUP: NPC Distance, Face & Makeup Overrides
 // Distance Tweaks before Face & Makeup Overrides
