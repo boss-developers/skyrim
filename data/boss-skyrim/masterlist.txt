@@ -174,6 +174,7 @@ LegendarySouls.esm
 More Interactive Items.ESM
 More Interactive Items [Dawnguard].ESM
 More Interactive Items [Hearthfire].ESM
+Neworld.esm
 Niires Hjerim(esm).esm
   IFNOT FILE("GeneralStores.esm") REQ: "http://skyrim.nexusmods.com/mods/18340 General Stores - storage resource for packrats"
 Niire's Honeyside(esm).esm
@@ -2847,6 +2848,8 @@ Chakram.esp
 ChickenStaff.esp
 chinaDressRavana.esp
 Chiulin.esp
+Chrysamere.esp
+  IF CHECKSUM("Chrysamere.esp", 741C7C7C) DIRTY: 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 circlet.esp
 CircletOfIllumination.esp
 ClericCraftable.esp
@@ -3764,6 +3767,9 @@ REGEX: NA_Trueflame_Unenchanted_(Eng|Rus)\.esp
   IF VAR(EN) && IF VAR(NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
     IF VAR(RU) && IF VAR(NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
 REGEX: Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)\.esp
+NobleArtifactsForSkyrim.esp
+  // German version. Current dl of full version only has Eng and RUS http://skyrim.nexusmods.com/mods/14677
+  IF CHECKSUM("NobleArtifactsForSkyrim.esp", 9B24BC8A) DIRTY: 7 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 NecroGuard Armor Set.esp
 necromancer's blade.esp
 NarquelionBow.esp
@@ -4173,7 +4179,7 @@ sunder.esp
 Sunnie_NG_Set.esp
 Sunnie_NG_Set_EbonyAddon.esp
 Sun Glasses OE.esp
-sunnydawnbreaker.esp
+IFNOT FILE("improvedrealistic.esp") MOD: sunnydawnbreaker.esp
 survivor_armor.esp
 Svartbough.esp
 svsjew.esp
@@ -5134,6 +5140,12 @@ forgottenmountainkeep.esp
 Forrest's Diary.esp
 Fort Ironcrag.esp
 Free Mine.esp
+Freedom of Speech.esp
+  IF VAR(Dawnguard) ERROR: Use Freedom of Speech -- Dawnguard.esp
+  IF CHECKSUM("Freedom of Speech.esp", 48DA06FC) DIRTY: 10 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Freedom of Speech -- Dawnguard.esp
+  IF FILE("Freedom of Speech.esp") INC: Freedom of Speech.esp
+  IF CHECKSUM("Freedom of Speech -- Dawnguard.esp", 954E7B99) DIRTY: 8 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 FrozenPeakLaboratory.esp
 ENDGROUP: Quests F
 
@@ -5311,6 +5323,9 @@ Netch Fetcher Convoy.esp
 NewBlade01.esp
 newfalkreath.esp
 newmorthal.esp
+NeworldFreeZabuton.esp
+NeworldShrineAndArena.esp
+  IF CHECKSUM("NeworldShrineAndArena.esp", ABFC4312) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 niflheim1.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version. ("http://skyrim.nexusmods.com/mods/13351 Forfeoranna Heim")
     IF VAR(RU) SAY: Устарело. Обновите до последней версии. ("http://skyrim.nexusmods.com/mods/13351 Forfeoranna Heim")
@@ -5378,6 +5393,12 @@ R0R0N0 Stable.esp
 RabbitOverkill.esp
 Radiance.esp
 raggedshortcut.esp
+Ramen.esp
+  IF VAR(Dawnguard) ERROR: Use Ramen0dawnguard.esp instead.
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+Ramen0dawnguard.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IF FILE("Ramen.esp") INC: Ramen.esp
 Ranger Ridge.esp
 Ranger Cabins.esp
 Ranger of Tamriel.esp
@@ -6399,8 +6420,9 @@ ImprovedMonsterLoot.esp
   IF CHECKSUM("ImprovedMonsterLoot.esp", B9CE5D33) DIRTY: 1 ITM record.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 improvedoverpowered.esp
 ImprovedRahgot.esp
-improvedrealistic.esp
+IFNOT FILE("LMBalancingDawnguardDV.esp") MOD:improvedrealistic.esp
   IF FILE("improvedoverpowered.esp") INC: improvedoverpowered.esp
+IF FILE("improvedrealistic.esp") MOD: sunnydawnbreaker.esp
 ImprovedScImpUniforms - Main.esp
 Increase Torch Range.esp
 Increased Arrow Damage.esp
@@ -6861,6 +6883,10 @@ Skyrim_Dragon Update.esp
   IF VAR(EN) INC: Other Dragon override mods, use only one.
     IF VAR(RU) INC: Другие, изменяющие драконов моды, используйте только один.
 Distant Detail.esp
+  IF VAR(Hearthfire) ERROR: Use Distant DetailHF.esp
+Distant DetailHF.esp
+  IF FILE("Distant Detail.esp") INC: Distant Detail.esp
+  IF CHECKSUM("Distant DetailHF.esp", 7AE9614F) DIRTY: 328 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: ElementalRunesImpact.*\.esp
 REGEX: secunda Size x\d\.\d\.esp
 selbs_combatfinesse.esp
@@ -7033,6 +7059,7 @@ Trolls Loot.esp
   IF CHECKSUM("Trolls Loot.esp", 9C8F811B) DIRTY: 3 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 True_Groundcover.esp
 TrueSteelImperialArmor.esp
+TwoRings.esp
 ENDGROUP: Overrides T
 
 BEGINGROUP: Overrides U
@@ -7095,6 +7122,7 @@ vampire royal hood.esp
 REGEX: VendorsHaveMoreMoney\d*\.esp
 MISELF_Vendors.esp
 Veshi so Smislom from hiro.esp
+vinis_crime_gold.esp
 Vile Art of Necromancy.esp
 VisibleSlaughterfish.esp
 VisibleEvilSlaughterfishComboPack.esp
@@ -7138,6 +7166,10 @@ ENDGROUP: Overrides XYZ
 BEGINGROUP: Overrides Late
 
 LMBalancingDV.esp
+LMBalancingDawnguardDV.esp
+IF FILE("LMBalancingDawnguardDV.esp") MOD:improvedrealistic.esp
+  IF FILE("improvedoverpowered.esp") INC: improvedoverpowered.esp
+IF FILE("improvedrealistic.esp") MOD: sunnydawnbreaker.esp
 HoodlessDragonpriestMasks1_0.esp
 HoodlessDragonpriestMasksPlus1_0.esp
 Friendly To All Faction.esp
@@ -7957,6 +7989,7 @@ DragonShoutsRTEnhancer.esp
 DraugrShoutFix.esp
 EnhancedShouts.esp
 Improved Dragon Shouts.esp
+Improved Dragon Shouts - Dawnguard.esp
 InfernoStormShout.esp
   IF VAR(EN) SAY: See "http://skyrim.nexusmods.com/mods/8343 mod page" for uninstallation instructions.
     IF VAR(RU) SAY: Смотрите инструкции по удалению на "http://skyrim.nexusmods.com/mods/8343 странице мода".
@@ -10073,6 +10106,8 @@ Chesko_LevelUp.esp
 DisableNoFastTravelMessage.esp
 DragonWordsDisplayed.esp
 First Person Messages.esp
+MenuShoutsInDragonsLanguage.esp
+  IF VAR(Dawnguard) && IFNOT CHECKSUM("MenuShoutsInDragonsLanguage.esp", E06D6E46) ERROR: Use Dawnguard version.
 no_annoying_messages.esp
 NoMoreMessages.esp
 noSkillMessage.esp
@@ -10376,5 +10411,6 @@ BEGINGROUP: Non Dynamic Plugins
 // DeadlyCombat_PISE_Patch.esp
 // Must load after ASIS (Unconfirmed, as comment for now)
 EzEWorldMap.esp
+Warburgs Paper World Map.esp
 ENDGROUP: Non Dynamic Plugins
 ENDGROUP: Post Bashed Patch
