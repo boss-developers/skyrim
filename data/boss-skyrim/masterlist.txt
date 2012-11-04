@@ -1858,10 +1858,12 @@ CraftUniqueArtifactWEAP.esp
 LFHM expert.esp
 LFox Alchemists Have Poisons.esp
   TAG: {{BASH: Delev, Relev}}
-  IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Delete. Included in LFox Alchemists Have Potions and Poisons.esp
+  IF VAR(EN) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Delete. Included in LFox Alchemists Have Potions and Poisons.esp
+    IF VAR(RU) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Удалите. Уже включено в LFox Alchemists Have Potions and Poisons.esp
 LFox Alchemists Have Potions.esp
   TAG: {{BASH: Delev, Relev}}
-  IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Delete. Included in LFox Alchemists Have Potions and Poisons.esp
+  IF VAR(EN) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Delete. Included in LFox Alchemists Have Potions and Poisons.esp
+    IF VAR(RU) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Удалите. Уже включено в LFox Alchemists Have Potions and Poisons.esp
 LFox Alchemists Have Potions and Poisons.esp
   TAG: {{BASH: Delev, Relev}}
 LFox Blacksmiths Have Metals.esp
@@ -2460,8 +2462,10 @@ CiviliansWillNotDieChild.esp
 CiviliansWillNotDiePatches.esp
   IF FILE("CiviliansWillNotDie.esp") INC: CiviliansWillNotDie.esp
   IF FILE("CiviliansWillNotDieChild.esp") INC: CiviliansWillNotDieChild.esp
-  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
+  IF CHECKSUM("CiviliansWillNotDiePatches.esp", C0754EA7) && IF VERSION("TES5", "1.7", <) REQ: Skyrim 1.7+
+  IF CHECKSUM("CiviliansWillNotDiePatches.esp", 2336B8B8) && IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
   IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch
+  IF CHECKSUM("CiviliansWillNotDiePatches.esp", C0754EA7) SAY: Устарело. Обновите до CiviliansWillNotDiePatches.esp 0.6+
 Destructible_bottles.esp
   IF CHECKSUM("Destructible_bottles.esp", BF5ED5A9) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 item sorting dg by saige.esp
@@ -5105,7 +5109,7 @@ ENDGROUP: Quests E
 BEGINGROUP: Quests F
 
 Falconroost.esp
-  IF FILE("WhiteFallsHouse.esp") INC:  WhiteFallsHouse.esp	
+  IF FILE("WhiteFallsHouse.esp") INC:  WhiteFallsHouse.esp
 REGEX: Falkreath Graveyard\w?\.esp
 FalkreathCabin.esp
 FalkreathCastle.esp
@@ -5158,9 +5162,11 @@ HallsOfDovahndor.esp
 Haven.esp
 HavenBag.esp
 heartwoodcottage1_v1.esp
-  SAY: Obsolete. Update to latest renamed version, heartwoodcottage1_v2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, heartwoodcottage1_v2.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, heartwoodcottage1_v2.esp
 heartwoodcottageNM1_v1.esp
-  SAY: Obsolete. Update to latest renamed version, heartwoodcottageNM1_v2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, heartwoodcottageNM1_v2.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, heartwoodcottageNM1_v2.esp
 heartwoodcottage1_v2.esp
   IF CHECKSUM("heartwoodcottage1_v2.esp", B5808D60) DIRTY: 20 ITM, 9 UDR, 3 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 heartwoodcottageNM1_v2.esp
@@ -5509,7 +5515,7 @@ SolitudeBetterDocks.esp
 MoreSolitudeFlora V1.0.esp
 solitude sanctuary.esp
 Soul.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)	
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 SoulForge.esp
 Sovngarde - completed main quest.esp
   IF VAR(EN) SAY: This mod is not compatible with the last quest in the Main Quest chain. Either disable the .esp before you do it or wait until you complete the main quest.
@@ -6641,7 +6647,8 @@ Nightingale Blade fix.esp
 Nightingale Maskless.esp
 no_essential_COs.esp
 REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg)\.esp
-  SAY: Obsolete.  Update to latest renamed version, Thieves Guild Requirements.esp
+  IF VAR(EN) SAY: Obsolete.  Update to latest renamed version, Thieves Guild Requirements.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Thieves Guild Requirements.esp
 NoAutoSkillBooks.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version.
     IF VAR(RU) WARN: Устарело. Обновите до последней версии.
@@ -7214,9 +7221,10 @@ MerchantsGuild.esp
   IF CHECKSUM("MerchantsGuild.esp", CBAA3162) DIRTY: 11 ITM, 2 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MoreOrganicCities.esp
 IFNOT FILE("3DNPC.esp") MOD: NerniesSolitudeExpansion.esp
-  IF CHECKSUM("NerniesSolitudeExpansion.esp", 304709FF) DIRTY: 52 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")  
+  IF CHECKSUM("NerniesSolitudeExpansion.esp", 304709FF) DIRTY: 52 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 NerniesSolitudeandVillageExpansion.esp
-  SAY: Obsolete. Update to latest renamed version, NerniesCityandVillageExpansion.esp.
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, NerniesCityandVillageExpansion.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, NerniesCityandVillageExpansion.esp.
   IF CHECKSUM("NerniesSolitudeandVillageExpansion.esp", AFDF87BD) DIRTY: 82 ITM, 24 UDR, 1 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 IFNOT FILE("3DNPC.esp") MOD: NerniesCityandVillageExpansion.esp
   IF CHECKSUM("NerniesCityandVillageExpansion.esp", 53A97488) DIRTY: 174 ITM, 9 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -7638,7 +7646,8 @@ conjureatronarchfix.esp
 conjure_chest.esp
 CurseSpell.esp
 Darkness.esp
-  SAY: Obsolete. Update to latest renamed version, "http://skyrim.nexusmods.com/mods/21164/ Dark Powers"
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, "http://skyrim.nexusmods.com/mods/21164/ Dark Powers"
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/21164/ Dark Powers"
 DarkBrotherhoodAstrid.esp
   IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
     IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
@@ -9141,7 +9150,7 @@ Unkillable Lydia.esp
 IF FILE("3DNPC.esp") MOD: RealisticRoomRental.esp
   IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 IF FILE("3DNPC.esp") MOD: NerniesSolitudeExpansion.esp
-  IF CHECKSUM("NerniesSolitudeExpansion.esp", 304709FF) DIRTY: 52 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")  
+  IF CHECKSUM("NerniesSolitudeExpansion.esp", 304709FF) DIRTY: 52 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 IF FILE("3DNPC.esp") MOD: NerniesCityandVillageExpansion.esp
   IF CHECKSUM("NerniesCityandVillageExpansion.esp", 53A97488) DIRTY: 174 ITM, 9 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("NerniesSolitudeExpansion.esp") INC: NerniesSolitudeExpansion.esp
@@ -9830,7 +9839,7 @@ CerwidenAppearancePatch.esp
 MujuroStormbringer.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 DudestiaMultiMarriages.esp
-EMCompViljaSkyrim.esp 
+EMCompViljaSkyrim.esp
 Spousetocustomhome.esp
 Merchant Follower Vyctara.esp
 MyOwnRubee.esp
