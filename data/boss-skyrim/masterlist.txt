@@ -113,7 +113,6 @@ IF VAR(USKP) SET: USKP
   IF VAR(EN) && IF VAR(FNIS) SAY: It appears you have "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
     IF VAR(RU) && IF VAR(FNIS) SAY: У вас установлен "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim". Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.
 
-
 BEGINGROUP: Official ESMs
 
 Skyrim.esm
@@ -3074,6 +3073,7 @@ dragonbonescythe.esp
 Dragonbone Weapons.esp
 Dragonbone Weapons - Faster Arrows.esp
 Dragonbone Weapons - Tytanis Compatibility.esp
+Dragonbone Weapons In Loot.esp
 dragonbonedaggerpreview.esp
 dragonbonedaggers.esp
 REGEX: DragonBoneWeapons.+\.esp
@@ -5518,6 +5518,8 @@ ShezriesHFKitchen.esp
 ShezriesHFKitchenHel.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
   IF CHECKSUM("ShezriesHFKitchenHel.esp", DC5FE37C) DIRTY: 6 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+ShezriesWinstadHearthfireKitchen.esp
+  IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
 ShipHome.esp
 SilvercrestTomb.esp
 simplebreezehome.esp
@@ -7421,6 +7423,7 @@ IFNOT FILE("3DNPC.esp") MOD: RealisticRoomRental.esp
   IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RealisticNeedsandDiseases.esp
   IF FILE("Water.esp") && IFNOT FILE("RND_Water-Patch.esp") REQ: RND_Water-Patch.esp
+RND_Water-Patch.esp
 RealisticRoomRental-Basic.esp
   IF FILE("RealisticRoomRental.esp") INC: RealisticRoomRental.esp
 RRRE-Lite.esp
@@ -10400,7 +10403,6 @@ BEGINGROUP: Extra Late
 
 FTFI Fast Travel From Indoors.esp
 // Must come after all cell altering mods.
-RND_Water-Patch.esp
 PC Exclusive Animation Path.esp
   IF FILE("AP Skyrim.esp") INC: AP Skyrim.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
