@@ -97,9 +97,13 @@ IF VAR(USKP) SET: USKP
   IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions is still at over 3100+. An increase of over 450 plugins in the last few weeks. Some dating as far back as Augest 7 of 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus forums".
     IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 3100+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на форумах  "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus".
 
-// SKSE
+// SKSE & SKCU
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
     IF VAR(RU) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
+  
+// SKSE Latest
+  IF VERSION("SKSE", "0.1.6.4", <) GLOBAL SAY: It appears you do not have the latest version of SKSE. If you wish to update it can be found "http://skse.silverlock.org/ here".
+  ELSE GLOBAL SAY: Your SKSE is up-to-date.
 
 // Dynamic plugins
   IF REGEX("ASIS(-Dependency)?\.esp") || IF REGEX("Automatic (Spells|Variations|Variants)\.esp") && IF VAR(EN) GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
@@ -116,13 +120,13 @@ Skyrim.esm
 Update.esm
   IF CHECKSUM("Update.esm", 412D96FB) DIRTY: 50 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   // This is version 1.8 of Update.esm
-  IF CHECKSUM("Update.esm", 7F464083) DIRTY: 50 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Update.esm", 7F464083) DIRTY: 52 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Dawnguard.esm
-  IF CHECKSUM("Dawnguard.esm", BD72CCF3) DIRTY: 591 ITM, 82 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Dawnguard.esm", BD72CCF3) DIRTY: 602 ITM, 82 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF VERSION("TES5", "1.7.7", <) REQ: Skyrim 1.7.7+
   TAG: {{BASH: Delev}}
 Hearthfires.esm
-  IF CHECKSUM("Hearthfires.esm", AF82CE6A) DIRTY: 163 ITM, 11 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Hearthfires.esm", AF82CE6A) DIRTY: 171 ITM, 11 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF VERSION("TES5", "1.7.7", <) REQ: Skyrim 1.7.7+
 
 ENDGROUP: Official ESMs
@@ -5182,6 +5186,7 @@ BEGINGROUP: Quests H
 
 Haafingar Schneehutte.esp
 HallsOfDovahndor.esp
+  IF CHECKSUM("HallsOfDovahndor.esp", A8418D27) DIRTY: 23 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Haven.esp
 HavenBag.esp
 heartwoodcottage1_v1.esp
@@ -5456,6 +5461,7 @@ Riverwood Smelter.esp
 RiverwoodCabin.esp
 RiverwoodHouse.esp
 riverwoodhuntingcabin.esp
+  IF CHECKSUM("riverwoodhuntingcabin.esp", A9CDB9B1) DIRTY: 21 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RiverwoodRepose.esp
   IF CHECKSUM("RiverwoodRepose.esp", 304711BC) DIRTY: 29 ITM, 4 UDR, 2 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RiverWoodShack.esp
