@@ -102,8 +102,10 @@ IF VAR(USKP) SET: USKP
     IF VAR(RU) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
   
 // SKSE Latest
-  IF VERSION("SKSE", "0.1.6.4", <) GLOBAL SAY: It appears you do not have the latest version of SKSE. If you wish to update it can be found "http://skse.silverlock.org/ here".
-  ELSE GLOBAL SAY: Your SKSE is up-to-date.
+  IF VAR(EN) && IF VERSION("SKSE", "0.1.6.4", <) GLOBAL SAY: It appears you do not have the latest version of SKSE. If you wish to update it can be found "http://skse.silverlock.org/ here".
+    IF VAR(EN) && IF VERSION("SKSE", "=0.1.6.4", >) GLOBAL SAY: Your SKSE is up-to-date.
+  IF VAR(RU) && IF VERSION("SKSE", "0.1.6.4", <) GLOBAL SAY: Вы используете не самую последнюю версию SKSE. Последняя версия может быть найдена "http://skse.silverlock.org/ здесь".
+    IF VAR(RU) && IF VERSION("SKSE", "=0.1.6.4", >) GLOBAL SAY: Ваш SKSE имеет последнюю версию.
 
 // Dynamic plugins
   IF REGEX("ASIS(-Dependency)?\.esp") || IF REGEX("Automatic (Spells|Variations|Variants)\.esp") && IF VAR(EN) GLOBAL SAY: A dynamically created plugin is installed. Please refer to the authors notes for more information on determining the best load order.
@@ -7575,7 +7577,8 @@ naturalisticwerewolf.esp
 Revamped Vampire Lord.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 RVL Size Reduction.esp
-  SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/21660 Revamped Vampire Lord"
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/21660 Revamped Vampire Lord"
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии. "http://skyrim.nexusmods.com/mods/21660 Revamped Vampire Lord"
 Scriptless werewolf bonus.esp
 StrongVampireLord.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -9425,7 +9428,8 @@ Ellette.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 eola1.3.esp
 Erik.esp
-  SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
 Esmeralda.esp
   IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemale"
 Etain the Shewolf.esp
@@ -9484,7 +9488,8 @@ Lunariana.esp
 Lyla.esp
 Manbreakerv1.esp
 Marcurio.esp
-  SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
 marcurio2.1.esp
 Marcurio_Tair.esp
 MartinFollower.esp
@@ -9646,7 +9651,8 @@ SelminaDArchon.esp
 SFR_Onmund.esp
   IF CHECKSUM("SFR_Onmund.esp", F8DF7340) DIRTY: 3 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Onmund.esp
-  SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
 sneAnya.esp
 sneHaekwon.esp
 sneIsobel.esp
@@ -9764,7 +9770,8 @@ RiaFacelift.esp
 Vladamir.esp
 Viin.esp
 Vorstag.esp
-  SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
 Uthgerd.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 katia.esp
