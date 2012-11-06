@@ -2478,7 +2478,8 @@ CiviliansWillNotDiePatches.esp
   IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", C0754EA7) SAY: Устарело. Обновите до "http://modgames.net/load/247-1-0-13970 CiviliansWillNotDiePatches.esp" 0.6+
 Destructible_bottles.esp
-  IF CHECKSUM("Destructible_bottles.esp", BF5ED5A9) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Destructible_bottles.esp", 33A7D490) WARN: Probably corrupted. Mod contains enexpected or 'out of order' records.
+  IF CHECKSUM("Destructible_bottles.esp", BF5ED5A9) || IF CHECKSUM("Destructible_bottles.esp", 0900B364) || IF CHECKSUM("Destructible_bottles.esp", 48639563) || IF CHECKSUM("Destructible_bottles.esp", 078C74DD) || IF CHECKSUM("Destructible_bottles.esp", 5BE52467) || IF CHECKSUM("Destructible_bottles.esp", D59FAF05) || IF CHECKSUM("Destructible_bottles.esp", D80876E8) SAY: Obsolete. Update to latest version.
 item sorting dg by saige.esp
 KoS_Land_at_War.esp
 REGEX: more_Travelers(_light)?\.esp
@@ -4166,7 +4167,7 @@ SpaceWikingArchmageEnchantment.esp
 Space Wiking's Dwemer Exoskeleton.esp
 Space Wiking's Jormungandr.esp
 Space Wiking's The Elementals.esp
-  IF CHECKSUM("Space Wiking's The Elementals.esp", 707FDF2E) DIRTY:  2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-
+  IF CHECKSUM("Space Wiking's The Elementals.esp", 707FDF2E) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-
 _TES5Edit Cleaning guide")
 SpawnAxe.esp
 spawnshield.esp
@@ -4224,7 +4225,7 @@ BEGINGROUP: Items T
 TaliArmor.esp
 Talon of Akatosh.esp
 Tamrielic Artifacts - Goldbrand - Eltonbrand.esp
-  IF CHECKSUM("Tamrielic Artifacts - Goldbrand - Eltonbrand.esp", 496766F9) DIRTY:  1 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Tamrielic Artifacts - Goldbrand - Eltonbrand.esp", 496766F9) DIRTY: 1 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Tamrielic Artifacts - Umbra.esp
 TamrielicArtifactsV1-1.esp
 tbmchrysamere.esp
@@ -4675,6 +4676,10 @@ FactionOverhaulV25.esp
 LegionOverhaulV25.esp
 /* Designed to work with "Deadly Dragons" mod (v3.1.0) */
 megadragons.esp
+Requiem.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard. (Official Bethesda DLC)
+  IF CHECKSUM("Requiem.esp", 54D02FF2) DIRTY: 87 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Requiem.esp", 700E9079) || IF CHECKSUM("Requiem.esp", B7313A82) || IF CHECKSUM("Requiem.esp", 50E21B61) SAY: Obsolete. Update to latest version.
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
 Skyrim_New Balance.esp
@@ -5206,6 +5211,13 @@ HallsOfDovahndor.esp
   IF CHECKSUM("HallsOfDovahndor.esp", A8418D27) DIRTY: 23 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Haven.esp
 HavenBag.esp
+HeartOfThunder.esp
+  IF VAR(SkyReM) INC: SkyRe_Main.esp
+  IF CHECKSUM("HeartOfThunder.esp", 2CA96833) DIRTY: 37 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("HeartOfThunder.esp", CE970887) || IF CHECKSUM("HeartOfThunder.esp", 65EB962D) || IF CHECKSUM("HeartOfThunder.esp", 1A6E4211) SAY: Obsolete. Update to the latest version.
+REGEX: HeartOfThunder 1.+\.esp
+  SAY: Obsolete. Update to latest renamed version.
+HoT Thunderwolf Form.esp
 heartwoodcottage1_v1.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, heartwoodcottage1_v2.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, heartwoodcottage1_v2.esp
@@ -8005,6 +8017,7 @@ transmutesoulgem.esp
 TriRoc Stripper Companion.esp
 TSO.esp
 UBW.esp
+Unearthed Arcana - Raise Servant.esp
 UnlockSpell.esp
 UnplayableMadePlayable.esp
 Unspontaneous-combustion.esp
@@ -9458,6 +9471,7 @@ FelixConstantine.esp
 Fezzik the Giant.esp
   IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) WARN: Delete this file. It is corrupt.
   IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) WARN: Delete this file. It is corrupt.
+FFBosmer.esp
 Frost_Elves.esp
   REQ: "http://www.loverslab.com/showthread.php?tid=10635 Custom Race Mods by Trykz"
 highfive.esp
@@ -10102,6 +10116,8 @@ AsharaSkyrimCharacterPresetsReplacer.esp
 AutoCastRacials.esp
 AutoCastPowers.esp
   IF CHECKSUM("AutoCastPowers.esp", EA872E4C) DIRTY: 1 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Bandit Children.esp
+  IF CHECKSUM("Bandit Children.esp", D301AE7B) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Barber.esp
 Basvanbeu MuscleTextureChanger with Navetsea set.esp
 REGEX: Better Racials- .+\.esp
@@ -10140,6 +10156,8 @@ Expanded Eye Color Selection.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 IF VAR(ExtSlider) MOD: VampireOverhaul.esp
 IF VAR(ExtSlider) MOD: VampireEffectProject.esp
+Forsworn Children.esp
+  IF CHECKSUM("Forsworn Children.esp", 722A5413) DIRTY: 3 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HealthRegeneratingOff.esp
   IF CHECKSUM("HealthRegeneratingOff.esp", 0A7CE6EC) DIRTY: 1 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: MD - BMIVR( with vanilla heights)?\.esp
