@@ -385,7 +385,6 @@ Sirenia.esm
 Tallis Wind.esm
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Talsha.esm
-TurnDownXrace.esm
 Tyth.esm
 UnicornCave.esm
   IF CHECKSUM("UnicornCave.esm", C5D100F6) DIRTY: 41 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -395,6 +394,9 @@ CMNewCompanions.esm
 jkotf4oneofthelastdwarven.esm
 OneiroMoarFollowers.esm
 RaceCompatibility.esm
+TurnDownXrace.esm
+  // RaceCompatibility.esm is master
+  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
 CMHalfElf.esm
   IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
 Sanctum of the Fallen.esm
@@ -3316,6 +3318,7 @@ Ghost Rider.esp
 ghostlier ghostblade.esp
 Giants hammertime.esp
 Gifted Armor.esp
+Gilgamesh Weapon Set.esp
 Gizmodian-Obliviweapons.esp
 GizmodianOblivionWeaponsCraftable.esp
 Gizmodian Silver Swords.esp
@@ -3425,7 +3428,7 @@ IFNOT VAR(BFNIAP) MOD: Level List - Immersive Armor.esp
 HoodsAndCirclets.esp
 HUM_Armor.esp
 hunterarmor.esp
-  IF FILE("SkyRe_Plugin_NordicHunterLightArmor_1.2.esp") TAG: {{BASH: Deactivate}}
+  SAY: Obsolete. Update to latest renamed version - hunterarmorv1.2.esp
 hunterarmorv1.2.esp
   IF FILE("SkyRe_Plugin_NordicHunterLightArmor_1.2.esp") TAG: {{BASH: Deactivate}}
 SkyRe_Plugin_NordicHunterLightArmor_1.2.esp
@@ -3433,6 +3436,8 @@ SkyRe_Plugin_NordicHunterLightArmor_1.2.esp
     IF VAR(RU) && IF FILE("hunterarmorv1.2.esp") SAY: Возможно уже включено в hunterarmorv1.2.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+hunterarmornofur.esp
+  IF FILE("hunterarmorv1.2.esp") INC: hunterarmorv1.2.esp
 HuntersSight.esp
 HuntressArmor.esp
 Hvergelmir's Armor Retexture - HAR.esp
@@ -3838,6 +3843,7 @@ REGEX: SkyRe_Plugin_NicoroshiCreations.*\.esp
 NightasyBondageArmor.esp
 Night_Dweller_Armor.esp
 Nightingale Armor for Mages.esp
+NightingaleArrows.esp
 NightingaleCrossbow.esp
 NightingaleDagger.esp
 NightingaleShiv.esp
@@ -4641,6 +4647,7 @@ Crafting300_Basic_extras_v1.0.esp
 Crafting300 - No Perk Tree Edits.esp
 300 Smithing fix.esp
 Darwins_Hard_Times.esp
+Destruction Overhaul.esp
 enhancedgameplay.esp
 Expanded Apothecary Inventory.esp
   IF CHECKSUM("Expanded Apothecary Inventory.esp", 761777FF) DIRTY:  1 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -4965,6 +4972,8 @@ Ank_Castle_Addon.esp
 AnnaMolly.esp
 AnorithsShack.esp
 /* Might be old version */
+Another Breezehome Basement.esp
+  SAY: Obsolete. Update to latest renamed version - expanded basement.esp
 AnisesCabin(GS).esp
 arbitrary faction additions - forsworn.esp
 ArbitraryFA - Forsworn.esp
@@ -5221,6 +5230,9 @@ EroticStatues.esp
 ESFCompanions.esp
 Everspring Grotto.esp
 Evil Lair of Hydra.esp
+expanded basement.esp
+  IF CHECKSUM("expanded basement.esp", 77B3D0AF) || IF CHECKSUM("expanded basement.esp", 05D3BC5E) || IF CHECKSUM("expanded basement.esp", AF1BA96C) || IF CHECKSUM("expanded basement.esp", F7137B70) || IF CHECKSUM("expanded basement.esp", C8B1446D) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("expanded basement.esp", 27C7711A) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 exo_WhiterunCaveHouse.esp
 ExplorerDungeonPack.esp
   IF CHECKSUM("ExplorerDungeonPack.esp", 4D76065C) DIRTY: 61 ITM, 10 UDR, 1 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -6199,6 +6211,11 @@ ENDGROUP: Overrides B
 BEGINGROUP: Overrides C
 
 Can you feel it.esp
+CandleLight-Medium.esp
+  WARN: This file contains unexpected or 'out of order' sub-records. It should be deleted and then reported to it's author.
+CandleLight-Minimum.esp
+  WARN: This file contains unexpected or 'out of order' sub-records. It should be deleted and then reported to it's author.
+  IF FILE("CandleLight-Medium.esp") INC: CandleLight-Medium.esp
 Carga.esp
 CatchAndKill.esp
 Cautious Bears with reduced Aggro Radius.esp
@@ -6433,6 +6450,9 @@ REGEX: Ghostly Shadowmere.*\.esp
     IF VAR(RU) SAY: Используйте только один Ghostly Shadowmere*.esp
 giant_giants_and_mammoths.esp
 REGEX: Giant Mammoths( 50size)?([ ]+\dk HP)?\.esp
+GiantClub.esp
+GiantClubNerfed.esp
+  IF FILE("GiantClub.esp") INC: GiantClub.esp
 GKorrPerks.esp
 REGEX: GloriousGrass( PineForests)?\.esp
 GoldenVendors.esp
@@ -7288,6 +7308,11 @@ ENDGROUP: Overrides V
 
 BEGINGROUP: Overrides W
 
+wabba-ori_proj.esp
+  IF CHECKSUM("wabba-ori_proj.esp", 920BFEAC) || IF CHECKSUM("wabba-ori_proj.esp", C0BCC465) || IF CHECKSUM("wabba-ori_proj.esp", C4D440F8) SAY: Obsolete. Update to the latest version.
+wabba-unrel_proj.esp
+  IF FILE("wabba-ori_proj.esp") INC: wabba-ori_proj.esp
+  IF CHECKSUM("wabba-unrel_proj.esp", F1E2BBDE) || IF CHECKSUM("wabba-unrel_proj.esp", 7F102922) || IF CHECKSUM("wabba-unrel_proj.esp", 285D704B) SAY: Obsolete. Update to the latest version.
 Wabbajack Fix.esp
 walk.esp
 IFNOT REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
@@ -8055,6 +8080,8 @@ ReflectiveWard.esp
 room.esp
   IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
 Rune Expansion.esp
+RunesImproved.esp
+  WARN: The file header version is not CK generated and this file may be corrupted. It should be deleted and then reported to it's author.  
 REGEX: SC_Modular Magic - .+\.esp
 Skyrim Spells Restored.esp
 SMARTS.esp
@@ -9517,6 +9544,9 @@ malecompilationv1.esp
 Aela Wears Wolf Armor.esp
 aela2.esp
 AjenBallad.esp
+AkaviriRebornbeta1.esp
+  IF CHECKSUM("AkaviriRebornbeta1.esp", 92CB7FEA) SAY: Obsolete. Update to lateset version.
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Alerik.esp
 Alexina.esp
   IF CHECKSUM("Alexina.esp", 5D08BB22) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -9524,6 +9554,7 @@ Alicia.esp
 Alma.esp
 Amanda.esp
 Andella.esp
+Andrea.esp
 Angelika.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Anruin.esp
