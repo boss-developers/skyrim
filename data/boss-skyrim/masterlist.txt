@@ -2010,6 +2010,9 @@ Nord Needs + Cooking Expanded patch.esp
   IFNOT FILE("NordNeeds.esp") REQ: "http://skyrim.nexusmods.com/mods/21384 NordNeeds"
 NoSaltRecipes.esp
 NPC Bartering.esp
+NPCPerked.esp
+  SAY: Run BOSS before generating the Perked Patch.esp.  Otherwise, the patch generated will have it's masters out of order.
+  IF CHECKSUM("NPCPerked.esp", CF92E3AC) DIRTY: 5 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: Base N
 
 BEGINGROUP: Base O
@@ -4996,6 +4999,9 @@ archaeologistguild.esp
 archmage quarters .esp
 ArieFarm.esp
 Arkris store.esp
+ArmorDisguises.esp
+  IF CHECKSUM("ArmorDisguises.esp", 0C1EC552) || IF CHECKSUM("ArmorDisguises.esp", F7458A62) || IF CHECKSUM("ArmorDisguises.esp", CA327D7C) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("ArmorDisguises.esp", 61DE8DD5) DIRTY: 63 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Auditorium.esp
 Aurora.esp
 REGEX: AutumnLodge\((Female|Male)Mannequin\)\.esp
@@ -5596,7 +5602,10 @@ HellayRiseWaterEvil.esp
 RiftWood.esp
 RiverEdge Home Fix.esp
 riverside camp.esp
+riversidelodgesws.esp
+  SAY: Obsolete. Update to the latest renamed version -> RiversideLodge.esp
 RiversideLodge.esp
+  IF CHECKSUM("RiversideLodge.esp", 1C4072D1) DIRTY: 9 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RiverSideShack.esp
 Riverwatch.esp
 RiverWood_Beautiful.esp
@@ -9690,6 +9699,8 @@ Hot_Male_Housecarls.esp
 HothFollower.esp
 Immersive Followers.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+inathesorceress.esp
+  WARN: This file contains unexpected or 'out of order' sub-records. It should be deleted and then reported to it's author.
 Jagon.esp
 jeans2.esp
 Jezebel Simon.esp
@@ -10727,6 +10738,7 @@ IF REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
   // must load after asis patch and deactivated before patch creation. (T3nd0's note from Bethesda SkyRe thread)
   IF VAR(EN) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Deactivate 'SkyRe_EnemyAI.esp' before creation of ASIS patch and activate only after creation of ASIS patch.
     IF VAR(RU) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Отключите 'SkyRe_EnemyAI.esp' перед созданием ASIS-патча и активируйте только после создания.
+Perk Patch.esp
 ENDGROUP: Dynamic Plugins
 
 /* Normaly only Dynamic plugins created by SkyProc go here.  Try to limit placing any plugins here.
