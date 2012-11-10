@@ -158,6 +158,8 @@ REGEX: PersonalizedMusic.*\.esm
 NoTint.esm
 LessTint.esm
 CLARALUX - More and Brighter Lights.esm
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии
 DarkerNights.esm
 DarkerInteriors.esm
 DarkerInteriorsAdd.esm
@@ -988,9 +990,13 @@ Bright Lights.esp
 CityLights.esp
 CLARALUX - More and Brighter Lights.esp
   IF CHECKSUM("CLARALUX - More and Brighter Lights.esp", CF9E9621) DIRTY: 113 ITM, 5 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии
 REGEX: CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius))|(Vanilla Lights|Medium Lights and Radius( w Shadows)?))\.esp
   IF VAR(EN) SAY: Use only one LightAdjuster.
     IF VAR(RU) SAY: Используйте только один LightAdjuster esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии
 ColorfulLightsNoShadows.esp
 REGEX: Dark( |e[r|st]+[ ]?)?Nights( and Bright Skies| No Weather)?\.esp
 REGEX: Dark(er)? Nights(B|_(\d{1,2})?(b+[lr])?)\.esp
@@ -1015,13 +1021,15 @@ Realistic Lighting.esp
 REGEX: [Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\.esp
   IFNOT FILE("Realistic Lighting.esp") REQ: Realistic Lighting with Customization
 realrain.esp
-  IF VAR(EN) SAY: Use only one realrain.esp
-    IF VAR(RU) SAY: Используйте только один realrain.esp
+  IF VAR(EN) && IF FILE("realrainBWRLWC.esp") SAY: Use only one realrain.esp
+    IF VAR(RU) && IF FILE("realrainBWRLWC.esp") SAY: Используйте только один realrain.esp
 realrainBWRLWC.esp
 realrainCoT.esp
+  IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(EN) SAY: Use only one realrain.esp
+    IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(RU) SAY: Используйте только один realrain.esp
 realrainextended.esp
-  IF VAR(EN) SAY: Use only one realrain.esp
-    IF VAR(RU) SAY: Используйте только один realrain.esp
+  IF FILE("realrainCoT.esp") || IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(EN) SAY: Use only one realrain.esp
+    IF FILE("realrainCoT.esp") || IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(RU) SAY: Используйте только один realrain.esp
 Realistic Lighting Patcher.esp
 Rebalance Light.esp
 13189_Rebalance_Light.esp
@@ -1084,6 +1092,12 @@ Zfixed Lights RCRN.esp
 Light Up Dawnguard.esp
 LightRoom.esp
 WM_Warmer_Lights.esp
+CLARALUX.esp
+  IF CHECKSUM("CLARALUX.esp", FD3F3144) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+CLARALUX-DG-Patch.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+CLARALUX-HF-Patch.esp
+  IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
 ENDGROUP: Lighting
 
 BEGINGROUP: Music
@@ -1933,6 +1947,9 @@ BEGINGROUP: Base M
 
 MAD Axe Bleeding Rebalance.esp
 MAD Ingots & Leather.esp
+  IF FILE("Ars Metallica.esp") INC: Ars Metallica. Use the compatible version.
+  IF FILE("MAD Ingots & Leather Ars Metallica Compatible.esp") SAY: Use only one MAD Ingots & Leather.esp (Regular or Ars Metallica compatible)
+MAD Ingots & Leather Ars Metallica Compatible.esp
 Malkavs Collection.esp
 malukahmainmenu.esp
 mammoth hide.esp
