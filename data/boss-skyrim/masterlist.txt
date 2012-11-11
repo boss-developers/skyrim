@@ -3528,6 +3528,7 @@ Insanity's Sorrow.esp
   IF CHECKSUM("Insanity's Sorrow.esp", 872ACBC) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Insanity's Umbra Sword.esp
   IF CHECKSUM("Insanity's Umbra Sword.esp", D8894064) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Insanity's Zatoichi.esp
 SkyRe_Plugin_InsanitysCelticKatana_1.2.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
@@ -10770,6 +10771,11 @@ skyforge_map_marker.esp
 REGEX: smakit_house_markers(_plus)?(_russian|_german)?\.esp
 tox Dragon Map Markers.esp
 REGEX: Unmarked Places - .+\.esp
+Warburg's 3D Paper World Map.esp
+  IF VERSION("TES5", "1.8.151.0", <) REQ: Skyrim 1.8+
+Warburg's 3D Paper World Map - Dawnguard.esp
+  IFNOT FILE("Warburg's 3D Paper World Map.esp") REQ: Warburg's 3D Paper World Map.esp (The main file)
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 WorldMapInFull3D.esp
   IF VAR(EN) SAY: If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)
     IF VAR(RU) SAY: Если вы используете другие моды. изменяющие карты, такие как Quality World Map with roads, измените параметр uLockedTerrainLOD на 32 для их отображения (только внутри помещений)
