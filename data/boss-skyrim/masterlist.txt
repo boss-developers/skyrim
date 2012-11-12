@@ -82,7 +82,7 @@ IF FILE("ApachiiHairMales.esm") SET: ApachiiHairM
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 IF VAR(USKP) SET: USKP
 
-// =================================================================
+// ================================================================
 // Global messages
 
 // Upgrade message for 1.7+ users:
@@ -7670,8 +7670,6 @@ detailed cities.esp
 REGEX: Populated Cities.*\.esp
 raggedshortcut_oc.esp
 BetterCitiesWhiterun.esp
-IF FILE("Open Cities Skyrim.esp") MOD: EMCompViljaSkyrim.esp
-  IF CHECKSUM("EMCompViljaSkyrim.esp", C45D4383) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Open Cities Skyrim.esp
   IF CHECKSUM("Open Cities Skyrim.esp", 022AD2C8) WARN: Stolen content. Please show respect for authors' rights and download from a legitimate source "http://skyrim.nexusmods.com/mods/8058".
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
@@ -9587,7 +9585,7 @@ DFB - Disable Hidden Follower Bows & Arrows.esp
   IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can remove all default followers equpment with UFO.
     IF VAR(RU) && IF VAR(UFO) SAY: Этот мод избыточен для 'UFO - Ultimate Follower Overhaul.esp'. Вы можете удалить весь скрытый инвентарь у компаньонов с помощью UFO.
 Eileen.esp
-IFNOT FILE("Open Cities Skyrim.esp") EMCompViljaSkyrim.esp
+IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMCompViljaSkyrim.esp
   IF CHECKSUM("EMCompViljaSkyrim.esp", C45D4383) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Eternal Bunny Pet.esp
 Eternal Bunny Pet (Gray Silent).esp
@@ -10312,6 +10310,8 @@ CerwidenAppearancePatch.esp
 MujuroStormbringer.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 DudestiaMultiMarriages.esp
+IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMCompViljaSkyrim.esp
+  IF CHECKSUM("EMCompViljaSkyrim.esp", C45D4383) DIRTY: 2 ITM records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Spousetocustomhome.esp
 Merchant Follower Vyctara.esp
 MyOwnRubee.esp
