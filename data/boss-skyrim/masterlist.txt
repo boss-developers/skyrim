@@ -960,9 +960,9 @@ BWS.esp
 Clanking Armor.esp
   IF CHECKSUM("Clanking Armor.esp", 7055B881) DIRTY: 5 ITMs, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DFG's Blade & Dagger Sheathe Sounds.esp
-DragonShout.esp
 DragonHitSoundFix.esp
 DragonHitSoundFix - RAS.esp
+DragonShout.esp
 IceBreaker's Improved Reverb.esp
 immersive thunder.esp
 REGEX: Improved Combat Sounds v2\.\d\.esp
@@ -976,7 +976,7 @@ newheavyarmorsound.esp
 Nordic Natural Sound.esp
 Phenderix's Magic Sounds Improved.esp
 projectpew.esp
-the real fus ro dah.esp
+QuieterRestorationDrawnSound.esp
 randomthunder.esp
 Rooster At Dawn v1.0.esp
 skyradio.esp
@@ -993,7 +993,8 @@ SoS - Civilization.esp
   IF VAR(EN) WARN: The Sounds of Skyrim collection have been causing a lot of bugs and corrupting saves, even when removed and caused stuttering.
     IF VAR(RU) WARN: В Sounds of Skyrim найден серьёзный баг, приводящий к "раздуванию" файлов сохранений. Рекомендуется отключить все модули мода и удалить все их файлы.
     // Must be removed after fixing of bugs.
-QuieterRestorationDrawnSound.esp
+the real fus ro dah.esp
+Thundering Shouts.esp
 zeldaaudio.esp
 ENDGROUP: Sound mods
 
@@ -2394,6 +2395,16 @@ TravellersOfSkyrim.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 TravellersOfSkyrim - Vanilla.esp
+TravellersOfSkyrim - Light.esp
+  IF FILE("TravellersOfSkyrim - Vanilla.esp") INC: TravellersOfSkyrim - Vanilla.esp
+TravellersOfSkyrim - Alchemists Vanilla.esp
+  IF FILE("TravellersOfSkyrim - Light.esp") || IF FILE("TravellersOfSkyrim - Vanilla.esp") INC: TravellersOfSkyrim - Vanilla.esp and / or TravellersOfSkyrim - Light.esp
+TravellersOfSkyrim - Apothecaries Vanilla.esp
+  IF FILE("TravellersOfSkyrim - Light.esp") || IF FILE("TravellersOfSkyrim - Vanilla.esp") INC: TravellersOfSkyrim - Vanilla.esp and / or TravellersOfSkyrim - Light.esp
+TravellersOfSkyrim - Mercenaries Vanilla.esp
+  IF FILE("TravellersOfSkyrim - Light.esp") || IF FILE("TravellersOfSkyrim - Vanilla.esp") INC: TravellersOfSkyrim - Vanilla.esp and / or TravellersOfSkyrim - Light.esp
+TravellersOfSkyrim - Merchants Vanilla.esp
+  IF FILE("TravellersOfSkyrim - Light.esp") || IF FILE("TravellersOfSkyrim - Vanilla.esp") INC: TravellersOfSkyrim - Vanilla.esp and / or TravellersOfSkyrim - Light.esp
 travelingargonians.esp
 treeplanting.esp
 TribalMightHorse.esp
@@ -2595,6 +2606,7 @@ kontrol.esp
 kuerteeAutoSaveAndTime.esp
 Mark Books as Read.esp
 Mart's Savegame DeBloatifier.esp
+MDX_MenuAutoAccept.esp
 NPCPhotoBooth.esp
 REGEX: SkyRealism - Simple Save System.+\.esp
   IF VAR(EN) SAY: Only use one SkyRealism - Simple Save System*.esp
@@ -2779,12 +2791,14 @@ BEGINGROUP: Items B
 BabetteShroudedRobes.esp
 Backpack OE.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
+backpackfrankdema.esp
 backstabgauntlets.esp
 BadGremlinsJarHunt.esp
   IF CHECKSUM("BadGremlinsJarHunt.esp", 82CAA554) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BadMedicine1.1.esp
 Bandanas of Skyrim.esp
 Bangarang.esp
+baraban-dawnguard-plate.esp
 BarbarianArmor.esp
 BarbarianAxe.esp
 Barbarian Jewelry.esp
@@ -3278,6 +3292,8 @@ EinherjarArmor.esp
 Lorecraft - EinherjarArmor.esp
 EisenPlate.esp
 EI.esp
+EK_RingLimiter.esp 
+  IF VERSION("SKSE", "0.1.6.3", <) REQ: "http://skse.silverlock.org SKSE" 1.6.3+
 Elculous.esp
 elegantvampirearmor.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -4941,6 +4957,7 @@ BEGINGROUP: Deadly and Mighty Dragons
 IF FILE("DeadlyDiversifiedDragonsPatch.esp") MOD: DragonsDiversified.esp
 REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp
   TAG: {{BASH: Delev, Relev}}
+DeadlyDragons_Addon.esp
 DeadlyDragonsX.esp
   TAG: {{BASH: Delev, Relev}} not tested
 DeadlyDragonsCraft.esp
@@ -5721,13 +5738,16 @@ Ranger's Valley Lodge.esp
 Rangers Refuge.esp
 Rashiik.esp
   IF CHECKSUM("Rashiik.esp", E5ED0B07) SAY: Obsolete. Update to the latest version.
-  IF CHECKSUM("Rashiik.esp", 7948D345) || IF CHECKSUM("Rashiik.esp", 7948D345) DIRTY: 10 ITM, 0 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Rashiik.esp", 7948D345) DIRTY: 10 ITM, 0 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RayeksEnd.esp
 razorshade.esp
+Realistic Dungeons.esp 
+  IF CHECKSUM("Realistic Dungeons.esp", 39B7E008) DIRTY: 1 ITM, 2479 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RealisticWhiterun.esp
 Reaper's The Dark Tower.esp
 ResearchThief.esp
 retreat.esp
+Return Trip.esp
 Review Studio.esp
 Riften Bivouac.esp
 riften jail test 2.esp
@@ -6267,6 +6287,7 @@ Achievement Remover.esp
 AdaptiveNightEye.esp
 AddChoices01.esp
 Adoption.esp
+Advanced Shrines.esp
 AdvancedTransmutation.esp
 REGEX: AIRangeIncrease(_NoAggro)?\.esp
 alcoholiceffect.esp
@@ -7214,6 +7235,7 @@ ENDGROUP: Overrides Q
 
 BEGINGROUP: Overrides R
 
+radialblur.esp
 Raptor Talon Argonians.esp
 RBS.esp
 ReadIt.esp
@@ -7444,6 +7466,14 @@ Soul Gems Glow When Full.esp
 SoultrapSummons.esp
 sparse start.esp
 SpecialGhostblade.esp
+SPTUnlimitedAmulets.esp
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
+SPTUnlimitedAmuletsDawnguard.esp
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
+SPTUnlimitedRings.esp
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
+SPTUnlimitedRingsDawnguard.esp
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8+
 Standin Stonene's Value Fix V1.esp
 Standing Stone Revamp v.1.0.esp
 SteelShieldOfSolitude.esp
@@ -7780,6 +7810,8 @@ REGEX: CityForest.*\.esp
   IF VAR(EN) && IF FILE("CityForestv2.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF FILE("CityForestv2.esp") WARN: Устарело. Обновите до последней версии.
 /* Changes FLOR Records */
+City Secret Entrances.esp
+  IF CHECKSUM("City Secret Entrances.esp", CAC40C72) DIRTY: 5 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Completed Forges.esp
 AIMP - Antz in my Pantz.esp
 Chesko_Step418.esp
@@ -7865,10 +7897,27 @@ NPCsUseAmmoAllBows.esp
 P-Froggys Rest and Eat.esp
 RealisticCarryWeight.esp
   IF CHECKSUM("RealisticCarryWeight.esp", DA01FD93) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+IFNOT FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
+  IF FILE("BabettesFeastBalanced.esp") && IFNOT FILE("RND_BabettesFeast-Patch.esp") REQ: RND_BabettesFeast-Patch.esp
+  IF VAR(Dawnguard) && IFNOT FILE("RND_Dawnguard-Patch.esp") REQ: RND_Dawnguard-Patch.esp
+  IF FILE("Destructible_bottles.esp") && IFNOT FILE("RND_DestructibleBottles-Patch.esp") REQ: RND_DestructibleBottles-Patch.esp
+  IF FILE("Drinking Fountains of Skyrim.esp") && IFNOT FILE("RND_DrinkingFountains-Patch.esp") REQ: RND_DrinkingFountains-Patch.esp
+  IF VAR(Hearthfire) && IFNOT FILE("RND_HearthFires-Patch.esp") REQ: RND_HearthFires-Patch.esp
+  IF FILE("NerniesCityandVillageExpansion.esp") && IFNOT FILE("RND_NCVE-Patch.esp") REQ: RND_NCVE-Patch.esp
+  IF FILE("Purewaters.esp") && IFNOT FILE("RND_PureWaters-Patch.esp") REQ: RND_PureWaters-Patch.esp
+  IF FILE("Realistic Wildlife Loot - Realistic.esp") && IFNOT FILE("RND_RWL-Patch.esp") REQ: RND_RWL-Patch.esp
+  IF FILE("Real Wildlife Skyrim 0.1.esp") && IFNOT FILE("RND_RWS-Patch.esp") REQ: RND_RWS-Patch.esp
+  IF FILE("Water.esp") && IFNOT FILE("RND_Water-Patch.esp") REQ: RND_Water-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_DestructibleBottles-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_DrinkingFountains-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_HearthFires-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_NCVE-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RealisticRoomRental.esp
   IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-RealisticNeedsandDiseases.esp
-  IF FILE("Water.esp") && IFNOT FILE("RND_Water-Patch.esp") REQ: RND_Water-Patch.esp
 RealisticRoomRental-Basic.esp
   IF FILE("RealisticRoomRental.esp") INC: RealisticRoomRental.esp
 RRRE-Lite.esp
@@ -8764,6 +8813,7 @@ BEGINGROUP: Thievery, Sneaking and Crime
 //
 // Overrides overhauls.
 
+Better Stealth AI for Followers.esp
 Thievery.esp
 REGEX: cao_extrapockets_D.+\.esp
 crimes!.esp
@@ -9757,6 +9807,25 @@ Essential Vigilance.esp
     IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен, при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
 Unkillable Lydia.esp
 3DNPC.esp
+IF FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
+  IF FILE("BabettesFeastBalanced.esp") && IFNOT FILE("RND_BabettesFeast-Patch.esp") REQ: RND_BabettesFeast-Patch.esp
+  IF VAR(Dawnguard) && IFNOT FILE("RND_Dawnguard-Patch.esp") REQ: RND_Dawnguard-Patch.esp
+  IF FILE("Destructible_bottles.esp") && IFNOT FILE("RND_DestructibleBottles-Patch.esp") REQ: RND_DestructibleBottles-Patch.esp
+  IF FILE("Drinking Fountains of Skyrim.esp") && IFNOT FILE("RND_DrinkingFountains-Patch.esp") REQ: RND_DrinkingFountains-Patch.esp
+  IF VAR(Hearthfire) && IFNOT FILE("RND_HearthFires-Patch.esp") REQ: RND_HearthFires-Patch.esp
+  IF FILE("NerniesCityandVillageExpansion.esp") && IFNOT FILE("RND_NCVE-Patch.esp") REQ: RND_NCVE-Patch.esp
+  IF FILE("Purewaters.esp") && IFNOT FILE("RND_PureWaters-Patch.esp") REQ: RND_PureWaters-Patch.esp
+  IF FILE("Realistic Wildlife Loot - Realistic.esp") && IFNOT FILE("RND_RWL-Patch.esp") REQ: RND_RWL-Patch.esp
+  IF FILE("Real Wildlife Skyrim 0.1.esp") && IFNOT FILE("RND_RWS-Patch.esp") REQ: RND_RWS-Patch.esp
+  IF FILE("Water.esp") && IFNOT FILE("RND_Water-Patch.esp") REQ: RND_Water-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_DestructibleBottles-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_DrinkingFountains-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_HearthFires-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_NCVE-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
 IF FILE("3DNPC.esp") MOD: RealisticRoomRental.esp
   IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 IF FILE("3DNPC.esp") MOD: RRRE-ToS_Oakwood-Patch.esp
@@ -9788,6 +9857,7 @@ Eternal Bunny Pet (Gray Silent).esp
 FairKhajiit.esp
 friendlybrynjolf.esp
 Gabby Companion.esp
+HothFollower.esp
 AIKhajiitCompanions.esp
 Ja´dirr + Kharjo Makeover.esp
 KCustomFollowers.esp
@@ -9852,6 +9922,7 @@ BEGINGROUP: Ultimate Follower Overhaul
 UFO - Ultimate Follower Overhaul.esp
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
   IF FILE("BDO.esp") INC: BDO.esp
+  IF VAR(Dawnguard) WARN: UFO - Dawnguard AddOn.esp required to work properly with Dawnguard (Official Bethesda DLC)
   IF VAR(EN) SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on "http://skyrim.nexusmods.com/mods/14037 mod page".
     IF VAR(RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода"(Eng) или читайте "http://u.to/GJZaAg это" локализованное ридми.
   IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 6EF3FFBA) DIRTY: 18 ITM, 0 UDR records Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -9862,6 +9933,7 @@ UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
 TravellersOfSkyrim - UFO Compatibility Patch.esp
+  IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
 ENDGROUP: Ultimate Follower Overhaul
 
 BEGINGROUP: Post UFO
@@ -10024,7 +10096,6 @@ highfive.esp
 housecarl_fem_plus.esp
 HousecarlWindhelm.esp
 Hot_Male_Housecarls.esp
-HothFollower.esp
 Immersive Followers.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 inathesorceress.esp
@@ -10930,6 +11001,7 @@ IF FILE("Purewaters.esp") MOD: realrainextended.esp
     IF VAR(RU) SAY: Используйте только один realrain.esp
 PurewatersDG.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+RND_PureWaters-Patch.esp
 RealisticWaterTextures.esp
   IF VAR(EN) && IF FILE("WATER.esp") WARN: DELETE. Use WATER.esp instead
     IF VAR(RU) && IF FILE("WATER.esp") WARN: Удалите. Используйте WATER.esp вместо этого.
@@ -10982,6 +11054,9 @@ BarenziahQuestMarkers.esp
 BetterMapMarkerPlacements.esp
 camp_map_markers.esp
 cartographers map markers.esp
+City Secret Entrances Map Markers.esp
+  IFNOT FILE("City Secret Entrances.esp") REQ: City Secret Entrances.esp
+  IF CHECKSUM("City Secret Entrances Map Markers.esp", DFFFCFFD) DIRTY: 5 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Compelling Treasure Maps.esp
 crimsonquestmarkers.esp
 detaillierte minen kartenmarkierungen.esp
