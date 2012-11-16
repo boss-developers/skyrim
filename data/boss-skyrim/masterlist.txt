@@ -9926,7 +9926,7 @@ BEGINGROUP: Ultimate Follower Overhaul
 UFO - Ultimate Follower Overhaul.esp
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
   IF FILE("BDO.esp") INC: BDO.esp
-  IFNOT VAR(Dawnguard) WARN: UFO - Dawnguard AddOn.esp required to work properly with Dawnguard (Official Bethesda DLC)
+  IF VAR(Dawnguard) && IFNOT FILE("UFO - Dawnguard AddOn.esp") WARN: UFO - Dawnguard AddOn.esp required to work properly with Dawnguard (Official Bethesda DLC)
   IF VAR(EN) SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on "http://skyrim.nexusmods.com/mods/14037 mod page".
     IF VAR(RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода"(Eng) или читайте "http://u.to/GJZaAg это" локализованное ридми.
   IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 6EF3FFBA) DIRTY: 18 ITM, 0 UDR records Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
