@@ -81,6 +81,8 @@ IF FILE("ApachiiHairFemales.esm") SET: ApachiiHairF
 IF FILE("ApachiiHairMales.esm") SET: ApachiiHairM
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 IF VAR(USKP) SET: USKP
+IF FILE("Unofficial Dawnguard Patch.esp") SET: USDP
+IF FILE("Unofficial Hearthfire Patch.esp") SET: USHP
 
 // ================================================================
 // Global messages
@@ -2547,7 +2549,7 @@ CiviliansWillNotDiePatches.esp
   IF FILE("CiviliansWillNotDieChild.esp") INC: CiviliansWillNotDieChild.esp
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", C0754EA7) && IF VERSION("TES5", "1.7", <) REQ: Skyrim 1.7+
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", 2336B8B8) && IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
-  IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch
+  // IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", C0754EA7) SAY: Устарело. Обновите до "http://modgames.net/load/247-1-0-13970 CiviliansWillNotDiePatches.esp" 0.6+
 Destructible_bottles.esp
   IF CHECKSUM("Destructible_bottles.esp", 33A7D490) WARN: This file contains unexpected or 'out of order' subrecords. It should be deleted and then reported to it's author.
@@ -3419,6 +3421,7 @@ REGEX: Glass Mage Armor (Skyrim Vanilla|Ashlander Silver|Outlander Gold)\.esp
 GM-LeatherHood.esp
   IF VAR(GMForgeAdd) INC: Gromits Smithing Forge Additions
 GodGearAndGloryBook.esp
+Gods smithing gift.esp
 Golden_Age_Arc_Sword.esp
 goldbrand.esp
 GoldRapier01.esp
@@ -6653,6 +6656,8 @@ flags of victory.esp
 FImperialCuirass.esp
 fixwards.esp
 FoodBowlsReplacer.esp
+ForceEnchantment.esp
+  IF CHECKSUM("ForceEnchantment.esp", 318FB954) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Four Slots for Enchanting .esp
   IF CHECKSUM("Four Slots for Enchanting .esp", 8E34ED2E) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Five Slots for Enchanting vanilla.esp
@@ -7145,6 +7150,14 @@ NoLeveledItemRewards.esp
 No More Arrows in the Knee.esp
 no more immortal childs.esp
 no nocturnal oath.esp
+No Permanent Essentials Redux.esp
+  IF CHECKSUM("No Permanent Essentials Redux.esp", E091E997) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  // IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
+  IF VAR(Dawnguard) && IFNOT FILE("No Permanent Essentials Redux -- Dawnguard.esp") REQ: No Permanent Essentials Redux -- Dawnguard.esp for proper operation with Dawnguard.
+No Permanent Essentials Redux -- Dawnguard.esp
+  IF CHECKSUM("No Permanent Essentials Redux -- Dawnguard.esp", 045BBC6A) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  // IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
+  IFNOT VAR(USDP) REQ: Unofficial Dawnguard Patch.esp
 No Perk Prereqs.esp
 No Perk Prereqs - No Helmets Required.esp
 No Perk Prereqs - Smithing Excluded.esp
