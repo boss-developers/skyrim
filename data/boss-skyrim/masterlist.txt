@@ -81,8 +81,8 @@ IF FILE("ApachiiHairFemales.esm") SET: ApachiiHairF
 IF FILE("ApachiiHairMales.esm") SET: ApachiiHairM
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 IF VAR(USKP) SET: USKP
-IF FILE("Unofficial Dawnguard Patch.esp") SET: USDP
-IF FILE("Unofficial Hearthfire Patch.esp") SET: USHP
+IF FILE("Unofficial Dawnguard Patch.esp") SET: UDGP
+IF FILE("Unofficial Hearthfire Patch.esp") SET: UHFP
 
 // ================================================================
 // Global messages
@@ -284,6 +284,8 @@ moonpath.esm
 MTAutoStorage.esm
   IF CHECKSUM("MTAutoStorage.esm", 7C0F98CA) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Nchuzzrezar.esm
+NeV-P_ExtremeMaterials.esm
+  TAG: {{BASH: Delev, Relev}}
 Night Eye Overhaul.esm
 okaazah.esm
 ORS_MorthalPain.esm
@@ -560,6 +562,7 @@ GM-KhajiitDSHFix.esp
 GrammaticalLoading.esp
 greatweapon_speedfix.esp
 GuardShieldLight.esp
+TEGHarbringerFixes.esp
 HeadsmansAxeFixed.esp
 HelmetStackFix.esp
 HjerimMessFix.esp
@@ -4832,6 +4835,8 @@ ProjectFrenzy.esp
 Skyrim_New Balance.esp
   TAG: {{BASH: Delev, Relev}}
 TheHelm.esp
+WoTS - Overhaul Version.esp
+  IF CHECKSUM("WoTS - Overhaul Version.esp", 64810379) DIRTY: 32 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP:  General Overhauls
 
 BEGINGROUP: Dragons hunt in Swarms
@@ -5604,6 +5609,24 @@ mannyBlackRock.esp
 mannyDragonhead.esp
   IF VAR(EN) && IF FILE("mannyDragonhead.esm") SAY: Use either mannyDragonhead.esm or mannyDragonhead.esp
     IF VAR(RU) && IF FILE("mannyDragonhead.esm") SAY: Используйте или mannyDragonhead.esm или mannyDragonhead.esp
+Mapseller.esp
+  IF VAR(Dawnguard) ERROR: Requires Dawnguard version, MapsellerDawnguard.esp
+  IF CHECKSUM("Mapseller.esp", ED585B65) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+MapsellerDV.esp
+  IF VAR(Dawnguard) ERROR: Requires Dawnguard version, MapsellerDawnguardDV.esp
+  IF FILE("Mapseller.esp") INC: Mapseller.esp
+  IF CHECKSUM("MapsellerDV.esp", E9AD27FD) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+MapsellerDawnguard.esp
+  IFNOT VAR(Dawnguard) ERROR: Requires vanilla version, Mapseller.esp
+  IF FILE("Mapseller.esp") INC: Mapseller.esp
+  IF FILE("MapsellerDV.esp") INC: MapsellerDV.esp
+  IF CHECKSUM("MapsellerDawnguard.esp", 4E319705) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+MapsellerDawnguardDV.esp
+  IFNOT VAR(Dawnguard) ERROR: Requires vanilla version, MapsellerDV.esp
+  IF FILE("Mapseller.esp") INC: Mapseller.esp
+  IF FILE("MapsellerDV.esp") INC: MapsellerDV.esp
+  IF FILE("MapsellerDawnguard.esp") INC: MapsellerDawnguard.esp
+  IF CHECKSUM("MapsellerDawnguardDV.esp", B17FE086) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Markarth Dwemer Palace.esp
 Markarth_plus.esp
 majoramoon.esp
@@ -5983,6 +6006,10 @@ tomb of garok.esp
 tomb of lucien lachance.esp
 tomboftrials.esp
 tos_secretprayereng.esp
+towHarvest.esp
+  IF CHECKSUM("towHarvest.esp", A3654F92) && IF VAR(Dawnguard) ERROR: Dawnguard version required.
+towMaterialbox.esp
+towQuickPower.esp
 TQC.esp
 treasurehunt.esp
 Trees for Solitude V1.1.esp
@@ -6093,8 +6120,8 @@ WindhelmMilitaryEnhancement.esp
 WinterholdCastle.esp
 Winterhold_Improvements.esp
 Winterhold repair.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Winterhold repairV4.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версииm, Winterhold repairV4.esp
 Winterhold repairV4.esp
   IF CHECKSUM("Winterhold repairV4.esp", 1CB2273B) DIRTY: 11 ITM, 26 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Winterhold Fully Restored.esp
@@ -6104,6 +6131,9 @@ wizard.esp
 WoodsmansShack.esp
 Work a Steady Job as a Blacksmith.esp
   IF CHECKSUM("Work a Steady Job as a Blacksmith.esp", 9EC79790) DIRTY: 13 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+WoTS - Non-Overhaul Version.esp
+  IF CHECKSUM("WoTS - Non-Overhaul Version.esp", DF5C6BEF) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("WoTS - Overhaul Version.esp") INC: WoTS - Overhaul Version.esp
 WRenchanter_tilted.esp
 Wyrmstooth.esp
   IF CHECKSUM("Wyrmstooth.esp", 54F43CEF) DIRTY: 6259 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -7109,6 +7139,11 @@ BEGINGROUP: Overrides N
 naturalcarriagedrivers.esp
 NecromancerImproved.esp
   // nexus description says it adjust the stats on the Necromancer Amulet.  No file for download.
+NeV-P_ExtremeMaterials.esp
+NeV-P_ExtremeMaterialsENG.esp
+  IF CHECKSUM("NeV-P_ExtremeMaterialsENG.esp", 745B4390) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("NeV-P_ExtremeMaterials.esp") INC: NeV-P_ExtremeMaterials.esp - different langauge.
+NeV-P_TitaniumDragonEquipment.esp
 NeutralHjerim.esp
 new_beautiful_sunglare_1.0.esp
 New Difficulties.esp
@@ -7157,7 +7192,7 @@ No Permanent Essentials Redux.esp
 No Permanent Essentials Redux -- Dawnguard.esp
   IF CHECKSUM("No Permanent Essentials Redux -- Dawnguard.esp", 045BBC6A) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   // IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
-  IFNOT VAR(USDP) REQ: Unofficial Dawnguard Patch.esp
+  IFNOT VAR(UDGP) REQ: Unofficial Dawnguard Patch.esp
 No Perk Prereqs.esp
 No Perk Prereqs - No Helmets Required.esp
 No Perk Prereqs - Smithing Excluded.esp
@@ -7354,6 +7389,8 @@ Skyrim_Dragon Update.esp
     // tags not tested
   IF VAR(EN) INC: Other Dragon override mods, use only one.
     IF VAR(RU) INC: Другие, изменяющие драконов моды, используйте только один.
+skyrim philter of phantom recipe mod.esp
+  TAG: {{BASH: Delev}}
 Distant Detail.esp
   IF VAR(Hearthfire) ERROR: Use Distant DetailHF.esp
 Distant DetailHF.esp
