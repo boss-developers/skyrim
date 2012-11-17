@@ -1286,9 +1286,11 @@ ArcheryOverhaulFletcherArrowsOnly.esp
 Archmage Crafting - Enchanted Items.esp
 Archmage Crafting - Unenchanted Clothing.esp
 REGEX: Arrowsmith\w{0,2}\.esp
+Arrow Smithing.esp
+arrowcrafting.esp
+  IF CHECKSUM("arrowcrafting.esp", 8E307ED0) || IF CHECKSUM("arrowcrafting.esp", D15AE0C5) SAY: Obsolete. Update to the latest version.
 arrowsmith-dawnguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-Arrow Smithing.esp
 Ars Metallica.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 Ars Metallica - Dawnguard.esp
@@ -6192,6 +6194,8 @@ Items Weight Adjustment.esp
 LeatherWeightFix(0.1).esp
 lessheavyfirewood.esp
 lightertools.esp
+Lighter Tools.esp
+  IF CHECKSUM("Lighter Tools.esp", 6DD49F50) SAY: Obsolete. Update to the latest version.
 lighter_mining_smithing_materials.esp
 Lightweight Potions and Poisons.esp
 lightingredients.esp
@@ -6867,6 +6871,9 @@ REGEX: iMaxPlayerRunes\d+\.esp
   IF VAR(EN) SAY: This is actually iMaxPlayerRunes which is a game setting - you might be able to just set it in the .ini file and skip the plugin.
     IF VAR(RU) SAY: Это просто параметр iMaxPlayerRunes из настроек игры - вы можете просто поменять его значение в .ini файле и не использовать этот плагин.
 ImmediateDragons.esp
+Immersive Weapons.esp
+  TAG:{{BASH: Delev}}
+  IF CHECKSUM("Immersive Weapons.esp", 2EAE1F9D) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Improved Archery and Bows.esp
 Improved Cloaks.esp
 improved final battle.esp
@@ -9592,10 +9599,12 @@ Light Armor Unarmed Scaling (no armor requirement).esp
 LockpickTree.esp
 MoreWerewolfPerks.esp
   IF CHECKSUM("MoreWerewolfPerks.esp", DECFC212) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Necromancer.esp
-// Adds items, spells perks.  Placed in lowest suitable group.
 MoonLightPower.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+// Adds items, spells perks.  Placed in lowest suitable group.
+Necromancer.esp
+non-linear perks.esp
+  IF CHECKSUM("non-linear perks.esp", CD66DCFB) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Overpower.esp
   IF CHECKSUM("Overpower.esp", A16B0637) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Path of the Ranger.esp
