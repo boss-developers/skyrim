@@ -80,7 +80,9 @@ IF FILE("ApachiiHair.esm") SET: ApachiiHair
 IF FILE("ApachiiHairFemales.esm") SET: ApachiiHairF
 IF FILE("ApachiiHairMales.esm") SET: ApachiiHairM
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
-IF VAR(USKP) SET: USKP
+//
+// Unofficial Patch variables
+IF FILE("Unofficial Skyrim Patch.esp") SET: USKP
 IF FILE("Unofficial Dawnguard Patch.esp") SET: UDGP
 IF FILE("Unofficial Hearthfire Patch.esp") SET: UHFP
 
@@ -414,6 +416,9 @@ TurnDownXrace.esm
   IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
 CMHalfElf.esm
   IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
+Monli.esm
+  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
+  IF CHECKSUM("Monli.esm", 94B31A2C) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Sanctum of the Fallen.esm
 SotF BETA v1-2.esm
 SC_Drow Race.esm
@@ -4557,6 +4562,7 @@ SkyRe_Plugin_VagabondArmor_5.esp
   IF VAR(EN) && IF ACTIVE("VagabondArmor.esp") SAY: Remember not to load (or to simply delete) VagabondArmor.esp
     IF VAR(RU) && IF ACTIVE("VagabondArmor.esp") SAY: Не забудьте отключить или удалить VagabondArmor.esp
 Valdacil's Light Armor Robes.esp
+VampireHuntersCoat.esp
 VampireMasterHood.esp
 VampireMasterSet.esp
   IF FILE("VampireMasterHood.esp") INC: VampireMasterHood.esp
@@ -5112,6 +5118,9 @@ REGEX: alternativeCityAccess.*\.esp
 AmethystHollowsUpdate.esp
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 Amazing Riverwood Starter Home.esp
+Ancient Knowledge Armour.esp
+  IF CHECKSUM("Ancient Knowledge Armour.esp", C3251F91) || IF CHECKSUM("Ancient Knowledge Armour.esp", DF1111AD) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("Ancient Knowledge Armour.esp", 65B6427E) DIRTY: 16 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Quest_AndTheRealmsOfDaedra.esp
 Ancient Watchtowers.esp
 Ank_Castle_Main.esp
@@ -6573,6 +6582,7 @@ DA_Maxwell_Outfit_Dibella_UNP.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 DA_Maxwell_Outfit_Dibella_UNP_EV.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
+DawnguardInquisitors.esp
 Deadly_Slaughterfish.esp
 Daedric Artifact Enhancements.esp
 Daedric Artifacts Overlord.esp
@@ -9685,6 +9695,9 @@ NiruinsBusinessPlan.esp
 Onehanded.esp
 REGEX: Pinups\d?\.esp
 psikoticsnecromancy.esp
+PotionsBETA.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Bethesda Official DLC)
+  IF CHECKSUM("PotionsBETA.esp", 00B541DA) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 See YourSelf drink and eat.esp
 Shake it!.esp
 ShakeIt.esp
@@ -9836,6 +9849,7 @@ MilkyGirlRaceWarrior.esp
 MilkyGirlRaceWarriorExtendedcolors.esp
   IF FILE("MilkyGirlRaceWarrior.esp") INC: MilkyGirlRaceWarrior.esp
 Monli.esp
+  IF FILE("Monli.esm") ERROR: Deactivate and remove, incompatible with Monli.esm
   IF CHECKSUM("Monli.esp", 75A81077) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MysticalElvesV1.5.esp
 mxfrostelfrace.esp
@@ -10092,6 +10106,8 @@ Better Companions.esp
 BetterCompanions.esp
 Child Adoption.esp
 Companion Followers.esp
+Haeli.esp
+  IF CHECKSUM("Haeli.esp", DC8D51C0) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 horkercompanion.esp
 KCustom_ALL_FHC_NDO.esp
 KCustomNPCs.esp
@@ -10101,6 +10117,7 @@ KCustomMagesCollege-NDO.esp
 KCustomMoreNPCs.esp
   IF FILE("KCustom_ALL_FHC_NDO.esp") INC: KCustom_ALL_FHC_NDO.esp
 malecompilationv1.esp
+MonliFollowers.esp
 My_Little_hatchling.esp
 My_Little_hatchling_K.esp
   IF FILE("My_Little_hatchling.esp") INC: My_Little_hatchling.esp
@@ -10802,7 +10819,6 @@ ENDGROUP: Companions
 
 BEGINGROUP: Companions Load Late
 // Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
-
 
 followernoama.esp
 followerhavok.esp
