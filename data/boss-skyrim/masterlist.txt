@@ -1195,13 +1195,19 @@ ENDGROUP: Textures
 
 BEGINGROUP: Base Early
 
+BeastModels.esp
+  SAY: Obsolete. Update to latest renamed version, ChangeMaleModels.esp
 REGEX: BorderRegionsDisabled(EV)?\.esp
   IF VAR(EN) SAY: Recommended to change Skyrim.ini bBorderRegionsEnabled=1 to bBorderRegionsEnabled=0 instead.
     IF VAR(RU) SAY: Рекомендуется изменить параметр Skyrim.ini bBorderRegionsEnabled=1 на bBorderRegionsEnabled=0 и удалить этот мод.
+ChangeMaleModels.esp
+  IF CHECKSUM("ChangeMaleModels.esp", 34A1E261) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Elemental Base.esp
 Less Fugly Female NPCs.esp
   IF CHECKSUM("Less Fugly Female NPCs.esp", 93FE07E6) WARN: This mod contains numerous corrupted records generated with TESVSmip. It is strongly advised you remove this from your load order to avoid damage to your saves.
 // makes sense to load before mods which alter individual NPC
+RegenRedux.esp
+RegenReduxLite.esp
 SFD_NumericQuality.esp
 /* Removed REGEX because specific load order is needed */
 Weapons and Armor fixes.esp
@@ -1221,6 +1227,7 @@ StaticMeshImprovementMod.esp
     IF VAR(RU) && IF CHECKSUM("StaticMeshImprovementMod.esp", 8806A693) SAY: Вы можете использовать данный esp для версии 1.20-1.26 и вероятно, более новых, если, в очередном обновлении SMIM, не последовало обновления esp.
 SkyrimImprovedChanges.esp
   TAG: {{BASH: Delev, Relev}}
+SloManaRegen.esp
 SurvivalistIngenuity.esp
   TAG: {{BASH: Delev, Relev}}
 SI_NoSaltOreMapMarkers.esp
@@ -1788,6 +1795,11 @@ HighlandFarmMilk.esp
   TAG: {{BASH: Relev}}
   // not tested
 HillmanShack.esp
+HM Marry All.esp
+  IFNOT VAR(Dawnguard) || IFNOT VAR(Hearthfire) && IF CHECKSUM("HM Marry All.esp", 139C1E4C) ERROR: Requires Dawndguard AND Hearthfires (Official Besthesda DLC)
+  IF VAR(Dawnguard) || IF VAR(Hearthfire) && IF CHECKSUM("HM Marry All.esp", DB88B8BE) ERROR: Requires Dawnguard and Hearthfires version of HM Marry All.esp
+  IF CHECKSUM("HM Marry All.esp", 139C1E4C) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("HM Marry All.esp", DB88B8BE) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HM MicroCraft.esp
 HorseFlute.esp
 HorseMarker.esp
@@ -1856,22 +1868,21 @@ ENDGROUP: Base I
 BEGINGROUP: Base J
 
 JAWS.esp
+JBS_banking_redux.esp
 JBS_banking.esp
   IF VAR(EN) SAY: Obsolete.  Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-JBS_banking_redux.esp
-jbs_smithing_real_ext.esp
-jbs_smithing_soul.esp
 jbs_item_breakdown_rev.esp
   IF VAR(EN) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp use More Realistic Recipes [revised] instead
     IF VAR(RU) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp используйте вместо этого мод  More Realistic Recipes [revised]
-jbs_smithing_real.esp
-/* -- Please Advise -- Should this be Base Early -- Check rev 4258 */
-jbs_weight_overhaul_complete.esp
 jbs_item_breakdown.esp
   IF FILE("jbs_smithing_real.esp") INC: jbs_smithing_real.esp
-jbs_weight_overhaul_pot.esp
 jbs_smithing_overhaul.esp
+jbs_smithing_real_ext.esp
+jbs_smithing_real.esp
+jbs_smithing_soul.esp
+jbs_weight_overhaul_complete.esp
+jbs_weight_overhaul_pot.esp
 JenassaBarkeep&Bard.esp
 Jesters.esp
 JewelCraft.esp
@@ -1883,6 +1894,7 @@ ENDGROUP: Base J
 BEGINGROUP: Base K
 
 KatixasRefillablePotions.esp
+KatixasSkillLock.esp
 KatixasUsableBarrels.esp
 KDC - Better Food.esp
 knownspells.esp
@@ -2256,6 +2268,7 @@ SkBBP - Blacksmithing and Balance.esp
 SkBBP - Loot Drops and Leveled Lists.esp
   TAG: {{BASH: Delev, Relev}}
 Skeleton Key Recipe.esp
+skooma-the-drug.esp
 SkoomaModKidduffah v1.0.esp
 skyBirds - Airborne Perching Birds.esp
 Skyforge Smelter.esp
@@ -2820,6 +2833,7 @@ BabetteShroudedRobes.esp
 Backpack OE.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 backpackfrankdema.esp
+backpack-realistic.esp
 backstabgauntlets.esp
 BadGremlinsJarHunt.esp
   IF CHECKSUM("BadGremlinsJarHunt.esp", 82CAA554) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -4350,11 +4364,13 @@ stalhrimstandalone2.esp
   TAG: {{BASH: Relev}}
   // Not tested.
 stalkerarmor.esp
+Standalone Monk Hoods.esp
 StandalonePack20.esp
 star killer armor.esp
 SteelImperialArmor.esp
 SteelMaiden.esp
 SteelSoldiersWithCloaks.esp
+STL-ElderScrollonBack.esp
 StorageHelpers.esp
 StormcloakArmorVariety.esp
   // tag not tested
@@ -5669,6 +5685,8 @@ MeekoHusky.esp
 merryfair_bridge.esp
 Milan's PAck.esp
 MilanDungeonPack2.esp
+MistTop.esp
+  IF CHECKSUM("MistTop.esp", BF0A2622) DIRTY: 37 ITM, 43 UDR, 5 deleted NavMesh records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Mistwatch.esp
   IF CHECKSUM("Mistwatch.esp", 0C96269C) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Mistwatch.esp", 21E66A86) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -6399,6 +6417,8 @@ Arrows Progressive Damage (BS and CCO).esp
   IF VAR(EN) WARN: Obsolete. Update to 'AT - Progressive Damage (BS and CCO).esp'
     IF VAR(RU) WARN: Устарело. Обновите до 'AT - Progressive Damage (BS and CCO).esp'
 ArtifactOverhaul.esp
+ArtifactRebalance.esp
+  SAY: Obsolete. Update to latest renamed version, LoreFriendlyArtifactRebalance.esp
 Ash Pile Expiration.esp
 ATTTemplate.esp
 MISELF_Atromancy.esp
@@ -6436,6 +6456,8 @@ BasicHorseRidingAI.esp
   IF VAR(EN) && IF VAR(UFO) WARN: included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
     IF VAR(RU) && IF VAR(UFO) WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.
 Basic Smithing Perk.esp
+better artifacts.esp
+  IF CHECKSUM("better artifacts.esp", 52BAB796) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Better Bone Armor.esp
 mod1.esp
   IF VAR(EN) && IF FILE("Better Bone Armor.esp") SAY: Use either Better Bone Armor.esp or mod1.esp
@@ -9316,6 +9338,8 @@ lcr.esp
 leveling_2x_slower1_5.esp
 Leveling Destruction Perks.esp
 Leveling Destruction Perks - Only Perks.esp
+Leveling Destruction Perks - No DualCast.esp
+Leveling Destruction Perks - No Regen.esp
 levelingperkslite.esp
   IF VAR(EN) && IF FILE("perksbymatope.esp") WARN: Delete. Already included in perksbymatope.esp
     IF VAR(RU) && IF FILE("perksbymatope.esp") WARN: Удалите. Уже включено в perksbymatope.esp
@@ -10113,16 +10137,64 @@ BEGINGROUP: Companions
 // Multimarriage
 
 AdditionalNPCFollwerVoices.esp
+Aela Wears Wolf Armor.esp
+aela2.esp
+AjenBallad.esp
+AkaviriRebornbeta1.esp
+  IF CHECKSUM("AkaviriRebornbeta1.esp", 92CB7FEA) SAY: Obsolete. Update to lateset version.
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+Alerik.esp
+Alexina.esp
+  IF CHECKSUM("Alexina.esp", 5D08BB22) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Alicia.esp
+Alma.esp
+Amanda.esp
 Amina.esp
   WARN: This file contains unexpected or 'out of order' sub-records. It should be deleted.
+Amira.esp
+Andella.esp
+Andrea.esp
+Angelika.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Angelina Jolie.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 Angelina Jolie UNP.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
+Anruin.esp
+Anruin - Faendal Replacer.esp
+Arro.esp
+AshenFollowers.esp
+  IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+AshenFollower.esp
+Atvir.esp
+Bald_Jiub.esp
+Barsukov.esp
+  IF CHECKSUM("Barsukov.esp", F191D03B) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Better Companions.esp
 BetterCompanions.esp
+Blaze Of Eventide.esp
+BreezeHomeChildren.esp
+Brothers.esp
+Caellon.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+Chadeaux.esp
+ChantelleV2.esp
 Child Adoption.esp
+ClaudiaVampireCompanion.esp
+Clyde.esp
+CMHalfElf.esp
+  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
+  IFNOT FILE("CMHalfElf.esm") REQ: CMHalfElf.esm
 Companion Followers.esp
+CompanionValfar.esp
+Danicus.esp
+Deadeye.esp
+Demon Horse.esp
+REGEX: DFH_.+\.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+DogCompanions.esp
+DogsRevamped.esp
 FFNordDawsyn.esp
   IF FILE("FFNords.esp") ERROR: Included in FFNords.esp
   IF CHECKSUM("FFNordDawsyn.esp", 77750ED7) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -10162,55 +10234,7 @@ My_Little_kitty_non_replaced.esp
   IF FILE("My_Little_kitty.esp") INC: My_Little_kitty.esp
   IF FILE("My_Little_kitty_k.esp") INC: My_Little_kitty_k.esp
 Natural Characters and Companions.esp
-Aela Wears Wolf Armor.esp
-aela2.esp
-AjenBallad.esp
-AkaviriRebornbeta1.esp
-  IF CHECKSUM("AkaviriRebornbeta1.esp", 92CB7FEA) SAY: Obsolete. Update to lateset version.
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-Alerik.esp
-Alexina.esp
-  IF CHECKSUM("Alexina.esp", 5D08BB22) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Alicia.esp
-Alma.esp
-Amanda.esp
-Andella.esp
-Andrea.esp
-Angelika.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-Anruin.esp
-Anruin - Faendal Replacer.esp
-Amira.esp
-Arro.esp
-AshenFollowers.esp
-  IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-AshenFollower.esp
-Atvir.esp
-Bald_Jiub.esp
-Barsukov.esp
-  IF CHECKSUM("Barsukov.esp", F191D03B) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Blaze Of Eventide.esp
-BreezeHomeChildren.esp
-Brothers.esp
-Caellon.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-Chadeaux.esp
-ChantelleV2.esp
-ClaudiaVampireCompanion.esp
-Clyde.esp
-CMHalfElf.esp
-  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
-  IFNOT FILE("CMHalfElf.esm") REQ: CMHalfElf.esm
-CompanionValfar.esp
 (TWE) Dandelion NPC.esp
-//  IF VAR(EN) SAY: This mod may contain unauthorized or illegal content.
-Danicus.esp
-Deadeye.esp
-Demon Horse.esp
-REGEX: DFH_.+\.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-DogCompanions.esp
 EeveeFox.esp
 Ellette.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
