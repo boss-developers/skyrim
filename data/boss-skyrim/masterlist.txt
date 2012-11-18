@@ -3733,6 +3733,7 @@ LC_ArcherEliteArmor.esp
   IF CHECKSUM("LC_ArcherEliteArmor.esp", 1651D217) SAY: Obsolete. Update to latest version.
   IF CHECKSUM("LC_ArcherEliteArmor.esp", 9A81FB2E) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 LC_AssassinOfShadownArmor.esp
+LFDarksidersWarSet.esp
 Lydia Armor.esp
   IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
 LeahArmor.esp
@@ -8688,6 +8689,13 @@ Battlemage's Arcanes.esp
 binding_spell.esp
 candlelightnobulb.esp
 /* Moved temporarly until I find a better place for it. */
+candlelightandmagelight10minute.esp
+Candlelightspelllasts15min.esp
+  IF FILE("candlelightandmagelight10minute.esp") INC: candlelightandmagelight10minute.esp
+Candlelightspelllasts1hour.esp
+  IF FILE("candlelightandmagelight10minute.esp") || IF FILE("Candlelightspelllasts15min.esp") INC: candlelightandmagelight10minute.esp and Candlelightspelllasts15min.esp
+Candlelightspelllasts30min.esp
+  IF FILE("Candlelightspelllasts1hour.esp") || IF FILE("candlelightandmagelight10minute.esp") || IF FILE("Candlelightspelllasts15min.esp") INC: candlelightandmagelight10minute.esp or Candlelightspelllasts * .esp
 Combat Remastered - Magic.esp
 dovahkiinrelax.esp
 gkorrspellsv2.esp
@@ -8730,6 +8738,12 @@ Lost Magic.esp
 LZA Quieter Dremora Summons.esp
 Magelight Multi Cast.esp
 Magelight Multi Cast lower version.esp
+MagelightLasts15Min.esp
+  IF FILE("candlelightandmagelight10minute.esp") INC: candlelightandmagelight10minute.esp
+MagelightLasts1Hour.esp
+  IF FILE("candlelightandmagelight10minute.esp") || IF FILE("MagelightLasts15Min.esp") INC: candlelightandmagelight10minute.esp and MageLightLasts15min.esp
+MagelightLasts30Min.esp
+  IF FILE("MagelightLasts1Hour.esp") || IF FILE("candlelightandmagelight10minute.esp") || IF FILE("MagelightLasts15Min.esp") INC: candlelightandmagelight10minute.esp or MageLightLasts * .esp
 MagicDetox.esp
 Magicka balance.esp
 REGEX: magickaregen.*\.esp
@@ -9860,6 +9874,8 @@ ESPv1_1.esp
 ESPv1_1nondependent.esp
 Female Presets 2-3.esp
 Improved Eyes Skyrim - Models.esp
+Kawaii Face Presets.esp
+  IF CHECKSUM("Kawaii Face Presets.esp", 2774F3D6) SAY: Obsolete. Update to the latest version.
 Male Presets 2-3.esp
 Presets 2-3.esp
 SGFemalePresets.esp
@@ -11160,7 +11176,12 @@ BarenziahQuestMarkers.esp
 BetterMapMarkerPlacements.esp
 camp_map_markers.esp
 cartographers map markers.esp
-City Secret Entrances Map Markers.esp
+cartographers map markers - vf.esp
+  IF FILE("cartographers map markers.esp") INC: cartographers map markers.esp
+Cartographers Map Markers_DE
+  IF FILE("cartographers map markers.esp") INC: cartographers map markers.esp
+  IF FILE("cartographers map markers - vf.esp") INC: cartographers map markers - vf.esp
+Secret Entrances Map Markers.esp
   IFNOT FILE("City Secret Entrances.esp") REQ: City Secret Entrances.esp
   IF CHECKSUM("City Secret Entrances Map Markers.esp", DFFFCFFD) DIRTY: 5 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Compelling Treasure Maps.esp
