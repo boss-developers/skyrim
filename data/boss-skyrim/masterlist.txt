@@ -1708,6 +1708,8 @@ BEGINGROUP: Base F
 farmeve.esp
 Farquar's Girl Gwendolyn.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+REGEX: Faster Bolts (100|25|50|75).*\.esp
+  SAY: Use on one Faster Bolts esp.
 FCSkriptures.esp
 FemHousecarl_TavernCloths.esp
 FishingInSkyrim.esp
@@ -1873,17 +1875,36 @@ JBS_banking_redux.esp
 JBS_banking.esp
   IF VAR(EN) SAY: Obsolete.  Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+JBS_gem_cutting.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
 jbs_item_breakdown_rev.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
   IF VAR(EN) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp use More Realistic Recipes [revised] instead
     IF VAR(RU) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp используйте вместо этого мод  More Realistic Recipes [revised]
 jbs_item_breakdown.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
   IF FILE("jbs_smithing_real.esp") INC: jbs_smithing_real.esp
+JBS_overhaul.esp
+JBS_overhaul_thalmor.esp
+  IF FILE("JBS_overhaul.esp") INC: JBS_overhaul.esp
 jbs_smithing_overhaul.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
+JBS_scrolls.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
 jbs_smithing_real_ext.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
 jbs_smithing_real.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
 jbs_smithing_soul.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
+JBS_tailor.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
+jbs_upgrade.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
 jbs_weight_overhaul_complete.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
 jbs_weight_overhaul_pot.esp
+  IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
 JenassaBarkeep&Bard.esp
 Jesters.esp
 JewelCraft.esp
@@ -2266,6 +2287,8 @@ Silverupgrade.esp
 SimpleBleeding.esp
   IF VAR(EN) && IF FILE("dD - Enhanced Blood Main.esp") WARN: This mod is included in 'dD - Enhanced Blood Main.esp'
     IF VAR(RU) && IF FILE("dD - Enhanced Blood Main.esp") WARN: Этот мод уже входит в состав 'dD - Enhanced Blood Main.esp'
+simple_crafter_breakdown.esp
+  IF CHECKSUM("simple_crafter_breakdown.esp", A1425391) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SkBBP - Blacksmithing and Balance.esp
 SkBBP - Loot Drops and Leveled Lists.esp
   TAG: {{BASH: Delev, Relev}}
@@ -2642,7 +2665,6 @@ Footprints.esp
 horsefp.esp
 IMAGINATOR - Visual Control for Skyrim.esp
 iHUD.esp
-jbs_upgrade.esp
 Ket_3DLoadscreens.esp
 Ket_PictureLoadscreens.esp
   IF CHECKSUM("Ket_PictureLoadscreens.esp", 3A81E5EB) SAY: Obsolete. Update to the latest version.
@@ -2804,6 +2826,9 @@ REGEX: ArrowsNoGravity(_Fast)?\.esp
 AronsMechaDragons.esp
   IF CHECKSUM("AronsMechaDragons.esp", 77A605C4) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ArrowsOfLight.esp
+ArrowsOfMight1.1.esp
+  SAY: Obsolete. Update to latest renamed version, ArrowsOfMight1.2.esp
+ArrowsOfMight1.2.esp
 AsharaRomanticOutfit.esp
 AsharaPartyOutfit.esp
 AsharaPrinceOfTheWoods.esp
@@ -2980,9 +3005,11 @@ chainGloves_by_Sasino.esp
 Chainmail by Sasino.esp
 Chainmail Hood v2.2.esp
   TAG: {{BASH: Relev}}
+chainmail.esp
+  REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
 Chainmailhauberks 1.0.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version -> Chainmailhauberks 1.1.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии -> Chainmailhauberks 1.1.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Chainmailhauberks 1.1.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Chainmailhauberks 1.1.esp
 Chainmailhauberks 1.1.esp
 Chakram.esp
 ChickenStaff.esp
@@ -3179,6 +3206,8 @@ REGEX: DG Jewelry\d?\.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 UNP Jewelry.esp
 DGJewelryExtended.esp
+DHuntress.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 diamondsword.esp
 REGEX: diamondweapons.*\.esp
   IF VAR(EN) && IF REGEX("diamondweapons1\.[02]\.esp") SAY: Obsolete. Update to latest version.
@@ -3400,6 +3429,7 @@ FistWraps.esp
 FionaOutfit.esp
 Fire Blade.esp
 FlameAtronachArmor.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 FioraArmor.esp
 Fitness Outfit OE.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
@@ -3427,6 +3457,7 @@ FS_ExorcizamusTe.esp
 FS_SwordOfTheSeeker.esp
 FSS - The Moving Day Ring.esp
 FullBootForKKSA.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 Futanarium.esp
 Futa equippable.esp
 ENDGROUP: Items F
@@ -3702,6 +3733,8 @@ ket_goldbrand.esp
 ket_umbra.esp
 khajit-ears.esp
 KhantuArmor.esp
+killerkeo's skimpy pack wip.esp
+  SAY: Obsolete. Update to latest renamed version, FullBootForKKSA.esp
 kimono's witcher silver swords.esp
 King's Slayer Armor.esp
 KingOfWorms.esp
@@ -5489,6 +5522,8 @@ Forfeorannaheim.esp
   IF CHECKSUM("Forfeorannaheim.esp", 59266CBF) DIRTY: 51 ITM, 31 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Forgotten Windmill.esp
 forgottenmountainkeep.esp
+Forlorn Keep.esp
+  IF CHECKSUM("Forlorn Keep.esp", FD6E2C05) DIRTY: 22 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Forrest's Diary.esp
 Fort Ironcrag.esp
 Free Mine.esp
@@ -6234,6 +6269,10 @@ A&P weight change only.esp
     IF VAR(RU) && IF VAR(SkyreM) WARN: Автор утверждает, что SkyRe будет перезаписывать этот мод, делая его бесполезным.
 Book_Weight_Correct.esp
 Domino_ReducedWeight_All.esp
+REGEX: Dragon Drop - B.*\.esp
+  SAY: Use only one 'Bone' esp
+REGEX: Dragon Drop - S.*\.esp
+  SAY: Use only one 'Scales' esp
 REGEX: DragonboneWeightRedux\(x\d\d?\)\.esp
 REGEX: DragonboneWeightReduction.+\.esp
 lighterdragonscalesandbones.esp
@@ -6673,6 +6712,8 @@ droppablebarenziah.esp
     IF VAR(RU) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp
 doubleko.esp
 Dr_ItemBones.esp
+Dragonbane Enchantment.esp
+  WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected or 'out of order' sub-records. It should be deleted.
 dragonbitetaildamage +.esp
 dragonplate_rebalanced.esp
 DragonsEnhanced.esp
@@ -7487,6 +7528,7 @@ shadowyshadowmere.esp
 Shrine Donations.esp
 shut up dogs.esp
 ShutUP Guards.esp
+Sleep well 72h.esp
 Silence The Bards.esp
 REGEX: Skyrim Moon Size (x\d\.\d)\.esp
 SlightlyIncreaseCarryWeight.esp
@@ -9709,6 +9751,7 @@ Overpower.esp
   IF CHECKSUM("Overpower.esp", A16B0637) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Path of the Ranger.esp
 Passgenau und Gut Ausgestattet auch ohne Helm.esp
+Perk_Light_Armor_Tree_Redone.esp
 Perky.esp
   IF CHECKSUM("Perky.esp", EE1F755B) || IF CHECKSUM("Perky.esp", 469D04CE) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Perky.esp", DFA3ACCE) DIRTY: 35 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
