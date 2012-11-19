@@ -1196,7 +1196,8 @@ ENDGROUP: Textures
 BEGINGROUP: Base Early
 
 BeastModels.esp
-  SAY: Obsolete. Update to latest renamed version, ChangeMaleModels.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, ChangeMaleModels.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ChangeMaleModels.esp
 REGEX: BorderRegionsDisabled(EV)?\.esp
   IF VAR(EN) SAY: Recommended to change Skyrim.ini bBorderRegionsEnabled=1 to bBorderRegionsEnabled=0 instead.
     IF VAR(RU) SAY: Рекомендуется изменить параметр Skyrim.ini bBorderRegionsEnabled=1 на bBorderRegionsEnabled=0 и удалить этот мод.
@@ -2611,7 +2612,7 @@ CiviliansWillNotDiePatches.esp
   IF FILE("CiviliansWillNotDieChild.esp") INC: CiviliansWillNotDieChild.esp
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", C0754EA7) && IF VERSION("TES5", "1.7", <) REQ: Skyrim 1.7+
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", 2336B8B8) && IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
-  // IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch
+  IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", C0754EA7) SAY: Устарело. Обновите до "http://modgames.net/load/247-1-0-13970 CiviliansWillNotDiePatches.esp" 0.6+
 Destructible_bottles.esp
   IF CHECKSUM("Destructible_bottles.esp", 33A7D490) WARN: This file contains unexpected or 'out of order' subrecords. It should be deleted and then reported to it's author.
@@ -2827,7 +2828,8 @@ AronsMechaDragons.esp
   IF CHECKSUM("AronsMechaDragons.esp", 77A605C4) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ArrowsOfLight.esp
 ArrowsOfMight1.1.esp
-  SAY: Obsolete. Update to latest renamed version, ArrowsOfMight1.2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, ArrowsOfMight1.2.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ArrowsOfMight1.2.esp
 ArrowsOfMight1.2.esp
 AsharaRomanticOutfit.esp
 AsharaPartyOutfit.esp
@@ -3682,7 +3684,8 @@ jammersslavegear.esp
 Janka_Captain.esp
 Janka_Lupina.esp
 Jaredschons&D13AdvancedDwarvenBowv2.esp
-  SAY: Obsolete. Update to the latest version, Jaredschons&D13AdvDwarvenBowAllIn1.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest version, Jaredschons&D13AdvDwarvenBowAllIn1.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Jaredschons&D13AdvDwarvenBowAllIn1.esp
 Jaredschons&D13AdvDwarvenBowAllIn1.esp
 JDRobedArmor.esp
 JetheadArmors.esp
@@ -3734,7 +3737,8 @@ ket_umbra.esp
 khajit-ears.esp
 KhantuArmor.esp
 killerkeo's skimpy pack wip.esp
-  SAY: Obsolete. Update to latest renamed version, FullBootForKKSA.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, FullBootForKKSA.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, FullBootForKKSA.esp
 kimono's witcher silver swords.esp
 King's Slayer Armor.esp
 KingOfWorms.esp
@@ -4333,7 +4337,8 @@ Shining Paladin.esp
 ShinKatana.esp
 shogo_laser_katana.esp
 ShreddedTrissHat.esp
-  IF FILE("DBShreddedTriss.esp") WARN: Delete. Included in 'DBShreddedTriss.esp'
+  IF VAR(EN) && IF FILE("DBShreddedTriss.esp") WARN: Delete. Included in 'DBShreddedTriss.esp'
+    IF VAR(RU) && IF FILE("DBShreddedTriss.esp") WARN: Удалите. Уже включено в 'DBShreddedTriss.esp'
 ShShortswords.esp
   IF VAR(EN) && IF VAR(SkyReM) WARN: Delete. Included in 'SkyRe_Main.esp'
     IF VAR(RU) && IF VAR(SkyReM) WARN: Удалите. Уже входит в SkyRe_Main.esp
@@ -5251,7 +5256,8 @@ betterbreezehome.esp
 BetterDarkBrotherhood.esp
   IF CHECKSUM("BetterDarkBrotherhood.esp", 06E40868) DIRTY: 118 ITM, 27 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 01_BetterNordicRuins.esp
-  SAY: Obsolete. Update to the latest renamed version, BetterNordicRuins.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, BetterNordicRuins.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, BetterNordicRuins.esp
 BetterNordicRuins.esp
   IF CHECKSUM("BetterNordicRuins.esp", 22F42319) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("BetterNordicRuins.esp", 6C176F16) DIRTY: 47 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -5827,7 +5833,8 @@ Pueblo.esp
 PuppetMaster2.1.esp
   IF CHECKSUM("PuppetMaster2.1.esp", B09450A0) DIRTY: 4 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 PuppetMasterBoss.esp
-  SAY: Obsolete. Update to latest renamed version, PuppetMaster2.1.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, PuppetMaster2.1.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, PuppetMaster2.1.esp
 Chop More Wood.esp
 ENDGROUP: Quests P
 
@@ -6270,9 +6277,11 @@ A&P weight change only.esp
 Book_Weight_Correct.esp
 Domino_ReducedWeight_All.esp
 REGEX: Dragon Drop - B.*\.esp
-  SAY: Use only one 'Bone' esp
+  IF VAR(EN) SAY: Use only one 'Bone' esp
+    IF VAR(RU) SAY: Используйте только один 'Bone' esp
 REGEX: Dragon Drop - S.*\.esp
-  SAY: Use only one 'Scales' esp
+  IF VAR(EN) SAY: Use only one 'Scales' esp
+    IF VAR(RU) SAY: Используйте только один 'Scales' esp
 REGEX: DragonboneWeightRedux\(x\d\d?\)\.esp
 REGEX: DragonboneWeightReduction.+\.esp
 lighterdragonscalesandbones.esp
@@ -6376,7 +6385,8 @@ no_quest_items.esp
   IF VAR(Dawnguard) && IFNOT CHECKSUM("no_quest_items.esp", 47CDC33D) INC: Dawnguard. Use Dawnguard version.
   IF CHECKSUM("no_quest_items.esp", 8CAAD195) || IF CHECKSUM("no_quest_items.esp", 639770A2) SAY: Obsolete. Update to the latest version.
 no_quest_items_DG.esp
-  SAY: Obsolete. Update to latest renamed version, no_quest_items.esp (CRC 47CDC33D)
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, no_quest_items.esp (CRC 47CDC33D)
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, no_quest_items.esp (CRC 47CDC33D)
 PrettySkins.esp
   // TAG: {{BASH: Stats}}
 PrettyOres.esp
@@ -6468,7 +6478,8 @@ Arrows Progressive Damage (BS and CCO).esp
     IF VAR(RU) WARN: Устарело. Обновите до 'AT - Progressive Damage (BS and CCO).esp'
 ArtifactOverhaul.esp
 ArtifactRebalance.esp
-  SAY: Obsolete. Update to latest renamed version, LoreFriendlyArtifactRebalance.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, LoreFriendlyArtifactRebalance.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, LoreFriendlyArtifactRebalance.esp
 Ash Pile Expiration.esp
 ATTTemplate.esp
 MISELF_Atromancy.esp
@@ -6917,6 +6928,7 @@ Helmets - Khajiit Ears Hair.esp
 helmless_warrior.esp
 Helms and Circlets.esp
 HelmsWithCirclets.esp
+hfsm.esp
 Hide all headgear - Heavy.esp
 Hide_All_Helms_and_Hoods.esp
 HigherEnchantmentsNoChargeArtifacts.esp
@@ -7412,9 +7424,11 @@ Raptor Talon Argonians.esp
 RBS.esp
 ReadIt.esp
 Real 1st Person View alpha 03c.esp
-  SAY: Obsolete. Update to the latest renamed version, Real 1st Person View.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Real 1st Person View.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Real 1st Person View.esp
 Real 1st Person View alpha 04b.esp
-  SAY: Obsolete. Update to the latest renamed version, Real 1st Person View.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Real 1st Person View.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Real 1st Person View.esp
 Real 1st Person View.esp
 realcarriage.esp
 Realistic Animal Behaviour.esp
@@ -7975,7 +7989,8 @@ tos_oakwood_hf.esp
 TownsAndCitiesEnhanced.esp
 UniqueTaverns.esp
 UniqueTavernsFalkwreath.esp
-  SAY: Obsolete. Update to latest renamed version, UniqueTaverns.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, UniqueTaverns.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, UniqueTaverns.esp
   IF FILE("UniqueTaverns.esp") ERROR: Included in UniqueTaverns.esp
 RRRL-UT-Patch.esp
 WhiterunInEnhanced.esp
@@ -8667,7 +8682,8 @@ SummersetLinweSummon.esp
   IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") SAY: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
     IF VAR(RU) && IFNOT FILE("LegendarySouls.esp") SAY: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
 Summon_Gargoyle.esp
-  SAY: Obsolete. Update to latest renamed version, Conjure_Gargoyle.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Conjure_Gargoyle.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Conjure_Gargoyle.esp
   IF FILE("Conjure_Gargoyle.esp") INC: Conjure_Gargoyle.esp
 Summon_Larvas.esp
 summonable_daedric_princes.esp
@@ -9645,7 +9661,8 @@ SkyRe_Plugin_viciousdawnbreaker.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe Chinese General Armor and Weapon.esp
-  SAY: Obsolete. Update to latest version, SkyRe Chinese General Set.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, SkyRe Chinese General Set.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe Chinese General Set.esp
 SkyRe Chinese General Set.esp
   IF ACTIVE("Song General Armor&weapon.esp") SAY: Remember not to load (or to simply delete) Song General Armor&weapon.esp
 SkyRe Masters of Death Sicarius Armor.esp
@@ -10497,7 +10514,8 @@ Serafina & co complete.esp
   IFNOT FILE("monster_hunter.esp") REQ: "http://skyrim.nexusmods.com/mods/6429 Monster Hunter"
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: "http://skyrim.nexusmods.com/mods/19733 Immersive Armors"
 Skyrim - The three divine brothers.esp
-  SAY: Obsolete. Update to latest renamed version, Brothers.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Brothers.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Brothers.esp
 Sneaky_Serana.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC))
 SNGakan.esp
@@ -10729,7 +10747,8 @@ katia.esp
 scar.esp
 Sexier Housecarls.esp
 Sexy Housecarls V 2.1.esp
-  SAY: Obsolete. Update to the latest renamed version, Sexier Housecarls.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Sexier Housecarls.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Sexier Housecarls.esp
 Shady.esp
 /* They change clothes when they exit a player home */
 SHARPE Housecarls.esp
@@ -10989,7 +11008,8 @@ REGEX: FollowMeNicely(AndHugMeMyLove)?(Dammit-)?(LetUsChat|AllOptionsOn)?(LessRe
 REGEX: FollowMeNicelyDammit-(ShutUpAndFight|RunLittleRabbitRun|LetsUsChat)?\.esp
 FriendlyFireTolerance99not4.esp
 Vampire Serana.esp
-  SAY: Obsolete. Update to latest renamed version, serana.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, serana.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, serana.esp
 voidcraft_housecarls.esp
 Xannon.esp
 ENDGROUP: Companions
