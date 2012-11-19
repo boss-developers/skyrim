@@ -8034,14 +8034,20 @@ IFNOT FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF FILE("Realistic Wildlife Loot - Realistic.esp") && IFNOT FILE("RND_RWL-Patch.esp") REQ: RND_RWL-Patch.esp
   IF FILE("Real Wildlife Skyrim 0.1.esp") && IFNOT FILE("RND_RWS-Patch.esp") REQ: RND_RWS-Patch.esp
   IF FILE("Water.esp") && IFNOT FILE("RND_Water-Patch.esp") REQ: RND_Water-Patch.esp
+  IF FILE("PotionsBETA.esp") && IFNOT FILE("RND_FAMP.esp") REQ: RND_FAMP.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
+  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_BabettesFeast-FAMP.esp instead.
 IFNOT FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_DestructibleBottles-Patch.esp
+  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_DestructibleBottles-FAMP.esp instead.
 IFNOT FILE("3DNPC.esp") MOD: RND_DrinkingFountains-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_HearthFires-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_NCVE-Patch.esp
+  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_NCVE-FAMP.esp instead.
 IFNOT FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
+  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWL-FAMP.esp instead.
 IFNOT FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
+  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWS-FAMP.esp instead.
 IFNOT FILE("3DNPC.esp") MOD: RealisticRoomRental.esp
   IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RealisticRoomRental-Basic.esp
@@ -9735,9 +9741,33 @@ NiruinsBusinessPlan.esp
 Onehanded.esp
 REGEX: Pinups\d?\.esp
 psikoticsnecromancy.esp
-PotionsBETA.esp
+IFNOT FILE("3DNPC.esp") MOD: PotionsBETA.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Bethesda Official DLC)
   IF CHECKSUM("PotionsBETA.esp", 00B541DA) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("RealisticNeedsandDiseases.esp") && IFNOT FILE("RND_FAMP.esp") REQ: RND_FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IFNOT FILE("IMCN_FAMP.esp") REQ: IMCN_FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IF FILE("CookingExpanded.esp") && IFNOT FILE("IMCN_CookingExpanded-FAMP.esp") REQ: IMCN_CookingExpanded-FAMP.esp
+  IF FILE("RealisticNeedsandDiseases.esp") && IF FILE("Realistic Wildlife Loot - Realistic.esp") && IFNOT FILE("RND_RWL-FAMP.esp") REQ: RND_RWL-FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IF FILE("Realistic Wildlife Loot - Reduced.esp") && IFNOT FILE("IMCN_RWL_Reduced-FAMP.esp") REQ: IMCN_RWL_Reduced-FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IF FILE("Realistic Wildlife Loot - Realistic.esp") && IFNOT FILE("IMCN_RWL_Realistic-FAMP.esp") REQ: IMCN_RWL_Realistic-FAMP.esp
+  IF FILE("RealisticNeedsandDiseases.esp") && IF FILE("Real Wildlife Skyrim 0.1.esp") && IFNOT FILE("RND_RWS-FAMP.esp") REQ: RND_RWS-FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IF FILE("Realistic Wildlife Loot - Reduced.esp") && IFNOT FILE("IMCN_RWS-FAMP.esp") REQ: IMCN_RWS-FAMP.esp
+  IF FILE("RealisticNeedsandDiseases.esp") && IF FILE("BabettesFeastBalanced.esp") && IFNOT FILE("RND_BabettesFeast-Patch.esp") REQ: RND_BabettesFeast-FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IF FILE("BabettesFeastBalanced.esp") && IFNOT FILE("IMCN_BabettesFeast-Patch.esp") REQ: BabettesFeast-Patch.esp
+  IF FILE("RealisticNeedsandDiseases.esp") && IF FILE("NerniesCityandVillageExpansion.esp") && IFNOT FILE("RND_NCVE-FAMP.esp") REQ: RND_NCVE-FAMP.esp
+  IF FILE("RealisticNeedsandDiseases.esp") && IF FILE("Destructible_bottles.esp") && IFNOT FILE("RND_DestructibleBottles-FAMP.esp") REQ: RND_DestructibleBottles-FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: IMCN_FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: IMCN_CookingExpanded-FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_RWL-FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: IMCN_RWL_Reduced-FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: IMCN_RWL_Realistic-FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_RWS-FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: IMCN_RWS-FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_BabettesFeast-FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: IMCN_BabettesFeast-FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_NCVE-FAMP.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_DestructibleBottles-FAMP.esp
 See YourSelf drink and eat.esp
 Shake it!.esp
 ShakeIt.esp
@@ -9968,6 +9998,13 @@ Essential Vigilance.esp
     IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен, при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
 Unkillable Lydia.esp
 3DNPC.esp
+IF FILE("3DNPC.esp") MOD: NerniesSolitudeExpansion.esp
+  IF CHECKSUM("NerniesSolitudeExpansion.esp", 304709FF) DIRTY: 52 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+IF FILE("3DNPC.esp") MOD: NerniesCityandVillageExpansion.esp
+  IF CHECKSUM("NerniesCityandVillageExpansion.esp", 53A97488) DIRTY: 174 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("NerniesSolitudeExpansion.esp") INC: NerniesSolitudeExpansion.esp
+IF FILE("3DNPC.esp") MOD: NerniesCityandVillage_TRO_BasicNeeds_Patch.esp
+  SAY: This esp's master files are not in BOSS sort order.
 IF FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF FILE("BabettesFeastBalanced.esp") && IFNOT FILE("RND_BabettesFeast-Patch.esp") REQ: RND_BabettesFeast-Patch.esp
   IF VAR(Dawnguard) && IFNOT FILE("RND_Dawnguard-Patch.esp") REQ: RND_Dawnguard-Patch.esp
@@ -9979,25 +10016,51 @@ IF FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF FILE("Realistic Wildlife Loot - Realistic.esp") && IFNOT FILE("RND_RWL-Patch.esp") REQ: RND_RWL-Patch.esp
   IF FILE("Real Wildlife Skyrim 0.1.esp") && IFNOT FILE("RND_RWS-Patch.esp") REQ: RND_RWS-Patch.esp
   IF FILE("Water.esp") && IFNOT FILE("RND_Water-Patch.esp") REQ: RND_Water-Patch.esp
+  IF FILE("PotionsBETA.esp") && IFNOT FILE("RND_FAMP.esp") REQ: RND_FAMP.esp
 IF FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
+  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_BabettesFeast-FAMP.esp instead.
 IF FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_DestructibleBottles-Patch.esp
+  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_DestructibleBottles-FAMP.esp instead.
 IF FILE("3DNPC.esp") MOD: RND_DrinkingFountains-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_HearthFires-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_NCVE-Patch.esp
+  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_NCVE-FAMP.esp instead.
 IF FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
+  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWL-FAMP.esp instead.
 IF FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
+  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWS-FAMP.esp instead.
 IF FILE("3DNPC.esp") MOD: RealisticRoomRental.esp
   IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 IF FILE("3DNPC.esp") MOD: RRRE-ToS_Oakwood-Patch.esp
 IF FILE("3DNPC.esp") MOD: RRRE-ToS_Oakwood_hf-Patch.esp
-IF FILE("3DNPC.esp") MOD: NerniesSolitudeExpansion.esp
-  IF CHECKSUM("NerniesSolitudeExpansion.esp", 304709FF) DIRTY: 52 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-IF FILE("3DNPC.esp") MOD: NerniesCityandVillageExpansion.esp
-  IF CHECKSUM("NerniesCityandVillageExpansion.esp", 53A97488) DIRTY: 174 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF FILE("NerniesSolitudeExpansion.esp") INC: NerniesSolitudeExpansion.esp
-IF FILE("3DNPC.esp") MOD: NerniesCityandVillage_TRO_BasicNeeds_Patch.esp
-  SAY: This esp's master files are not in BOSS sort order.
+IF FILE("3DNPC.esp") MOD: PotionsBETA.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Bethesda Official DLC)
+  IF CHECKSUM("PotionsBETA.esp", 00B541DA) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("RealisticNeedsandDiseases.esp") && IFNOT FILE("RND_FAMP.esp") REQ: RND_FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IFNOT FILE("IMCN_FAMP.esp") REQ: IMCN_FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IF FILE("CookingExpanded.esp") && IFNOT FILE("IMCN_CookingExpanded-FAMP.esp") REQ: IMCN_CookingExpanded-FAMP.esp
+  IF FILE("RealisticNeedsandDiseases.esp") && IF FILE("Realistic Wildlife Loot - Realistic.esp") && IFNOT FILE("RND_RWL-FAMP.esp") REQ: RND_RWL-FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IF FILE("Realistic Wildlife Loot - Reduced.esp") && IFNOT FILE("IMCN_RWL_Reduced-FAMP.esp") REQ: IMCN_RWL_Reduced-FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IF FILE("Realistic Wildlife Loot - Realistic.esp") && IFNOT FILE("IMCN_RWL_Realistic-FAMP.esp") REQ: IMCN_RWL_Realistic-FAMP.esp
+  IF FILE("RealisticNeedsandDiseases.esp") && IF FILE("Real Wildlife Skyrim 0.1.esp") && IFNOT FILE("RND_RWS-FAMP.esp") REQ: RND_RWS-FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IF FILE("Realistic Wildlife Loot - Reduced.esp") && IFNOT FILE("IMCN_RWS-FAMP.esp") REQ: IMCN_RWS-FAMP.esp
+  IF FILE("RealisticNeedsandDiseases.esp") && IF FILE("BabettesFeastBalanced.esp") && IFNOT FILE("RND_BabettesFeast-Patch.esp") REQ: RND_BabettesFeast-FAMP.esp
+  IF FILE("Imp's More Complex Needs.esm") && IF FILE("BabettesFeastBalanced.esp") && IFNOT FILE("IMCN_BabettesFeast-Patch.esp") REQ: BabettesFeast-Patch.esp
+  IF FILE("RealisticNeedsandDiseases.esp") && IF FILE("NerniesCityandVillageExpansion.esp") && IFNOT FILE("RND_NCVE-FAMP.esp") REQ: RND_NCVE-FAMP.esp
+  IF FILE("RealisticNeedsandDiseases.esp") && IF FILE("Destructible_bottles.esp") && IFNOT FILE("RND_DestructibleBottles-FAMP.esp") REQ: RND_DestructibleBottles-FAMP.esp
+IF FILE("3DNPC.esp") MOD: RND_FAMP.esp
+IF FILE("3DNPC.esp") MOD: IMCN_FAMP.esp
+IF FILE("3DNPC.esp") MOD: IMCN_CookingExpanded-FAMP.esp
+IF FILE("3DNPC.esp") MOD: RND_RWL-FAMP.esp
+IF FILE("3DNPC.esp") MOD: IMCN_RWL_Reduced-FAMP.esp
+IF FILE("3DNPC.esp") MOD: IMCN_RWL_Realistic-FAMP.esp
+IF FILE("3DNPC.esp") MOD: RND_RWS-FAMP.esp
+IF FILE("3DNPC.esp") MOD: IMCN_RWS-FAMP.esp
+IF FILE("3DNPC.esp") MOD: RND_BabettesFeast-FAMP.esp
+IF FILE("3DNPC.esp") MOD: IMCN_BabettesFeast-FAMP.esp
+IF FILE("3DNPC.esp") MOD: RND_NCVE-FAMP.esp
+IF FILE("3DNPC.esp") MOD: RND_DestructibleBottles-FAMP.esp
 RRRE-3DNPCv2-Patch.esp
 Althirs Companion and Carriage Command v1.1.esp
 AccurateCompanionGuild.esp
