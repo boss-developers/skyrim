@@ -8097,6 +8097,8 @@ REGEX: dD.?- Realistic Ragdoll Force.*\.esp
     IF VAR(RU) SAY: Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers", для поддержки других версий skeleton.nif.
 drink eat sleep.esp
 /* Steam network version is an esp and BSA */
+Field Alchemy.esp
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 imp's more complex needs.esp
   IF VAR(EN) && IF FILE("Imp's More Complex Needs.esm") SAY: Use either Nexus or Steam Workshop version, not both.
     IF VAR(RU) && IF FILE("Imp's More Complex Needs.esm") SAY: Используйте любую Nexus или Steam Workshop версию, не обе.
@@ -8687,10 +8689,12 @@ REGEX: SC_Modular Magic - .+\.esp
 Skyrim Spells Restored.esp
 SMARTS.esp
 SMEssentialKills.esp
+  SAY: Obsolete. Update to latest renamed version, SMEssentialKills - XC.esp
+SMEssentialKills - XC.esp
 SoulGemTransmutation.esp
 spellcraft.esp
 SpellCombo.esp
-  IF CHECKSUM("SpellCombo.esp", E82C9392) DIRTY: 14 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("SpellCombo.esp", E82C9392) DIRTY: 14 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 spelleraser.esp
 SpellsExpanded.esp
 SpellMasterOfTheTimeAndSpace.esp
