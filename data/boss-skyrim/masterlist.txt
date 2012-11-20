@@ -104,7 +104,7 @@ IF FILE("Unofficial Hearthfire Patch.esp") SET: UHFP
 // SKSE & SKCU
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
     IF VAR(RU) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: У вас установлен Skyrim Community Uncapper, но SKSE не найден! Смотрите страницу загрузки "http://skse.silverlock.org/  SKSE".
-  
+
 // SKSE Latest
   IF VAR(EN) && IF VERSION("SKSE", "0.1.6.5", <) GLOBAL SAY: It appears you do not have the latest version of SKSE. If you wish to update it can be found "http://skse.silverlock.org/ here".
     IF VAR(EN) && IFNOT VERSION("SKSE", "0.1.6.5", <) GLOBAL SAY: Your SKSE is up-to-date.
@@ -1056,10 +1056,12 @@ realrain.esp
     IF VAR(RU) && IF FILE("realrainBWRLWC.esp") SAY: Используйте только один realrain.esp
 realrainBWRLWC.esp
 realrainCoT.esp
-  IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(EN) SAY: Use only one realrain.esp
+   IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(EN) && IF VAR(EN) SAY: Use only one realrain.esp
+     IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(EN) && IF VAR(RU) SAY: Используйте только один realrain.esp
     IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(RU) SAY: Используйте только один realrain.esp
 realrainextended.esp
-  IF FILE("realrainCoT.esp") || IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(EN) SAY: Use only one realrain.esp
+   IF FILE("realrainCoT.esp") || IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(EN) && IF VAR(EN) SAY: Use only one realrain.esp
+     IF FILE("realrainCoT.esp") || IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(EN) && IF VAR(RU) SAY: Используйте только один realrain.esp
     IF FILE("realrainCoT.esp") || IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(RU) SAY: Используйте только один realrain.esp
 Realistic Lighting Patcher.esp
 Rebalance Light.esp
@@ -1685,19 +1687,25 @@ REGEX: Lorecraft - ExpandedJewelry(Crafting|NoChaos).esp
 LORECRAFT-ExpandedJewelryCrafting.esp
 Expensive Transports 5x.esp
   IF CHECKSUM("Expensive Transports 5x.esp", 58CC3897) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
-  IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") ERROR: Use only one of Expensive Transports*.esp
+   IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
+     IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
 Expensive Transports 10x.esp
   IF CHECKSUM("Expensive Transports 10x.esp", 9AE20AC6) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
-  IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") ERROR: Use only one of Expensive Transports*.esp
+   IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
+     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
 Expensive Transports 20x.esp
   IF CHECKSUM("Expensive Transports 20x.esp", EA972067) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
-  IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") ERROR: Use only one of Expensive Transports*.esp
+   IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
+     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
 Expensive Transports 5x.esp
-  IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") ERROR: Use only one of Expensive Transports*.esp
+   IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
+     IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
 Expensive Transports 10x.esp
-  IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") ERROR: Use only one of Expensive Transports*.esp
+   IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
+     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
 Expensive Transports 20x.esp
-  IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") ERROR: Use only one of Expensive Transports*.esp
+   IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
+     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
 ExpensiveCarriagesInns.esp
 ExpensiveCarriagesInns_x5.esp
 Expensive Investments.esp
@@ -2030,7 +2038,8 @@ BEGINGROUP: Base M
 MAD Axe Bleeding Rebalance.esp
 MAD Ingots & Leather.esp
   IF FILE("Ars Metallica.esp") INC: Ars Metallica. Use the compatible version.
-  IF FILE("MAD Ingots & Leather Ars Metallica Compatible.esp") SAY: Use only one MAD Ingots & Leather.esp (Regular or Ars Metallica compatible)
+   IF FILE("MAD Ingots & Leather Ars Metallica Compatible.esp") && IF VAR(EN) SAY: Use only one MAD Ingots & Leather.esp (Regular or Ars Metallica compatible)
+     IF FILE("MAD Ingots & Leather Ars Metallica Compatible.esp") && IF VAR(RU) SAY: Используйте только один MAD Ingots & Leather.esp (Regular or Ars Metallica compatible)
 MAD Ingots & Leather Ars Metallica Compatible.esp
 Malkavs Collection.esp
 malukahmainmenu.esp
@@ -3043,7 +3052,8 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
   IF VAR(EN) && IF FILE("Cloaks - No Imperial.esp") && IFNOT FILE("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
     IF VAR(RU) && IF FILE("Cloaks - No Imperial.esp") && IFNOT FILE("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
 1nivWICCloaksCRAFT.esp
-  IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(EN) WARN: Use only one WICCloaks esp.
+   IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(EN) && IF VAR(EN) WARN: Use only one WICCloaks esp.
+     IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(EN) && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
     IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
 1nivWICCloaksNoGuards.esp
   IF VAR(EN) && IF FILE("1nivWICCloaks.esp") WARN: Use only one WICCloaks esp.
@@ -3370,7 +3380,7 @@ EinherjarArmor.esp
 Lorecraft - EinherjarArmor.esp
 EisenPlate.esp
 EI.esp
-EK_RingLimiter.esp 
+EK_RingLimiter.esp
   IF VERSION("SKSE", "0.1.6.3", <) REQ: "http://skse.silverlock.org SKSE" 1.6.3+
 Elculous.esp
 elegantvampirearmor.esp
@@ -4843,15 +4853,18 @@ BEGINGROUP: General Overhauls
 ASIS-Encounter Zones.esp
 REGEX: Smithing Perks Overhaul( - Balanced)?.esp
   IF FILE("PerkUP-Smithing.esp") INC: PerkUP-Smithing.esp
-  IF VAR(EN) && IF FILE("Complete Crafting Overhaul - BS version.esp") && IF FILE("Complete Crafting Overhaul.esp") SAY: Use only one Smithing Perks Overhaul esp
-    IF VAR(RU) && IF FILE("Complete Crafting Overhaul - BS version.esp") && IF FILE("Complete Crafting Overhaul.esp") SAY: Используйте только один Smithing Perks Overhaul esp
-  IF VAR(EN) && IF VAR(CCO) && IF FILE("Complete Crafting Overhaul.esp") SAY: Use balanced version with Complete Crafting Overhaul mod
-    IF VAR(RU) && IF VAR(CCO) && IF FILE("Complete Crafting Overhaul.esp") SAY: С модом Complete Crafting Overhaul используйте balanced-версию.
+  IF VAR(EN) && FILE("Smithing Perks Overhaul - Balanced.esp") && IF FILE("Smithing Perks Overhaul.esp") WARN: Use only one - Smithing Perks Overhaul.esp or Smithing Perks Overhaul - Balanced.esp
+    IF VAR(RU) && IF FILE("Smithing Perks Overhaul - Balanced.esp") && IF FILE("Smithing Perks Overhaul.esp") SAY: Используйте только один мод - Smithing Perks Overhaul.esp или Smithing Perks Overhaul - Balanced.esp
+  IF VAR(EN) && IF FILE("Complete Crafting Overhaul.esp") SAY: Use 'Smithing Perks Overhaul - Balanced.esp' with Complete Crafting Overhaul mod
+    IF VAR(RU) && IF FILE("Complete Crafting Overhaul.esp") SAY: С модом Complete Crafting Overhaul используйте 'Smithing Perks Overhaul - Balanced.esp'
 REGEX: Complete Crafting Overhaul( - BS version)?\.esp
+  IF FILE("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
+  IF VAR(EN) && IF FILE("Complete Crafting Overhaul - BS version.esp") && IF FILE("Complete Crafting Overhaul.esp") SAY: Use only one - Complete Crafting Overhaul.esp or Complete Crafting Overhaul - BS version.esp
+    IF VAR(RU) && IF FILE("Complete Crafting Overhaul - BS version.esp") && IF FILE("Complete Crafting Overhaul.esp") SAY: Используйте только один мод - Complete Crafting Overhaul.esp или Complete Crafting Overhaul - BS version.esp
   IF VAR(EN) && IF REGEX("(Headbomb's )?Better Sorting.*\.esp") && IF FILE("Complete Crafting Overhaul.esp") WARN: Use only BS-version for Better Sorting.
     IF VAR(RU) && IF REGEX("(Headbomb's )?Better Sorting.*\.esp") && IF FILE("Complete Crafting Overhaul.esp") WARN: Для Better Sorting используйте только BS-версию.
-  IF VAR(EN) && IF VAR(SkyReM) WARN: Possible doubles in crafting menu
-    IF VAR(RU) && IF VAR(SkyReM) WARN: Возможны дубликаты в меню крафтинга.
+  IF VAR(EN) && IF VAR(SkyReM) WARN: Skyre mod is detected. Possible doubles in crafting menu
+    IF VAR(RU) && IF VAR(SkyReM) WARN: Обнаружен мод SkyRe. Возможны дубликаты в меню крафтинга.
   IF VAR(EN) SAY: Will conflict with mods that modify existing recipes.
     IF VAR(RU) SAY: Возможны конфликты с модами, модифицирующими существующие рецепты.
 Lorecraft - Crafting Overhaul.esp
@@ -5043,13 +5056,15 @@ ERSO 01 - Vanilla Race Redone v.1.4.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 ERSO 01 - Vanilla Races Redone.esp
-  IF FILE("ERSO 01 - VRR only new heights.esp") SAY: Use only one ERSO 01 file.
+   IF FILE("ERSO 01 - VRR only new heights.esp") && IF VAR(EN) SAY: Use only one ERSO 01 file.
+     IF FILE("ERSO 01 - VRR only new heights.esp") && IF VAR(RU) SAY: Используйте только один ERSO 01 file.
 ERSO 01 - VRR only new heights.esp
 ERSO 02 - Enhanced Fauna and Monsters for Skyrim v.2.0.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 ERSO 02 - Enhanced Fauna and Monsters for Skyrim.esp
-  IF FILE("ERSO 02 - EFMS very bigger giant mammoths.esp") SAY: Use only one ERSO 02 file.
+   IF FILE("ERSO 02 - EFMS very bigger giant mammoths.esp") && IF VAR(EN) SAY: Use only one ERSO 02 file.
+     IF FILE("ERSO 02 - EFMS very bigger giant mammoths.esp") && IF VAR(RU) SAY: Используйте только один ERSO 02 file.
 ERSO 02 - EFMS very bigger giant mammoths.esp
 ENDGROUP: ERSO Start
 
@@ -5113,7 +5128,8 @@ REGEX: ERSO 07 - (Super )?(Slighty )?Mighty Dragon Priests\.esp
   // Seperate entry for ERSO version, makes things easier.
 ERSO 08 - RUS-00 Main.esp
 ERSO 09 - RUS-Npcs overhaul.esp
-  IF FILE("ERSO 09 - Vendor Trainer Quest-giver protected.esp") SAY: Use only one ERSO 09 file.
+   IF FILE("ERSO 09 - Vendor Trainer Quest-giver protected.esp") && IF VAR(EN) SAY: Use only one ERSO 09 file.
+     IF FILE("ERSO 09 - Vendor Trainer Quest-giver protected.esp") && IF VAR(RU) SAY: Используйте только один ERSO 09 file.
   IF CHECKSUM("ERSO 09 - RUS-Npcs overhaul.esp", 94A3B292) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ERSO 09 - Vendor Trainer Quest-giver protected.esp
 ERSO 10 - RUS-(SIM)-Travellers and Adventurers.esp
@@ -5874,7 +5890,7 @@ Rashiik.esp
   IF CHECKSUM("Rashiik.esp", 7948D345) DIRTY: 10 ITM, 0 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RayeksEnd.esp
 razorshade.esp
-Realistic Dungeons.esp 
+Realistic Dungeons.esp
   IF CHECKSUM("Realistic Dungeons.esp", 39B7E008) DIRTY: 1 ITM, 2479 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RealisticWhiterun.esp
 Reaper's The Dark Tower.esp
@@ -6903,7 +6919,7 @@ REGEX: Harder Trading - Sell Cap (4x|6x|10x)\.esp
     IF VAR(RU) SAY: Этот мод, очевидно, не совместим с модами, меняющими значение fBarterSellmax (максимум денег у продавцов).
 HarderAlduin.esp
 HandyMan.esp
-  WARN: This file header was not created with the CK. It may be corrupt and it should be deleted. 
+  WARN: This file header was not created with the CK. It may be corrupt and it should be deleted.
 HB BasicRidingAI.esp
 HBE_Smithing.esp
 HBE_Smithing_Schematics_NoRare.esp
@@ -7052,9 +7068,11 @@ Isharas_MLLY_MALES.esp
   IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") INC: Isharas_MLLY_FEMALES_SKSE.esp
 Isharas_MLLY_MALES_SKSE.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
-  IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") WARN: Use only one Isharas_MLLY_* esp.
+   IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") && IF VAR(EN) WARN: Use only one Isharas_MLLY_* esp.
+     IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") && IF VAR(RU) WARN: Используйте только один Isharas_MLLY_* esp.
 Isharas_MLLY_RESET.esp
-  IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") || IF FILE("Isharas_MLLY_MALES_SKSE.esp") WARN: Use only one Isharas_MLLY_* esp.
+   IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") || IF FILE("Isharas_MLLY_MALES_SKSE.esp") && IF VAR(EN) WARN: Use only one Isharas_MLLY_* esp.
+     IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") || IF FILE("Isharas_MLLY_MALES_SKSE.esp") && IF VAR(RU) WARN: Используйте только один Isharas_MLLY_* esp.
 ENDGROUP: Overrides I
 
 BEGINGROUP: Overrides J
@@ -7782,7 +7800,8 @@ vanillaarcheryimproved.esp
   IF VAR(EN) && IF VAR(Dawnguard) && IFNOT FILE("vanillaarcheryimproveddawnguard.esp") ERROR: Use vanillaarcheryimproveddawnguard.esp instead
     IF VAR(RU) && IF VAR(Dawnguard) && IFNOT FILE("vanillaarcheryimproveddawnguard.esp") ERROR: Используйте вместо этого vanillaarcheryimproveddawnguard.esp
 vanillaarcheryimproveddawnguard.esp
-  IF FILE("vanillaarcheryimproved.esp") SAY: Use only one vanillaarcheryimproved esp.
+   IF FILE("vanillaarcheryimproved.esp") && IF VAR(EN) SAY: Use only one vanillaarcheryimproved esp.
+     IF FILE("vanillaarcheryimproved.esp") && IF VAR(RU) SAY: Используйте только один vanillaarcheryimproved esp.
 VanillaMonsterLootV1_5.esp
   TAG: {{BASH: Relev}}
   IF VAR(EN) WARN: Obsolete.  Update to latest version.
@@ -8583,7 +8602,8 @@ MiningforMagesEasy.esp
   IF CHECKSUM("MiningforMagesEasy.esp", 6164A0C6) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 mm_HorseWhisperer.esp
 Moryth spells.esp
-  SAY: Obsolete. Update to latest renamed version, Evilbass Light and Dark Spells.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Evilbass Light and Dark Spells.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Evilbass Light and Dark Spells.esp
 MYSpell.esp
 MYSpellHard.esp
   IF FILE("MYSpell.esp") INC: MYSpell.esp
@@ -8658,7 +8678,7 @@ room.esp
   IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
 Rune Expansion.esp
 RunesImproved.esp
-  WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.  
+  WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.
 REGEX: SC_Modular Magic - .+\.esp
 Skyrim Spells Restored.esp
 SMARTS.esp
@@ -10480,23 +10500,23 @@ MC-Synbios.esp
   IFNOT FILE("FlansEyesForSkrim.esp") REQ: "http://skyrim.nexusmods.com/mods/14539 Flans Eyes for Skyrim"
   IFNOT VAR(ApachiiHair) && IFNOT VAR(ApachiiHairM) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairMale"
 MHBArganna.esp
-  IF CHECKSUM("MHBArganna.esp", 54657D5A) WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.  
+  IF CHECKSUM("MHBArganna.esp", 54657D5A) WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.
   IF FILE("HousecarlBeauties.esp") INC: HousecarlBeauties.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 MHBCalderenne.esp
-  IF CHECKSUM("MHBCalderenne.esp", 07226144) WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.  
+  IF CHECKSUM("MHBCalderenne.esp", 07226144) WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.
   IF FILE("HousecarlBeauties.esp") INC: HousecarlBeauties.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 MHBIona.esp
-  IF CHECKSUM("MHBIona.esp", E6D9AB22) WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.  
+  IF CHECKSUM("MHBIona.esp", E6D9AB22) WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.
   IF FILE("HousecarlBeauties.esp") INC: HousecarlBeauties.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 MHBJordis.esp
-  IF CHECKSUM("MHBJordis.esp", B7F5AA24) WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.  
+  IF CHECKSUM("MHBJordis.esp", B7F5AA24) WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.
   IF FILE("HousecarlBeauties.esp") INC: HousecarlBeauties.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 MHBLydia.esp
-  IF CHECKSUM("MHBLydia.esp", FFA9D829) WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.  
+  IF CHECKSUM("MHBLydia.esp", FFA9D829) WARN: The file header version is not CK generated. This file may be corrupted and it should be deleted, then reported to it's author.
   IF FILE("HousecarlBeauties.esp") INC: HousecarlBeauties.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Misha.esp
@@ -10972,15 +10992,17 @@ SGFSabeena.esp
 SNValeria.esp
 SphereBox.esp
 Tauriel Original Standalone_v1_0.esp
-  IF FILE("Tauriel Standalone_v1_1.esp") || IF FILE("Tauriel Standalone XCE v1_2.esp") ERROR: Use only one Tauriel esp. 
 Tauriel original de Standalone_v1_0.esp
-  IF FILE("Tauriel Standalone_v1_1.esp") || IF FILE("Tauriel Standalone XCE v1_2.esp") ERROR: Use only one Tauriel esp. 
+  IF FILE("Tauriel Original Standalone_v1_0.esp") INC: Tauriel Original Standalone_v1_0.esp
 Tauriel Standalone_v1_1.esp
-  IF FILE("Tauriel Original Standalone_v1_0.esp") || IF FILE("Tauriel Standalone XCE v1_2.esp") ERROR: Use only one Tauriel esp. 
+  IF FILE("Tauriel Original Standalone_v1_0.esp") INC: Tauriel Original Standalone_v1_0.esp
+  IF FILE("Tauriel original de Standalone_v1_0.esp") INC: Tauriel original de Standalone_v1_0.esp
 Tauriel Standalone XCE v1_2.esp
-  IF FILE("Tauriel Original Standalone_v1_0.esp") || IF FILE("Tauriel Standalone_v1_1.esp") ERROR: Use only one Tauriel esp. 
+  IF FILE("Tauriel Original Standalone_v1_0.esp") INC: Tauriel Original Standalone_v1_0.esp
+  IF FILE("Tauriel original de Standalone_v1_0.esp") INC: Tauriel original de Standalone_v1_0.esp
+  IF FILE("Tauriel Standalone_v1_1.esp") INC: Tauriel Standalone_v1_1.esp
 LillyFaceMorph.esp
-  REQ: Tauriel*.esp
+  IFNOT REGEX("Tauriel\s(Original\s)?(de\s)?Standalone.+\.esp") REQ: Tauriel*.esp
 The Lady Of Akatosh.esp
 timek_Laluna.esp
 Tuath.esp
