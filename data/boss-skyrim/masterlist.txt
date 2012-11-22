@@ -1325,15 +1325,15 @@ Arrow Smithing.esp
 arrowcrafting.esp
   IF CHECKSUM("arrowcrafting.esp", 8E307ED0) || IF CHECKSUM("arrowcrafting.esp", D15AE0C5) SAY: Obsolete. Update to the latest version.
 REGEX: Arrowsmith\w{0,2}\.esp
-  IF VAR(EN) && IF ("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Delete. Arrowsmith.esp already included in SkyRe_Main.esp
-    IF VAR(RU) && IF ("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Удалите. Arrowsmith.esp уже включен в SkyRe_Main.esp
-  IF VAR(EN) && IF ("Arrowsmith.esp") && IF VAR(CCO) ERROR: Delete. Arrowsmith.esp already included in Complete Crafting Overhaul mod.
-    IF VAR(RU) && IF ("Arrowsmith.esp") && IF VAR(CCO) ERROR: Удалите. Arrowsmith.esp уже включен в мод Complete Crafting Overhaul.
+  IF VAR(EN) && IF FILE("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Delete. Arrowsmith.esp already included in SkyRe_Main.esp
+    IF VAR(RU) && IF FILE("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Удалите. Arrowsmith.esp уже включен в SkyRe_Main.esp
+  IF VAR(EN) && IF FILE("Arrowsmith.esp") && IF VAR(CCO) ERROR: Delete. Arrowsmith.esp already included in Complete Crafting Overhaul mod.
+    IF VAR(RU) && IF FILE("Arrowsmith.esp") && IF VAR(CCO) ERROR: Удалите. Arrowsmith.esp уже включен в мод Complete Crafting Overhaul.
 arrowsmith-dawnguard.esp
   IF FILE("Arrowsmith.esp") INC: Arrowsmith.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF VAR(EN) && IF ("arrowsmith-dawnguard.esp") && IF FILE(SkyRe_Main.esp) ERROR: Delete. arrowsmith-dawnguard.esp already included in Complete Crafting Overhaul mod.
-    IF VAR(RU) && IF ("arrowsmith-dawnguard.esp") && IF FILE(SkyRe_Main.esp) ERROR: Удалите. arrowsmith-dawnguard.esp уже включен в мод Complete Crafting Overhaul.
+  IF VAR(EN) && IF FILE("arrowsmith-dawnguard.esp") && IF FILE("SkyRe_Main.esp") ERROR: Delete. arrowsmith-dawnguard.esp already included in Complete Crafting Overhaul mod.
+    IF VAR(RU) && IF FILE("arrowsmith-dawnguard.esp") && IF FILE("SkyRe_Main.esp") ERROR: Удалите. arrowsmith-dawnguard.esp уже включен в мод Complete Crafting Overhaul.
 	// Not sure but SkyRe_Main.esp is requires the Dawnguard DLC and includes Arrowsmith.esp
 Ars Metallica.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
