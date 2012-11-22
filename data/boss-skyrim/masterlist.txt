@@ -1205,6 +1205,7 @@ colored constellations.esp
 lockpickvision.esp
 real glaciers remastered.esp
 thatsice.esp
+vampirelord retexture.esp
 VanillaReducedTextures.esp
 ENDGROUP: Textures
 
@@ -1922,6 +1923,8 @@ jbs_item_breakdown_rev.esp
 jbs_item_breakdown.esp
   IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
   IF FILE("jbs_smithing_real.esp") INC: jbs_smithing_real.esp
+jbs_combined.esp
+  SAY: Obsolete. Update to latest renamed version, JBS_overhaul.esp
 JBS_overhaul.esp
 JBS_overhaul_thalmor.esp
   IF FILE("JBS_overhaul.esp") INC: JBS_overhaul.esp
@@ -4032,6 +4035,14 @@ BEGINGROUP: Items N
 REGEX: NA_BipolarBlade_(Eng|Rus|Deu)\.esp
   IF VAR(EN) && IF VAR(NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
     IF VAR(RU) && IF VAR(NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+NA_CleaverFelms_Eng.esp
+  IF VAR(EN) && IF VAR(NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    IF VAR(RU) && IF VAR(NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+  IF CHECKSUM("NA_CleaverFelms_Eng.esp", C40354D2) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+NA_CleaverFelms_Rus.esp
+  IF VAR(EN) && IF VAR(NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+    IF VAR(RU) && IF VAR(NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
+  IF CHECKSUM("NA_CleaverFelms_Rus.esp", 3EF8D4B9) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: NA_Chrysamere_(Eng|Rus|Deu)\.esp
   IF VAR(EN) && IF VAR(NobleArtInst) WARN: Delete already in Noble_Artifacts_For_Skyrim(Eng|Rus).esp
     IF VAR(RU) && IF VAR(NobleArtInst) WARN: Удалите. Уже входит в Noble_Artifacts_For_Skyrim(Eng|Rus).esp
@@ -4271,6 +4282,7 @@ Reaper's Necroxym Greatsword.esp
 Reaper's Quests-Timing Book.esp
 Red Bane Redone V1.esp
 Red Queen.esp
+RedeadTrissDresses.esp
 Redguard Shield.esp
 RedguardKnight.esp
   IF FILE("SkyRe_Plugin_RedguardKnightArmor_3.esp") TAG: {{BASH: Deactivate}}
@@ -4468,6 +4480,7 @@ spyduckWands.esp
   IF VERSION("SKSE", "0.1.5.9", <) REQ: "http://skse.silverlock.org SKSE" 1.5.9+
 sulundo.esp
 StaffBundle.esp
+stalhrim2.esp
 stalhrimstandalone2.esp
   TAG: {{BASH: Relev}}
   // Not tested.
@@ -6588,6 +6601,7 @@ REGEX: AIRangeIncrease(_NoAggro)?\.esp
 alcoholiceffect.esp
 all roads.esp
 AltarsRestoreMagicka.esp
+AlteredSteedStone.esp
 AlternateBreezehomePurchase.esp
 alternate sunglare.esp
 AlternateTullius.esp
@@ -6659,6 +6673,7 @@ BasicHorseRidingAI.esp
   IF VAR(EN) && IF VAR(UFO) WARN: included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO instead
     IF VAR(RU) && IF VAR(UFO) WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.
 Basic Smithing Perk.esp
+Better_Food_and_Sleep.esp
 better artifacts.esp
   IF CHECKSUM("better artifacts.esp", 52BAB796) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Better Bone Armor.esp
@@ -6674,7 +6689,7 @@ Better Deadly Bandits Weapons Only.esp
 Better Dragons.esp
 Better Dynamic Snow.esp
   IF CHECKSUM("Better Dynamic Snow.esp", 541965A9) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Better_Food_and_Sleep.esp
+better forsworn.esp
 Better House Carls.esp
 Better Honeyside.esp
 Better Jorrvaskr.esp
@@ -6687,6 +6702,8 @@ BetterBreathHolding.esp
 BetterBreezehomeBeds.esp
 BetterBreezehomeBedsNoble.esp
   IF FILE("BetterBreezehomeBeds.esp") INC: BetterBreezehomeBeds.esp
+BetterEnhancedCrossbows.esp
+  IF CHECKSUM("BetterEnhancedCrossbows.esp", 547FA257) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BetterFurnitureClutter.esp
 BetterItemSorting.esp
 IF REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
@@ -7045,13 +7062,15 @@ ENDGROUP: Overrides G
 BEGINGROUP: Overrides H
 
 H&C for VGR.esp
+HandyMan.esp
+  WARN: This file was not created with the CK. It may be corrupt and it should be deleted. 
 HardcoreSkyrim.esp
 REGEX: Harder Trading - Sell Cap (4x|6x|10x)\.esp
   IF VAR(EN) SAY: This mod is obviously not compatible with mods that change sell fBarterSellmax (sell cap).
     IF VAR(RU) SAY: Этот мод, очевидно, не совместим с модами, меняющими значение fBarterSellmax (максимум денег у продавцов).
 HarderAlduin.esp
-HandyMan.esp
-  WARN: This file header was not created with the CK. It may be corrupt and it should be deleted.
+Harkon's Sword.esp
+  IFNOT VAR(Dawnguard) REQ: Dawngyard (Official Bethesda DLC)
 HB BasicRidingAI.esp
 HBE_Smithing.esp
 HBE_Smithing_Schematics_NoRare.esp
@@ -7140,6 +7159,7 @@ ImmediateDragons.esp
 Immersive Weapons.esp
   TAG:{{BASH: Delev}}
   IF CHECKSUM("Immersive Weapons.esp", 2EAE1F9D) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+imperialpower.esp
 Improved Archery and Bows.esp
 Improved Cloaks.esp
 improved final battle.esp
@@ -7849,10 +7869,6 @@ Thieves Guild Requirements.esp
 REGEX: Tougher Traps - \w{5,10}\.esp
 TCO - Travel Cost Overhaul.esp
 REGEX: TheWitcher2-Ultimate Replace Mod.+\.esp
-VariedGuards.esp
-VariedGuards2H.esp
-VariousGuardReplacer.esp
-  // TAG: {{BASH: Graphics}}
 The Joy of Perspective.esp
 REGEX: The Skyrim conflict( Light| Medium| Hard)?( DE&O)?( Essential)?.*\.esp
   // TAG: {{BASH: Invent, Names}}
@@ -7876,6 +7892,7 @@ Trolls Loot.esp
   IF CHECKSUM("Trolls Loot.esp", 9C8F811B) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 True_Groundcover.esp
 TrueSteelImperialArmor.esp
+truethalmor.esp
 TwoRings.esp
 ENDGROUP: Overrides T
 
@@ -7945,6 +7962,10 @@ VampireLordFlys.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 vampire royal hood.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+VariedGuards.esp
+VariedGuards2H.esp
+VariousGuardReplacer.esp
+  // TAG: {{BASH: Graphics}}
 REGEX: VendorsHaveMoreMoney\d*\.esp
 MISELF_Vendors.esp
 Veshi so Smislom from hiro.esp
@@ -8870,6 +8891,8 @@ SummonDarklings.esp
 SummonLola.esp
 Support Magic.esp
   TAG: {{BASH: Relev}}
+SwordDance.esp
+  IF CHECKSUM("SwordDance.esp", F73F4730) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SynodSeptimusSummon.esp
   IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
     IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
@@ -9141,6 +9164,9 @@ ASX_Potions.esp
 BetterWhitePhialEffects.esp
 Black lightened Alchemy.esp
 Black lightened Alchemy ML.esp
+BloodPotionRecipe.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("BloodPotionRecipe.esp", 25395F5D) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Chemistry.esp
 CP_GourdIngredient.esp
 CuralmilsPhial.esp
@@ -9189,6 +9215,7 @@ enchanting freedom.esp
 EnchantmentPower.esp
 Enchant Plus.esp
 EnchantmentCleanser.esp
+Everything is Disenchantable.esp
 Fortify Enchanting necklace.esp
 IPutASpellOnYou.esp
 hankyench.esp
@@ -9534,6 +9561,13 @@ ACE Melee.esp
 ACE Smithing.esp
 ACE Synergy.esp
 IF VAR(EN) && IF REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
+LB_MuchAdoSnowElves_ACE_Patch_Light.esp
+  IFNOT FILE("ACE Archery.esp") REQ: ACE Archery.esp
+  IFNOT FILE("LB_MuchAdoSnowElves.esm") REQ: LB_MuchAdoSnowElves.esm
+LB_MuchAdoSnowElves_ACE_Patch_Long.esp
+  IFNOT FILE("ACE Archery.esp") REQ: ACE Archery.esp
+  IFNOT FILE("LB_MuchAdoSnowElves.esm") REQ: LB_MuchAdoSnowElves.esm
+  IF FILE("LB_MuchAdoSnowElves_ACE_Patch_Light.esp") INC: LB_MuchAdoSnowElves_ACE_Patch_Light.esp (Use only one ACE Patch)
 Actually A Deadly Verbal Debate.esp
 alan_extended archery perk tree.esp
 alan_guide for the perfect blacksmith.esp
@@ -9580,6 +9614,9 @@ GDTES5 Lockpick Perk Tree Reconfigure.esp
 GluRUS_magicscaling.esp
 GrandMaster.esp
 HeavyArmorPerks v1.1.esp
+  SAY: Obsolete. Update to latest renamed version, HeavyArmorPerksv2.2.esp
+HeavyArmorPerksv2.2.esp
+  IF CHECKSUM("HeavyArmorPerksv2.2.esp", D3C0A697) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 JulesPerkRankAssign.esp
 Illusion Perks Overhaul.esp
 iMO-Perks.esp
@@ -10169,6 +10206,7 @@ Draman Skeleton Mod.esp
 Dryad Race.esp
 Dwarf.esp
   IF CHECKSUM("Dwarf.esp", A6D2870E) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+dwemerplayablerace.esp
 Epic Elves by zzjay.esp
 EpicElves by zzjay.esp
 FFRace.esp
@@ -11394,6 +11432,7 @@ ThatsRacist.esp
 WaterAttacking.esp
 WiS III races.esp
 REGEX: WiS IV( -)? Races?\.esp
+werewolffeedonanimal.esp
 Gri_BeastFeet.esp
 QuickKhajiits.esp
 GlowingEyeFix.esp
