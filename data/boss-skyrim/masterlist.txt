@@ -968,6 +968,8 @@ RevampedExteriorFog.esp
   IF FILE("Realistic Lighting.esp") INC: Realistic Lighting.esp
 Supreme Fog.esp
   IF CHECKSUM("Supreme Fog.esp", 4B1EB3A6) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Supreme Storms.esp
+  IF CHECKSUM("Supreme Storms.esp", 6B5D41BD) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 PaperMapHeight-RemoveFog.esp
   IF VAR(EN) && IF FILE("WATER.esp") WARN: Removing Fog will affect WATER. Load after WATER if you are experiencing errors.
     IF VAR(RU) && IF FILE("WATER.esp") WARN: Удаление тумана повлияет на мод WATER. Загружайте после WATER если вы замечаете баги.
@@ -990,7 +992,8 @@ DragonHitSoundFix.esp
 DragonHitSoundFix - RAS.esp
 DragonShout.esp
 IceBreaker's Improved Reverb.esp
-  IF CHECKSUM("IceBreaker's Improved Reverb.esp", 1BD6F02D) DIRTY: 5 ITMs, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  SAY: Obsolete. Update to latest renamed version, IceBreaker's Improved Reverb-v0.02-Cleaned.esp
+IceBreaker's Improved Reverb-v0.02-Cleaned.esp
 immersive thunder.esp
 REGEX: Improved Combat Sounds v2\.\d\.esp
   IF VAR(EN) && IF FILE("Improved Combat Sounds v2.0.esp") SAY: Obsolete. Update to 2.1 for a cleaned esp
@@ -1045,6 +1048,7 @@ CLO.esp
 CLO - Custom Lighting Overlay.esp
 DarkerSkyrimLighting.esp
 Encryptions Water Arrow.esp
+EnhancedLightsandFX.esp
 magiclightshadows.esp
 MikeFoxs_CorrectLighting.esp
   IF CHECKSUM("MikeFoxs_CorrectLighting.esp", D2B44EBE) DIRTY: 0 ITM, 302 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -1307,6 +1311,7 @@ ApachiiHelmetWigs.esp
 Arcticia's LifeCycles.esp
 Armored Skeleton.esp
   TAG: {{BASH: Relev}}
+  IF FILE("Skyrim Immersive Creatures.esp") ERROR: Remove. Armored Skeleton.esp is included in Skyrim Immersive Creatures.esp
 ENG_All_In_One_v1.2.esp
 NoRestorationExploit.esp
 ANB - ArrowsToPicks.esp
@@ -5667,6 +5672,8 @@ Golden Egg Treasure Hunt.esp
 Gildergreen Regrown.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 golkar.esp
+gonkishvampdens.esp
+  IF CHECKSUM("gonkishvampdens.esp", C11AED71) DIRTY: 35 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 GR123 Castle.esp
 Great House Barrow.esp
 GreatTalosHunt.esp
@@ -5677,8 +5684,8 @@ Grey Stead Manor.esp
 greystone castle v1.0.esp
 Grytewake.esp
 GuildmastersQuarters.esp
-  IF CHECKSUM("GuildmastersQuarters.esp", 69B5B053) DIRTY: 3 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("GuildmastersQuarters.esp", BD42388D) || IF CHECKSUM("GuildmastersQuarters.esp", 178FBECE) || IF CHECKSUM("GuildmastersQuarters.esp", 2D8FB51E) || IF CHECKSUM("GuildmastersQuarters.esp", 372DF4C0) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("GuildmastersQuarters.esp", 69B5B053) DIRTY: 3 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: Quests G
 
 BEGINGROUP: Quests H
@@ -7555,7 +7562,6 @@ BEGINGROUP: Overrides R
 
 radialblur.esp
 Raptor Talon Argonians.esp
-RBS.esp
 ReadIt.esp
 Real 1st Person View alpha 03c.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Real 1st Person View.esp
@@ -9781,6 +9787,10 @@ REGEX: SkyRe_Plugin_ImmersiveArmor_.+\.esp
     IF VAR(RU) && IF ACTIVE("hothtrooper44_ArmorCompilation.esp") SAY: Не забудьте отключить или удалить hothtrooper44_ArmorCompilation.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_hothtrooper44_ArmorCompilation.esp
+  // same as above??
+  IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: hothtrooper44_ArmorCompilation.esp
+  IFNOT VAR(SkyReM) REQ: SkyRe_Main.esp
 SkyRe_Plugin_Omegared99-WeaponSets.esp
   IF VAR(EN) && IF ACTIVE("Omegared99-WeaponSets.esp") SAY: Remember not to load (or to simply delete) Omegared99-WeaponSets.esp
     IF VAR(RU) && IF ACTIVE("Omegared99-WeaponSets.esp") SAY: Не забудьте отключить или удалить Omegared99-WeaponSets.esp
@@ -11719,6 +11729,7 @@ IF REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
   IF VAR(EN) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Deactivate 'SkyRe_EnemyAI.esp' before creation of ASIS patch and activate only after creation of ASIS patch.
     IF VAR(RU) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Отключите 'SkyRe_EnemyAI.esp' перед созданием ASIS-патча и активируйте только после создания.
 Perk Patch.esp
+RBS.esp
 ENDGROUP: Dynamic Plugins
 
 /* Normaly only Dynamic plugins created by SkyProc go here.  Try to limit placing any plugins here.
