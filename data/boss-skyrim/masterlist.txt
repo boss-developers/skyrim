@@ -183,6 +183,7 @@ GeneralStores.esm
 SCoL Main.esm
 HorseBranding.esm
 highfive.esm
+ImmersiveContent.esm
 LB_MuchAdoSnowElves.esm
   IF FILE("LB_MuchAdoSnowElves_WeaponsOnly.esp") && IF CHECKSUM("LB_MuchAdoSnowElves.esm", 9E22BEF7) WARN: This is the wrong esm for LB_MuchAdoSnowElves_WeaponsOnly.esp
 LegendarySouls.esm
@@ -1053,6 +1054,12 @@ CLO - Custom Lighting Overlay.esp
 DarkerSkyrimLighting.esp
 Encryptions Water Arrow.esp
 EnhancedLightsandFX.esp
+ImmersiveContentExteriorLighting.esp
+  IF REGEX("CLARALU.*\.esp") INC: CLARALUX lighting mods
+  IF CHECKSUM("ImmersiveContentExteriorLighting.esp", F2A7A8BD) DIRTY: 17 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+ImmersiveContentLateLightPatch.esp
+ImmersiveContentVeryLateLightPatch.esp
+  IF FILE("ImmersiveContentLateLightPatch.esp") INC: ImmersiveContentLateLightPatch.esp, use only one LateLightPatch.
 magiclightshadows.esp
 MikeFoxs_CorrectLighting.esp
   IF CHECKSUM("MikeFoxs_CorrectLighting.esp", D2B44EBE) DIRTY: 0 ITM, 302 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -3086,6 +3093,7 @@ Chrysamere.esp
   IF CHECKSUM("Chrysamere.esp", 741C7C7C) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 circlet.esp
 CircletOfIllumination.esp
+Cleric Armours - Credo.esp 
 ClericCraftable.esp
 REGEX: Cloaks( - No Imperial| - Player Only)?\.esp
   TAG: {{BASH: Relev}}
@@ -3734,6 +3742,8 @@ SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
     IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
+InquisitorGear.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 InvisRing.esp
 InvisibleArmorSets.esp
 ISDBlackSting.esp
@@ -4731,6 +4741,7 @@ Vampguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesada DLC)
   IF CHECKSUM("Vampguard.esp", FDB0B379) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 VampireHuntersCoat.esp
+  SAY: Obsolete. Update to the latest renamed version, InquisitorGear.esp
 VampireMasterHood.esp
 VampireMasterSet.esp
   IF FILE("VampireMasterHood.esp") INC: VampireMasterHood.esp
@@ -4788,6 +4799,8 @@ WarfighterArmory.esp
 Warglaive of Azzinoth.esp
 warmagearmor.esp
 Lorecraft - DoODABoOM.esp
+Warrior Cleric Julianos - Credo.esp
+  SAY: Obsolete. Update to the latest renamed version, Cleric Armours - Credo.esp
 Warsword.esp
 The Way of the Voice.esp
 REGEX: WayoftheVoice\d\.esp
@@ -5683,6 +5696,11 @@ Forlorn Keep.esp
   IF CHECKSUM("Forlorn Keep.esp", FD6E2C05) DIRTY: 22 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Forrest's Diary.esp
 Fort Ironcrag.esp
+FourSeasonsInn.esp
+  SAY: Obsolete. Update to the latest renamed version, FourSeasonsv1.02.esp
+FourSeasonsv1.02.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IF CHECKSUM("FourSeasonsv1.02.esp", B9AB3BF8) DIRTY: 9 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Free Mine.esp
 Freedom of Speech.esp
   IF VAR(Dawnguard) ERROR: Use Freedom of Speech -- Dawnguard.esp
@@ -5927,6 +5945,8 @@ REGEX: Murder.?.?\.esp
 Museum.esp
 IFNOT VAR(UFO) MOD: My home is your home.esp
 Mystic Home.esp
+My Inn.esp
+  SAY: Obsolete. Update to the latest renamed version, FourSeasonsv1.02.esp
 My Place.esp
 ENDGROUP: Quests M
 
@@ -6855,6 +6875,7 @@ DA_Maxwell_Outfit_Dibella_UNP_EV.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 DawnguardInquisitors.esp
 Deadly_Slaughterfish.esp
+  SAY: A required file, VampireHuntersCoat.esp, has been updated and renamed to InquisitorGear.esp. Updating may break this mod.
   IFNOT FILE("VampireHuntersCoat.esp") REQ: VampireHuntersCoat.esp
 Daedric Artifact Enhancements.esp
 Daedric Artifacts Overlord.esp
