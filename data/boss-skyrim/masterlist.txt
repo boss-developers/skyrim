@@ -992,7 +992,8 @@ DragonHitSoundFix.esp
 DragonHitSoundFix - RAS.esp
 DragonShout.esp
 IceBreaker's Improved Reverb.esp
-  SAY: Obsolete. Update to latest renamed version, IceBreaker's Improved Reverb-v0.02-Cleaned.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, IceBreaker's Improved Reverb-v0.02-Cleaned.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, IceBreaker's Improved Reverb-v0.02-Cleaned.esp
 IceBreaker's Improved Reverb-v0.02-Cleaned.esp
 immersive thunder.esp
 REGEX: Improved Combat Sounds v2\.\d\.esp
@@ -1320,12 +1321,20 @@ Archery-Overhaul.esp
 ArcheryOverhaulFletcherArrowsOnly.esp
 Archmage Crafting - Enchanted Items.esp
 Archmage Crafting - Unenchanted Clothing.esp
-REGEX: Arrowsmith\w{0,2}\.esp
 Arrow Smithing.esp
 arrowcrafting.esp
   IF CHECKSUM("arrowcrafting.esp", 8E307ED0) || IF CHECKSUM("arrowcrafting.esp", D15AE0C5) SAY: Obsolete. Update to the latest version.
+REGEX: Arrowsmith\w{0,2}\.esp
+  IF VAR(EN) && IF ("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Delete. Arrowsmith.esp already included in SkyRe_Main.esp
+    IF VAR(RU) && IF ("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Удалите. Arrowsmith.esp уже включен в SkyRe_Main.esp
+  IF VAR(EN) && IF ("Arrowsmith.esp") && IF VAR(CCO) ERROR: Delete. Arrowsmith.esp already included in Complete Crafting Overhaul mod.
+    IF VAR(RU) && IF ("Arrowsmith.esp") && IF VAR(CCO) ERROR: Удалите. Arrowsmith.esp уже включен в мод Complete Crafting Overhaul.
 arrowsmith-dawnguard.esp
+  IF FILE("Arrowsmith.esp") INC: Arrowsmith.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF VAR(EN) && IF ("arrowsmith-dawnguard.esp") && IF FILE(SkyRe_Main.esp) ERROR: Delete. arrowsmith-dawnguard.esp already included in Complete Crafting Overhaul mod.
+    IF VAR(RU) && IF ("arrowsmith-dawnguard.esp") && IF FILE(SkyRe_Main.esp) ERROR: Удалите. arrowsmith-dawnguard.esp уже включен в мод Complete Crafting Overhaul.
+	// Not sure but SkyRe_Main.esp is requires the Dawnguard DLC and includes Arrowsmith.esp
 Ars Metallica.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 Ars Metallica - Dawnguard.esp
@@ -6700,7 +6709,8 @@ BetterStaffofMagnusMedium.esp
   IF FILE("BetterStaffofMagnus.esp") INC: Use only one BetterStafofMagnus esp.
 BetterSwimming.esp
 ME_BetterWards.esp
-  SAY: Obsolete. Update to latest renamed version, betterwards.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, betterwards.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, betterwards.esp
 betterwards.esp
 betterwards-nostagger.esp
   IF FILE("betterwards.esp") INC: betterwards.esp
@@ -8817,7 +8827,8 @@ REGEX: SC_Modular Magic - .+\.esp
 Skyrim Spells Restored.esp
 SMARTS.esp
 SMEssentialKills.esp
-  SAY: Obsolete. Update to latest renamed version, SMEssentialKills - XC.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, SMEssentialKills - XC.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SMEssentialKills - XC.esp
 SMEssentialKills - XC.esp
 SoulGemTransmutation.esp
 spellcraft.esp
