@@ -169,6 +169,7 @@ DarkerNights.esm
 DarkerInteriors.esm
 DarkerInteriorsAdd.esm
 DirectorsTools.esm
+DonJuansPlayersClubMaster.esm
 REGEX: Expanded Towns.*\.esm
   IF VAR(EN) SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
     IF VAR(RU) SAY: Устарело, обновите до последней версии Expanded Towns and Cities
@@ -310,6 +311,7 @@ RiverEdge Home.esm
 RiverHelm.esm
 Ranger Ridge.esm
 retreat.esm
+RIP88_Pool_Furniture.esm
 SkyrimSewers.esm
 SleepingTreeSanctuary.esm
 Solitude A City Of Trade.esm
@@ -1469,6 +1471,7 @@ BEGINGROUP: Base C
 
 REGEX: Calendar - (Deutsch|English|Francais|Italiano|Spanish)\.esp
   IF FILE("ModernDayCalendarNames.esp") || IF FILE("Modern Day Calendar Names_Learn Names.esp") INC: Modern Day Calendar Names
+Calender.esp
 CalienteVanillaArmorTweaks.esp
 CallingCardFence.esp
 calt.esp
@@ -1959,6 +1962,7 @@ JBS_tailor.esp
   IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
 jbs_upgrade.esp
   IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
+JBS_weight_goldarrowcarry.esp
 jbs_weight_overhaul_complete.esp
   IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
 jbs_weight_overhaul_pot.esp
@@ -2076,6 +2080,8 @@ lt_better_horses_uninstaller.esp
 HMBHPatch.esp
 SIBHPatch.esp
 lt_camping.esp
+ltbl.esp
+  IF CHECKSUM("ltbl.esp", 3AC741CA) DIRTY: 31 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 lush trees.esp
 lustymaidonehand.esp
 LydiaExchangeableArmor.esp
@@ -4291,6 +4297,8 @@ playable greybeard.esp
 Plush Backpack.esp
 Pony_Armor.esp
 PonySword.esp
+RIP88_Pool_Furniture_Sample.esp
+  IF CHECKSUM("RIP88_Pool_Furniture_Sample.esp", 70EE4672) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 PotionTransmutation.esp
 PowerOfTheGods.esp
 Powder Bow.esp
@@ -6857,7 +6865,7 @@ br_hoodcirclets.esp
 Breezehome free.esp
 BreezehomeExtraLight.esp
 REGEX: Brighter Campfires (X\d\d|Extreme)\.esp
-Brighter Сandles esp
+Brighter Сandles.esp
 brrobecirclets.esp
 brutal elven.esp
 brutal hide.esp
@@ -7165,6 +7173,7 @@ GM-Tanning.esp
 Gradual Encumbrance from Carry Weight.esp
 Grass and Grass.esp
 greener aspenforest.esp
+grimsever2h.esp
 GSRDivorce.esp
 Guard Shields - Light.esp
 GuardDialogue.esp
@@ -7481,6 +7490,7 @@ Magnify Spell Enchantments - Disenchant.esp
 Magnus100_50.esp
 make inferno.esp
 male_mannequins_skinned.esp
+Makeover-BalgruufTheGreater.esp
 Mannequin_Female_Vyctoria.esp
 Mannequin_Male_Vyktor.esp
 ManlyLonghammer.esp
@@ -7729,6 +7739,7 @@ ENDGROUP: Overrides Q
 BEGINGROUP: Overrides R
 
 radialblur.esp
+Ralof & Hadvar Imp Mod.esp
 RangerNightingale.esp
   IF FILE("BowAssassin.esp") ERROR: Use BowAssassin.esp or RangerNightingale.esp, not both.
 Raptor Talon Argonians.esp
@@ -10317,6 +10328,10 @@ Oblivion hair2.esp
 OmEyes.esp
 OrientalBrows.esp
 RANsHair_02_06.esp
+  SAY: Obsolete. Update to the latest renamed version, RANs Hair.esp
+RANs Hair Ver 2.0.esp
+  SAY: Obsolete. Update to the latest renamed version, RANs Hair.esp
+RANs Hair.esp
 RenHair.esp
 TelRedHair.esp
 TelDarkRedHair.esp
@@ -10465,6 +10480,7 @@ BEGINGROUP: Character Presets
 /* I figured this group should be around this area
 If someone feels it could be placed better, feel free to move it */
 
+ArnoldPreset.esp
 ESPv1_1.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ESPv1_1nondependent.esp
@@ -11380,22 +11396,43 @@ marriagemod - alpha v3.esp
 ENDGROUP: Unlimited Companions
 
 
+BBLSHousecarlsmovein.esp
+BBLSVisitors.esp
+BBLuxurySuiteClassier.esp
 CerwidenCompanion.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 CerwidenAppearancePatch.esp
 // Must load after CerwidenCompanion.esp
-MujuroStormbringer.esp
-  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
+disablelydiatradedialog.esp
+DogCompanionsToFoxes.esp
 DudestiaMultiMarriages.esp
 IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMCompViljaSkyrim.esp
   IF CHECKSUM("EMCompViljaSkyrim.esp", C45D4383) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Spousetocustomhome.esp
+FriendlyFireTolerance99not4.esp
+REGEX: FollowMeNicely(AndHugMeMyLove)?(Dammit-)?(LetUsChat|AllOptionsOn)?(LessRepetitiveChatter)?\.esp
+REGEX: FollowMeNicelyDammit-(ShutUpAndFight|RunLittleRabbitRun|LetsUsChat)?\.esp
+HugMe.esp
+  IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
+  IF VAR(EN) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp or moveitLWT.esp
+    IF VAR(RU) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp или moveitLWT.esp
+LZA Follower Trade Priority.esp
 Merchant Follower Vyctara.esp
+REGEX: move.?it(LWT)?\.esp
+  IF VAR(EN) && IF REGEX("Better Followers - [SBNP].*\.esp") INC: Better Followers, BF already have same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.
+    IF VAR(RU) && IF FILE("Better Follower Improvements.esp") IF REGEX("Better Followers - [SBNP].*\.esp") INC: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.
+  IF VAR(EN) && IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") WARN: Use only one move it esp
+    IF VAR(RU) && IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") WARN: Используйте только один move it esp
+MrKrabs.esp
+MrSlackPants-DeadlyTraps.esp
+MujuroStormbringer.esp
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 MyOwnRubee.esp
 New Partners.esp
 nordguardfollower.esp
 PetSabrecatJango.esp
 Pets.esp
+Pixie Windcaller.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Sabretooth.esp
 Sabretoothmod_1_02.esp
 Selene.esp
@@ -11407,6 +11444,12 @@ SGFLucretia.esp
 SGFSabeena.esp
 SNValeria.esp
 SphereBox.esp
+Shut Up Mjoll!.esp
+Silent Lydia.esp
+Spousetocustomhome.esp
+StopBumpingIntoMe.esp
+  IF VAR(EN) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp or moveitLWT.esp
+    IF VAR(RU) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp или moveitLWT.esp
 Tauriel Original Standalone_v1_0.esp
 Tauriel original de Standalone_v1_0.esp
   IF FILE("Tauriel Original Standalone_v1_0.esp") INC: Tauriel Original Standalone_v1_0.esp
@@ -11425,44 +11468,19 @@ Tuath.esp
 TTS - Lydia.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
   IFNOT FILE(" TheEyesOfBeauty.esp") REQ: "http://skyrim.nexusmods.com/mods/13722 The Eyes of Beauty".
-disablelydiatradedialog.esp
 Ultimate Witcher Experience - Followers.esp
 Ultimate Witcher Experience - Follower Geralt.esp
 Ultimate Witcher Experience - Follower Iorveth.esp
 Ultimate Witcher Experience - Follower Triss.esp
 vajhira.esp
-VampireCompanionBetav1.esp
-Vashira The blood flash.esp
-WealtheowValentine.esp
-wisplicker.esp
-DogCompanionsToFoxes.esp
-Shut Up Mjoll!.esp
-Silent Lydia.esp
-BBLSHousecarlsmovein.esp
-BBLSVisitors.esp
-BBLuxurySuiteClassier.esp
-LZA Follower Trade Priority.esp
-REGEX: move.?it(LWT)?\.esp
-  IF VAR(EN) && IF REGEX("Better Followers - [SBNP].*\.esp") INC: Better Followers, BF already have same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.
-    IF VAR(RU) && IF FILE("Better Follower Improvements.esp") IF REGEX("Better Followers - [SBNP].*\.esp") INC: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.
-  IF VAR(EN) && IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") WARN: Use only one move it esp
-    IF VAR(RU) && IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") WARN: Используйте только один move it esp
-MrKrabs.esp
-MrSlackPants-DeadlyTraps.esp
-StopBumpingIntoMe.esp
-  IF VAR(EN) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp or moveitLWT.esp
-    IF VAR(RU) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp или moveitLWT.esp
-HugMe.esp
-  IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
-  IF VAR(EN) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp or moveitLWT.esp
-    IF VAR(RU) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp или moveitLWT.esp
-REGEX: FollowMeNicely(AndHugMeMyLove)?(Dammit-)?(LetUsChat|AllOptionsOn)?(LessRepetitiveChatter)?\.esp
-REGEX: FollowMeNicelyDammit-(ShutUpAndFight|RunLittleRabbitRun|LetsUsChat)?\.esp
-FriendlyFireTolerance99not4.esp
 Vampire Serana.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, serana.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, serana.esp
+VampireCompanionBetav1.esp
+Vashira The blood flash.esp
 voidcraft_housecarls.esp
+WealtheowValentine.esp
+wisplicker.esp
 wlightmajesty.esp
 Xannon.esp
 ENDGROUP: Companions
