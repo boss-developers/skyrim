@@ -1214,6 +1214,7 @@ BEGINGROUP: Textures
 
 /* texture packadge from Steam Workshop */
 colored constellations.esp
+glowing arrows v2.1.esp
 lockpickvision.esp
 real glaciers remastered.esp
 thatsice.esp
@@ -2041,6 +2042,7 @@ LIAT - NPCs.esp
   IF VAR(EN) && IF REGEX("LIAT - .+NPCs\.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF REGEX("LIAT - .+NPCs\.esp") WARN: Устарело. Обновите до последней версии.
 librarian - book sorting.esp
+lingxc.esp
 Linked Home Chests.esp
 LMNimmervollerBeutelDV.esp
 lockBreaker_EV.esp
@@ -3431,6 +3433,9 @@ Dwemer Scouter.esp
 Dwemer Goggles & Scouter.esp
 DwemerAutoBlade.esp
   IF FILE("SkyRe_Plugin_DwemerAutoBlade.esp") TAG: {{BASH: Deactivate}}
+DwemerBombsNoPerkTree.esp
+  IF CHECKSUM("DwemerBombsNoPerkTree.esp", 8D5E43B0) DIRTY: 11 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("DwemerBombs.esp") INC: DwemerBombs.esp
 DwarvenPowerArmor.esp
   IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Do not use. Included in AetheriumSwordsnArmor.esp
     IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp
@@ -3477,6 +3482,8 @@ Energy Sword.esp
 EternalShineArmorAndWeapons.esp
 EtherealEdge.esp
 Evil MasterMind Armor.esp
+exparrow.esp
+  IF CHECKSUM("exparrow.esp", DE5FA17B) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Experimenter_Ring.esp
 expertandmasterhoods.esp
 ExplodingArrows.esp
@@ -3563,6 +3570,9 @@ Gatti14Yumiko.esp
 Gatti2Misogi.esp
 Gatti3Evilrose.esp
 GattiBondage0.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
+GattiBondage1.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 GattiQBCollection.esp
 GattiUNPCollection.esp
 REGEX: GDRanger(Armor|Dress)\.esp
@@ -3593,6 +3603,7 @@ goldbrand.esp
 GoldRapier01.esp
 GoldTeraH17.esp
 GondorianArmour.esp
+GondorianRangerArmor.esp
 GOT Knight Armor.esp
 GOT Knight Armor 2.esp
 GoT_Sigils.esp
@@ -3996,6 +4007,8 @@ M_Longclaw.esp
 M_Needle.esp
 REGEX: MaleClericArmor(Heavy|Light|Cloth)?\.esp
 Magicka Sabers.esp
+Magicka Sabers expanded.esp
+  IF CHECKSUM("Magicka Sabers expanded.esp", 0F9D0688) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 mage champion.esp
 mage robe hoods.esp
 Maid Armor.esp
@@ -4501,6 +4514,8 @@ Solitude Furniture.esp
 Song General Armor&weapon.esp
   IF FILE("SkyRe Chinese General Set.esp") TAG: {{BASH: Deactivate}}
 sonia.esp
+SophitiaByNausicaa.esp
+  WARN: This file contains unexpected (or out of order) records and should be removed.
 sord.esp
 SOT_SwordOfTruth.esp
 soulcalibur.esp
@@ -5655,7 +5670,6 @@ DusksCabin.esp
   IF CHECKSUM("DusksCabin.esp", D8766585) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DwarvenFalls.esp
   IF CHECKSUM("DwarvenFalls.esp", 30FF942D) DIRTY: 8 ITM, 26 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-dwemer.esp
 Dwemer Armory.esp
 dwemer_egg.esp
 Dwemer_Skyship_v1.esp
@@ -5663,6 +5677,7 @@ Dwemer_Skyship_v1.esp
   IF VERSION("TES5", "0.1.5.26", <) REQ: Skyrim 2.5.26+
 dwemerstatuetest.esp
 DwemerTower.esp
+dwemer.esp
 Dynasty_Manor.esp
 ENDGROUP: Quests D
 
@@ -8642,9 +8657,6 @@ apocalypse.esp
 Apocalypse - The Spell Package.esp
   IF CHECKSUM("Apocalypse - The Spell Package.esp", C8244604) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ArrowSpell.esp
-BanishLight.esp
-  IF VAR(EN) WARN: May not work properly with lighting mods.
-    IF VAR(RU) WARN: Может неверно работать с модами, меняющими освещение..
 EOS - Apocalypse Spells Compatibility.esp
 AddtionalLights.esp
 AddtionalLights_with_shadows.esp
@@ -8653,6 +8665,9 @@ Ancient Spells.esp
 Artillery_DFA.esp
 REGEX: ASX( - |_)Spells.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+BanishLight.esp
+  IF VAR(EN) WARN: May not work properly with lighting mods.
+    IF VAR(RU) WARN: Может неверно работать с модами, меняющими освещение..
 BardSvaknirSummon.esp
   IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
     IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
@@ -8688,6 +8703,8 @@ ExtractOreSpell.esp
   IF FILE("MiningFlames.esp") INC: MiningFlames.esp
   IF VAR(EN) && IF FILE("MidasSkyrim.esp") INC: MidasSkyrim.esp (Spell 'Bound Pickaxe')
     IF VAR(RU) && IF FILE("MidasSkyrim.esp") INC: Midas Magic.esp (Заклинание 'Призыв кирки')
+boundxbows.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 CallAssassins.esp
 Candlespell.esp
 REGEX: Candle[:alpha:]ight(Shadow|ToggleDefault(NC)?|Toggle\d\d(NC)?|Toggle\d(NC)?)?\.esp
@@ -8755,6 +8772,8 @@ Elderman's Cure Disease Spell.esp
 ElementalFuryFix.esp
 Elementalist.esp
 elemballlightning.esp
+Epic Potent Flame Thrall.esp
+  WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
 essential player character.esp
 Evilbass Light and Dark Spells.esp
   IFNOT VAR(Dawnguard) && IF CHECKSUM("Evilbass Light and Dark Spells.esp", 4E1181E9) ERROR: Use non-Dawnguard version.
@@ -10109,6 +10128,9 @@ Bullseye to Dragonslayer Perk.esp
 REGEX: (\d{1,3})XCarryWeight.esp
 concentrated10.esp
 REGEX: addweight\d?0\.esp
+DwemerBombs.esp
+  IF CHECKSUM("DwemerBombs.esp", D7BB72C4) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("DwemerBombsNoPerkTree.esp") INC: DwemerBombsNoPerkTree.esp
 heavy_armor_buff.esp
 HeavyArmorTree.esp
 Improved Lower Level Smithing.esp
@@ -10118,6 +10140,21 @@ JNwepPerkoverhaul.esp
   IF FILE("Duel - Combat Realism.esp") INC: Duel - Combat Realism.esp
 Light Armor Unarmed Scaling (no armor requirement).esp
 LockpickTree.esp
+More Useful Soul Siphon10.esp
+More Usefull Soul Siphon25.esp
+  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
+More Usefull Soul Siphon50.esp
+  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon25.esp") INC: More Usefull Soul Siphon25.esp, use only one More Useful Soul Siphon esp.
+More Usefull Soul Siphon75.esp
+  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon25.esp") INC: More Usefull Soul Siphon25.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon50.esp") INC: More Usefull Soul Siphon50.esp, use only one More Useful Soul Siphon esp.
+More Usefull Soul Siphon100.esp
+  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon25.esp") INC: More Usefull Soul Siphon25.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon50.esp") INC: More Usefull Soul Siphon50.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon75.esp") INC: More Usefull Soul Siphon75.esp, use only one More Useful Soul Siphon esp.
 MoreWerewolfPerks.esp
   IF CHECKSUM("MoreWerewolfPerks.esp", DECFC212) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MoonLightPower.esp
@@ -11614,6 +11651,7 @@ MenuShoutsInDragonsLanguage.esp
   IF VAR(Dawnguard) && IFNOT CHECKSUM("MenuShoutsInDragonsLanguage.esp", E06D6E46) ERROR: Use Dawnguard version.
 no_annoying_messages.esp
 NoMoreMessages.esp
+nomorestupiddog.esp
 noSkillMessage.esp
 NymSkyrimGrammarHammer.esp
   IF CHECKSUM("NymSkyrimGrammarHammer.esp", 90A68AA7) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
