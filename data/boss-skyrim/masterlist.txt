@@ -2238,6 +2238,7 @@ REGEX: Radiant and Unique Potions (and )?Poisons.*\.esp
     IF VAR(RU) && IF FILE("Radiant and Unique Potions and Poisons.esp") SAY: Устарело. Обновите до последней версии.
   IF VAR(EN) && IF FILE("Radiant and Unique Potions Poisons and BOOZE.esp") && IF REGEX("Unique BOOZE Bottles.*\.esp") SAY: Uninstall Unique BOOZE Bottles
     IF VAR(RU) && IF FILE("Radiant and Unique Potions Poisons and BOOZE.esp") && IF REGEX("Unique BOOZE Bottles.*\.esp") SAY: Деинсталируйте Unique BOOZE Bottles
+real crossbow smithing.esp
 Real Days.esp
 real glaciers.esp
   IF VAR(EN) SAY: Old version update to Real Glaciers V2
@@ -2247,6 +2248,8 @@ Real Months.esp
   // tags not tested
 real mountains.esp
 realistic clouds.esp
+realistic dragons.esp
+  IF CHECKSUM("realistic dragons.esp", 0D5A10E4) DIRTY: 13 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 renameddragonclaws.esp
   // TAG: {{BASH: Names}}
 REGEX: Realistic Wildlife Loot V.+\.esp
@@ -3617,6 +3620,7 @@ HealerRobes.esp
 hearthfires_blacksmithmaterials.esp
 heatershield.esp
 HeatWavev4.esp
+heavy holy.esp
 Heavy Stormcloak Officer Armor.esp
 Heavenly Legion Armor.esp
 HedgeKnight.esp
@@ -3696,6 +3700,8 @@ ENDGROUP: Items H
 
 BEGINGROUP: Items I
 
+Ironman5000 Weapon Overhaul.esp
+  SAY: Obsolete. Update to the latest renamed version, I5KWeaponOH.esp
 I5KWeaponOH.esp
   TAG: {{BASH: Delev, Relev}}
 ibr_sedethul.esp
@@ -4361,6 +4367,7 @@ RobedSteelPlateArmor.esp
 RogueArmor.esp
 RogueOutfit.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
+roh - no desease.esp
 Roman armor and weapons.esp
 Roman armor and weapons replacer.esp
 romulusarmor.esp
@@ -7096,6 +7103,7 @@ REGEX: GM-CookingRebalance.*\.esp
 GM-CookingEnhanced06b.esp
 GM-Smelting.esp
 GM-Tanning.esp
+Gradual Encumbrance from Carry Weight.esp
 Grass and Grass.esp
 greener aspenforest.esp
 GSRDivorce.esp
@@ -7259,6 +7267,8 @@ IncreasedCartCosts.esp
 InfiniteCharge.esp
 Intense Difficulty 2x to player.esp
   WARN: This file was released before the CK (07 Feb. 2012) and is not recommended for use and should be removed.
+Invisible Aetherial Crown.esp
+  IF CHECKSUM("Invisible Aetherial Crown.esp", 12F27709) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 InvisibleHelmets.esp
 REGEX: LeatherWeightFix\(.{3}\)v1\.2\.esp
 REGEX: IsharasItemSortingMod_Arrows_.+\.esp
@@ -7409,6 +7419,7 @@ Mannequin.esp
 MannequinReplacerImperial.esp
 SNPrettyMannequins.esp
 Marriage Expanded.esp
+Matching_Armor_Set_Fixed_-_No_Helmets_Required.esp
 REGEX: masser Size x\d\.\d\.esp
 masteredmagicka.esp
   IF REGEX("Mighty Magick .+\.esp") INC: Mighty Magic
@@ -7512,34 +7523,14 @@ NGEC.esp
 Nightingale Blade fix.esp
 Nightingale Maskless.esp
 nightingale_armor_tweak.esp
-no_essential_COs.esp
-REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg)\.esp
-  IF VAR(EN) SAY: Obsolete.  Update to latest renamed version, Thieves Guild Requirements.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Thieves Guild Requirements.esp
-NoAutoSkillBooks.esp
-  IF VAR(EN) WARN: Obsolete. Update to latest version.
-    IF VAR(RU) WARN: Устарело. Обновите до последней версии.
-    // Not sure about this
-NoAutoSkillBooks(Normal).esp
-NoAutoSkillBooks(Better).esp
-  IF VAR(EN) && IF FILE("NoAutoSkillBooks(Normal).esp") WARN: Use only one (Normal) or (Better) version
-    IF VAR(RU) && IF FILE("NoAutoSkillBooks(Normal).esp") WARN: Используйте только одну (Normal) или (Better) версию.
-No Axe or Pickaxe required.esp
-noBlurDOF.esp
-noblur.esp
-nocollegetour.esp
 No Annoying Skeleton Sound.esp
+No Axe or Pickaxe required.esp
 No Crime gold.esp
-No_dog_meat.esp
 No Fast Traveling.esp
 No Fast Travel.esp
-no_guard_warning_after_shouts.esp
 No Helmets Required.esp
-nohelmormask_1.7.esp
 No Lootless goats.esp
   TAG: {{BASH: Relev}}
-NoLeveledItemRewards.esp
-  TAG: {{BASH: Delev}}
 No More Arrows in the Knee.esp
 no more immortal childs.esp
 no nocturnal oath.esp
@@ -7554,30 +7545,51 @@ No Permanent Essentials Redux -- Dawnguard.esp
 No Perk Prereqs.esp
 No Perk Prereqs - No Helmets Required.esp
 No Perk Prereqs - Smithing Excluded.esp
+No Random Dragons.esp
+No Sun.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 dD-No Twitching Dragon Death Animation.esp
 No Vendor Yells.esp
-No Random Dragons.esp
-NoRandomDragons.esp
+No_dog_meat.esp
+no_essential_COs.esp
+no_guard_warning_after_shouts.esp
+REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg)\.esp
+  IF VAR(EN) SAY: Obsolete.  Update to latest renamed version, Thieves Guild Requirements.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Thieves Guild Requirements.esp
+NoAutoSkillBooks.esp
+  IF VAR(EN) WARN: Obsolete. Update to latest version.
+    IF VAR(RU) WARN: Устарело. Обновите до последней версии.
+    // Not sure about this
+NoAutoSkillBooks(Normal).esp
+NoAutoSkillBooks(Better).esp
+  IF VAR(EN) && IF FILE("NoAutoSkillBooks(Normal).esp") WARN: Use only one (Normal) or (Better) version
+    IF VAR(RU) && IF FILE("NoAutoSkillBooks(Normal).esp") WARN: Используйте только одну (Normal) или (Better) версию.
+noBlurDOF.esp
+noblur.esp
+nocollegetour.esp
 NoCombatMusic.esp
 NoDeepCaveAmbianceLoops.esp
 NoDragonborn.esp
-Matching_Armor_Set_Fixed_-_No_Helmets_Required.esp
 noflickpulse.esp
-REGEX: NoHelmet.*\.esp
-NoHealthRegen.esp
 noguardhelmets.esp
-non-leveled items.esp
+NoHealthRegen.esp
+REGEX: NoHelmet.*\.esp
+nohelmormask_1.7.esp
+NoLeveledItemRewards.esp
+  TAG: {{BASH: Delev}}
 NoMoreMinePests.esp
-Non-player Armor.esp
-NonEssentialChilds.esp
-NordResist-50stamina.esp
-NordResist-25%.esp
+NoRandomDragons.esp
 NoResetZone.esp
 nosalt.esp
 NoSpiders - BearSpiders.esp
 NoSpiders - MudcrabSpiders.esp
-NothingSellsForZero.esp
 NoTraining.esp
+non-leveled items.esp
+Non-player Armor.esp
+NonEssentialChilds.esp
+NordResist-50stamina.esp
+NordResist-25%.esp
+NothingSellsForZero.esp
 NPCShutUP.esp
 NPCsMoveatPlayerSpeed.esp
 NudeYngvildSpirits.esp
@@ -7714,6 +7726,7 @@ SB Bartering Mod.esp
 ScalingElementalRunes.esp
 ScarabFollowerTweaks.esp
 scaredchildren.esp
+serananozombie.esp
 Shadow Remover.esp
 SilentRuneSpells_v100.esp
 SilentRuneSpellsUncap_v100.esp
@@ -8026,6 +8039,8 @@ MISELF_Vendors.esp
 Veshi so Smislom from hiro.esp
 vinis_crime_gold.esp
 Vile Art of Necromancy.esp
+Visible Aetherial Crown.esp
+  SAY: Obsolete. Update to the latest renamed version, Invisible Aetherial Crown.esp
 VisibleSlaughterfish.esp
 VisibleEvilSlaughterfishComboPack.esp
 ENDGROUP: Overrides V
