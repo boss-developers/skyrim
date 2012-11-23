@@ -615,6 +615,7 @@ lightingfix.esp
   IF CHECKSUM("lightingfix.esp", B22ED6C8) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 lydia chair fix.esp
 MageRobesCommentFix.esp
+MagicFix.esp
 REGEX: Magnus\d{2,3}\.esp
 markedfordeathfix.esp
 MatchingSetCheat.esp
@@ -2503,6 +2504,7 @@ The Visitors.esp
 TheBigBookofAlchemy.esp
   TAG: {{BASH: Relev}}
 TheBookOfCLO.esp
+TheSkyforge.esp
 thieves guild visitors (fixed).esp
 Third Era Attributes for Skyrim.esp
 Tiny.esp
@@ -4399,6 +4401,8 @@ BEGINGROUP: Items S
 
 S&D outfit.esp
 S&D shadow walker.esp
+Saber Lily - Caliburn Outfit.esp
+  REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
 Saber.esp
 SabreCat_Gear.esp
 SabrecatGear_AncientArmor
@@ -7179,6 +7183,8 @@ Helms and Circlets.esp
 HelmsWithCirclets.esp
 hfsm.esp
 Hide all headgear - Heavy.esp
+Hide all headgear - Light.esp
+Hide all headgear - Masks.esp
 Hide_All_Helms_and_Hoods.esp
 HigherEnchantmentsNoChargeArtifacts.esp
   IF CHECKSUM("HigherEnchantmentsNoChargeArtifacts.esp", 890AED0C) DIRTY: 13 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -7308,6 +7314,11 @@ Isharas_MLLY_MALES_SKSE.esp
 Isharas_MLLY_RESET.esp
    IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") || IF FILE("Isharas_MLLY_MALES_SKSE.esp") && IF VAR(EN) WARN: Use only one Isharas_MLLY_* esp.
      IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") || IF FILE("Isharas_MLLY_MALES_SKSE.esp") && IF VAR(RU) WARN: Используйте только один Isharas_MLLY_* esp.
+Item Prices.esp
+Item Prices V2.esp
+  IF FILE("Item Prices.esp") SAY: Use only one Item Prices esp.
+Item Prices V3.esp
+  IF FILE("Item Prices.esp") || IF FILE("Item Prices V2.esp") SAY: Use only one Item Prices esp.
 ENDGROUP: Overrides I
 
 BEGINGROUP: Overrides J
@@ -7422,7 +7433,11 @@ ENDGROUP: Overrides L
 BEGINGROUP: Overrides M
 
 MageFriendlyDiademOfTheSavant.esp
+  WARN: This file was released before the CK (07 Feb. 2012) and is not recommended for use and should be removed.
 MageFriendlyDragonPriestMasks.esp
+  WARN: This file was released before the CK (07 Feb. 2012) and is not recommended for use and should be removed.
+MageFriendlyDragonPriestMasks_hidden.esp
+  WARN: This file was released before the CK (07 Feb. 2012) and is not recommended for use and should be removed.
 Magelightshadow.esp
 magicmoonsp.esp
 Magnify Spell Enchantments.esp
@@ -7954,11 +7969,9 @@ ENDGROUP: Overrides S
 BEGINGROUP: Overrides T
 
 T01DegaineLieAboutStatue.esp
-terrain bump.esp
-Thieves Guild Requirements.esp
-REGEX: Tougher Traps - \w{5,10}\.esp
+TableSalt.esp
 TCO - Travel Cost Overhaul.esp
-REGEX: TheWitcher2-Ultimate Replace Mod.+\.esp
+terrain bump.esp
 The Joy of Perspective.esp
 REGEX: The Skyrim conflict( Light| Medium| Hard)?( DE&O)?( Essential)?.*\.esp
   // TAG: {{BASH: Invent, Names}}
@@ -7968,11 +7981,15 @@ TheChoiceIsYours.esp
   IF CHECKSUM("TheChoiceIsYours.esp", 6CF96C54) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 TheOneMask.esp
 TheRiftenRangers.esp
+REGEX: TheWitcher2-Ultimate Replace Mod.+\.esp
+Thief Encounter Fix.esp
+Thieves Guild Requirements.esp
 torches for realistic lighting.esp
 REGEX: torches for RL \(.+\)\.esp
 torchradius.esp
 Tougher guards.esp
 Tougher Traps.esp
+REGEX: Tougher Traps - \w{5,10}\.esp
 Train over 9000!!!! times.esp
 TrainAndSprint.esp
 training dummies.esp
@@ -8618,6 +8635,8 @@ AlikrKematuSummon.esp
   IF VAR(EN) SAY: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
     IF VAR(EN) SAY: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("AlikrKematuSummon.esp", 6D6B36B6) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Als 360 Degree Fus Ro Dah.esp
+Als Thunder Smite.esp
 apocalypse.esp
 Apocalypse - The Spell Package.esp
   IF CHECKSUM("Apocalypse - The Spell Package.esp", C8244604) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -9077,6 +9096,15 @@ InfernoStormShout.esp
 LetItAllOut.esp
 REGEX: LFox Improved Shouts( Master( Changes Only)?)?\.esp
 MorePowerfulShouts.esp
+  IF CHECKSUM("MorePowerfulShouts.esp", F1EDB543) && IF VAR(Dawnguard) ERROR: Remove and use the Dawnguard version.
+  IF CHECKSUM("MorePowerfulShouts.esp", E845AEC7) && IFNOT VAR(Dawnguard) ERROR: Remove and use the non-Dawnguard version.
+  IF CHECKSUM("MorePowerfulShouts.esp", F1EDB543) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("MorePowerfulShouts.esp", E845AEC7) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+More Powerful Shouts (Traducción español).esp
+  IF FILE("MorePowerfulShouts.esp") INC: MorePowerfulShouts.esp
+MorePowerfulShouts_DragonTimes.esp
+MorePowerfulShoutsVanillaCooldown.esp
+  IF FILE("MorePowerfulShouts_DragonTimes.esp") INC: MorePowerfulShouts_DragonTimes.esp
 PeryitesBlessing.esp
 QuickShouts.esp
 RealDragonShoutingRecharge.esp
@@ -10057,6 +10085,8 @@ BEGINGROUP: Player Perks
 10 extra effect.esp
 12 extra effect.esp
   IF FILE("10 extra effect.esp") INC: 10 extra effect.esp
+Alteration and Restoration redux.esp
+  IF CHECKSUM("Alteration and Restoration redux.esp", 49730F28) DIRTY: 18 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Archery Perk Mods.esp
   IF CHECKSUM("Archery Perk Mods.esp", 47EBBE8F) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Archery Perk Mods.esp", 38DAF655) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -11368,6 +11398,7 @@ Vampire Serana.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, serana.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, serana.esp
 voidcraft_housecarls.esp
+wlightmajesty.esp
 Xannon.esp
 ENDGROUP: Companions
 
@@ -11513,6 +11544,8 @@ Henrys All Animals and Creatures BeFriend.esp
 Henrys All Animals and Creatures BeFriend German.esp
   IF CHECKSUM("Henrys All Animals and Creatures BeFriend German.esp", 7E773EE5) DIRTY: 21 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("Henrys All Animals BeFriend.esp") || IF FILE("Henrys All Animals BeFriend German.esp") || IF FILE("Henrys All Animals  and Creatures BeFriend.esp") INC: Henrys All * BeFriend mods
+khajiit_replacer.esp
+  IF CHECKSUM("khajiit_replacer.esp", F59E2E52) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Morozik75_Better_Races_Rus.esp
 Nicer-Looking Khajiit.esp
 RaceRevamp.esp
@@ -11757,7 +11790,7 @@ cartographers map markers - vf.esp
 Cartographers Map Markers_DE
   IF FILE("cartographers map markers.esp") INC: cartographers map markers.esp
   IF FILE("cartographers map markers - vf.esp") INC: cartographers map markers - vf.esp
-Secret Entrances Map Markers.esp
+City Secret Entrances Map Markers.esp
   IFNOT FILE("City Secret Entrances.esp") REQ: City Secret Entrances.esp
   IF CHECKSUM("City Secret Entrances Map Markers.esp", DFFFCFFD) DIRTY: 5 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Compelling Treasure Maps.esp
