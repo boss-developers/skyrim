@@ -440,6 +440,7 @@ SC_Drow Race.esm
 BBLuxurySuite.esm
 GluRuSArtifactEffectPerk.esm
 ZZZ_Stenvar_Replacer_THAIDEN.esm
+  SAY: Obsolete. Update to the latest renamed version, ZZZ_Stenvar_Replacer_THAIDEN.esp
 IsharasUniqueRaces.esm
   IF FILE("ethereal_elven_overhaul.esp") INC: Ethereal elven overhaul. See "http://forums.nexusmods.com/index.php?showtopic=817456&pid=6542372&st=0&#entry6542372 compatability instructions".
 Dual Wield for Followers.esm
@@ -929,6 +930,7 @@ Torvar.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Vex.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+Vilkas02.esp
 Vilkas.esp
 Vilkas v1.esp
 Vilkas v2.esp
@@ -5997,6 +5999,8 @@ Mistwatch.esp
   IF CHECKSUM("Mistwatch.esp", 0C96269C) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Mistwatch.esp", 21E66A86) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+Missing Houses.esp
+  IF CHECKSUM("Missing Houses.esp", 399B577C) DIRTY: 26 ITM, 12 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Moar Arrows.esp
   IF CHECKSUM("Moar Arrows.esp", 8D27C06A) || IF CHECKSUM("Moar Arrows.esp", 17179139) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Moar Arrows.esp", CF22AA26) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -7759,6 +7763,8 @@ Real 1st Person View alpha 04b.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Real 1st Person View.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Real 1st Person View.esp
 Real 1st Person View.esp
+Real Dibella priestress.esp
+  REQ: "http://skyrim.nexusmods.com/downloads/file.php?id=17699 DreamBurrows Sage Outfit Retexture Standalone"
 realcarriage.esp
 Realistic Animal Behaviour.esp
   IF CHECKSUM("Realistic Animal Behaviour.esp", BAAA3FD3) || IF CHECKSUM("Realistic Animal Behaviour.esp", 68D49ED7) || IF CHECKSUM("Realistic Animal Behaviour.esp", D4718D13) SAY: Obsolete. Update to the latest version.
@@ -9005,6 +9011,8 @@ togglevampiresight.esp
 Total Voidmagic.esp
   IF FILE("Medium Voidmagic.esp") INC: Medium Voidmagic.esp, use only one Voidmagic esp.
   IF FILE("Light Voidmagic.esp") INC: Light Voidmagic.esp, use only one Voidmagic esp.
+transmute_gem_spell.esp
+  IF CHECKSUM("transmute_gem_spell.esp", 95B1B63B) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 TwinSoulsExpandedLevels.esp
 Physic Magic 0.8v.esp
 poisondestruction.esp
@@ -9901,6 +9909,8 @@ SlowerLevelingSmithing.esp
 REGEX: SlowerSkills_v.+\.esp
 SmithingMasteryPerks.esp
   IF FILE("PerkUP-Smithing.esp") INC: PerkUP-Smithing.esp
+Target Training System - TTS.esp
+  IF CHECKSUM("Target Training System - TTS.esp", 59F6E5C8) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 The Fingersmith Mod + Perk Adjustments 1.2b.esp
 ToL Perk Tree.esp
 REGEX: training_costs_\d{1,2}_x\d_x\d\.esp
@@ -10631,6 +10641,14 @@ HothFollower.esp
 AIKhajiitCompanions.esp
 Ja´dirr + Kharjo Makeover.esp
 KCustomFollowers.esp
+IFNOT VAR(UFO) MOD: KTNUlfric.esp
+  IF CHECKSUM("KTNUlfric.esp", 8CF90F55) && IF VAR(UFO) ERROR: Use the UFO version of KTNUlfric.esp
+  IF CHECKSUM("KTNUlfric.esp", 35CB3586) && IFNOT VAR(UFO) ERROR: Use the non-UFO version of KTNUlfric.esp
+  IF CHECKSUM("KTNUlfric.esp", 8CF90F55) DIRTY: 18 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("KTNUlfric.esp", 35CB3586) DIRTY: 15 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+IFNOT VAR(UFO) MOD: CWBattleUlfric.esp
+IFNOT VAR(UFO) MOD: OriginalrecipeUlfric.esp
+  IF FILE("CWBattleUlfric.esp") INC: CWBattleUlfric.esp
 Lively Followers.esp
 Mabari.esp
   IF CHECKSUM("Mabari.esp", E3FA50FA) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -10720,6 +10738,14 @@ IF VAR(UFO) MOD: SupermodelDawnguard.esp
   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
 IF VAR(UFO) MOD: My home is your home.esp
   // Bethsoft thrd20#119
+IF VAR(UFO) MOD: KTNUlfric.esp
+  IF CHECKSUM("KTNUlfric.esp", 8CF90F55) && IF VAR(UFO) ERROR: Use UFO version of KTNUlfric.esp
+  IF CHECKSUM("KTNUlfric.esp", 35CB3586) && IFNOT VAR(UFO) ERROR: Use UFO version of KTNUlfric.esp
+  IF CHECKSUM("KTNUlfric.esp", 8CF90F55) DIRTY: 18 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("KTNUlfric.esp", 35CB3586) DIRTY: 15 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+IF VAR(UFO) MOD: CWBattleUlfric.esp
+IF VAR(UFO) MOD: OriginalrecipeUlfric.esp
+  IF FILE("CWBattleUlfric.esp") INC: CWBattleUlfric.esp
 ENDGROUP: Post UFO
 
 // dont't know where these sould go.  To be loaded after UFO when UFO is present
@@ -11076,6 +11102,7 @@ HousecarlWhiterun Sexy Lydia v0.5.esp
 iLoveLydia.esp
   IF VAR(EN) WARN: This mod will conflict with any female body altering mods.
     IF VAR(RU) WARN: Этот мод может конфликтовать с любыми реплейсерами женских тел.
+UniqueHouseCarls.esp
 UniqueLydia.esp
 UniqueLydiaArmor.esp
 UniqueLydiaSF.esp
@@ -11440,12 +11467,14 @@ MujuroStormbringer.esp
 MyOwnRubee.esp
 New Partners.esp
 nordguardfollower.esp
+OndolemarReplacer.esp
 PetSabrecatJango.esp
 Pets.esp
 Pixie Windcaller.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Sabretooth.esp
 Sabretoothmod_1_02.esp
+Selathir.esp
 Selene.esp
   WARN: This file contains unexpected (or out of order) records and should be removed.
 SGFChastity.esp
@@ -11473,12 +11502,15 @@ Tauriel Standalone XCE v1_2.esp
   IF FILE("Tauriel Standalone_v1_1.esp") INC: Tauriel Standalone_v1_1.esp
 LillyFaceMorph.esp
   IFNOT REGEX("Tauriel\s(Original\s)?(de\s)?Standalone.+\.esp") REQ: Tauriel*.esp
+Taleya.esp
+  IFNOT FILE("oblivion hair.esm") REQ: "http://skyrim.nexusmods.com/mods/18110 Hair packs of TES IV Oblivion".
+  IFNOT FILE("AdditionalNPCFollwerVoices.esp") REQ: "http://skyrim.nexusmods.com/mods/16266 Additional Vanilla NPC Follower Voice Types".  
 The Lady Of Akatosh.esp
 timek_Laluna.esp
 Tuath.esp
 TTS - Lydia.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
-  IFNOT FILE(" TheEyesOfBeauty.esp") REQ: "http://skyrim.nexusmods.com/mods/13722 The Eyes of Beauty".
+  IFNOT FILE("TheEyesOfBeauty.esp") REQ: "http://skyrim.nexusmods.com/mods/13722 The Eyes of Beauty".
 Ultimate Witcher Experience - Followers.esp
 Ultimate Witcher Experience - Follower Geralt.esp
 Ultimate Witcher Experience - Follower Iorveth.esp
@@ -11489,6 +11521,12 @@ Vampire Serana.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, serana.esp
 VampireCompanionBetav1.esp
 Vashira The blood flash.esp
+VizerinChronicles.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("FallOut3Hairs.esm") REQ: "http://skyrim.nexusmods.com/mods/17993 Hair packs of Fallout 3".  
+  IFNOT FILE("AdditionalNPCFollwerVoices.esp") REQ: "http://skyrim.nexusmods.com/mods/16266 Additional Vanilla NPC Follower Voice Types".  
+Viszerinfollower.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 voidcraft_housecarls.esp
 WealtheowValentine.esp
 wisplicker.esp
@@ -11517,6 +11555,8 @@ Female Orc Walk Only.esp
 Followers Stop Fighting Each Other 2.0.esp
 Seguidores DEJAR de pelear Entre Other.esp
   IF FILE("Followers Stop Fighting Each Other 2.0.esp") ERROR: Translation of Followers Stop Fighting Each Other 2.0.esp
+ZZZ_Stenvar_Replacer_THAIDEN.esp
+
 ENDGROUP: Companions Load Late
 ENDGROUP: Companions and NPCs
 
@@ -11822,6 +11862,8 @@ BEGINGROUP: Water and Lava
 
 better_water.esp
 ClearWater.esp
+Hot Volcanic Water.esp
+  IF CHECKSUM("Hot Volcanic Water.esp", CB9A32B4) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ImmersiveWater3.esp
 Purewaters.esp
 IF FILE("Purewaters.esp") MOD: realrainextended.esp
