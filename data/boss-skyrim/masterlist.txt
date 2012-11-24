@@ -398,6 +398,8 @@ EAIthilwhenE_1_1.esm
 EASamhair.esm
 ElisHotSprings.esm
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+Enchanting Scrolls.esm
+  IF CHECKSUM("Enchanting Scrolls.esm", 8C4258BC) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 GiantChild.esm
   IF CHECKSUM("GiantChild.esm", 479C279C) DIRTY: 0 ITM, 8 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Malise - A Companion By Joseph Anthony.esm
@@ -1330,6 +1332,17 @@ AllFemaleGuards.esp
 Alternate Clothing Names.esp
 Als Treasure Vault Only.esp
 ancalagon.esp
+ArmorRatingTweak.esp
+  IF CHECKSUM("ArmorRatingTweak.esp", BDA00C4B) WARN: This file contains unexpected (or out of order) records and should be removed.
+ArmorRatingTweak_1000AR.esp
+  IF CHECKSUM("ArmorRatingTweak_1000AR.esp", 61A3ED55) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("ArmorRatingTweak.esp") ERROR: Use only one ArmorTweak esp.
+ArmorRatingTweak80.esp
+  IF CHECKSUM("ArmorRatingTweak80.esp", F2DFB691) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF FILE("ArmorRatingTweak.esp") || IF FILE("ArmorRatingTweak_1000AR.esp") ERROR: Use only one ArmorTweak esp.
+ArmorRatingTweak80_1000AR.esp
+  IF CHECKSUM("ArmorRatingTweak80_1000AR.esp", FCAF2A2E) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("ArmorRatingTweak.esp") || IF FILE("ArmorRatingTweak_1000AR.esp") || IF FILE("ArmorRatingTweak80.esp") ERROR: Use only one ArmorTweak esp.
 ArmorSets.esp
   IF VERSION("SKSE", "0.1.5.6", <) REQ: "http://skse.silverlock.org SKSE" 1.5.6+
 ARTOFMAGIC.esp
@@ -2513,6 +2526,11 @@ ENDGROUP: Base S
 
 BEGINGROUP: Base T
 
+Tailoring.esp
+  IF CHECKSUM("Tailoring.esp", 9FABD6AD) DIRTY: 15 ITM, 32 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Tailoring No Perks.esp
+  IF FILE("Tailoring.esp") ERROR: Use Tailoring.esp or Tailoring No Perks.esp, not both.
+  IF CHECKSUM("Tailoring No Perks.esp", 49889E2D) DIRTY: 0 ITM, 32 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Tamriel Compendium - Skill Books.esp
   // Requires TAG: {{BASH: Relev}} ?
 REGEX: Tamriel Compendium( -)?( Skill Book Version)?\.esp
@@ -3521,6 +3539,13 @@ ElvenGilded.esp
 ElvenWeaponry.esp
 ElysiumArmor.esp
 EnchantedAccessories.esp
+Enchanting Scrolls.esp
+  IF FILE("Enchanting Scrolls.esm") ERROR: Use Enchanting Scrolls.esp or Enchanting Scrolls.esm, not both.
+  IF CHECKSUM("Enchanting Scrolls.esp", 95EDA249) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Enchanting Scrolls - Empty Soul Gems.esp
+  IF CHECKSUM("Enchanting Scrolls - Empty Soul Gems.esp", FC56D52D) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Enchanting Scrolls - More Scrolls.esp
+  IF CHECKSUM("Enchanting Scrolls - More Scrolls.esp", AE0295B4) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Energy Sword.esp
 EternalShineArmorAndWeapons.esp
 EtherealEdge.esp
@@ -3671,6 +3696,7 @@ ENDGROUP: Items G
 
 BEGINGROUP: Items H
 
+HanasSkeletonStaff.esp
 Hartherz1.2.esp
 HartherzEnglish.esp
 Hawke Armor.esp
@@ -3780,7 +3806,7 @@ Ice Armour.esp
 imp_guard_helm.esp
 imp_helm.esp
   IF CHECKSUM("imp_helm.esp", B5CC3F9D) DIRTY:  3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-REGEX: imp_helm_(night|imp)\.esp
+REGEX: imp_helm_(dae|dawn|dw|eb|imp|night|st)\.esp
 ImperialArmor.esp
 imperialdragonarmor.esp
 Imperial Dragon Armor.esp
@@ -5636,6 +5662,9 @@ collectors_chamber.esp
 College Of Winterhold Overhaul Release - V1.02.esp
 ColovianGunder.esp
 Commute.esp
+Convenient Horse Herding.esp
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+
+  IF VERSION("TES5", "0.1.8.151.0.7", <) REQ: Skyrim 1.8.151.0.7+
 Creed Hills Estate.esp
 Creeks.esp
   IF CHECKSUM("Creeks.esp", CEA19788) || IF CHECKSUM("Creeks.esp", B0022758) || IF CHECKSUM("Creeks.esp", 152E225F) || IF CHECKSUM("Creeks.esp", 27D75BC4) || IF CHECKSUM("Creeks.esp", FBB0A123) SAY: Obsolete. Update to the latest version.
@@ -5739,7 +5768,7 @@ Dwemer Armory.esp
 dwemer_egg.esp
 Dwemer_Skyship_v1.esp
   IF VERSION("SKSE", "0.1.5.2", <) REQ: "http://skse.silverlock.org SKSE" 1.5.2+
-  IF VERSION("TES5", "0.1.5.26", <) REQ: Skyrim 2.5.26+
+  IF VERSION("TES5", "0.1.5.26", <) REQ: Skyrim 1.5.26+
 dwemerstatuetest.esp
 DwemerTower.esp
 dwemer.esp
@@ -7436,6 +7465,7 @@ JMO-Dragons.esp
 joopraetorian.esp
 JulesDisenchantGodAmulets.esp
 REGEX: JumpHigher_?.+\.esp
+JumpingConsumesStamina.esp
 ENDGROUP: Overrides J
 
 BEGINGROUP: Overrides K
@@ -7695,6 +7725,7 @@ no_guard_warning_after_shouts.esp
 REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg)\.esp
   IF VAR(EN) SAY: Obsolete.  Update to latest renamed version, Thieves Guild Requirements.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Thieves Guild Requirements.esp
+NoAutoHealthRegen.esp
 NoAutoSkillBooks.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version.
     IF VAR(RU) WARN: Устарело. Обновите до последней версии.
@@ -7848,6 +7879,7 @@ ruins clutter improvement hd.esp
 RunesAlwaysStagger.esp
 /* Will - and ; cause an issue ? Should REGEX be used?  REGEX: runes-?\cloak-fix.esp */
 runes-;cloak-fix.esp
+RunningConsumesStamina.esp
 ENDGROUP: Overrides R
 
 BEGINGROUP: Overrides S
@@ -8414,6 +8446,8 @@ grass & ground fixes.esp
 Green Cities.esp
   IF CHECKSUM("Green Cities.esp", DA4C08CB) DIRTY: 2 ITM, 5 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Green Whiterun.esp
+icefloes.esp
+  IF CHECKSUM("icefloes.esp", BCCE527D) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MoreForestsNV.esp
   IF CHECKSUM("MoreForestsNV.esp", 564D264F) DIRTY: 313 ITM, 175 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Oblivion Gates.esp
