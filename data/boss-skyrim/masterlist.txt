@@ -597,6 +597,8 @@ GuardShieldLight.esp
 TEGHarbringerFixes.esp
 HeadsmansAxeFixed.esp
 HelmetStackFix.esp
+hjerim chest fix.esp
+  IF CHECKSUM("hjerim chest fix.esp", 560F7C1C) DIRTY: 0 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Hjerimfix.esp
   IF CHECKSUM("Hjerimfix.esp", 9B9B0581) DIRTY: 0 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HjerimMessFix.esp
@@ -1619,6 +1621,9 @@ IFNOT CHECKSUM("Crafting300.esp", FFCC056A) && IFNOT CHECKSUM("Crafting300.esp",
   TAG: {{BASH: Delev, Relev}}
 craftingplusv2.esp
 CraftingMaterialsRecipes.esp
+RecettesMaterielFabrication.esp
+  // French CraftingMaterialsRecipes.esp
+  IF FILE("CraftingMaterialsRecipes.esp") ERROR: Use CraftingMaterialsRecipes.esp or RecettesMaterielFabrication.esp, not both.
 CraftingRecipesRevisited.esp
 Crafting Soul Gems.esp
 craftplusweaponssteam.esp
@@ -1894,6 +1899,8 @@ HM Marry All.esp
   IF CHECKSUM("HM Marry All.esp", 139C1E4C) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("HM Marry All.esp", DB88B8BE) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HM MicroCraft.esp
+HM Nirnroot Regrows.esp
+  IF CHECKSUM("HM Nirnroot Regrows.esp", D484CD35) DIRTY: 0 ITM, 205 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HorseFlute.esp
 HorseMarker.esp
 HotkeyMod.esp
@@ -1908,8 +1915,8 @@ ENDGROUP: Base H
 
 BEGINGROUP: Base I
 
-I5K Skull Hunt.esp
 I_Said_Follow_Dammit_Not_Party.esp
+I5K Skull Hunt.esp
 Icy.esp
 Improved Container Names.esp
   // TAG: {{BASH: Names}}
@@ -2132,6 +2139,8 @@ MAD Ingots & Leather.esp
    IF FILE("MAD Ingots & Leather Ars Metallica Compatible.esp") && IF VAR(EN) SAY: Use only one MAD Ingots & Leather.esp (Regular or Ars Metallica compatible)
      IF FILE("MAD Ingots & Leather Ars Metallica Compatible.esp") && IF VAR(RU) SAY: Используйте только один MAD Ingots & Leather.esp (Regular or Ars Metallica compatible)
 MAD Ingots & Leather Ars Metallica Compatible.esp
+MaladiesDeBordeciel.esp
+  IF CHECKSUM("MaladiesDeBordeciel.esp", E54712F2) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Malkavs Collection.esp
 malukahmainmenu.esp
 mammoth hide.esp
@@ -2212,6 +2221,9 @@ Nord Needs + Cooking Expanded patch.esp
   IFNOT FILE("CookingExpanded.esp") REQ: "http://skyrim.nexusmods.com/mods/1409 Cooking Expanded"
   IFNOT FILE("NordNeeds.esp") REQ: "http://skyrim.nexusmods.com/mods/21384 NordNeeds"
 NoSaltRecipes.esp
+RecettesSansSel.esp
+  // French NoSaltRecipes.esp
+  IF FILE("RecettesSansSel.esp") ERROR: Use NoSaltRecipes.esp or RecettesSansSel.esp, not both.
 NPC Bartering.esp
 NPCPerked.esp
   SAY: Run BOSS before generating the Perked Patch.esp.  Otherwise, the patch generated will have it's masters out of order.
@@ -2683,6 +2695,7 @@ Wolfs_Advanced_Recipes.esp
 Wolfs_Advanced_Recipes_Rus.esp
   IF FILE("Wolfs_Advanced_Recipes.esp") INC: Wolfs_Advanced_Recipes.esp
 REGEX: WolfsRecettes.+\.esp
+  IF REGEX("Wolfs_.+\.esp") ERROR: Use Wolfs_*_Recipes esps or WolfsRecettes* esps, not both.
 Woodcutter's Wife.esp
 WorkingBoats.esp
 WRenchant_rotated.esp
@@ -3619,6 +3632,9 @@ Forsworn Legwraps.esp
 Forsworn-Sabrecat.esp
 REGEX: fox\d\d? Armor\.esp
 Fox Cafe_X.esp
+frost armour.esp
+  IF VAR(EN) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://skyrim.nexusmods.com/mods/20868".
+    IF VAR(RU) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
 Frostmourne.esp
 Frostmourne 1.0.1.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version > Frostmourne v.1.3 unenchanted version.esp
@@ -3764,6 +3780,7 @@ HexanShield.esp
 HighelfL17.esp
 Highlander Katana.esp
 highric Armor.esp
+HM Soul Gem Shifter.esp
 holy armor.esp
 HonestAbe.esp
 IFNOT VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
@@ -3808,9 +3825,6 @@ Ironman5000 Weapon Overhaul.esp
 I5KWeaponOH.esp
   TAG: {{BASH: Delev, Relev}}
 ibr_sedethul.esp
-frost armour.esp
-  IF VAR(EN) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://skyrim.nexusmods.com/mods/20868".
-    IF VAR(RU) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
 Ice Armour.esp
   IF VAR(EN) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://skyrim.nexusmods.com/mods/20868".
     IF VAR(RU) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
@@ -3852,6 +3866,7 @@ SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
     IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
+insdevkikyosbow.esp
 InquisitorGear.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 InvisRing.esp
@@ -4290,6 +4305,8 @@ Novamonk.Butler Uniform.esp
 NPCRedDress.esp
 NRzJournal.esp
 nuadablade.esp
+numenume elf ear.esp
+  IF CHECKSUM("numenume elf ear.esp", 2112184A) WARN: This file contains unexpected (or out of order) records and should be removed.
 ENDGROUP: Items N
 
 BEGINGROUP: Items O
@@ -4754,6 +4771,11 @@ ThalmorStandalone.esp
 Thane's Blade.esp
 THBoneHawkRingCraftable.esp
 THCraftableVampireArmory.esp
+throwingweapons.esp
+throwing_weapons_leveledlists_plugin.esp
+Throwing_Weapons_Misc_Plugin.esp
+Throwing_Weapons_PerkTree_Plugin.esp
+throwing_weapons_quiver_plugin.esp
 THVampireRoyalArmorUnenchanted_BoneHawkRingCraftable.esp
   IF FILE("THBoneHawkRingCraftable.esp") INC: THBoneHawkRingCraftable.esp
 The Bow of the Drow.esp
@@ -5750,6 +5772,9 @@ REGEX: Descentintomadness.*\.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 DetailedCities.esp
 REGEX: Deus Mons(_WithNPCs)?\.esp
+df127merchantspack01.esp
+  IF CHECKSUM("df127merchantspack01.esp", 5D83EBDB) DIRTY: 186 ITM, 81 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("df127merchantspack01.esp", 5D83EBDB) WARN: This file contains 6 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
 Dice Game in Taverns.esp
 DisintegratingAxe.esp
   IF CHECKSUM("DisintegratingAxe.esp", 70970745) SAY: Obsolete. Update to the latest version.
@@ -7381,6 +7406,7 @@ Housecarls V3 D for Deluxe.esp
 HT_traveltax.esp
 hunter's discipline - 100%.esp
 Hypothermia.esp
+ThanasHypothermia.esp
 FixFollowerBow.esp
 FixFollowerBow_12Arrows.esp
 FollowerDaedricBow12.esp
@@ -7507,6 +7533,7 @@ ENDGROUP: Overrides J
 
 BEGINGROUP: Overrides K
 
+Kill Every NPC.esp
 Killable Camp Commanders.esp
 REGEX: killable.children(.V?\d.\d{1,2})?\.esp
 killable_children_qp_aventus.esp
@@ -7840,6 +7867,7 @@ Usable lantern.esp
 Child Armor.esp
 pf_lightfootcompanions.esp
   IFNOT FILE("playing_children.esp") REQ: playing_children.esp
+playerhousechests.esp
 potions_0_1.esp
 poisons_0_1.esp
 posion.esp
@@ -9132,6 +9160,8 @@ QueenPotemaSummon.esp
 SummonableCreatures.esp
   IF CHECKSUM("SummonableCreatures.esp", 442DF73F) || IF CHECKSUM("SummonableCreatures.esp", 86FBDC8B) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("SummonableCreatures.esp", 5E074043) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+SummonArvakVoiceSpell.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 TH_Storage_All.esp
 togglevampiresight.esp
 Total Voidmagic.esp
@@ -11686,9 +11716,6 @@ Khaliza of Gilane.esp
 LylvieveSisters.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 NoNakedComments.esp
-throwingweapons.esp
-throwing_weapons_leveledlists_plugin.esp
-  TAG: {{BASH: Relev}}
 ulushenie naparnikov.esp
 Victoria.esp
 Female Follower Fix.esp
@@ -11927,6 +11954,7 @@ REGEX: SkyRim \d+ DeadBody Remover\.esp
 REGEX: SkyRim \d Day DeadBody Timer\.esp
 REGEX: SkyRim \d Day Respawn\.esp
 REGEX: skyrimespawn\d{0,1}\.esp
+Skyrim 120 Day Respawn.esp
 REGEX: Skyrim \d{1,2} Day Vendor Respawn\.esp
 NO_RESPAWN.esp
 SlowRespawn_NoClearedCellRespawn.esp
