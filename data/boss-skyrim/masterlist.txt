@@ -143,6 +143,9 @@ Unofficial Skyrim Patch.esm
   IF VAR(EN) ERROR: This esm file WILL damage your game. We strongly advise that you use the official version of "http://skyrim.nexusmods.com/mods/19 Unofficial Skyrim Patch".
     IF VAR(RU) ERROR: Этот esm-файл может повредить вашу игру. Настоятельно рекомендуется использовать "http://skyrim.nexusmods.com/mods/19 официальную версию патча".
 Correctif - Skyrim.esm
+REGEX: (83Willows_)?101BUGs.+\.esm
+  TAG: {{BASH: Delev, Relev}}
+ // http://skyrim.nexusmods.com/mods/20166/  Changing esp to esm.
 PerkReset.esm
 3rdEraWeaponsMoS.esm
 AIKhajiitCompanions.esm
@@ -438,6 +441,7 @@ Sanctum of the Fallen.esm
 SotF BETA v1-2.esm
 SC_Drow Race.esm
 BBLuxurySuite.esm
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 GluRuSArtifactEffectPerk.esm
 ZZZ_Stenvar_Replacer_THAIDEN.esm
   SAY: Obsolete. Update to the latest renamed version, ZZZ_Stenvar_Replacer_THAIDEN.esp
@@ -852,6 +856,7 @@ Faralda.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("Faralda.esp", F5F6A469) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Farkas.esp
+  IF CHECKSUM("Farkas.esp", 817EF15F) WARN: This file contains unexpected (or out of order) records and should be removed.
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Farkas v1.esp
 Farkas v2.esp
@@ -932,6 +937,7 @@ Vex.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Vilkas02.esp
 Vilkas.esp
+  IF CHECKSUM("Vilkas.esp", BF4211DE) WARN: This file contains unexpected (or out of order) records and should be removed.
 Vilkas v1.esp
 Vilkas v2.esp
 Vilkas v3.esp
@@ -1288,6 +1294,7 @@ _pocketcampsite.esp
 5GiantToes.esp
 REGEX: (83Willows_)?101BUGs.+\.esp
   TAG: {{BASH: Delev, Relev}}
+  IF REGEX("(83Willows_)?101BUGs.+\.esm") ERROR: Remove this mod when esm is being used.
 ENDGROUP: Base #
 
 BEGINGROUP: Base A
@@ -1429,6 +1436,7 @@ REGEX: BellyachesNewDragonSpecies_?(Tougher)?(Factionless)?(Dragons)?\.esp
   IF CHECKSUM("BellyachesNewDragonSpecies.esp", 685E2580) DIRTY: 117 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   // Hand placed dragons, possibly need moved.  (Load before Deadly Dragons)
 Bible.esp
+biggermammoths.esp
 Birds.esp
   IF VAR(Hearthfire) INC: Heartfires DLC.  Remove this and install BirdsHF.esp
   IF CHECKSUM("Birds.esp", 200672C3) DIRTY: 376 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -2630,6 +2638,7 @@ werewolfloadscreenreduction.esp
 werewolvesofskyrim.esp
 WerewolvesSpawn.esp
 Whistle.esp
+whitephial.esp
 REGEX: Wilderness War Parties Standalone.*\.esp
 wildhorses.esp
 Winterlude's Arrowsmithing Mod.esp
@@ -2671,6 +2680,17 @@ xylozi_tougher_traps.esp
 yngolbarrowbuttonfix.esp
 ZazResources.esp
 ZutatenAblegen.esp
+Zira's Skyrim Horse Base - Armored.esp
+  IF CHECKSUM("Zira's Skyrim Horse Base - Armored.esp", 421DF75A) DIRTY: 3 ITM, 47 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Zira's Skyrim Horse Base - Bareback Riding.esp
+  IF FILE("Zira's Skyrim Horse Base - Armored.esp") ERROR: Use only one Zira's Skyrim Horse Base esp.
+  IF CHECKSUM("Zira's Skyrim Horse Base - Bareback Riding.esp", A2DD658D) DIRTY: 3 ITM, 47 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Zira's Skyrim Horse Base - No Tack.esp
+  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") ERROR: Use only one Zira's Skyrim Horse Base esp.
+  IF CHECKSUM("Zira's Skyrim Horse Base - No Tack.esp", F93CD5D0) DIRTY: 3 ITM, 47 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Zira's Skyrim Horse Base.esp
+  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") ERROR: Use only one Zira's Skyrim Horse Base esp.
+  IF CHECKSUM("Zira's Skyrim Horse Base.esp", 86D08FB5) DIRTY: 3 ITM, 47 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: Base XYZ
 
 BEGINGROUP: Base Late
@@ -2987,6 +3007,7 @@ BBP_ArmorPack2.esp
 BBP_Apple.esp
 BBP_Dragon_Princess.esP
 BBLSspouse.esp
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 Befouler.esp
 BelethorGoods.esp
 BellHammer.esp
@@ -3081,6 +3102,7 @@ Brand-Shei's Strongbox.esp
 BretonLongbow.esp
 Bromsweapons.esp
 brutal armor.esp
+Buchanan Stormcloak Hood.esp
 Buckler DV.esp
 Bucklers.esp
 Bucklers - Complete.esp
@@ -3622,6 +3644,7 @@ Gods smithing gift.esp
 Golden_Age_Arc_Sword.esp
 goldbrand.esp
 GoldRapier01.esp
+GoldSteelDagger.esp
 GoldTeraH17.esp
 GondorianArmour.esp
 GondorianRangerArmor.esp
@@ -4209,6 +4232,7 @@ Nocturnal's Accoutrements.esp
 nomo1.esp
 Non-playable Armor.esp
 Non-playable Weapons + Ammo.esp
+NoobEx Star Guide.esp
 nordhero.esp
   TAG: {{BASH: Delev}}
 Nordic Conqueror Armor.esp
@@ -4433,6 +4457,7 @@ Royal Daywalker Armor.esp
 royal_daedric.esp
 RoyalArmorOfAragorn.esp
 RoyalElven.esp
+RRMasterSmithingRecipes.esp
 RRTheSword.esp
 ENDGROUP: Items R
 
@@ -4515,8 +4540,10 @@ siegebreaker.esp
 Silencer's Vestments - Cloth.esp
 Silencer's Vestments - Heavy Armor.esp
 Silencer's Vestments - Light Armor.esp
+Silencer's Vestments.esp
+  SAY: Obsolete. Update to the latest renamed version, 1 - Cloth (Heavy Armor, Light Armor, Replacer)
 silencers vestments.esp
-  SAY: Obsolete. Update to the latest renamed version, Silencer's Vestments - Cloth (Heavy Armor, Light Armor, Replacer)
+  SAY: Obsolete. Update to the latest renamed version, 1 - Cloth (Heavy Armor, Light Armor, Replacer)
 SilverArmor.esp
 SilverDragonArmor.esp
 Silverlight Armor.esp
@@ -4540,6 +4567,7 @@ SnakeBattleaxe.esp
 SnowLeopardForsworn.esp
 SnowyNightingale.esp
 So Hot.esp
+SoBL.esp
 Solitude Furniture.esp
 Song General Armor&weapon.esp
   IF FILE("SkyRe Chinese General Set.esp") TAG: {{BASH: Deactivate}}
@@ -5448,10 +5476,16 @@ BaradMithost.esp
 Barrogshideout.esp
 basement.esp
 BBLuxurySuiteExt.esp
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
+BBLSsecretArmourRoom.esp
+  IFNOT FILE("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
+  IF CHECKSUM("BBLSsecretArmourRoom.esp", BBF453F1) DIRTY: 2 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BBLSMotseerOutfits.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 BBLSmusic.esp
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 BBLSapachii.esp
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 Beautiful Riften.esp
 Beautiful Whiterun.esp
 becomeabard.esp
@@ -5906,6 +5940,8 @@ JobsofSkyrim.esp
   IF CHECKSUM("JobsofSkyrim.esp", 8C1C50BA) DIRTY: 71 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Jornheim.esp
   IF CHECKSUM("Jornheim.esp", 65C2481F) DIRTY: 15 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Jorrvaskr Hall.esp
+  IF CHECKSUM("Jorrvaskr Hall.esp", 00BB7FFD) DIRTY: 0 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Jorrvaskr Lofthome.esp
 jrfarm13.esp
 ENDGROUP: Quests J
@@ -6174,6 +6210,8 @@ RiverwoodImprovement.esp
 riverwood creek.esp
 RiverWood Dungeons.esp
   IF CHECKSUM("RiverWood Dungeons.esp", 2983C01D) DIRTY: 20 ITM, 71 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Riverwood Gates Fix.esp
+  IF CHECKSUM("Riverwood Gates Fix.esp", 363E0208) DIRTY: 1 ITM, 5 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Riverwood Lakehouse 1_6.esp
 Riverwood R9.esp
 RiverWood Redux.esp
@@ -6836,6 +6874,9 @@ BetterEnhancedCrossbows.esp
 betterfactionscomplete.esp
   IF CHECKSUM("betterfactionscomplete.esp", 382ADAE8) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BetterFurnitureClutter.esp
+BetterGhostbladeV1.esp
+BetterGhostbladeV1glass.esp
+  IF FILE("BetterGhostbladeV1.esp") ERROR: Use only one BetterGhostbladeV1 esp.
 BetterItemSorting.esp
 IF REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 REGEX: (Headbomb's )?Better Sorting.*\.esp
@@ -8163,6 +8204,8 @@ walk.esp
 IFNOT REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
 wealthymerchants.esp
 Weapon Specialization - Generalized.esp
+WeaponSmith.esp
+  IF CHECKSUM("WeaponSmith.esp", F7850589) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 WerewolfDeathItem.esp
 Werewolves Plague in Skyrim.esp
 whiterun guard.esp
@@ -8897,6 +8940,8 @@ Kamehameha Attack.esp
 kdansky_cheapwards.esp
 kdansky_freewards.esp
 kdansky_indefinitebuffs.esp
+KodlakWhitemane.esp
+  IF CHECKSUM("KodlakWhitemane.esp", C68252A0) WARN: This file contains unexpected (or out of order) records and should be removed.
 Krisan's Spells.esp
 Leveled Concentrated Restoration Spells.esp
 LFDivineTarget.esp
@@ -9847,6 +9892,8 @@ levelingperkslite.esp
 REGEX: MageArmor(Easy)?\.esp
 magicscaling.esp
 MagicSneakCrit.esp
+MartialArtist.esp
+  IF CHECKSUM("MartialArtist.esp", A137E4F5) DIRTY: 15 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MBAxe.esp
 MBBow.esp
 MBDaggerAlone.esp
@@ -11229,6 +11276,7 @@ Iona-Dovas_Angels-TCG.esp
 ESFAela.esp
 Aelafacelift.esp
 AelaTheHuntress.esp
+  IF CHECKSUM("AelaTheHuntress.esp", 826D7A86) WARN: This file contains unexpected (or out of order) records and should be removed.
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 AelaTheHuntressFacelift.esp
 AraneaIenithFacelift.esp
@@ -11264,6 +11312,8 @@ Shady.esp
 /* They change clothes when they exit a player home */
 SHARPE Housecarls.esp
 saadia.esp
+Skjor.esp
+  IF CHECKSUM("Skjor.esp", C892B655) WARN: This file contains unexpected (or out of order) records and should be removed.
 Skjor II.esp
   IFNOT FILE("AdditionalNPCFollwerVoices.esp") REQ: "http://skyrim.nexusmods.com/mods/16266 Additional Vanilla Follower Voice Types"
 SMSkyrim.esp
@@ -11444,8 +11494,11 @@ ENDGROUP: Unlimited Companions
 
 
 BBLSHousecarlsmovein.esp
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 BBLSVisitors.esp
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 BBLuxurySuiteClassier.esp
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 CerwidenCompanion.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 CerwidenAppearancePatch.esp
