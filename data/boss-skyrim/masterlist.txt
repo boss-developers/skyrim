@@ -251,6 +251,8 @@ ANK_Castle_Main.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии
 Aurora.esm
+BertsBreezeCellar.v.1.0(esm).esm
+  SAY: Obsolete. Not included in latest version.
 BertsBreezehomeGarden.esm
 BertsBreezehomeRemodel.V.1.0(esm).esm
 BertsBreezehomeRemodel.V.1.0(esm2).esm
@@ -1368,17 +1370,16 @@ Alternate Clothing Names.esp
 Als Treasure Vault Only.esp
 ancalagon.esp
 ArmorRatingTweak.esp
-  IF CHECKSUM("ArmorRatingTweak.esp", BDA00C4B) WARN: This file contains unexpected (or out of order) records and should be removed.
+  SAY: Obsolete. Update to the lastest version.
 ArmorRatingTweak_1000AR.esp
-  IF CHECKSUM("ArmorRatingTweak_1000AR.esp", 61A3ED55) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF FILE("ArmorRatingTweak.esp") ERROR: Use only one ArmorTweak esp.
+  SAY: Obsolete. Update to the lastest version.
 ArmorRatingTweak80.esp
-  IF CHECKSUM("ArmorRatingTweak80.esp", F2DFB691) WARN: This file contains unexpected (or out of order) records and should be removed.
-  IF FILE("ArmorRatingTweak.esp") || IF FILE("ArmorRatingTweak_1000AR.esp") ERROR: Use only one ArmorTweak esp.
+  SAY: Obsolete. Update to the lastest version.
 ArmorRatingTweak80_1000AR.esp
-  IF CHECKSUM("ArmorRatingTweak80_1000AR.esp", FCAF2A2E) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF FILE("ArmorRatingTweak.esp") || IF FILE("ArmorRatingTweak_1000AR.esp") || IF FILE("ArmorRatingTweak80.esp") ERROR: Use only one ArmorTweak esp.
-ArmorSets.esp
+  SAY: Obsolete. Update to the lastest version.
+REGEX: ArmorRatingTweak_(\d{8}|U)?.+\.esp
+  SAY: Use only one ArmorRatingTweak esp.
+  ArmorSets.esp
   IF VERSION("SKSE", "0.1.5.6", <) REQ: "http://skse.silverlock.org SKSE" 1.5.6+
 ARTOFMAGIC.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -1766,6 +1767,7 @@ Dwemer Spectres.esp
 dualcastingcostfixed.esp
 dwarven_scrap_renamed.esp
 DungeonQuestAwareness.esp
+DynamicSpells.esp
 DynamicTorches.esp
 ENDGROUP: Base D
 
@@ -2224,6 +2226,11 @@ more carriages.esp
 More Interactive Items.esp
 more locked containers.esp
 more npcs in the wild.esp
+more plants.esp
+  IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
+more plants dawnguard.esp
+  IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 More Prey animals.esp
 moredragonloot.esp
 MoreFood.esp
@@ -5645,6 +5652,8 @@ Beautiful Whiterun.esp
 becomeabard.esp
 BecomeKingOfRiverHelm.esp
 beforsworn.esp
+BertsBreezeCellar(esp.V.1.0).esp
+  SAY: Obsolete. Update to the latest version.
 BertsBreezeRemodel.V.1.1.esp
 BertsBreezehomeGreenhouse.V.1.0.esp
 BertsBreezehomeGarden(Cheat).esp
@@ -7020,6 +7029,9 @@ REGEX: ArmorCap90.*\.esp
     IF VAR(RU) SAY: Используйте только один ArmorCap esp
 ArmoredThalmorRobes.esp
 REGEX: ArrowInTheEverywhere.*\.esp
+Arvak, Shadowmere's Body - DB Saddle.esp
+Arvak, Shadowmere's Body - No Saddle.esp
+  IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") ERROR: Use only one Arvak esp.
 ENDGROUP: Overrides A
 
 BEGINGROUP: Overrides B
