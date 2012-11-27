@@ -7405,16 +7405,16 @@ Fast Respawns And Rich Merchants.esp
   TAG: {{BASH: Relev}}
 /* Might be different from the mod below it. This is latest version */
 faster arrows.esp
-REGEX: FasterArrows(\d{1,3})?\.esp
 REGEX: Faster Arrows Improved (\d{1,3})?\.esp
-REGEX: FasterArrows\d*\.esp
-REGEX: fasterdragonbonearrows.+\.esp
-  IF VAR(EN) SAY: Use only one fasterdragonbonearrows*.esp
-    IF VAR(RU) SAY: Используйте только один fasterdragonbonearrows*.esp
 faster vanilla horses.esp
 Faster Wild Animals.esp
 Faster Woodland Creatures v1.2.esp
+REGEX: FasterArrows(\d{1,3})?\.esp
+REGEX: FasterArrows\d*\.esp
 FasterDeer.esp
+REGEX: fasterdragonbonearrows.+\.esp
+  IF VAR(EN) SAY: Use only one fasterdragonbonearrows*.esp
+    IF VAR(RU) SAY: Используйте только один fasterdragonbonearrows*.esp
 REGEX: FasterHorses_Sprint_x.+\.esp
 FasterNordHeroWeps.esp
   IF CHECKSUM("FasterNordHeroWeps.esp", 4F2396EA) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -8984,12 +8984,21 @@ VampireInverterDG.esp
 VampireUpgrade.esp
 REGEX: Vampirism Inverter( B)?\.esp
 Werepyre.esp
+Werewolf Enhancer.esp
+REGEX: Werewolf Enhancer -.+\.esp
+IFNOT CHECKSUM("Werewolf Loot.esp", D83BDA8C) MOD: Werewolf Loot.esp
+  IFNOT FILE("WerewolfUpgrade.esp") REQ: WerewolfUpgrade.esp
+  // two different mods with same name
+Werewolf Loot - Edible Animals.esp
 Werewolf_MF_models_a.esp
+WerewolfMastery.esp
+  IF VAR(Dawnguard) && IF CHECKSUM("WerewolfMastery.esp", 57E4BC0F) ERROR: Use Dawnguard version.
+  IF CHECKSUM("WerewolfMastery.esp", 57E4BC0F) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT VAR(Dawnguard) && IF CHECKSUM("WerewolfMastery.esp", 73AC0648) ERROR: Use non-Dawnguard version.
+  IF CHECKSUM("WerewolfMastery.esp", 73AC0648) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 WerewolfNigtheyeHowl.esp
   IF VAR(EN) SAY: Use only one WerewolfNighteyeHowl.esp
     IF VAR(RU) SAY: Используйте только один WerewolfNighteyeHowl.esp
-Werewolf Enhancer.esp
-REGEX: Werewolf Enhancer -.+\.esp
 WerewolfSecondHowlToggle.esp
 WerewolfTweaksTransformToughRegen.esp
 WerewolfTweaksMoreDamageCurved.esp
@@ -8997,10 +9006,6 @@ WerewolfTweaksFeedRegen.esp
 WerewolfTweaksFear.esp
 WerewolfTweaks350Health_300AR_30MR.esp
 WerewolfUpgrade.esp
-IFNOT CHECKSUM("Werewolf Loot.esp", D83BDA8C) MOD: Werewolf Loot.esp
-  IFNOT FILE("WerewolfUpgrade.esp") REQ: WerewolfUpgrade.esp
-  // two different mods with same name
-Werewolf Loot - Edible Animals.esp
 Werewolves.esp
 WiS IV - Werewolf & Vampire.esp
 YetAnotherWerewolfImprovement.esp
