@@ -731,6 +731,7 @@ Vulkanglas statt Malachit.esp
 Wandering Dupe Mannequin Fix v1.2 SPODUM Vanilla.esp
 Whiterun Field Fix.esp
 Whiterun Lighting Fix.esp
+  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Included in Unofficial Skyrim Patch.esp
 Whiterun Market Fixes.esp
 Whiterun_no_standing.esp
 Whiterun-GildergreenTree-FullyGrownable.esp
@@ -738,6 +739,7 @@ whitrun stair fix.esp
 Winterhold Shields.esp
   IF VAR(EN) WARN: File is corrupt and should not be used.
     IF VAR(RU) WARN: Файл испорчен и не должен использоваться.
+  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Included in Unofficial Skyrim Patch.esp
 wolfqueenfix.esp
 VampiresHoodFix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Included in Unofficial Skyrim Patch.esp
@@ -749,6 +751,7 @@ SkyrimFixes.esp
     IF VAR(RU) && IF VAR(USKP) SAY: Некоторые исправления уже включены в Unofficial Skyrim Patch.esp. Подробности смотрите на "http://skyrim.nexusmods.com/mods/24807 странице мода".
 Unofficial Skyrim Patch.esp
   TAG: {{BASH: Delev, Relev}}
+  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
   IF VAR(EN) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Recommend to use the "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch" in addition to Dawnguard. This is need for correct work with Dawnguard.
     IF VAR(RU) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Рекомендуется использовать "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch", в дополнение к Dawnguard. Это необходимо для корректной работы с Dawnguard. Русская версия "http://u.to/D5ZaAg здесь".
 USKP_addon.esp
@@ -761,18 +764,22 @@ ENDGROUP: Vanilla fixes
 BEGINGROUP: DLC Fixes
 
 BreezhomeAlchemyLabFix.esp
+  IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 DawnguardDrainVitalityFix.esp
+  IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 invisible_shield_fix.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 USKP Dawnguard vampire face & eye fix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
     IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
 Dawnguard Breezehome Fix.esp
-  IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") SAY: Obsolete. This has been fixed by the Unofficial Dawnguard Patch.
+  IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
     IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
 Unofficial Dawnguard Patch.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
 VLCollisionFix.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 HighResTexturePackFix.esp
@@ -800,6 +807,7 @@ Skyrim - Director's Cut - HD Pack Fix.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
 Unofficial Hearthfire Patch.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
+  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
 EveryVampireEyesGrow.esp
   // Only work when loaded after U*Ps
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
