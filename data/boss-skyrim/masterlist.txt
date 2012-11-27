@@ -162,6 +162,9 @@ AMOvanilla.esm
 AmethystHollowsMaster.esm
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 BSTamriel.esm
+CastleDrakhur_masterfle.esm
+  IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) DIRTY: 23 ITM, 7 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) WARN: This file contains 6 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
 Lycanthropy_Music.esm
 REGEX: PersonalizedMusic.*\.esm
 NoTint.esm
@@ -541,6 +544,12 @@ Brawl Bugs CE.esp
     IF VAR(RU) && IF VAR(SkyReM) ERROR: Удалите. Уже включено в SkyRe_main.esp вер.0.99.18
 breezehomelightfix.esp
 BreezehomeLadderFix.esp
+  IF CHECKSUM("BreezehomeLadderFix.esp", 28E5896D) WARN: This file contains 2 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("BreezehomeLadderFix.esp", 7CA22630) WARN: This file contains 32 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+BreezehomeLadderFixJP.esp
+  IF CHECKSUM("BreezehomeLadderFixJP.esp", F2BAA689) WARN: This file contains 2 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("BreezehomeLadderFixJP.esp", 94D3C2C0) WARN: This file contains 32 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF FILE("BreezehomeLadderFix.esp") ERROR: Use BreezehomeLadderFix.esp or BreezehomeLadderFixJP.esp, not both.
 BreezehomeLightingFix.esp
 Brynjolf Dialogue Fix.esp
 Bugfix-NoFollowerTrespassDialog.esp
@@ -551,6 +560,7 @@ bugfixenchanmentnoregeneration.esp
 Bugfixrobesenchantments.esp
 Bullseye Perk Fix.esp
   // Possibly belongs in perks
+changeorc.esp
 Civil War Neutrality Fix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
@@ -1332,6 +1342,7 @@ BEGINGROUP: Base #
 _pocketcampsite.esp
 00EButterfliegenENGLISH.esp
 00SexyHouseVendors.esp
+3279_BronyaPsijikNar.esp
 5GiantToes.esp
 REGEX: (83Willows_)?101BUGs.+\.esp
   TAG: {{BASH: Delev, Relev}}
@@ -1446,7 +1457,6 @@ BabettesFeastBalanced.esp
 BabettesFeast - IMCN.esp
 BabettesFeastOverpowered.esp
 BabettesFeastWeakerEffects.esp
-Batch Crafting Recipes.esp
 REGEX: Back off,.*\.esp
   IF VAR(EN) SAY: Use only one Back off*.esp
 REGEX: (Vidani's )?Bag of Holding\.esp
@@ -1473,6 +1483,7 @@ bard - loren - hjerim.esp
 bard  - loren - hjerim.esp
 Barrels and Crates.esp
   TAG: {{BASH: Relev}}
+Batch Crafting Recipes.esp
 Behemoth Dragon.esp
 Belleza DiBella - PNJ Overhaul.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
@@ -1511,6 +1522,10 @@ bladesfactionfix.esp
 BlazesMassIngots.esp
 BLESSINGS - Altar Descriptions.esp
 bloodierCombatv1.1.esp
+Bloody Cannibalism.esp
+  IFNOT VAR(Dawnguard) && IF CHECKSUM("Bloody Cannibalism.esp", 75D6B87E) ERROR: Use non-Dawnguard version.
+  IF VAR(Dawnguard) && IF CHECKSUM("Bloody Cannibalism.esp", A220A80B) ERROR: Use Dawnguard version.
+  IF CHECKSUM("Bloody Cannibalism.esp", A220A80B) DIRTY: 1 ITM, 20 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Bob The Merchant.esp
   IF CHECKSUM("Bob The Merchant.esp", 05F9D7C3) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Bolts For Weapon Vendors.esp
@@ -1773,6 +1788,7 @@ Dwemer Povazka from Hiro.esp
 Dwemer Spectres.esp
 dualcastingcostfixed.esp
 dwarven_scrap_renamed.esp
+DwarvenSphere.esp
 DungeonQuestAwareness.esp
 DynamicSpells.esp
 DynamicTorches.esp
@@ -1913,6 +1929,9 @@ Grab Moveable Statics.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 GrandSoulGemOnly.esp
 greatwyrm.esp
+Grind_stuff.esp
+  IF VAR(Hearthfire) && IF CHECKSUM("Grind_stuff.esp", 31CCFA29) ERROR: Use Hearthfires version.
+  IFNOT VAR(Hearthfire) && IF CHECKSUM("Grind_stuff.esp", 5E014754) ERROR: Use non-Hearthfires version.
 GSTH.esp
 guardedborders.esp
 GuardianStonesExpanded.esp
@@ -2447,6 +2466,7 @@ Shields_on_back.esp
 shMannequinDecorate_WBh.esp
 ShootingStars.esp
 shrewsburyskyrimcookbook.esp
+Short Grass.esp
 SIDT.esp
   // TAG: {{BASH: Names}}
 sign.esp
@@ -3310,26 +3330,28 @@ Combat Remastered - 2H to 1H Extended Vanilla Weapons.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ConanSwords.esp
 Lorecraft - Conan.esp
-CraftableTemplar.esp
-CraftableNocturnalRobes.esp
+Craftable Arrows.esp
+Craftable Artifacts.esp
 Craftable Dragon Priest Masks.esp
 Craftable Ebony Mail and Blade.esp
+REGEX: craftable gold coins \d?.+\.esp
+  SAY: Use only one craftable gold coins esp.
+Craftable Greybeard Robes.esp
+Craftable Invisible Helmets.esp
+Craftable Invisible Helmets - DDA.esp
 Craftable Nightingale Armor.esp
+Craftable Psijic.esp
+Craftable Staffs.esp
 Craftable Thieves Guild Armor.esp
 Craftable TPL Dagger.esp
 Craftable Triss armor.esp
-Craftable Arrows.esp
-Craftable Artifacts.esp
-Craftable Invisible Helmets.esp
-Craftable Invisible Helmets - DDA.esp
-CraftablePantysCBBEv3M.esp
-Craftable Psijic.esp
-Craftable Staffs.esp
-Craftable Greybeard Robes.esp
 CraftableClothes.esp
 CraftableHoods.esp
 CraftableJewelry.esp
+CraftableNocturnalRobes.esp
+CraftablePantysCBBEv3M.esp
 craftablerobes.esp
+CraftableTemplar.esp
 CraftBoundWeaponsAndArrows.esp
 CraftableBloodcrownbyDraco.esp
 CrainteVomir.esp
@@ -3768,6 +3790,8 @@ GM-LeatherHood.esp
   IF VAR(GMForgeAdd) INC: Gromits Smithing Forge Additions
 GodGearAndGloryBook.esp
 Gods smithing gift.esp
+REGEX: Gold Ingot \d?.+\.esp
+  SAY: Use only one Gold Ingot esp.
 Golden_Age_Arc_Sword.esp
 goldbrand.esp
 GoldRapier01.esp
@@ -3791,6 +3815,7 @@ GuardianWeapons.esp
 GuardShieldsReplaced.esp
 Guild Duelist Armor.esp
 gun.esp
+guts_knife.esp
 Greate Templar Sword.esp
 // Typo is filename, not actual typo
 Gwendolic Armor.esp
@@ -4522,6 +4547,7 @@ Really Radiant Raiment.esp
 RaiderHelmet.esp
 raiser sword.esp
 RangerArmor.esp
+RangerArmorPack.esp
 ranger armor and weapons mod.esp
 Ranger's Cape.esp
 Rapplez Armor.esp
@@ -5665,6 +5691,9 @@ beforsworn.esp
 BertsBreezeCellar(esp.V.1.0).esp
   IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+BertsBreezeCellar(esp.V2.0).esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 BertsBreezehomeCellar.I.1.3.esp
   WARN: TES5Edit Msg - The volume for a file has been externally altered so that the opened file is no longer valid> [BertsBreezehomeCellar.I.1.3.esp]
 BertsBreezehomeCellar(Claude).esp
@@ -5817,6 +5846,9 @@ Castle Stonespire.esp
 Castle Strunmah.esp
 CastleDKmod.esp
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
+CastleDrakhur_updatefile.esp
+  IF CHECKSUM("CastleDrakhur_updatefile.esp", D6ED863C) DIRTY: 20 ITM, 102 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("CastleDrakhur_updatefile.esp", D6ED863C) WARN: This file contains 7 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
 CastleGrey.esp
   IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
    // changes default stayatplace AI making horses not stay at dismount location
@@ -6584,6 +6616,8 @@ SoulForge.esp
 Sovngarde - completed main quest.esp
   IF VAR(EN) SAY: This mod is not compatible with the last quest in the Main Quest chain. Either disable the .esp before you do it or wait until you complete the main quest.
     IF VAR(RU) SAY: Этот мод не совместим с последним квестом в основной цепочке квестов. Либо отключите .esp, прежде чем сделать это, либо дождитесь, пока вы не завершите главный квест.
+SovngardeQuest.esp
+  IF CHECKSUM("SovngardeQuest.esp", D50921F7) DIRTY: 16 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SpouseLife.esp
 SpouseStoreMod.esp
 SSQ.esp
@@ -6709,6 +6743,36 @@ Vampire Citidel.esp
 VampireHideouts.esp
 Vamp_Quest_01.esp
 varenguard.esp
+Vault of the Dovahkiin - Assassin.esp
+  SAY: Obsolete. Update to latest renamed version, Vault of the Dovahkiin 1.1 - Assassin.esp
+Vault of the Dovahkiin - Imperial.esp
+  SAY: Obsolete. Update to latest renamed version, Vault of the Dovahkiin 1.1 - Imperial.esp
+Vault of the Dovahkiin - Mage.esp
+  SAY: Obsolete. Update to latest renamed version, Vault of the Dovahkiin 1.1 - Mage.esp
+Vault of the Dovahkiin - Stormcloak.esp
+  SAY: Obsolete. Update to latest renamed version, Vault of the Dovahkiin 1.1 - Stormcloak.esp
+Vault of the Dovahkiin - Thief.esp
+  SAY: Obsolete. Update to latest renamed version, Vault of the Dovahkiin 1.1 - Thief.esp
+Vault of the Dovahkiin - Warrior.esp
+  SAY: Obsolete. Update to latest renamed version, Vault of the Dovahkiin 1.1 - Warrior.esp
+Vault of the Dovahkiin 1.1 - Assassin.esp
+  IF CHECKSUM("Vault of the Dovahkiin 1.1 - Assassin.esp", 44965600) DIRTY: 0 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  SAY: Use only one Vault of the Dovahkiin esp.
+Vault of the Dovahkiin 1.1 - Imperial.esp
+  IF CHECKSUM("Vault of the Dovahkiin 1.1 - Imperial.esp", 94246301) DIRTY: 0 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  SAY: Use only one Vault of the Dovahkiin esp.
+Vault of the Dovahkiin 1.1 - Mage.esp
+  IF CHECKSUM("Vault of the Dovahkiin 1.1 - Mage.esp", 864F774A) DIRTY: 0 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  SAY: Use only one Vault of the Dovahkiin esp.
+Vault of the Dovahkiin 1.1 - Stormcloak.esp
+  IF CHECKSUM("Vault of the Dovahkiin 1.1 - Stormcloak.esp", 32B3E560) DIRTY: 0 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  SAY: Use only one Vault of the Dovahkiin esp.
+Vault of the Dovahkiin 1.1 - Thief.esp
+  IF CHECKSUM("Vault of the Dovahkiin 1.1 - Thief.esp", F48C29C4) DIRTY: 0 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  SAY: Use only one Vault of the Dovahkiin esp.
+Vault of the Dovahkiin 1.1 - Warrior.esp
+  IF CHECKSUM("Vault of the Dovahkiin 1.1 - Warrior.esp", 7F8B0754) DIRTY: 0 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  SAY: Use only one Vault of the Dovahkiin esp.
 VeiledKeep.esp
   IF CHECKSUM("VeiledKeep.esp", 4D96FDC8) DIRTY: 8 ITM, 55 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Vengeance.esp
@@ -9057,6 +9121,7 @@ Ancient Spells.esp
 Artillery_DFA.esp
 REGEX: ASX( - |_)Spells.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+Avada Kedavra.esp
 Bandit's Dream Spell.esp
 BanishLight.esp
   IF VAR(EN) WARN: May not work properly with lighting mods.
@@ -10180,12 +10245,13 @@ flexibleperktrees.esp
 GDTES5 Lockpick Perk Tree Reconfigure.esp
 GluRUS_magicscaling.esp
 GrandMaster.esp
+HeavyArmorPerks - Helmetless.esp
+  IF CHECKSUM("HeavyArmorPerks - Helmetless.esp", 3A11FDB9) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HeavyArmorPerks v1.1.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, HeavyArmorPerksv2.2.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, HeavyArmorPerksv2.2.esp
 HeavyArmorPerksv2.2.esp
   IF CHECKSUM("HeavyArmorPerksv2.2.esp", D3C0A697) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-JulesPerkRankAssign.esp
 Illusion Perks Overhaul.esp
 iMO-Perks.esp
 Improved Casting.esp
@@ -10194,6 +10260,7 @@ REGEX: Improved Destruction Perks.*\.esp
 Improved Expert Spells.esp
 REGEX: Improved Master Spells.*\.esp
 JokeMOD-SilentRunning.esp
+JulesPerkRankAssign.esp
 kuerteeSkillBasedDamageMultipliers.esp
   IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
 lcr.esp
@@ -10810,6 +10877,8 @@ CustomRaces.esp
 dagi_raht_race.esp
 DarkRaces.esp
 Decapitate_Children.esp
+Drakian race.esp
+  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
 Draman Skeleton Mod.esp
 Dryad Race.esp
 Dwarf.esp
@@ -10818,6 +10887,8 @@ dwemerplayablerace.esp
 Epic Elves by zzjay.esp
 EpicElves by zzjay.esp
 FFRace.esp
+FlyableDragonRacesRevamped.esp
+  IF CHECKSUM("FlyableDragonRacesRevamped.esp", 183A85A8) DIRTY: 45 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 GiantChild.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, GiantChild.esm
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, GiantChild.esm
@@ -11939,6 +12010,8 @@ ulushenie naparnikov.esp
 Victoria.esp
 Female Follower Fix.esp
 Female Orc Walk Only.esp
+Followers Stop Fighting Each Other.esp
+  SAY: Obsolete. Update to the latest renamed version, Followers Stop Fighting Each Other 2.0.esp
 Followers Stop Fighting Each Other 2.0.esp
 Seguidores DEJAR de pelear Entre Other.esp
   IF FILE("Followers Stop Fighting Each Other 2.0.esp") ERROR: Translation of Followers Stop Fighting Each Other 2.0.esp
@@ -12070,9 +12143,10 @@ khajiit_replacer.esp
   IF CHECKSUM("khajiit_replacer.esp", F59E2E52) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Morozik75_Better_Races_Rus.esp
 Nicer-Looking Khajiit.esp
+Race Tweaks.esp
 RaceRevamp.esp
 Races and Doomstones.esp
-Race Tweaks.esp
+Races Reviewed by Theme.esp
 ReducedCarryWeight - 150.esp
 SkyrimSizesLore.esp
 Khajiit Awesome.esp
