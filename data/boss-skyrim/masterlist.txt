@@ -1063,7 +1063,9 @@ REGEX: Improved Combat Sounds v2\.\d\.esp
   IF VAR(EN) && IF FILE("Improved Combat Sounds v2.0.esp") SAY: Obsolete. Update to 2.1 for a cleaned esp
     IF VAR(RU) && IF FILE("Improved Combat Sounds v2.0.esp") SAY: Устарело. Обновите до версии 2.1, для использования очищенного esp.
 indiemusicscene_la.esp
-ICS Possible Fix 1.esp
+REGEX: ICS Possible Fix \d\.esp
+  IF VAR(EN) SAY: Obsolete. Update to Improved Combat Sounds v2.1.esp for a cleaned esp
+    IF VAR(RU) SAY: Устарело. Обновите до версии Improved Combat Sounds v2.1.esp, для использования очищенного esp.
 KR - Solitude No Sewer sound.esp
 LIAT - Sounds.esp
 newheavyarmorsound.esp
@@ -1966,6 +1968,11 @@ HighlandFarmMilk.esp
   TAG: {{BASH: Relev}}
   // not tested
 HillmanShack.esp
+HM Child Character.esp
+  IFNOT VAR(Dawnguard) && IF CHECKSUM("HM Child Character.esp", F0933FCC) ERROR: Requires non-Dawndguard version of HM Child Character.esp
+  IF VAR(Dawnguard) && IF CHECKSUM("HM Child Character.esp", 40FB3AAD) ERROR: Requires Dawnguard version of HM Child Character.esp
+  IF CHECKSUM("HM Child Character.esp", F0933FCC) DIRTY: 16 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("HM Child Character.esp", 40FB3AAD) DIRTY: 7 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HM Marry All.esp
   IFNOT VAR(Dawnguard) || IFNOT VAR(Hearthfire) && IF CHECKSUM("HM Marry All.esp", 139C1E4C) ERROR: Requires Dawndguard AND Hearthfires (Official Besthesda DLC)
   IF VAR(Dawnguard) || IF VAR(Hearthfire) && IF CHECKSUM("HM Marry All.esp", DB88B8BE) ERROR: Requires Dawnguard and Hearthfires version of HM Marry All.esp
@@ -3135,6 +3142,7 @@ BBP_Apple.esp
 BBP_Dragon_Princess.esP
 BBLSspouse.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
+BeastmastersAxe.esp
 Befouler.esp
 BelethorGoods.esp
 BellHammer.esp
@@ -3601,12 +3609,16 @@ Dwarven Condenser.esp
 Dwarven War Cross Bow.esp
   IF CHECKSUM("Dwarven War Cross Bow.esp", 8D6DD2FB) DIRTY: 6 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DwarvenMech.esp
+DwarvenPowerArmor.esp
+  IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Do not use. Included in AetheriumSwordsnArmor.esp
+    IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp
 dwarvenrifle.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 DwarvenRifle_Guilmonex.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 dwarvenscythe.esp
 DwarvenShooter.esp
+dwarvensteel.esp
 DwarvenSwords.esp
 Dwemer Artificer.esp
   IF CHECKSUM("Dwemer Artificer.esp", 939498B8) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -3628,9 +3640,6 @@ DwemerAutoBlade.esp
 DwemerBombsNoPerkTree.esp
   IF CHECKSUM("DwemerBombsNoPerkTree.esp", 8D5E43B0) DIRTY: 11 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("DwemerBombs.esp") INC: DwemerBombs.esp
-DwarvenPowerArmor.esp
-  IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Do not use. Included in AetheriumSwordsnArmor.esp
-    IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp
 DwemerRifle.esp
 DynamicLoot.esp
 Dynasty Armor.esp
@@ -3778,6 +3787,7 @@ GattiBondage1.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 GattiQBCollection.esp
 GattiUNPCollection.esp
+GauntletsGluttonousPower.esp
 REGEX: GDRanger(Armor|Dress)\.esp
 Gearblade.esp
 Gemtastic.esp
@@ -4802,7 +4812,9 @@ spyduckWands.esp
   IF VERSION("SKSE", "0.1.5.9", <) REQ: "http://skse.silverlock.org SKSE" 1.5.9+
 sulundo.esp
 StaffBundle.esp
+Stalhrim.esp
 stalhrim2.esp
+StalhrimDagger.esp
 stalhrimstandalone2.esp
   TAG: {{BASH: Relev}}
   // Not tested.
@@ -4907,6 +4919,8 @@ ThalmorNoGlass.esp
   TAG: {{BASH: Delev}}
 ThalmorEliteArmor.esp
   TAG: {{BASH: Delev}}
+ThalmorRobesEnchantment.esp
+ThalmorRobesEnchantment_2.esp
 ThalmorStandalone.esp
 Thane's Blade.esp
 THBoneHawkRingCraftable.esp
@@ -5667,6 +5681,8 @@ REGEX: alternativeCityAccess.*\.esp
 AmethystHollowsUpdate.esp
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
 Amazing Riverwood Starter Home.esp
+AMRetreat.esp
+  IF CHECKSUM("AMRetreat.esp", 35B13C96) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Ancient Knowledge Armour.esp
   IF CHECKSUM("Ancient Knowledge Armour.esp", C3251F91) || IF CHECKSUM("Ancient Knowledge Armour.esp", DF1111AD) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Ancient Knowledge Armour.esp", 65B6427E) DIRTY: 16 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -5701,6 +5717,8 @@ ENDGROUP: Quests A
 
 BEGINGROUP: Quests B
 
+BankofMarkarth.esp
+  IF CHECKSUM("BankofMarkarth.esp", C79214D7) DIRTY: 5 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Bards Questing in Tombs.esp
 bardscollegewithfix.esp
 bardscollegewithoutfix.esp
@@ -6300,6 +6318,11 @@ ENDGROUP: Quests L
 
 BEGINGROUP: Quests M
 
+Mage Tower.esp
+  IF CHECKSUM("Mage Tower.esp", 0AEF400A) DIRTY: 22 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Mage Tower Battle Mage Edition.esp
+  IF FILE("Mage Tower.esp") ERROR: Use either Mage Tower.esp or Mage Tower Battle Mage Edition.esp, not both.
+  IF CHECKSUM("Mage Tower Battle Mage Edition.esp", 6E2CCA18) DIRTY: 26 ITM, 6 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Magelight Grotto.esp
 Mages College Quests.esp
 Malkavs_Collection_V2_DV.esp
@@ -6334,6 +6357,9 @@ Markarth_plus.esp
 majoramoon.esp
 MeekoHusky.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+MercenaryGuild.esp
+  IF CHECKSUM("MercenaryGuild.esp", 8539027A) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("MercenaryGuild.esp", 9801AAA0) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 merryfair_bridge.esp
 Milan's PAck.esp
 MilanDungeonPack2.esp
@@ -6685,7 +6711,6 @@ TEG_TelvanniHall.esp
 teg_wizards_of_winterhold.esp
 TeleportRoom.esp
 Terrace Porch.ESP
-theShrines.esp
 TKratosteleports.esp
 Temporal Rift.esp
 TezofTerrornorthsTomb.esp
@@ -6717,7 +6742,10 @@ The Secret Room of Breezehome.esp
     IF VAR(RU) && IF FILE("secretroom-bh-en.esp") SAY: Используйте только один мод 'The Secret Room of Breezehome.esp' или 'secretroom-bh-en.esp'
 theMannysOutPost.esp
 thereserve.esp
+theShrines.esp
 theWatchTowers.esp
+thievesguildexit.esp
+  IF CHECKSUM("thievesguildexit.esp", 6183EA77) DIRTY: 3 ITM, 18 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ThievesGuildTrapdoor.esp
 ThistleCottage.esp
 thundersnow1.esp
@@ -7474,11 +7502,32 @@ Eola.esp
 REGEX: Equip more Rings( \(\d\))?.esp
 Essential dogs v2.esp
 Essential Frost.esp
+  IF CHECKSUM("Essential Frost.esp", D44409A0) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
 Essential horses - all horses.esp
+  IF CHECKSUM("Essential horses - all horses.esp", C89FBE27) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
+Essential horses v2.esp
+  IF CHECKSUM("Essential horses v2.esp", C89FBE27) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
+Essential horses.esp
+  IF CHECKSUM("Essential horses.esp", 9B9E748D) WARN: This file was released before the CK (07 Feb. 2012) and it is not recommended for use. It should be removed.
 Essential Karinda.esp
+  IF CHECKSUM("Essential Karinda.esp", 76726DC5) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
+Essential Markarth horses.esp
+  IF CHECKSUM("Essential Markarth horses.esp", 8FF75D36) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
 Essential Meeko.esp
+Essential Riften horses.esp
+  IF CHECKSUM("Essential Riften horses.esp", 7BBB11F3) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
+Essential Shadowmere and Frost.esp
+  IF CHECKSUM("Essential Shadowmere and Frost.esp", 7811F09F) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
+Essential Shadowmere v2.esp
+  IF CHECKSUM("Essential Shadowmere v2.esp", A381200F) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
 Essential Shadowmere.esp
+  IF CHECKSUM("Essential Shadowmere.esp", A381200F) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
+Essential Solitude horses.esp
+  IF CHECKSUM("Essential Solitude horses.esp", 545A07B5) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
 Essential Whiterun horses.esp
+  IF CHECKSUM("Essential Whiterun horses.esp", 5975BB9B) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
+Essential Windhelm horses.esp
+  IF CHECKSUM("Essential Windhelm horses.esp", FBD393F5) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
 essentialhorsemen.esp
 Extended Selection.esp
 ExpandedCarriageService.esp
@@ -9076,6 +9125,8 @@ VampireInveterDG.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, VampireInverterDG.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, VampireInverterDG.esp
 VampireInverterDG.esp
+VampireKinship.esp
+  IF CHECKSUM("VampireKinship.esp", C1417F3B) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 VampireUpgrade.esp
 REGEX: Vampirism Inverter( B)?\.esp
 Werepyre.esp
@@ -12366,6 +12417,7 @@ ClearWater.esp
 Hot Volcanic Water.esp
   IF CHECKSUM("Hot Volcanic Water.esp", CB9A32B4) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ImmersiveWater3.esp
+medium water.esp
 Purewaters.esp
 IF FILE("Purewaters.esp") MOD: realrainextended.esp
   IF VAR(EN) SAY: Use only one realrain.esp
