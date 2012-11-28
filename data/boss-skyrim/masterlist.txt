@@ -5538,48 +5538,66 @@ REGEX: ERSO 0\d - Wait More Time( Before Next)? Dragon Encounter (\()?x\d\.\d(\)
 REGEX: ERSO 07 - (Super )?(Slighty )?Mighty Dragon Priests\.esp
   // Seperate entry for ERSO version, makes things easier.
 ERSO 08 - RUS-00 Main.esp
-ERSO 09 - RUS-Npcs overhaul.esp
-  IF CHECKSUM("ERSO 09 - RUS-Npcs overhaul.esp", 94A3B292) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-ERSO 09 - RUS-Npcs overhaul compatible USKP.esp
-  IF FILE("ERSO 09 - RUS-Npcs overhaul.esp") && IF VAR(EN) SAY: Use only one ERSO 09 file.
-    IF FILE("ERSO 09 - RUS-Npcs overhaul.esp") && IF VAR(RU) SAY: Используйте только один ERSO 09 file.
-ERSO 09 - RUS-Npcs overhaul compatible USKP v.1.2.3a.esp
-  IF FILE("ERSO 09 - RUS-Npcs overhaul.esp") && IF VAR(EN) SAY: Use only one ERSO 09 file.
-    IF FILE("ERSO 09 - RUS-Npcs overhaul.esp") && IF VAR(RU) SAY: Используйте только один ERSO 09 file.
-  IF FILE("ERSO 09 - RUS-Npcs overhaul compatible USKP.esp")  && IF VAR(EN) SAY: Use only one ERSO 09 file.
-    IF FILE("ERSO 09 - RUS-Npcs overhaul compatible USKP.esp") && IF VAR(RU) SAY: Используйте только один ERSO 09 file.
+REGEX: ERSO 09 - RUS-Npcs.*\.esp
+  IF VAR(EN) SAY: Use only one ERSO 09 file.
+    IF VAR(RU) SAY: Используйте только один ERSO 09 file.
 ERSO 09 - Vendor Trainer Quest-giver protected.esp
-  IF FILE("ERSO 09 - RUS-Npcs overhaul.esp") && IF VAR(EN) SAY: Use only one ERSO 09 file.
-    IF FILE("ERSO 09 - RUS-Npcs overhaul.esp") && IF VAR(RU) SAY: Используйте только один ERSO 09 file.
-  IF FILE("ERSO 09 - RUS-Npcs overhaul compatible USKP.esp")  && IF VAR(EN) SAY: Use only one ERSO 09 file.
-    IF FILE("ERSO 09 - RUS-Npcs overhaul compatible USKP.esp") && IF VAR(RU) SAY: Используйте только один ERSO 09 file.
-  IF FILE("ERSO 09 - RUS-Npcs overhaul compatible USKP v.1.2.3a.esp")  && IF VAR(EN) SAY: Use only one ERSO 09 file.
-    IF FILE("ERSO 09 - RUS-Npcs overhaul compatible USKP v.1.2.3a.esp") && IF VAR(RU) SAY: Используйте только один ERSO 09 file.
+  IF REGEX("ERSO 09 - RUS-Npcs.*\.esp") && IF VAR(EN) SAY: Use only one ERSO 09 file.
+    IF REGEX("ERSO 09 - RUS-Npcs.*\.esp") && IF VAR(RU) SAY: Используйте только один ERSO 09 file.
 ERSO 10 - RUS-(SIM)-Travellers and Adventurers.esp
 ERSO 11 - RUS-(SIM)-Assassins and Thieves.esp
 ERSO 12 - RUS-(SIM)-Werewolves.esp
 ERSO 13 - MD - A Better Level Progression.esp
-REGEX: ERSO 13.02 - Lower Skill Gain -.*\.esp
+REGEX: ERSO 13.02 .*\.esp
+  // Lower Skill Gain
   IF VAR(EN) SAY: Use only one ERSO 13.02 file.
     IF VAR(RU) SAY: Используйте только один ERSO 13.02 file.
-ERSO 13.03 - Higher Skill Cap 125.esp
-ERSO 13.03 - Higher Skill Cap 150.esp
-  IF FILE("ERSO 13.03 - Higher Skill Cap 125.esp") && IF VAR(EN) SAY: Use only one ERSO 13.03 file.
-    IF FILE("ERSO 13.03 - Higher Skill Cap 125.esp") && IF VAR(RU) SAY: Используйте только один ERSO 13.03 file.
+REGEX: ERSO 13.03 .*\.esp
+  // Higher Skill Cap
+  IF VAR(EN) SAY: Use only one ERSO 13.03 file.
+    IF VAR(RU) SAY: Используйте только один ERSO 13.03 file.
 ERSO 14 - Vendors richer and Inns more expensive.esp
-REGEX: ERSO 14.02 - Harder barter.*\.esp
+REGEX: ERSO 14.02 .*\.esp
+  // Harder barter
   IF VAR(EN) SAY: Use only one ERSO 14.02 file.
     IF VAR(RU) SAY: Используйте только один ERSO 14.02 file.
-REGEX: ERSO 15 - Timescale.*\.esp
+REGEX: ERSO 14.03 .*\.esp
+  // Vendor Soul Gems
+  IF VAR(EN) SAY: Use only one ERSO 14.03 file.
+    IF VAR(RU) SAY: Используйте только один ERSO 14.03 file.
+REGEX: ERSO 14.04 .*\.esp
+  // Vendor Animal Parts
+  IF VAR(EN) SAY: Use only one ERSO 14.04 file.
+    IF VAR(RU) SAY: Используйте только один ERSO 14.04 file.
+REGEX: ERSO 14.05 .*\.esp
+  // Vendor Minerals
+  IF VAR(EN) SAY: Use only one ERSO 14.05 file.
+    IF VAR(RU) SAY: Используйте только один ERSO 14.05 file.
+REGEX: ERSO 14.06 .*\.esp
+  // Vendor Enchanted Weapons and Armor
+  IF VAR(EN) SAY: Use only one ERSO 14.06 file.
+    IF VAR(RU) SAY: Используйте только один ERSO 14.06 file.
+REGEX: ERSO 14.07 .*\.esp
+  // Vendor Less Weapons and Armors
+  IF VAR(EN) SAY: Use only one ERSO 14.07 file.
+    IF VAR(RU) SAY: Используйте только один ERSO 14.07 file.
+REGEX: ERSO 15 .*\.esp
+  // Timescale
   IF VAR(EN) SAY: Use only one ERSO 15 file.
     IF VAR(RU) SAY: Используйте только один ERSO 15 file.
-REGEX: ERSO 16 - Realistic Crime Alert Distances - .*\.esp
+REGEX: ERSO 16 .*\.esp
+  // Realistic Crime Alert Distances
   IF VAR(EN) SAY: Use only one ERSO 16 file.
     IF VAR(RU) SAY: Используйте только один ERSO 16 file.
-REGEX: ERSO 17 - Training cost.*\.esp
+REGEX: ERSO 17 .*\.esp
+  // Training cost
   IF VAR(EN) SAY: Use only one ERSO 17 file.
     IF VAR(RU) SAY: Используйте только один ERSO 17 file.
 ERSO 18 - Legendary Armors and Weapons Enhanced.esp
+REGEX: ERSO 19 .*\.esp
+  // Respawn
+  IF VAR(EN) SAY: Use only one ERSO 19 file.
+    IF VAR(RU) SAY: Используйте только один ERSO 19 file.
 ENDGROUP: ERSO End
 
 BEGINGROUP: Overhauls Load Late
