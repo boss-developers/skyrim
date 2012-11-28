@@ -406,6 +406,12 @@ EACalypsoE_1_2.esm
 EACinthowenSkyhairWNE.esm
 EAIthilwhenE_1_1.esm
 EASamhair.esm
+  SAY: Obsolete. Update to the latest renamed version, EASamhairE_1_1.esm
+EASamhairE_1_1.esm
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+EASamhairNE_1_1.esm
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IF FILE("EASamhairE_1_1.esm") ERROR: Use EASamhairE_1_1.esm or EASamhairNE_1_1.esm, not both.
 ElisHotSprings.esm
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Enchanting Scrolls.esm
@@ -1699,6 +1705,8 @@ Creepy Dungeons.esp
 /* Removes by hand all unrealistic and ambient lighting in dungeons only */
 CrossbowsExpanded.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+crossbows rebalanced.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 CrossbowsRevamped.esp
   TAG: {{BASH: Delev, Relev}}
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -2566,6 +2574,7 @@ SkyrimsUniqueTreasures.esp
 SkyscraperGiants.esp
 Slaughterfish Monster.esp
 Sleep well.esp
+sloth.esp
 SMDropLitTorch.esp
 smeltable dwarven scrap metal.esp
 smeltdown_ingots_osr.esp
@@ -2809,6 +2818,7 @@ xgfPferdeKarren-en.esp
   IF FILE("xgfpferdekarren.esp") INC: xgfpferdekarren.esp
 xylozi_tougher_traps.esp
 yngolbarrowbuttonfix.esp
+YouKing.esp
 ZazResources.esp
 ZutatenAblegen.esp
 Zira's Skyrim Horse Base - Armored.esp
@@ -3496,6 +3506,7 @@ diamondsword.esp
 REGEX: diamondweapons.*\.esp
   IF VAR(EN) && IF REGEX("diamondweapons1\.[02]\.esp") SAY: Obsolete. Update to latest version.
     IF VAR(RU) && IF REGEX("diamondweapons1\.[02]\.esp") SAY: Устарело. Обновите до последней версии.
+DI Armor.esp
 DIMclothes1.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 Dishonored Lord Protector Set.esp
@@ -4030,12 +4041,16 @@ JSwords.esp
   IF VAR(EN) SAY: Obsolete. Update to v13+
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Faster Combat-Jswords.esp
+JSwords_FR_Plugin_V13C.esp
+JSwords_FR_Plugin_V13D.esp
 JSwordsDistributionBalancePlugin.esp
   IF VAR(EN) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Do not use - included in SkyRe_Plugin_JaySuSSwords_1.3D.esp.
     IF VAR(RU) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Удалите. Уже включено в SkyRe_Plugin_JaySuSSwords_1.3D.esp.
   IF VAR(EN) && IF FILE("Skyrim unleashed Xtra_items.esp") ERROR: Do not use - included in Skyrim unleashed Xtra_items.esp.
     IF VAR(RU) && IF FILE("Skyrim unleashed Xtra_items.esp") ERROR: Удалите. Уже включено в Skyrim unleashed Xtra_items.esp.
-JSwords_FR_Plugin_V13C.esp
+JSwordsDistribution_Lieux.esp
+  IF VAR(EN) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Do not use - included in SkyRe_Plugin_JaySuSSwords_1.3D.esp.
+    IF VAR(RU) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Удалите. Уже включено в SkyRe_Plugin_JaySuSSwords_1.3D.esp.
 Deleveled Skyrim - JSwords.esp
   TAG: {{BASH: Delev, Relev}}
 AttTJSwords.esp
@@ -4091,6 +4106,8 @@ BEGINGROUP: Items L
 
 Lacey Clover.esp
 LadyBatByNausicaa.esp
+Lady of Death.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 Lady Rappelz.esp
 LanternHands.esp
 LayerBikini.esp
@@ -6663,6 +6680,8 @@ SnowberryCottage.esp
 Star-NorthernFrostBrewery.esp
   IF CHECKSUM("Star-NorthernFrostBrewery.esp", 012DE681) WARN: This file contains 9 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
 SteepledHat's Riverwood Home.esp
+So (84).esp
+  IF CHECKSUM("So (84).esp", 17486F2D) DIRTY: 122 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Soleis.esp
 Solitude Military Enhancement.esp
 Solitude Blue Palace Military Enhancement.esp
@@ -8908,6 +8927,9 @@ REGEX: dD.?- Realistic Ragdoll Force.*\.esp
     IF VAR(RU) SAY: Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers", для поддержки других версий skeleton.nif.
 drink eat sleep.esp
 /* Steam network version is an esp and BSA */
+Fatigue_Effects.esp
+  IF CHECKSUM("Fatigue_Effects.esp", A4C14B80) WARN: This file contains unexpected (or out of order) records and it should be removed.
+Fatigue_Effects_LoadingScreens.esp
 Field Alchemy.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 FirstAid.esp
@@ -9909,12 +9931,20 @@ BEGINGROUP: Enchantment
 
 zzzAlmostUnlimitedWeaponEnchant.esp
   IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-zzzEverlastingWeaponEnchant.esp
-infinitedaedricchargesbyfioran.esp
+Artifact Disenchanting.esp
+Artifact Disenchanting - Dawnguard.esp
+Backstab Enchantment new.esp
 Balanced Crafting Project - Enchanting Part.esp
 Balanced Enchanting v2.esp
-Z_Enchantment.esp
+bootsofnimblespeed.esp
+BowsElementalFury.esp
 Darkons Enchantment Changes.esp
+Destruction Damage Mod.esp
+  IF CHECKSUM("Destruction Damage Mod.esp", EEE99D11) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Disenchantable Dragonbane.esp
+disenchnateverything.esp
+  // typo is Mod name 
+  SAY: Obsolete. Update to latest renamed version, Enchanting Freedom.esp
 enchant3.esp
 enchant4effects.esp
 Enchant_Me_items.esp
@@ -9926,22 +9956,24 @@ enchantmentoverhaul.esp
 Enchanting - IDWIW.esp
 HM Enchanting Unlocker.esp
 enchanting freedom.esp
+  IF CHECKSUM("enchanting freedom.esp", C1ED186F) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Z_Enchantment.esp
 EnchantmentPower.esp
+enchantmentrebalanced.esp
+  SAY: Obsolete. Update to latest renamed version, Enchanting Freedom.esp
 Enchant Plus.esp
 EnchantmentCleanser.esp
+zzzEverlastingWeaponEnchant.esp
 Everything is Disenchantable.esp
+FormsEdit.esp
 Fortify Enchanting necklace.esp
-IPutASpellOnYou.esp
+HasteEnchantment.esp
+  IF CHECKSUM("HasteEnchantment.esp", FA187A27) DIRTY: 1 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 hankyench.esp
 HoodlessPsijicArchmageReplacement.esp
   // move this mod to items group with Graphics tag after it work in bashed patch for Skyrim
-Artifact Disenchanting.esp
-Artifact Disenchanting - Dawnguard.esp
-Backstab Enchantment new.esp
-bootsofnimblespeed.esp
-BowsElementalFury.esp
-Disenchantable Dragonbane.esp
-FormsEdit.esp
+infinitedaedricchargesbyfioran.esp
+IPutASpellOnYou.esp
 MasterMagickaRegen.esp
 Muffle Enchantment.esp
 NAEE.esp
@@ -11162,6 +11194,11 @@ DFB - Companions Lost No More - Dawnguard.esp
 DFB - Disable Hidden Follower Bows & Arrows.esp
   IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can remove all default followers equpment with UFO.
     IF VAR(RU) && IF VAR(UFO) SAY: Этот мод избыточен для 'UFO - Ultimate Follower Overhaul.esp'. Вы можете удалить весь скрытый инвентарь у компаньонов с помощью UFO.
+EASamhairE_1_1.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+EASamhairNE_1_1.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IF FILE("EASamhairE_1_1.esp") ERROR: Use EASamhairE_1_1.esp or EASamhairNE_1_1.esp, not both.
 Eileen.esp
 IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMCompViljaSkyrim.esp
   IF CHECKSUM("EMCompViljaSkyrim.esp", C45D4383) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -11184,6 +11221,7 @@ IFNOT VAR(UFO) MOD: CWBattleUlfric.esp
 IFNOT VAR(UFO) MOD: OriginalrecipeUlfric.esp
   IF FILE("CWBattleUlfric.esp") INC: CWBattleUlfric.esp
 Lively Followers.esp
+lospaco.esp
 Mabari.esp
   IF CHECKSUM("Mabari.esp", E3FA50FA) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Nilvas Reinhardt.esp
@@ -11296,7 +11334,8 @@ BEGINGROUP: NPC Distance, Face & Makeup Overrides
 REGEX: (No |(Slightly )?Reduced Distance )NPC Greetings.esp
 NoSkillComments.esp
 NoPanicComments.esp
-ENDGROUP: NPC Distance, Face & Makeup Overrides
+Beter Faendal.esp
+NDGROUP: NPC Distance, Face & Makeup Overrides
 
 BEGINGROUP: Companions
 // Load after UFO, XFL
