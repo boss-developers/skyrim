@@ -219,6 +219,8 @@ LorecraftESM.esm
 oblivion hair.esm
 Oblivion hair2.esm
 Real Wildlife - IMCN.esm
+SC_Drow Race.esm
+  SAY: Obsolete. Update to the latest renamed version, DrowRace.esp
 SkyTEST-RealisticAnimals&Predators.esm
 Smithing Extended.esm
 Immersive Patrols.esm
@@ -466,7 +468,6 @@ Monli.esm
   IF CHECKSUM("Monli.esm", 94B31A2C) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Sanctum of the Fallen.esm
 SotF BETA v1-2.esm
-SC_Drow Race.esm
 BBLuxurySuite.esm
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 GluRuSArtifactEffectPerk.esm
@@ -922,8 +923,6 @@ Farkas v1.esp
 Farkas v2.esp
 Farkas v3.esp
 Fianna.esp
-REGEX: HousecarlSolitude A Jordis the Sword-Maiden v.+\.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 FraliaGrayMane.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("FraliaGrayMane.esp", D017BDCC) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -934,6 +933,8 @@ GaiusMaro.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("GaiusMaro.esp", DCBBFF4D) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Gwendolyn.esp
+REGEX: HousecarlSolitude A Jordis the Sword-Maiden v.+\.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Hroki.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("Hroki.esp", 690073BB) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -1524,6 +1525,10 @@ Belleza DiBella - PNJ Overhaul.esp
 Better Alchemy Loot.esp
 Better Embers.esp
 Better Skill and Quest Books Names.esp
+DV Better Sleep Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF FILE("DV Better Sleep Dawnguard.esp") ERROR: Use non-Dawnguard version, DV Better Sleep.esp
+DV Better Sleep.esp
+  IF VAR(Dawnguard) && IF FILE("DV Better Sleep.esp") ERROR: Use Dawnguard version, DV Better Sleep Dawnguard.esp
 BetterChestLoot.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 BetterFishAdded.esp
@@ -3101,6 +3106,9 @@ armorkits.esp
 Armor of Justice.esp
 Armoury of Conan.esp
 Zbrojownia z Conan.esp
+Armures traditionnelles de Bordeciel I.esp
+  IF CHECKSUM("Armures traditionnelles de Bordeciel I.esp", 2AC9BE08) WARN: This file contains unexpected (or out of order) records and it should be removed.
+Armures traditionnelles de Bordeciel II.esp
 Armures traditionnelles de Bordeciel III.esp
 Arngrim_Evening_Dress.esp
 REGEX: ArrowsNoGravity(_Fast)?\.esp
@@ -3426,6 +3434,8 @@ Crossbow_Basic_Collection_NoLListed_EN.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Crossbow_Basic_Collection_NoLListed_DE.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+customnightingale.esp
+  SAY: Obsolete. Update to the latest renamed version, UnenchantedNightingaleSetMod.esp
 CrystalAxe.esp
 Crystaldagger.esp
 CrystalHammer.esp
@@ -3961,6 +3971,7 @@ HighelfL17.esp
 Highlander Katana.esp
 highric Armor.esp
 HM Soul Gem Shifter.esp
+holdbounties.esp
 holy armor.esp
 HonestAbe.esp
 IFNOT VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
@@ -4071,6 +4082,7 @@ jack of blades armor.esp
 JackshAyaneNArmor.esp
 JackshBabyDoll.esp
 JackshCelineArmor.esp
+JackshKasumiNinjaArmor.esp
 jammersslavegear.esp
 Janka_Captain.esp
 Janka_Lupina.esp
@@ -4950,6 +4962,7 @@ Tamrielic Artifacts - Goldbrand - Eltonbrand.esp
   IF CHECKSUM("Tamrielic Artifacts - Goldbrand - Eltonbrand.esp", 496766F9) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Tamrielic Artifacts - Umbra.esp
 TamrielicArtifactsV1-1.esp
+TargeoftheBloodedImproved.esp
 TBSC_BodySuit.esp
   REQ: "http://skyrim.nexusmods.com/mods/4888 CHSBHC - BBP female body".
   IFNOT FILE("SkyHeels.esp") REQ: "http://skyrim.nexusmods.com/mods/5589 SkyHeels" resources.
@@ -5086,10 +5099,12 @@ UmbraSturmbringer.esp
 Unarmed Enhanced.esp
 Unexpected Blades.esp
 Unenchanted Necromancer Amulet.esp
-UnenchRobeSepHoodThalmor.esp
 UnenchantedTGArmors.esp
 UnenchantedRoyalVampireArmor.esp
+UnenchantedNightingaleArmour.esp
+  SAY: Obsolete. Update to the latest renamed version, UnenchantedNightingaleSetMod.esp
 UnenchantedNightingaleSetMod.esp
+UnenchRobeSepHoodThalmor.esp
 UnderC.esp
 REGEX: UniqueLeveledItemsUpgrade(1dot3)?\.esp
   IF VAR(EN) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Obsolete. Update to latest version.
@@ -5799,8 +5814,9 @@ archmage quarters .esp
 ArieFarm.esp
 Arkris store.esp
 ArmorDisguises.esp
-  IF CHECKSUM("ArmorDisguises.esp", 0C1EC552) || IF CHECKSUM("ArmorDisguises.esp", F7458A62) || IF CHECKSUM("ArmorDisguises.esp", CA327D7C) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("ArmorDisguises.esp", 61DE8DD5) DIRTY: 63 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Asgrim's Hold.esp
+  IF CHECKSUM("Asgrim's Hold.esp", A22B2395) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Auditorium.esp
 Aurora.esp
 REGEX: AutumnLodge\((Female|Male)Mannequin\)\.esp
@@ -6033,6 +6049,7 @@ Creeks.esp
   IF CHECKSUM("Creeks.esp", CEA19788) || IF CHECKSUM("Creeks.esp", B0022758) || IF CHECKSUM("Creeks.esp", 152E225F) || IF CHECKSUM("Creeks.esp", 27D75BC4) || IF CHECKSUM("Creeks.esp", FBB0A123) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Creeks.esp", 4B535D88) DIRTY: 36 ITM, 29 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Creepy Hovel.esp
+CrimeEnchanced.esp
 CrimsonQuest2.esp
   IF CHECKSUM("CrimsonQuest2.esp", B8C5038E) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 CrimsonQuest3.esp
@@ -6231,6 +6248,9 @@ ENDGROUP: Quests F
 BEGINGROUP: Quests G
 
 GardensOfWhiterun.esp
+garrettsretreat_v02a.esp
+  IF CHECKSUM("garrettsretreat_v02a.esp", 9FB00C2C) DIRTY: 80 ITM, 134 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("garrettsretreat_v02a.esp", 9FB00C2C) WARN: This file contains 1 deleted NavMesh record.  TES5Edit cannot repair this and it may cause problems with your game.
 Geir Manor.esp
   IFNOT VAR(GS) REQ: "http://skyrim.nexusmods.com/mods/18340 General Stores"
   IF CHECKSUM("Geir Manor.esp", FF608082) DIRTY: 26 ITM, 23 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -6262,6 +6282,7 @@ Grytewake.esp
 Guardian Plate Armor.esp
   IF CHECKSUM("Guardian Plate Armor.esp", 5ED4F98F) DIRTY: 4 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Guardian Plate Armor.esp", 15972BCB) DIRTY: 4 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Guenhwyvar.esp
 GuildmastersQuarters.esp
   IF CHECKSUM("GuildmastersQuarters.esp", BD42388D) || IF CHECKSUM("GuildmastersQuarters.esp", 178FBECE) || IF CHECKSUM("GuildmastersQuarters.esp", 2D8FB51E) || IF CHECKSUM("GuildmastersQuarters.esp", 372DF4C0) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("GuildmastersQuarters.esp", 69B5B053) DIRTY: 3 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -8591,6 +8612,7 @@ stronger alduin.esp
 stronger daedric artifacts.esp
   // TAG: {{BASH: Stats}}
 strongermagerewards.esp
+stupidlysimplemining.esp
 Spells Cast Light.esp
 Spell Tome price fix light.esp
 spellbreaker_300.esp
@@ -8714,6 +8736,8 @@ VariousGuardReplacer.esp
 REGEX: VendorsHaveMoreMoney\d*\.esp
 MISELF_Vendors.esp
 Veshi so Smislom from hiro.esp
+Viable_Faction_Armours.esp
+  IF CHECKSUM("Viable_Faction_Armours.esp", 705C44E8) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 vinis_crime_gold.esp
 Vile Art of Necromancy.esp
 Visible Aetherial Crown.esp
@@ -8949,6 +8973,8 @@ Green Cities.esp
 Green Whiterun.esp
 icefloes.esp
   IF CHECKSUM("icefloes.esp", BCCE527D) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+REGEX: Immersive Gras.*\.esp
+  SAY: Use only one Immersive Grass esp.
 MoreForestsNV.esp
   IF CHECKSUM("MoreForestsNV.esp", 564D264F) DIRTY: 313 ITM, 175 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Oblivion Gates.esp
@@ -9317,6 +9343,8 @@ Bandit's Dream Spell.esp
 BanishLight.esp
   IF VAR(EN) WARN: May not work properly with lighting mods.
     IF VAR(RU) WARN: Может неверно работать с модами, меняющими освещение..
+bankai.esp
+  IF CHECKSUM("bankai.esp", A0B5A19E) DIRTY: 16 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BardSvaknirSummon.esp
   IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
     IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
@@ -9616,6 +9644,9 @@ QueenPotemaSummon.esp
   IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") SAY: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
     IF VAR(RU) && IFNOT FILE("LegendarySouls.esp") SAY: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("QueenPotemaSummon.esp", B3F2FCD8) DIRTY: 6 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Spells and Incantations.esp
+sprigganandwispmother.esp
+  IF CHECKSUM("sprigganandwispmother.esp", FCC956DB) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SummonableCreatures.esp
   IF CHECKSUM("SummonableCreatures.esp", 442DF73F) || IF CHECKSUM("SummonableCreatures.esp", 86FBDC8B) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("SummonableCreatures.esp", 5E074043) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -9976,6 +10007,7 @@ ENDGROUP: Spells Late
 
 BEGINGROUP: Alchemy
 
+alchemy extended.esp
 Alchemy Fixed Beta 0.02.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -11096,6 +11128,9 @@ Decapitate_Children.esp
 Drakian race.esp
   IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
 Draman Skeleton Mod.esp
+DrowRace.esp
+  IF CHECKSUM("DrowRace.esp", 3A35E3FF) DIRTY: 20 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
 Dryad Race.esp
 Dwarf.esp
   IF CHECKSUM("Dwarf.esp", A6D2870E) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -11142,6 +11177,8 @@ playable dremora.esp
 qmod01shadowscale.esp
 race+.esp
 RGMsTattooedRaces.esp
+SC_Drow Race.esp
+  SAY: Obsolete. Update to the latest renamed version, DrowRace.esp
 SkyTEST-MysticLands.esp
   IF CHECKSUM("SkyTEST-MysticLands.esp", 98D9ED8B) DIRTY: 20 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SPTConsistentOlderPeople.esp
