@@ -4782,6 +4782,7 @@ SkimpySilverlight.esp
 skyforgedShields.esp
 SkyforgeWeapons.esp
 SkyHeels.esp
+  IF CHECKSUM("SkyHeels.esp", 9816BAE4) WARN: This file contains unexpected (or out of order) records and it should be removed.
 SkyPortals.esp
 Skyrim - Chests Of Fun.esp
 skyrule.esp
@@ -4902,6 +4903,9 @@ Tamrielic Artifacts - Goldbrand - Eltonbrand.esp
   IF CHECKSUM("Tamrielic Artifacts - Goldbrand - Eltonbrand.esp", 496766F9) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Tamrielic Artifacts - Umbra.esp
 TamrielicArtifactsV1-1.esp
+TBSC_BodySuit.esp
+  REQ: "http://skyrim.nexusmods.com/mods/4888 CHSBHC - BBP female body".
+  IFNOT FILE("SkyHeels.esp") REQ: "http://skyrim.nexusmods.com/mods/5589 SkyHeels" resources.
 tbmchrysamere.esp
 TCOSS.esp
   TAG: {{BASH: Delev, Relev}}
@@ -5351,6 +5355,22 @@ mm_BeluaSanguinareRevisitedLootTables.esp
 mm_BeluaSanguinareRevisitedRefuge.esp
 mm_BeluaSanguinareRevisitedStaminaSprintDrain.esp
 mm_BeluaSanguinareRevisitedDGCompatibility.esp
+MoM - Mastery of Magicka.esp
+  SAY: Use only one MoM esp.
+  TAG: {{BASH: Delev}}
+  IF CHECKSUM("MoM - Mastery of Magicka.esp", ADDF2A6D) DIRTY: 13 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+MoM - No Alchemy & Enchanting.esp
+  SAY: Use only one MoM esp.
+  TAG: {{BASH: Delev}}
+  IF CHECKSUM("MoM - No Alchemy & Enchanting.esp", 3C26874D) DIRTY: 13 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+MoM - No Alchemy.esp
+  SAY: Use only one MoM esp.
+  TAG: {{BASH: Delev}}
+  IF CHECKSUM("MoM - No Alchemy.esp", 658C9F93) DIRTY: 13 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+MoM - No Enchanting.esp 
+  SAY: Use only one MoM esp.
+  TAG: {{BASH: Delev}}
+  IF CHECKSUM("MoM - No Enchanting.esp ", A51AF24C) DIRTY: 13 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 T3nd0sOverhaul.esp
   IF VAR(EN) SAY: Obsolete. Update to latest 'SkyRe - Skyrim Redone'
     IF VAR(RU) SAY: Устарело. Обновите до последней версии 'SkyRe - Skyrim Redone'
@@ -6267,9 +6287,12 @@ ENDGROUP: Quests H
 BEGINGROUP: Quests I
 
 Immersive Lore & Hidden Treasures.esp
+Immersive Cities Project.esp
+  SAY: Obsolete. Update to latest renamed version, ICP Whiterun Exterior.esp
 ImmersiveCitiesProjectPart2.esp
   IF CHECKSUM("ImmersiveCitiesProjectPart2.esp", 1D6C7360) DIRTY: 21 ITM, 186 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("ImmersiveCitiesProjectPart2.esp", 1D6C7360) WARN: This file contains 12 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF FILE("ICP Whiterun Exterior.esp") ERROR: Use ICP Whiterun Exterior.esp or ImmersiveCitiesProjectPart2.esp, not both.
 Imperial and Sons forts.esp
 improved thieves guild.esp
 InfiniteShouts.esp
@@ -6921,6 +6944,7 @@ WhiteFallsHouse.esp
 ICP Whiterun Exterior.esp
   IF CHECKSUM("ICP Whiterun Exterior.esp", 58A7F24E) DIRTY: 8 ITM, 409 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("ICP Whiterun Exterior.esp", 58A7F24E) WARN: This file contains 7 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF FILE("ImmersiveCitiesProjectPart2.esp") ERROR: Use ICP Whiterun Exterior.esp or ImmersiveCitiesProjectPart2.esp, not both.
 (BETA) Immersive Cities - Whiterun.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, ICP Whiterun Exterior.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, ICP Whiterun Exterior.esp
@@ -7424,6 +7448,8 @@ Deadly_Slaughterfish.esp
   IFNOT FILE("VampireHuntersCoat.esp") REQ: VampireHuntersCoat.esp
 Daedric Artifact Enhancements.esp
 Daedric Artifacts Overlord.esp
+Daedric Light Armor - Rebalanced.esp
+  IF CHECKSUM("Daedric Light Armor - Rebalanced.esp", BA0A6590) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
 DaedricWOP.esp
 dangerous animals.esp
   IF CHECKSUM("dangerous animals.esp", D2E559A6) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -9458,6 +9484,8 @@ markrecall.esp
 MarkRecallAlt.esp
 MarkRecallCon.esp
 MasterTheTimeAndSpaceTOGGLE.esp
+Mass effect Biotic spells.esp
+  IF CHECKSUM("Mass effect Biotic spells.esp", C32007ED) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MaximumDrive.esp
 MECR_NightEye_DetectLife_Overhaul.esp
 Medium Voidmagic.esp
@@ -9478,6 +9506,8 @@ MiningforMagesEasy.esp
   IF FILE("MiningforMagesAdvanced.esp") INC: MiningforMagesAdvanced.esp
   IF CHECKSUM("MiningforMagesEasy.esp", 6164A0C6) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 mm_HorseWhisperer.esp
+More elements in skyrim.esp
+  IF CHECKSUM("More elements in skyrim.esp", 2AB8A62E) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Moryth spells.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Evilbass Light and Dark Spells.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Evilbass Light and Dark Spells.esp
@@ -10155,6 +10185,7 @@ Fighting Stances(optional) EnemiesPack.esp
 fists of steel lvls.esp
 firstPersonKillmoveOnly.esp
 GluRuS_newkillmoves.esp
+Headshot.esp
 Horsemen.esp
 killmove.esp
 Killmove +.esp
@@ -10221,6 +10252,7 @@ REGEX: 1 - Skill Rebalance \+ \d{2,3}% Speed\.esp
 2xskillgain.esp
 2x Skill Increase Rate.esp
 3 - Reduced Early Perk Skill Reqs.esp
+4xskillgain.esp
 REGEX: ...?% Skill Speed\.esp
 REGEX: leveling_\dx_slower.+\.esp
 ACE BYOG.esp
@@ -10764,6 +10796,8 @@ JNwepPerkoverhaul.esp
   IF FILE("Duel - Combat Realism.esp") INC: Duel - Combat Realism.esp
 Light Armor Unarmed Scaling (no armor requirement).esp
 LockpickTree.esp
+MoM - Only Mastery Perks.esp
+  SAY: Use only one MoM esp.
 More Useful Soul Siphon10.esp
 More Usefull Soul Siphon25.esp
   IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
@@ -12282,9 +12316,10 @@ Henrys All Animals and Creatures BeFriend German.esp
   IF CHECKSUM("Henrys All Animals and Creatures BeFriend German.esp", 7E773EE5) DIRTY: 21 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("Henrys All Animals BeFriend.esp") || IF FILE("Henrys All Animals BeFriend German.esp") || IF FILE("Henrys All Animals  and Creatures BeFriend.esp") INC: Henrys All * BeFriend mods
 khajiit_replacer.esp
-  IF CHECKSUM("khajiit_replacer.esp", F59E2E52) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Morozik75_Better_Races_Rus.esp
 Nicer-Looking Khajiit.esp
+nord_nightseye01.esp
+  IF CHECKSUM("nord_nightseye01.esp", BB8B06A8) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Race Tweaks.esp
 RaceRevamp.esp
 Races and Doomstones.esp
