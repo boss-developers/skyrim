@@ -2166,6 +2166,7 @@ REGEX: Lanterns Of Skyrim - Bridges x2 - OnOff(_bright)?\.esp
 Lanterns Of Skyrim - Villages.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+Lanterns Of Skyrim - AIO - Dawnguard.esp
 Lanterns on the Roads (50% less lanterns).esp
 LBInteriorDecorating.esp
 LB Jewelry Chest.esp
@@ -2966,6 +2967,7 @@ VanillaUsesCustom.esp
   IF VAR(EN) WARN: Obsolete.  Update to latest version.
     IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 WarriorRest.esp
+WetandCold.esp
 ENDGROUP: Load Order Independent Mods
 
 BEGINGROUP: Items
@@ -3542,6 +3544,8 @@ Dead Knight Armor.esp
 Decapitation-spell-and-raise-skull-minions.esp
 Demon Lord Armor Set.esp
 Demon Sword.esp
+DemonHunterArmor.esp
+  SAY: Be sure you have the correct version for the body type installed: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body" or "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 Demothris.esp
 DesertWindByNausicaa.esp
 devilwithinGLOWYrune.esp
@@ -4032,6 +4036,8 @@ Imperial Dragon Armor.esp
 Imperial_Greek armor.esp
 InfernoGreatSword.esp
 Infinity Blade Hero Set.esp
+InsanitysCelticKatana.esp
+  IF FILE("SkyRe_Plugin_InsanitysCelticKatana_1.2.esp") TAG: {{BASH: Deactivate}}
 Insanity's Chrysamere.esp
 Insanity's Craftable Dragonbane.esp
 Insanity's Dragonbane.esp
@@ -4044,8 +4050,7 @@ Insanity's Goldbrand.esp
   IF CHECKSUM("Insanity's Goldbrand.esp", B5360513) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Insanity's Kahvozein Fang.esp
 Insanity's Ice Blade of the Monarch.esp
-InsanitysCelticKatana.esp
-  IF FILE("SkyRe_Plugin_InsanitysCelticKatana_1.2.esp") TAG: {{BASH: Deactivate}}
+Insanity's Pale Blade.esp
 Insanity's Sorrow.esp
   IF CHECKSUM("Insanity's Sorrow.esp", 872ACBC) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Insanity's Umbra Sword.esp
@@ -4566,6 +4571,8 @@ Onechanbara Kagura Set.esp
 One handed Crossbow.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 openfacehelmetsstandalone.esp
+Orcish Sabre.esp
+  IF CHECKSUM("Orcish Sabre.esp", 1AF00464) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 OrcishMaskedHelmet.esp
 OreynBearclaw.esp
 Orgnum'sDagger.esp
@@ -4588,6 +4595,7 @@ BEGINGROUP: Items P
 
 Paladin.esp
 PaladinArmor.esp
+Pauldrons.esp
 PENIS.esp
   REQ: "http://skyrim.nexusmods.com/mods/2488 Nudes - FavoredSoulMeshes - ErectVersion"
 PhoenixArmor.esp
@@ -6363,6 +6371,8 @@ Hunter.esp
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
 Hunter's Campsite v1.1.esp
 HuntForTheWayStones.esp
+HvilaHome.esp
+  IF CHECKSUM("HvilaHome.esp", 81E6081F) DIRTY: 7 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 hyrulecomplete03.esp
 ENDGROUP: Quests H
 
@@ -9954,6 +9964,7 @@ MagicUnderControl.esp
 REGEX: Mighty Magick - (Dual Casting|Alteration|Conjuration|Destruction|Illusion|Restoration|Scaling)\.esp
 Mighty Magick - Fortify Magic School Enchantment and Alchemy Reversed.esp
 REGEX: Mighty Magick - .+ Extras\.esp
+Mighty Magick - Enchantments Rebalance.esp
 MiniLovers.esp
 MiniLoversSoundSpell.esp
 MiniLoversAlternative.esp
@@ -10071,6 +10082,7 @@ skoomacooking.esp
 ENDGROUP: Alchemy
 
 BEGINGROUP: Enchantment
+// enchantments
 
 zzzAlmostUnlimitedWeaponEnchant.esp
   IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -10088,6 +10100,7 @@ Disenchantable Dragonbane.esp
 disenchnateverything.esp
   // typo is Mod name 
   SAY: Obsolete. Update to latest renamed version, Enchanting Freedom.esp
+ElaborateEnchantments.esp
 enchant3.esp
 enchant4effects.esp
 Enchant_Me_items.esp
@@ -11043,6 +11056,8 @@ hair.esp
 Hair-Specular Fix.esp
 hornsareforever.esp
 LovelyHairstyles.esp
+LovelyHairstylesLITE.esp
+  IF FILE("LovelyHairstyles.esp") ERROR: Use LovelyHairstyles.esp or LovelyHairstylesLITE.esp, not both.
 mmkhajiithair11.esp
 MMhair.esp
 MTOH.esp
@@ -11108,7 +11123,8 @@ ENDGROUP: Eyes
 
 XCES.esp
   IF CHECKSUM("XCES.esp", 0D760898) WARN: Obsolete. Update to the latest version.
-// Adds complexions (which are used to add scars), not certain of placement
+  IF FILE("ethereal_elven_overhaul.esp") INC: ethereal_elven_overhaul.esp
+  // Adds complexions (which are used to add scars), not certain of placement
 
 Improved Freckles Skyrim.esp
 // Not certain where this ought to go.  Replaces freckles and adds for men.
