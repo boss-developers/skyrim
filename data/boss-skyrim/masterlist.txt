@@ -1327,6 +1327,11 @@ REGEX: BorderRegionsDisabled(EV)?\.esp
 ChangeMaleModels.esp
   IF CHECKSUM("ChangeMaleModels.esp", 34A1E261) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Elemental Base.esp
+jumpHeightOnly.esp
+jumpHeightThird.esp
+  IF FILE("jumpHeightOnly.esp") ERROR: Use only one jumpheight esp.
+lowerJumpHeight.esp
+  IF FILE("jumpHeightOnly.esp") || IF FILE("jumpHeightThird.esp") ERROR: Use only one jumpheight esp.
 Less Fugly Female NPCs.esp
   IF CHECKSUM("Less Fugly Female NPCs.esp", 93FE07E6) WARN: This mod contains numerous corrupted records generated with TESVSmip. It is strongly advised you remove this from your load order to avoid damage to your saves.
 // makes sense to load before mods which alter individual NPC
@@ -2258,6 +2263,7 @@ MAD Ingots & Leather.esp
    IF FILE("MAD Ingots & Leather Ars Metallica Compatible.esp") && IF VAR(EN) SAY: Use only one MAD Ingots & Leather.esp (Regular or Ars Metallica compatible)
      IF FILE("MAD Ingots & Leather Ars Metallica Compatible.esp") && IF VAR(RU) SAY: Используйте только один MAD Ingots & Leather.esp (Regular or Ars Metallica compatible)
 MAD Ingots & Leather Ars Metallica Compatible.esp
+MaiqSENPAI.esp
 MaladiesDeBordeciel.esp
   IF CHECKSUM("MaladiesDeBordeciel.esp", E54712F2) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Malkavs Collection.esp
@@ -3268,6 +3274,8 @@ BlutKult_Zwergenaexte.esp
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 BMC - Craftable Glove Alternatives.esp
 bobsarmory.esp
+Books+.esp
+  IF CHECKSUM("Books+.esp", 08095BB6) DIRTY: 4 ITM, 18 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BootsBlindingSpeed.esp
 boots_of_blinding_speed.esp
 boots of speed.esp
@@ -3585,6 +3593,7 @@ REGEX: Dovahkiin Mercenary Armor and Weapons (CBBE|UNP)?\.esp
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Dovahkiin Mercenary Armor and Weapons CBBE.esp", C376FC4) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и может содержать неверные записи. Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
 Dovahkiin Mercenary Armored Horse.esp
 Dovahkiin's_Great_Sword.esp
+dovahkiin'scrown.esp
 DPArmor.esp
 DPArmor_AIO.esp
 DraconicArmor.esp
@@ -4385,6 +4394,8 @@ MongolArmor.esp
 monster_hunter.esp
   IF CHECKSUM("monster_hunter.esp", A8A0C107) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Monster Hunter.esp
+Monys Portable Crafting Equipment.esp
+  IF CHECKSUM("Monys Portable Crafting Equipment.esp", 9B33A305) WARN: This file contains unexpected (or out of order) records and it should be removed.
 MoonAndStarRing.esp
 morenamedbows.esp
 morrowind_ring_of_khajiit.esp
@@ -5835,6 +5846,8 @@ ArmorDisguises.esp
   IF CHECKSUM("ArmorDisguises.esp", 61DE8DD5) DIRTY: 63 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Asgrim's Hold.esp
   IF CHECKSUM("Asgrim's Hold.esp", A22B2395) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+AssassinsSquads.esp
+  IF CHECKSUM("AssassinsSquads.esp", 09D13B98) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Auditorium.esp
 Aurora.esp
 REGEX: AutumnLodge\((Female|Male)Mannequin\)\.esp
@@ -6164,6 +6177,8 @@ dragonstaffofdomination001.esp
 Dragonstand.esp
 Drelas_Cottage_0.5b.esp
 DremFahPahNahl.esp
+dremorathrall.esp
+  IF CHECKSUM("dremorathrall.esp", 752F259A) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 driftshadetreetops.esp
   IF CHECKSUM("driftshadetreetops.esp", 33884D3D) DIRTY: 1 ITM, 29 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("driftshadetreetops.esp", 33884D3D) WARN: This file contains 1 deleted NavMesh record.  TES5Edit cannot repair deleted NavMeshes and this mod may cause problems with your game.
@@ -6178,6 +6193,11 @@ Dungeons Vault of Elements.esp
   IF CHECKSUM("Dungeons Vault of Elements.esp", A30FCAEE) DIRTY: 0 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DusksCabin.esp
   IF CHECKSUM("DusksCabin.esp", D8766585) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+DVC.esp
+  IF CHECKSUM("DVC.esp", 16317A66) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+DVCLight.esp
+  IF CHECKSUM("DVCLight.esp", B81A8CB5) DIRTY: 44 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("DVC.esp") ERROR: Use DVC.esp or DVCLight.esp, not both.
 DwarvenFalls.esp
   IF CHECKSUM("DwarvenFalls.esp", 30FF942D) DIRTY: 8 ITM, 26 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Dwemer Armory.esp
@@ -7439,6 +7459,7 @@ BlockSparkles.esp
 REGEX: Bloodx\d{1,4}\.esp
 REGEX: Bodies Stay Longer( \(Extreme\))?\.esp
 book prices fix.esp
+Books+ (No skill books).esp
 border.esp
 BorderRegionsDisabledEV.esp
 BORGAKH1a.esp
@@ -8216,17 +8237,16 @@ BEGINGROUP: Overrides N
 naturalcarriagedrivers.esp
 NecromancerImproved.esp
   // nexus description says it adjust the stats on the Necromancer Amulet.  No file for download.
+NeutralHjerim.esp
 NeV-P_ExtremeMaterials.esp
 NeV-P_ExtremeMaterialsENG.esp
   IF CHECKSUM("NeV-P_ExtremeMaterialsENG.esp", 745B4390) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("NeV-P_ExtremeMaterials.esp") INC: NeV-P_ExtremeMaterials.esp - different langauge.
 NeV-P_TitaniumDragonEquipment.esp
-NeutralHjerim.esp
 new_beautiful_sunglare_1.0.esp
 New Difficulties.esp
 New Encounter zone Levels.esp
 /* Part of New Encounter zone Levels.esp */
-Tougher named NPCs.esp
 NGEC.esp
 Nightingale Blade fix.esp
 Nightingale Maskless.esp
@@ -8234,6 +8254,8 @@ nightingale_armor_tweak.esp
 No Annoying Skeleton Sound.esp
 No Axe or Pickaxe required.esp
 No Crime gold.esp
+No Falling Damage.esp
+  IF FILE("Less Falling Damage.esp") ERROR: Use Less Falling Damage.esp or No Falling Damage.esp, not both.
 No Fast Traveling.esp
 No Fast Travel.esp
 No Helmets Required.esp
@@ -8675,6 +8697,7 @@ torches for realistic lighting.esp
 REGEX: torches for RL \(.+\)\.esp
 torchradius.esp
 Tougher guards.esp
+Tougher named NPCs.esp
 Tougher Traps.esp
 REGEX: Tougher Traps - \w{5,10}\.esp
 Train over 9000!!!! times.esp
@@ -9052,6 +9075,7 @@ ENDGROUP: City Overhauls
 
 BEGINGROUP: Realism
 
+// realism
 Skyrim_realism.esp
   IF CHECKSUM("Skyrim_realism.esp", 536BCFFA) DIRTY: 183 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BasicHumanNeeds.esp
@@ -9674,6 +9698,7 @@ QueenPotemaSummon.esp
   IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") SAY: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
     IF VAR(RU) && IFNOT FILE("LegendarySouls.esp") SAY: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("QueenPotemaSummon.esp", B3F2FCD8) DIRTY: 6 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+recallthedead.esp
 Spells and Incantations.esp
 sprigganandwispmother.esp
   IF CHECKSUM("sprigganandwispmother.esp", FCC956DB) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -11640,6 +11665,8 @@ My_Little_kitty_non_replaced.esp
 Natural Characters and Companions.esp
 SkyNPCReimagined.esp
 (TWE) Dandelion NPC.esp
+
+//
 AmazonianKhajiitAlpha.esp
 REGEX: AnotherFollowerMod_.+\.esp
 Barbarian Companions.esp
@@ -11748,6 +11775,11 @@ RC_Cara_v1.esp
 Salit.esp
 Sden.esp
 Sebastion.esp
+JNPC_Serana.esp
+JNPC_SeranaB.esp
+  IF FILE("JNPC_Serana.esp") ERROR: Use JNPC_Serana.esp or JNPC_SeranaB.esp, not both.
+JNPC_Serana_alt.esp
+  SAY: Obsolete. Update to the latest renamed version, JNPC_Serana.esp
 Serana_Revised.esp
   IF VAR(EN) REQ: Meshes and Textures from "http://skyrim.nexusmods.com/mods/21038 Girls of Skyrim - Michelle"
     IF VAR(RU) REQ: Модели(Meshes) и тестуры мз мода "http://skyrim.nexusmods.com/mods/21038 Girls of Skyrim - Michelle"
@@ -12441,6 +12473,7 @@ Henrys All Animals and Creatures BeFriend German.esp
 khajiit_replacer.esp
 Morozik75_Better_Races_Rus.esp
 Nicer-Looking Khajiit.esp
+NorcRace_OrcRaceReplacer.esp
 nord_nightseye01.esp
   IF CHECKSUM("nord_nightseye01.esp", BB8B06A8) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Race Tweaks.esp
@@ -12488,6 +12521,7 @@ IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   // Must be loaded after SkyRe_Races.esp(if installed) to work correctly
 Third Era Attributes for Skyrim - Races.esp
 ethereal_elven_overhaul.esp
+  IF FILE("XCES.esp") INC: XCES.esp
   IF VAR(EN) && IF FILE("SkyRe_Races.esp") && IFNOT CHECKSUM("ethereal_elven_overhaul.esp", 38515FFF) INC: SkyRe.  Compatibility version no longer available.
 //    IF VAR(RU) && IF FILE("SkyRe_Races.esp") SAY: Убедитесь, что используете совместимую версию, которую можно скачать "http://skyrim.nexusmods.com/mods/24273/ отсюда".
 ENDGROUP: Race Overrides
@@ -12539,6 +12573,7 @@ REGEX: WiS IV( -)? Blood Coins( slow| normal| Insane)?\.esp
 ChickenNestFix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
+followerssovngarde_respawn_version_1_0.esp
 REGEX: MD - WMTBNDE .+\.esp
   IF VAR(EN) SAY: Use only one WMTBNDE esp
     IF VAR(RU) SAY: Используйте только один WMTBNDE esp
