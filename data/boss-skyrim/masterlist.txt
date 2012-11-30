@@ -2569,10 +2569,17 @@ Skyrim Immersive Creatures.esp
 SkyMoMod_lists.esp
   TAG: {{BASH: Delev, Relev}}
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
-  IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: If you're using the original "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod", this esp is obsolete and you should update to the latest version. If you're using the Lore-Friendly version, disreagrd this note.
-// commented until new message is translated.
-// IF VAR(EN) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: If you're using only the original "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod", this esp is obsolete. If you're using the Lore-Friendly mod, disreagrd this note.
-//    IF VAR(RU) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: Устарело(только при использовании "http://skyrim.nexusmods.com/mods/9694 оригинального" мода). Обновите до последней версии.
+  IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: Obsolete. Update to the latest version.
+  IF REGEX("SkyMoMod Lore.+\.esp") INC: SkyMoMod Lore * v10.esp's
+   // commented until new message is translated.
+  // IF VAR(EN) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: If you're using only the original "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod", this esp is obsolete. If you're using the Lore-Friendly mod, disreagrd this note.
+  //    IF VAR(RU) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: Устарело(только при использовании "http://skyrim.nexusmods.com/mods/9694 оригинального" мода). Обновите до последней версии.
+REGEX: SkyMoMod Lore.+\.esp
+  TAG: {{BASH: Delev}}
+  SAY: Use only one SkyMoMod Lore esp.
+  REQ: SkyMoMod v10
+  IF FILE("SkyMoMod_lists.esp") INC: SkyMoMod_lists.esp
+  IF FILE("SkyMo-Dawn.esp") INC: SkyMo-Dawn.esp 
 REGEX: SkyMoMod_morespawns_(animal|bandit|draugr|dwerven|falmer|forsworn|mage|vampire)\.esp
 SkyMoMod Extras Collectables.esp
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
@@ -2580,6 +2587,8 @@ Skyrim_Monster_Mod_Additions-Collectables.esp
 SkyMoMod Extras Conjuration.esp
 skymo-dawn.esp
   TAG: {{BASH: Delev}}
+  SAY: Obsolete. Update to the lastest renamed version, SkyMoMod Lore-Friendly * v10.esp
+  IF REGEX("SkyMoMod Lore-Friendly .+\.esp") INC: SkyMoMod Lore-Friendly * v10.esp's
 Skyrim_Monster_Mod_Additions-Conjuration.esp
 REGEX: Deleveled Skyrim - SkyMoMod_list( \(No EleTri\)| \(No EleTriSta\))\.esp
   TAG: {{BASH: Delev, Relev}}
@@ -3395,6 +3404,7 @@ CommonItemWeapons.esp
 CompanionsShields.esp
 CompleteBarenziah.esp
 Construct Dragonbone Crown.esp
+ConvenientCrossbows.esp
 CoolItems1_1.esp
 CopperPaladinArmorV1.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardPaladinArmorCP.esp
@@ -6010,6 +6020,20 @@ BreezehomeEnchantingTableFrench.esp
 BreezehomeGrindStone.esp
 Breezehome PLUS.esp
   IF VAR(BertsBHInst) INC: BertsBreezeRemodel
+Briar'sEndCourierQuest.esp
+  IF FILE("Fleetford.esp") INC: Fleetford.esp
+  IF CHECKSUM("Briar'sEndCourierQuest.esp", 30CD77F3) DIRTY: 48 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Briar'sEndCourierQuest.esp", 30CD77F3) WARN: This file contains 3 deleted NavMesh records.  TES5Edit cannot repair deleted NavMeshes and this mod may cause problems with your game.
+Briar'sEndInstantQuest.esp
+  IF FILE("Fleetford.esp") INC: Fleetford.esp
+  IF FILE("Briar'sEndCourierQuest.esp") ERROR: Use only one Briar'sEnd esp.
+  IF CHECKSUM("Briar'sEndInstantQuest.esp", 3BEEDC33) DIRTY: 48 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Briar'sEndInstantQuest.esp", 3BEEDC33) WARN: This file contains 3 deleted NavMesh records.  TES5Edit cannot repair deleted NavMeshes and this mod may cause problems with your game.
+Briar'sEndNoQuest.esp
+  IF FILE("Fleetford.esp") INC: Fleetford.esp
+  IF FILE("Briar'sEndCourierQuest.esp") || IF FILE("Briar'sEndInstantQuest.esp") ERROR: Use only one Briar'sEnd esp.
+  IF CHECKSUM("Briar'sEndNoQuest.esp", DC577DA1) DIRTY: 50 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Briar'sEndNoQuest.esp", DC577DA1) WARN: This file contains 3 deleted NavMesh records.  TES5Edit cannot repair deleted NavMeshes and this mod may cause problems with your game.
 Bridge Farm.esp
 Bridge Farm Hearthfire version.esp
   IF FILE("Bridge Farm.esp") INC: Bridge Farm.esp
@@ -6260,6 +6284,8 @@ fjorinstomb.esp
 flaho_shi_wassersturz.esp
   IF CHECKSUM("flaho_shi_wassersturz.esp", 4EA6342F) || IF CHECKSUM("flaho_shi_wassersturz.esp", 3FBCF912) DIRTY: 22 ITM, 6 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Fleetford.esp
+  IF REGEX("Briar'sEnd.*\.esp") INC: Briar'sEnd
+  IF CHECKSUM("Fleetford.esp", 6D3A13D9) DIRTY: 50 ITM, 31 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Forfeorannaheim.esp
   IF CHECKSUM("Forfeorannaheim.esp", 59266CBF) DIRTY: 51 ITM, 31 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Forges of Skyrim.esp
@@ -6721,6 +6747,11 @@ RiverwoodRepose.esp
 RiverWoodShack.esp
 riverwoodpicnicarea.esp
 robbersroost.esp
+ROEBETA.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("ROEBETA.esp", 8880D3D2) DIRTY: 62 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("ROEBETA.esp", 8880D3D2) WARN: This file contains 1 deleted NavMesh record.  TES5Edit cannot repair deleted NavMeshes and this mod may cause problems with your game.
 roof-jumping treasure mod.esp
 rooq.esp
 rooq_bathing_twocell.esp
@@ -10492,6 +10523,8 @@ ACE Magic.esp
 ACE Melee.esp
 ACE Smithing.esp
 ACE Synergy.esp
+ACE Archery-Weapons of the Third Era Patch.esp
+IF CHECKSUM("ACE Archery-Weapons of the Third Era Patch.esp", 873EAB94) WARN: This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.
 IF VAR(EN) && IF REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
 LB_MuchAdoSnowElves_ACE_Patch_Light.esp
   IFNOT FILE("ACE Archery.esp") REQ: ACE Archery.esp
@@ -11529,7 +11562,7 @@ BEGINGROUP: NPC Distance, Face & Makeup Overrides
 // Distance Tweaks before Face & Makeup Overrides
 // Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 
-REGEX: (No |(Slightly )?Reduced Distance )NPC Greetings.esp
+REGEX: (No |Reduced Distance |Slightly Reduced Distance )NPC Greetings.esp
 NoSkillComments.esp
 NoPanicComments.esp
 Beter Faendal.esp
@@ -12772,6 +12805,9 @@ Player Created Map Marker.esp
 Proudspire Manor - Map Marker.esp
 PlayerHomeMapMarkers.esp
 Secondary Locations Map Markers.esp
+  IF CHECKSUM("Secondary Locations Map Markers.esp", 1F4F79E7) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Secondary Locations Dawnguard.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 skyforge_map_marker.esp
 REGEX: smakit_house_markers(_plus)?(_russian|_german)?\.esp
 tox Dragon Map Markers.esp
