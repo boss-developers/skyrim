@@ -396,6 +396,7 @@ ApachiiHairMales.esm
 Caellon.esm
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Succubus.esm
+  SAY: Obsolete. Update to the latest renamed version, SuccubusFollower.esp or Succubus Summoning.esp
 MTOH.esm
   IF VAR(EN) SAY: Hair standalone mod for other mods which edit NPCs. If this one is used, MTOH.esp should be disabled.
     IF VAR(RU) SAY: Автономный мод причесок, меняющий NPC. Если он использован, то MTOH.esp должен быть отключен.
@@ -480,6 +481,16 @@ Dual Wield for Followers.esm
 Extended Colors.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+
+  // esp's with esm bytes 
+SuccubusFollower.esp
+  SAY: This esp has been saved as an esm and released without changing it's name.
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IF FILE("Succubus Summoning.esp") ERROR: Use SuccubusFollower.esp or Succubus Summoning.esp, not both.
+Succubus Summoning.esp
+  SAY: This esp has been saved as an esm and released without changing it's name.
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IF FILE("SuccubusFollower.esp") ERROR: Use Succubus Summoning.esp or SuccubusFollower.esp, not both.
 ENDGROUP: ESMs
 
 BEGINGROUP: Official DLC Files
@@ -1095,6 +1106,7 @@ projectpew.esp
 QuieterRestorationDrawnSound.esp
 randomthunder.esp
 Rooster At Dawn v1.0.esp
+shutupnirnroot.esp
 skyradio.esp
 Skyrim - Player Re-Voiced - Elven Races Complete - Male.esp
 SoS - The Dungeons.esp
@@ -1485,6 +1497,8 @@ REGEX: Arrows of Magicka.*\.esp
 AThievesTreasure.esp
 Auto Unequip Helmet.esp
 AV1Dragon_Lords.esp
+AvengersBosses.esp
+  IF CHECKSUM("AvengersBosses.esp", 806151D5) WARN: This file contains unexpected (or out of order) records and it should be removed.
 ENDGROUP: Base A
 
 BEGINGROUP: Base B
@@ -3000,6 +3014,8 @@ BEGINGROUP: Items #
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 18 Black Katanas.esp
+18 Black® Katanas HD ML.esp
+  SAY: Obsolete. Update to the latest renamed version, 18 Black Katanas.esp
 1AlirArmor.esp
 1CuteKnightArmor.esp
 1handedWarhammers.esp
@@ -3196,6 +3212,8 @@ Basara.esp
 /* bat3.esp, hawk2.esp, wyvern4.esp contain Item Records */
 bat3.esp
 Battle Armor.esp
+Battledress Armor.esp
+  IF CHECKSUM("Battledress Armor.esp", 68CE399F) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BattleFlute.esp
 BattleMage armor.esp
 Battlemode Armors.esp
@@ -5983,6 +6001,8 @@ Breezehome_FullyUpgradable_v1_2_nopurchase.esp
   IF VAR(BertsBHInst) INC: BertsBreezeRemodel
 Breezehome Remodeled Finely.esp
   IF VAR(BertsBHInst) INC: BertsBreezeRemodel
+Breezehome Sovngarde Portal.esp
+  IF CHECKSUM("Breezehome Sovngarde Portal.esp", A743AB12) DIRTY: 2 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Breezehome1stwing.esp
   IF VAR(EN) SAY: No longer support, use Dovahkiin Hideout instead
     IF VAR(RU) SAY: Больше не поддерживается, используйте вместо этого Dovahkiin Hideout.
@@ -6932,6 +6952,8 @@ TheClone Breezehome - housemarkerfasttravel fix.esp
 TheClone Breezehome Light fix.esp
 thefrontier.esp
   IF CHECKSUM("thefrontier.esp", 13762B47) DIRTY: 200 ITM, 22 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+ThiefSecretEntrances.esp
+  IF CHECKSUM("ThiefSecretEntrances.esp", F2CCB43F) DIRTY: 18 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 The Fancy Flagon.esp
 The Paarthurnax Dilemma.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
@@ -6959,6 +6981,8 @@ Tolucan.esp
 Tomb ahranas.esp
 tomb of garok.esp
 tomb of lucien lachance.esp
+Tomb of the Volkihar.esp
+  IF CHECKSUM("Tomb of the Volkihar.esp", BDA182AC) DIRTY: 15 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 tomboftrials.esp
 tos_secretprayereng.esp
 towHarvest.esp
@@ -8847,6 +8871,10 @@ WeaponSmith.esp
   IF CHECKSUM("WeaponSmith.esp", F7850589) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 WerewolfDeathItem.esp
 Werewolves Plague in Skyrim.esp
+WerewolvesInvadingNaturally.esp
+WerewolvesOccurringNaturally.esp
+  TAG: {{BASH: Delev}}
+  IF FILE("WerewolvesInvadingNaturally.esp") ERROR: Use only one Werewolves * Naturally.esp
 whiterun guard.esp
 wieldablelantern.esp
 wieldablelanternlanternreplacer.esp
@@ -9795,6 +9823,7 @@ Starbomb.esp
   IF CHECKSUM("Starbomb.esp", 215E5B64) DIRTY: 26 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 StripNPCs.esp
 Succubus.esp
+  SAY: Obsolete. Update to the latest renamed version, SuccubusFollower.esp or Succubus Summoning.esp
 SummersetLinweSummon.esp
   IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
     IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
@@ -11958,8 +11987,6 @@ sneBrinna.esp
 sneAudmund.esp
 sneAmbrosine.esp
 StenvarGB.esp
-SuccubusFollower.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 REGEX: aela1.3b?(alt)?(nowarpaint)?\.esp
 REGEX: aranea1.?\.esp
 belrand1a.esp
