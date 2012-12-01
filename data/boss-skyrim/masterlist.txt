@@ -167,7 +167,7 @@ archmageTrophyhall.esm
 BSTamriel.esm
 CastleDrakhur_masterfle.esm
   IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) DIRTY: 23 ITM, 7 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) WARN: This file contains 6 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) WARN: This file contains 6 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 DBShreddedTriss.esm
   SAY: Obsolete. Update to the latest renamed version, DBShreddedTriss.esp
 Lycanthropy_Music.esm
@@ -571,11 +571,11 @@ Brawl Bugs CE.esp
     IF VAR(RU) && IF VAR(SkyReM) ERROR: Удалите. Уже включено в SkyRe_main.esp вер.0.99.18
 breezehomelightfix.esp
 BreezehomeLadderFix.esp
-  IF CHECKSUM("BreezehomeLadderFix.esp", 28E5896D) WARN: This file contains 2 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
-  IF CHECKSUM("BreezehomeLadderFix.esp", 7CA22630) WARN: This file contains 32 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("BreezehomeLadderFix.esp", 28E5896D) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
+  IF CHECKSUM("BreezehomeLadderFix.esp", 7CA22630) WARN: This file contains 32 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 BreezehomeLadderFixJP.esp
-  IF CHECKSUM("BreezehomeLadderFixJP.esp", F2BAA689) WARN: This file contains 2 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
-  IF CHECKSUM("BreezehomeLadderFixJP.esp", 94D3C2C0) WARN: This file contains 32 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("BreezehomeLadderFixJP.esp", F2BAA689) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
+  IF CHECKSUM("BreezehomeLadderFixJP.esp", 94D3C2C0) WARN: This file contains 32 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
   IF FILE("BreezehomeLadderFix.esp") ERROR: Use BreezehomeLadderFix.esp or BreezehomeLadderFixJP.esp, not both.
 BreezehomeLightingFix.esp
 Brynjolf Dialogue Fix.esp
@@ -2686,6 +2686,9 @@ StarX Frost Giants.esp
 Fire Giants.esp
 Frost Giants.esp
 Smithing_Tomes.esp
+Statues.esp
+  IF VAR(Hearthfire) && IF CHECKSUM("Statues.esp", C08BE2C5) ERROR: Use Hearthfires version.
+  IFNOT VAR(Hearthfire) && IF CHECKSUM("Statues.esp", 5081E67A) ERROR: Use Vanilla version.
 SteamAchievementUnlocker.esp
   IF CHECKSUM("SteamAchievementUnlocker.esp", 067CB652) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Steel Bolts For All.esp
@@ -2968,6 +2971,8 @@ DEAsprint&jump.esp
   IF VERSION("SKSE", "0.1.5.9", <) REQ: "http://skse.silverlock.org SKSE" 1.5.9+
   IF VAR(EN) SAY: Won't work if sprint/jump key is remapped to mouse button.
     IF VAR(RU) SAY: Может не работать, если кнопка бега\прыжка переназначена на кнопку мыши.
+Dragon Soul Relinquishment.esp
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
 DragonWarrior-Effects.esp
 Dynavision.esp
   IF VAR(EN) WARN: DYNAVISION will work with most ENB configuations, however if you are using ENB, remember to turn OFF the ENB DOF feature in your graphics options
@@ -3110,6 +3115,7 @@ Ancient Black Dragonscale Armor.esp
 Ancient Skyforge Armor.esp
 AncientNordArmorBuff.esp
 Andragorn's Armoury.esp
+Andragorn_Weapons.esp
 Angelic_Demonic.esp
 REGEX: Animetica.+\.esp
 AnotherBlackThievesGuildArmor_v2.1.esp
@@ -4191,6 +4197,7 @@ KatanaCrafting.esp
 Katharinian Armor.esp
 Kaw's Claws.esp
 Kaw's Cat Disguise.esp
+KCEAssaultRifles.esp
 LadyKdCirclets.esp
 kefarmor.esp
 ket_fang.esp
@@ -6055,17 +6062,17 @@ Breezehome PLUS.esp
 Briar'sEndCourierQuest.esp
   IF FILE("Fleetford.esp") INC: Fleetford.esp
   IF CHECKSUM("Briar'sEndCourierQuest.esp", 30CD77F3) DIRTY: 48 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Briar'sEndCourierQuest.esp", 30CD77F3) WARN: This file contains 3 deleted NavMesh records.  TES5Edit cannot repair deleted NavMeshes and this mod may cause problems with your game.
+  IF CHECKSUM("Briar'sEndCourierQuest.esp", 30CD77F3) WARN: This file contains 3 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Briar'sEndInstantQuest.esp
   IF FILE("Fleetford.esp") INC: Fleetford.esp
   IF FILE("Briar'sEndCourierQuest.esp") ERROR: Use only one Briar'sEnd esp.
   IF CHECKSUM("Briar'sEndInstantQuest.esp", 3BEEDC33) DIRTY: 48 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Briar'sEndInstantQuest.esp", 3BEEDC33) WARN: This file contains 3 deleted NavMesh records.  TES5Edit cannot repair deleted NavMeshes and this mod may cause problems with your game.
+  IF CHECKSUM("Briar'sEndInstantQuest.esp", 3BEEDC33) WARN: This file contains 3 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Briar'sEndNoQuest.esp
   IF FILE("Fleetford.esp") INC: Fleetford.esp
   IF FILE("Briar'sEndCourierQuest.esp") || IF FILE("Briar'sEndInstantQuest.esp") ERROR: Use only one Briar'sEnd esp.
   IF CHECKSUM("Briar'sEndNoQuest.esp", DC577DA1) DIRTY: 50 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Briar'sEndNoQuest.esp", DC577DA1) WARN: This file contains 3 deleted NavMesh records.  TES5Edit cannot repair deleted NavMeshes and this mod may cause problems with your game.
+  IF CHECKSUM("Briar'sEndNoQuest.esp", DC577DA1) WARN: This file contains 3 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Bridge Farm.esp
 Bridge Farm Hearthfire version.esp
   IF FILE("Bridge Farm.esp") INC: Bridge Farm.esp
@@ -6091,13 +6098,13 @@ caos tools- ninjaweaps.esp
 cascade_house.esp
 Castle Stonespire.esp
   IF CHECKSUM("Castle Stonespire.esp", CF0B7159) DIRTY: 42 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Castle Stonespire.esp", CF0B7159) WARN: This file contains 2 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("Castle Stonespire.esp", CF0B7159) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Castle Strunmah.esp
 CastleDKmod.esp
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
 CastleDrakhur_updatefile.esp
   IF CHECKSUM("CastleDrakhur_updatefile.esp", D6ED863C) DIRTY: 20 ITM, 102 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("CastleDrakhur_updatefile.esp", D6ED863C) WARN: This file contains 7 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("CastleDrakhur_updatefile.esp", D6ED863C) WARN: This file contains 7 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 CastleGrey.esp
   IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
    // changes default stayatplace AI making horses not stay at dismount location
@@ -6143,7 +6150,7 @@ CrimsonQuest3.esp
   IF CHECKSUM("CrimsonQuest3.esp", 9267F2DB) DIRTY: 35 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 CuilalielHaven.esp
   IF CHECKSUM("CuilalielHaven.esp", C21288ED) DIRTY: 34 ITM, 15 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("CuilalielHaven.esp", C21288ED) WARN: This file contains 4 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("CuilalielHaven.esp", C21288ED) WARN: This file contains 4 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 CuilalieOptionalDisplayCases.esp
   IFNOT FILE("CuilalielHaven.esp") REQ: CuilalielHaven.esp
 CryptOfTheTongues.esp
@@ -6175,7 +6182,7 @@ DawnstarBlacksmithExpansion.esp
 DawnStarHome 0.2v.esp
 DawnstarMarket.esp
   IF CHECKSUM("DawnstarMarket.esp", 13265D73) DIRTY: 52 ITM, 6 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("DawnstarMarket.esp", 13265D73) WARN: This file contains 2 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("DawnstarMarket.esp", 13265D73) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 dawnstarsanctuaryoverhaul.esp
 dawnstarsanctuaryslightexpansion.esp
 RIC_Dawnstar.esp
@@ -6190,7 +6197,7 @@ DetailedCities.esp
 REGEX: Deus Mons(_WithNPCs)?\.esp
 df127merchantspack01.esp
   IF CHECKSUM("df127merchantspack01.esp", 5D83EBDB) DIRTY: 186 ITM, 81 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("df127merchantspack01.esp", 5D83EBDB) WARN: This file contains 6 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("df127merchantspack01.esp", 5D83EBDB) WARN: This file contains 6 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Dice Game in Taverns.esp
 DisintegratingAxe.esp
   IF CHECKSUM("DisintegratingAxe.esp", 70970745) SAY: Obsolete. Update to the latest version.
@@ -6355,7 +6362,7 @@ garrettsretreat_v02a.esp
 Geir Manor.esp
   IFNOT VAR(GS) REQ: "http://skyrim.nexusmods.com/mods/18340 General Stores"
   IF CHECKSUM("Geir Manor.esp", FF608082) DIRTY: 26 ITM, 23 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Geir Manor.esp", FF608082) WARN: This file contains 3 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("Geir Manor.esp", FF608082) WARN: This file contains 3 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Gleaming falls.esp
   IF CHECKSUM("Gleaming falls.esp", 4630FE0E) DIRTY: 8 ITM, 63 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Gobland.esp
@@ -6464,7 +6471,7 @@ Immersive Cities Project.esp
   SAY: Obsolete. Update to latest renamed version, ICP Whiterun Exterior.esp
 ImmersiveCitiesProjectPart2.esp
   IF CHECKSUM("ImmersiveCitiesProjectPart2.esp", 1D6C7360) DIRTY: 21 ITM, 186 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("ImmersiveCitiesProjectPart2.esp", 1D6C7360) WARN: This file contains 12 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("ImmersiveCitiesProjectPart2.esp", 1D6C7360) WARN: This file contains 12 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
   IF FILE("ICP Whiterun Exterior.esp") ERROR: Use ICP Whiterun Exterior.esp or ImmersiveCitiesProjectPart2.esp, not both.
 Imperial and Sons forts.esp
 improved thieves guild.esp
@@ -6534,7 +6541,7 @@ Lost Prospect Mine Home.esp
 Luggage.esp
 Lurking in the shadows.esp
   IF CHECKSUM("Lurking in the shadows.esp", F87D7C47) DIRTY: 59 ITM, 53 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Lurking in the shadows.esp", F87D7C47) WARN: This file contains 9 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("Lurking in the shadows.esp", F87D7C47) WARN: This file contains 9 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 LYRreachwindEyrieCrafting.esp
 LYRReachwindEyrieV100.esp
 ENDGROUP: Quests L
@@ -6590,7 +6597,7 @@ Milan's PAck.esp
 MilanDungeonPack2.esp
 MistTop.esp
   IF CHECKSUM("MistTop.esp", BF0A2622) DIRTY: 37 ITM, 43 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("MistTop.esp", BF0A2622) WARN: This file contains 5 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("MistTop.esp", BF0A2622) WARN: This file contains 5 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Mistwatch.esp
   IF CHECKSUM("Mistwatch.esp", 0C96269C) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Mistwatch.esp", 21E66A86) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -6599,7 +6606,7 @@ Missing Houses.esp
   IF CHECKSUM("Missing Houses.esp", 399B577C) DIRTY: 40 ITM, 12 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 mixwatermill.esp
   IF CHECKSUM("mixwatermill.esp", 0BEAA858) DIRTY: 37 ITM, 160 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("mixwatermill.esp", 0BEAA858) WARN: This file contains 2 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("mixwatermill.esp", 0BEAA858) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Moar Arrows.esp
   IF CHECKSUM("Moar Arrows.esp", 8D27C06A) || IF CHECKSUM("Moar Arrows.esp", 17179139) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Moar Arrows.esp", CF22AA26) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -6660,6 +6667,9 @@ Quest_NoMercy.esp
 NoBleakFalls.esp
   IF CHECKSUM("NoBleakFalls.esp", 7D2AD14B) DIRTY: 0 ITM, 6 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Nordricks Grave.esp
+Northern Bathhouses.esp
+  IF CHECKSUM("Northern Bathhouses.esp", FBE79F4F) DIRTY: 96 ITM, 12 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Northern Bathhouses.esp", FBE79F4F) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 nowellrocks.esp
 NPC - Shady Fences.esp
 ENDGROUP: Quests N
@@ -6816,7 +6826,7 @@ SarumansTower.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Saviik City.esp
   IF CHECKSUM("Saviik City.esp", 2A1083E8) DIRTY: 0 ITM, 576 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Saviik City.esp", 2A1083E8) WARN: This file contains 32 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("Saviik City.esp", 2A1083E8) WARN: This file contains 32 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Saviors Lodge - Player Home.esp
   IF CHECKSUM("Saviors Lodge - Player Home.esp", 615CF04F) DIRTY: 39 ITM, 64 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF VAR(EN) && IFNOT FILE("Scripts/IHWelcomeScript.pex") WARN: You still need to install the scripts for this mod. See download page.
@@ -6895,7 +6905,7 @@ smelterinriverwood.esp
 SnowberryCottage.esp
   IF CHECKSUM("SnowberryCottage.esp", DC320F38) DIRTY: 13 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Star-NorthernFrostBrewery.esp
-  IF CHECKSUM("Star-NorthernFrostBrewery.esp", 012DE681) WARN: This file contains 9 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("Star-NorthernFrostBrewery.esp", 012DE681) WARN: This file contains 9 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 SteepledHat's Riverwood Home.esp
 So (84).esp
   IF CHECKSUM("So (84).esp", 17486F2D) DIRTY: 122 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -7136,7 +7146,7 @@ WhiteFallsHouse.esp
   IF CHECKSUM("WhiteFallsHouse.esp", D3EB5880) DIRTY: 46 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ICP Whiterun Exterior.esp
   IF CHECKSUM("ICP Whiterun Exterior.esp", 58A7F24E) DIRTY: 8 ITM, 409 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("ICP Whiterun Exterior.esp", 58A7F24E) WARN: This file contains 7 deleted NavMesh records.  TES5Edit cannot repair this and it may cause problems with your game.
+  IF CHECKSUM("ICP Whiterun Exterior.esp", 58A7F24E) WARN: This file contains 7 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
   IF FILE("ImmersiveCitiesProjectPart2.esp") ERROR: Use ICP Whiterun Exterior.esp or ImmersiveCitiesProjectPart2.esp, not both.
 (BETA) Immersive Cities - Whiterun.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, ICP Whiterun Exterior.esp
@@ -8674,6 +8684,7 @@ SkyTEST-RealisticAnimalBehavior.esp
 SkyTEST-HarderCreatures.esp
 dD - Enhanced Blood Main.esp
   // moved after SkyTest for correct work.
+  SAY: Be sure you have downloaded and installed the script Hotfixes.
   IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
   IF VAR(Dawnguard) && IFNOT VAR(SkyMoMod) && IFNOT FILE("dD-Dawnguard-EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Dawnguard Compatibility_Patch".
   IFNOT VAR(Dawnguard) && IF VAR(SkyMoMod) && IFNOT FILE("dD-SkyrimMonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Monster Mod.
@@ -9143,7 +9154,7 @@ Markath-CityofBloodandSilver.esp
 markarth extra.esp
 morewr.esp
   IF CHECKSUM("morewr.esp", 6EFAE8A5) DIRTY: 17 ITM, 16 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("morewr.esp", 6EFAE8A5) WARN: This file contains 12 deleted NavMesh records.  TES5Edit cannot repair deleted NavMeshes and this mod may cause problems with your game.
+  IF CHECKSUM("morewr.esp", 6EFAE8A5) WARN: This file contains 12 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 REGEX: Populated Cities.*\.esp
 raggedshortcut_oc.esp
 BetterCitiesWhiterun.esp
