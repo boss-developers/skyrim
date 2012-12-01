@@ -11325,8 +11325,8 @@ BEGINGROUP: Companions and NPCs
 // Companions\housecarls and NPC this is a different mods. Global mods in most variants must be load early. Single mods with minor changes must be load late.
 
 BEGINGROUP: Companions Load Early
-// companion early
 
+Amara.esp
 Essential followers - all followers.esp
   IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
     IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
@@ -11430,21 +11430,35 @@ EASamhairE_1_1.esp
 EASamhairNE_1_1.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
   IF FILE("EASamhairE_1_1.esp") ERROR: Use EASamhairE_1_1.esp or EASamhairNE_1_1.esp, not both.
+EnhancedCompanionGuildNoCosmetic.esp
 Eileen.esp
 IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMCompViljaSkyrim.esp
   IF CHECKSUM("EMCompViljaSkyrim.esp", C45D4383) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Eternal Bunny Pet.esp
 Eternal Bunny Pet (Gray Silent).esp
 FairKhajiit.esp
+femcalder.esp
+Feralfade.esp
+followers alpha9.esp
+foxpet-petfox.esp
 follower pack orcs.esp
   IF CHECKSUM("follower pack orcs.esp", F226DDFB) DIRTY: 14 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 FreezeMasterAmaya.esp
 friendlybrynjolf.esp
 Gabby Companion.esp
+HorseCompanions.esp
+  IF VAR(EN) && IF VAR(UFO) WARN: HorseCompanions.es is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+    IF VAR(RU) && IF VAR(UFO) WARN: HorseCompanions.es уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
+REGEX: .*HorseRidingFollowers\.esp
+  IF VAR(EN) && IF VAR(UFO) WARN: HorseRidingFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
+    IF VAR(RU) && IF VAR(UFO) WARN: HorseRidingFollowers уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
+Horses for followers.esp
 hot carlsv1.esp
 HothFollower.esp
+Hroki Wife Companion.esp
 AIKhajiitCompanions.esp
 Ja´dirr + Kharjo Makeover.esp
+JohnTheAssassin.esp
 KCustomFollowers.esp
 IFNOT VAR(UFO) MOD: KTNUlfric.esp
   IF CHECKSUM("KTNUlfric.esp", 8CF90F55) && IF VAR(UFO) ERROR: Use the UFO version of KTNUlfric.esp
@@ -11458,38 +11472,26 @@ Lively Followers.esp
 lospaco.esp
 Mabari.esp
   IF CHECKSUM("Mabari.esp", E3FA50FA) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+mercenariesplus.esp
 Nilvas Reinhardt.esp
+NoFollowerTorch.esp
+PetBearOslo.esp
+  IF CHECKSUM("PetBearOslo.esp", 7614B5F9) || IF CHECKSUM("PetBearOslo.esp", EA58D0C9) SAY: Obsolete. Update to the latest version.
 sec_goatfrey.esp
-EnhancedCompanionGuildNoCosmetic.esp
-femcalder.esp
-Feralfade.esp
-followers alpha9.esp
-foxpet-petfox.esp
-REGEX: Vashira the Crimson Flash( shorter named)?\.esp
+SelminaDArchon1.esp
+REGEX: SPODUM v.+\.esp
+StrayDogFix.esp
 TCG.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
     IF VAR(RU) && IF VAR(UFO) WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
 TCGStarterKit.esp
-HorseCompanions.esp
-  IF VAR(EN) && IF VAR(UFO) WARN: HorseCompanions.es is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
-    IF VAR(RU) && IF VAR(UFO) WARN: HorseCompanions.es уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
-REGEX: .*HorseRidingFollowers\.esp
-  IF VAR(EN) && IF VAR(UFO) WARN: HorseRidingFollowers is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
-    IF VAR(RU) && IF VAR(UFO) WARN: HorseRidingFollowers уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
-Horses for followers.esp
-PetBearOslo.esp
-  IF CHECKSUM("PetBearOslo.esp", 7614B5F9) || IF CHECKSUM("PetBearOslo.esp", EA58D0C9) SAY: Obsolete. Update to the latest version.
-SelminaDArchon1.esp
-REGEX: SPODUM v.+\.esp
+Tornis.esp
+REGEX: Vashira the Crimson Flash( shorter named)?\.esp
 voidMountedFollowers.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO.
     IF VAR(RU) && IF VAR(UFO) WARN: Включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
-Hroki Wife Companion.esp
-mercenariesplus.esp
-NoFollowerTorch.esp
-StrayDogFix.esp
 ENDGROUP: Companions Load Early
 
 BEGINGROUP: Questgiver NPCs
