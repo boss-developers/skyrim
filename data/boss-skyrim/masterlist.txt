@@ -907,6 +907,8 @@ Cuter Essential Housecarls.esp
 DanicaPureSpring.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("DanicaPureSpring.esp", 7714719A) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Delphine Makeover.esp
+Delphine Makeover D2.esp
 Dibella's Beauty - NPC Overhaul.esp
 DW Followers.esp
 DW Commoners.esp
@@ -1382,8 +1384,11 @@ SloManaRegen.esp
 SurvivalistIngenuity.esp
   TAG: {{BASH: Delev, Relev}}
 SI_NoSaltOreMapMarkers.esp
+SI_PrizesDoubled.esp
 SI_VanillaMerchants.esp
 SI_VanillaMessages.esp
+SI_VanillaPrizes.esp
+  IF FILE("SI_PrizesDoubled.esp") ERROR: Use SI_PrizesDoubled.esp or SI_VanillaPrizes.esp, not both.
 SIRW.esp
   TAG: {{BASH: Delev, Relev}} not tested
 SIMIIPatch.esp
@@ -4046,6 +4051,10 @@ IFNOT VAR(BFNIAP) MOD: Level List - Immersive Armor.esp
   TAG: {{BASH: Delev, Relev}}
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: hothtrooper44_ArmorCompilation.esp
   IFNOT FILE("Lorecraft - Immersive Armors.esp") REQ: Lorecraft - Immersive Armors.esp
+IFNOT VAR(BFNIAP) MOD: SI_WicCosIaPatch.esp
+  IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: hothtrooper44_ArmorCompilation.esp
+  IFNOT FILE("1nivWICCloaks.esp") REQ: 1nivWICCloaks.esp
+  IFNOT FILE("Cloaks.esp") REQ: Cloaks.esp
 HoodsAndCirclets.esp
 HotaruByNausicaa.esp
 HUM_Armor.esp
@@ -5397,6 +5406,7 @@ ImmersiveArmorsNPCs.esp
 ImmersiveArmorsNPCsNoHelmets.esp
   IFNOT FILE("ImmersiveArmorsNPCs.esp") INC: ImmersiveArmorsNPCs.esp
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
+IF VAR(BFNIAP) MOD: SI_WicCosIaPatch.esp
 BandolierForNPCMasterFile.esp
   IF CHECKSUM("BandolierForNPCMasterFile.esp", 112359C0) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 53C8535D) || IF CHECKSUM("BandolierForNPCMasterFile.esp", C844F9AD) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("BandolierForNPCMasterFile.esp", 112359C0) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 76E11697) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 0146A38B) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
@@ -7604,7 +7614,6 @@ CCO - Permanent Birthsigns.esp
   IF CHECKSUM("CCO - Permanent Birthsigns.esp", 9CB120EE) DIRTY:  0 ITM, 24 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 CharredSkeeverReplacer.esp
 chicken.esp
-Children of Skyrim - NORD PRESETS.esp
 CiceroDistanceFix.esp
 Circlet with Helms.esp
   IF CHECKSUM("Circlet with Helms.esp", FBEC072E) DIRTY:  2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -11357,6 +11366,8 @@ BEGINGROUP: Character Presets
 If someone feels it could be placed better, feel free to move it */
 
 ArnoldPreset.esp
+Children of Skyrim - NORD PRESETS.esp
+Delphine Makeover Preset.esp
 ESPv1_1.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 ESPv1_1nondependent.esp
