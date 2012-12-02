@@ -227,7 +227,12 @@ SkyTEST-RealisticAnimals&Predators.esm
 Smithing Extended.esm
 Immersive Patrols.esm
 Immersive Patrols x2.esm
+The Spice of Life.esm
+  IF CHECKSUM("The Spice of Life.esm", A75F2F6D) SAY: File not created with CK.
 TravellersOfSkyrim.esm
+TRO_BasicNeeds.esm
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, TRO_BasicNeeds.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, TRO_BasicNeeds.esp
 CraftSketching.esm
 ForbiddenRomance.esm
 itsatrap!.esm
@@ -3449,6 +3454,7 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
   IF FILE("1nivWICSkyCloaksPatch.esp") INC: 1nivWICSkyCloaksPatch esp
 1nivWICCloaksLorecraft.esp
 1nivWICCloaksCRAFTLorecraft.esp
+cloakplus.esp
 CMHood (Ashlander).esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version - Chainmail Hood v2.2.esp
    IF VAR(RU) SAY: Устарело. Обновите до последней версии - Chainmail Hood v2.2.esp
@@ -3698,9 +3704,12 @@ DragonfireCrossbow02.esp
   IF CHECKSUM("DragonfireCrossbow02.esp", A8EDDE9D) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DragonHideRobeArmor.esp
 Lorecraft - Dragonhide.esp
-dragonironreplacer.esp
-  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
-    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+DragonIron.esp
+  IF VAR(EN) && IF CHECKSUM("DragonIron.esp", 0C4425D4) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF VAR(RU) && IF CHECKSUM("DragonIron.esp", 0C4425D4) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+DragonIronReplacer.esp
+  IF VAR(EN) && IF CHECKSUM("DragonIronReplacer.esp", 7FDC3BE8) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) && IF CHECKSUM("DragonIronReplacer.esp", 7FDC3BE8) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 DragonplateHelmFix.esp
   IF VAR(EN) WARN: File is corrupt and should not be used.
     IF VAR(RU) WARN: Файл испорчен и не должен использоваться.
@@ -4703,6 +4712,7 @@ plate hoods pack-fixed.esp
 PlatedMagiArmor.esp
 playable greybeard.esp
 Plush Backpack.esp
+PocketProtectorsStarter.esp
 Pony_Armor.esp
 PonySword.esp
 RIP88_Pool_Furniture_Sample.esp
@@ -5197,6 +5207,7 @@ Ultima Weapon.esp
 UltraVision.esp
 Umbra (Two handed).esp
 umbra by r3van(one handed).esp
+UmbralKatana.esp
 UmbraSturmbringer.esp
 Unarmed Enhanced.esp
 Unexpected Blades.esp
@@ -5204,7 +5215,8 @@ Unenchanted Necromancer Amulet.esp
 UnenchantedTGArmors.esp
 UnenchantedRoyalVampireArmor.esp
 UnenchantedNightingaleArmour.esp
-  SAY: Obsolete. Update to the latest renamed version, UnenchantedNightingaleSetMod.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, UnenchantedNightingaleSetMod.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, UnenchantedNightingaleSetMod.esp
 UnenchantedNightingaleSetMod.esp
 UnenchRobeSepHoodThalmor.esp
 UnderC.esp
@@ -5692,7 +5704,7 @@ ENDGROUP: War in Skyrim
 
 BEGINGROUP: ERSO Start
 // Note that some ERSO files are in the "Deadly and Mighty Dragons" group
-
+// erso
 ERSO 01 - Vanilla Race Redone v.1.4.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -6946,6 +6958,8 @@ Star-NorthernFrostBrewery.esp
 SteepledHat's Riverwood Home.esp
 So (84).esp
   IF CHECKSUM("So (84).esp", 17486F2D) DIRTY: 122 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+soldynemuseum.esp
+  IF CHECKSUM("soldynemuseum.esp", 3B1F7505) DIRTY: 11 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Soleis.esp
 Solitude Military Enhancement.esp
 Solitude Blue Palace Military Enhancement.esp
@@ -7148,6 +7162,8 @@ BEGINGROUP: Quests W
 
 Wallofhonor.esp
 Wanderer Shelter.esp
+WANDERINGNAZGUL.esp
+  IF CHECKSUM("WANDERINGNAZGUL.esp", 8A52AEC8) DIRTY: 102 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Warden.esp
 WardrobeRoom.esp
 WARZONES - Civil Unrest.esp
@@ -8335,6 +8351,11 @@ More Ore.esp
 More Powerful Daedric Artifacts.esp
   // TAG: {{BASH: Stats}}
 More Powerful Dragons.esp
+  IF VAR(EN) && IF CHECKSUM("More Powerful Dragons.esp", 48A18FE5) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) && IF CHECKSUM("More Powerful Dragons.esp", 48A18FE5) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
+More Powerful Dragons Leveled Dragons.esp
+  IF VAR(EN) && IF CHECKSUM("More Powerful Dragons Leveled Dragons.esp", CEF8347C) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) && IF CHECKSUM("More Powerful Dragons Leveled Dragons.esp", CEF8347C) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
 REGEX: MoreTraining_\d\d\.esp
 moredeathreloadtime.esp
 More Salt Please.esp
@@ -8749,6 +8770,7 @@ dD-Reduced Splatter Size.esp
 dD-Reduced Wound Size.esp
 slowerstaminadrain.esp
 Speed Revised.esp
+spiders_to_draugr_and_skeevers.esp
 Spriggans are  on your side.esp
 Superjump_2x.esp
 REGEX: SSCR Hard Type.*\.esp
@@ -8835,6 +8857,14 @@ Trolls Loot.esp
 True_Groundcover.esp
 TrueSteelImperialArmor.esp
 truethalmor.esp
+TSoL - All NPCs.esp
+  IFNOT FILE("The Spice of Life.esm") REQ: The Spice of Life.esm
+TSoL - Housecarls.esp
+  IFNOT FILE("The Spice of Life.esm") REQ: The Spice of Life.esm
+TSoL - Marriable Followers.esp
+  IFNOT FILE("The Spice of Life.esm") REQ: The Spice of Life.esm
+TSoL - Non-Marriable Followers.esp
+  IFNOT FILE("The Spice of Life.esm") REQ: The Spice of Life.esm
 TwoRings.esp
 ENDGROUP: Overrides T
 
@@ -9980,6 +10010,7 @@ enchantthreeeffects.esp
 
 BEGINGROUP: Shouts
 
+// shouts
 WoP - Dragon Language.esp
 // Placed first for patches that load later
 Better shout time.esp
@@ -9998,6 +10029,12 @@ DragonRealShout.esp
 DragonShoutsRTEnhancer.esp
 DraugrShoutFix.esp
 EnhancedShouts.esp
+Excalibur _powerfirebreath.esp
+  IF CHECKSUM("Excalibur _powerfirebreath.esp", 409BB061) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Excalibur _firebreath_IMBA ver.esp
+  IF VAR(EN) && IF CHECKSUM("Excalibur _firebreath_IMBA ver.esp", C513B76D) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF VAR(RU) && IF CHECKSUM("Excalibur _firebreath_IMBA ver.esp", C513B76D) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+  IF FILE("Excalibur _powerfirebreath.esp") WARN: Use Excalibur _powerfirebreath.esp or Excalibur _firebreath_IMBA ver.esp, not both.
 fastershouts.esp
 IFNOT VAR(SkyReM) MOD: Improved Dragon Shouts.esp
 IFNOT VAR(SkyReM) MOD: Improved Dragon Shouts - Dawnguard.esp
@@ -11335,6 +11372,8 @@ EpicElves by zzjay.esp
 FFRace.esp
 FlyableDragonRacesRevamped.esp
   IF CHECKSUM("FlyableDragonRacesRevamped.esp", 183A85A8) DIRTY: 45 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+garbon race.esp
+  IF CHECKSUM("garbon race.esp", AAA3653F) DIRTY: 31 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 GiantChild.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, GiantChild.esm
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, GiantChild.esm
@@ -11668,11 +11707,15 @@ BEGINGROUP: NPC Distance, Face & Makeup Overrides
 // Distance Tweaks before Face & Makeup Overrides
 // Companions Load Late contains a Distance plugin loaded late for compatibility with Luxury Suite
 
+Beter Faendal.esp
 REGEX: (No |Reduced Distance |Slightly Reduced Distance )NPC Greetings.esp
 NoSkillComments.esp
 NoPanicComments.esp
-Beter Faendal.esp
-NDGROUP: NPC Distance, Face & Makeup Overrides
+TSoL - Marriable Followers (Nicer Faces).esp
+  IFNOT FILE("The Spice of Life.esm") REQ: The Spice of Life.esm
+TSoL - Non-Marriable Followers (Nicer Faces).esp
+  IFNOT FILE("The Spice of Life.esm") REQ: The Spice of Life.esm
+ENDGROUP: NPC Distance, Face & Makeup Overrides
 
 BEGINGROUP: Companions
 // Load after UFO, XFL
