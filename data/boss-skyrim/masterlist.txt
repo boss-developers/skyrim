@@ -1275,6 +1275,7 @@ CLARALUX-HF-Patch.esp
 ENDGROUP: Lighting
 
 BEGINGROUP: Music
+// music
 
 AdditionalMusicPackI.esp
 AdditionalMusicPackII.esp
@@ -1287,6 +1288,7 @@ Ambience Music Overhaul - Addon - with vanilla music -.esp
 Ambience Music Overhaul - Combat.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version. Renamed to AMO - Combat.esp
     IF VAR(RU) WARN: Устарело. Обновите до последней версии. Переименовано в AMO - Combat.esp
+AK- Elder Scrolls Music.esp
 AMO - Combat.esp
 Ambience Music Overhaul - Combat - with vanilla music.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version. Renamed to AMOvanilla - Combat.esp
@@ -1352,6 +1354,7 @@ BeastModels.esp
 REGEX: BorderRegionsDisabled(EV)?\.esp
   IF VAR(EN) SAY: Recommended to change Skyrim.ini bBorderRegionsEnabled=1 to bBorderRegionsEnabled=0 instead.
     IF VAR(RU) SAY: Рекомендуется изменить параметр Skyrim.ini bBorderRegionsEnabled=1 на bBorderRegionsEnabled=0 и удалить этот мод.
+BreezehomeShadowStripingFix.esp
 ChangeMaleModels.esp
   IF CHECKSUM("ChangeMaleModels.esp", 34A1E261) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Elemental Base.esp
@@ -1382,12 +1385,15 @@ RPGArmor.esp
 sh_HF_goat_fix.esp
   TAG: {{BASH: Relev}}
 Shadow Striping Fix.esp
+Skyrim Shadow Striping Fix.esp
+  IF VAR(EN) && IF FILE("BreezehomeShadowStripingFix.esp") ERROR: Use either BreezehomeShadowStripingFix.esp or Skyrim Shadow Striping Fix.esp, not both.
+    IF VAR(RU) && IF FILE("BreezehomeShadowStripingFix.esp") ERROR: Используйте любой или BreezehomeShadowStripingFix.esp или Skyrim Shadow Striping Fix.esp, не обе.
+SkyrimImprovedChanges.esp
+  TAG: {{BASH: Delev, Relev}}
 SMIM_Fixes.esp
 REGEX: SpellFix.*\.esp
 StaticMeshImprovementMod.esp
     IF VAR(RU) && IF CHECKSUM("StaticMeshImprovementMod.esp", 8806A693) SAY: Вы можете использовать данный esp для версии 1.20-1.26 и вероятно, более новых, если, в очередном обновлении SMIM, не последовало обновления esp.
-SkyrimImprovedChanges.esp
-  TAG: {{BASH: Delev, Relev}}
 SloManaRegen.esp
 SurvivalistIngenuity.esp
   TAG: {{BASH: Delev, Relev}}
@@ -1396,7 +1402,8 @@ SI_PrizesDoubled.esp
 SI_VanillaMerchants.esp
 SI_VanillaMessages.esp
 SI_VanillaPrizes.esp
-  IF FILE("SI_PrizesDoubled.esp") ERROR: Use SI_PrizesDoubled.esp or SI_VanillaPrizes.esp, not both.
+  IF VAR(EN) && IF FILE("SI_PrizesDoubled.esp") ERROR: Use either SI_PrizesDoubled.esp or SI_VanillaPrizes.esp, not both.
+    IF VAR(RU) && IF FILE("SI_PrizesDoubled.esp") ERROR: Используйте любой или SI_PrizesDoubled.esp или SI_VanillaPrizes.esp, не обе.
 SIRW.esp
   TAG: {{BASH: Delev, Relev}} not tested
 SIMIIPatch.esp
@@ -1915,26 +1922,22 @@ ExpandedJewelryCrafting.esp
 REGEX: Lorecraft - ExpandedJewelry(Crafting|NoChaos).esp
 LORECRAFT-ExpandedJewelryCrafting.esp
 Expensive Transports 5x.esp
-  IF CHECKSUM("Expensive Transports 5x.esp", 58CC3897) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
-   IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
-     IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
+  IF CHECKSUM("Expensive Transports 5x.esp", 508E4CE3) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
+  IF CHECKSUM("Expensive Transports 5x.esp", 58CC3897) && IFNOT VAR(Dawnguard) ERROR: Use non-Dawngaurd version.
 Expensive Transports 10x.esp
-  IF CHECKSUM("Expensive Transports 10x.esp", 9AE20AC6) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
-   IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
-     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
+  IF CHECKSUM("Expensive Transports 10x.esp", 519298F9) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
+  IF CHECKSUM("Expensive Transports 10x.esp", 9AE20AC6) && IFNOT VAR(Dawnguard) ERROR: Use non-Dawngaurd version.
+   IF FILE("Expensive Transports 5x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports *.esp
+     IF FILE("Expensive Transports 5x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports *.esp
+Expensive Transports 10x Linear.esp
+  IFNOT VAR(Dawnguard) REQ: Dawngaurd (Official Bethesda DLC)
+   IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports *.esp
+     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports *.esp
 Expensive Transports 20x.esp
-  IF CHECKSUM("Expensive Transports 20x.esp", EA972067) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
-   IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
-     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
-Expensive Transports 5x.esp
-   IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
-     IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
-Expensive Transports 10x.esp
-   IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
-     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 20x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
-Expensive Transports 20x.esp
-   IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports*.esp
-     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports*.esp
+  IF CHECKSUM("Expensive Transports 20x.esp", F88C8F09) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
+  IF CHECKSUM("Expensive Transports 20x.esp", EA972067) && IFNOT VAR(Dawnguard) ERROR: Use non-Dawngaurd version.
+   IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 10x Linear.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports *.esp
+     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") IF FILE("Expensive Transports 10x Linear.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports *.esp
 ExpensiveCarriagesInns.esp
 ExpensiveCarriagesInns_x5.esp
 Expensive Investments.esp
@@ -2630,7 +2633,8 @@ Skyrim_Monster_Mod_Additions-Collectables.esp
 SkyMoMod Extras Conjuration.esp
 skymo-dawn.esp
   TAG: {{BASH: Delev}}
-  SAY: Obsolete. Update to the lastest renamed version, SkyMoMod Lore-Friendly * v10.esp
+  IF VAR(EN) && IF REGEX("SkyMoMod Lore-Friendly .+\.esp") SAY: Obsolete. Update to latest renamed version, SkyMoMod Lore-Friendly * v10.esp
+    IF VAR(RU) && IF REGEX("SkyMoMod Lore-Friendly .+\.esp") SAY: Устарело. Обновите до последней версии, SkyMoMod Lore-Friendly * v10.esp
   IF REGEX("SkyMoMod Lore-Friendly .+\.esp") INC: SkyMoMod Lore-Friendly * v10.esp's
 Skyrim_Monster_Mod_Additions-Conjuration.esp
 REGEX: Deleveled Skyrim - SkyMoMod_list( \(No EleTri\)| \(No EleTriSta\))\.esp
@@ -4712,7 +4716,11 @@ plate hoods pack-fixed.esp
 PlatedMagiArmor.esp
 playable greybeard.esp
 Plush Backpack.esp
+PocketProtectors.esp
+  IF CHECKSUM("PocketProtectors.esp", 2889143D) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 PocketProtectorsStarter.esp
+  IF VAR(EN) && IF FILE("PocketProtectorsStarter.esp") WARN: Use either PocketProtectorsStarter.esp or PocketProtectors.esp, not both.
+    IF VAR(RU) && IF FILE("PocketProtectorsStarter.esp") WARN: Используйте любой или PocketProtectorsStarter.esp или PocketProtectors.esp, не обе.
 Pony_Armor.esp
 PonySword.esp
 RIP88_Pool_Furniture_Sample.esp
@@ -5438,6 +5446,9 @@ IF VAR(BFNIAP) MOD: Level List - Immersive Armor.esp
   TAG: {{BASH: Delev, Relev}}
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: hothtrooper44_ArmorCompilation.esp
   IFNOT FILE("Lorecraft - Immersive Armors.esp") REQ: Lorecraft - Immersive Armors.esp
+IA6npc01.esp
+  IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
+  IF FILE("ImmersiveArmorsNPCs.esp") INC: ImmersiveArmorsNPCs.esp
 ImmersiveArmorsNPCs.esp
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
 ImmersiveArmorsNPCsNoHelmets.esp
@@ -5584,6 +5595,7 @@ LegionOverhaulV25.esp
 /* Designed to work with "Deadly Dragons" mod (v3.1.0) */
 megadragons.esp
 Requiem.esp
+  SAY: Requiem makes a LOT of changes. You may want to consider making and using a User Rules list based on your particular mod loadout.
   IFNOT VAR(Dawnguard) REQ: Dawnguard. (Official Bethesda DLC)
   IF CHECKSUM("Requiem.esp", 54D02FF2) DIRTY: 87 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Requiem.esp", 700E9079) || IF CHECKSUM("Requiem.esp", B7313A82) || IF CHECKSUM("Requiem.esp", 50E21B61) SAY: Obsolete. Update to latest version.
@@ -7371,7 +7383,7 @@ IFNOT VAR(SkyReM) MOD: Morrowloot.esp
   IF VAR(EN) SAY: It's recommend to load morrowloot after any plugins that have a Relev tag and change the same LeveledLists as morrowloot because they will add vanilla records removed by morrowloot
     IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные вещи обратно - в списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
 Morrowloot_nwah.esp
-  IF VAR(EN) && IF FILE("Morrowloot.esp") WARN: Do not use with original Morrowloot mod.
+  IF VAR(EN) && IF FILE("Morrowloot.esp") ERROR: Do not use with original Morrowloot mod.
     IF VAR(RU) && IF FILE("Morrowloot.esp") ERROR: Не используйте с оригинальным модом Morrowloot.
   IF VAR(SkyReM) INC: SkyRe_Main.esp
 REGEX: ThievesguildNPCOverhaul_byHarodath__.+\.esp
@@ -8798,8 +8810,6 @@ Standin Stonene's Value Fix V1.esp
 Standing Stone Revamp v.1.0.esp
 SteelShieldOfSolitude.esp
 -Stickier_Arrows- Fix.esp
-  IF VAR(EN) && IF File("Stickier_Arrows V2.esp") WARN: Use only one Stickier Arrows esp.
-    IF VAR(RU) && IF File("Stickier_Arrows V2.esp") WARN: Используйте только один Stickier Arrows esp.
 Stickier_Arrows V2.esp
   IF VAR(EN) && IF File("-Stickier_Arrows- Fix.esp") WARN: Use only one Stickier Arrows esp.
     IF VAR(RU) && IF File("-Stickier_Arrows- Fix.esp") WARN: Используйте только один Stickier Arrows esp.
@@ -11662,12 +11672,18 @@ UFO - Ultimate Follower Overhaul.esp
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
   IF FILE("BDO.esp") INC: BDO.esp
   IF VAR(Dawnguard) && IFNOT FILE("UFO - Dawnguard AddOn.esp") WARN: UFO - Dawnguard AddOn.esp required to work properly with Dawnguard (Official Bethesda DLC)
+  IF VAR(Hearthfire) && IFNOT FILE("UFO - Heartfire AddOn.esp") WARN: UFO - Haertfire AddOn.esp required to work properly with Hearthfires (Official Bethesda DLC)
   IF VAR(EN) SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on "http://skyrim.nexusmods.com/mods/14037 mod page".
     IF VAR(RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода"(Eng) или читайте "http://u.to/GJZaAg это" локализованное ридми.
   IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 6EF3FFBA) DIRTY: 18 ITM, 0 UDR records Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 UFO - Dawnguard AddOn.esp
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+UFO - Heartfire AddOn.esp
+  // Typo is name, not typo
+  IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
+  IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("UFO - Hearthfire AddOn.esp", 047AA94A) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
