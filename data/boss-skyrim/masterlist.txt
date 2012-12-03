@@ -165,6 +165,8 @@ Anora follower.esm
   IF CHECKSUM("Anora follower.esm", 319033CE) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 archmageTrophyhall.esm
   IF CHECKSUM("archmageTrophyhall.esm", F788FDF0) DIRTY: 0 ITM, 20 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+BoogyManLair.esm
+  IF CHECKSUM("BoogyManLair.esm", A1D94BDA) DIRTY: 42 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BSTamriel.esm
 CLARALUX - More and Brighter Lights.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -799,6 +801,8 @@ Unofficial Skyrim Patch.esp
 USKP_addon.esp
 USKP_addon ENG.esp
   IF FILE("USKP_addon.esp") INC: USKP_addon.esp
+
+// fixes that must load after USKP
 Arrow and Imperial Armor Fix.esp
 RaceCompatibilityUSKPOverride.esp
 ENDGROUP: Vanilla fixes
@@ -808,23 +812,24 @@ BEGINGROUP: DLC Fixes
 BreezhomeAlchemyLabFix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-DawnguardDrainVitalityFix.esp
-  IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-invisible_shield_fix.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-USKP Dawnguard vampire face & eye fix.esp
-  IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
-    IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
+chopping_block_wood_fires.esp
+  IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
+Correctif - HighResTexturePack.esp
 Dawnguard Breezehome Fix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
     IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
-Unofficial Dawnguard Patch.esp
+Dawnguard Summons Fixed.esp
+DawnguardDrainVitalityFix.esp
+  IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
-VLCollisionFix.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+HDtextures01.esp
+HF-MoveSpouse.esp
+  IF CHECKSUM("HF-MoveSpouse.esp", 7D544DFE) DIRTY: 15 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HighResTexturePackFix.esp
+invisible_shield_fix.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+Prodspire Cooking pot hearthfire bugfix.esp
+  IF CHECKSUM("Prodspire Cooking pot hearthfire bugfix.esp", 91AA4E51) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 sh_HF_Falkr_fix.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
 sh_HF_Falkr_noVamp&fix.esp
@@ -837,27 +842,29 @@ sh_HF_Pale_fix.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
 sh_HF_Pale_noVamp&fix.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
-chopping_block_wood_fires.esp
-  IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
-Correctif - HighResTexturePack.esp
-HDtextures01.esp
-HF-MoveSpouse.esp
-  IF CHECKSUM("HF-MoveSpouse.esp", 7D544DFE) DIRTY: 15 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Prodspire Cooking pot hearthfire bugfix.esp
-  IF CHECKSUM("Prodspire Cooking pot hearthfire bugfix.esp", 91AA4E51) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Skyrim - Director's Cut - HD Pack Fix.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
+Vampire Alva.esp
+Vampire Face Fixes.esp
+  SAY: This mod will not be compatible with any mods that alter the vampire character classes.
+VLCollisionFix.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+USKP Dawnguard vampire face & eye fix.esp
+  IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
+    IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
+Unofficial Dawnguard Patch.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
 Unofficial Hearthfire Patch.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
   IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
+
+  // fixes that must be loaded after UDGP
 EveryVampireEyesGrow.esp
-  // Only work when loaded after U*Ps
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IF VAR(EN) SAY: This mod will not be compatible with any mods that alter humanoid(imperial, breton, nord, redguard) race. Also, not compatible with mods that have Babette's facegendata(0001D4B7.NIF).
     IF VAR(RU) SAY: Этот мод может быть не совместим с любыми модами меняющих рассы гуманоидов(имперец, бретонец, норд, редгард). Также не совместим с модами, меняющими внешние данные Бабетты(Babette's facegendata(0001D4B7.NIF)).
-Vampire Face Fixes.esp
-  SAY: This mod will not be compatible with any mods that alter the vampire character classes.
-Vampire Alva.esp
+
 ENDGROUP: DLC Fixes
 
 REGEX: Skyrim HD Full - .+\.esp
@@ -936,6 +943,8 @@ ElisifTheFair.esp
   IF CHECKSUM("ElisifTheFair.esp", 6625766C) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Embry.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+Eyes of Sheogorath.esp
+  IF CHECKSUM("Eyes of Sheogorath.esp", EE0634B4) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Faendal.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("Faendal.esp", 5D38C4E9) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -3145,6 +3154,8 @@ Althirs Camping Tools German.esp
 AlynShirArmor.esp
 aMagicalChest.esp
 AmazonArmor.esp
+AmbrosiaFashions.esp
+  IF CHECKSUM("AmbrosiaFashions.esp", 5625FC4F) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Amiella Outfit.esp
 amk Border Lace Lingerie.esp
 AmuletteDesNeuf.esp
@@ -3256,6 +3267,7 @@ Bangarang.esp
 baraban-dawnguard-plate.esp
 BarbarianArmor.esp
 BarbarianAxe.esp
+BarbarianFur.esp
 Barbarian Jewelry.esp
 BaratheonArmor.esp
   IF FILE("SkyRe_Plugin_BaratheonArmor_1.esp") TAG: {{BASH: Deactivate}}
@@ -4430,7 +4442,7 @@ BEGINGROUP: Items M
 M_Ice.esp
 M_Longclaw.esp
 M_Needle.esp
-REGEX: MaleClericArmor(Heavy|Light|Cloth)?\.esp
+Magic Cloak Armor.esp
 Magicka Sabers.esp
 Magicka Sabers expanded.esp
   IF CHECKSUM("Magicka Sabers expanded.esp", 0F9D0688) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -4441,6 +4453,7 @@ magnus v3.0.esp
 Maid Armor.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+REGEX: MaleClericArmor(Heavy|Light|Cloth)?\.esp
 Maliki.esp
   IF CHECKSUM("Maliki.esp", EA4CC153) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Malo_Waffen.esp
@@ -6236,6 +6249,9 @@ BEGINGROUP: Quests D
 DA_Skyship.esp
   IF CHECKSUM("DA_Skyship.esp", FE8D1C12) DIRTY: 30 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("DA_Skyship.esp", 5B03BF9A) DIRTY: 30 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Daedra in Conjurer Dungeons.esp
+  IFNOT VAR(SkyMoMod) REQ: SkyMoMod.esm
+  IF CHECKSUM("Daedra in Conjurer Dungeons.esp", EE210836) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DaedricHideout.esp
 daelusdagger.esp
 Dalls_New_Vlinderl_Hall.esp
@@ -7169,6 +7185,8 @@ Vault of the Dovahkiin 1.1 - Warrior.esp
 VeiledKeep.esp
   IF CHECKSUM("VeiledKeep.esp", 4D96FDC8) DIRTY: 8 ITM, 55 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Vengeance.esp
+VFU_Home.esp
+  IF CHECKSUM("VFU_Home.esp", 9887F7C7) DIRTY: 48 ITM, 28 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Vigilant of Stendarr Quests.esp
 Vigilant of Stendarr Quests No Joining Requirements Patch.esp
 VlindrelArmory v2_Nav.esp
@@ -7204,6 +7222,9 @@ Better Warzones Soldier Uniforms With Cloaks.esp
   REQ: "http://skyrim.nexusmods.com/mods/12092 Cloaks of Skyrim"
 ScImpUniformsWARZONES.esp
 Wayhouse.esp
+WeatherTop.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("WeatherTop.esp", 57764A83) DIRTY: 1 ITM, 8 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 WestbrookKeep.esp
 Western Watchtower Rebuilt.esp
   IF CHECKSUM("Western Watchtower Rebuilt.esp", 49E528EE) SAY: Obsolete. Update to latest version.
@@ -9792,6 +9813,7 @@ MagesSavosSummon.esp
     IF VAR(RU) && IFNOT FILE("LegendarySouls.esp") SAY: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("MagesSavosSummon.esp", 5CE9EC31) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Magic Box.esp
+Magic Armour On Target.esp
 Magicka Revamp - Destruction - Extra Spells - WIP.esp
 maintainedarmorspells.esp
 markrecall.esp
@@ -11159,6 +11181,10 @@ Overpower.esp
   IF CHECKSUM("Overpower.esp", A16B0637) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Path of the Ranger.esp
 Passgenau und Gut Ausgestattet auch ohne Helm.esp
+Perk_Heavy_Armor_Tree_Redone.esp
+Perk_Heavy_Armor_Tree_Redone_No_Stagger.esp
+  IF VAR(EN) && IF FILE("Perk_Heavy_Armor_Tree_Redone.esp") ERROR: Use either Perk_Heavy_Armor_Tree_Redone.esp or Perk_Heavy_Armor_Tree_Redone_No_Stagger.esp, not both.
+    IF VAR(RU) && IF FILE("Perk_Heavy_Armor_Tree_Redone.esp") ERROR: Используйте любой или Perk_Heavy_Armor_Tree_Redone.esp или Perk_Heavy_Armor_Tree_Redone_No_Stagger.esp, не обе.
 Perk_Light_Armor_Tree_Redone.esp
 Perky.esp
   IF CHECKSUM("Perky.esp", EE1F755B) || IF CHECKSUM("Perky.esp", 469D04CE) SAY: Obsolete. Update to the latest version.
@@ -11490,21 +11516,6 @@ BEGINGROUP: Companions and NPCs
 
 BEGINGROUP: Companions Load Early
 
-Amara.esp
-Anora follower.esp
-Essential followers - all followers.esp
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
-essential followers.esp
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
-essentialfollowers.esp
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
-Essential Vigilance.esp
-  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
-    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен, при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
-Unkillable Lydia.esp
 3DNPC.esp
 IF FILE("3DNPC.esp") MOD: NerniesSolitudeExpansion.esp
   IF CHECKSUM("NerniesSolitudeExpansion.esp", 304709FF) DIRTY: 52 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -11580,10 +11591,13 @@ IF FILE("3DNPC.esp") MOD: RRRL-ETaC-Villages-Complete-Patch.esp
 RRRE-3DNPCv2-Patch.esp
 Althirs Companion and Carriage Command v1.1.esp
 AccurateCompanionGuild.esp
+Amara.esp
 animal_euphorium.esp
+Anora follower.esp
 Beyrana.esp
+begleittiger.esp
+  IF CHECKSUM("begleittiger.esp", A3222EF4) DIRTY: 11 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Brynjolf & Vex Followers.esp
-followers keep up.esp
 DFB - Companions Lost No More.esp
   IF CHECKSUM("DFB - Companions Lost No More.esp", 500DD498) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DFB - Companions Lost No More - Dawnguard.esp
@@ -11599,12 +11613,26 @@ EnhancedCompanionGuildNoCosmetic.esp
 Eileen.esp
 IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMCompViljaSkyrim.esp
   IF CHECKSUM("EMCompViljaSkyrim.esp", C45D4383) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Essential followers - all followers.esp
+  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+essential followers.esp
+  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+essentialfollowers.esp
+  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+Essential Vigilance.esp
+  IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
+    IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен, при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
+Unkillable Lydia.esp
 Eternal Bunny Pet.esp
 Eternal Bunny Pet (Gray Silent).esp
 FairKhajiit.esp
 femcalder.esp
 Feralfade.esp
 followers alpha9.esp
+followers keep up.esp
 foxpet-petfox.esp
 follower pack orcs.esp
   IF CHECKSUM("follower pack orcs.esp", F226DDFB) DIRTY: 14 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -11997,6 +12025,7 @@ JNPC_Serana_alt.esp
 Serana_Revised.esp
   IF VAR(EN) REQ: Meshes and Textures from "http://skyrim.nexusmods.com/mods/21038 Girls of Skyrim - Michelle"
     IF VAR(RU) REQ: Модели(Meshes) и тестуры мз мода "http://skyrim.nexusmods.com/mods/21038 Girls of Skyrim - Michelle"
+Serana Revised+upd.esp
 SeranaSecret.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Serafina & co.esp
