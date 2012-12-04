@@ -1555,6 +1555,7 @@ ENDGROUP: Base A
 BEGINGROUP: Base B
 
 BabettesFeast.esp
+IF FILE("BabettesFeastBalanced.esp") MOD: SkyRealism - Mass and Materials.esp
 BabettesFeastBalanced.esp
 BabettesFeast - IMCN.esp
 BabettesFeastOverpowered.esp
@@ -1749,6 +1750,7 @@ Cooking Mod - Yummy in Your Tummy.esp
 CookingExpanded.esp
 CookingExpanded - EoS.esp
 CookingExpanded - IMCN.esp
+SkyRealism - Feast and Famine - Cooking Expanded.esp
 Cowardly horses.esp
 Cowardly essential horses.esp
 REGEX: Cowardly Frost.*\.esp
@@ -9437,7 +9439,7 @@ Real Running.esp
 RealTimeReading.esp
 Rest_player.esp
 SkyRealism - Time and Travel.esp
-SkyRealism - Mass and Materials.esp
+IFNOT FILE("BabettesFeastBalanced.esp") MOD: SkyRealism - Mass and Materials.esp
 SkyRealism - Capacity and Carry Weight.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IFNOT VAR(Dawnguard) && IF CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) REQ: Dawnguard (Official Bethesda DLC)
@@ -11884,6 +11886,10 @@ BEGINGROUP: Companions
 // Unlimited followers
 // Multimarriage
 
+// #
+(TWE) Dandelion NPC.esp
+
+// a
 AdditionalNPCFollwerVoices.esp
 Aela Wears Wolf Armor.esp
 aela2.esp
@@ -11897,6 +11903,7 @@ Alexina.esp
 Alicia.esp
 Alma.esp
 Amanda.esp
+AmazonianKhajiitAlpha.esp
 Amina.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
@@ -11909,6 +11916,7 @@ Angelina Jolie.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 Angelina Jolie UNP.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
+REGEX: AnotherFollowerMod_.+\.esp
 Anruin.esp
 Anruin - Faendal Replacer.esp
 Arro.esp
@@ -12006,11 +12014,12 @@ My_Little_kitty_non_replaced.esp
   IF FILE("My_Little_kitty_k.esp") INC: My_Little_kitty_k.esp
 Natural Characters and Companions.esp
 SkyNPCReimagined.esp
-(TWE) Dandelion NPC.esp
+Stenvar.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Stenvar_Revamped.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Stenvar_Revamped.esp
+Stenvar_Revamped.esp
 
 //
-AmazonianKhajiitAlpha.esp
-REGEX: AnotherFollowerMod_.+\.esp
 Barbarian Companions.esp
 conancompanion.esp
 CMBeautifulCompanions.esp
@@ -13166,6 +13175,7 @@ DeadlyCombat_PISE_Patch.esp
 GeneralStores-SkyMoMod.esp
 CCO - Uninstaller.esp
 // Didn't know where this should go...
+GDFoodCompatability.esp
 OCS + Hearthfire Patch.esp
 REGEX: SSS .+ Patch\.esp
 SSS Deadly Dragons Patch A.esp
