@@ -82,6 +82,7 @@ IF REGEX("SkyRe_.+\.esp") SET: SkyRe
 IF FILE("SkyRe_Main.esp") || IF FILE("SkyRe_Main_NoDawnguard.esp") SET: SkyReM
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 IF FILE("UFO - Ultimate Follower Overhaul.esp") SET: UFO
+IF FILE("Update.esm") SET: Update
 //
 // Unofficial Patch variables
 IF FILE("Unofficial Skyrim Patch.esp") SET: USKP
@@ -148,7 +149,8 @@ Correctif - Skyrim.esm
 3rdEraWeaponsMoS.esm
 REGEX: (83Willows_)?101BUGs.+\.esm
   TAG: {{BASH: Delev, Relev}}
- // http://skyrim.nexusmods.com/mods/20166/  Changing esp to esm.
+  // http://skyrim.nexusmods.com/mods/20166/  Changing esp to esm.
+// esm a
 AIKhajiitCompanions.esm
 All Housecarls Are Hunks.esm
 Ambience Music Overhaul.esm
@@ -165,15 +167,18 @@ Anora follower.esm
   IF CHECKSUM("Anora follower.esm", 319033CE) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 archmageTrophyhall.esm
   IF CHECKSUM("archmageTrophyhall.esm", F788FDF0) DIRTY: 0 ITM, 20 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+// esm b
 BoogyManLair.esm
   IF CHECKSUM("BoogyManLair.esm", A1D94BDA) DIRTY: 42 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BSTamriel.esm
+// esm c
 CLARALUX - More and Brighter Lights.esm
-  IF VAR(EN) SAY: Obsolete. Update to latest version.
+  IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии
 CastleDrakhur_masterfle.esm
   IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) DIRTY: 23 ITM, 7 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) WARN: This file contains 6 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
+// esm d
 DarkerNights.esm
 DarkerInteriors.esm
 DarkerInteriorsAdd.esm
@@ -182,17 +187,39 @@ DBShreddedTriss.esm
 Devani follower.esm
 DirectorsTools.esm
 DonJuansPlayersClubMaster.esm
+// esm e
 Eyja 1.5.esm
+// esm f
+// esm g
+// esm h
+// esm i
+ImprovedCicero.esm
+// esm j
 Janus follower.esm
   IF CHECKSUM("Janus follower.esm", EAEDBCB6) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+// esm k
+// esm l
 LessTint.esm
 LunariRace.esm
   SAY: Obsolete. Update to the latest renamed version, LunariRace.esp
 Lycanthropy_Music.esm
+// esm m
+// esm n
 NoTint.esm
+// esm o
+// esm p
 PerkReset.esm
 REGEX: PersonalizedMusic.*\.esm
+// esm q
+// esm r
+// esm s
 // S´Drass follower.esm
+// esm t
+// esm u
+// esm v
+// esm w
+// esm xyz
+// esm last
 REGEX: Expanded Towns.*\.esm
   IF VAR(EN) SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
     IF VAR(RU) SAY: Устарело, обновите до последней версии Expanded Towns and Cities
@@ -594,7 +621,8 @@ BreezehomeLadderFix.esp
 BreezehomeLadderFixJP.esp
   IF CHECKSUM("BreezehomeLadderFixJP.esp", F2BAA689) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
   IF CHECKSUM("BreezehomeLadderFixJP.esp", 94D3C2C0) WARN: This file contains 32 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
-  IF FILE("BreezehomeLadderFix.esp") ERROR: Use BreezehomeLadderFix.esp or BreezehomeLadderFixJP.esp, not both.
+  IF FILE("BreezehomeLadderFix.esp") && IF VAR(EN) ERROR: Use either BreezehomeLadderFix.esp or BreezehomeLadderFixJP.esp, not both.
+     IF FILE("BreezehomeLadderFix.esp") && IF VAR(RU) ERROR: Используйте любой или BreezehomeLadderFix.esp или BreezehomeLadderFixJP.esp, не обе.
 BreezehomeLightingFix.esp
 Brynjolf Dialogue Fix.esp
 Bugfix-NoFollowerTrespassDialog.esp
@@ -883,6 +911,8 @@ AdrianneAvenicci.esp
   IF CHECKSUM("AdrianneAvenicci.esp", 3F15FD93) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Aela-1_1.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+A Sexy Aela The Huntres Replacer v 1.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Ahlam.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("Ahlam.esp", 9C67BE65) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -1150,6 +1180,9 @@ Supreme Storms.esp
 PaperMapHeight-RemoveFog.esp
   IF VAR(EN) && IF FILE("WATER.esp") WARN: Removing Fog will affect WATER. Load after WATER if you are experiencing errors.
     IF VAR(RU) && IF FILE("WATER.esp") WARN: Удаление тумана повлияет на мод WATER. Загружайте после WATER если вы замечаете баги.
+VanillaSnowWindyand150percentLessView.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, MoreSnowWindyand150percentLessView.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, MoreSnowWindyand150percentLessView.esp
 WMGAtmosphericENBPlugin.esp
 ENDGROUP: Weather mods and overhauls
 
@@ -1913,6 +1946,7 @@ DenseGrass.esp
 DFB - Dawnguard - More Crossbow Locations.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 DFB - Random Encounters.esp
+Diadem15.esp
 Diverse Faction Weapons.esp
 DivinePunishmentForArrowsToTheKnee.esp
 Domino_PerkBooks_Easy.esp
@@ -2213,6 +2247,7 @@ JBS_banking.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 JBS_gem_cutting.esp
   IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
+JBS_hunting.esp
 jbs_item_breakdown_rev.esp
   IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
   IF VAR(EN) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp use More Realistic Recipes [revised] instead
@@ -2679,7 +2714,6 @@ TF_SimpleSilver+SovngardeReplacement.esp
 SkBBP - Blacksmithing and Balance.esp
 SkBBP - Loot Drops and Leveled Lists.esp
   TAG: {{BASH: Delev, Relev}}
-Skeleton Key Recipe.esp
 skooma-the-drug.esp
 SkoomaModKidduffah v1.0.esp
 skyBirds - Airborne Perching Birds.esp
@@ -3455,6 +3489,7 @@ bouncy_belts_and_stockings.esp
   IF VAR(EN) REQ: UNP or UNPB body. Should work with all versions.
     IF VAR(RU) REQ: UNP или UNPB. Должно работать со всеми версиями.
 bound weapons redux.esp
+bow of destiny mk 2.esp
 BowofIorveth.esp
   IF FILE("SkyRe_Plugin_BowofIorveth_1.2.esp") TAG: {{BASH: Deactivate}}
 SkyRe_Plugin_BowofIorveth_1.2.esp
@@ -3590,6 +3625,7 @@ Craftable Invisible Helmets.esp
 Craftable Invisible Helmets - DDA.esp
 Craftable Nightingale Armor.esp
 Craftable Psijic.esp
+craftable skeleton key.esp
 Craftable Staffs.esp
 Craftable Thieves Guild Armor.esp
 Craftable TPL Dagger.esp
@@ -3937,7 +3973,8 @@ ElvenWeaponry.esp
 ElysiumArmor.esp
 EnchantedAccessories.esp
 Enchanting Scrolls.esp
-  IF FILE("Enchanting Scrolls.esm") ERROR: Use Enchanting Scrolls.esp or Enchanting Scrolls.esm, not both.
+  IF FILE("Enchanting Scrolls.esm") && IF VAR(EN) ERROR: Use either Enchanting Scrolls.esp or Enchanting Scrolls.esm, not both.
+     IF FILE("Enchanting Scrolls.esm") && IF VAR(RU) ERROR: Используйте любой или Enchanting Scrolls.esp или Enchanting Scrolls.esm, не обе.
   IF CHECKSUM("Enchanting Scrolls.esp", 95EDA249) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Enchanting Scrolls - Empty Soul Gems.esp
   IF CHECKSUM("Enchanting Scrolls - Empty Soul Gems.esp", FC56D52D) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -3947,6 +3984,7 @@ Energy Sword.esp
 EternalShineArmorAndWeapons.esp
 EtherealEdge.esp
 Evil MasterMind Armor.esp
+ExiledBladesArmor.esp
 exparrow.esp
   IF CHECKSUM("exparrow.esp", DE5FA17B) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Experimenter_Ring.esp
@@ -5068,6 +5106,9 @@ SilverDragonArmor.esp
 Silverlight Armor.esp
 SilvistEbonyMail.esp
 Skeleton bikini.esp
+Skeleton Key Recipe.esp
+  IF CHECKSUM("Skeleton Key Recipe.esp", 9FB9A9AC) && IF VAR(EN) WARN: This file was released before the CK (07 Feb. 2012) and is not recommended for use. It should be removed.
+    IF CHECKSUM("Skeleton Key Recipe.esp", 9FB9A9AC) && IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
 SkimpySilverlight.esp
 skyforgedShields.esp
 SkyforgeWeapons.esp
@@ -6066,6 +6107,8 @@ archaeologistguild.esp
 archmage quarters .esp
 archmageTrophyhall.esp
   IF CHECKSUM("archmageTrophyhall.esp", 278DA913) DIRTY: 9 ITM, 564 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Arheim.esp
+  IF CHECKSUM("Arheim.esp", EA6CE99A) DIRTY: 10 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ArieFarm.esp
 Arkris store.esp
 ArmorDisguises.esp
@@ -6152,6 +6195,7 @@ beschuetzer von himmelsrand.esp
 IF FILE("BetterBreezehome.esp") MOD: FalkreathCastle.esp
 betterbreezehome.esp
   IF VAR(BertsBHInst) INC: BertsBreezeRemodel
+BetterCitiesWindhelm.esp
 BetterDarkBrotherhood.esp
   IF CHECKSUM("BetterDarkBrotherhood.esp", 06E40868) DIRTY: 118 ITM, 27 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 01_BetterNordicRuins.esp
@@ -9910,6 +9954,7 @@ Invisibility.esp
 Isharas_Glimpse_of_Elsweyr.esp
   IFNOT FILE("SKSE") SAY: Note that to allow containers to have categories like the player inventory you need "http://skse.silverlock.org/ SKSE". See the "Tip" section on the mods "http://skyrim.nexusmods.com/mods/25362 description page".
 JSB-AdvancedDestruction.esp
+jbs_combatdodge.esp
 JoOMassLightning.esp
 Kamehameha Attack.esp
 kdansky_cheapwards.esp
@@ -11655,6 +11700,7 @@ Female Presets 2-3.esp
 Improved Eyes Skyrim - Models.esp
 Kawaii Face Presets.esp
   IF CHECKSUM("Kawaii Face Presets.esp", 2774F3D6) SAY: Obsolete. Update to the latest version.
+KhaleesiFacePreset.esp
 Male Presets 2-3.esp
 Presets 2-3.esp
 SGFemalePresets.esp
@@ -12078,6 +12124,8 @@ kaelas.man.slave_tiberius.esp
 khajiitmarriage.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, KMM_2-1a.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, KMM_2-1a.esp
+KhaleesiStandalone.esp
+  IF CHECKSUM("KhaleesiStandalone.esp", 04311F8C) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 KCustom_ALL_FHC_NDO.esp
 KCustomNPCs.esp
   IF FILE("KCustom_ALL_FHC_NDO.esp") INC: KCustom_ALL_FHC_NDO.esp
@@ -12320,7 +12368,14 @@ HousecarlWindhelm.esp
   IF VAR(EN) && IF FILE("Sexier Housecarls.esp") WARN: Redundant. Already included in Sexier Housecarls.esp
     IF VAR(RU) && IF FILE("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
 HousecarlWhiterun.esp
+HousecarlWhiterun Sexy Lydia v0.3.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 HousecarlWhiterun Sexy Lydia v0.5.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
+  IF CHECKSUM("HousecarlWhiterun Sexy Lydia v0.5.esp", 7C29388F) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF CHECKSUM("HousecarlWhiterun Sexy Lydia v0.5.esp", 7C29388F) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 iLoveLydia.esp
   IF VAR(EN) WARN: This mod will conflict with any female body altering mods.
     IF VAR(RU) WARN: Этот мод может конфликтовать с любыми реплейсерами женских тел.
