@@ -5758,9 +5758,12 @@ ERSO 01 - Vanilla Race Redone v.1.4.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 ERSO 01 - Vanilla Races Redone.esp
-   IF FILE("ERSO 01 - VRR only new heights.esp") && IF VAR(EN) SAY: Use only one ERSO 01 file.
-     IF FILE("ERSO 01 - VRR only new heights.esp") && IF VAR(RU) SAY: Используйте только один ERSO 01 file.
+ERSO 01 - VRR HighElflore.esp
+   IF FILE("ERSO 01 - Vanilla Races Redone.esp") && IF VAR(EN) SAY: Use only one ERSO 01 file.
+     IF FILE("ERSO 01 - Vanilla Races Redone.esp") && IF VAR(RU) SAY: Используйте только один ERSO 01 file.
 ERSO 01 - VRR only new heights.esp
+   IF FILE("ERSO 01 - Vanilla Races Redone.esp") || IF FILE("ERSO 01 - VRR HighElflore.esp") && IF VAR(EN) SAY: Use only one ERSO 01 file.
+     IF FILE("ERSO 01 - Vanilla Races Redone.esp") || IF FILE("ERSO 01 - VRR HighElflore.esp") && IF VAR(RU) SAY: Используйте только один ERSO 01 file.
 ERSO 02 - Enhanced Fauna and Monsters for Skyrim v.2.0.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -7501,6 +7504,10 @@ AddChoices01.esp
 Adoption.esp
 Advanced Shrines.esp
 AdvancedTransmutation.esp
+AethEbonyCircletReplacer.esp
+AethEbonyCrownReplacer.esp
+  IF VAR(EN) && IF FILE("AethEbonyCircletReplacer.esp") ERROR: Use either AethEbonyCircletReplacer.esp or AethEbonyCrownReplacer.esp, not both.
+    IF VAR(RU) && IF FILE("AethEbonyCircletReplacer.esp") ERROR: Используйте любой или AethEbonyCircletReplacer.esp или AethEbonyCrownReplacer.esp, не обе.
 REGEX: AIRangeIncrease(_NoAggro)?\.esp
 alcoholiceffect.esp
 all roads.esp
