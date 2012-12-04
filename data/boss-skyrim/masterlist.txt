@@ -657,7 +657,6 @@ GM-KhajiitDSHFix.esp
 GrammaticalLoading.esp
 greatweapon_speedfix.esp
 GuardShieldLight.esp
-TEGHarbringerFixes.esp
 HeadsmansAxeFixed.esp
 HelmetStackFix.esp
 hjerim chest fix.esp
@@ -669,6 +668,7 @@ HM DB CookQuestFix.esp
 invinciblehawkfix.esp
 imperialhelmetfix.esp
 ImperialHelmetHeavyFix.esp
+KarliahFix.esp
 Kataous' Bug Fixes for Player Homes.esp
 REGEX: KeeningFix.*\.esp
 KeeningSmithing.esp
@@ -762,6 +762,7 @@ TalosShrineFix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
 teg_civilwar_restore.esp
+TEGHarbringerFixes.esp
 thearmourerfixes.esp
 terramend.esp
   IF CHECKSUM("terramend.esp", 2AA40114) DIRTY: 8 ITM, 7 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -1064,6 +1065,8 @@ BEGINGROUP: Weather mods and overhauls
 //
 // Unlikely to be affected by anything but sound mods.
 
+1 Day Moon Phases.esp
+  IF CHECKSUM("1 Day Moon Phases.esp", FE2F1935) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Chesko_Frostfall.esp
 enbweather.esp
 IFNOT FILE("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
@@ -1476,6 +1479,7 @@ AllFemaleGuards.esp
 Alternate Clothing Names.esp
 Als Treasure Vault Only.esp
 ancalagon.esp
+ArmorRatingRevised.esp
 ArmorRatingTweak.esp
   IF VAR(EN) SAY: Obsolete. Update to the lastest version.
     IF VAR(RU) SAY: Устарело. Обновите до the lastest version.
@@ -1491,7 +1495,7 @@ ArmorRatingTweak80_1000AR.esp
 REGEX: ArmorRatingTweak_(\d{8}|U)?.+\.esp
   IF VAR(EN) SAY: Use only one ArmorRatingTweak esp.
     IF VAR(RU) SAY: Используйте только один ArmorRatingTweak esp.
-  ArmorSets.esp
+ArmorSets.esp
   IF VERSION("SKSE", "0.1.5.6", <) REQ: "http://skse.silverlock.org SKSE" 1.5.6+
 ARTOFMAGIC.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -1596,13 +1600,13 @@ DV Better Sleep Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF FILE("DV Better Sleep Dawnguard.esp") ERROR: Use non-Dawnguard version, DV Better Sleep.esp
 DV Better Sleep.esp
   IF VAR(Dawnguard) && IF FILE("DV Better Sleep.esp") ERROR: Use Dawnguard version, DV Better Sleep Dawnguard.esp
+betterbarter.esp
 BetterChestLoot.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 BetterFishAdded.esp
   TAG: {{BASH: Relev}}
 betterstartingitems.esp
 bbLager.esp
-guild battlemage.esp
 REGEX: BellyachesNewDragonSpecies_?(Tougher)?(Factionless)?(Dragons)?\.esp
   IF CHECKSUM("BellyachesNewDragonSpecies_FactionlessDragons.esp", AA96F38F) DIRTY: 118 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("BellyachesNewDragonSpecies.esp", 685E2580) DIRTY: 117 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -2048,6 +2052,7 @@ guardedborders.esp
 GuardianStonesExpanded.esp
   IF CHECKSUM("GuardianStonesExpanded.esp", BDBF79E7) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 GuardsGuardThePlayer.esp
+guild battlemage.esp
 ENDGROUP: Base G
 
 BEGINGROUP: Base H
@@ -2412,6 +2417,11 @@ new guards.esp
 NewBeveragesAndMiscItems.esp
 NightingaleArmorTextureFix.esp
 Nightingale Equipment Tweaks.esp
+No Warning - Default Attack Radius.esp
+No Warning - Double Attack Radius.esp
+  IF CHECKSUM("No Warning - Double Attack Radius.esp", B79D2CCD) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("No Warning - Default Attack Radius.esp") && IF VAR(EN) ERROR: Use only one of No Warning - * Attack Radius.esp
+    IF FILE("No Warning - Default Attack Radius.esp") && IF VAR(RU) ERROR: Используйте только один of No Warning - * Attack Radius.esp
 Nocturnal Craftable Armors.esp
   IF VAR(EN) && IF FILE("Vampirelordroyal.esp") WARN: Author states in Nexus description that Royal Bloodlines (Vampirelordroyal.esp) will break this mod.
     IF VAR(RU) && IF FILE("Vampirelordroyal.esp") WARN: Автор сообщает в описании на нексусе, что Royal Bloodlines (Vampirelordroyal.esp) может портить этот мод.
@@ -3446,6 +3456,7 @@ Chainmailhauberks 1.0.esp
 Chainmailhauberks 1.1.esp
 Chakram.esp
 ChickenStaff.esp
+Child Armor.esp
 chinaDressRavana.esp
 Chiulin.esp
 Chrysamere.esp
@@ -3916,8 +3927,8 @@ FF7 Masamune & Souba.esp
 FFweapons.esp
 Field Mage Craftable Armor.esp
 Field Mage Outfit.esp
-Fine Leather Armor.esp
 Final TensaZangetsu.esp
+Fine Leather Armor.esp
 FinGleam.esp
 FinGleam-Nighteye.esp
 finnsword.esp
@@ -3926,6 +3937,13 @@ FionaOutfit.esp
 Fire Blade.esp
 FlameAtronachArmor.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
+Flare Arrow Brighter.esp
+Flare Arrow Explosive.esp
+  IF VAR(EN) && IF FILE("Flare Arrow Brighter.esp") ERROR: Use only one of Flare Arrow *.esp
+    IF VAR(RU) && IF FILE("Flare Arrow Brighter.esp") ERROR: Используйте только один of Flare Arrow *.esp
+Flare Arrow.esp
+  IF FILE("Flare Arrow Brighter.esp") || IF FILE("Flare Arrow Explosive.esp") && IF VAR(EN) ERROR: Use only one of Flare Arrow *.esp
+    IF FILE("Flare Arrow Brighter.esp") || IF FILE("Flare Arrow Explosive.esp") && IF VAR(RU) ERROR: Используйте только один of Flare Arrow *.esp
 FioraArmor.esp
 Fitness Outfit OE.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
@@ -5195,6 +5213,8 @@ Throwing Knives.esp
 Tifa.ff7.byHimmelsky.esp
 Tifa.ff7.Orignalcloth by Himmelsky.esp
 TimeStopRing.esp
+tinyangrytrolls.esp
+  IF CHECKSUM("tinyangrytrolls.esp", 5393F1E8) DIRTY:9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 tkwleemodtestcloth.esp
 TK-world.esp
 TMRLollipop.esp
@@ -6308,6 +6328,8 @@ DisintegratingAxe.esp
   IF CHECKSUM("DisintegratingAxe.esp", 70970745) SAY: Obsolete. Update to the latest version.
 Divine Intervention.esp
 dnihome.esp
+DoggyDoors.esp
+  IF CHECKSUM("DoggyDoors.esp", 6868B566) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DomaineAlucard.esp
   IF CHECKSUM("DomaineAlucard.esp", 40271CEA) DIRTY: 0 ITM, 14 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Domino_MudcrabMerchant.esp
@@ -6323,7 +6345,6 @@ Dovaheim4.0.esp
 DovahkriidGrenzganger.esp
   IF CHECKSUM("DovahkriidGrenzganger.esp", 3C53A050) DIRTY: 25 ITM, 21 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 dovahkiin_sanctuary.esp
-Drakehelm.esp
 Dragon Falls Manor.esp
   IF CHECKSUM("Dragon Falls Manor.esp", 197A15AB) DIRTY: 63 ITM, 19 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Dragon Falls Manor.esp", 775367F7) DIRTY: 15 ITM, 19 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -6345,6 +6366,7 @@ REGEX: DragonsReach_Hideout_(Plus|Assassin|Nightingale)\.esp
 dragonstaffofdomination001.esp
   IF CHECKSUM("dragonstaffofdomination001.esp", FD198303) DIRTY: 10 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Dragonstand.esp
+Drakehelm.esp
 Drelas_Cottage_0.5b.esp
 DremFahPahNahl.esp
 dremorathrall.esp
@@ -7047,6 +7069,9 @@ Stonecreek.esp
 stonehenge11.esp
 SuperSkyrimBros.esp
   IF CHECKSUM("SuperSkyrimBros.esp", 0AC16F40) DIRTY: 70 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+suncresthall.esp
+  IF CHECKSUM("suncresthall.esp", 0AFEA2E1) DIRTY: 48 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("suncresthall.esp", 0AFEA2E1) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Sweet&Sexy Lingerie.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
 SweetiesPawnShop.esp
@@ -7533,15 +7558,15 @@ ArchmageNecklace.esp
 Argonian Breathless Emerge.esp
 Argonian Claws and Pugilist bonus.esp
 Argonian resist poison.esp
-Armored Skyrim.esp
-armored-horses.esp
 REGEX: ArmorCap90.*\.esp
   IF VAR(EN) SAY: Use only one ArmorCap esp
     IF VAR(RU) SAY: Используйте только один ArmorCap esp
+Armored Skyrim.esp
+armored-horses.esp
+ArmoredThalmorRobes.esp
 armorLegion.esp
   TAG: {{BASH: Delev, Relev}}
     // not tested
-ArmoredThalmorRobes.esp
 Arrows Progressive Damage (BS and CCO).esp
   IF VAR(EN) WARN: Obsolete. Update to 'AT - Progressive Damage (BS and CCO).esp'
     IF VAR(RU) WARN: Устарело. Обновите до 'AT - Progressive Damage (BS and CCO).esp'
@@ -7718,6 +7743,7 @@ Cautious Horkers with reduced aggro radius.esp
 Cautious Mudcrabs.esp
 Cautious Sabrecats with reduced aggro radius.esp
 cbbecurvy.esp
+ccDifferentStones.esp
 CCO - Oblivion Carry Weights.esp
 CCO - Permanent Birthsigns.esp
   IF CHECKSUM("CCO - Permanent Birthsigns.esp", 9CB120EE) DIRTY:  0 ITM, 24 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -8133,16 +8159,18 @@ Immersive Weapons.esp
 imperialpower.esp
 Improved Archery and Bows.esp
 Improved Cloaks.esp
+Improved Daedric Artifacts.esp
+Improved Familiars.esp
 improved final battle.esp
   IF CHECKSUM("improved final battle.esp", 41A04451) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Improved Daedric Artifacts.esp
+Improved Mage Armor.esp
+Improved Potions.esp
 Improved Radiant Rewards.esp
 Improved Radiant Rewards Lower.esp
 Improved Radiant Rewards Medium.esp
-Improved Familiars.esp
-Improved Mage Armor.esp
-Improved Potions.esp
 Improved Runes.esp
+Improved Shields.esp
+  IF CHECKSUM("Improved Shields.esp", CC6B7D57) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 improved_dawnbreaker_explosion.esp
 ImprovedArchMageRobes.esp
 ImprovedFood.esp
@@ -8201,9 +8229,12 @@ Isharas_MLLY_RESET.esp
      IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") || IF FILE("Isharas_MLLY_MALES_SKSE.esp") && IF VAR(RU) WARN: Используйте только один Isharas_MLLY_* esp.
 Item Prices.esp
 Item Prices V2.esp
-  IF FILE("Item Prices.esp") SAY: Use only one Item Prices esp.
+  SAY: Use only one Item Prices esp.
+  IF FILE("Item Prices.esp") && IF VAR(EN) ERROR: Use only one of Item Prices *.esp
+    IF FILE("Item Prices.esp") && IF VAR(RU) ERROR: Используйте только один of Item Prices *.esp
 Item Prices V3.esp
-  IF FILE("Item Prices.esp") || IF FILE("Item Prices V2.esp") SAY: Use only one Item Prices esp.
+  IF FILE("Item Prices.esp") || IF FILE("Item Prices V2.esp") && IF VAR(EN) ERROR: Use only one of Item Prices *.esp
+    IF FILE("Item Prices.esp") || IF FILE("Item Prices V2.esp") && IF VAR(RU) ERROR: Используйте только один of Item Prices *.esp
 ENDGROUP: Overrides I
 
 BEGINGROUP: Overrides J
@@ -8211,6 +8242,12 @@ BEGINGROUP: Overrides J
 REGEX: JailtimeMax\d\d\d?\.esp
 JanusForbeare's Fighting Words.esp
   IF CHECKSUM("JanusForbeare's Fighting Words.esp", EAF4398B) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Jarls sit up straight except Falkreath jarl.esp
+  // Changes Jarl chairs, not NPC's
+Jarls sit up straight.esp
+  // Changes Jarl chairs, not NPC's
+  IF VAR(EN) && IF FILE("Jarls sit up straight except Falkreath jarl.esp") ERROR: Use either Jarls sit up straight except Falkreath jarl.esp or Jarls sit up straight.esp, not both.
+    IF VAR(RU) && IF FILE("Jarls sit up straight except Falkreath jarl.esp") ERROR: Используйте любой или Jarls sit up straight except Falkreath jarl.esp или Jarls sit up straight.esp, не обе.
 jasBetterFood.esp
 jasNoIcecream.esp
 JM_BetterAlchemySatchel.esp
@@ -8573,14 +8610,13 @@ BEGINGROUP: Overrides P
 
 Painful traps.esp
 PeacefulMudcrabs.esp
+MZ Peaceful Slaughterfish.esp
 PerQ.esp
 Paralyze.esp
 Paralyze-1.1b.esp
   IF FILE("Paralyze.esp") INC: Paralyze.esp
 Passive dragons.esp
 playing_children.esp
-Usable lantern.esp
-Child Armor.esp
 pf_lightfootcompanions.esp
   IFNOT FILE("playing_children.esp") REQ: playing_children.esp
 playerhousechests.esp
@@ -8973,6 +9009,7 @@ unlimited amulets and rings 0.1.esp
 Dawnguard Unlimited Rings and Amulets.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
 UnlimitedEnchantments.esp
+Usable lantern.esp
 UsefulDetectLife.esp
 Ustengrav gate removal.esp
   IF CHECKSUM("Ustengrav gate removal.esp", A680BE35) DIRTY: 0 ITM, 6 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -9842,9 +9879,12 @@ Magic Box.esp
 Magic Armour On Target.esp
 Magicka Revamp - Destruction - Extra Spells - WIP.esp
 maintainedarmorspells.esp
-markrecall.esp
+MarkRecall.esp
 MarkRecallAlt.esp
 MarkRecallCon.esp
+MarkRecallPow.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, MarkRecall.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, MarkRecall.esp
 MasterTheTimeAndSpaceTOGGLE.esp
 Mass effect Biotic spells.esp
   IF CHECKSUM("Mass effect Biotic spells.esp", C32007ED) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -10161,8 +10201,17 @@ BEGINGROUP: Spells Late
 REGEX: (\dSec(ond)?)ShadowWarrior.esp
 Ancestor Guardian.esp
 AspectIllusionOnly.esp
+IF FILE("DeadlySpellImpacts.esp") MOD: balanceddestructionv4.esp
 Battlemage's Arcanes.esp
+BetterDualCasting.esp
+BetterMagic_FULL.esp
+BetterMasterSpells.esp
+BetterSpellFinishers.esp
+BFSEffects.esp
 binding_spell.esp
+BurnifiedEffects.esp
+  IF VAR(EN) SAY: Obsolete. Upgrade to Burn Freeze Shock Effects
+    IF VAR(RU) SAY: Устарело. Обновите до Burn Freeze Shock Effects
 candlelightnobulb.esp
 /* Moved temporarly until I find a better place for it. */
 candlelightandmagelight10minute.esp
@@ -10174,30 +10223,12 @@ Candlelightspelllasts30min.esp
   IF FILE("Candlelightspelllasts1hour.esp") || IF FILE("candlelightandmagelight10minute.esp") || IF FILE("Candlelightspelllasts15min.esp") INC: candlelightandmagelight10minute.esp or Candlelightspelllasts * .esp
 Combat Remastered - Magic.esp
 crache - tri night eye.esp
-dovahkiinrelax.esp
-gkorrspellsv2.esp
-InvestedMagic.esp
-tSSSSS.esp
-tSSSSS - No Restoration.esp
-MagicDuel.esp
-MagicDuel_Chinese.esp
-MagicDuel_French.esp
-Mighty Magick - Magicka Rules.esp
-REGEX: MMO(Alteration|Conjuration|Destruction|Illusion|Restoration)Changes\.esp
-BetterDualCasting.esp
-BetterSpellFinishers.esp
-BetterMasterSpells.esp
-BetterMagic_FULL.esp
-BurnifiedEffects.esp
-  IF VAR(EN) SAY: Obsolete. Upgrade to Burn Freeze Shock Effects
-    IF VAR(RU) SAY: Устарело. Обновите до Burn Freeze Shock Effects
-BFSEffects.esp
-IF FILE("DeadlySpellImpacts.esp") MOD: balanceddestructionv4.esp
 DeadlySpellImpacts.esp
 DeadlySpellImpacts - Two Fire.esp
 DIRemoveStartSpellsFlamesHealing.esp
 Dismiss Summons.esp
 DL33-PermDragonRend.esp
+dovahkiinrelax.esp
 DualFlurrytoFlurry.esp
 ELEMEarthPrison.esp
 ElemIceWall.esp
@@ -10207,8 +10238,10 @@ EmpoweredMagic_Dawnguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Even Smaller Spell Light Radius.esp
 FNISspells.esp
+gkorrspellsv2.esp
 ignitetheworld.esp
 Improved Walls.esp
+InvestedMagic.esp
 LFox No Nightingale Power Cooldown.esp
 LFox No Racial Power Cooldown.esp
 Longer Conjuration Spells.esp
@@ -10224,6 +10257,9 @@ MagelightLasts1Hour.esp
 MagelightLasts30Min.esp
   IF FILE("MagelightLasts1Hour.esp") || IF FILE("candlelightandmagelight10minute.esp") || IF FILE("MagelightLasts15Min.esp") INC: candlelightandmagelight10minute.esp or MageLightLasts * .esp
 MagicDetox.esp
+MagicDuel.esp
+MagicDuel_Chinese.esp
+MagicDuel_French.esp
 Magicka balance.esp
 REGEX: magickaregen.*\.esp
 MagicUnderControl.esp
@@ -10231,9 +10267,17 @@ REGEX: Mighty Magick - (Dual Casting|Alteration|Conjuration|Destruction|Illusion
 Mighty Magick - Fortify Magic School Enchantment and Alchemy Reversed.esp
 REGEX: Mighty Magick - .+ Extras\.esp
 Mighty Magick - Enchantments Rebalance.esp
+Mighty Magick - Magicka Rules.esp
+REGEX: MMO(Alteration|Conjuration|Destruction|Illusion|Restoration)Changes\.esp
 MiniLovers.esp
 MiniLoversSoundSpell.esp
 MiniLoversAlternative.esp
+More Accessible Magicka no buyable masters.esp
+  IF CHECKSUM("More Accessible Magicka no buyable masters.esp", A6A5F13F) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+More Accessible Magicka.esp
+  IF CHECKSUM("More Accessible Magicka.esp", 01230B90) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF VAR(EN) && IF FILE("More Accessible Magicka no buyable masters.esp") ERROR: Use either More Accessible Magicka no buyable masters.esp or More Accessible Magicka.esp, not both.
+    IF VAR(RU) && IF FILE("More Accessible Magicka no buyable masters.esp") ERROR: Используйте любой или More Accessible Magicka no buyable masters.esp или More Accessible Magicka.esp, не обе.
 More Visible Soul Trap Effect.esp
 mpn.esp
 necromancy tweak.esp
@@ -10244,6 +10288,8 @@ Night Eye Overhaul.esp
 Nighteye(red).esp
 NoPlayerSpells.esp
 nospellstart.esp
+Paralysis in Illusion.esp
+  IF CHECKSUM("Paralysis in Illusion.esp", 7A14834A) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 PartyTime.esp
   IF CHECKSUM("PartyTime.esp", 2B5DBE61) DIRTY: 33 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Path of Shadows - Magic.esp
@@ -10254,11 +10300,11 @@ SeeYouSleepByMadmole.esp
 ShadowOfTheMagic.esp
   IF VAR(EN) SAY: Obsolete. Update to Summon Shadow Merchant
     IF VAR(RU) SAY: Устарело. Обновите до Summon Shadow Merchant
+ShowRaceMenuAlternative.esp
+  // Adds spell, doesn't override current race menu
 IFNOT FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
 SimpleTeleport.esp
 SinisterSummoner.esp
-ShowRaceMenuAlternative.esp
-  // Adds spell, doesn't override current race menu
 Skyrim_Best Voise Magic.esp
 Skyrim_Best Voise Magic Damage.esp
   IF FILE("Skyrim_Best Voise Magic.esp") INC: Skyrim_Best Voise Magic.esp
@@ -10288,7 +10334,10 @@ Torchlight.esp
 transmute tweak make all silver first.esp
 TrueTransmutation.esp
 TS_VampireTweaks.esp
+tSSSSS.esp
+tSSSSS - No Restoration.esp
 Vampire Lord Serana Fixed.esp
+VampireShadows.esp
 Vampiric_Drain_Fix.esp
   IF FILE("Vampire Lord Serana Fixed.esp") INC: Vampire Lord Serana Fixed.esp
 Vampiric_Drain_Fix_BloodChalice.esp
@@ -10348,7 +10397,7 @@ skoomacooking.esp
 ENDGROUP: Alchemy
 
 BEGINGROUP: Enchantment
-// enchantments
+// enchantment
 
 zzzAlmostUnlimitedWeaponEnchant.esp
   IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -10365,12 +10414,14 @@ Destruction Damage Mod.esp
 Disenchantable Dragonbane.esp
 disenchnateverything.esp
   // typo is Mod name 
-  SAY: Obsolete. Update to latest renamed version, Enchanting Freedom.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Enchanting Freedom.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Enchanting Freedom.esp
 ElaborateEnchantments.esp
 enchant3.esp
 enchant4effects.esp
 Enchant_Me_items.esp
 Enchant_Me_perks.esp
+EnchantableBackstab.esp
 Enchanted Items Overhaul.esp
   TAG: {{BASH: Delev, Relev}}
 EnchantMagicPower.esp
@@ -10382,7 +10433,8 @@ enchanting freedom.esp
 Z_Enchantment.esp
 EnchantmentPower.esp
 enchantmentrebalanced.esp
-  SAY: Obsolete. Update to latest renamed version, Enchanting Freedom.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Enchanting Freedom.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Enchanting Freedom.esp
 Enchant Plus.esp
 EnchantmentCleanser.esp
 zzzEverlastingWeaponEnchant.esp
@@ -11483,6 +11535,14 @@ Neovalen Race Compatibility.esp
   IF CHECKSUM("Neovalen Race Compatibility.esp", 6E01C2F2) SAY: Obsolete. Update to latest version.
   IFNOT FILE("DSpSoB.esp") REQ: "http://skyrim.nexusmods.com/mods/17746 Duel Sheath plus Shields on Back"
 New Playable Races by Budcat v3.0.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, New Playable Races by Budcat v4.0.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, New Playable Races by Budcat v4.0.esp
+New Playable Races by Budcat v4.0.esp
+  IF CHECKSUM("New Playable Races by Budcat v4.0.esp", 8E8CCA8C) DIRTY: 80 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+NPR 4.0 w Unarmed Compatibility by Budcat.esp
+  IF CHECKSUM("NPR 4.0 w Unarmed Compatibility by Budcat.esp", F1CAA272) DIRTY: 51 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF VAR(EN) && IF FILE("New Playable Races by Budcat v4.0.esp") ERROR: Use either New Playable Races by Budcat v4.0.esp or NPR 4.0 w Unarmed Compatibility by Budcat.esp, not both.
+    IF VAR(RU) && IF FILE("New Playable Races by Budcat v4.0.esp") ERROR: Используйте любой или New Playable Races by Budcat v4.0.esp или NPR 4.0 w Unarmed Compatibility by Budcat.esp, не обе.
 NewRaces.esp
 Nidia Race LB.esp
 OhmesRaht.esp
@@ -11719,11 +11779,11 @@ voidMountedFollowers.esp
 ENDGROUP: Companions Load Early
 
 BEGINGROUP: Questgiver NPCs
+awnuldthebold.esp
 GoTSkyrimConversion.esp
 // not sure where to put 'Conversions' this seemed most likely based on description (no readme).
   SAY: This is a Conversion.  Most other mods will be incompatible.
   IF CHECKSUM("GoTSkyrimConversion.esp", 022C9E07) DIRTY: 97 ITM, 32 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-awnuldthebold.esp
 ENDGROUP: Questgiver NPCs
 
 BEGINGROUP: Extensible Follower Framework
@@ -12748,6 +12808,7 @@ Henrys All Animals and Creatures BeFriend German.esp
   IF CHECKSUM("Henrys All Animals and Creatures BeFriend German.esp", 7E773EE5) DIRTY: 21 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("Henrys All Animals BeFriend.esp") || IF FILE("Henrys All Animals BeFriend German.esp") || IF FILE("Henrys All Animals  and Creatures BeFriend.esp") INC: Henrys All * BeFriend mods
 khajiit_replacer.esp
+KhajiitSenseOfSmell.esp
 Morozik75_Better_Races_Rus.esp
 Nicer-Looking Khajiit.esp
 NorcRace_OrcRaceReplacer.esp
