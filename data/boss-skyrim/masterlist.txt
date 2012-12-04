@@ -4099,6 +4099,7 @@ HexanShield.esp
 HighelfL17.esp
 Highlander Katana.esp
 highric Armor.esp
+Highric.esp
 HM Soul Gem Shifter.esp
 holdbounties.esp
 holy armor.esp
@@ -4510,6 +4511,9 @@ Moar Kontent.esp
 modern weapons.esp
   IF CHECKSUM("modern weapons.esp", F76E0343) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Mods247Helf16.esp
+  IF VAR(EN) && IF CHECKSUM("Mods247Helf16.esp", 8855F757) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF VAR(RU) && IF CHECKSUM("Mods247Helf16.esp", 8855F757) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+Mods247HelfH16.esp
 Mondschwert von General Lee Sam.esp
 MongolArmor.esp
 monster_hunter.esp
@@ -4774,6 +4778,8 @@ PrvtI_HeavyArmory.esp
     // included
 psijic mage.esp
 Psiijic_Master_Outfits.esp
+PsilocybinMushrooms.esp
+PsilocybinMushrooms_FlyAmanita.esp
 PTKeywords.esp
 PTMageArmor.esp
 puresteel.esp
@@ -5301,6 +5307,7 @@ Valdacil's Light Armor Robes.esp
 Vampguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesada DLC)
   IF CHECKSUM("Vampguard.esp", FDB0B379) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+vampire armor revisited.esp
 VampireHuntersCoat.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, InquisitorGear.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, InquisitorGear.esp
@@ -6622,6 +6629,11 @@ LB_MuchAdoSnowElves_WeaponsOnly.esp
   IF FILE("LB_MuchAdoSnowElves_Quest.esp") INC: LB_MuchAdoSnowElves_Quest.esp
 LetsGetRich.esp
 LevelersTower.esp
+LevelersTowerRemod.esp
+  IF VAR(EN) && IF FILE("LevelersTower.esp") ERROR: Use either LevelersTower.esp or LevelersTowerRemod.esp, not both.
+    IF VAR(RU) && IF FILE("LevelersTower.esp") ERROR: Используйте любой или LevelersTower.esp или LevelersTowerRemod.esp, не обе.
+  IF CHECKSUM("LevelersTowerRemod.esp", 5F1FCD8C) DIRTY: 10 ITM, 5 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("LevelersTowerRemod.esp", 5F1FCD8C) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 LFox Moon Sugar Manor.esp
 Liberation Beacon.esp
   IF CHECKSUM("Liberation Beacon.esp", EAC2C978) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -7516,36 +7528,31 @@ Argonian Claws and Pugilist bonus.esp
 Argonian resist poison.esp
 Armored Skyrim.esp
 armored-horses.esp
+REGEX: ArmorCap90.*\.esp
+  IF VAR(EN) SAY: Use only one ArmorCap esp
+    IF VAR(RU) SAY: Используйте только один ArmorCap esp
 armorLegion.esp
   TAG: {{BASH: Delev, Relev}}
     // not tested
-ArrowDamageDecrease.esp
+ArmoredThalmorRobes.esp
 Arrows Progressive Damage (BS and CCO).esp
   IF VAR(EN) WARN: Obsolete. Update to 'AT - Progressive Damage (BS and CCO).esp'
     IF VAR(RU) WARN: Устарело. Обновите до 'AT - Progressive Damage (BS and CCO).esp'
+ArrowDamageDecrease.esp
+REGEX: ArrowInTheEverywhere.*\.esp
 ArtifactOverhaul.esp
 ArtifactRebalance.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, LoreFriendlyArtifactRebalance.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, LoreFriendlyArtifactRebalance.esp
+Arvak, Shadowmere's Body - DB Saddle.esp
+Arvak, Shadowmere's Body - No Saddle.esp
+  IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") ERROR: Use only one Arvak esp.
 Ash Pile Expiration.esp
 ATTTemplate.esp
 MISELF_Atromancy.esp
 augmentedspells.esp
 AutoAim.esp
-Better Auriels Bow.esp
-NoAutoAim.esp
-  IF FILE("AutoAim.esp") INC: AutoAim.esp
-Proper Aiming.esp
-  IF FILE("AutoAim.esp") INC: AutoAim.esp
-Waterbreathing Breathless Emerge.esp
-REGEX: ArmorCap90.*\.esp
-  IF VAR(EN) SAY: Use only one ArmorCap esp
-    IF VAR(RU) SAY: Используйте только один ArmorCap esp
-ArmoredThalmorRobes.esp
-REGEX: ArrowInTheEverywhere.*\.esp
-Arvak, Shadowmere's Body - DB Saddle.esp
-Arvak, Shadowmere's Body - No Saddle.esp
-  IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") ERROR: Use only one Arvak esp.
+Auriel's Bow Reloaded.esp
 ENDGROUP: Overrides A
 
 BEGINGROUP: Overrides B
@@ -7572,6 +7579,7 @@ Basic Smithing Perk.esp
 BeastWithinNightEye.esp
 better artifacts.esp
   IF CHECKSUM("better artifacts.esp", 52BAB796) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Better Auriels Bow.esp
 Better Blacksmithing.esp
   IF CHECKSUM("Better Blacksmithing.esp", 3C4E4135) DIRTY: 29 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Better Bone Armor.esp
@@ -7803,25 +7811,26 @@ REGEX: DisableRangedKillCams(\d\.\d)\.esp
 DiversePriests.esp
 dogtogermanshepard2fix.esp
 draeath-NightingaleShadow-LesserPower.esp
+draeath-visionPowerDuration-1Hour.esp
 Dragon Priest Dager.esp
 Dragon Priest Masks - Better Sorting Style.esp
 Dragon Souls To Attributes.esp
   IF CHECKSUM("Dragon Souls To Attributes.esp", EC31C990) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Dragon Souls To Attributes.esp", 4A52794E) || IF CHECKSUM("Dragon Souls To Attributes.esp", 646A5BB8) SAY: Obsolete. Update to the latest version.
-doublebounddmg.esp
-  // TAG: {{BASH: Stats}}
-droppablebarenziah.esp
-  IF VAR(EN) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
-    IF VAR(RU) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp
-doubleko.esp
-Dr_ItemBones.esp
 Dragonbane Enchantment.esp
   IF VAR(EN) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
 dragonbitetaildamage +.esp
-dragonplate_rebalanced.esp
 DragonsEnhanced.esp
 DragonflyNoFlee.esp
+dragonplate_rebalanced.esp
+droppablebarenziah.esp
+  IF VAR(EN) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
+    IF VAR(RU) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp
+doublebounddmg.esp
+  // TAG: {{BASH: Stats}}
+doubleko.esp
+Dr_ItemBones.esp
 Drelas_Cottage.esp
 REGEX: Dual Casting - Cost - .+\.esp
   IF VAR(EN) SAY: Use only one Dual Casting - Cost esp.
@@ -8482,6 +8491,8 @@ no_guard_warning_after_shouts.esp
 REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg)\.esp
   IF VAR(EN) SAY: Obsolete.  Update to latest renamed version, Thieves Guild Requirements.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Thieves Guild Requirements.esp
+NoAutoAim.esp
+  IF FILE("AutoAim.esp") INC: AutoAim.esp
 NoAutoHealthRegen.esp
 NoAutoSkillBooks.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version.
@@ -8579,6 +8590,8 @@ PowerOfTheBeast.esp
 PrettyPrices.esp
 PrisonerRagsForFemales.esp
 prolongedenchantingpotions.esp
+Proper Aiming.esp
+  IF FILE("AutoAim.esp") INC: AutoAim.esp
 ENDGROUP: Overrides P
 
 BEGINGROUP: Overrides Q
@@ -8653,10 +8666,7 @@ Safely Thrall.esp
   IF VAR(EN) SAY: Obsolete.  Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Safely Thrall_v1_1.esp
-Sell_Stolen.esp
 SameWalkRunSpeeds.esp
-STFU.esp
-STFU - guards.esp
 SameWalkRunSpeedsLite.esp
 SB - Jump.esp
 SB - Sneak Dagger Boost.esp
@@ -8666,6 +8676,7 @@ SB Bartering Mod.esp
 ScalingElementalRunes.esp
 ScarabFollowerTweaks.esp
 scaredchildren.esp
+Sell_Stolen.esp
 serananozombie.esp
 Shadow Remover.esp
 Silencer's Vestments - Replacer.esp
@@ -8725,6 +8736,7 @@ Sleep well 72h.esp
 Silence The Bards.esp
 REGEX: Skyrim Moon Size (x\d\.\d)\.esp
 SlightlyIncreaseCarryWeight.esp
+Slof's Nightmare.esp
 Slof's Unique Frost.esp
 slowercompanions.esp
 Sickly Diseases.esp
@@ -8848,6 +8860,8 @@ SPTUnlimitedRingsDawnguard.esp
 Standin Stonene's Value Fix V1.esp
 Standing Stone Revamp v.1.0.esp
 SteelShieldOfSolitude.esp
+STFU.esp
+STFU - guards.esp
 -Stickier_Arrows- Fix.esp
 Stickier_Arrows V2.esp
   IF VAR(EN) && IF File("-Stickier_Arrows- Fix.esp") WARN: Use only one Stickier Arrows esp.
@@ -9011,6 +9025,7 @@ wabba-unrel_proj.esp
 Wabbajack Fix.esp
 walk.esp
 IFNOT REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
+Waterbreathing Breathless Emerge.esp
 wealthymerchants.esp
 Weapon Specialization - Generalized.esp
 WeaponSmith.esp
@@ -11434,6 +11449,10 @@ GiantChild.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, GiantChild.esm
   IF FILE("GiantChild.esm") ERROR: Remove. Replaced by GiantChild.esm
 GreybeardRace.esp
+HBR_Marshwalker(Argonian)_Standalone.esp
+  IF CHECKSUM("HBR_Marshwalker(Argonian)_Standalone.esp", 8E76E40F) DIRTY: 21 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+HBR_OhmesRaht(Khajiit)_Standalone.esp
+  IF CHECKSUM("HBR_OhmesRaht(Khajiit)_Standalone.esp", 6BC5C8FE) DIRTY: 42 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Kaleen2.esp
 LunariRace.esp
 Matera.esp
@@ -12701,6 +12720,10 @@ fjAshenVampires.esp
     IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
 Forsworn Children.esp
   IF CHECKSUM("Forsworn Children.esp", 722A5413) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+HBR_Argonian_Replacer.esp
+  IF CHECKSUM("HBR_Argonian_Replacer.esp", 6503322F) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+HBR_Khajiit_Replacer.esp
+  IF CHECKSUM("HBR_Khajiit_Replacer.esp", CE1E8BD7) DIRTY: 21 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HealthRegeneratingOff.esp
   IF CHECKSUM("HealthRegeneratingOff.esp", 0A7CE6EC) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: MD - BMIVR( with vanilla heights)?\.esp
