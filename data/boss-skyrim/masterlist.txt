@@ -377,8 +377,8 @@ ORS_MorthalPain.esm
 ORS_SolitudeGate.esm
   IF CHECKSUM("ORS_SolitudeGate.esm", 31BACFAE) DIRTY: 26 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 pinewoodvillage.esm
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Pinewood Village.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Pinewood Village.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version - Pinewood Village.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии - Pinewood Village.esp
   IF CHECKSUM("pinewoodvillage.esm", DDA83B3F) DIRTY: 33 ITM, 25 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Proudspire Manor Refurbished.esm
 REGEX: OverlookTower.*\.esm
@@ -542,10 +542,11 @@ Bandit Raid.esp
 SuccubusFollower.esp
   SAY: This is actually an esm released as an esp file.
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IF FILE("Succubus Summoning.esp") ERROR: Use SuccubusFollower.esp or Succubus Summoning.esp, not both.
 Succubus Summoning.esp
   SAY: This is actually an esm released as an esp file.
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-  IF FILE("SuccubusFollower.esp") INC: SuccubusFollower.esp
+  IF FILE("SuccubusFollower.esp") ERROR: Use Succubus Summoning.esp or SuccubusFollower.esp, not both.
 ENDGROUP: ESMs
 
 BEGINGROUP: Official DLC Files
@@ -726,6 +727,7 @@ lightplacement.esp
   IF VAR(EN) WARN: Obsolete. Update to latest renamed version. Renamed to lightingfix.esp
     IF VAR(RU) WARN: Устарело. Обновите до последней версии. Переименовано в lightingfix.esp
 lightingfix.esp
+  IF CHECKSUM("lightingfix.esp", A534E1EA) SAY: Obsolete. Update to latest version.
   IF CHECKSUM("lightingfix.esp", B22ED6C8) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 lydia chair fix.esp
 MageRobesCommentFix.esp
@@ -1359,6 +1361,9 @@ Real Lights - Cities.esp
 Dark Light Templates.esp
 Dark Dungeons for ENB.esp
 Further Dark Dungeons for ENB.esp
+  IF CHECKSUM("Dark Dungeons for ENB.esp", A7023FF2) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("Dark Dungeons for ENB.esp", 1EC2E726) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("Dark Dungeons for ENB.esp", ABC1F0E1) SAY: Obsolete. Update to the latest version.
   IF FILE("Dark Dungeons for ENB.esp") INC: Dark Dungeons for ENB.esp
 Dark Dungeons for Dawnguard.esp
 bigdanscozyvillages.esp
@@ -1418,7 +1423,6 @@ esisenviropack.esp
 Fantasy Music Overhaul.esp
   IF CHECKSUM("Fantasy Music Overhaul.esp", 7E3AC694) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Fantasy Music Overhaul.esp", 3B6DBCF8) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  // two versions, same name
 FixCombatMusic.esp
 REGEX: enhanced soundtrack (\d{1,2})\.esp
   IF VAR(EN) SAY: Adds music but also contains textures and meshes. Loose files will override them
@@ -1444,7 +1448,6 @@ BEGINGROUP: Textures
 /* texture packadge from Steam Workshop */
 colored constellations.esp
 compass.esp
-elvenarrow.esp
 glowing arrows v2.1.esp
 lockpickvision.esp
 real glaciers remastered.esp
@@ -1608,6 +1611,7 @@ Archmage Crafting - Enchanted Items.esp
 Archmage Crafting - Unenchanted Clothing.esp
 Arrow Smithing.esp
 arrowcrafting.esp
+  IF CHECKSUM("arrowcrafting.esp", 8E307ED0) || IF CHECKSUM("arrowcrafting.esp", D15AE0C5) SAY: Obsolete. Update to the latest version.
 REGEX: Arrowsmith\w{0,2}\.esp
   IF VAR(EN) && IF FILE("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Delete. Arrowsmith.esp already included in SkyRe_Main.esp
     IF VAR(RU) && IF FILE("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Удалите. Arrowsmith.esp уже включен в SkyRe_Main.esp
@@ -2783,6 +2787,7 @@ SkyRealism - Feast and Famine.esp
   IFNOT FILE("BabbetesFeastBalanced.esp") REQ: BabbetesFeastBalanced.esp
 Skyrim Barbers.esp
 Skyrim Expanded Loot Tables.esp
+  IF CHECKSUM("Skyrim Expanded Loot Tables.esp", 24E08D9F) SAY: Obsolete. Update to latest version.
   // TAG: {{BASH: Invent}}
 /* doubleloot.esp and moreloot(3v1)?\.esp change same chests as Skyrim Expanded Loot Tables.esp */
 Skyrim Expanded Loot Tables - Lower Drop Rate.esp
@@ -3099,6 +3104,7 @@ CiviliansWillNotDiePatches.esp
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", C0754EA7) SAY: Устарело. Обновите до "http://modgames.net/load/247-1-0-13970 CiviliansWillNotDiePatches.esp" 0.6+
 Destructible_bottles.esp
   IF CHECKSUM("Destructible_bottles.esp", 33A7D490) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("Destructible_bottles.esp", BF5ED5A9) || IF CHECKSUM("Destructible_bottles.esp", 0900B364) || IF CHECKSUM("Destructible_bottles.esp", 48639563) || IF CHECKSUM("Destructible_bottles.esp", 078C74DD) || IF CHECKSUM("Destructible_bottles.esp", 5BE52467) || IF CHECKSUM("Destructible_bottles.esp", D59FAF05) || IF CHECKSUM("Destructible_bottles.esp", D80876E8) SAY: Obsolete. Update to latest version.
 item sorting dg by saige.esp
 KoS_Land_at_War.esp
 REGEX: more_Travelers(_light)?\.esp
@@ -3151,6 +3157,7 @@ horsefp.esp
 IMAGINATOR - Visual Control for Skyrim.esp
 Ket_3DLoadscreens.esp
 Ket_PictureLoadscreens.esp
+  IF CHECKSUM("Ket_PictureLoadscreens.esp", 3A81E5EB) SAY: Obsolete. Update to the latest version.
 kontrol.esp
 kuerteeAutoFirstThirdPersonView.esp
   IF CHECKSUM("kuerteeAutoFirstThirdPersonView.esp", 44B0D8BF) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -3456,6 +3463,7 @@ BlackLaceCutieDress.esp
 BlackSacramentArmor.esp
 BlackSacramentDBreplacer.esp
 Black Scaled Armor MOD.esp
+  IF CHECKSUM("Black Scaled Armor MOD.esp", 852855A6) SAY: Obsolete. Update to the latest version.
 Blacksword.esp
 blackswordsman.esp
   IF FILE("SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp") TAG: {{BASH: Deactivate}}
@@ -3671,11 +3679,6 @@ Crossbow_Basic_Collection_NoLListed_EN.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Crossbow_Basic_Collection_NoLListed_DE.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-Crossbows by Scot.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF CHECKSUM("Crossbows by Scot.esp", 9C9266A8) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Crossbows by Scot.esp", 56839516) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  // two versions, same name
 customnightingale.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, UnenchantedNightingaleSetMod.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, UnenchantedNightingaleSetMod.esp
@@ -3809,6 +3812,7 @@ DIMclothes1.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 Dishonored Lord Protector Set.esp
 DLE_en.esp
+  IF CHECKSUM("DLE_en.esp", 3F26B1FA) SAY: Obsolete. Update to the latest version.
 DME.esp
 DME_Light.esp
   IF FILE("DME.esp") INC: DME.esp
@@ -3895,8 +3899,8 @@ DreadWeapons_Fifthdreads_Weapon_Pack.esp
 Dreadweave Axes.esp
 DreamBurrowsRegalAssassin.esp
 DreamBurrowSageRetexture.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DreamBurrowsSageOutfit.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, DreamBurrowsSageOutfit.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version > DreamBurrowsSageOutfit.esp
+   IF VAR(RU) SAY: Устарело. Обновите до последней версии > DreamBurrowsSageOutfit.esp
 DreamBurrowsSageOutfit.esp
 dreughhd.esp
   // must load after morrowind armor mod
@@ -3939,14 +3943,14 @@ DwarvenSwords.esp
 Dwemer Artificer.esp
   IF CHECKSUM("Dwemer Artificer.esp", 939498B8) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Dwemer Artificer v0.1.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Dwemer Artificer.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Dwemer Artificer.esp
+  IF VAR(EN) && IF FILE("Dwemer Artificer.esp") SAY: Obsolete. Update to latest version.
+    IF VAR(RU) && IF FILE("Dwemer Artificer.esp") SAY: Устарело. Обновите до последней версии.
 Dwemer Artificer v0.2.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Dwemer Artificer.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Dwemer Artificer.esp
+  IF VAR(EN) && IF FILE("Dwemer Artificer.esp") SAY: Obsolete. Update to latest version.
+    IF VAR(RU) && IF FILE("Dwemer Artificer.esp") SAY: Устарело. Обновите до последней версии.
 Fun in a Box.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Dwemer Artificer.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Dwemer Artificer.esp
+  IF VAR(EN) && IF FILE("Dwemer Artificer.esp") WARN: Obsolete. Update to latest version.  Not included
+    IF VAR(RU) && IF FILE("Dwemer Artificer.esp") WARN: Устарело. Обновите до последней версии.  Not included
 Dwemer Scouter.esp
   IF VAR(EN) SAY: Obsolete.  Update to latest version - Dwemer Goggles & Scouter.esp
     IF VAR(RU) SAY: Устарело.  Обновите до последней версии - Dwemer Goggles & Scouter.esp
@@ -4082,15 +4086,15 @@ frost armour.esp
     IF VAR(RU) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
 Frostmourne.esp
 Frostmourne 1.0.1.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Frostmourne v.1.3 unenchanted version.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, Frostmourne v.1.3 unenchanted version.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version > Frostmourne v.1.3 unenchanted version.esp
+   IF VAR(RU) SAY: Устарело. Обновите до последней версии > Frostmourne v.1.3 unenchanted version.esp
 Frostmourne 1.2.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Frostmourne v.1.3 unenchanted version.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, Frostmourne v.1.3 unenchanted version.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version > Frostmourne v.1.3 unenchanted version.esp
+   IF VAR(RU) SAY: Устарело. Обновите до последней версии > Frostmourne v.1.3 unenchanted version.esp
 Frostmourne v.1.3 unenchanted version.esp
 frostmourneblade.esp
 frostmournebladeNoEnchant.esp
-  IF FILE("frostmourneblade.esp") INC: frostmourneblade.esp
+  IF FILE("frostmourneblade.esp") INC: frostmourneblade.esp, use only one frostmourne esp.
 FS_AngelsInSkyrim.esp
 FS_EveningStar.esp
 FS_ExorcizamusTe.esp
@@ -4263,8 +4267,8 @@ HoodsAndCirclets.esp
 HotaruByNausicaa.esp
 HUM_Armor.esp
 hunterarmor.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, hunterarmorv1.2.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, hunterarmorv1.2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version - hunterarmorv1.2.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии - hunterarmorv1.2.esp
 hunterarmorv1.2.esp
   IF FILE("SkyRe_Plugin_NordicHunterLightArmor_1.2.esp") TAG: {{BASH: Deactivate}}
 SkyRe_Plugin_NordicHunterLightArmor_1.2.esp
@@ -4360,7 +4364,7 @@ jammersslavegear.esp
 Janka_Captain.esp
 Janka_Lupina.esp
 Jaredschons&D13AdvancedDwarvenBowv2.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Jaredschons&D13AdvDwarvenBowAllIn1.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest version, Jaredschons&D13AdvDwarvenBowAllIn1.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Jaredschons&D13AdvDwarvenBowAllIn1.esp
 Jaredschons&D13AdvDwarvenBowAllIn1.esp
 JDRobedArmor.esp
@@ -4479,6 +4483,7 @@ LBClosetMagician.esp
 LBGoldArmoredBikini.esp
   IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
 LC_ArcherEliteArmor.esp
+  IF CHECKSUM("LC_ArcherEliteArmor.esp", 1651D217) SAY: Obsolete. Update to latest version.
   IF CHECKSUM("LC_ArcherEliteArmor.esp", 9A81FB2E) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 LC_AssassinOfShadownArmor.esp
 LFDarksidersWarSet.esp
@@ -4521,14 +4526,14 @@ Lightning's Latex Mask.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 lilithscarver1_0.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, lilithscarver2_2.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, lilithscarver2_2.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest version.
+   IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 lilithscarver2_0.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest version, lilithscarver2_2.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, lilithscarver2_2.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest version.
+   IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 lilithscarver2_1.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest version, lilithscarver2_2.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, lilithscarver2_2.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest version.
+   IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 lilithscarver2_2.esp
 lilithscleaver.esp
 lilithsdecapitator1_0.esp
@@ -4540,16 +4545,19 @@ lilithsrazor1_1.esp
 lilithsrazor_s.esp
 lilithsreaver.esp
 lilithssickle_axe_1.esp
-  IF VAR(EN) SAY: Obsolete.  Update to latest renamed version, lilithssickle_2_1.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, lilithssickle_2_1.esp
+  IF VAR(EN) SAY: Obsolete.  Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 lilithssickle_2_0.esp
-  IF VAR(EN) SAY: Obsolete.  Update to latest version, lilithssickle_2_1.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, lilithssickle_2_1.esp
+  IF VAR(EN) SAY: Obsolete.  Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 lilithssickle_2_1.esp
-  IF CHECKSUM("lilithssickle_2_1.esp", 78270F6E) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("lilithssickle_2_1.esp", 78270F6E) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-
+_TES5Edit Cleaning guide")
 lilithsslasher2h.esp
 Lineage 2 Acceossory.esp
+//  IF VAR(EN) SAY: This mod may contain unauthorized or illegal content.
 Lineage 2 Weapons.esp
+//  IF VAR(EN) SAY: This mod may contain unauthorized or illegal content.
 lingling_gg.esp
 LinguistPack.esp
 Lion Heart Halberd.esp
@@ -4765,12 +4773,12 @@ NightPrincess.esp
 NightsWatchArmor.esp
 NightsWatchArmorLight.esp
 Nine_Divines_Amulet.esp
-  IF VAR(EN) SAY: Obsolete. Upgrade to latest renamed version, Nine_Divines_Amulet_1.1.esp
-    IF VAR(RU) SAY: Устарело обновите до последней версии, Nine_Divines_Amulet_1.1.esp
+  IF VAR(EN) SAY: Obsolete. Upgrade to latest version
+    IF VAR(RU) SAY: Устарело обновите до последней версии.
 Nine_Divines_Amulet_1.1.esp
 Nine_Divines_Amulet_nonOP.esp
-  IF VAR(EN) SAY: Obsolete. Upgrade to latest renamed version, Nine_Divines_Amulet_nonOP_1.1.esp
-    IF VAR(RU) SAY: Устарело обновите до последней версии, Nine_Divines_Amulet_nonOP_1.1.esp
+  IF VAR(EN) SAY: Obsolete. Upgrade to latest version
+    IF VAR(RU) SAY: Устарело обновите до последней версии..
 Nine_Divines_Amulet_nonOP_1.1.esp
   IF FILE("Nine_Divines_Amulet_1.1.esp") INC: Nine_Divines_Amulet_1.1.esp
 ninjatos.esp
@@ -5191,9 +5199,6 @@ SpellbreakersLOREFRIENDLY.esp
   IF CHECKSUM("SpellbreakersLOREFRIENDLY.esp", D355A267) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("Spellbreakers.esp") ERROR: Use Spellbreakers.esp or SpellbreakersLOREFRIENDLY.esp, not both.
 spriggan_mask.esp
-Spriggan Armor 2.esp
-  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
-  IF CHECKSUM("Spriggan Armor 2.esp", C5E7B65B) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Spring elven set.esp
 spyduckWands.esp
   IF VERSION("SKSE", "0.1.5.9", <) REQ: "http://skse.silverlock.org SKSE" 1.5.9+
@@ -5224,6 +5229,7 @@ StormcloakArmorVariety.esp
   // tag not tested
   TAG: {{BASH: Relev}}
 stoutheartarmor.esp
+  IF CHECKSUM("stoutheartarmor.esp", 7E65336D) SAY: Obsolete. Update to the latest version.
 Strapless Bikinis.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
   IF VAR(EN) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
@@ -5648,8 +5654,8 @@ BandolierForNPCMasterFile.esp
   IF CHECKSUM("BandolierForNPCMasterFile.esp", 882FDEA5) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 18D6D7C8) || IF CHECKSUM("BandolierForNPCMasterFile.esp", BECFD7BA) && IFNOT FILE("Dr_BandolierDG.esp") && IF VAR(Dawnguard) ERROR: Dawnguard add-on for Bandolier required. "http://skyrim.nexusmods.com/mods/22119 Dr_BandolierDG.esp"
 BandolierForNPCs.esp
 BandolierForNPCsWinterIsComing.esp
-  IF VAR(EN) WARN: Obsolete. Update to the latest renamed version, BandolierForNPCsWIC_V2.esp
-   IF VAR(RU) WARN: Устарело. Обновите до последней версии, BandolierForNPCsWIC_V2.esp
+  IF VAR(EN) WARN: Obsolete. Update to the latest renamed version.
+   IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 BandolierForNPCsWIC_V2.esp
 BandolierForNPCsCloaksOfSkyrim.esp
 BandolierForNPCsBanditsWearHelmets.esp
@@ -5675,6 +5681,7 @@ BandolierForNPCsImmersiveArmorsPatch.esp
 calyps-dragonpriestmasks.esp
 CraftableODPM.esp
   IF CHECKSUM("CraftableODPM.esp", 4804B647) REQ: "http://skyrim.nexusmods.com/mods/17707 calyps-dragonpriestmasks.esp"
+  IF CHECKSUM("CraftableODPM.esp", 4804B647) WARN: Obsolete. Update to latest version.
   IF CHECKSUM("CraftableODPM.esp", B19B9231)  DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: Items Load Late
 ENDGROUP: Items
@@ -5793,6 +5800,7 @@ Requiem.esp
   SAY: Requiem makes a LOT of changes. You may want to consider making and using a User Rules list based on your particular mod loadout.
   IFNOT VAR(Dawnguard) REQ: Dawnguard. (Official Bethesda DLC)
   IF CHECKSUM("Requiem.esp", 54D02FF2) DIRTY: 87 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Requiem.esp", 700E9079) || IF CHECKSUM("Requiem.esp", B7313A82) || IF CHECKSUM("Requiem.esp", 50E21B61) SAY: Obsolete. Update to latest version.
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
 Skyrim Hardcore Overhaul.esp
@@ -5915,7 +5923,7 @@ BEGINGROUP: ERSO Start
 // Note that some ERSO files are in the "Deadly and Mighty Dragons" group
 // erso
 ERSO 01 - Vanilla Race Redone v.1.4.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, 
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 ERSO 01 - Vanilla Races Redone.esp
 ERSO 01 - VRR HighElflore.esp
@@ -5925,7 +5933,7 @@ ERSO 01 - VRR only new heights.esp
    IF FILE("ERSO 01 - Vanilla Races Redone.esp") || IF FILE("ERSO 01 - VRR HighElflore.esp") && IF VAR(EN) SAY: Use only one ERSO 01 file.
      IF FILE("ERSO 01 - Vanilla Races Redone.esp") || IF FILE("ERSO 01 - VRR HighElflore.esp") && IF VAR(RU) SAY: Используйте только один ERSO 01 file.
 ERSO 02 - Enhanced Fauna and Monsters for Skyrim v.2.0.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 ERSO 02 - Enhanced Fauna and Monsters for Skyrim.esp
    IF FILE("ERSO 02 - EFMS very bigger giant mammoths.esp") && IF VAR(EN) SAY: Use only one ERSO 02 file.
@@ -5945,8 +5953,9 @@ DeadlyDragonsCraft.esp
   TAG: {{BASH: Delev, Relev}} not tested
 DeadlyDragonsSpells.esp
 MasterOfMagic.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DeadlyDragonsSpells.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DeadlyDragonsSpells.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+// Is a beta (now old) version of DeadlyDragonsSpells.
 DeadlyDragonsCreature.esp
   TAG: {{BASH: Delev, Relev}} not tested
 DeadlyDragonsEF.esp
@@ -5977,16 +5986,16 @@ BEGINGROUP: ERSO End
 // Note that some ERSO files are in the "Deadly and Mighty" Dragons group
 
 ERSO 04 - Mighty Dragon Priests v.4.0.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, ERSO 04 - Mighty Odahviing.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ERSO 04 - Mighty Odahviing.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 ERSO 04 - Mighty Odahviing.esp
 ERSO 05 - Dovah Holy Book v.4.0.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 ERSO 05 - Dovah Holy Book.esp
 ERSO 06 - Mighty Odahviing v.4.0.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, ERSO 04 - Mighty Odahviing.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ERSO 04 - Mighty Odahviing.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 REGEX: ERSO 0\d - Wait More Time( Before Next)? Dragon Encounter (\()?x\d\.\d(\))?( v\.\d\.\d)?\.esp
 REGEX: ERSO 07 - (Super )?(Slighty )?Mighty Dragon Priests\.esp
   // Seperate entry for ERSO version, makes things easier.
@@ -6109,6 +6118,7 @@ ac2.esp
 adalmatar.esp
 Adam Adamowicz's Grave.esp
 Aella.esp
+  IF CHECKSUM("Aella.esp", 01D57553) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Aella.esp", 91E4FBB5) DIRTY: 16 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 AerafalEN.esp
 Aethernautics.esp
@@ -6126,6 +6136,7 @@ Amazing Riverwood Starter Home.esp
 AMRetreat.esp
   IF CHECKSUM("AMRetreat.esp", 35B13C96) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Ancient Knowledge Armour.esp
+  IF CHECKSUM("Ancient Knowledge Armour.esp", C3251F91) || IF CHECKSUM("Ancient Knowledge Armour.esp", DF1111AD) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Ancient Knowledge Armour.esp", 65B6427E) DIRTY: 16 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Quest_AndTheRealmsOfDaedra.esp
 Ancient Watchtowers.esp
@@ -6138,8 +6149,8 @@ AnnaMolly.esp
 AnorithsShack.esp
 /* Might be old version */
 Another Breezehome Basement.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, expanded basement.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, expanded basement.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version - expanded basement.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии - expanded basement.esp
 AnisesCabin(GS).esp
 arbitrary faction additions - forsworn.esp
 ArbitraryFA - Forsworn.esp
@@ -6190,11 +6201,11 @@ becomeabard.esp
 BecomeKingOfRiverHelm.esp
 beforsworn.esp
 BertsBreezeCellar(esp.V.1.0).esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, BertsBreezehomeCellar.I.1.3.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, BertsBreezehomeCellar.I.1.3.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 BertsBreezeCellar(esp.V2.0).esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, BertsBreezehomeCellar.I.1.3.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, BertsBreezehomeCellar.I.1.3.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 BertsBreezehomeCellar.I.1.3.esp
   WARN: TES5Edit Msg - The volume for a file has been externally altered so that the opened file is no longer valid> [BertsBreezehomeCellar.I.1.3.esp]
 BertsBreezehomeCellar(Claude).esp
@@ -6242,6 +6253,7 @@ BetterDarkBrotherhood.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, BetterNordicRuins.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, BetterNordicRuins.esp
 BetterNordicRuins.esp
+  IF CHECKSUM("BetterNordicRuins.esp", 22F42319) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("BetterNordicRuins.esp", 6C176F16) DIRTY: 47 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BetterRiften.esp
 bettertameriel.esp
@@ -6257,12 +6269,14 @@ BlackbroodHideout.esp
 blackmarsh.esp
 BlackMoor.esp
   IF CHECKSUM("BlackMoor.esp", 8A8B45DF) DIRTY: 14 ITM, 8 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("BlackMoor.esp", 997436A7) || IF CHECKSUM("BlackMoor.esp", 6CF48D16) SAY: Obsolete. Update to the latest version.
 BlackreachRailroad.esp
 Blackrun_playerhome_1_2.esp
 BlackTowerUpdate.esp
 blackwolflodge.esp
 BlackwoodCompanyHall.esp
   IF CHECKSUM("BlackwoodCompanyHall.esp", 848A0E9A) DIRTY: 184 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("BlackwoodCompanyHall.esp", BFBCB393) || IF CHECKSUM("BlackwoodCompanyHall.esp", 9E17E71E) || IF CHECKSUM("BlackwoodCompanyHall.esp", 0970AA3E) SAY: Obsolete. Update to the latest version.
 Bluecreek Estate.esp
 BookwurmRetreat.esp
 bossdungeon.esp
@@ -6342,6 +6356,7 @@ Bridge Farm Hearthfire version.esp
 arcanebreeze.esp
 Broken Oar Grotto - Replayable.esp
 Brothel.esp
+  IF CHECKSUM("Brothel.esp", 029D1CAC) || IF CHECKSUM("Brothel.esp", 5AFFF047) || IF CHECKSUM("Brothel.esp", 9C382042) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Brothel.esp", B5592F06) DIRTY: 29 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Brotherhood.esp
 BuildableHouse.esp
@@ -6407,6 +6422,7 @@ Convenient Horse Herding.esp
   IF VERSION("TES5", "0.1.8.151.0.7", <) REQ: Skyrim 1.8.151.0.7+
 Creed Hills Estate.esp
 Creeks.esp
+  IF CHECKSUM("Creeks.esp", CEA19788) || IF CHECKSUM("Creeks.esp", B0022758) || IF CHECKSUM("Creeks.esp", 152E225F) || IF CHECKSUM("Creeks.esp", 27D75BC4) || IF CHECKSUM("Creeks.esp", FBB0A123) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Creeks.esp", 4B535D88) DIRTY: 36 ITM, 29 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Creepy Hovel.esp
 CrimeEnchanced.esp
@@ -6475,6 +6491,8 @@ DFB - Dimensional Rift Home.esp
   IF CHECKSUM("DFB - Dimensional Rift Home.esp", C035FBE0) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Dice Game in Taverns.esp
 DisintegratingAxe.esp
+  IF CHECKSUM("DisintegratingAxe.esp", 70970745) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+     IF CHECKSUM("DisintegratingAxe.esp", 70970745) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Divine Intervention.esp
 dnihome.esp
 DoggyDoors.esp
@@ -6482,6 +6500,7 @@ DoggyDoors.esp
 DomaineAlucard.esp
   IF CHECKSUM("DomaineAlucard.esp", 40271CEA) DIRTY: 0 ITM, 14 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Domino_MudcrabMerchant.esp
+  IF CHECKSUM("Domino_MudcrabMerchant.esp", 2F466C70) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Domino_MudcrabMerchant.esp", 57BDA449) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Domus Domentis.esp
 DomusMechanicus.esp
@@ -6566,12 +6585,13 @@ ESFCompanions.esp
 Everspring Grotto.esp
 Evil Lair of Hydra.esp
 expanded basement.esp
+  IF CHECKSUM("expanded basement.esp", 77B3D0AF) || IF CHECKSUM("expanded basement.esp", 05D3BC5E) || IF CHECKSUM("expanded basement.esp", AF1BA96C) || IF CHECKSUM("expanded basement.esp", F7137B70) || IF CHECKSUM("expanded basement.esp", C8B1446D) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("expanded basement.esp", 27C7711A) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 exo_WhiterunCaveHouse.esp
 ExplorerDungeonPack.esp
   IF CHECKSUM("ExplorerDungeonPack.esp", 4D76065C) DIRTY: 61 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("ExplorerDungeonPack.esp", 03B99039) DIRTY: 8 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("ExplorerDungeonPack.esp", 4D76065C) && IF FILE("ExplorerDungeonPack.esm") INC: ExplorerDungeonPack.esm
+  IF CHECKSUM("ExplorerDungeonPack.esp", 4D76065C) && IF FILE("ExplorerDungeonPack.esm") INC: ExplorerDungeonPack.esm.  Use the correct version.
 ExRorikstead.esp
 ENDGROUP: Quests E
 
@@ -6657,6 +6677,7 @@ tos_granitehall.esp
   IF CHECKSUM("tos_granitehall.esp", 1550E5C4) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Great House Barrow.esp
 GreatTalosHunt.esp
+  IF CHECKSUM("GreatTalosHunt.esp", 6C0CFBE4) || IF CHECKSUM("GreatTalosHunt.esp", E1A53EA5) || IF CHECKSUM("GreatTalosHunt.esp", A174E77C) || IF CHECKSUM("GreatTalosHunt.esp", 3A1727DF) || IF CHECKSUM("GreatTalosHunt.esp", 4566C395) || IF CHECKSUM("GreatTalosHunt.esp", 18250375) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("GreatTalosHunt.esp", 10E82562) DIRTY: 27 ITM, 136 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 aGreyLedgeManorLITE.esp
 Grey Stead Manor.esp
@@ -6667,6 +6688,7 @@ Guardian Plate Armor.esp
   IF CHECKSUM("Guardian Plate Armor.esp", 15972BCB) DIRTY: 4 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Guenhwyvar.esp
 GuildmastersQuarters.esp
+  IF CHECKSUM("GuildmastersQuarters.esp", BD42388D) || IF CHECKSUM("GuildmastersQuarters.esp", 178FBECE) || IF CHECKSUM("GuildmastersQuarters.esp", 2D8FB51E) || IF CHECKSUM("GuildmastersQuarters.esp", 372DF4C0) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("GuildmastersQuarters.esp", 69B5B053) DIRTY: 3 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: Quests G
 
@@ -6680,9 +6702,10 @@ HavenBag.esp
 HeartOfThunder.esp
   IF VAR(SkyReM) INC: SkyRe_Main.esp
   IF CHECKSUM("HeartOfThunder.esp", 2CA96833) DIRTY: 37 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("HeartOfThunder.esp", CE970887) || IF CHECKSUM("HeartOfThunder.esp", 65EB962D) || IF CHECKSUM("HeartOfThunder.esp", 1A6E4211) SAY: Obsolete. Update to the latest version.
 REGEX: HeartOfThunder 1.+\.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, HeartOfThunder.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, HeartOfThunder.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 HoT Thunderwolf Form.esp
 heartwoodcottage1_v1.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, heartwoodcottage1_v2.esp
@@ -6696,6 +6719,7 @@ heartwoodcottageNM1_v2.esp
   IF FILE("heartwoodcottage1_v2.esp") INC: heartwoodcottage1_v2.esp
   IF CHECKSUM("heartwoodcottageNM1_v2.esp", 4BFDE1C5) DIRTY: 43 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 hellaylegacydungeon02.esp
+  IF CHECKSUM("hellaylegacydungeon02.esp", CAB6DC90) || IF CHECKSUM("hellaylegacydungeon02.esp", 30690487) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("hellaylegacydungeon02.esp", 2B3E69E2) DIRTY: 42 ITM, 8 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HellayTalesOfTheDraugrLibrarian.esp
 HelmsHaven.esp
@@ -6775,10 +6799,9 @@ BEGINGROUP: Quests K
 Kapuwa.esp
 Kapuwa Grass.esp
 KatixasBeerBrewery.esp
+  IF CHECKSUM("KatixasBeerBrewery.esp", F7327160) || IF CHECKSUM("KatixasBeerBrewery.esp", 6D656E96) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("KatixasBeerBrewery.esp", 331EDC48) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 KatixasCiderhouse.esp
-kittyehdogarmory.esp
-  IF CHECKSUM("kittyehdogarmory.esp", E5628EB6) DIRTY: 0 ITM, 137 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 KohdiRoadsideRuins.esp
 KRZ - Better Archmage Quarters.esp
 Kynesguard.esp
@@ -6796,6 +6819,7 @@ Landscaped_Homes_Proudspire.esp
 Landscaped_Proudspire.esp
 lastdefeat.esp
 LawnDaveTheDragon.esp
+  IF CHECKSUM("LawnDaveTheDragon.esp", 3E9A8B77) || IF CHECKSUM("LawnDaveTheDragon.esp", B07C823E) || IF CHECKSUM("LawnDaveTheDragon.esp", 7CB32A45) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("LawnDaveTheDragon.esp", 43E87D04) DIRTY: 7 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 LB_MuchAdoSnowElves_Quest.esp
 LB_MuchAdoSnowElves_WeaponsOnly.esp
@@ -6879,6 +6903,7 @@ MistTop.esp
   IF CHECKSUM("MistTop.esp", BF0A2622) DIRTY: 37 ITM, 43 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("MistTop.esp", BF0A2622) WARN: This file contains 5 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Mistwatch.esp
+  IF CHECKSUM("Mistwatch.esp", 0C96269C) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Mistwatch.esp", 21E66A86) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 Missing Houses.esp
@@ -6887,6 +6912,7 @@ mixwatermill.esp
   IF CHECKSUM("mixwatermill.esp", 0BEAA858) DIRTY: 37 ITM, 160 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("mixwatermill.esp", 0BEAA858) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Moar Arrows.esp
+  IF CHECKSUM("Moar Arrows.esp", 8D27C06A) || IF CHECKSUM("Moar Arrows.esp", 17179139) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Moar Arrows.esp", CF22AA26) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 mod 1.esp
 moonpath_questdata.esp
@@ -7021,6 +7047,7 @@ Ranger Ridge_addon.esp
 Ranger's Valley Lodge.esp
 Rangers Refuge.esp
 Rashiik.esp
+  IF CHECKSUM("Rashiik.esp", E5ED0B07) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Rashiik.esp", 7948D345) DIRTY: 10 ITM, 0 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RayeksEnd.esp
 razorshade.esp
@@ -7089,6 +7116,7 @@ royalmansion.esp
 RRLegendoftheLostSword.esp
 Rudale.esp
   IF CHECKSUM("Rudale.esp", 05A0A771) DIRTY: 13 ITM, 59 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Rudale.esp", 69ECFBC4) SAY: Obsolete. Update to latest version.
 Run For Your Lives.esp
   IF FILE("EveryoneGetInside.esp") INC: EveryoneGetInside.esp
 rwhideout.esp
@@ -7110,11 +7138,11 @@ Saviors Lodge - Player Home.esp
   IF VAR(EN) && IFNOT FILE("Scripts/IHWelcomeScript.pex") WARN: You still need to install the scripts for this mod. See download page.
     IF VAR(RU) && IFNOT FILE("Scripts/IHWelcomeScript.pex") WARN: Вам всё еще нужно установить скрипты для этого мода. Ищите их на странице загрузки мода..
 Saviors Lodge V1.0.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version, Saviors Lodge - Player Home.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Saviors Lodge - Player Home.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Saviors Lodge V2.0.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Saviors Lodge - Player Home.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Saviors Lodge - Player Home.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version -> Saviors Lodge - Player Home.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии -> Saviors Lodge - Player Home.esp
 SCA - Skyrim Character Archetypes (Beta).esp
 scbbnoman.esp
 Quest_SeaOfGhosts.esp
@@ -7124,12 +7152,14 @@ Scout Addon for ATIC.esp
 SeabreezeEstate.esp
 Secluded Cottage.esp
 Secretentrances.esp
+  IF CHECKSUM("Secretentrances.esp", BBA06CBF) SAY: Obsolete. Update to latest version.
   IF CHECKSUM("Secretentrances.esp", ADDA81B2) DIRTY: 16 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SecretOfTheDwemer.esp
+  IF CHECKSUM("SecretOfTheDwemer.esp", E6E3A0BB) || IF CHECKSUM("SecretOfTheDwemer.esp", C02B0A73) SAY: Obsolete. Update to latest version.
   IF CHECKSUM("SecretOfTheDwemer.esp", 751A6B97) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 secretroom-bh-en.esp
-  IF VAR(EN) && IF FILE("The Secret Room of Breezehome.esp") INC: The Secret Room of Breezehome.esp
-    IF VAR(RU) && IF FILE("The Secret Room of Breezehome.esp") INC: The Secret Room of Breezehome.esp
+  IF VAR(EN) && IF FILE("The Secret Room of Breezehome.esp") SAY: Use only one 'The Secret Room of Breezehome.esp' or 'secretroom-bh-en.esp'
+    IF VAR(RU) && IF FILE("The Secret Room of Breezehome.esp") SAY: Используйте только один мод 'The Secret Room of Breezehome.esp' или 'secretroom-bh-en.esp'
 Sell Stones of Barenziah.esp
 Sentinel Falls.esp
 REGEX: SBT Smal\d\.esp
@@ -7171,6 +7201,7 @@ SkyHavenTempleEnhanced.esp
 SkyrimChimneys.esp
 SkyrimChimneysRW.esp
 skyrimdefenders.esp
+  IF CHECKSUM("skyrimdefenders.esp", 93DBD7FE) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("skyrimdefenders.esp", 6D3CD439) DIRTY: 240 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Skyrim Home.esp
 Skyrim School of Witchcraft and Wizardry.esp
@@ -7430,12 +7461,13 @@ WeatherTop.esp
   IF CHECKSUM("WeatherTop.esp", 57764A83) DIRTY: 1 ITM, 8 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 WestbrookKeep.esp
 Western Watchtower Rebuilt.esp
+  IF CHECKSUM("Western Watchtower Rebuilt.esp", 49E528EE) SAY: Obsolete. Update to latest version.
   IF CHECKSUM("Western Watchtower Rebuilt.esp", 27B7618E) DIRTY: 0 ITM, 83 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Whiterun Spruce by ReVan1199.esp
 Whiterun Trees.esp
   IF CHECKSUM("Whiterun Trees.esp", D2995274) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version "http://skyrim.nexusmods.com/mods/8240 Whiterun Trees 1.1.esp"
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии "http://skyrim.nexusmods.com/mods/8240 Whiterun Trees 1.1.esp"
+  IF CHECKSUM("Whiterun Trees.esp", 226D7357)  IF VAR(EN) SAY: Obsolete. Update to latest version "http://skyrim.nexusmods.com/mods/8240 Whiterun Trees 1.1.esp"
+   IF VAR(RU) SAY: Устарело. Обновите до последней версии "http://skyrim.nexusmods.com/mods/8240 Whiterun Trees 1.1.esp"
 Whiterun Trees 1.1.esp
   IF CHECKSUM("Whiterun Trees.esp", D2995274) WARN: Different mod with same name. Probably incompatible.
 Windhelm Dock FTP.esp
@@ -7547,6 +7579,7 @@ LeatherWeightFix(0.1).esp
 lessheavyfirewood.esp
 lightertools.esp
 Lighter Tools.esp
+  IF CHECKSUM("Lighter Tools.esp", 6DD49F50) SAY: Obsolete. Update to the latest version.
 lighter_mining_smithing_materials.esp
 Lightweight Potions and Poisons.esp
 lightingredients.esp
@@ -7629,6 +7662,7 @@ xFenWSOWAFW3E.esp
 no_quest_items.esp
   IFNOT VAR(Dawnguard) && IF CHECKSUM("no_quest_items.esp", 47CDC33D) REQ: Dawnguard. (Official Bethesda DLC)
   IF VAR(Dawnguard) && IFNOT CHECKSUM("no_quest_items.esp", 47CDC33D) INC: Dawnguard. Use Dawnguard version.
+  IF CHECKSUM("no_quest_items.esp", 8CAAD195) || IF CHECKSUM("no_quest_items.esp", 639770A2) SAY: Obsolete. Update to the latest version.
 no_quest_items_DG.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, no_quest_items.esp (CRC 47CDC33D)
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, no_quest_items.esp (CRC 47CDC33D)
@@ -7755,6 +7789,7 @@ BalancedHeroWeps.esp
   IF CHECKSUM("BalancedHeroWeps.esp", 1A21ED10) WARN: This file contains unexpected (or out of order) records and should be removed.
 BalancedMode.esp
 BarbasLessAnnoying.esp
+  IF CHECKSUM("BarbasLessAnnoying.esp", 9E39BF7F) SAY: Obsolete. Update to the latest version.
 BardSingOnRequestOnly.esp
 Barenziah's Crown.esp
 BarenziahQuestMarkers_Droppable.esp
@@ -8004,6 +8039,7 @@ Dragon Priest Dager.esp
 Dragon Priest Masks - Better Sorting Style.esp
 Dragon Souls To Attributes.esp
   IF CHECKSUM("Dragon Souls To Attributes.esp", EC31C990) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Dragon Souls To Attributes.esp", 4A52794E) || IF CHECKSUM("Dragon Souls To Attributes.esp", 646A5BB8) SAY: Obsolete. Update to the latest version.
 Dragonbane Enchantment.esp
   IF VAR(EN) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
@@ -8257,6 +8293,8 @@ hemuwau dragonbane to 2h.esp
 H&C mask addon.esp
 HjerimArmory.esp
   IF CHECKSUM("HjerimArmory.esp", E6B5F2B2) DIRTY: 3 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("HjerimArmory.esp", 68BDC62D) DIRTY: 3 ITM, 444 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("HjerimArmory.esp", 68BDC62D) SAY: Obsolete.  Update to latest version.
 Hoodless Archmage Robes.esp
 HorsesGoneWild.esp
 HorseInventory.esp
@@ -8524,6 +8562,7 @@ Magelightshadow.esp
 MagickaAbsorption.esp
 magicmoonsp.esp
 Magnify Spell Enchantments.esp
+  IF CHECKSUM("Magnify Spell Enchantments.esp", 74C76DD8) SAY: Obsolete. Update to the latest version.
 Magnify Spell Enchantments - Disenchant.esp
   IF FILE("Magnify Spell Enchantments.esp") INC: Magnify Spell Enchantments.esp
 Magnus100_50.esp
@@ -8816,6 +8855,7 @@ Real Dibella priestress.esp
   REQ: "http://skyrim.nexusmods.com/downloads/file.php?id=17699 DreamBurrows Sage Outfit Retexture Standalone"
 realcarriage.esp
 Realistic Animal Behaviour.esp
+  IF CHECKSUM("Realistic Animal Behaviour.esp", BAAA3FD3) || IF CHECKSUM("Realistic Animal Behaviour.esp", 68D49ED7) || IF CHECKSUM("Realistic Animal Behaviour.esp", D4718D13) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Realistic Animal Behaviour.esp", 5CC5DE01) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Realistic werewolf speed.esp
 realisticskoomamodv1.esp
@@ -8857,8 +8897,8 @@ BEGINGROUP: Overrides S
 
 Sacred_Stones.esp
 Safely Thrall.esp
-  IF VAR(EN) SAY: Obsolete.  Update to latest renamed version, Safely Thrall_v1_1.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Safely Thrall_v1_1.esp
+  IF VAR(EN) SAY: Obsolete.  Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Safely Thrall_v1_1.esp
 SameWalkRunSpeeds.esp
 SameWalkRunSpeedsLite.esp
@@ -8886,25 +8926,25 @@ Skyrim_Best Daedric Artifacts.esp
 Skyrim bigger trees.esp
 Sneak Tweak.esp
 SkyJubs_Invisible_Helmets_English_Main_1_2.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SkyJubs_Invisible_Helmets_English_Main_1_4.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyJubs_Invisible_Helmets_English_Main_1_4.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SkyJubs_Invisible_Helmets_German_Main_1_2.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SkyJubs_Invisible_Helmets_English_Main_1_4v.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyJubs_Invisible_Helmets_English_Main_1_4v.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SkyJubs_Invisible_Helmets_English_Main_1_3.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SkyJubs_Invisible_Helmets_English_Main_1_4.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyJubs_Invisible_Helmets_English_Main_1_4.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SkyJubs_Invisible_Helmets_English_Main_1_3v.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SkyJubs_Invisible_Helmets_English_Main_1_4v.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyJubs_Invisible_Helmets_English_Main_1_4v.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SkyJubs_Invisible_Helmets_English_Main_1_4.esp
 SkyJubs_Invisible_Helmets_English_Main_1_4v.esp
   IF FILE("SkyJubs_Invisible_Helmets_English_Main_1_4.esp") INC: SkyJubs_Invisible_Helmets_English_Main_1_4.esp
 SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_2.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_3.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_3.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_3.esp
-  WARN: This mod does not have any of the HothTrooper44 Armor mods as a master. It will create duplicates instead of modifying the originals.
+  SAY: This mod does not have any of the HothTrooper44 Armor mods as a master. It will create duplicates instead of modifying the originals.
 Skyrim_Dragon Update.esp
   TAG: {{BASH: Delev, Relev}}
     // tags not tested
@@ -9171,6 +9211,7 @@ ENDGROUP: Overrides U
 BEGINGROUP: Overrides V
 
 valuablecoins.esp
+  IF CHECKSUM("valuablecoins.esp", 80A41AE4) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("valuablecoins.esp", 325F41CC) || IF CHECKSUM("valuablecoins.esp", B7D1F4BA) || IF CHECKSUM("valuablecoins.esp", D125B45C) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 valuablehidesandskinsvanilla.esp
 vanillaarcheryimproved.esp
@@ -9181,8 +9222,8 @@ vanillaarcheryimproveddawnguard.esp
      IF FILE("vanillaarcheryimproved.esp") && IF VAR(RU) SAY: Используйте только один vanillaarcheryimproved esp.
 VanillaMonsterLootV1_5.esp
   TAG: {{BASH: Relev}}
-  IF VAR(EN) WARN: Obsolete.  Update to latest renamed version, VanillaMonsterLoot.esp
-    IF VAR(RU) WARN: Устарело. Обновите до последней версии, VanillaMonsterLoot.esp
+  IF VAR(EN) WARN: Obsolete.  Update to latest version.
+    IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 VanillaMonsterLoot.esp
   TAG: {{BASH: Relev}}
   IF CHECKSUM("VanillaMonsterLoot.esp", DCEE3E1E) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -9212,8 +9253,10 @@ ENDGROUP: Overrides V
 BEGINGROUP: Overrides W
 
 wabba-ori_proj.esp
+  IF CHECKSUM("wabba-ori_proj.esp", 920BFEAC) || IF CHECKSUM("wabba-ori_proj.esp", C0BCC465) || IF CHECKSUM("wabba-ori_proj.esp", C4D440F8) SAY: Obsolete. Update to the latest version.
 wabba-unrel_proj.esp
   IF FILE("wabba-ori_proj.esp") INC: wabba-ori_proj.esp
+  IF CHECKSUM("wabba-unrel_proj.esp", F1E2BBDE) || IF CHECKSUM("wabba-unrel_proj.esp", 7F102922) || IF CHECKSUM("wabba-unrel_proj.esp", 285D704B) SAY: Obsolete. Update to the latest version.
 Wabbajack Fix.esp
 walk.esp
 IFNOT REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
@@ -9299,6 +9342,7 @@ csmod.esp
   IF CHECKSUM("csmod.esp", 5E095749) DIRTY: 19 ITM, 0 UDR. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Dawnstar_TheCoinsTide.esp
 Drinking Fountains of Skyrim.esp
+  IF CHECKSUM("Drinking Fountains of Skyrim.esp", 5A348F0C) WARN: Obsolete. Update to latest version.
   IF CHECKSUM("Drinking Fountains of Skyrim.esp", 1A86291B) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 EroticStatues2 - Solitude.esp
 REGEX: Expanded Towns (- Riverwood?|- Rorikstead?|- Ivarstead?|- Darkwater?|- Dragon Bridge?|and Settlements?|and Villages?)\.esp
@@ -9338,6 +9382,7 @@ FarvynsDivineOctavo.esp
 Green and White Windhelm.esp
 HoldStables.esp
 Log Cabin Riften.esp
+  IF CHECKSUM("Log Cabin Riften.esp", CB696C6C) SAY: Obsolete. Update to the latest version.
 Long Lost Chopping Blocks.esp
 Long lost smelters by Hyralux.esp
 LushSolitude.esp
@@ -9880,10 +9925,13 @@ CompanionKodlakSummon.esp
     IF VAR(RU) && IFNOT FILE("LegendarySouls.esp") SAY: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
 conjurationmadnessmodv1.esp
 Conjure_Armored_Husky.esp
+  IF CHECKSUM("Conjure_Armored_Husky.esp", F0E45BC9) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Conjure_Armored_Husky.esp", F3A51E21) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Conjure_Armored_Troll.esp
+  IF CHECKSUM("Conjure_Armored_Troll.esp", 4BE3E42F) || IF CHECKSUM("Conjure_Armored_Troll.esp", 6B09974A) SAY: Obsolete. Update to the latest version.
 conjure_chest.esp
 Conjure_Death_Hound.esp
+  IF CHECKSUM("Conjure_Death_Hound.esp", 9207A5B2) || IF CHECKSUM("Conjure_Death_Hound.esp", 98298BAD) || IF CHECKSUM("Conjure_Death_Hound.esp", 15417CD3) || IF CHECKSUM("Conjure_Death_Hound.esp", BDD73A1A) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Conjure_Death_Hound.esp", F273F759) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Conjure_Gargoyle.esp
 conjureatronarchfix.esp
@@ -10125,6 +10173,7 @@ Spells and Incantations.esp
 sprigganandwispmother.esp
   IF CHECKSUM("sprigganandwispmother.esp", FCC956DB) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SummonableCreatures.esp
+  IF CHECKSUM("SummonableCreatures.esp", 442DF73F) || IF CHECKSUM("SummonableCreatures.esp", 86FBDC8B) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("SummonableCreatures.esp", 5E074043) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SummonArvakVoiceSpell.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -10264,6 +10313,7 @@ WhispersCallerSummon.esp
 Wintercross Ancient Art of Magick 1.2.esp
 wkyddResurrectionSpell.esp
 wkyddUnlockingSpell.esp
+  IF CHECKSUM("wkyddUnlockingSpell.esp", AAA13CE3) || IF CHECKSUM("wkyddUnlockingSpell.esp", 73D0DE92) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("wkyddUnlockingSpell.esp", F4D4C951) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: General Spells
 
@@ -10754,6 +10804,7 @@ Duel2_Stamina.esp
   IF FILE("Duel_Master.esp") INC: Duel_Master.esp
 Duel_NoArmorTweak.esp
 duel weild 2 hand.esp
+  IF CHECKSUM("duel weild 2 hand.esp", 3B654AD9) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("duel weild 2 hand.esp", 546FCEA3) DIRTY: 7 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DukePatricks - CombatTweaks.esp
   IF VAR(EN) SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/3646 Duke Patricks - Heavy Weapons Combat" instead.
@@ -10893,6 +10944,7 @@ REGEX: Balanced_Magic_(Adept|Novice|Master)\.esp
     IF VAR(RU) SAY: Выберете только один из нижестледующих, если вы предпочитаете ванильные настройки или другие моды, которые регулируют эти значения.
 Balanced_Magic_BETA_2_0.esp
 betterskillgains.esp
+  IF CHECKSUM("betterskillgains.esp", D1DF377A) || IF CHECKSUM("betterskillgains.esp", 2A4DE483) || IF CHECKSUM("betterskillgains.esp", 7D6A1243) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("betterskillgains.esp", 750982FC) DIRTY: 32 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BS-Balanced_Magic_BETA_2_0.esp
   IFNOT FILE("BS-Balanced_Magic_BETA_2_0.esp") REQ: Balanced_Magic_BETA_2_0.esp
@@ -11275,7 +11327,7 @@ SkyRe_Plugin_viciousdawnbreaker.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe Chinese General Armor and Weapon.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, SkyRe Chinese General Set.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, SkyRe Chinese General Set.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe Chinese General Set.esp
 SkyRe Chinese General Set.esp
   IF ACTIVE("Song General Armor&weapon.esp") SAY: Remember not to load (or to simply delete) Song General Armor&weapon.esp
@@ -11345,7 +11397,6 @@ ENDGROUP: Skills, Attributes and Leveling
 
 BEGINGROUP: Player Perks
 // Alters player perks or adds a new perk. Should not contain QUST entries if possible.
-// perks
 
 10 extra effect.esp
 12 extra effect.esp
@@ -11353,6 +11404,7 @@ BEGINGROUP: Player Perks
 Alteration and Restoration redux.esp
   IF CHECKSUM("Alteration and Restoration redux.esp", 49730F28) DIRTY: 18 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Archery Perk Mods.esp
+  IF CHECKSUM("Archery Perk Mods.esp", 47EBBE8F) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Archery Perk Mods.esp", 38DAF655) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Archery Perk Mods Toned Down.esp
   IF FILE("Archery Perk Mods.esp") INC: Archery Perk Mods.esp
@@ -11373,25 +11425,6 @@ Bullseye to Dragonslayer Perk.esp
 REGEX: (\d{1,3})XCarryWeight.esp
 concentrated10.esp
 REGEX: addweight\d?0\.esp
-DovahkiinSpeech - HigherReq.esp
-  IF CHECKSUM("DovahkiinSpeech - HigherReq.esp", E1870DC5) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("DovahkiinSpeech - HigherReq.esp", E1870DC5) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
-DovahkiinSpeech - HigherReqNerfed.esp
-  IF CHECKSUM("DovahkiinSpeech - HigherReqNerfed.esp", 4B15F923) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("DovahkiinSpeech - HigherReqNerfed.esp", 4B15F923) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
-  IF FILE("DovahkiinSpeech - HigherReq.esp") WARN: Use only one DovahkiinSpeech esp.
-DovahkiinSpeech - MidNoPerkReq.esp
-  IF CHECKSUM("DovahkiinSpeech - MidNoPerkReq.esp", 6179F01D) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("DovahkiinSpeech - MidNoPerkReq.esp", 6179F01D) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
-  IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") WARN: Use only one DovahkiinSpeech esp.
-DovahkiinSpeech - MidReq.esp
-  IF CHECKSUM("DovahkiinSpeech - MidReq.esp", FFFCDA31) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("DovahkiinSpeech - MidReq.esp", FFFCDA31) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
-  IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") WARN: Use only one DovahkiinSpeech esp.
-DovahkiinSpeech.esp
-  IF CHECKSUM("DovahkiinSpeech.esp", 27656479) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("DovahkiinSpeech.esp", 27656479) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
-  IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") || IF FILE("DovahkiinSpeech - MidReq.esp") WARN: Use only one DovahkiinSpeech esp.
 DwemerBombs.esp
   IF CHECKSUM("DwemerBombs.esp", D7BB72C4) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("DwemerBombsNoPerkTree.esp") INC: DwemerBombsNoPerkTree.esp
@@ -11409,13 +11442,19 @@ MoM - Only Mastery Perks.esp
     IF VAR(RU) SAY: Используйте только один MoM esp.
 More Useful Soul Siphon10.esp
 More Usefull Soul Siphon25.esp
-  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp
+  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
 More Usefull Soul Siphon50.esp
-  IF FILE("More Useful Soul Siphon10.esp") || IF FILE("More Usefull Soul Siphon25.esp") SAY Use only one More Useful Soul Siphon esp.
+  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon25.esp") INC: More Usefull Soul Siphon25.esp, use only one More Useful Soul Siphon esp.
 More Usefull Soul Siphon75.esp
-  IF FILE("More Useful Soul Siphon10.esp") || IF FILE("More Usefull Soul Siphon25.esp") IF FILE("More Usefull Soul Siphon50.esp") SAY Use only one More Useful Soul Siphon esp.
+  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon25.esp") INC: More Usefull Soul Siphon25.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon50.esp") INC: More Usefull Soul Siphon50.esp, use only one More Useful Soul Siphon esp.
 More Usefull Soul Siphon100.esp
-  IF FILE("More Useful Soul Siphon10.esp") || IF FILE("More Usefull Soul Siphon25.esp") IF FILE("More Usefull Soul Siphon50.esp") IF FILE("More Usefull Soul Siphon75.esp") SAY Use only one More Useful Soul Siphon esp.
+  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon25.esp") INC: More Usefull Soul Siphon25.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon50.esp") INC: More Usefull Soul Siphon50.esp, use only one More Useful Soul Siphon esp.
+  IF FILE("More Usefull Soul Siphon75.esp") INC: More Usefull Soul Siphon75.esp, use only one More Useful Soul Siphon esp.
 MoreWerewolfPerks.esp
   IF CHECKSUM("MoreWerewolfPerks.esp", DECFC212) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MoonLightPower.esp
@@ -11435,6 +11474,7 @@ Perk_Heavy_Armor_Tree_Redone_No_Stagger.esp
     IF VAR(RU) && IF FILE("Perk_Heavy_Armor_Tree_Redone.esp") ERROR: Используйте любой или Perk_Heavy_Armor_Tree_Redone.esp или Perk_Heavy_Armor_Tree_Redone_No_Stagger.esp, не обе.
 Perk_Light_Armor_Tree_Redone.esp
 Perky.esp
+  IF CHECKSUM("Perky.esp", EE1F755B) || IF CHECKSUM("Perky.esp", 469D04CE) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("Perky.esp", DFA3ACCE) DIRTY: 35 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 IF FILE("Perky.esp") MOD: Ish's Respec Mod.esp
   TAG: {{BASH: Relev}}
@@ -11469,7 +11509,7 @@ BEGINGROUP: Pose and Animation Mods
 ActionPoser.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
 AP Skyrim.esp
-  SAY: Obsolete? Esp not included in latest version.
+  WARN: Obsolete??? Esp not included in latest version.
 BySbire_FemaleBehavoir.esp
 dD-No Spinning Death Animation.esp
 DIWS_SlowerWalk.esp
@@ -11617,6 +11657,7 @@ underworld_eyes.esp
 ENDGROUP: Eyes
 
 XCES.esp
+  IF CHECKSUM("XCES.esp", 0D760898) WARN: Obsolete. Update to the latest version.
   IF FILE("ethereal_elven_overhaul.esp") INC: ethereal_elven_overhaul.esp
   // Adds complexions (which are used to add scars), not certain of placement
 
@@ -11702,6 +11743,7 @@ MysticalElvesV1.5.esp
 mxfrostelfrace.esp
 NedeRace.esp
 Neovalen Race Compatibility.esp
+  IF CHECKSUM("Neovalen Race Compatibility.esp", 6E01C2F2) SAY: Obsolete. Update to latest version.
   IFNOT FILE("DSpSoB.esp") REQ: "http://skyrim.nexusmods.com/mods/17746 Duel Sheath plus Shields on Back"
 New Playable Races by Budcat v3.0.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, New Playable Races by Budcat v4.0.esp
@@ -11753,6 +11795,7 @@ ESPv1_1nondependent.esp
 Female Presets 2-3.esp
 Improved Eyes Skyrim - Models.esp
 Kawaii Face Presets.esp
+  IF CHECKSUM("Kawaii Face Presets.esp", 2774F3D6) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("Kawaii Face Presets.esp", 2774F3D6) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 KhaleesiFacePreset.esp
   IF CHECKSUM("KhaleesiFacePreset.esp", 42C16D17) WARN: This file is broken and will not work.
@@ -11936,6 +11979,7 @@ multifollowerlite.esp
 Nilvas Reinhardt.esp
 NoFollowerTorch.esp
 PetBearOslo.esp
+  IF CHECKSUM("PetBearOslo.esp", 7614B5F9) || IF CHECKSUM("PetBearOslo.esp", EA58D0C9) SAY: Obsolete. Update to the latest version.
 sec_goatfrey.esp
 SelminaDArchon1.esp
 REGEX: SPODUM v.+\.esp
@@ -12057,6 +12101,7 @@ Aela Wears Wolf Armor.esp
 aela2.esp
 AjenBallad.esp
 AkaviriRebornbeta1.esp
+  IF CHECKSUM("AkaviriRebornbeta1.esp", 92CB7FEA) SAY: Obsolete. Update to lateset version.
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Alerik.esp
 Alexina.esp
@@ -12427,8 +12472,8 @@ HousecarlWindhelm.esp
     IF VAR(RU) && IF FILE("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
 HousecarlWhiterun.esp
 HousecarlWhiterun Sexy Lydia v0.3.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, HousecarlWhiterun Sexy Lydia v0.5.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, HousecarlWhiterun Sexy Lydia v0.5.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 HousecarlWhiterun Sexy Lydia v0.5.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
