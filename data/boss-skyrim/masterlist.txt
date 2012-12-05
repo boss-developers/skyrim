@@ -5630,9 +5630,9 @@ ImmersiveArmorsNPCsNoHelmets.esp
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
 IF VAR(BFNIAP) MOD: SI_WicCosIaPatch.esp
 BandolierForNPCMasterFile.esp
-  IFNOT FILE("Dr_Bandolier.esp") REQ: "http://skyrim.nexusmods.com/mods/16438 Bandolier - Bags and Pouches"
-  IF FILE("Dr_BandolierDG.esp") SAY: Make sure you have Dawnguard-version of this mod if you wish for it to work with the "http://skyrim.nexusmods.com/mods/22119 Dawnguard version of bags and pouches".
-    // IF VAR(RU) && IF FILE("Dr_BandolierDG.esp") SAY: Убедитесь, что используете Dawnguard-версию этого мода.
+  IF CHECKSUM("BandolierForNPCMasterFile.esp", 112359C0) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 76E11697) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 0146A38B) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
+  IF CHECKSUM("BandolierForNPCMasterFile.esp", 882FDEA5) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 18D6D7C8) || IF CHECKSUM("BandolierForNPCMasterFile.esp", BECFD7BA) && IFNOT VAR(Dawnguard) ERROR: Use non-Dawnguard version.
+  IF CHECKSUM("BandolierForNPCMasterFile.esp", 882FDEA5) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 18D6D7C8) || IF CHECKSUM("BandolierForNPCMasterFile.esp", BECFD7BA) && IFNOT FILE("Dr_BandolierDG.esp") && IF VAR(Dawnguard) ERROR: Dawnguard add-on for Bandolier required. "http://skyrim.nexusmods.com/mods/22119 Dr_BandolierDG.esp"
 BandolierForNPCs.esp
 BandolierForNPCsWinterIsComing.esp
   IF VAR(EN) WARN: Obsolete. Update to the latest renamed version.
@@ -5646,10 +5646,16 @@ BandolierForNPCsCheaperBandoliers.esp
 BandolierForNPCsCheaperBandoliers_BalancedWeight.esp
   IF VAR(EN) && IF FILE("Dr_BandolierDG.esp") ERROR: Use Dawnguard version.
     IF VAR(RU) && IF FILE("Dr_BandolierDG.esp") ERROR: Используйте версию для Dawnguard.
-  IF FILE("BandolierForNPCsCheaperBandoliers.esp") INC: BandolierForNPCsCheaperBandoliers.esp
+  IF FILE("BandolierForNPCsCheaperBandoliers.esp") && IF VAR(EN) ERROR: Use either BandolierForNPCsCheaperBandoliers.esp or BandolierForNPCsCheaperBandoliers_BalancedWeight.esp, not both.
+     IF FILE("BandolierForNPCsCheaperBandoliers.esp") && IF VAR(RU) ERROR: Используйте любой или BandolierForNPCsCheaperBandoliers.esp или BandolierForNPCsCheaperBandoliers_BalancedWeight.esp, не обе.
 BandolierForNPCsCheaperBandoliersDawnguard.esp
+  IFNOT VAR(Dawnguard) ERROR: Use non-Dawnguard version.
+  IFNOT FILE("Dr_BandolierDG.esp") && IF VAR(Dawnguard) ERROR: Dawnguard add-on for Bandolier required. "http://skyrim.nexusmods.com/mods/22119 Dr_BandolierDG.esp"
 BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp
-  IF FILE("BandolierForNPCsCheaperBandoliersDawnguard.esp") INC: BandolierForNPCsCheaperBandoliersDawnguard.esp
+  IFNOT VAR(Dawnguard) ERROR: Use non-Dawnguard version.
+  IFNOT FILE("Dr_BandolierDG.esp") && IF VAR(Dawnguard) ERROR: Dawnguard add-on for Bandolier required. "http://skyrim.nexusmods.com/mods/22119 Dr_BandolierDG.esp"
+  IF FILE("BandolierForNPCsCheaperBandoliersDawnguard.esp") && IF VAR(EN) ERROR: Use either BandolierForNPCsCheaperBandoliersDawnguard.esp or BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp, not both.
+     IF FILE("BandolierForNPCsCheaperBandoliersDawnguard.esp") && IF VAR(RU) ERROR: Используйте любой или BandolierForNPCsCheaperBandoliersDawnguard.esp или BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp, не обе.
 BandolierForNPCsImmersiveArmorsPatch.esp
   IF VAR(EN) WARN: Obsolete. Not included in latest version. Load ImmersiveArmors after all BandolierForNPCs esps.
     IF VAR(RU) WARN: Устарело. Не входит в состав последней версии. Загружайте ImmersiveArmors после всех BandolierForNPCs esps.
