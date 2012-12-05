@@ -5630,10 +5630,9 @@ ImmersiveArmorsNPCsNoHelmets.esp
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: Immersive Armors (by hothtrooper44)
 IF VAR(BFNIAP) MOD: SI_WicCosIaPatch.esp
 BandolierForNPCMasterFile.esp
-  IF CHECKSUM("BandolierForNPCMasterFile.esp", 112359C0) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 53C8535D) || IF CHECKSUM("BandolierForNPCMasterFile.esp", C844F9AD) SAY: Obsolete. Update to the latest version.
-  IF CHECKSUM("BandolierForNPCMasterFile.esp", 112359C0) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 76E11697) || IF CHECKSUM("BandolierForNPCMasterFile.esp", 0146A38B) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
-  IF VAR(EN) && IF VAR(Dawnguard) SAY: Make sure you have Dawnguard-version of this mod.
-    IF VAR(RU) && IF VAR(Dawnguard) SAY: Убедитесь, что используете Dawnguard-версию этого мода.
+  IFNOT FILE("Dr_Bandolier.esp") REQ: "http://skyrim.nexusmods.com/mods/16438 Bandolier - Bags and Pouches"
+  IF FILE("Dr_BandolierDG.esp") SAY: Make sure you have Dawnguard-version of this mod if you wish for it to work with the "http://skyrim.nexusmods.com/mods/22119 Dawnguard version of bags and pouches".
+    // IF VAR(RU) && IF FILE("Dr_BandolierDG.esp") SAY: Убедитесь, что используете Dawnguard-версию этого мода.
 BandolierForNPCs.esp
 BandolierForNPCsWinterIsComing.esp
   IF VAR(EN) WARN: Obsolete. Update to the latest renamed version.
@@ -5642,11 +5641,11 @@ BandolierForNPCsWIC_V2.esp
 BandolierForNPCsCloaksOfSkyrim.esp
 BandolierForNPCsBanditsWearHelmets.esp
 BandolierForNPCsCheaperBandoliers.esp
-  IF VAR(EN) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
-    IF VAR(RU) && IF VAR(Dawnguard) ERROR: Используйте версию для Dawnguard.
+  IF VAR(EN) && IF FILE("Dr_BandolierDG.esp") ERROR: Use Dawnguard version.
+    IF VAR(RU) && IF FILE("Dr_BandolierDG.esp") ERROR: Используйте версию для Dawnguard.
 BandolierForNPCsCheaperBandoliers_BalancedWeight.esp
-  IF VAR(EN) && IF VAR(Dawnguard) ERROR: Use Dawnguard version.
-    IF VAR(RU) && IF VAR(Dawnguard) ERROR: Используйте версию для Dawnguard.
+  IF VAR(EN) && IF FILE("Dr_BandolierDG.esp") ERROR: Use Dawnguard version.
+    IF VAR(RU) && IF FILE("Dr_BandolierDG.esp") ERROR: Используйте версию для Dawnguard.
   IF FILE("BandolierForNPCsCheaperBandoliers.esp") INC: BandolierForNPCsCheaperBandoliers.esp
 BandolierForNPCsCheaperBandoliersDawnguard.esp
 BandolierForNPCsCheaperBandoliers_BalancedWeight_Dawnguard.esp
