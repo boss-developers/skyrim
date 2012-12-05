@@ -214,6 +214,8 @@ Janus follower.esm
   // esm k
   // esm l
 LessTint.esm
+LiFE.esm
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body" or "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
 LunariRace.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, LunariRace.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, LunariRace.esp
@@ -2753,7 +2755,6 @@ SkyMoMod.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Skyrim Immersive Creatures.esp
   TAG: {{BASH: Delev, Relev}}
-  IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
   IF CHECKSUM("Skyrim Immersive Creatures.esp", 9F345819) || IF CHECKSUM("Skyrim Immersive Creatures.esp", 31F6B4FF) || IF CHECKSUM("Skyrim Immersive Creatures.esp", DB09F9B0) || IF CHECKSUM("Skyrim Immersive Creatures.esp", ACC6DAE2) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SkyMoMod_lists.esp
   TAG: {{BASH: Delev, Relev}}
@@ -6065,6 +6066,10 @@ REGEX: ERSO 19 .*\.esp
   // Respawn
   IF VAR(EN) SAY: Use only one ERSO 19 file.
     IF VAR(RU) SAY: Используйте только один ERSO 19 file.
+REGEX: ERSO 20 .*\.esp
+  // Respawn
+  IF VAR(EN) SAY: Use only one ERSO 20 file.
+    IF VAR(RU) SAY: Используйте только один ERSO 20 file.
 ENDGROUP: ERSO End
 
 BEGINGROUP: Overhauls Load Late
@@ -6372,6 +6377,11 @@ Cabin in the woods.esp
 CabinInRiverwoodV1.1.esp
 Camps of the Wilderness.esp
 CampsAndShipwrecks.esp
+Candle Pond Ranch Default Mannequin.esp
+  IF CHECKSUM("Candle Pond Ranch Default Mannequin.esp", BDD2E234) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
+Candle Pond Ranch.esp
+  IF CHECKSUM("Candle Pond Ranch.esp", 8B643328) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
+  IF FILE("Candle Pond Ranch Default Mannequin.esp") INC: Candle Pond Ranch Default Mannequin.esp
 caos tools- ninjaweaps.esp
 cascade_house.esp
 Castle Stonespire.esp
@@ -9590,9 +9600,13 @@ IFNOT FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_DestructibleBottles-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_DestructibleBottles-FAMP.esp instead.
 IFNOT FILE("3DNPC.esp") MOD: RND_DrinkingFountains-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_ETaC-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_HearthFires-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_HighlandMilkFarm-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_NCVE-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_NCVE-FAMP.esp instead.
+IFNOT FILE("3DNPC.esp") MOD: RND_NerniesRangerPack-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_Requiem-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWL-FAMP.esp instead.
 IFNOT FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
@@ -11584,6 +11598,7 @@ hornsareforever.esp
 LovelyHairstyles.esp
 LovelyHairstylesLITE.esp
   IF FILE("LovelyHairstyles.esp") ERROR: Use LovelyHairstyles.esp or LovelyHairstylesLITE.esp, not both.
+MacKom_LoreStylesHairSet.esp
 mmkhajiithair11.esp
 MMhair.esp
 MTOH.esp
@@ -11838,9 +11853,13 @@ IF FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_DestructibleBottles-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_DestructibleBottles-FAMP.esp instead.
 IF FILE("3DNPC.esp") MOD: RND_DrinkingFountains-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_ETaC-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_HearthFires-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_HighlandMilkFarm-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_NCVE-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_NCVE-FAMP.esp instead.
+IF FILE("3DNPC.esp") MOD: RND_NerniesRangerPack-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_Requiem-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWL-FAMP.esp instead.
 IF FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
@@ -13059,6 +13078,9 @@ Henrys All Animals and Creatures BeFriend German.esp
   IF FILE("Henrys All Animals BeFriend.esp") || IF FILE("Henrys All Animals BeFriend German.esp") || IF FILE("Henrys All Animals  and Creatures BeFriend.esp") INC: Henrys All * BeFriend mods
 khajiit_replacer.esp
 KhajiitSenseOfSmell.esp
+LiFE.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body" or "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
+  IF FILE("LiFE.esm") INC: LiFE.esm
 Morozik75_Better_Races_Rus.esp
 Nicer-Looking Khajiit.esp
 NorcRace_OrcRaceReplacer.esp
