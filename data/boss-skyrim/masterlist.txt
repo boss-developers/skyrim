@@ -237,6 +237,12 @@ SmithBornMaterials.esm
   // Must load after SmithBornPerks.esm
   // esm t
   // esm u
+UndergroundBathhouse.esm
+  IF CHECKSUM("UndergroundBathhouse.esm", 0FD0CF70) DIRTY: 1 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+UndergroundBathhouse_light.esm
+  IF CHECKSUM("UndergroundBathhouse_light.esm", F4137AC5) DIRTY: 1 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("UndergroundBathhouse.esm") && IF VAR(EN) WARN: Use either UndergroundBathhouse.esm or UndergroundBathhouse_light.esm, not both.
+    IF FILE("UndergroundBathhouse.esm") && IF VAR(RU) WARN: Используйте любой или UndergroundBathhouse.esm или UndergroundBathhouse_light.esm, не обе.
   // esm v
   // esm w
   // esm xyz
@@ -2305,7 +2311,12 @@ knownspells.esp
 Krisan's Children.esp
 ktxcompleteskyforge.esp
 kuerteeHorseCommands.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 kuerteeHorseCommandsVerB.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+kuerteeHorseCommandsVerB2.esp
 kuerteeProfessions.esp
 Kuun's angels drop armor.esp
 Kuun's angels drop worn armor.esp
@@ -3159,6 +3170,7 @@ DYNAVISION Dynamic Depth of Field.esp
 Footprints.esp
 horsefp.esp
 IMAGINATOR - Visual Control for Skyrim.esp
+JaySUS Improved Loadscreens.esp
 Ket_3DLoadscreens.esp
 Ket_PictureLoadscreens.esp
   IF CHECKSUM("Ket_PictureLoadscreens.esp", 3A81E5EB) SAY: Obsolete. Update to the latest version.
@@ -3299,6 +3311,7 @@ ANB - WearableTSun.esp
 Ancient Black Dragonscale Armor.esp
 ancient magnus armor.esp
 Ancient Skyforge Armor.esp
+Ancient Weapons To DaedraHeart.esp
 AncientNordArmorBuff.esp
 Andragorn's Armoury.esp
 Andragorn_Weapons.esp
@@ -3364,6 +3377,7 @@ AsharaWeddingOutfit.esp
 Ashbringer.esp
 AshlandAmulets.esp
 Assasin Creed Mod.esp
+assassinarrow.esp
 Assassins Daggers.esp
 aassassinscraftables.esp
 AssassinsCreedArmor.esp
@@ -3796,6 +3810,7 @@ Daedric Extra Armor.esp
 DeathSting.esp
 Dead Knight Armor.esp
 Decapitation-spell-and-raise-skull-minions.esp
+DELVEN.esp
 Demon Lord Armor Set.esp
 Demon Sword.esp
 DemonHunterArmor.esp
@@ -3871,6 +3886,8 @@ Lorecraft - Dragon Bone Weapons.esp
 SkyRe_Plugin_DragonBoneWeaponsComplete_1.03.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+dragonborndagger.esp
+  IFNOT VAR(Dawnguard) ERROR: Skyrim will CTD on loading without Dawnguard (Official Bethesda DLC)
 dragonborngarb.esp
 DragonfireCrossbow.esp
   IF CHECKSUM("DragonfireCrossbow.esp", 5596EEF2) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -3934,6 +3951,7 @@ DungeonGear01.esp
 Dusk Eaters Sword.esp
 Duskfang and Dawnfang.esp
   IF CHECKSUM("Duskfang and Dawnfang.esp", 09A06CD5) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+duskguardamulet.esp
 DVd.esp
 DwarvenArmorWeapons.esp
 Dwarven Condenser.esp
@@ -3985,6 +4003,8 @@ Ears.esp
   // adds wearable ears as armor
 Earrings Set1.esp
 EarRingHelmets.esp
+Ebony Bow & Blade.esp
+  IF CHECKSUM("Ebony Bow & Blade.esp", 653D7CB4) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Ebony Craw Wizard Armor fixed.esp
 Ebony Knight Armor.esp
 Ebony Mage Armor.esp
@@ -4412,6 +4432,8 @@ SkyRe_Plugin_JaySuSSwords_1.3D.esp
   IF VAR(EN) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 JulietByNausicaa.esp
+Juquinha-armory.esp
+  REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
 ENDGROUP: Items J
 
 BEGINGROUP: Items K
@@ -5273,6 +5295,7 @@ Sweeping Onehanders.esp
 Sweeping TwoHanders.esp
 SwitchAxe.esp
 Sword of the One Eyed Crow.esp
+svs L&M.esp
 sword_of_omens.esp
 sword_yamato.esp
 ENDGROUP: Items S
@@ -6058,6 +6081,7 @@ REGEX: ERSO 14.07 .*\.esp
   // Vendor Less Weapons and Armors
   IF VAR(EN) SAY: Use only one ERSO 14.07 file.
     IF VAR(RU) SAY: Используйте только один ERSO 14.07 file.
+ERSO 14.08 - Respawn Vendor Stuff 5 days.esp
 REGEX: ERSO 15 .*\.esp
   // Timescale
   IF VAR(EN) SAY: Use only one ERSO 15 file.
@@ -6079,6 +6103,9 @@ REGEX: ERSO 20 .*\.esp
   // Respawn
   IF VAR(EN) SAY: Use only one ERSO 20 file.
     IF VAR(RU) SAY: Используйте только один ERSO 20 file.
+ERSO 21.01 PM Dungeons.esp 
+ERSO 21.02 PM Blackreach.esp 
+ERSO 21.03 PM Dwemer.esp 
 ENDGROUP: ERSO End
 
 BEGINGROUP: Overhauls Load Late
@@ -7345,6 +7372,9 @@ The Secret Room of Breezehome (En).esp
 The Secret Room of Breezehome.esp
   IF VAR(EN) && IF FILE("secretroom-bh-en.esp") SAY: Use only one 'The Secret Room of Breezehome.esp' or 'secretroom-bh-en.esp'
     IF VAR(RU) && IF FILE("secretroom-bh-en.esp") SAY: Используйте только один мод 'The Secret Room of Breezehome.esp' или 'secretroom-bh-en.esp'
+theHoardersHome.esp
+  IF CHECKSUM("theHoardersHome.esp", 34949429) DIRTY: 15 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("theHoardersHome.esp", 34949429) WARN: This file contains 5 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 theMannysOutPost.esp
 thereserve.esp
 Thermopylae.esp
@@ -7388,6 +7418,8 @@ ENDGROUP: Quests T
 
 BEGINGROUP: Quests U
 
+ub_invite_any_npc.esp
+  IFNOT FILE("UndergroundBathhouse.esm") ERROR: This mod requires UndergroundBathhouse.esm
 Ultimate training ground.esp
   IF CHECKSUM("Ultimate training ground.esp", 2DE178EF) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 uluchenie ivarsteda.esp
@@ -10049,6 +10081,7 @@ DismissSpell.esp
 dovahkiin_bound_weapons.esp
 dovahkiin_levitate_spell.esp
 dovahkiin_shieldward.esp
+Dragon Knowledge Spell.esp
 DynamicWard.esp
 // spells e
 E0TeleportSpells.esp
@@ -10099,6 +10132,7 @@ GamblerVashaSummon.esp
   IF VAR(EN) && IFNOT FILE("LegendarySouls.esp") SAY: Obsolete.  Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
     IF VAR(RU) && IFNOT FILE("LegendarySouls.esp") SAY: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("GamblerVashaSummon.esp", EC3B6A2A) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Gather_Wood_Spell.esp
 Ghostifish-Magical Alchemy Harvest-o-tron.esp
 gome.esp
 Grand Healing Mod.esp
@@ -10381,6 +10415,9 @@ TotalConjuration.esp
 touchspells.esp
 TransmogrifySpell.esp
 transmutation.esp
+Transmute_Arrows_v0-1_daedra_by-grillNbier.esp
+Transmute_Arrows_v0-1_ebony_by-grillNbier.esp
+Transmute_Arrows_v0-1_glass_by-grillNbier.esp
 transmute_gem_spell.esp
   IF CHECKSUM("transmute_gem_spell.esp", 95B1B63B) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 transmutesoulgem.esp
@@ -11637,6 +11674,7 @@ Quickshot.esp
 // perks s
 Shars Perks - 2HandSneak and DagCrit.esp
 Shars Perks - DW Savagery.esp
+SleepWell.esp
 Soulmaster 10.esp
 SpeechTree.esp
 IFNOT FILE("SkyRe_Main.esp") MOD: StavesofSkyrim.esp
