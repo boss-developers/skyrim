@@ -4158,6 +4158,7 @@ GattiQBCollection.esp
 GattiUNPCollection.esp
 GauntletsGluttonousPower.esp
 REGEX: GDRanger(Armor|Dress)\.esp
+GDWeaponry.esp
 Gearblade.esp
 Gemtastic.esp
 Genesis' Rapier.esp
@@ -5660,6 +5661,7 @@ ZaZ Gags.esp
 ZeldaMod.esp
 ZhaetheriaLegend.esp
 zhanshen.esp
+zzlovelyfeather.esp
 zzTmBallGown.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 ENDGROUP: Items XYZ
@@ -7655,6 +7657,9 @@ BEGINGROUP: Weight Changes
 
 Armor Weight Adjustment.esp
 Axe and Pickaxe weight.esp
+A&P weight change only..esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, A&P weight change only.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, A&P weight change only.esp
 A&P weight change only.esp
   IF VAR(EN) && IF VAR(SkyreM) WARN: Author states SkyRe will overlap this mod, rendering it useless.
     IF VAR(RU) && IF VAR(SkyreM) WARN: Автор утверждает, что SkyRe будет перезаписывать этот мод, делая его бесполезным.
@@ -9242,6 +9247,8 @@ REGEX: The Skyrim conflict( Light| Medium| Hard)?( DE&O)?( Essential)?.*\.esp
     IF VAR(RU) SAY: Используйте только один The Skyrim conflict *.esp
 TheChoiceIsYours.esp
   IF CHECKSUM("TheChoiceIsYours.esp", 6CF96C54) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+TheChoiceIsYours_Dawnguard.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm not found. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 TheOneMask.esp
 TheRiftenRangers.esp
 REGEX: TheWitcher2-Ultimate Replace Mod.+\.esp
@@ -9757,6 +9764,7 @@ IFNOT FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWL-FAMP.esp instead.
 IFNOT FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWS-FAMP.esp instead.
+IFNOT FILE("3DNPC.esp") MOD: RND_SkyMoMod-Patch.esp 
 IFNOT FILE("3DNPC.esp") MOD: RealisticRoomRental.esp
   IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 IFNOT FILE("3DNPC.esp") MOD: RealisticRoomRental-Basic.esp
@@ -12129,6 +12137,7 @@ IF FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWL-FAMP.esp instead.
 IF FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWS-FAMP.esp instead.
+IF FILE("3DNPC.esp") MOD: RND_SkyMoMod-Patch.esp 
 IF FILE("3DNPC.esp") MOD: PotionsBETA.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Bethesda Official DLC)
   IF CHECKSUM("PotionsBETA.esp", 00B541DA) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -13631,10 +13640,26 @@ crimsonquestmarkers.esp
 detaillierte minen kartenmarkierungen.esp
 DragonPriestMaskQuestMarkers.esp
 DLC-ParagonPortalMapMaker.esp
+EnableBlackreachMap.esp
+EnableBlackreachMap+M.esp
+  IF FILE("EnableBlackreachMap.esp") && IF VAR(EN) ERROR: Use either EnableBlackreachMap.esp or EnableBlackreachMap+M.esp, not both.
+     IF FILE("EnableBlackreachMap.esp") && IF VAR(RU) ERROR: Используйте любой или EnableBlackreachMap.esp или EnableBlackreachMap+M.esp, не обе.
 EnableForgottenValeMap.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, EnableForgottenValeMap+M.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, EnableForgottenValeMap+M.esp
+EnableForgottenValeMap+M.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm not found. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+EnableForgottenValeMap+M+EA.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm not found. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IF FILE("EnableForgottenValeMap+M.esp") && IF VAR(EN) ERROR: Use either EnableForgottenValeMap+M.esp or EnableForgottenValeMap+M+EA.esp, not both.
+     IF FILE("EnableForgottenValeMap+M.esp") && IF VAR(RU) ERROR: Используйте любой или EnableForgottenValeMap+M.esp или EnableForgottenValeMap+M+EA.esp, не обе.
 EnableSoulCairnMap.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm not found. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+EnableSoulCairnMap+M.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm not found. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IF FILE("EnableSoulCairnMap.esp") && IF VAR(EN) ERROR: Use either EnableSoulCairnMap.esp or EnableSoulCairnMap+M.esp, not both.
+     IF FILE("EnableSoulCairnMap.esp") && IF VAR(RU) ERROR: Используйте любой или EnableSoulCairnMap.esp или EnableSoulCairnMap+M.esp, не обе.
+EnableSovngardeMap.esp
 ext_mapm.esp
 FastTravelLocationsVAD1.1.esp
 follower map markers.esp
