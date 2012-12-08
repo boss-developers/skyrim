@@ -973,6 +973,7 @@ Bryling.esp
   IF CHECKSUM("Bryling.esp", 6531FFC7) DIRTY: 7 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 // face c
 Carlotta.esp
+Children of Skyrim - TOWN GUARDS.esp
 Companion People.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 CustomUthgerd.esp
@@ -1215,6 +1216,7 @@ Bardsoundsmalukah.esp
 BWS.esp
 Clanking Armor.esp
   IF CHECKSUM("Clanking Armor.esp", 7055B881) DIRTY: 5 ITMs, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+CookingSound.esp
 DFG's Blade & Dagger Sheathe Sounds.esp
 DragonHitSoundFix.esp
 DragonHitSoundFix - RAS.esp
@@ -3202,8 +3204,8 @@ REGEX: TimedAutoSave(\d\d)\.esp
 Troy1010_GameSettings_ImprovedCombatRegen 1.0.0.esp
 towAutoFP.esp
 VanillaUsesCustom.esp
-  IF VAR(EN) WARN: Obsolete.  Update to latest version.
-    IF VAR(RU) WARN: Устарело. Обновите до последней версии.
+  IF VAR(EN) SAY: Obsolete.  Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 WarriorRest.esp
 WetandCold.esp
 ENDGROUP: Load Order Independent Mods
@@ -6967,6 +6969,8 @@ MapsellerDawnguardDV.esp
   IF CHECKSUM("MapsellerDawnguardDV.esp", B17FE086) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Markarth Dwemer Palace.esp
 Markarth_plus.esp
+MarkersOfSkyrim.esp
+  IF CHECKSUM("MarkersOfSkyrim.esp", E5AD1BA9) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 majoramoon.esp
 MeekoHusky.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -7664,6 +7668,7 @@ REGEX: Dragon Drop - S.*\.esp
     IF VAR(RU) SAY: Используйте только один 'Scales' esp
 REGEX: DragonboneWeightRedux\(x\d\d?\)\.esp
 REGEX: DragonboneWeightReduction.+\.esp
+lighterdragonitems.esp
 lighterdragonscalesandbones.esp
 GM-HMSPotions3SecsWeighted.esp
 HuntersMod.esp
@@ -8457,6 +8462,7 @@ Improved Daedric Artifacts.esp
 Improved Familiars.esp
 improved final battle.esp
   IF CHECKSUM("improved final battle.esp", 41A04451) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+improved food.esp
 Improved Mage Armor.esp
 Improved Potions.esp
 Improved Radiant Rewards.esp
@@ -9578,6 +9584,12 @@ tos_oakwood_hf.esp
   IF CHECKSUM("tos_oakwood_hf.esp", 33196BE1) DIRTY: 3 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 TownsAndCitiesEnhanced.esp
 // tac u
+ultime skyrim - riverwood.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, ultimate skyrim - riverwood.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ultimate skyrim - riverwood.esp
+ultimate skyrim - riverwood.esp
+  IF CHECKSUM("ultimate skyrim - riverwood.esp", 604D605A) DIRTY: 81 ITM, 235 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("ultimate skyrim - riverwood.esp", 604D605A) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 UniqueTaverns.esp
 UniqueTavernsFalkwreath.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, UniqueTaverns.esp
@@ -10335,6 +10347,7 @@ QueenPotemaSummon.esp
   IF CHECKSUM("QueenPotemaSummon.esp", B3F2FCD8) DIRTY: 6 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 quiet conjuration.esp
 // spells r
+real_dovahkiin_strength.esp
 RamaTeleporterSystem_v1.esp
 Raj's Restoration 100.esp
 recallthedead.esp
@@ -11173,6 +11186,7 @@ Noredundantperks.esp
 Crimson Tide - Blood.esp
   IF FILE("dD - Enhanced Blood Main.esp") INC: dD - Enhanced Blood Main.esp
 /* Crimson Tide has been repoted to cause issues if loaded after ACE Melee */
+// skills a
 ACE Archery Dawnguard Patch.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version. Renamed to ACE Archery.esp
     IF VAR(RU) WARN: Устарело. Обновите до последней версии. Переименовано в ACE Archery.esp
@@ -11220,16 +11234,20 @@ REGEX: AB?T -( Increased)? Progressive Damage( \(BS and CCO\)| \(with Nord Hero 
 REGEX: AB?T - Recover ([-\+]?\d{1,3}%)( Less| More)? Arrows( and Bolts)?\.esp
 /* All AT plugins must load after *all* ACE modules */
 ABT - Bolts Renamed for BS and CCO.esp
+// skills b
 Balanced Armor Effects.esp
+// skills c
 cao_PerkRanks.esp
 DFB - Carry Weight Per Stamina Choice.esp
 Combat Perks Overhaul.esp
 Conjuration Perks Overhaul Beta 0.1.esp
+// skills d
 REGEX: Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp
   IF VAR(EN) SAY: Use only one Deadly Torches - *.esp
     IF VAR(RU) SAY: Используйте только один Deadly Torches - *.esp
 Destruction Scaling.esp
 Dual Flurry for all.esp
+// skills e
 EagleEye3x.esp
 Eld-betterLockpickPerks.esp
 EM-AllInOne.esp
@@ -11240,11 +11258,14 @@ EpicGlory-SkillsStartAtZeroByMadmole.esp
   IF VAR(EpicGloryInst) INC: EpicGloryByMadmole.esp
 EpicGloryStatsStartAt50ByMadmole.esp
   IF VAR(EpicGloryInst) INC: EpicGloryByMadmole.esp
+// skills f
 FeelMagic.esp
 flexibleperktrees.esp
+// skills g
 GDTES5 Lockpick Perk Tree Reconfigure.esp
 GluRUS_magicscaling.esp
 GrandMaster.esp
+// skills h
 HeavyArmorPerks - Helmetless.esp
   IF CHECKSUM("HeavyArmorPerks - Helmetless.esp", 3A11FDB9) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HeavyArmorPerks v1.1.esp
@@ -11252,6 +11273,7 @@ HeavyArmorPerks v1.1.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, HeavyArmorPerksv2.2.esp
 HeavyArmorPerksv2.2.esp
   IF CHECKSUM("HeavyArmorPerksv2.2.esp", D3C0A697) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+// skills i
 Illusion Perks Overhaul.esp
 iMO-Perks.esp
 Improved Casting.esp
@@ -11259,10 +11281,13 @@ Improved Casting Enhanced.esp
 REGEX: Improved Destruction Perks.*\.esp
 Improved Expert Spells.esp
 REGEX: Improved Master Spells.*\.esp
+// skills j
 JokeMOD-SilentRunning.esp
 JulesPerkRankAssign.esp
+// skills k
 kuerteeSkillBasedDamageMultipliers.esp
   IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+// skills l
 lcr.esp
 leveling_2x_slower1_5.esp
 Leveling Destruction Perks.esp
@@ -11272,6 +11297,8 @@ Leveling Destruction Perks - No Regen.esp
 levelingperkslite.esp
   IF VAR(EN) && IF FILE("perksbymatope.esp") WARN: Delete. Already included in perksbymatope.esp
     IF VAR(RU) && IF FILE("perksbymatope.esp") WARN: Удалите. Уже включено в perksbymatope.esp
+levelrates_halved.esp
+// skills m
 REGEX: MageArmor(Easy)?\.esp
 magicscaling.esp
 MagicSneakCrit.esp
@@ -11289,8 +11316,11 @@ More Exp Chance.esp
 More Exp Change for cooking.esp
 MorePP.esp
 MorePerksPerLevel.esp
+// skills n
 no more ability perk tree.esp
 non-linear perk trees.esp
+// skills o
+// skills p
 REGEX: pace_\w_\d{2,4}_\d{1,2}.*\.esp
 Path of Shadows - Sneak Settings.esp
 Path of Shadows - Sneak Perks.esp
@@ -11311,6 +11341,8 @@ REGEX: PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp
   IF VAR(EN) SAY: Use only one PTAlchemyOverhaul_SkillRate esp
     IF VAR(RU) SAY: Используйте только один PTAlchemyOverhaul_SkillRate esp
 CookingExpanded - PTAlchFood.esp
+// skills q
+// skills r
 RacialSkillBoost.esp
 Racial Traits Improved.esp
 racialxpandskillbonus.esp
@@ -11319,6 +11351,7 @@ ReadAndLearnSpeechcraft1_1.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, ReadAndLearnSpeechcraft.esp
 ReadAndLearnSpeechcraft.esp
 ruestungstalente_ohne_helm.esp
+// skills s
 SB - Level Scaling Mod.esp
 SB Skills and Leveling.esp
 SkBBP - Enchanting Skill Gain Balanced.esp
@@ -11346,17 +11379,20 @@ SlowerLevelingSmithing.esp
 REGEX: SlowerSkills_v.+\.esp
 SmithingMasteryPerks.esp
   IF FILE("PerkUP-Smithing.esp") INC: PerkUP-Smithing.esp
+// skills t
 Target Training System - TTS.esp
   IF CHECKSUM("Target Training System - TTS.esp", 59F6E5C8) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 The Fingersmith Mod + Perk Adjustments 1.2b.esp
 ToL Perk Tree.esp
 REGEX: training_costs_\d{1,2}_x\d_x\d\.esp
 train 10 times per level.esp
+train 99 times per level.esp
 Train With Anyone.esp
 TrueYield.esp
 Steel an Iron perk.esp
 Twili's Unarmed perk.esp
 Twili's Unarmored perk.esp
+// skills u
 REGEX: Uncapped Perks - [CM].+\.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
   IF REGEX("PerkUP-.*\.esp") INC: PerkUP
@@ -11369,9 +11405,13 @@ REGEX: Uncapped Perks - .+\.esp
   IF REGEX("PerkUP-.*\.esp") INC: PerkUP
 BlueStarPerkAdventure.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
+// skills v
+// skills w
 REGEX: WiS IV - leveld World X\d+\.esp
   IF VAR(EN) SAY: Use only one WiS IV - leveld World esp
     IF VAR(RU) SAY: Используйте только один WiS IV - leveld World esp
+// skills xyz
+// skills wahteva...
 SkyRe_Main.esp
   TAG: {{BASH: Relev, Delev}}
     //TAG: {{BASH: Delev, Names, Relev}}
@@ -11559,7 +11599,7 @@ SkyRe_Plugin_Morrowloot.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_Witcher 2 Style Dawnguard Armour.esp
 SkyRe_Dreamcloth.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm not found. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 REGEX: Acquisitive Soul Gems( FR)?\.esp
   // must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
 HarvestOverhaulSkyReCompatibility.esp
@@ -11580,7 +11620,7 @@ ArmorPerkHelmetRemover.esp
 Vampirelordroyal.esp
 vinis_alchemy_tree.esp
 BatTravel.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm not found. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 bandit raids on holds.esp
 GDO_Plugin_SkyRe.esp
   IFNOT VAR(SkyReM) REQ: SkyrimRedone
@@ -12014,7 +12054,11 @@ BEGINGROUP: Character Presets
 If someone feels it could be placed better, feel free to move it */
 
 ArnoldPreset.esp
+Children of Skyrim - NORD PRESETS 1-10 v1.1.esp
+Children of Skyrim - NORD PRESETS 11-20.esp
 Children of Skyrim - NORD PRESETS.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Children of Skyrim - NORD PRESETS 1-10 v1.1.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Children of Skyrim - NORD PRESETS 1-10 v1.1.esp
 Delphine Makeover Preset.esp
 ESPv1_1.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -12495,6 +12539,7 @@ Stenvar.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Stenvar_Revamped.esp
 Stenvar_Revamped.esp
 // companions t
+Tina.esp
 // companions u
 // companions v
 // companions w
