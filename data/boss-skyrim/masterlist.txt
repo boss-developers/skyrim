@@ -3191,6 +3191,7 @@ REGEX: SkyRealism - Simple Save System.+\.esp
   IF VAR(EN) SAY: Only use one SkyRealism - Simple Save System*.esp
     IF VAR(RU) SAY: Используйте только один SkyRealism - Simple Save System*.esp
 ORS_MM.esp
+RealTime.esp
 SkyRealism - Skills and Statistics.esp
 Skyrim Better Performance.esp
 Skyrim Timed AutoSave Helper
@@ -13558,6 +13559,9 @@ BEGINGROUP: Map marker Tweaks
 
 accurate prison markers.esp
 arvakskull-marker.esp
+Atlas Map Markers.esp
+Atlas Dawnguard.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm not found. Skyrim will CTD if using this file without Dawnguard (Official Bethesda DLC)
 Barenziah.esp
 10466_BarenziahQuestM.esp
 BarenziahQuestMarkers.esp
@@ -13617,9 +13621,11 @@ Player Created Map Marker.esp
 Proudspire Manor - Map Marker.esp
 PlayerHomeMapMarkers.esp
 Secondary Locations Map Markers.esp
-  IF CHECKSUM("Secondary Locations Map Markers.esp", 1F4F79E7) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Atlas Map Markers.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Atlas Map Markers.esp
 Secondary Locations Dawnguard.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, 
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, 
 skyforge_map_marker.esp
 REGEX: smakit_house_markers(_plus)?(_russian|_german)?\.esp
 Stones of Barenziah - FR- Les Pierres de Barenziah - Rangeables + Marqueur de Quête.esp
