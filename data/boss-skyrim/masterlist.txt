@@ -414,7 +414,6 @@ DeadlyDragons.esm
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Mannequin.esm
 Monster Hunter.esm
-//  IF VAR(EN) SAY: This mod may contain unauthorized or illegal content.
   IF CHECKSUM("Monster Hunter.esm", 51FB2723) DIRTY: 28 ITM, 19 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 alchstone5x.esm
 REGEX: EagleEyePerk(_defStamina|_half_stamina)?\.esm
@@ -453,6 +452,7 @@ ApachiiHairFemales.esm
 ApachiiHairMales.esm
 Caellon.esm
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+CinderFrost.esm
 Succubus.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SuccubusFollower.esp or Succubus Summoning.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, SuccubusFollower.esp or Succubus Summoning.esp
@@ -542,7 +542,7 @@ Extended Colors.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 
-  // esm's released as esp
+	// esm's released as esp
 Bandit Raid.esp
   SAY: This is actually an esm released as an esp file.
 SuccubusFollower.esp
@@ -4711,6 +4711,9 @@ Mods247Helf16.esp
 Mods247HelfH16.esp
 Mondschwert von General Lee Sam.esp
 MongolArmor.esp
+  IF VAR(EN) && IF CHECKSUM("MongolArmor.esp", 7A153783) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF VAR(RU) && IF CHECKSUM("MongolArmor.esp", 7A153783) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+MongolShield.esp
 monster_hunter.esp
   IF CHECKSUM("monster_hunter.esp", A8A0C107) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Monster Hunter.esp
@@ -6229,6 +6232,7 @@ Auditorium.esp
 Aurora.esp
 REGEX: AutumnLodge\((Female|Male)Mannequin\)\.esp
 Auðgrímr.esp
+awesomobreezehome.esp
 ENDGROUP: Quests A
 
 BEGINGROUP: Quests B
@@ -6781,6 +6785,14 @@ BEGINGROUP: Quests H
 Haafingar Schneehutte.esp
 HallsOfDovahndor.esp
   IF CHECKSUM("HallsOfDovahndor.esp", A8418D27) DIRTY: 23 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+HammerfellBandits.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, HammerfellBanditsV2.0.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, HammerfellBanditsV2.0.esp
+HammerfellBanditsV1.5.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, HammerfellBanditsV2.0.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, HammerfellBanditsV2.0.esp
+HammerfellBanditsV2.0.esp
+  IF CHECKSUM("HammerfellBanditsV2.0.esp", A9DDEAFA) DIRTY: 13 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Haven.esp
 HavenBag.esp
 HeartOfThunder.esp
@@ -8133,6 +8145,8 @@ Dawnguard - Att.esp
     IF VAR(RU) SAY: Вопреки порядку загрузки BOSS, мастерфайл этого мода находится перед Dawnguard.esm
 Dawnguard - Join As A Vampire.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+IFNOT FILE("LorebalanceArtifacts.esp") MOD: DawnguardArmorLaup26.esp
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 db-nightshade-replacer.esp
 Deadly Traps.esp
 Death Reload (30 Minutes).esp
@@ -8418,6 +8432,9 @@ HjerimArmory.esp
   IF CHECKSUM("HjerimArmory.esp", E6B5F2B2) DIRTY: 3 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("HjerimArmory.esp", 68BDC62D) DIRTY: 3 ITM, 444 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("HjerimArmory.esp", 68BDC62D) SAY: Obsolete.  Update to latest version.
+Hoodless Archmage - OE.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Hoodless Archmage Robes.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Hoodless Archmage Robes.esp
 Hoodless Archmage Robes.esp
 HorsesGoneWild.esp
 HorseInventory.esp
@@ -8652,6 +8669,11 @@ longercandlelight5min.esp
 LongerCraftingDurations.esp
 longerblessings.esp
 Lord of Illusion Ring.esp
+LorebalanceArtifacts.esp
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("LorebalanceArtifacts.esp", E22F5916) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+IF FILE("LorebalanceArtifacts.esp") MOD: DawnguardArmorLaup26.esp
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 LoreFriendlyArtifactRebalance.esp
 LoreFriendlyArtifacts.esp
 Lore Friendly Ebony Mail.esp
@@ -12440,10 +12462,12 @@ BreezeHomeChildren.esp
 Brothers.esp
 // companions c
 Caellon.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 Chadeaux.esp
 ChantelleV2.esp
 Child Adoption.esp
+CinderFrost.esp
+  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 ClaudiaVampireCompanion.esp
 CleanBalimund.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -13387,10 +13411,14 @@ Khajiit Awesome.esp
 Khajiit Racial Tweek.esp
 More Hair Colors.esp
 Morrowind Races.esp
+MorrowindAblities.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Old Race Settings.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Old Race Settings.esp
 mwcrh&w.esp
 NormalVampireFaces.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 OCS OSR.esp
+Old Race Settings.esp
 PrettyKhajiit.esp
 Race Abilities and Skills Redone.esp
   IF CHECKSUM("Race Abilities and Skills Redone.esp", E4A1C5F7) DIRTY: 7 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -13477,6 +13505,7 @@ REGEX: WiS IV( -)? Blood Coins( slow| normal| Insane)?\.esp
 ChickenNestFix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
+Faster Skyrim 1 Day Vendor Respawn.esp
 followerssovngarde_respawn_version_1_0.esp
 REGEX: MD - WMTBNDE .+\.esp
   IF VAR(EN) SAY: Use only one WMTBNDE esp
