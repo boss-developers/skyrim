@@ -495,7 +495,11 @@ jkotf4oneofthelastdwarven.esm
 OneiroMoarFollowers.esm
 RaceCompatibility.esm
 RaestlozArmorReplace.esm
-  IF VERSION("TES5", "1.8.151.07", <) && IFNOT CHECKSUM("RaestlozArmorReplace.esm", 6FA99C8F) REQ: Skyrim 1.8.151.07+
+  IFNOT CHECKSUM("RaestlozArmorReplace.esm", B83CB078) || IFNOT CHECKSUM("RaestlozArmorReplace.esm", 6FA99C8F) && IF VERSION("TES5", "1.8.151.07", <) REQ: Skyrim 1.8.151.07+
+RaestlozArmorReplace - Dawnguard.esm
+  IFNOT CHECKSUM("RaestlozArmorReplace - Dawnguard.esm", FBBDED04) || IFNOT CHECKSUM("RaestlozArmorReplace - Dawnguard.esm", 00449758) && IF VERSION("TES5", "1.8.151.07", <) REQ: Skyrim 1.8.151.07+
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("RaestlozArmorReplace.esm") || IFNOT ACTIVE("RaestlozArmorReplace.esm") ERROR: RaestlozArmorReplace.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
 TurnDownXrace.esm
   // RaceCompatibility.esm is master
   IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
@@ -4204,6 +4208,7 @@ ENDGROUP: Items G
 
 BEGINGROUP: Items H
 
+hamoretastierfoodrecipes.esp
 HanasSkeletonStaff.esp
 Hartherz1.2.esp
 HartherzEnglish.esp
@@ -4993,6 +4998,9 @@ REGEX: R18Pn - .+\.esp
 R18PN_Corset.esp
 RealFireArrows.esp
 Really Radiant Raiment.esp
+RaestlozArmorReplace.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, RaestlozArmorReplace.esm
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, RaestlozArmorReplace.esm
 RaiderHelmet.esp
 raiser sword.esp
 RangerArmor.esp
@@ -6773,14 +6781,22 @@ Geir Manor.esp
   IF CHECKSUM("Geir Manor.esp", FF608082) WARN: This file contains 3 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Gleaming falls.esp
   IF CHECKSUM("Gleaming falls.esp", 4630FE0E) DIRTY: 8 ITM, 63 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Gildergreen Regrown.esp
+  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 Gobland.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Gobland.esp", 20858F47) DIRTY: 69 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Gold Worth Something.esp
   IF CHECKSUM("Gold Worth Something.esp", AF685A9A) DIRTY: 11 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Golden Egg Treasure Hunt.esp
-Gildergreen Regrown.esp
-  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
+REGEX: Gokstad vBeta.+\.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Gokstad Sailable Ship v1.3b.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Gokstad Sailable Ship v1.3b.esp
+REGEX: Gokstad Sailable Ship v1.(0|1|2)b\.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Gokstad Sailable Ship v1.3b.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Gokstad Sailable Ship v1.3b.esp
+Gokstad Sailable Ship v1.3b.esp
+  IF CHECKSUM("Gokstad Sailable Ship v1.3b.esp", 7FC2FA94) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 golkar.esp
 gonkishvampdens.esp
   IF CHECKSUM("gonkishvampdens.esp", C11AED71) DIRTY: 35 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -7185,7 +7201,11 @@ Realistic Dungeons.esp
 RealisticAbandonedShack.esp
   IF CHECKSUM("RealisticAbandonedShack.esp", 2863EDC8) DIRTY: 10 ITM, 89 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 RealisticWhiterun.esp
+Reapers.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Reaper's The Dark Tower.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Reaper's The Dark Tower.esp
 Reaper's The Dark Tower.esp
+  IF CHECKSUM("Reaper's The Dark Tower.esp", 1B0EC1DB) DIRTY: 17 ITM, 9 UDR record. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ResearchThief.esp
 retreat.esp
 Return Trip.esp
@@ -7309,6 +7329,8 @@ ShadowScales.esp
   IF CHECKSUM("ShadowScales.esp", 1B136A4C) DIRTY: 0 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Shady_Tales.esp
 Shady Fences.esp
+SharedStorage.esp
+  IF FILE("WyvernCliff.esp") WARN: Delete this file. It is included in 'WyvernCliff.esp'
 ShayksBAQ.esp
 ShezriesHFKitchen.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
@@ -7685,6 +7707,8 @@ WoTS - Non-Overhaul Version.esp
 WRenchanter_tilted.esp
 Wyrmstooth.esp
   IF CHECKSUM("Wyrmstooth.esp", 54F43CEF) DIRTY: 6259 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+WyvernCliff.esp
+  IF CHECKSUM("WyvernCliff.esp", E7D2EC3E) DIRTY: 32 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: Quests W
 
 BEGINGROUP: Quests XYZ
@@ -7948,20 +7972,33 @@ ArtifactRebalance.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, LoreFriendlyArtifactRebalance.esp
 Arvak, Shadowmere's Body - DB Saddle.esp
 Arvak, Shadowmere's Body - No Saddle.esp
-  IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") ERROR: Use only one Arvak esp.
+  IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") WARN: Use only one Arvak esp.
+Arvak_Fire.esp
+  IF CHECKSUM("Arvak_Fire.esp", 8B83FC98) DIRTY: 3 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+Arvak_Frost.esp
+  IF CHECKSUM("Arvak_Frost.esp", 21746CA3) DIRTY: 3 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IF FILE("Arvak_Fire.esp") && IF VAR(EN) WARN: Use either Arvak_Fire.esp or Arvak_Frost.esp, not both.
+     IF FILE("Arvak_Fire.esp") && IF VAR(RU) WARN: Используйте любой или Arvak_Fire.esp или Arvak_Frost.esp, не обе.
+Arvak_Storm.esp
+  IF CHECKSUM("Arvak_Storm.esp", A3FADF0F) DIRTY: 3 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IF FILE("Arvak_Fire.esp") || IF FILE("Arvak_Frost.esp") && IF VAR(EN) WARN: Use only one of Arvak_*.esp
+    IF FILE("Arvak_Fire.esp") || IF FILE("Arvak_Frost.esp") && IF VAR(RU) WARN: Используйте только один of Arvak_*.esp
 Ash Pile Expiration.esp
 ATTTemplate.esp
-MISELF_Atromancy.esp
 augmentedspells.esp
 AutoAim.esp
 Auriel's Bow Reloaded.esp
+AutoCamDialogue.esp
+AutoCamSpellCast.esp
 ENDGROUP: Overrides A
 
 BEGINGROUP: Overrides B
 
 Babette.esp
-  IF CHECKSUM("Babette.esp", 6596E3CF) DIRTY: 8 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-
-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Babette.esp", 6596E3CF) DIRTY: 8 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Balanced and Split Sword Axe Mace Weapon Perks.esp
 balanced atronachs.esp
@@ -8012,6 +8049,7 @@ Better Necromancer's Amulet.esp
 Better Stormcloaks.esp
 Better_enchanting_tables.esp
 Better_Food_and_Sleep.esp
+betterarvak.esp
 BetterBreathHolding.esp
 BetterBreezehomeBeds.esp
 BetterBreezehomeBedsNoble.esp
@@ -8054,6 +8092,7 @@ ME_BetterWards.esp
 betterwards.esp
 betterwards-nostagger.esp
   IF FILE("betterwards.esp") INC: betterwards.esp
+Bigger Badder Lich King.esp
 Bigger dragons.esp
 biggerbears.esp
 Binocular Vision For NPCs while Sneaking.esp
@@ -8823,6 +8862,7 @@ Mikaelarps Disenchantable armor.esp
 Mikaelarps disenchantable artifacts.esp
 MiningFaster.esp
 MiningMore.esp
+MISELF_Atromancy.esp
 mjhKhajiitSpeak.esp
   IF VAR(EN) SAY: This mod overwrites all dialogue enable only when playing Khajiit.
     IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
@@ -9417,6 +9457,12 @@ ENDGROUP: Overrides U
 
 BEGINGROUP: Overrides V
 
+valkiirs_tastier_food.esp
+  IF VAR(Hearthfire) SAY: Use Hearthfires version to get changes made to Hearthfires food.
+valkiirs_tastier_food_hearthfire.esp
+  IF FILE("valkiirs_tastier_food.esp") && IF VAR(EN) WARN: Use either valkiirs_tastier_food.esp or valkiirs_tastier_food_hearthfire.esp, not both.
+     IF FILE("valkiirs_tastier_food.esp") && IF VAR(RU) WARN: Используйте любой или valkiirs_tastier_food.esp или valkiirs_tastier_food_hearthfire.esp, не обе.
+  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
 valuablecoins.esp
   IF CHECKSUM("valuablecoins.esp", 80A41AE4) SAY: Obsolete. Update to the latest version.
   IF CHECKSUM("valuablecoins.esp", 325F41CC) || IF CHECKSUM("valuablecoins.esp", B7D1F4BA) || IF CHECKSUM("valuablecoins.esp", D125B45C) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -11185,6 +11231,11 @@ only1stpfinishers.esp
 REGEX: The Dance of Death.*\.esp
   IF VAR(EN) && IF REGEX("The Dance of Death V.+.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF REGEX("The Dance of Death V.+.esp") WARN: Устарело. Обновите до последней версии.
+REGEX: Troy1010_ImprovedArmorFormula_Difficulty.+\.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Troy1010_ImprovedArmorFormula 4.0.0.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Troy1010_ImprovedArmorFormula 4.0.0.esp
+Troy1010_ImprovedArmorFormula 4.0.0.esp
+  IF CHECKSUM("Troy1010_ImprovedArmorFormula 4.0.0.esp", BEC1B7D3) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 UCO.esp
 unarmed combat.esp
 Warhammer_Killmoved_By_Enemy.esp
@@ -13832,7 +13883,40 @@ Secondary Locations Dawnguard.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, 
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, 
 skyforge_map_marker.esp
-REGEX: smakit_house_markers(_plus)?(_russian|_german)?\.esp
+smakit_house_markers.esp
+  IF CHECKSUM("smakit_house_markers.esp", CDB6A10B) DIRTY: 11 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+smakit_house_markers_french.esp
+  IF FILE("smakit_house_markers.esp") && IF VAR(EN) SAY: Use only one of smakit_house_markers esp
+    IF FILE("smakit_house_markers.esp") && IF VAR(RU) SAY: Используйте только один of smakit_house_markers esp
+  IF CHECKSUM("smakit_house_markers_french.esp", DBEE7CC8) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+smakit_house_markers_german.esp
+  IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) SAY: Use only one of smakit_house_markers esp
+    IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) SAY: Используйте только один of smakit_house_markers esp
+  IF CHECKSUM("smakit_house_markers_german.esp", 2B4220E5) DIRTY: 13 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+smakit_house_markers_italian.esp
+  IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) SAY: Use only one of smakit_house_markers esp
+    IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) SAY: Используйте только один of smakit_house_markers esp
+  IF CHECKSUM("smakit_house_markers_italian.esp", FFD1B168) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+smakit_house_markers_plus.esp
+  IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) SAY: Use only one of smakit_house_markers esp
+    IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) SAY: Используйте только один of smakit_house_markers esp
+  IF CHECKSUM("smakit_house_markers_plus.esp", 6FDBD6B9) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+smakit_house_markers_plus_russian.esp
+  IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) SAY: Use only one of smakit_house_markers esp
+    IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) SAY: Используйте только один of smakit_house_markers esp
+  IF CHECKSUM("smakit_house_markers_plus_russian.esp", 34BBD145) DIRTY: 11 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+smakit_house_markers_polish.esp
+  IF FILE("smakit_house_markers_plus_russian.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) SAY: Use only one of smakit_house_markers esp
+    IF FILE("smakit_house_markers_plus_russian.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) SAY: Используйте только один of smakit_house_markers esp
+  IF CHECKSUM("smakit_house_markers_polish.esp", 4BD3A2A0) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+smakit_house_markers_russian.esp
+  IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) SAY: Use only one of smakit_house_markers esp
+    IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) SAY: Используйте только один of smakit_house_markers esp
+  IF CHECKSUM("smakit_house_markers_russian.esp", 3077B684) DIRTY: 7 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+smakit_house_markers_spanish.esp
+  IF FILE("smakit_house_markers_russian.esp") || IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) SAY: Use only one of smakit_house_markers esp
+    IF FILE("smakit_house_markers_russian.esp") || IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) SAY: Используйте только один of smakit_house_markers esp
+  IF CHECKSUM("smakit_house_markers_spanish.esp", CD86D7B9) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Stones of Barenziah - FR- Les Pierres de Barenziah - Rangeables + Marqueur de Quête.esp
 tox Dragon Map Markers.esp
 REGEX: Unmarked Places - .+\.esp
