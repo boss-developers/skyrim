@@ -3129,9 +3129,6 @@ ENDGROUP: Base XYZ
 
 BEGINGROUP: Base Late
 
-Darwins_Primitive_Times.esp
-REGEX: DarwinsHT_.+\.esp
-
 adventurersandtravelers.esp
 AdventurersAndTravelersLight.esp
 BeastBanditsV1.esp
@@ -3139,6 +3136,8 @@ BarberShop.esp
 Convenient Horses.esp
   IF CHECKSUM("Convenient Horses.esp", 4D155F9A) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Convenient Horses - Unique Frost.esp
+convenient horses ultimate.esp
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 CrowdedCities.esp
 REGEX: KoS_Outcast(_Lite)?\.esp
   IF VAR(EN) SAY: Use only one KoS_Outcast*.esp
@@ -3154,6 +3153,8 @@ CiviliansWillNotDiePatches.esp
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", 2336B8B8) && IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
   IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", C0754EA7) SAY: Устарело. Обновите до "http://modgames.net/load/247-1-0-13970 CiviliansWillNotDiePatches.esp" 0.6+
+Darwins_Primitive_Times.esp
+REGEX: DarwinsHT_.+\.esp
 Destructible_bottles.esp
   IF CHECKSUM("Destructible_bottles.esp", 33A7D490) WARN: This file contains unexpected (or out of order) records and should be removed.
   IF CHECKSUM("Destructible_bottles.esp", BF5ED5A9) || IF CHECKSUM("Destructible_bottles.esp", 0900B364) || IF CHECKSUM("Destructible_bottles.esp", 48639563) || IF CHECKSUM("Destructible_bottles.esp", 078C74DD) || IF CHECKSUM("Destructible_bottles.esp", 5BE52467) || IF CHECKSUM("Destructible_bottles.esp", D59FAF05) || IF CHECKSUM("Destructible_bottles.esp", D80876E8) SAY: Obsolete. Update to latest version.
@@ -3614,6 +3615,7 @@ Cattelya Greatsword.esp
 Catwoman Suit.esp
 Cauldron in a Field.esp
 cellanweaponry.esp
+celtebonyarmor.esp
 Cerberus.esp
   IF CHECKSUM("Cerberus.esp", BD2CF9A5) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 chainGloves_by_Sasino.esp
@@ -3958,6 +3960,9 @@ DragonsoulArmour.esp
 DragonsoulWeapons.esp
   IF CHECKSUM("DragonsoulWeapons.esp", CCA2F9B7) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DragonSword.esp
+dragonweapons.esp
+  IF CHECKSUM("dragonweapons.esp", 7516E4CE) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF CHECKSUM("dragonweapons.esp", 7516E4CE) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Dread Huntress Armor.esp
 Dread Knight Weapon Set.esp
 DreadKnightWeaponSet,esp
@@ -4344,6 +4349,14 @@ IFNOT VAR(BFNIAP) MOD: SI_WicCosIaPatch.esp
 HoodsAndCirclets.esp
 HotaruByNausicaa.esp
 HUM_Armor.esp
+HunEbonyArmorStandalone.esp
+  IF CHECKSUM("HunEbonyArmorStandalone.esp", F7132DAC) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF CHECKSUM("HunEbonyArmorStandalone.esp", F7132DAC) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+HunEbonyWeaponsStandalone.esp
+  IF CHECKSUM("HunEbonyWeaponsStandalone.esp", 49FA902D) DIRTY: 11 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+hunnicarmors.esp
+  IF CHECKSUM("hunnicarmors.esp", D968FD8E) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF CHECKSUM("hunnicarmors.esp", D968FD8E) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 hunterarmor.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, hunterarmorv1.2.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, hunterarmorv1.2.esp
@@ -6801,6 +6814,8 @@ Fishers Farm.esp
 fjorinstomb.esp
 flaho_shi_wassersturz.esp
   IF CHECKSUM("flaho_shi_wassersturz.esp", 4EA6342F) || IF CHECKSUM("flaho_shi_wassersturz.esp", 3FBCF912) DIRTY: 22 ITM, 6 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Flatlander_M7001.esp
+  IF CHECKSUM("Flatlander_M7001.esp", E2DC21C7) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Fleetford.esp
   IF REGEX("Briar'sEnd.*\.esp") INC: Briar'sEnd
   IF CHECKSUM("Fleetford.esp", 6D3A13D9) DIRTY: 50 ITM, 31 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -6926,6 +6941,8 @@ customhjerim.esp
   IF CHECKSUM("customhjerim.esp", ACDBBFD5) DIRTY: 4 ITM, 140 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Hjerim Smithy.esp
 Hjerim_Blacksmith_English.esp
+hjerim_home.esp
+  IF CHECKSUM("hjerim_home.esp", 09936EBC) DIRTY: 4 ITM, 212 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HjerimExpansion.esp
 HjerimForge.esp
 hideout.esp
@@ -7042,6 +7059,8 @@ LimbwoodManor.esp
 LLA_LovesLaborsAvenged.esp
 LMSkyrimBetterPlayerHomes.esp
 LocalizedGuildJobs.esp
+Loreius.esp
+  IF CHECKSUM("Loreius.esp", 5E55AA50) DIRTY: 11 ITM, 5 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Lost Paradise.esp
 Lost Prospect Mine Home.esp
 Luggage.esp
