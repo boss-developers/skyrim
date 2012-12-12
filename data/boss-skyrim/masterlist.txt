@@ -855,6 +855,8 @@ Skyrim Crafting Fixes.esp
 SkyrimFixes.esp
   IF VAR(EN) && IF VAR(USKP) SAY: Some corrections already included in Unofficial Skyrim Patch.esp. In more details see "http://skyrim.nexusmods.com/mods/24807 mod page".
     IF VAR(RU) && IF VAR(USKP) SAY: Некоторые исправления уже включены в Unofficial Skyrim Patch.esp. Подробности смотрите на "http://skyrim.nexusmods.com/mods/24807 странице мода".
+
+  // Unoffical Patches
 Unofficial Skyrim Patch.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
@@ -911,6 +913,8 @@ Vampire Face Fixes.esp
   SAY: This mod will not be compatible with any mods that alter the vampire character classes.
 VLCollisionFix.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+ 
+ // Unoffical DLC Patches
 USKP Dawnguard vampire face & eye fix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
     IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
@@ -921,7 +925,7 @@ Unofficial Hearthfire Patch.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
   IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
 
-  // fixes that must be loaded after UDGP
+  // fixes that must be loaded after Unofficial DLC Patches
 EveryVampireEyesGrow.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IF VAR(EN) SAY: This mod will not be compatible with any mods that alter humanoid(imperial, breton, nord, redguard) race. Also, not compatible with mods that have Babette's facegendata(0001D4B7.NIF).
@@ -3608,6 +3612,7 @@ Casual Outfit OE.esp
 Cattelya Greatsword.esp
   IF CHECKSUM("Cattelya Greatsword.esp", 38C1FCB3) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Catwoman Suit.esp
+Cauldron in a Field.esp
 cellanweaponry.esp
 Cerberus.esp
   IF CHECKSUM("Cerberus.esp", BD2CF9A5) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -5253,6 +5258,8 @@ Skyhighrim.esp
   IF CHECKSUM("Skyhighrim.esp", AD626BD2) DIRTY: 13 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SkyPortals.esp
 Skyrim - Chests Of Fun.esp
+Skyrim Knights.esp
+  IF CHECKSUM("Skyrim Knights.esp", 95F4356E) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 skyrule.esp
 SleekSteel_StandAlone.esp
 Slof's Just For Men.esp
@@ -7100,6 +7107,7 @@ Milan's PAck.esp
 MilanDungeonPack2.esp
 minerfriends.esp
   IF CHECKSUM("minerfriends.esp", 0D7732AE) DIRTY: 23 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+missingapprentices.esp
 MistTop.esp
   IF CHECKSUM("MistTop.esp", BF0A2622) DIRTY: 37 ITM, 43 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("MistTop.esp", BF0A2622) WARN: This file contains 5 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
@@ -9002,13 +9010,18 @@ No More Arrows in the Knee.esp
 no more immortal childs.esp
 no nocturnal oath.esp
 No Permanent Essentials Redux.esp
-  IF CHECKSUM("No Permanent Essentials Redux.esp", E091E997) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
+  IF CHECKSUM("No Permanent Essentials Redux.esp", D68322C4) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT VAR(USKP) || IFNOT ACTIVE("Unofficial Skyrim Patch.esp") ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IF VAR(Dawnguard) && IFNOT FILE("No Permanent Essentials Redux -- Dawnguard.esp") REQ: No Permanent Essentials Redux -- Dawnguard.esp for proper operation with Dawnguard.
 No Permanent Essentials Redux -- Dawnguard.esp
-  IF CHECKSUM("No Permanent Essentials Redux -- Dawnguard.esp", 045BBC6A) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
-  IFNOT VAR(UDGP) REQ: Unofficial Dawnguard Patch.esp
+  IF CHECKSUM("No Permanent Essentials Redux -- Dawnguard.esp", 11202A14) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(USKP) || IFNOT ACTIVE("Unofficial Skyrim Patch.esp") ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT VAR(UDGP) || IFNOT ACTIVE("Unofficial Dawnguard Patch.esp") ERROR: Unofficial Dawnguard Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+No Permanent Essentials Redux -- Bring Out Your Dead Compatibility.esp
+  IFNOT VAR(USKP) || IFNOT ACTIVE("Unofficial Skyrim Patch.esp") ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT FILE("Bring Out Your Dead.esp") || IFNOT ACTIVE("Bring Out Your Dead.esp") ERROR: Bring Out Your Dead.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT FILE("No Permanent Essentials Redux.esp") || IFNOT ACTIVE("No Permanent Essentials Redux.esp") ERROR: No Permanent Essentials Redux.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 No Perk Prereqs.esp
 No Perk Prereqs - No Helmets Required.esp
 No Perk Prereqs - Smithing Excluded.esp
@@ -10663,6 +10676,8 @@ ThalmorAncanoSummon.esp
 The Nights Embrace.esp
   IF CHECKSUM("The Nights Embrace.esp", DC859FD2) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT VAR(Dawnguard) ERROR: Dawnguard (Official Bethesda DLC)
+TeleportSpellMod.esp
+  IF CHECKSUM("TeleportSpellMod.esp", 9A6FD915) DIRTY: 11 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 testspells.esp
   IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ThievesGreyFoxSummon.esp
