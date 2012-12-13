@@ -1235,6 +1235,9 @@ BEGINGROUP: Sound mods
 //
 // Some Sounds.esp
 //  TES4 (Header only)
+// 
+// It appears that *ANY* sound is ok to be placed here.
+//
 
 addwinterholdmusic.esp
 Bardsoundsmalukah.esp
@@ -1258,8 +1261,13 @@ indiemusicscene_la.esp
 REGEX: ICS Possible Fix \d\.esp
   IF VAR(EN) SAY: Obsolete. Update to Improved Combat Sounds v2.1.esp for a cleaned esp
     IF VAR(RU) SAY: Устарело. Обновите до версии Improved Combat Sounds v2.1.esp, для использования очищенного esp.
+KCEUnarmedBladeSound.esp
+  IF CHECKSUM("KCEUnarmedBladeSound.esp", 7252CC51) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 KR - Solitude No Sewer sound.esp
 LIAT - Sounds.esp
+  IF CHECKSUM("LIAT - Sounds.esp", 0068EB2F) DIRTY: 43 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("LIAT - Sounds.esp", A03F61CD) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IF CHECKSUM("LIAT - Sounds.esp", A03F61CD) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 newheavyarmorsound.esp
 Nordic Natural Sound.esp
 Phenderix's Magic Sounds Improved.esp
@@ -1752,9 +1760,15 @@ Birds.esp
   IF VAR(Hearthfire) INC: Heartfires DLC.  Remove this and install BirdsHF.esp
   IF CHECKSUM("Birds.esp", 200672C3) DIRTY: 376 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BirdsHF.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, BirdsHFclean.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, BirdsHFclean.esp
   IFNOT VAR(Hearthfire) REQ: Heartfires (Official Bethesda DLC).
   IF FILE("Birds.esp") INC: Birds.esp
   IF CHECKSUM("BirdsHF.esp", 9F07F0A4) DIRTY: 368 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+BirdsHFclean.esp
+  IF FILE("Birds.esp") INC: Birds.esp
+  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("BirdsHFclean.esp", B5314156) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BirdsFlocks_FR_2.3.esp
 Birdsofskyrim.esp
   IF CHECKSUM("Birdsofskyrim.esp", CF25ED24) DIRTY: 31 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -1823,6 +1837,7 @@ cao_goldbrand_WT.esp
 cao_ToolsTrade_BuyRL.esp
 CarryWeightSpells.esp
 Carriage1.esp
+  IF CHECKSUM("Carriage1.esp", 0DD48CC7) DIRTY: 20 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Cart in Each Big Town.esp
 Cat_mount.esp
 Catsofskyrim.esp
@@ -2291,6 +2306,7 @@ ENDGROUP: Base I
 BEGINGROUP: Base J
 
 JAWS.esp
+  IF CHECKSUM("JAWS.esp", CF25ED24) DIRTY: 156 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 JBS_banking_redux.esp
 JBS_banking.esp
   IF VAR(EN) SAY: Obsolete.  Update to latest version.
@@ -2418,9 +2434,13 @@ LFox Alchemists Have Potions and Poisons.esp
 LFox Blacksmiths Have Metals.esp
   TAG: {{BASH: Delev, Relev}}
 LFox Bottle That Blood.esp
+REGEX: LIAT - (AI Packages|Crowded|Less Visitors|Lively Inns and Taverns|More Visitors)?\.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, LIAT - NPCs.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, LIAT - NPCs.esp
 LIAT - NPCs.esp
-  IF VAR(EN) && IF REGEX("LIAT - .+NPCs\.esp") SAY: Obsolete. Update to latest version.
-    IF VAR(RU) && IF REGEX("LIAT - .+NPCs\.esp") SAY: Устарело. Обновите до последней версии.
+  IF CHECKSUM("LIAT - NPCs.esp", 8EFD5F95) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("LIAT - NPCs.esp", 5887EDBA) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IF CHECKSUM("LIAT - NPCs.esp", 5887EDBA) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 librarian - book sorting.esp
 LightRest.esp
 lingxc.esp
@@ -2791,6 +2811,7 @@ SkBBP - Loot Drops and Leveled Lists.esp
 skooma-the-drug.esp
 SkoomaModKidduffah v1.0.esp
 skyBirds - Airborne Perching Birds.esp
+  IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 131BB61C) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Skyforge Smelter.esp
 Skyforge_Plus v2.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version 3+.
@@ -4517,6 +4538,7 @@ Katharinian Armor.esp
 Kaw's Claws.esp
 Kaw's Cat Disguise.esp
 KCEAssaultRifles.esp
+KCEBattleClaws.esp
 LadyKdCirclets.esp
 kefarmor.esp
 ket_fang.esp
@@ -8657,6 +8679,7 @@ ImmediateDragons.esp
 Immersive Weapons.esp
   TAG:{{BASH: Delev}}
   IF CHECKSUM("Immersive Weapons.esp", 2EAE1F9D) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Immersive Weapons.esp", 3A0B75F5) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 imperialpower.esp
 Improved Archery and Bows.esp
 Improved Cloaks.esp
@@ -9934,7 +9957,8 @@ ENDGROUP: City Overhauls
 
 BEGINGROUP: Realism
 
-// realism
+// realism mods
+abotFiresHurt.esp
 Skyrim_realism.esp
   IF CHECKSUM("Skyrim_realism.esp", 536BCFFA) DIRTY: 183 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BasicHumanNeeds.esp
@@ -10412,6 +10436,7 @@ Force Grip Mastery.esp
 ForcePush.esp
 ForgottenMastery.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("ForgottenMastery.esp", 4D20CBA7) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ForswornFaolanSummon.esp
   IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
     IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
