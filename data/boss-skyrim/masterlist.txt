@@ -7907,8 +7907,8 @@ SkyrimWeightImprovement.esp
   IF CHECKSUM("SkyrimWeightImprovement.esp", B12CA7E5) || IF CHECKSUM("SkyrimWeightImprovement.esp", 6166E301) && IF VAR(Dawnguard) && IF VAR(Hearthfire) SAY: Use Dawnguard and Hearthfires version if you want Dawnguard and Hearthfires items to be adjusted by this mod.
   // Dawnguard version
   IF CHECKSUM("SkyrimWeightImprovement.esp", 770F0BB8) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") || IF CHECKSUM("SkyrimWeightImprovement.esp", 770F0BB8) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") || IF CHECKSUM("SkyrimWeightImprovement.esp", DB1E6677) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") && IF CHECKSUM("SkyrimWeightImprovement.esp", 770F0BB8) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") && IF CHECKSUM("SkyrimWeightImprovement.esp", DB1E6677) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   // Dawnguard and Hearthfires version
   IF CHECKSUM("SkyrimWeightImprovement.esp", 84521D2D) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") || IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") && IF CHECKSUM("SkyrimWeightImprovement.esp", 84521D2D) ERROR: Dawnguard.esm AND Hearthfires.esm are not present or are not active. Skyrim will CTD when loading if using this file without them.
