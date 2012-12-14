@@ -1186,6 +1186,14 @@ REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
   IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp
     IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp
   IF FILE("Realistic Lighting.esp") INC: Realistic Lighting.esp
+ExpandedSnowSystems.esp
+  IF CHECKSUM("ExpandedSnowSystems.esp", 03A9B612) DIRTY: 1301 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) DIRTY: 1460 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("ExpandedSnowSystems.esp", 03A9B612) || IF CHECKSUM("ExpandedSnowSystems.esp", 72CC3B0C) && IF VAR(Dawnguard) WARN: Dawnguard.esm found. Use the Dawnguard version of ExpandedSnowSystems.esp instead to have mod work as intended.
+  IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) || IF CHECKSUM("ExpandedSnowSystems.esp", 5B79F47D) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IF FILE("ClimatesOfTamriel.esm") || IF ACTIVE("ClimatesOfTamriel.esm") WARN: ClimatesOfTamriel.esm is present or is active. Use ExpandedSnowSystems-CoT.esp instead to have mod work as intended.
+ExpandedSnowSystems-CoT.esp
+  IFNOT FILE("ClimatesOfTamriel.esm") || IFNOT ACTIVE("ClimatesOfTamriel.esm") ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
 Fewer Snowstorms.esp
   IF CHECKSUM("Fewer Snowstorms.esp", 88CB9260) DIRTY: 7 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: getSnowyV.+\.esp
@@ -12642,6 +12650,7 @@ IF VAR(UFO) MOD: SupermodelDawnguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
 IF VAR(UFO) MOD: My home is your home.esp
+  IF CHECKSUM("My home is your home.esp", C36587B3) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   // Bethsoft thrd20#119
 IF VAR(UFO) MOD: KTNUlfric.esp
   IF CHECKSUM("KTNUlfric.esp", 8CF90F55) && IF VAR(UFO) ERROR: Use UFO version of KTNUlfric.esp
