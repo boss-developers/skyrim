@@ -4842,7 +4842,8 @@ mwCraftableCirclets.esp
 MyArmor.esp
 Mystic.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Mystic.esp", 67CBB5B2) WARN: Original file was released before the CK (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
-    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Niagras Bleach Pack.esp", 67CBB5B2) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.MysticGloves.esp
+    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Niagras Bleach Pack.esp", 67CBB5B2) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
+	MysticGloves.esp
 ENDGROUP: Items M
 
 BEGINGROUP: Items N
@@ -10491,9 +10492,6 @@ follow.esp
 ForbiddenMagic.esp
 Force Grip Mastery.esp
 ForcePush.esp
-ForgottenMastery.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF CHECKSUM("ForgottenMastery.esp", 4D20CBA7) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ForswornFaolanSummon.esp
   IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete.  Included in LegendarySouls.esp
     IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
@@ -11021,12 +11019,31 @@ MagicDuel_French.esp
 Magicka balance.esp
 REGEX: magickaregen.*\.esp
 MagicUnderControl.esp
-REGEX: Mighty Magick - (Dual Casting|Alteration|Conjuration|Destruction|Illusion|Restoration|Scaling)\.esp
-Mighty Magick - Fortify Magic School Enchantment and Alchemy Reversed.esp
-REGEX: Mighty Magick - .+ Extras\.esp
+Mighty Magick - Alteration.esp
+  IF CHECKSUM("Mighty Magick - Alteration.esp", 89544A70) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Mighty Magick - Alteration Extras.esp
+Mighty Magick - Conjuration.esp
+  IF CHECKSUM("Mighty Magick - Conjuration.esp", 4F8E6366) DIRTY: 14 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Mighty Magick - Conjuration Extras.esp
+Mighty Magick - Destruction.esp
+  IF CHECKSUM("Mighty Magick - Destruction.esp", 161C16F0) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Mighty Magick - Dual Casting.esp
 Mighty Magick - Enchantments Rebalance.esp
+Mighty Magick - Fortify Magic School Enchantment and Alchemy Reversed.esp
+Mighty Magick - Illusion.esp
+  IF CHECKSUM("Mighty Magick - Illusion.esp", F589AEED) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Mighty Magick - Illusion Extras.esp
 Mighty Magick - Magicka Rules.esp
+Mighty Magick - Restoration.esp
+  IF CHECKSUM("Mighty Magick - Restoration.esp", 6AB2E35C) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Mighty Magick - Restoration Extras.esp
+  IF CHECKSUM("Mighty Magick - Restoration Extras.esp", 880BE3E0) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Mighty Magick - Scaling.esp
 REGEX: MMO(Alteration|Conjuration|Destruction|Illusion|Restoration)Changes\.esp
+ForgottenMastery.esp
+  // must load after Mighty Magic
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("ForgottenMastery.esp", 4D20CBA7) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MiniLovers.esp
 MiniLoversSoundSpell.esp
 MiniLoversAlternative.esp
@@ -12215,6 +12232,7 @@ IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStylesELVES.e
 IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles-FemaleOnly.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 bald hair.esp
+Beards.esp
 Beautiful Hair.esp
 Black Hair Is Black.esp
 IFNOT FILE("Dibella's Beauty - NPC Overhaul.esp") MOD: Cazy Hairs-by zzjay.esp
