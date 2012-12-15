@@ -311,6 +311,8 @@ more_Travelers.esm
 Omegared99-Compilation.esm
 phiNoFF.esm
 Populated Cities NPCListMaster.esm
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Populated Cities 2.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Populated Cities 2.esp
 Sexy Crafting Merchants.esm
 SkyMoMod.esm
   TAG: {{BASH: Delev, Relev}}
@@ -324,6 +326,7 @@ Tamrielic Lore.esm
   IF CHECKSUM("Tamrielic Lore.esm", 1EC8407A) DIRTY: 5 ITM. 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Vigilant of Stendarr Quests Master.esm
 WARZONES - Civil Unrest.esm
+  IF CHECKSUM("WARZONES - Civil Unrest.esm", 5641193A) DIRTY: 66 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Warzones French.esm
   IF CHECKSUM("Warzones French.esm", 628534CB) DIRTY: 65 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 AOM.esm
@@ -1793,6 +1796,7 @@ Bloody Cannibalism.esp
   IF CHECKSUM("Bloody Cannibalism.esp", A220A80B) DIRTY: 1 ITM, 20 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Bob The Merchant.esp
   IF CHECKSUM("Bob The Merchant.esp", 05F9D7C3) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+BoethiaVolunteer.esp
 Bolts For Weapon Vendors.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 bondolf a rich merchant.esp
@@ -2226,6 +2230,12 @@ hellayracedesc.esp
 here there be monsters.esp
 hq_skyrimmap.esp
 HjerimChests.esp
+High Level Enemies.esp
+  IF CHECKSUM("High Level Enemies.esp", 1C8C37F3) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("High Level Enemies.esp", 1C8C37F3) || IF CHECKSUM("High Level Enemies.esp", 347522FE) && IF VAR(Dawnguard) SAY: Dawnguard detected.  Use the Dawnguard version to add Dawnguard NPCs.
+ // Dawnguard version
+  IF CHECKSUM("High Level Enemies.esp", EE48239D) && IFNOT VAR(Dawnguard) ERROR: Dawnguard not detected.  Use the non-Dawnguard version or Skyrim will CTD on loading.
+High Level Enemies - Increased Max Resists.esp
 HigherLevelEnemies.esp
   TAG: {{BASH: Relev}}
 HighlandFarmMilk.esp
@@ -2271,13 +2281,17 @@ ImprovedFish.esp
 improvedskillbooks.esp
 improvedquestbooks.esp
 Immersive Battles.esp
+  IF CHECKSUM("Immersive Battles.esp", 6CECB1B1) DIRTY: 23 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Immersive Brigands.esp
+  IF CHECKSUM("Immersive Brigands.esp", 36958C0C) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Immersive Dawnguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("Immersive Dawnguard.esp", 3AF84D37) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Immersive Patrols.esp
-  IF CHECKSUM("Immersive Patrols.esp", 1158CFE5) DIRTY: 31 ITM, 8 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Immersive Patrols.esp", 54BCDA38) DIRTY: 31 ITM, 8 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Immersive Travelers.esp
 Immersive Werewolves.esp
+  IF CHECKSUM("Immersive Werewolves.esp", F572120F) DIRTY: 3 ITM, 8 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 improvedrecipes.esp
 ImprovedScImpUniforms - Vanilla only.esp
 improvedskillbooksclassic.esp
@@ -3270,7 +3284,8 @@ VanillaUsesCustom.esp
   IF VAR(EN) SAY: Obsolete.  Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 WarriorRest.esp
-WetandCold.esp
+war zone fix.esp
+IFNOT FILE("SKSE Hotkeys.esp") MOD: WetandCold.esp
 ENDGROUP: Load Order Independent Mods
 
 BEGINGROUP: Items
@@ -3790,6 +3805,9 @@ d2Helmets.esp
 dadagjlx.esp
 dadagtera1.esp
 Daeas.esp
+Daedric Extra Armor.esp
+  IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Daedric Extra Armor.esp", 8DDD039) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
+    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Daedric Extra Armor.esp", 8DDD039) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и может содержать неверные записи. Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версиючитайте описание на странице загрузки мода или локализованную исправленную версию, то вам не о чем беспокоиться.
 daedric longsword standalone crafting.esp
 Daedric Lord Armor.esp
 Daedric Mage Armor.esp
@@ -3804,11 +3822,20 @@ DaedricCrossbow.esp
   IF CHECKSUM("DaedricCrossbow.esp", 7A4AF5A4) DIRTY: 2 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DaedricMask.esp
 daedricmaskeng.esp
+Dagger of time.esp
 Dagger01.esp
+DaggerCraft.esp
+  IF FILE("SkyRe_Plugin_DaggerCraft_1.3.esp") TAG: {{BASH: Deactivate}}
+SkyRe_Plugin_DaggerCraft_1.3.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("DaggerCraft.esp") SAY: Remember not to load (or to simply delete) DaggerCraft.esp
+    IF VAR(RU) && IF ACTIVE("DaggerCraft.esp") SAY: Не забудьте отключить или удалить DaggerCraft.esp
 Damascus_Swords.esp
 DandelionArmor.esp
 dantes rebellion.esp
 DAO Morrigan's Robes.esp
+Dark Crusader Reforged - Klingen-Set.esp
 DarkAssassinArmor.esp
 DarkElvesArmory.esp
 Darklilith.esp
@@ -3824,6 +3851,7 @@ darkseraticheavyarmor.esp
 LFDarksidersWarArmor.esp
 darksiders_pack.esp
 darksiders_scythe.esp
+DarkStringArmor.esp
 Darkwindv1.esp
 Dark Souls Rings.esp
   IF CHECKSUM("Dark Souls Rings.esp", 4DFA74C8) DIRTY: 3 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -3850,24 +3878,14 @@ dbbownogloss.esp
 dbbowtest.esp
 dbdagger.esp
 DBJarrinRoot.esp
-DDD-BardsLute.esp
-  IF CHECKSUM("DDD-BardsLute.esp", 583FC67E) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-DSmystictails.esp
 dbsword.esp
 DBZOutfit.esp
 DBZVegetaOutfit.esp
+DDD-BardsLute.esp
+  IF CHECKSUM("DDD-BardsLute.esp", 583FC67E) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+DSmystictails.esp
 REGEX: FluffkinsDaedricCorset.*\.esp
   IFNOT FILE("DaedricCorset.esp") REQ: "http://skyrim.nexusmods.com/mods/4081 DaedricCorset".esp
-DaggerCraft.esp
-  IF FILE("SkyRe_Plugin_DaggerCraft_1.3.esp") TAG: {{BASH: Deactivate}}
-SkyRe_Plugin_DaggerCraft_1.3.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("DaggerCraft.esp") SAY: Remember not to load (or to simply delete) DaggerCraft.esp
-    IF VAR(RU) && IF ACTIVE("DaggerCraft.esp") SAY: Не забудьте отключить или удалить DaggerCraft.esp
-Dagger of time.esp
-Dark Crusader Reforged - Klingen-Set.esp
-DarkStringArmor.esp
 DCR_Blade_Set.esp
 DCR_Shadow_Buckler.esp
 DCSorceress.esp
@@ -3875,9 +3893,7 @@ DEATH-DEALER.esp
   IF CHECKSUM("DEATH-DEALER.esp", C4EA57D6) DIRTY: 5 ITM, 5 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DEATH-DEALER-PKR.esp
   IF CHECKSUM("DEATH-DEALER-PKR.esp", 88046B62) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Daedric Extra Armor.esp
-  IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Daedric Extra Armor.esp", 8DDD039) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
-    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Daedric Extra Armor.esp", 8DDD039) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и может содержать неверные записи. Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версиючитайте описание на странице загрузки мода или локализованную исправленную версию, то вам не о чем беспокоиться.
+death's guise.esp
 DeathSting.esp
 Dead Knight Armor.esp
 Decapitation-spell-and-raise-skull-minions.esp
@@ -3911,6 +3927,7 @@ DI Armor.esp
 DIMclothes1.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 Dishonored Lord Protector Set.esp
+DK_Armor_By_Hothtrooper44.esp
 DLE_en.esp
   IF CHECKSUM("DLE_en.esp", 3F26B1FA) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("DLE_en.esp", 3F26B1FA) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -3976,6 +3993,7 @@ DragonIron.esp
 DragonIronReplacer.esp
   IF VAR(EN) && IF CHECKSUM("DragonIronReplacer.esp", 7FDC3BE8) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) && IF CHECKSUM("DragonIronReplacer.esp", 7FDC3BE8) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+dragonlord-greatsword.esp
 DragonplateHelmFix.esp
   IF VAR(EN) WARN: File is corrupt and should not be used.
     IF VAR(RU) WARN: Файл испорчен и не должен использоваться.
@@ -4554,6 +4572,7 @@ kefarmor.esp
 ket_fang.esp
 ket_goldbrand.esp
 ket_umbra.esp
+khajiitearrings.esp
 khajit-ears.esp
 KhantuArmor.esp
 killerkeo's skimpy pack wip.esp
@@ -4686,13 +4705,12 @@ lilithssickle_2_0.esp
   IF VAR(EN) SAY: Obsolete.  Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 lilithssickle_2_1.esp
-  IF CHECKSUM("lilithssickle_2_1.esp", 78270F6E) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-
-_TES5Edit Cleaning guide")
+  IF CHECKSUM("lilithssickle_2_1.esp", 78270F6E) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 lilithsslasher2h.esp
+lilithsslayer.esp
+  IF CHECKSUM("lilithsslayer.esp", FC6760F5) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Lineage 2 Acceossory.esp
-//  IF VAR(EN) SAY: This mod may contain unauthorized or illegal content.
 Lineage 2 Weapons.esp
-//  IF VAR(EN) SAY: This mod may contain unauthorized or illegal content.
 lingling_gg.esp
 LinguistPack.esp
 Lion Heart Halberd.esp
@@ -5053,8 +5071,8 @@ PocketProtectorsStarter.esp
     IF VAR(RU) && IF FILE("PocketProtectorsStarter.esp") WARN: Используйте любой или PocketProtectorsStarter.esp или PocketProtectors.esp, не обе.
 Pony_Armor.esp
 PonySword.esp
-RIP88_Pool_Furniture_Sample.esp
-  IF CHECKSUM("RIP88_Pool_Furniture_Sample.esp", 70EE4672) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+PotemasWolfblade.esp
+  IF CHECKSUM("PotemasWolfblade.esp", 2559F5C8) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 PotionTransmutation.esp
 PowerOfTheGods.esp
 Powder Bow.esp
@@ -5160,17 +5178,21 @@ RingOFNighteye.esp
 RingsOfPotions.esp
 RingsOfPower.esp
 RingOfTalos.esp
-  IF VAR(EN) WARN: This file was released before the CK (07 Feb. 2012) and is not recommended for use and should be removed.
+  IF VAR(EN) WARN: This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.
     IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
 RingOfTheColdharbour.esp
 RingOfTheNecromancer.esp
 Rings of Sanguinare Vampiris.esp
 RingsOfTamriel.esp
+RIP88_Pool_Furniture_Sample.esp
+  IF CHECKSUM("RIP88_Pool_Furniture_Sample.esp", 70EE4672) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Ripper Sword.esp
 Ritual Armor of Boethiah.esp
 roadsidethief_simple_armor.esp
+RobedEbonyArmor.esp
 RobedSteelPlateArmor.esp
   TAG: {{BASH: Delev}}
+  IF FILE("RobedEbonyArmor.esp") INC: RobedEbonyArmor.esp
 RogueArmor.esp
 RogueOutfit.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
@@ -5260,6 +5282,7 @@ Set.esp
 SexyJersey.esp
 SexyKunoichi2ndByNausicaa.esp
 SF Poison.esp
+Shadow Ranger Gear by Natterforme.esp
 Shard of Azzinoth.esp
 ShieldsofSkyrim.esp
 ShieldsofSkyrimLists.esp
@@ -5515,6 +5538,8 @@ tinyangrytrolls.esp
   IF CHECKSUM("tinyangrytrolls.esp", 5393F1E8) DIRTY:9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 tkwleemodtestcloth.esp
 TK-world.esp
+TMasks-JudgmentDay.esp
+  REQ: Meshes and textures from "http://skyrim.nexusmods.com/mods/20077 Tribunal Maskes by Zairaam", esp usage optional.
 TMRLollipop.esp
 tobuscusweapons.esp
 tom349fistweapons.esp
@@ -7023,6 +7048,7 @@ Imperial and Sons forts.esp
 improved thieves guild.esp
 InfiniteShouts.esp
   IF CHECKSUM("InfiniteShouts.esp", 3DB13ED0) DIRTY: 3 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Isharas_PreventVampAttacksTillDGStart.esp
 ivarstead-expanded.esp
 IvarsteadDepository.esp
 ENDGROUP: Quests I
@@ -8472,6 +8498,7 @@ ENDGROUP: Overrides E
 BEGINGROUP: Overrides F
 
 FA Guard Helmet.esp
+faceonlydragonmask.esp
 Faendal-by-Axeface.esp
   IFNOT FILE("XCE.esp") REQ: "http://skyrim.nexusmods.com/mods/2356 XCE - Xenius Character Enhancement"
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
@@ -8578,6 +8605,9 @@ GuardDialogue50.esp
 Guard Dialogue Overhaul.esp
 Guard Dialogue Overhaul Lite.esp
 GuardianStonesOverhaul-Candrian.esp
+Guards armor replacement.esp
+  TAG: {{BASH: Delev}}
+  SAY: Incompatible with helmet replacer / changer mods.
 guardskillcomments.esp
 GuardsNoShoutStop.esp
 GZD - Ancient Falmer Crown.esp
@@ -9152,6 +9182,15 @@ IFNOT FILE("SkyRe_Main.esp") MOD: OpenFaceHelmets.esp
 openfacehelmetsreplacer.esp
 OpenFaceHelmetsDwarven.esp
 oreglow.esp
+REGEX: Organized Books v(0.1|1.0)?\.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+Organized Books v1.1 - DLC Compatibility.esp
+  IF CHECKSUM("Organized Books v1.1 - DLC Compatibility.esp", AEDA7E22) DIRTY: 21 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Organized Books v1.1 - JNL.esp
+  IF CHECKSUM("Organized Books v1.1 - JNL.esp", D22AC6A3) DIRTY: 21 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Organized Books v1.1.esp
+  IF CHECKSUM("Organized Books v1.1.esp", EBA297CE) DIRTY: 19 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ORS_MorthalPain_AdeptPatch.esp
 ORS_MorthalPain_InsanePatch.esp
   IF FILE("ORS_MorthalPain_AdeptPatch.esp") INC: ORS_MorthalPain_AdeptPatch.esp
@@ -9225,6 +9264,9 @@ Realistic Animal Behaviour.esp
 Realistic werewolf speed.esp
 realisticskoomamodv1.esp
 ReallyGiantGiantsandMammoths.esp
+REGEX: RealNightEye(Red|Green|Colorless|Blue|Yellow)?\.esp
+  IF VAR(EN) SAY: Use only one RealNightEye*.esp
+    IF VAR(RU) SAY: Используйте только один RealNightEye*.esp
 RebalanceMain.esp
 lessarrows.esp
 Recover Less Arrows.esp
@@ -9710,27 +9752,27 @@ ENDGROUP: Overrides
 
 BEGINGROUP: Towns and Villages
 
-// tac #
-// tac a
+// tav #
+// tav a
 aaaadaedric1.esp
   IF CHECKSUM("aaaadaedric1.esp", E01641C4) DIRTY: 9 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-// tac b
+// tav b
 bathhouse.esp
 Better Villages.esp
 Blacksmith Chests.esp
-// tac c
+// tav c
 CK's Improved Windhelm.esp
   IF VAR(EN) WARN: This plugin is reported to cause frequent crashes. Use with caution.
     IF VAR(RU) WARN: Сообщалось, что этот плагин вызывал частые вылеты. Используйте с осторожностью.
 CM Merchants.esp
 csmod.esp
   IF CHECKSUM("csmod.esp", 5E095749) DIRTY: 19 ITM, 0 UDR. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-// tac d
+// tav d
 Dawnstar_TheCoinsTide.esp
 Drinking Fountains of Skyrim.esp
   IF CHECKSUM("Drinking Fountains of Skyrim.esp", 5A348F0C) WARN: Obsolete. Update to latest version.
   IF CHECKSUM("Drinking Fountains of Skyrim.esp", 1A86291B) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-// tac e
+// tav e
 EroticStatues2 - Solitude.esp
 REGEX: Expanded Towns (- Riverwood?|- Rorikstead?|- Ivarstead?|- Darkwater?|- Dragon Bridge?|and Settlements?|and Villages?)\.esp
   IF VAR(EN) SAY: Obsolete - update to current version renamed to "http://skyrim.nexusmods.com/mods/13608 Expanded Towns and Cities"
@@ -9766,30 +9808,30 @@ Expanded Villages2.0.esp
   IF CHECKSUM("Expanded Villages2.0.esp", 8AFA9E8E) ||IF CHECKSUM("Expanded Villages2.0.esp", ECD276C7) WARN: This file contains 3 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 ExpandedWinterholdRuins.esp
 ExpandedWinterholdRuinsExterior.esp
-// tac f
+// tav f
 FarvynsDivineOctavo.esp
   IF FILE("Open Cities Skyrim.esp") INC: Open Cities Skyrim.esp
   IF CHECKSUM("FarvynsDivineOctavo.esp", E8A983E6) DIRTY: 18 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-// tac g
+// tav g
 Green and White Windhelm.esp
-// tac h
+// tav h
 HoldStables.esp
-// tac i
-// tac j
-// tac k
-// tac l
+// tav i
+// tav j
+// tav k
+// tav l
 Log Cabin Riften.esp
   IF CHECKSUM("Log Cabin Riften.esp", CB696C6C) SAY: Obsolete. Update to the latest version.
 Long Lost Chopping Blocks.esp
 Long lost smelters by Hyralux.esp
 LushSolitude.esp
-// tac m
+// tav m
 MerchantsGuild.esp
   IF CHECKSUM("MerchantsGuild.esp", CBAA3162) DIRTY: 11 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MoreOrganicCities.esp
 IFNOT FILE("3DNPC.esp") MOD: NerniesSolitudeExpansion.esp
   IF CHECKSUM("NerniesSolitudeExpansion.esp", 304709FF) DIRTY: 52 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-// tac n
+// tav n
 NerniesSolitudeandVillageExpansion.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, NerniesCityandVillageExpansion.esp.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, NerniesCityandVillageExpansion.esp.
@@ -9803,18 +9845,18 @@ NerniesRangerPack.esp
 NerniesThiefPack.esp
   IF CHECKSUM("NerniesThiefPack.esp", E2322238) DIRTY: 17 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 NerniesThiefPackGDAddOn.esp
-// tac o
+// tav o
 ORS_SolitudeGate.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-// tac p
+// tav p
 Pinewood Village.esp
   IF CHECKSUM("Pinewood Village.esp", 4A26EA6A) DIRTY: 33 ITM, 25 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("pinewoodvillage.esm") INC: pinewoodvillage.esm
 PrimbyTown.esp
 Princess Riverwood Cottage.esp
-// tac q
-// tac r
+// tav q
+// tav r
 Riverwood Enhanced.esp
   IF CHECKSUM("Riverwood Enhanced.esp", 63725578) DIRTY: 28 ITM, 31 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Riverwood Enhanced.esp", 63725578) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair.  This mod may cause problems with your game.
@@ -9831,7 +9873,7 @@ Riverwood Enhanced - NO NPC.esp
 riverwood gates.esp
 Riverwood R9D.esp
 RiverwoodEnhancedPlugin.esp
-// tac s
+// tav s
 Smelter_Riften.esp
 Smelter_Solitude.esp
 Solitude A City Of Trade.esp
@@ -9842,7 +9884,7 @@ Solitude A City Of Trade LITE!.esp
 SolitudeBetterDocks-SDD-CompatiblePatch.esp
   IFNOT FILE("Solitude A City Of Trade.esm") || IFNOT FILE("Solitude A City Of Trade.esp") || IFNOT FILE("Solitude A City Of Trade LITE!.esp") REQ: Solitude A City Of Trade
   IFNOT FILE("SolitudeBetterDocks.esp") REQ: SolitudeBetterDocks.esp
-// tac t
+// tav t
 TAVERiften.esp
 TAVESolitude.esp
 tavewhiterunsn.esp
@@ -9858,7 +9900,7 @@ tos_oakwood.esp
 tos_oakwood_hf.esp
   IF CHECKSUM("tos_oakwood_hf.esp", 33196BE1) DIRTY: 3 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 TownsAndCitiesEnhanced.esp
-// tac u
+// tav u
 ultime skyrim - riverwood.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, ultimate skyrim - riverwood.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, ultimate skyrim - riverwood.esp
@@ -9871,14 +9913,14 @@ UniqueTavernsFalkwreath.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, UniqueTaverns.esp
   IF FILE("UniqueTaverns.esp") ERROR: Included in UniqueTaverns.esp
 RRRL-UT-Patch.esp
-// tac v
-// tac w
+// tav v
+// tav w
 WhiterunInEnhanced.esp
 WinterholdRuinsAddon_V1.esp
   IFNOT FILE("WinterholdDestruction.esm") || IFNOT ACTIVE("WinterholdDestruction.esm") ERROR: WinterholdDestruction.esm is not present or is not active. Skyrim will CTD when loading if using this file.
   IF CHECKSUM("WinterholdRuinsAddon_V1.esp", 1AF5E998) || IF CHECKSUM("WinterholdRuinsAddon_V1.esp", D2F29417) WARN: This file contains 4 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
   IF CHECKSUM("WinterholdRuinsAddon_V1.esp", 1AF5E998) DIRTY: 41 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-// tac xyz
+// tav xyz
 ENDGROUP: Towns and Villages
 
 BEGINGROUP: Landscaping
@@ -9955,7 +9997,11 @@ markarth extra.esp
 morewr.esp
   IF CHECKSUM("morewr.esp", 6EFAE8A5) DIRTY: 17 ITM, 16 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("morewr.esp", 6EFAE8A5) WARN: This file contains 12 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
-REGEX: Populated Cities.*\.esp
+REGEX: Populated Cities v.+\.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Populated Cities 2.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Populated Cities 2.esp
+Populated Cities 2.esp
+  IF CHECKSUM("Populated Cities 2.esp", 5FC72375) DIRTY: 59 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 raggedshortcut_oc.esp
 BetterCitiesWhiterun.esp
 Open Cities Skyrim.esp
@@ -10576,8 +10622,9 @@ MystraTransmuteOreNoCooldown.esp
   IF CHECKSUM("MystraTransmuteOreNoCooldown.esp", EA66F549) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 // spells n
 Nature of the beast.esp
-  IF CHECKSUM("Nature of the beast.esp", 41B7A05B) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon"
+  IF CHECKSUM("Nature of the beast.esp", 7EDCD683) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("Nature of the beast.esp", 7EDCD683) && IFNOT CHECKSUM("Nature of the beast.esp", E20D43CA) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IFNOT CHECKSUM("Nature of the beast.esp", 7EDCD683) && IFNOT CHECKSUM("Nature of the beast.esp", E20D43CA) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Necromimesis.esp
 nighteye.esp
 nighteyecastable.esp
@@ -10829,6 +10876,7 @@ DragonFire - Voice of the Dragon.esp
   IF FILE("DragonFire.esp") INC: DragonFire.esp
 DragonRealShout.esp
 DragonShoutsRTEnhancer.esp
+draugrdontshout.esp
 DraugrShoutFix.esp
 // shouts e
 EnhancedShouts.esp
@@ -10867,6 +10915,7 @@ MorePowerfulShoutsVanillaCooldown.esp
   IF FILE("MorePowerfulShouts_DragonTimes.esp") INC: MorePowerfulShouts_DragonTimes.esp
 // shouts n
 No Shout Time.esp
+nonbossdraugrdontshout.esp
 // shouts o
 // shouts p
 PeryitesBlessing.esp
@@ -11227,7 +11276,10 @@ BEGINGROUP: Combat
 // Combat Group
 
 Duel - Combat Realism.esp
+  IF CHECKSUM("Duel - Combat Realism.esp", 948C8561) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
+  IFNOT CHECKSUM("Duel - Combat Realism.esp", 948C8561) && IFNOT CHECKSUM("Duel - Combat Realism.esp", 1D4ABEF5) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IFNOT CHECKSUM("Duel - Combat Realism.esp", 948C8561) && IFNOT CHECKSUM("Duel - Combat Realism.esp", 1D4ABEF5) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   // Duel combat realism must load BEFORE Ace Reaistic fighting
 ACE Realistic Fighting.esp
 REGEX: CustomDifficultyP.*\.esp
@@ -12214,6 +12266,7 @@ Dawnguard Eyes.esp
 DorkDiva Elf Eye Additions.esp
 DorkDiva Eyes For Dark Characters pack one.esp
 Extended eye colours.esp
+FantasyEyes.esp
 FlansEyesForSkrim.esp
 GlowEyesArgonianKhajiitVamp.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
@@ -13693,6 +13746,7 @@ Henrys All Animals and Creatures BeFriend German.esp
   IF FILE("Henrys All Animals BeFriend.esp") || IF FILE("Henrys All Animals BeFriend German.esp") || IF FILE("Henrys All Animals  and Creatures BeFriend.esp") INC: Henrys All * BeFriend mods
 khajiit_replacer.esp
 KhajiitSenseOfSmell.esp
+LevelledUnarmedBoost.esp
 LiFE.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body" or "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
   IF FILE("LiFE.esm") INC: LiFE.esm
@@ -13763,6 +13817,7 @@ BEGINGROUP: Message suppression/changing overrides
 // Best loaded late to override possible message additions from other mods.
 
 attkremover.esp
+changed syntaxes.esp
 Chesko_LevelUp.esp
   IF VERSION("SKSE", "0.1.6.1", <) REQ: "http://skse.silverlock.org SKSE" 1.6.1+.
   IF VERSION("TES5", "1.7.7.0", <) REQ: Skyrim 1.7.7+
@@ -14141,6 +14196,7 @@ PC Exclusive Animation Path - Elder Race.esp
 PLAYER WO.esp
 SKSE Hotkeys.esp
   IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
+IF FILE("SKSE Hotkeys.esp") MOD: WetandCold.esp
 Skyrim Performance MOD.esp
 Skyrim Performance MOD 5min.esp
   IF VAR(EN) && IF FILE("Skyrim Performance MOD.esp") WARN: Use only one Skyrim performance Mod.esp
