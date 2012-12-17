@@ -389,6 +389,8 @@ Grytewake.esm
 hideout.esm
 Kyia.esm
 Lanterns Of Skyrim - All In One - Main.esm
+  IF VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC) SAY: Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") && IFNOT CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 042A3DE0) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC) or use the non-Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm
 REGEX: Lanterns Of Skyrim - All In One( 2x brighter)?\.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -2453,8 +2455,8 @@ ENDGROUP: Base K
 BEGINGROUP: Base L
 
 REGEX: Lanterns Of Skyrim - All In One - (Climates of Tamriel - )?(2x Brighter|Default)?(RCRN )?(Magic Light|lvl-\d|Hyper Purist|Classic|Legacy|Pure)?\.esp
-  IF VAR(EN) WARN: Use only one Lanterns Of Skyrim - All In One esp.
-    IF VAR(RU) WARN: Используйте только один Lanterns Of Skyrim - All In One esp.
+  IF VAR(EN) SAY: Use only one Lanterns Of Skyrim - All In One esp.
+    IF VAR(RU) SAY: Используйте только один Lanterns Of Skyrim - All In One esp.
 Lanterns Of Skyrim - All In One.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -6769,6 +6771,14 @@ CuilalieOptionalDisplayCases.esp
 CryptOfTheTongues.esp
 crystalis.esp
 CrystalRock.esp
+CZHCAD.esp
+  IFNOT CHECKSUM("CZHCAD.esp", B3418C2A) && IFNOT CHECKSUM("CZHCAD.esp", 11557113) SAY: This may be obsolete. As of 17-DEC-12, the latest version is 8.5.
+  // Dirty and clean checksums above
+  IF CHECKSUM("CZHCAD.esp", B3418C2A) DIRTY: 4 ITM, 51 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+CZHCAD_DG.esp
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+CZHCAD_HF.esp
+  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
 ENDGROUP: Quests C
 
 BEGINGROUP: Quests D
@@ -10102,6 +10112,10 @@ Riverwood Enhanced - NO NPC.esp
 riverwood gates.esp
 Riverwood R9D.esp
 RiverwoodEnhancedPlugin.esp
+  IF FILE("Lanterns Of Skyrim - All In One - Main.esm") SAY: Use the "http://skyrim.nexusmods.com/mods/ Lanterns of Skyrim and Towns and Villages Enhanced patch" instead to have Lanterns of Skyrim work properly with Towns and Villages Enhanced - Riverwood.
+  IF FILE("LoS and RE patch.esp") ERROR: Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not an add-on.  
+LoS and RE patch.esp
+  // Replacer for RiverwoodEnhancedPlugin.esp
 // tav s
 Smelter_Riften.esp
 Smelter_Solitude.esp
@@ -10129,6 +10143,11 @@ tos_oakwood.esp
 tos_oakwood_hf.esp
   IF CHECKSUM("tos_oakwood_hf.esp", 33196BE1) DIRTY: 3 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 TownsAndCitiesEnhanced.esp
+  IF FILE("Lanterns Of Skyrim - All In One - Main.esm") SAY: Use the "http://skyrim.nexusmods.com/mods/27395 Lanterns of Skyrim and Towns and Villages Enhanced patch" instead to have Lanterns of Skyrim work properly with Towns And Cities Enhanced.
+  IF FILE("L0S and TaVE patch.esp") ERROR: Remove. L0S and TaVE patch.esp is designed as a replacement for TownsAndCitiesEnhanced.esp, not an add-on.  
+L0S and TaVE patch.esp
+  // Replacer for TownsAndCitiesEnhanced.esp
+  IF CHECKSUM("L0S and TaVE patch.esp", 76CF8279) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 // tav u
 ultime skyrim - riverwood.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, ultimate skyrim - riverwood.esp
