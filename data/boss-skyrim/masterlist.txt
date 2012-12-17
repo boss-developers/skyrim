@@ -4035,6 +4035,8 @@ DragonboneCrossbow.esp
 DragonBoneEbonsteel.esp
 Dragon Bone Mage Armor.esp
 dragon priest masks fix.esp
+dragonblood mod.esp
+  IF CHECKSUM("dragonblood mod.esp", 83115133) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 dragonbonescythe.esp
 Dragonbone Weapons.esp
 Dragonbone Weapons - Faster Arrows.esp
@@ -4575,7 +4577,10 @@ Jack of All Trades.esp
 jack of blades armor.esp
 JackshAyaneNArmor.esp
 JackshBabyDoll.esp
+JackshBSJinArmor.esp
 JackshCelineArmor.esp
+JackshClaireArmor.esp
+JackshKasumiArmor.esp
 JackshKasumiNinjaArmor.esp
 jammersslavegear.esp
 Janka_Captain.esp
@@ -4853,7 +4858,8 @@ MashupUNP.esp
 Masked Mage's Armour.esp
 master alchemy book.esp
 REGEX: matys knights of the nine armor (\d\.\d)\.esp
-Matys Mithril armor Enhanced.esp
+IF CHECKSUM("Matys Mithril armor Enhanced.esp", AE930F8B) MOD: Matys Mithril armor Enhanced.esp
+  // Original mod
 kotn mage.esp
 matys medieval knights.esp
 MaceofAevar.esp
@@ -4910,6 +4916,23 @@ MoonAndStarRing.esp
 morenamedbows.esp
 morrowind_ring_of_khajiit.esp
 MorrowindArmor.esp
+  IF CHECKSUM("MorrowindArmor.esp", 7DDD7CAC) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF CHECKSUM("MorrowindArmor.esp", 7DDD7CAC) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+MorrowindGlass.esp
+  IF FILE("MorrowindArmor.esp") && IF VAR(EN) WARN: Use either MorrowindArmor.esp or MorrowindGlass.esp, not both.
+    IF FILE("MorrowindArmor.esp") && IF VAR(RU) WARN: Используйте любой или MorrowindArmor.esp или MorrowindGlass.esp, не обa.
+  IF CHECKSUM("MorrowindGlass.esp", 9099DB14) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF CHECKSUM("MorrowindGlass.esp", 9099DB14) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+MorrowindSmithing.esp
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+MorrowindSmithingVanilla.esp
+  IF VAR(Dawnguard) INC: Use Dawnguard version, MorrowindSmithing.esp
+  IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+IF CHECKSUM("Matys Mithril armor Enhanced.esp", A71FA4F0) MOD: Matys Mithril armor Enhanced.esp
+  // Replacer version for MorrowindArmor mod
+  IF CHECKSUM("Matys Mithril armor Enhanced.esp", A71FA4F0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+    IF CHECKSUM("Matys Mithril armor Enhanced.esp", A71FA4F0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 morrowindarmorhd.esp
 REGEX: morrowin[ds] weapons.+\.esp
 morrowindweapons bloodmoon.esp
@@ -14600,6 +14623,9 @@ Compatibility patch - PHT, IA, CoS & WIC.esp
   IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 GDFoodCompatability.esp
 OCS + Hearthfire Patch.esp
+SkyRealism - Mass and Materials - MorrowindArmor.esp
+  IFNOT FILE("MorrowindArmor.esp") || IFNOT ACTIVE ("MorrowindArmor.esp") ERROR: MorrowindArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 SPTConsistentOlderPeopleEEOPatch.esp
   IFNOT FILE("ethereal_elven_overhaul.esp") || IFNOT ACTIVE ("ethereal_elven_overhaul.esp") ERROR: ethereal_elven_overhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IFNOT FILE("SPTConsistentOlderPeople.esp") || IFNOT ACTIVE ("SPTConsistentOlderPeople.esp") ERROR: SPTConsistentOlderPeople.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
