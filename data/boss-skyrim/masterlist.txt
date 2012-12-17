@@ -7854,6 +7854,11 @@ treasurehunt.esp
 Trees for Solitude V1.1.esp
 Trees for Solitude.esp
 treehouse.esp
+TruePeopleOfSkyrim.esp
+  IF CHECKSUM("TruePeopleOfSkyrim.esp", 487C296B) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IF CHECKSUM("TruePeopleOfSkyrim.esp", 487C296B) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+  IF CHECKSUM("TruePeopleOfSkyrim.esp", EDFB3782) DIRTY: 39 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("TruePeopleOfSkyrim.esp", EDFB3782) || IF CHECKSUM("TruePeopleOfSkyrim.esp", F915D806) WARN: This file contains 18 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 tukkordoshouse.esp
 Tundra Defense.esp
 (TWE) Riften Brothel..esp
@@ -10116,6 +10121,7 @@ RiverwoodEnhancedPlugin.esp
   IF FILE("LoS and RE patch.esp") ERROR: Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not an add-on.  
 LoS and RE patch.esp
   // Replacer for RiverwoodEnhancedPlugin.esp
+  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
 // tav s
 Smelter_Riften.esp
 Smelter_Solitude.esp
@@ -10147,6 +10153,7 @@ TownsAndCitiesEnhanced.esp
   IF FILE("L0S and TaVE patch.esp") ERROR: Remove. L0S and TaVE patch.esp is designed as a replacement for TownsAndCitiesEnhanced.esp, not an add-on.  
 L0S and TaVE patch.esp
   // Replacer for TownsAndCitiesEnhanced.esp
+  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
   IF CHECKSUM("L0S and TaVE patch.esp", 76CF8279) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 // tav u
 ultime skyrim - riverwood.esp
@@ -10206,6 +10213,10 @@ icefloes.esp
 REGEX: Immersive Gras.*\.esp
   IF VAR(EN) SAY: Use only one Immersive Grass esp.
     IF VAR(RU) SAY: Используйте только один Immersive Grass esp.
+LakeExpanded01.esp
+  IF CHECKSUM("LakeExpanded01.esp", 43AEF0BF) || IF CHECKSUM("LakeExpanded01.esp", 843EB3FC) && IF VAR(Hearthfire) INC: Hearthfires (Official Bethesda DLC).  Use Hearthfires version.
+  IF CHECKSUM("LakeExpanded01.esp", 43AEF0BF) DIRTY: 39 ITM, 39 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("LakeExpanded01.esp", 5F7097BF) DIRTY: 38 ITM, 55 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MoreForestsNV.esp
   IF CHECKSUM("MoreForestsNV.esp", 564D264F) DIRTY: 313 ITM, 175 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Oblivion Gates.esp
@@ -11221,9 +11232,12 @@ ENDGROUP: Shouts
 
 BEGINGROUP: Spells Late
 
+// sp late #
 REGEX: (\dSec(ond)?)ShadowWarrior.esp
+// sp late a
 Ancestor Guardian.esp
 AspectIllusionOnly.esp
+// sp late b
 IF FILE("DeadlySpellImpacts.esp") MOD: balanceddestructionv4.esp
 Battlemage's Arcanes.esp
 BetterDualCasting.esp
@@ -11235,6 +11249,7 @@ binding_spell.esp
 BurnifiedEffects.esp
   IF VAR(EN) SAY: Obsolete. Upgrade to Burn Freeze Shock Effects
     IF VAR(RU) SAY: Устарело. Обновите до Burn Freeze Shock Effects
+// sp late c
 candlelightnobulb.esp
 /* Moved temporarly until I find a better place for it. */
 candlelightandmagelight10minute.esp
@@ -11251,6 +11266,7 @@ Clear Skies Fix - CoT version.esp
     IF FILE("Clear Skies Fix.esp") && IF VAR(RU) WARN: Используйте любой или Clear Skies Fix.esp или Clear Skies Fix - CoT version.esp, не обa.
 Combat Remastered - Magic.esp
 crache - tri night eye.esp
+// sp late d
 DeadlySpellImpacts.esp
 DeadlySpellImpacts - Two Fire.esp
 DIRemoveStartSpellsFlamesHealing.esp
@@ -11258,6 +11274,7 @@ Dismiss Summons.esp
 DL33-PermDragonRend.esp
 dovahkiinrelax.esp
 DualFlurrytoFlurry.esp
+// sp late e
 ELEMEarthPrison.esp
 ElemIceWall.esp
 EmpoweredMagic.esp
@@ -11265,17 +11282,25 @@ EmpoweredMagic_Dawnguard.esp
   IFNOT FILE("EmpoweredMagic.esp") REQ: EmpoweredMagic.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 Even Smaller Spell Light Radius.esp
+// sp late f
 FNISspells.esp
+// sp late g
 gkorrspellsv2.esp
+// sp late h
+// sp late i
 ignitetheworld.esp
 Improved Walls.esp
 InvestedMagic.esp
+// sp late j
+// sp late k
+// sp late l
 LFox No Nightingale Power Cooldown.esp
 LFox No Racial Power Cooldown.esp
 Longer Conjuration Spells.esp
 Lost Magic.esp
   TAG: {{BASH: Delev, Relev}}
 LZA Quieter Dremora Summons.esp
+// sp late m
 Magelight Multi Cast.esp
 Magelight Multi Cast lower version.esp
 MagelightLasts15Min.esp
@@ -11330,6 +11355,7 @@ MorePowerfulNecromancy.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, mpn.esp
 More Visible Soul Trap Effect.esp
 mpn.esp
+// sp late n
 necromancy tweak.esp
 NEO Optional Longer Potions.esp
 NEO Optional Longer Scroll.esp
@@ -11338,6 +11364,8 @@ Night Eye Overhaul.esp
 Nighteye(red).esp
 NoPlayerSpells.esp
 nospellstart.esp
+// sp late o
+// sp late p
 Paralysis in Illusion.esp
   IF CHECKSUM("Paralysis in Illusion.esp", 7A14834A) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 PartyTime.esp
@@ -11346,6 +11374,9 @@ Path of Shadows - Magic.esp
 Permanent Blessing.esp
 power_nighteye.esp
 PowerfulIllusion.esp
+// sp late q
+// sp late r
+// sp late s
 SeeYouSleepByMadmole.esp
 ShadowOfTheMagic.esp
   IF VAR(EN) SAY: Obsolete. Update to Summon Shadow Merchant
@@ -11369,6 +11400,8 @@ REGEX: Skyrim Improved Magic System( - No Race Spell Removal)?\.esp
     IF VAR(RU) && IF FILE("Skyrim Improved Magic System.esp") && IF FILE("Skyrim Improved Magic System - No Race Spell Removal.esp") WARN: Используйте только один Skyrim Improved Magic System esp
 Smaller Spell Light Radius.esp
 SFFSpells.esp
+Spell Brilliance.esp
+Spell Candlelight.esp
 SpellSneak.esp
 IFNOT FILE("Alternate Start - Live Another Life.esp") MOD: Starting Spell Choice.esp
 Startingspells begone.esp
@@ -11377,6 +11410,7 @@ summon cap.esp
 SummonShadowMerchant.esp
 SummonSuccubus.esp
 SustainedSpells.esp
+// sp late t
 TelekinesisImproved.esp
 TelekinesisImproved-LessDMG.esp
 Teleport.esp
@@ -11386,6 +11420,8 @@ TrueTransmutation.esp
 TS_VampireTweaks.esp
 tSSSSS.esp
 tSSSSS - No Restoration.esp
+// sp late u
+// sp late v
 Vampire Lord Serana Fixed.esp
 VampireShadows.esp
 Vampiric_Drain_Fix.esp
@@ -11397,6 +11433,8 @@ Voice_of_the_Sky.esp
 REGEX: WiS IV - AI & Spells for NPC( - No Knockdown)?\.esp
   IF VAR(EN) SAY: Use only one WiS IV - AI & Spells for NPC esp
     IF VAR(RU) SAY: Используйте только один WiS IV - AI & Spells for NPC esp
+// sp late w
+// sp late xyz
 Z_DualCasting_BeGood.esp
 zinvestedmagicsteam.esp
 ENDGROUP: Spells Late
@@ -13189,6 +13227,8 @@ Dryad Saria.esp
 // companions e
 EerieElves.esp
 EeveeFox.esp
+Enhanced Lydia.esp
+  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair". 
 EkkiiBreezeBasementAFMLydia.esp
 ElizaValentine.esp
 Ellette.esp
