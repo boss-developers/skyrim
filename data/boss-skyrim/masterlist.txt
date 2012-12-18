@@ -339,6 +339,7 @@ SPIKE.esm
 Tamrielic Lore.esm
   IF CHECKSUM("Tamrielic Lore.esm", 1EC8407A) DIRTY: 5 ITM. 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Vigilant of Stendarr Quests Master.esm
+  IF CHECKSUM("Vigilant of Stendarr Quests Master.esm", 0B0207CF) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 WARZONES - Civil Unrest.esm
   IF CHECKSUM("WARZONES - Civil Unrest.esm", 5641193A) DIRTY: 66 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Warzones French.esm
@@ -1496,8 +1497,11 @@ ENDGROUP: Lighting
 BEGINGROUP: Music
 // music
 
+AdditionalMusicBundleI.esp
+  IF CHECKSUM("AdditionalMusicBundleI.esp", 010E2879) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 AdditionalMusicPackI.esp
 AdditionalMusicPackII.esp
+AK- Elder Scrolls Music.esp
 Ambience Music Overhaul - Addon.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -1507,19 +1511,18 @@ Ambience Music Overhaul - Addon - with vanilla music -.esp
 Ambience Music Overhaul - Combat.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, AMO - Combat.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, AMO - Combat.esp
-AK- Elder Scrolls Music.esp
-AMO - Combat.esp
 Ambience Music Overhaul - Combat - with vanilla music.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, AMOvanilla - Combat.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, AMOvanilla - Combat.esp
-AMOvanilla - Combat.esp
 Ambience Music Overhaul - Interiors and Special.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, AMO - Special.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, AMO - Special.esp
-AMO - Special.esp
 Ambience Music Overhaul - Interiors and Special - with vanilla music.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, AMOvanilla - Special.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, AMOvanilla - Special.esp
+AMO - Combat.esp
+AMO - Special.esp
+AMOvanilla - Combat.esp
 AMOvanilla - Special.esp
 REGEX: Dawn_addon_part(\d)\.esp
 dragonborn with lute.esp
@@ -4253,6 +4256,8 @@ FF7 Masamune & Souba.esp
 FFweapons.esp
 Field Mage Craftable Armor.esp
 Field Mage Outfit.esp
+Fifty_Shades_OFGM_LA.esp
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Final TensaZangetsu.esp
 Fine Leather Armor.esp
 FinGleam.esp
@@ -6598,6 +6603,7 @@ bettertameriel.esp
 BetterThievesGuild.esp
 Better Thieves Guild.esp
 beyond_skyrim.esp
+BGsno-globes.esp
 REGEX: Bigger Cities and Villages.*\.esp
   IF VAR(EN) && IF FILE("Bigger Cities and Villages0.1.1.esp") SAY: Obsolete. Update to latest version.
     IF VAR(RU) && IF FILE("Bigger Cities and Villages0.1.1.esp") SAY: Устарело. Обновите до последней версии.
@@ -6619,6 +6625,7 @@ BlackwoodCompanyHall.esp
     IF CHECKSUM("BlackwoodCompanyHall.esp", BFBCB393) || IF CHECKSUM("BlackwoodCompanyHall.esp", 9E17E71E) || IF CHECKSUM("BlackwoodCompanyHall.esp", 0970AA3E) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Bluecreek Estate.esp
 BookwurmRetreat.esp
+Boozeus.esp
 Borderlands.esp
   IF CHECKSUM("Borderlands.esp", 44062B91) DIRTY: 16 ITM, 80 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Borderlands.esp", 44062B91) WARN: This file contains 34 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
@@ -6795,7 +6802,7 @@ CryptOfTheTongues.esp
 crystalis.esp
 CrystalRock.esp
 CZHCAD.esp
-  IFNOT CHECKSUM("CZHCAD.esp", B3418C2A) && IFNOT CHECKSUM("CZHCAD.esp", 11557113) SAY: This may be obsolete. As of 17-DEC-12, the latest version is 8.5.
+  IFNOT CHECKSUM("CZHCAD.esp", B3418C2A) && IFNOT CHECKSUM("CZHCAD.esp", 11557113) SAY: This may be obsolete. As of 17 DEC 2012, the latest version is 8.5.
   // Dirty and clean checksums above
   IF CHECKSUM("CZHCAD.esp", B3418C2A) DIRTY: 4 ITM, 51 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 CZHCAD_DG.esp
@@ -6970,6 +6977,11 @@ BEGINGROUP: Quests E
 Earthmist hollow.esp
   IF VAR(EN) SAY: The plugin is partially companion-friendly. However, they cannot pass through vine doors despite navmeshes.
     IF VAR(RU) SAY: Плагин является частично дружественным к компаньонам. Компаньоны не смогут проходить через двери.
+EBM.esp
+  IFNOT CHECKSUM("EBM.esp", 2CBBAEC7) && IFNOT CHECKSUM("EBM.esp", ADA00DD0) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IFNOT CHECKSUM("EBM.esp", 2CBBAEC7) && IFNOT CHECKSUM("EBM.esp", ADA00DD0) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+  IF CHECKSUM("EBM.esp", 2CBBAEC7) DIRTY: 24 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("EBM.esp", 2CBBAEC7) || IF CHECKSUM("EBM.esp", ADA00DD0) WARN: This file contains 3 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
 Elvenwood.esp
 EK_UnusualApplications.esp
 EkkiiBreeze.esp
@@ -7115,6 +7127,7 @@ HammerfellBanditsV1.5.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, HammerfellBanditsV2.0.esp
 HammerfellBanditsV2.0.esp
   IF CHECKSUM("HammerfellBanditsV2.0.esp", A9DDEAFA) DIRTY: 13 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+harvestableJarrinRoot.esp
 Haven.esp
 HavenBag.esp
 HeartOfThunder.esp
@@ -7123,8 +7136,8 @@ HeartOfThunder.esp
   IF CHECKSUM("HeartOfThunder.esp", CE970887) || IF CHECKSUM("HeartOfThunder.esp", 65EB962D) || IF CHECKSUM("HeartOfThunder.esp", 1A6E4211) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("HeartOfThunder.esp", CE970887) || IF CHECKSUM("HeartOfThunder.esp", 65EB962D) || IF CHECKSUM("HeartOfThunder.esp", 1A6E4211) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 REGEX: HeartOfThunder 1.+\.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, HeartOfThunder.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, HeartOfThunder.esp
 HoT Thunderwolf Form.esp
   // Heart of Thunder add-on
 heartwoodcottage1_v1.esp
@@ -7271,6 +7284,8 @@ lighthouse.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
 lighthousefull.esp
 LimbwoodManor.esp
+LittleShrines.esp
+  IF CHECKSUM("LittleShrines.esp", 16957C35) DIRTY: 0 ITM, 8 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 LLA_LovesLaborsAvenged.esp
 LMSkyrimBetterPlayerHomes.esp
 LocalizedGuildJobs.esp
@@ -7458,6 +7473,9 @@ proudspiresmithcraft.esp
 ProudspireSmithy1.2.esp
 ProudspireManorImprovements.esp
 Pueblo.esp
+puffs soul gems.esp
+  IF CHECKSUM("puffs soul gems.esp", F3331613) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+    IF CHECKSUM("puffs soul gems.esp", F3331613) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 PuppetMaster2.1.esp
   IF CHECKSUM("PuppetMaster2.1.esp", B09450A0) DIRTY: 4 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 PuppetMasterBoss.esp
@@ -7665,10 +7683,10 @@ SlightlyEnhancedBreezehome.esp
 skooma cabin.esp
 SKY.esp
 Sky Haven Temple Teleporter (Immersion included).esp
-SkyrimSewers.esp
 SkyHavenTempleEnhanced.esp
-/* SkyrimChimneys.esp and SkyrimChimneysRW.esp placed in this order until I find out if REGEX can be used. */
+Skymap.esp
 SkyrimChimneys.esp
+  // SkyrimChimneys.esp and SkyrimChimneysRW.esp placed in this order until I find out if REGEX can be used.
 SkyrimChimneysRW.esp
 skyrimdefenders.esp
   IF CHECKSUM("skyrimdefenders.esp", 93DBD7FE) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
@@ -7677,6 +7695,7 @@ skyrimdefenders.esp
 Skyrim Home.esp
 Skyrim School of Witchcraft and Wizardry.esp
   IF CHECKSUM("Skyrim School of Witchcraft and Wizardry.esp", E003E0AF) DIRTY: 599 ITM, 67 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+SkyrimSewers.esp
 Skyrim Toilets.esp
 skyrim villages.esp
 smelter in solitude.esp
@@ -7981,15 +8000,21 @@ Vengeance.esp
 VFU_Home.esp
   IF CHECKSUM("VFU_Home.esp", 9887F7C7) DIRTY: 48 ITM, 28 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Vigilant of Stendarr Quests.esp
+  IF CHECKSUM("Vigilant of Stendarr Quests.esp", A0318472) || IF CHECKSUM("Vigilant of Stendarr Quests.esp", 63846C4B) DIRTY: 17 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Dawnguard - Vigilant of Stendarr Quests Patch.esp
+  IFNOT VAR(Dawnguard) WARN: This patch is to be used only if the Hall of the Viligent has been "trashed" by the Dawnguard NPC's.
+  IF CHECKSUM("Dawnguard - Vigilant of Stendarr Quests Patch.esp", 9F4D4339) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Vigilant of Stendarr Quests No Joining Requirements Patch.esp
-VlindrelArmory v2_Nav.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Vigilant of Stendarr Quests.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Vigilant of Stendarr Quests.esp
 Vjarkell Castle.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+Vlindrel Hall - Dragonborn Edition.esp
+VlindrelArmory v2_Nav.esp
 VlindrelArmory.esp
 VlindrelArmory v2.esp
 VlindrelArmory v2a.esp
 VlindrelForge.esp
-Vlindrel Hall - Dragonborn Edition.esp
 VodahminMahhe.esp
   IF CHECKSUM("VodahminMahhe.esp", 167A4215) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 VoiceMasterHouse.esp
@@ -8354,6 +8379,10 @@ ArtifactOverhaul.esp
 ArtifactRebalance.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, LoreFriendlyArtifactRebalance.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, LoreFriendlyArtifactRebalance.esp
+Arvak Dark Power.esp
+Arvak Dark Power Voice power version.esp
+  IF FILE("Arvak Dark Power.esp") && IF VAR(EN) WARN: Use either Arvak Dark Power.esp or Arvak Dark Power Voice power version.esp, not both.
+    IF FILE("Arvak Dark Power.esp") && IF VAR(RU) WARN: Используйте любой или Arvak Dark Power.esp или Arvak Dark Power Voice power version.esp, не обa.
 Arvak, Shadowmere's Body - DB Saddle.esp
 Arvak, Shadowmere's Body - No Saddle.esp
   IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") WARN: Use only one Arvak esp.
@@ -8374,6 +8403,15 @@ Ash Pile Expiration.esp
 ATTTemplate.esp
 augmentedspells.esp
 AutoAim.esp
+AurielsArrows_BloodCursed.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Auriels_Arrows.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Auriels_Arrows.esp
+Auriels_Arrows.esp
+  // two versions same name
+  IFNOT CHECKSUM("Auriels_Arrows.esp", CDADE9F6) && IFNOT CHECKSUM("Auriels_Arrows.esp", 52C0FFEC) && IFNOT CHECKSUM("Auriels_Arrows.esp", 3F52150F) && IFNOT CHECKSUM("Auriels_Arrows.esp", 6E06216E) SAY: This esp may be obsolete. As of 17 DEC 2012, the latest version is 1.3.
+  IF CHECKSUM("Auriels_Arrows.esp", CDADE9F6) DIRTY: 5 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Auriels_Arrows.esp", 52C0FFEC) DIRTY: 5 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Auriel's Bow Reloaded.esp
 AutoCamDialogue.esp
 AutoCamSpellCast.esp
@@ -10403,6 +10441,27 @@ SkyRealism - Capacity and Carry Weight.esp
   IF VAR(EN) && IFNOT REGEX("LeatherBackpack(Brown|Black|DarkBrown)\.esp") REQ: "http://skyrim.nexusmods.com/mods/13732 Leather Backpack".  Install only the black, brown and original varients. Also be sure to choose "Regular" for all install options.
     IF VAR(RU) && IFNOT REGEX("LeatherBackpack(Brown|Black|DarkBrown)\.esp") REQ: "http://skyrim.nexusmods.com/mods/13732 Leather Backpack".  Устанавливайте только черную(black) или коричневую(brown) и оригинальную версию. Также убедитесь, что выбрали "Regular", для всех опций установки.
 SkyRealism - Encumbrance.esp
+SkyRealism - Mass and Materials - 1nivWICCloaks.esp
+  IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+SkyRealism - Mass and Materials - Cloaks.esp
+  IFNOT FILE("Cloaks.esp") || IFNOT ACTIVE ("Cloaks.esp") ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+SkyRealism - Mass and Materials - Dawnguard.esp
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+SkyRealism - Mass and Materials - Hearthfires.esp
+  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+SkyRealism - Mass and Materials - MorrowindArmor.esp
+  IFNOT FILE("MorrowindArmor.esp") || IFNOT ACTIVE ("MorrowindArmor.esp") ERROR: MorrowindArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+SkyRealism - Mass and Materials - PrvtI_HeavyArmory.esp
+  IFNOT FILE("PrvtI_HeavyArmory.esp") || IFNOT ACTIVE ("PrvtI_HeavyArmory.esp") ERROR: PrvtI_HeavyArmory.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+SkyRealism - Mass and Materials - WVExpansion.esp
+  IFNOT FILE("WVExpansion.esp") || IFNOT ACTIVE ("WVExpansion.esp") ERROR: WVExpansion.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 SkyRealism - Portable Crafting Kits.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 SkyrimSpeeds.esp
@@ -11737,6 +11796,8 @@ firstPersonKillmoveOnly.esp
 GluRuS_newkillmoves.esp
 Headshot.esp
 Horsemen.esp
+  IF CHECKSUM("Horsemen.esp", B652C4F9) DIRTY: 24 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Horsemen Combat Enhancement.esp
 killmove.esp
 Killmove +.esp
 Killmove + only player.esp
@@ -14623,9 +14684,6 @@ Compatibility patch - PHT, IA, CoS & WIC.esp
   IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 GDFoodCompatability.esp
 OCS + Hearthfire Patch.esp
-SkyRealism - Mass and Materials - MorrowindArmor.esp
-  IFNOT FILE("MorrowindArmor.esp") || IFNOT ACTIVE ("MorrowindArmor.esp") ERROR: MorrowindArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 SPTConsistentOlderPeopleEEOPatch.esp
   IFNOT FILE("ethereal_elven_overhaul.esp") || IFNOT ACTIVE ("ethereal_elven_overhaul.esp") ERROR: ethereal_elven_overhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IFNOT FILE("SPTConsistentOlderPeople.esp") || IFNOT ACTIVE ("SPTConsistentOlderPeople.esp") ERROR: SPTConsistentOlderPeople.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
