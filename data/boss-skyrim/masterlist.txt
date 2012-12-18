@@ -1594,9 +1594,11 @@ ChangeMaleModels.esp
 Elemental Base.esp
 jumpHeightOnly.esp
 jumpHeightThird.esp
-  IF FILE("jumpHeightOnly.esp") ERROR: Use only one jumpheight esp.
+  IF FILE("jumpHeightOnly.esp") && IF VAR(EN) ERROR: Use only one jumpheight esp.
+    IF FILE("jumpHeightOnly.esp") && IF VAR(RU) ERROR: Используйте только один jumpheight esp.
 lowerJumpHeight.esp
-  IF FILE("jumpHeightOnly.esp") || IF FILE("jumpHeightThird.esp") ERROR: Use only one jumpheight esp.
+  IF FILE("jumpHeightOnly.esp") || IF FILE("jumpHeightThird.esp") && IF VAR(EN) ERROR: Use only one jumpheight esp.
+    IF FILE("jumpHeightOnly.esp") || IF FILE("jumpHeightThird.esp") && IF VAR(RU) ERROR: Используйте только один jumpheight esp.
 Less Fugly Female NPCs.esp
   IF CHECKSUM("Less Fugly Female NPCs.esp", 93FE07E6) WARN: This mod contains numerous corrupted records generated with TESVSmip. It is strongly advised you remove this from your load order to avoid damage to your saves.
 // makes sense to load before mods which alter individual NPC
@@ -1898,10 +1900,12 @@ cao_DweSchematicsBuy.esp
   IF CHECKSUM("cao_DweSchematicsBuy.esp", 7E85692A) WARN: This file contains unexpected (or out of order) records and it should be removed.
 cao_DweSchematicsCheat.esp
   IF CHECKSUM("cao_DweSchematicsCheat.esp", 7E7B9B1A) WARN: This file contains unexpected (or out of order) records and it should be removed.
-  IF FILE("cao_DweSchematicsBuy.esp") ERROR: Use only one cao_DweSchematics esp.
+  IF FILE("cao_DweSchematicsBuy.esp") && IF VAR(EN) ERROR: Use only one cao_DweSchematics esp.
+    IF FILE("cao_DweSchematicsBuy.esp") && IF VAR(RU) ERROR: Используйте только один cao_DweSchematics esp.
 cao_DweSchematicsSearch.esp
   IF CHECKSUM("cao_DweSchematicsSearch.esp", A655AB19) WARN: This file contains unexpected (or out of order) records and it should be removed.
-  IF FILE("cao_DweSchematicsBuy.esp") || IF FILE("cao_DweSchematicsCheat.esp") ERROR: Use only one cao_DweSchematics esp.
+  IF FILE("cao_DweSchematicsBuy.esp") || IF FILE("cao_DweSchematicsCheat.esp") && IF VAR(EN) ERROR: Use only one cao_DweSchematics esp.
+    IF FILE("cao_DweSchematicsBuy.esp") || IF FILE("cao_DweSchematicsCheat.esp") && IF VAR(RU) ERROR: Используйте только один cao_DweSchematics esp.
 cao_goldbrand.esp
   IF VAR(EN) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
@@ -2253,14 +2257,14 @@ REGEX: GM-Fletching(Harder|Standard)\.esp
   IF VAR(EN) SAY: Use only one version of GM-Fletching*.esp
     IF VAR(RU) SAY: Используйте только один GM-Fletching*.esp
 GM-ForgeAdditions.esp
-  IF VAR(EN) && IF VAR(DualGMForgeAdd) SAY: Use Only One GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp
+  IF VAR(EN) && IF VAR(DualGMForgeAdd) SAY: Use only one GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp
     IF VAR(RU) SAY: Используйте только один GM-ForgeAdditions.esp или GM-ForgeAdditionsLAotB.esp
 GM-ForgeAdditionsLevelledOutfits.esp
   IF VAR(EN) && IF VAR(DualGMLevList) SAY: Use only one GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp
     IF VAR(RU) SAY: Используйте только один GM-ForgeAdditionsLevelledOutfits.esp или GM-ForgeAdditionsLevelledOutfits.esp
 /* will work alongside The Lost Art of the Blacksmith */
 GM-ForgeAdditionsLAotB.esp
-  IF VAR(EN) && IF VAR(DualGMForgeAdd) SAY: Use Only One GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp
+  IF VAR(EN) && IF VAR(DualGMForgeAdd) SAY: Use only one GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp
     IF VAR(RU) SAY: Используйте только один GM-ForgeAdditions.esp или GM-ForgeAdditionsLAotB.esp
 GM-ForgeAdditionsLAotBLevelledOutfits.esp
   IF VAR(EN) && IF VAR(DualGMLevList) SAY: Use only one GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp
@@ -2371,7 +2375,8 @@ invulnerablestandardhorses.esp
 invulnerableuniquehorses.esp
 Invulnerable Horses - Brave.esp
 Invulnerable Horses.esp
-  IF FILE("Invulnerable Horses - Brave.esp") ERROR: Use only one Invulnerable Horses esp.
+  IF FILE("Invulnerable Horses - Brave.esp") && IF VAR(EN) ERROR: Use only one Invulnerable Horses esp.
+    IF FILE("Invulnerable Horses - Brave.esp") && IF VAR(RU) ERROR: Используйте только один Invulnerable Horses esp.
 IFNOT FILE("Perky.esp") MOD: Ish's Respec Mod.esp
   TAG: {{BASH: Relev}}
 Ish's Souls to Perks.esp
@@ -3239,13 +3244,16 @@ ZutatenAblegen.esp
 Zira's Skyrim Horse Base - Armored.esp
   IF CHECKSUM("Zira's Skyrim Horse Base - Armored.esp", 421DF75A) DIRTY: 3 ITM, 47 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Zira's Skyrim Horse Base - Bareback Riding.esp
-  IF FILE("Zira's Skyrim Horse Base - Armored.esp") ERROR: Use only one Zira's Skyrim Horse Base esp.
+  IF FILE("Zira's Skyrim Horse Base - Armored.esp") && IF VAR(EN) ERROR: Use only one Zira's Skyrim Horse Base esp.
+    IF FILE("Zira's Skyrim Horse Base - Armored.esp") && IF VAR(RU) ERROR: Используйте только один Zira's Skyrim Horse Base esp.
   IF CHECKSUM("Zira's Skyrim Horse Base - Bareback Riding.esp", A2DD658D) DIRTY: 3 ITM, 47 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Zira's Skyrim Horse Base - No Tack.esp
-  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") ERROR: Use only one Zira's Skyrim Horse Base esp.
+  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") && IF VAR(EN) ERROR: Use only one Zira's Skyrim Horse Base esp.
+    IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") && IF VAR(RU) ERROR: Используйте только один Zira's Skyrim Horse Base esp.
   IF CHECKSUM("Zira's Skyrim Horse Base - No Tack.esp", F93CD5D0) DIRTY: 3 ITM, 47 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Zira's Skyrim Horse Base.esp
-  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") ERROR: Use only one Zira's Skyrim Horse Base esp.
+  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") && IF VAR(EN) ERROR: Use only one Zira's Skyrim Horse Base esp.
+    IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") && IF VAR(RU) ERROR: Используйте только один Zira's Skyrim Horse Base esp.
   IF CHECKSUM("Zira's Skyrim Horse Base.esp", 86D08FB5) DIRTY: 3 ITM, 47 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ENDGROUP: Base XYZ
 
@@ -6710,13 +6718,15 @@ Briar'sEndCourierQuest.esp
     IF CHECKSUM("Briar'sEndCourierQuest.esp", 30CD77F3) && IF VAR(RU) WARN: Этот файл содержит 3 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре.
 Briar'sEndInstantQuest.esp
   IF FILE("Fleetford.esp") INC: Fleetford.esp
-  IF FILE("Briar'sEndCourierQuest.esp") ERROR: Use only one Briar'sEnd esp.
+  IF FILE("Briar'sEndCourierQuest.esp") && IF VAR(EN) ERROR: Use only one Briar'sEnd esp.
+    IF FILE("Briar'sEndCourierQuest.esp") && IF VAR(RU) ERROR: Используйте только один Briar'sEnd esp.
   IF CHECKSUM("Briar'sEndInstantQuest.esp", 3BEEDC33) DIRTY: 48 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Briar'sEndInstantQuest.esp", 3BEEDC33) && IF VAR(EN) WARN: This file contains 3 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
     IF CHECKSUM("Briar'sEndInstantQuest.esp", 3BEEDC33) && IF VAR(RU) WARN: Этот файл содержит 3 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре.
 Briar'sEndNoQuest.esp
   IF FILE("Fleetford.esp") INC: Fleetford.esp
-  IF FILE("Briar'sEndCourierQuest.esp") || IF FILE("Briar'sEndInstantQuest.esp") ERROR: Use only one Briar'sEnd esp.
+  IF FILE("Briar'sEndCourierQuest.esp") || IF FILE("Briar'sEndInstantQuest.esp") && IF VAR(EN) ERROR: Use only one Briar'sEnd esp.
+    IF FILE("Briar'sEndCourierQuest.esp") || IF FILE("Briar'sEndInstantQuest.esp") && IF VAR(RU) ERROR: Используйте только один Briar'sEnd esp.
   IF CHECKSUM("Briar'sEndNoQuest.esp", DC577DA1) DIRTY: 50 ITM, 10 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Briar'sEndNoQuest.esp", DC577DA1) && IF VAR(EN) WARN: This file contains 3 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
     IF CHECKSUM("Briar'sEndNoQuest.esp", DC577DA1) && IF VAR(RU) WARN: Этот файл содержит 3 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре.
@@ -6926,19 +6936,23 @@ DovahkiinSpeech - HigherReq.esp
 DovahkiinSpeech - HigherReqNerfed.esp
   IF CHECKSUM("DovahkiinSpeech - HigherReqNerfed.esp", 4B15F923) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("DovahkiinSpeech - HigherReqNerfed.esp", 4B15F923) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
-  IF FILE("DovahkiinSpeech - HigherReq.esp") WARN: Use only one DovahkiinSpeech esp.
+  IF FILE("DovahkiinSpeech - HigherReq.esp") && IF VAR(EN) WARN: Use only one DovahkiinSpeech esp.
+    IF FILE("DovahkiinSpeech - HigherReq.esp") && IF VAR(RU) WARN: Используйте только один DovahkiinSpeech esp.
 DovahkiinSpeech - MidNoPerkReq.esp
   IF CHECKSUM("DovahkiinSpeech - MidNoPerkReq.esp", 6179F01D) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("DovahkiinSpeech - MidNoPerkReq.esp", 6179F01D) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
-  IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") WARN: Use only one DovahkiinSpeech esp.
+  IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") && IF VAR(EN) WARN: Use only one DovahkiinSpeech esp.
+    IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") && IF VAR(RU) WARN: Используйте только один DovahkiinSpeech esp.
 DovahkiinSpeech - MidReq.esp
   IF CHECKSUM("DovahkiinSpeech - MidReq.esp", FFFCDA31) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("DovahkiinSpeech - MidReq.esp", FFFCDA31) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
-  IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") WARN: Use only one DovahkiinSpeech esp.
+  IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") && IF VAR(EN) WARN: Use only one DovahkiinSpeech esp.
+    IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") && IF VAR(RU) WARN: Используйте только один DovahkiinSpeech esp.
 DovahkiinSpeech.esp
   IF CHECKSUM("DovahkiinSpeech.esp", 27656479) DIRTY: 8 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("DovahkiinSpeech.esp", 27656479) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
-  IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") || IF FILE("DovahkiinSpeech - MidReq.esp") WARN: Use only one DovahkiinSpeech esp.
+  IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") || IF FILE("DovahkiinSpeech - MidReq.esp") && IF VAR(EN) WARN: Use only one DovahkiinSpeech esp.
+    IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") || IF FILE("DovahkiinSpeech - MidReq.esp") && IF VAR(RU) WARN: Используйте только один DovahkiinSpeech esp.
 Dragon Falls Manor.esp
   IF CHECKSUM("Dragon Falls Manor.esp", 197A15AB) DIRTY: 63 ITM, 19 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Dragon Falls Manor.esp", 775367F7) DIRTY: 15 ITM, 19 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -8434,7 +8448,8 @@ Arvak Dark Power Voice power version.esp
     IF FILE("Arvak Dark Power.esp") && IF VAR(RU) WARN: Используйте любой или Arvak Dark Power.esp или Arvak Dark Power Voice power version.esp, не обa.
 Arvak, Shadowmere's Body - DB Saddle.esp
 Arvak, Shadowmere's Body - No Saddle.esp
-  IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") WARN: Use only one Arvak esp.
+  IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") && IF VAR(EN) WARN: Use only one Arvak esp.
+    IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") && IF VAR(RU) WARN: Используйте только один Arvak esp.
 Arvak_Fire.esp
   IF CHECKSUM("Arvak_Fire.esp", 8B83FC98) DIRTY: 3 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -8534,7 +8549,8 @@ betterfactionscomplete.esp
 BetterFurnitureClutter.esp
 BetterGhostbladeV1.esp
 BetterGhostbladeV1glass.esp
-  IF FILE("BetterGhostbladeV1.esp") ERROR: Use only one BetterGhostbladeV1 esp.
+  IF FILE("BetterGhostbladeV1.esp") && IF VAR(EN) ERROR: Use only one BetterGhostbladeV1 esp.
+    IF FILE("BetterGhostbladeV1.esp") && IF VAR(RU) ERROR: Используйте только один BetterGhostbladeV1 esp.
 BetterItemSorting.esp
 IF REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 REGEX: (Headbomb's )?Better Sorting.*\.esp
@@ -9329,7 +9345,7 @@ masteredmagickaenchantmentfix.esp
 MasterEnchanter.esp
 /* Companion file for MasterEnchanter.esp */
 REGEX: EnchantPowerX.*\.esp
-  IF VAR(EN) SAY: Use only One EnchantPowerX*.esp
+  IF VAR(EN) SAY: Use only one EnchantPowerX*.esp
     IF VAR(RU) SAY: Используйте только один EnchantPowerX*.esp
 MasterTrainers100.esp
 REGEX: MatsoImmersive(Rain|Sun)\.esp
@@ -10048,7 +10064,8 @@ Werewolves Plague in Skyrim.esp
 WerewolvesInvadingNaturally.esp
 WerewolvesOccurringNaturally.esp
   TAG: {{BASH: Delev}}
-  IF FILE("WerewolvesInvadingNaturally.esp") ERROR: Use only one Werewolves * Naturally.esp
+  IF FILE("WerewolvesInvadingNaturally.esp") && IF VAR(EN) ERROR: Use only one Werewolves * Naturally.esp
+    IF FILE("WerewolvesInvadingNaturally.esp") && IF VAR(RU) ERROR: Используйте только один Werewolves * Naturally.esp
 whiterun guard.esp
 wieldablelantern.esp
 wieldablelanternlanternreplacer.esp
