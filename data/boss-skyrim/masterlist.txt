@@ -185,7 +185,8 @@ BSTamriel.esm
 // esms c
 CastleDrakhur_masterfle.esm
   IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) DIRTY: 23 ITM, 7 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) WARN: This file contains 6 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
+  IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) &&  IF VAR(EN) WARN: This file contains 6 deleted NavMesh records that TES5Edit cannot repair.  This mod may cause problems with your game.
+    IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) &&  IF VAR(RU) WARN: Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре.
 CLARALUX - More and Brighter Lights.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии
@@ -789,7 +790,7 @@ lydia chair fix.esp
 // fixes m
 MageRobesCommentFix.esp
 MagicFix.esp
-Magnus20.esp
+Magnus20.esp=
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Magnus20.esp", DE1D22AC)  WARN: Original file was released before the CK (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Magnus20.esp", DE1D22AC)  WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
 Magnus50.esp
@@ -904,7 +905,7 @@ wolfqueenfix.esp
   // Unoffical Patches
 Unofficial Skyrim Patch.esp
   TAG: {{BASH: Delev, Relev}}
-  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VAR(EN) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Recommend to use the "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch" in addition to Dawnguard. This is need for correct work with Dawnguard.
     IF VAR(RU) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Рекомендуется использовать "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch", в дополнение к Dawnguard. Это необходимо для корректной работы с Dawnguard. Русская версия "http://u.to/D5ZaAg здесь".
 USKP_addon.esp
@@ -959,19 +960,18 @@ Vampire Face Fixes.esp
 VLCollisionFix.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 
- // Unoffical DLC Patches
+// Unoffical DLC Patches
 USKP Dawnguard vampire face & eye fix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Included in Unofficial Dawnguard Patch.esp
     IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
 Unofficial Dawnguard Patch.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
-  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   TAG: {{BASH: Delev, Relev}}
 Unofficial Hearthfire Patch.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
-  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
-
-  // fixes that must be loaded after Unofficial DLC Patches
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+// fixes that must be loaded after Unofficial DLC Patches
 EveryVampireEyesGrow.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
   IF VAR(EN) SAY: This mod will not be compatible with any mods that alter humanoid(imperial, breton, nord, redguard) race. Also, not compatible with mods that have Babette's facegendata(0001D4B7.NIF).
@@ -1082,7 +1082,8 @@ Faralda.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("Faralda.esp", F5F6A469) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Farkas.esp
-  IF CHECKSUM("Farkas.esp", 817EF15F) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("Farkas.esp", 817EF15F) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Farkas.esp", 817EF15F) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Farkas v1.esp
 Farkas v2.esp
@@ -1113,7 +1114,7 @@ Irileth.esp
 // face k
 // face l
 Layla.esp
-  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Lisette.esp
 lydia1d.esp
@@ -1204,7 +1205,8 @@ Vex.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Vilkas02.esp
 Vilkas.esp
-  IF CHECKSUM("Vilkas.esp", BF4211DE) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("Vilkas.esp", BF4211DE) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Vilkas.esp", BF4211DE) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Vilkas v1.esp
 Vilkas v2.esp
 Vilkas v3.esp
@@ -2298,13 +2300,13 @@ HighlandFarmMilk.esp
   // not tested
 HillmanShack.esp
 HM Child Character.esp
-  IFNOT VAR(Dawnguard) && IF CHECKSUM("HM Child Character.esp", F0933FCC) ERROR: Requires non-Dawndguard version of HM Child Character.esp
-  IF VAR(Dawnguard) && IF CHECKSUM("HM Child Character.esp", 40FB3AAD) ERROR: Requires Dawnguard version of HM Child Character.esp
+  IFNOT VAR(Dawnguard) && IF CHECKSUM("HM Child Character.esp", F0933FCC) REQ: non-Dawndguard version of HM Child Character.esp
+  IF VAR(Dawnguard) && IF CHECKSUM("HM Child Character.esp", 40FB3AAD) REQ: Dawnguard version of HM Child Character.esp
   IF CHECKSUM("HM Child Character.esp", F0933FCC) DIRTY: 16 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("HM Child Character.esp", 40FB3AAD) DIRTY: 7 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HM Marry All.esp
-  IFNOT VAR(Dawnguard) || IFNOT VAR(Hearthfire) && IF CHECKSUM("HM Marry All.esp", 139C1E4C) ERROR: Requires Dawndguard AND Hearthfires (Official Besthesda DLC)
-  IF VAR(Dawnguard) || IF VAR(Hearthfire) && IF CHECKSUM("HM Marry All.esp", DB88B8BE) ERROR: Requires Dawnguard and Hearthfires version of HM Marry All.esp
+  IFNOT VAR(Dawnguard) || IFNOT VAR(Hearthfire) && IF CHECKSUM("HM Marry All.esp", 139C1E4C) REQ: Dawndguard AND Hearthfires (Official Besthesda DLC)
+  IF VAR(Dawnguard) || IF VAR(Hearthfire) && IF CHECKSUM("HM Marry All.esp", DB88B8BE) REQ: Dawnguard and Hearthfires version of HM Marry All.esp
   IF CHECKSUM("HM Marry All.esp", 139C1E4C) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("HM Marry All.esp", DB88B8BE) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HM MicroCraft.esp
@@ -3270,7 +3272,8 @@ CiviliansWillNotDiePatches.esp
 Darwins_Primitive_Times.esp
 REGEX: DarwinsHT_.+\.esp
 Destructible_bottles.esp
-  IF CHECKSUM("Destructible_bottles.esp", 33A7D490) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("Destructible_bottles.esp", 33A7D490) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Destructible_bottles.esp", 33A7D490) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
   IF CHECKSUM("Destructible_bottles.esp", BF5ED5A9) || IF CHECKSUM("Destructible_bottles.esp", 0900B364) || IF CHECKSUM("Destructible_bottles.esp", 48639563) || IF CHECKSUM("Destructible_bottles.esp", 078C74DD) || IF CHECKSUM("Destructible_bottles.esp", 5BE52467) || IF CHECKSUM("Destructible_bottles.esp", D59FAF05) || IF CHECKSUM("Destructible_bottles.esp", D80876E8) && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF CHECKSUM("Destructible_bottles.esp", BF5ED5A9) || IF CHECKSUM("Destructible_bottles.esp", 0900B364) || IF CHECKSUM("Destructible_bottles.esp", 48639563) || IF CHECKSUM("Destructible_bottles.esp", 078C74DD) || IF CHECKSUM("Destructible_bottles.esp", 5BE52467) || IF CHECKSUM("Destructible_bottles.esp", D59FAF05) || IF CHECKSUM("Destructible_bottles.esp", D80876E8) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 item sorting dg by saige.esp
@@ -4066,7 +4069,7 @@ DragonfireCrossbow02.esp
 DragonHideRobeArmor.esp
 Lorecraft - Dragonhide.esp
 DragonIron.esp
-  IF VAR(EN) && IF CHECKSUM("DragonIron.esp", 0C4425D4) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF VAR(EN) && IF CHECKSUM("DragonIron.esp", 0C4425D4) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) && IF CHECKSUM("DragonIron.esp", 0C4425D4) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 DragonIronReplacer.esp
   IF VAR(EN) && IF CHECKSUM("DragonIronReplacer.esp", 7FDC3BE8) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -4087,7 +4090,7 @@ DragonsoulWeapons.esp
   IF CHECKSUM("DragonsoulWeapons.esp", CCA2F9B7) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DragonSword.esp
 dragonweapons.esp
-  IF CHECKSUM("dragonweapons.esp", 7516E4CE) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("dragonweapons.esp", 7516E4CE) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("dragonweapons.esp", 7516E4CE) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Dread Huntress Armor.esp
 Dread Knight Weapon Set.esp
@@ -4480,12 +4483,12 @@ HoodsAndCirclets.esp
 HotaruByNausicaa.esp
 HUM_Armor.esp
 HunEbonyArmorStandalone.esp
-  IF CHECKSUM("HunEbonyArmorStandalone.esp", F7132DAC) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("HunEbonyArmorStandalone.esp", F7132DAC) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("HunEbonyArmorStandalone.esp", F7132DAC) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 HunEbonyWeaponsStandalone.esp
   IF CHECKSUM("HunEbonyWeaponsStandalone.esp", 49FA902D) DIRTY: 11 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 hunnicarmors.esp
-  IF CHECKSUM("hunnicarmors.esp", D968FD8E) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("hunnicarmors.esp", D968FD8E) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("hunnicarmors.esp", D968FD8E) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 hunterarmor.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, hunterarmorv1.2.esp
@@ -4904,12 +4907,12 @@ Moar Kontent.esp
 modern weapons.esp
   IF CHECKSUM("modern weapons.esp", F76E0343) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Mods247Helf16.esp
-  IF VAR(EN) && IF CHECKSUM("Mods247Helf16.esp", 8855F757) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF VAR(EN) && IF CHECKSUM("Mods247Helf16.esp", 8855F757) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) && IF CHECKSUM("Mods247Helf16.esp", 8855F757) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Mods247HelfH16.esp
 Mondschwert von General Lee Sam.esp
 MongolArmor.esp
-  IF VAR(EN) && IF CHECKSUM("MongolArmor.esp", 7A153783) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF VAR(EN) && IF CHECKSUM("MongolArmor.esp", 7A153783) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) && IF CHECKSUM("MongolArmor.esp", 7A153783) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 MongolShield.esp
 monster_hunter.esp
@@ -4921,22 +4924,22 @@ MoonAndStarRing.esp
 morenamedbows.esp
 morrowind_ring_of_khajiit.esp
 MorrowindArmor.esp
-  IF CHECKSUM("MorrowindArmor.esp", 7DDD7CAC) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("MorrowindArmor.esp", 7DDD7CAC) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("MorrowindArmor.esp", 7DDD7CAC) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 MorrowindGlass.esp
   IF FILE("MorrowindArmor.esp") && IF VAR(EN) WARN: Use either MorrowindArmor.esp or MorrowindGlass.esp, not both.
     IF FILE("MorrowindArmor.esp") && IF VAR(RU) WARN: Используйте любой или MorrowindArmor.esp или MorrowindGlass.esp, не обa.
-  IF CHECKSUM("MorrowindGlass.esp", 9099DB14) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("MorrowindGlass.esp", 9099DB14) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("MorrowindGlass.esp", 9099DB14) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 MorrowindSmithing.esp
   IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 MorrowindSmithingVanilla.esp
   IF VAR(Dawnguard) INC: Use Dawnguard version, MorrowindSmithing.esp
-  IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 IF CHECKSUM("Matys Mithril armor Enhanced.esp", A71FA4F0) MOD: Matys Mithril armor Enhanced.esp
   // Replacer version for MorrowindArmor mod
-  IF CHECKSUM("Matys Mithril armor Enhanced.esp", A71FA4F0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("Matys Mithril armor Enhanced.esp", A71FA4F0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Matys Mithril armor Enhanced.esp", A71FA4F0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 morrowindarmorhd.esp
 REGEX: morrowin[ds] weapons.+\.esp
@@ -5082,7 +5085,8 @@ NPCRedDress.esp
 NRzJournal.esp
 nuadablade.esp
 numenume elf ear.esp
-  IF CHECKSUM("numenume elf ear.esp", 2112184A) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("numenume elf ear.esp", 2112184A) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("numenume elf ear.esp", 2112184A) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 ENDGROUP: Items N
 
 BEGINGROUP: Items O
@@ -5289,7 +5293,8 @@ Ring of Nighteye.esp
 RingOfAssassins.esp
 RingOfBoethiah.esp
 ringofhircine.esp
-  IF CHECKSUM("ringofhircine.esp", BE953E6C) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("ringofhircine.esp", BE953E6C) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("ringofhircine.esp", BE953E6C) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 RingofKhajiit.esp
 RingOfKonahrik.esp
 RingOFNighteye.esp
@@ -5879,7 +5884,8 @@ RecyclingModWo3E.esp
   IFNOT REGEX("Weapons of the Third Era.+\.esp") REQ: "http://skyrim.nexusmods.com/mods/3871 Weapons of the Third Era"
 Werehide.esp
 WereWolfRing.esp
-  IF CHECKSUM("WereWolfRing.esp", 730A89B3) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("WereWolfRing.esp", 730A89B3) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("WereWolfRing.esp", 730A89B3) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 whiteebony.esp
 winterhold_robes.esp
   IF CHECKSUM("winterhold_robes.esp", 3A0E23B5) DIRTY: 7 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -7323,19 +7329,19 @@ mannyDragonhead.esp
     IF VAR(RU) && IF FILE("mannyDragonhead.esm") SAY: Используйте или mannyDragonhead.esm или mannyDragonhead.esp
 mannywallofskyrim.esp
 Mapseller.esp
-  IF VAR(Dawnguard) ERROR: Requires Dawnguard version, MapsellerDawnguard.esp
+  IF VAR(Dawnguard) REQ: Dawnguard version, MapsellerDawnguard.esp
   IF CHECKSUM("Mapseller.esp", ED585B65) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MapsellerDV.esp
-  IF VAR(Dawnguard) ERROR: Requires Dawnguard version, MapsellerDawnguardDV.esp
+  IF VAR(Dawnguard) REQ: Dawnguard version, MapsellerDawnguardDV.esp
   IF FILE("Mapseller.esp") INC: Mapseller.esp
   IF CHECKSUM("MapsellerDV.esp", E9AD27FD) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MapsellerDawnguard.esp
-  IFNOT VAR(Dawnguard) ERROR: Requires vanilla version, Mapseller.esp
+  IFNOT VAR(Dawnguard) REQ: vanilla version, Mapseller.esp
   IF FILE("Mapseller.esp") INC: Mapseller.esp
   IF FILE("MapsellerDV.esp") INC: MapsellerDV.esp
   IF CHECKSUM("MapsellerDawnguard.esp", 4E319705) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MapsellerDawnguardDV.esp
-  IFNOT VAR(Dawnguard) ERROR: Requires vanilla version, MapsellerDV.esp
+  IFNOT VAR(Dawnguard) REQ: vanilla version, MapsellerDV.esp
   IF FILE("Mapseller.esp") INC: Mapseller.esp
   IF FILE("MapsellerDV.esp") INC: MapsellerDV.esp
   IF FILE("MapsellerDawnguard.esp") INC: MapsellerDawnguard.esp
@@ -8425,7 +8431,8 @@ Babette.esp
 Balanced and Split Sword Axe Mace Weapon Perks.esp
 balanced atronachs.esp
 BalancedHeroWeps.esp
-  IF CHECKSUM("BalancedHeroWeps.esp", 1A21ED10) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("BalancedHeroWeps.esp", 1A21ED10) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("BalancedHeroWeps.esp", 1A21ED10) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 BalancedMode.esp
 BarbasLessAnnoying.esp
   IF CHECKSUM("BarbasLessAnnoying.esp", 9E39BF7F) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
@@ -8489,7 +8496,8 @@ BetterItemSorting.esp
 IF REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 REGEX: (Headbomb's )?Better Sorting.*\.esp
 BetterNordHeroWeapons.esp
-  IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Weightless Ingredients - Better Sorting.esp
 Weightless Soulgems and Fragments - Better Sorting (PseudoVanilla).esp
 Weightless Soulgems and Fragments - Better Sorting (Ranked).esp
@@ -8817,7 +8825,8 @@ REGEX: fasterdragonbonearrows.+\.esp
     IF VAR(RU) SAY: Используйте только один fasterdragonbonearrows*.esp
 REGEX: FasterHorses_Sprint_x.+\.esp
 FasterNordHeroWeps.esp
-  IF CHECKSUM("FasterNordHeroWeps.esp", 4F2396EA) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("FasterNordHeroWeps.esp", 4F2396EA) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("FasterNordHeroWeps.esp", 4F2396EA) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 FasterSpeeds.esp
 FastTravelFromIndoors.esp
 Filling Food & Restful Sleep.esp
@@ -10182,7 +10191,7 @@ RiverwoodEnhancedPlugin.esp
   IF FILE("LoS and RE patch.esp") ERROR: Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not an add-on.  
 LoS and RE patch.esp
   // Replacer for RiverwoodEnhancedPlugin.esp
-  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 // tav s
 Smelter_Riften.esp
 Smelter_Solitude.esp
@@ -10214,7 +10223,7 @@ TownsAndCitiesEnhanced.esp
   IF FILE("L0S and TaVE patch.esp") ERROR: Remove. L0S and TaVE patch.esp is designed as a replacement for TownsAndCitiesEnhanced.esp, not an add-on.  
 L0S and TaVE patch.esp
   // Replacer for TownsAndCitiesEnhanced.esp
-  IF VAR(EN) && IF VERSION("TES5", "1.8.151", <) ERROR: Requires official Skyrim patch 1.8.151 or higher.
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF CHECKSUM("L0S and TaVE patch.esp", 76CF8279) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 // tav u
 ultime skyrim - riverwood.esp
@@ -10896,7 +10905,8 @@ kdansky_cheapwards.esp
 kdansky_freewards.esp
 kdansky_indefinitebuffs.esp
 KodlakWhitemane.esp
-  IF CHECKSUM("KodlakWhitemane.esp", C68252A0) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("KodlakWhitemane.esp", C68252A0) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("KodlakWhitemane.esp", C68252A0) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Krisan's Spells.esp
 // spells l
 Leveled Concentrated Restoration Spells.esp
@@ -11234,7 +11244,7 @@ EnhancedShouts.esp
 Excalibur _powerfirebreath.esp
   IF CHECKSUM("Excalibur _powerfirebreath.esp", 409BB061) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Excalibur _firebreath_IMBA ver.esp
-  IF VAR(EN) && IF CHECKSUM("Excalibur _firebreath_IMBA ver.esp", C513B76D) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF VAR(EN) && IF CHECKSUM("Excalibur _firebreath_IMBA ver.esp", C513B76D) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) && IF CHECKSUM("Excalibur _firebreath_IMBA ver.esp", C513B76D) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
   IF FILE("Excalibur _powerfirebreath.esp") WARN: Use Excalibur _powerfirebreath.esp or Excalibur _firebreath_IMBA ver.esp, not both.
 // shouts f
@@ -13247,7 +13257,7 @@ Blaze Of Eventide.esp
 REGEX: Braithwen Fernleaf( Archer| Auburn| Auburn Auto)?\.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
   REQ: "http://skyrim.nexusmods.com/downloads/file.php?id=195 Human Eyes for Elves".
-  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 BreezeHomeChildren.esp
 BrelynaMaryon.esp
@@ -13337,8 +13347,10 @@ FelixConstantine.esp
   REQ: "http://skyrim.nexusmods.com/mods/3424 Pretty Eyes"
 fenrir-follower.esp
 Fezzik the Giant.esp
-  IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) WARN: This file contains unexpected (or out of order) records and should be removed.
-  IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+  IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 FFBosmer.esp
 FFNordDawsyn.esp
   IF FILE("FFNords.esp") ERROR: Included in FFNords.esp
@@ -13408,7 +13420,7 @@ HousecarlWhiterun Sexy Lydia v0.3.esp
 HousecarlWhiterun Sexy Lydia v0.5.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
-  IF CHECKSUM("HousecarlWhiterun Sexy Lydia v0.5.esp", 7C29388F) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("HousecarlWhiterun Sexy Lydia v0.5.esp", 7C29388F) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("HousecarlWhiterun Sexy Lydia v0.5.esp", 7C29388F) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 HousecarlWindhelm.esp
 // companions i
@@ -13416,7 +13428,7 @@ iLoveLydia.esp
   IF VAR(EN) WARN: This mod will conflict with any female body altering mods.
     IF VAR(RU) WARN: Этот мод может конфликтовать с любыми реплейсерами женских тел.
 ImaniSuda.esp
-  IF CHECKSUM("ImaniSuda.esp", 4813304B) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("ImaniSuda.esp", 4813304B) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("ImaniSuda.esp", 4813304B) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Immersive Followers.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
@@ -13434,11 +13446,11 @@ jeans2.esp
 JessicaAlba.esp
 Jezebel.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-  IF CHECKSUM("Jezebel.esp", 77C303DF) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("Jezebel.esp", 77C303DF) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Jezebel.esp", 77C303DF) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Jezebel Simon.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-  IF CHECKSUM("Jezebel Simon.esp", C75CAB33) || IF CHECKSUM("Jezebel Simon.esp", E8D86949) || IF CHECKSUM("Jezebel Simon.esp", 35728E70) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("Jezebel Simon.esp", C75CAB33) || IF CHECKSUM("Jezebel Simon.esp", E8D86949) || IF CHECKSUM("Jezebel Simon.esp", 35728E70) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Jezebel Simon.esp", C75CAB33) || IF CHECKSUM("Jezebel Simon.esp", E8D86949) || IF CHECKSUM("Jezebel Simon.esp", 35728E70) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
   IF FILE("Jezebel.esp") && IF VAR(EN) WARN: Use either Jezebel.esp or Jezebel Simon.esp, not both.
      IF FILE("Jezebel.esp") && IF VAR(RU) WARN: Используйте любой или Jezebel.esp или Jezebel Simon.esp, не оба.
@@ -13747,7 +13759,8 @@ Jzargo.esp
 Iona-Dovas_Angels-TCG.esp
 ESFAela.esp
 AelaTheHuntress.esp
-  IF CHECKSUM("AelaTheHuntress.esp", 826D7A86) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("AelaTheHuntress.esp", 826D7A86) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("AelaTheHuntress.esp", 826D7A86) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 AelaTheHuntressFacelift.esp
 AraneaIenithFacelift.esp
@@ -13785,7 +13798,8 @@ Shady.esp
 SHARPE Housecarls.esp
 saadia.esp
 Skjor.esp
-  IF CHECKSUM("Skjor.esp", C892B655) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("Skjor.esp", C892B655) && VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Skjor.esp", C892B655) && VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Skjor II.esp
   IFNOT FILE("AdditionalNPCFollwerVoices.esp") REQ: "http://skyrim.nexusmods.com/mods/16266 Additional Vanilla Follower Voice Types"
 SMSkyrim.esp
