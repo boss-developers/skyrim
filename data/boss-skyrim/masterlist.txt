@@ -727,6 +727,7 @@ Derkeethus_fix.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
 Domus_Dementis_fixes.esp
 dragonarmourratingfix.esp
+Dreagonsreach bottle fix.esp
 // fixes e
 REGEX: EbonyBladeFixed.*\.esp
 ElvBootEmStaFix.esp
@@ -4958,10 +4959,10 @@ MorrowindSmithingVanilla.esp
   IF VAR(Dawnguard) INC: Use Dawnguard version, MorrowindSmithing.esp
   IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
-IF CHECKSUM("Matys Mithril armor Enhanced.esp", A71FA4F0) MOD: Matys Mithril armor Enhanced.esp
+IF CHECKSUM("matys mithril armor enhanced.esp", A71FA4F0) MOD: matys mithril armor enhanced.esp
   // ^ Replacer version for MorrowindArmor mod
-  IF CHECKSUM("Matys Mithril armor Enhanced.esp", A71FA4F0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
-    IF CHECKSUM("Matys Mithril armor Enhanced.esp", A71FA4F0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+  IF CHECKSUM("matys mithril armor enhanced.esp", A71FA4F0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("matys mithril armor enhanced.esp", A71FA4F0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 morrowindarmorhd.esp
 REGEX: morrowin[ds] weapons.+\.esp
 morrowindweapons bloodmoon.esp
@@ -6517,6 +6518,8 @@ Another Breezehome Basement.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version - expanded basement.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии - expanded basement.esp
 AnisesCabin(GS).esp
+anti-vampnocide.esp
+  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard (Official Bethesda DLC)
 arbitrary faction additions - forsworn.esp
 ArbitraryFA - Forsworn.esp
 archaeologistguild.esp
@@ -6776,9 +6779,9 @@ Castle Dracula.esp
   IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Castle Dracula.esp", 3BEE9879) DIRTY: 25 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Castle Stonespire.esp
-  IF CHECKSUM("Castle Stonespire.esp", CF0B7159) DIRTY: 42 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Castle Stonespire.esp", CF0B7159) && IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
-    IF CHECKSUM("Castle Stonespire.esp", CF0B7159) && IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  IF CHECKSUM("Castle Stonespire.esp", D070A4D3) DIRTY: 37 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Castle Stonespire.esp", D070A4D3) || IF CHECKSUM("Castle Stonespire.esp", 0A749261) && IF VAR(EN) WARN: This file contains 10 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("Castle Stonespire.esp", D070A4D3) || IF CHECKSUM("Castle Stonespire.esp", 0A749261) && IF VAR(RU) WARN:  Этот файл содержит 10 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 Castle Strunmah.esp
 CastleDKmod.esp
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
@@ -7307,6 +7310,14 @@ Lakeshore.esp
 LakesideHideaway.esp
 LakeSideHome.esp
   IF CHECKSUM("LakeSideHome.esp", 22F454F4) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+HF_Lakeview_Pool_and_Hotbath.esp
+  IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 49403248) DIRTY: 8 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 49403248) || IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 03270F0F) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 49403248) || IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 03270F0F) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
+HF_Lakeview_North_Perimeter_Fence.esp
+  IF CHECKSUM("HF_Lakeview_North_Perimeter_Fence.esp", C7E73EB4) DIRTY: 0 ITM, 6 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
 Landscaped_Breezehome.esp
 Landscaped_Honeyside.esp
 Landscaped_Homes_Honeyside.esp
@@ -7753,6 +7764,9 @@ skyrimdefenders.esp
     IF CHECKSUM("skyrimdefenders.esp", 93DBD7FE) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   IF CHECKSUM("skyrimdefenders.esp", 6D3CD439) DIRTY: 240 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Skyrim Home.esp
+skyrimovens.esp
+  IF CHECKSUM("skyrimovens.esp", 0FA9E4CA) DIRTY: 0 ITM, 61 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
 Skyrim School of Witchcraft and Wizardry.esp
   IF CHECKSUM("Skyrim School of Witchcraft and Wizardry.esp", E003E0AF) DIRTY: 599 ITM, 67 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SkyrimSewers.esp
@@ -10434,6 +10448,8 @@ Better Hunting.esp
 REGEX: dD.?- Realistic Ragdoll Force.*\.esp
   IF VAR(EN) SAY: Ragdolls will conflict with other mods that change the skeleton.nif. Check "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers" for compatibly with other skeleton.nif.
     IF VAR(RU) SAY: Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers", для поддержки других версий skeleton.nif.
+Diseased.esp
+  IFNOT CHECKSUM("Diseased.esp", 6AE6CA51) SAY: This esp may be obsolete. As of 19-DEC-12, the latest version is 1.02c.
 drink eat sleep.esp
 /* Steam network version is an esp and BSA */
 Fatigue_Effects.esp
