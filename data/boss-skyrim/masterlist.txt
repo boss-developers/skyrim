@@ -335,7 +335,7 @@ Pretty Followers.esm
 Realistic Wildlife Loot.esm
 Real Wildlife - IMCN.esm
 // esms s
-// S´Drass follower.esm
+MOD: S´Drass follower.esm
 SC_Drow Race.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, DrowRace.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, DrowRace.esp
@@ -4888,8 +4888,6 @@ MashupUNP.esp
 Masked Mage's Armour.esp
 master alchemy book.esp
 REGEX: matys knights of the nine armor (\d\.\d)\.esp
-IF CHECKSUM("Matys Mithril armor Enhanced.esp", AE930F8B) MOD: Matys Mithril armor Enhanced.esp
-  // ^ Original mod
 kotn mage.esp
 matys medieval knights.esp
 MaceofAevar.esp
@@ -4959,10 +4957,11 @@ MorrowindSmithingVanilla.esp
   IF VAR(Dawnguard) INC: Use Dawnguard version, MorrowindSmithing.esp
   IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
-IF CHECKSUM("matys mithril armor enhanced.esp", A71FA4F0) MOD: matys mithril armor enhanced.esp
-  // ^ Replacer version for MorrowindArmor mod
+matys mithril armor enhanced.esp
+  // Replacer version for MorrowindArmor mod and orginal mod have same name
   IF CHECKSUM("matys mithril armor enhanced.esp", A71FA4F0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("matys mithril armor enhanced.esp", A71FA4F0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+  // ^ replacer mod crc
 morrowindarmorhd.esp
 REGEX: morrowin[ds] weapons.+\.esp
 morrowindweapons bloodmoon.esp
