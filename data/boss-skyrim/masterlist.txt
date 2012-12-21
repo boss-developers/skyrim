@@ -256,10 +256,10 @@ HorseBranding.esm
 ImmersiveContent.esm
 Immersive Patrols.esm
 Immersive Patrols x2.esm
+ImprovedCicero.esm
 Imp's More Complex Needs.esm
   IF VAR(EN) && IF FILE("imp's more complex needs.esp") SAY: Use either Nexus or Steam Workshop version, not both.
     IF VAR(RU) && IF FILE("imp's more complex needs.esp") SAY: Используйте любую Nexus или Steam Workshop версию, не оба.
-ImprovedCicero.esm
 itsatrap!.esm
 // esms j
 Janus follower.esm
@@ -2862,14 +2862,18 @@ REGEX: Realistic Wildlife Loot -( IMCN)?( Realistic| Reduced)\.esp
   // not tested
   IF VAR(EN) SAY: Use only one Realistic Wildlife Loot - *.esp
     IF VAR(RU) SAY: Используйте только один Realistic Wildlife Loot - *.esp
-REGEX: Real Wildlife Skyrim.*\.esp
-  TAG: {{BASH: Relev}}
+Real Wildlife Skyrim 0.1.esp
+  TAG: {{BASH: Delev}}
+  IF CHECKSUM("Real Wildlife Skyrim 0.1.esp", 0ED42B25) DIRTY: 346 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Real Wildlife Skyrim 0.1 No Food.esp
+  TAG: {{BASH: Delev}}
+  IF CHECKSUM("Real Wildlife Skyrim 0.1 No Food.esp", 52DD73E8) DIRTY: 360 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF ACTIVE("Real Wildlife Skyrim 0.1.esp") INC: Real Wildlife Skyrim 0.1.esp
 Real Wildlife.esp
   TAG: {{BASH: Relev}}
 REGEX: SIRWPat?ch\.esp
   TAG: {{BASH: Delev, Relev}}
     // not tested
-Real Wildlife Skyrim 0.1 IMCN.esp
 recipeammoarrows.esp
 recipeingots.esp
 RecyclingMod.esp
@@ -10770,6 +10774,11 @@ IMCN FeedPatch.esp
 IMCN Hearthfire Patch.esp
 EOS - IMCN Compatibility.esp
 HarvestOverhaulCreatures_IMCN_Compatibility_Patch.esp
+Real Wildlife Skyrim 0.1 IMCN.esp
+  TAG: {{BASH: Delev}}
+  IF CHECKSUM("Real Wildlife Skyrim 0.1 IMCN.esp", 6FF9970F) DIRTY: 322 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF ACTIVE("Real Wildlife Skyrim 0.1 No Food.esp") || IF ACTIVE("Real Wildlife Skyrim 0.1.esp") INC: Real Wildlife Skyrim 0.1.esp or Real Wildlife Skyrim 0.1 No Food.esp
+  // ^ Mod must load after IMCN - Overrides.esp
 ENDGROUP: Realism
 
 BEGINGROUP: Vampires and Werewolves
