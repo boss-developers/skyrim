@@ -57,11 +57,11 @@ IF FILE("..\ScriptDragon.dll") SET: SCDR
 //
 // DLC variable setup for BOSS v1.7+.
 // Added as many plugins are likely to require DLC.
-IF FILE("Dawnguard.esm") SET: Dawnguard
-IF FILE("Hearthfires.esm") SET: Hearthfire
+IF ACTIVE("Dawnguard.esm") SET: Dawnguard
+IF ACTIVE("Hearthfires.esm") SET: Hearthfire
 //
 // Plugins
-IF FILE("ApachiiHair.esm") SET: ApachiiHair
+IF ACTIVE("ApachiiHair.esm") SET: ApachiiHair
 IF FILE("ApachiiHairFemales.esm") SET: ApachiiHairF
 IF FILE("ApachiiHairMales.esm") SET: ApachiiHairM
 IF FILE("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
@@ -394,7 +394,7 @@ hideout.esm
 Kyia.esm
 Lanterns Of Skyrim - All In One - Main.esm
   IF VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC) SAY: Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 042A3DE0) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC) or use the non-Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm
+  IFNOT VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 042A3DE0) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC) or use the non-Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm
 REGEX: Lanterns Of Skyrim - All In One( 2x brighter)?\.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -557,8 +557,8 @@ RaestlozArmorReplace.esm
   IFNOT CHECKSUM("RaestlozArmorReplace.esm", B83CB078) || IFNOT CHECKSUM("RaestlozArmorReplace.esm", 6FA99C8F) && IF VERSION("TES5", "1.8.151.07", <) REQ: Skyrim 1.8.151.07+
 RaestlozArmorReplace - Dawnguard.esm
   IFNOT CHECKSUM("RaestlozArmorReplace - Dawnguard.esm", FBBDED04) || IFNOT CHECKSUM("RaestlozArmorReplace - Dawnguard.esm", 00449758) && IF VERSION("TES5", "1.8.151.07", <) REQ: Skyrim 1.8.151.07+
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-  IFNOT FILE("RaestlozArmorReplace.esm") || IFNOT ACTIVE("RaestlozArmorReplace.esm") ERROR: RaestlozArmorReplace.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT ACTIVE("RaestlozArmorReplace.esm") ERROR: RaestlozArmorReplace.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
 TurnDownXrace.esm
   // RaceCompatibility.esm is master
   IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
@@ -721,7 +721,7 @@ DaedricShieldHiResFix.esp
 DaggerBowEnchantPotionFixes.esp
 DB_WitD Quest Fix.esp
 DBHoodFix.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Deflect Arrows Fix - Realistic.esp
 Deflect Arrows Perk Fix.esp
   IF VAR(EN) && IF VERSION("TES5", "1.4.27", >) ERROR: Delete. Fixed in official patch 1.5
@@ -869,7 +869,7 @@ SkyrimFixes.esp
   IF VAR(EN) && IF VAR(USKP) SAY: Some corrections already included in Unofficial Skyrim Patch.esp. In more details see "http://skyrim.nexusmods.com/mods/24807 mod page".
     IF VAR(RU) && IF VAR(USKP) SAY: Некоторые исправления уже включены в Unofficial Skyrim Patch.esp. Подробности смотрите на "http://skyrim.nexusmods.com/mods/24807 странице мода".
 Spell Absorb Fix.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 SolitudeProudspireManorFix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
@@ -932,7 +932,7 @@ BEGINGROUP: DLC Fixes
 
 BreezhomeAlchemyLabFix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Already included in Unofficial Dawnguard Patch.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 chopping_block_wood_fires.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
 Correctif - HighResTexturePack.esp
@@ -942,13 +942,13 @@ Dawnguard Breezehome Fix.esp
 Dawnguard Summons Fixed.esp
 DawnguardDrainVitalityFix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Already included in Unofficial Dawnguard Patch.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 HDtextures01.esp
 HF-MoveSpouse.esp
   IF CHECKSUM("HF-MoveSpouse.esp", 7D544DFE) DIRTY: 15 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HighResTexturePackFix.esp
 invisible_shield_fix.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Prodspire Cooking pot hearthfire bugfix.esp
   IF CHECKSUM("Prodspire Cooking pot hearthfire bugfix.esp", 91AA4E51) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 sh_HF_Falkr_fix.esp
@@ -969,14 +969,14 @@ Vampire Alva.esp
 Vampire Face Fixes.esp
   SAY: This mod will not be compatible with any mods that alter the vampire character classes.
 VLCollisionFix.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 
 // Unoffical DLC Patches
 USKP Dawnguard vampire face & eye fix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Already included in Unofficial Dawnguard Patch.esp
     IF VAR(RU) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.
 Unofficial Dawnguard Patch.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   TAG: {{BASH: Delev, Relev}}
 Unofficial Hearthfire Patch.esp
@@ -984,7 +984,7 @@ Unofficial Hearthfire Patch.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 // fixes that must be loaded after Unofficial DLC Patches
 EveryVampireEyesGrow.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF VAR(EN) SAY: This mod will not be compatible with any mods that alter humanoid(imperial, breton, nord, redguard) race. Also, not compatible with mods that have Babette's facegendata(0001D4B7.NIF).
     IF VAR(RU) SAY: Этот мод может быть не совместим с любыми модами меняющих рассы гуманоидов(имперец, бретонец, норд, редгард). Также не совместим с модами, меняющими внешние данные Бабетты(Babette's facegendata(0001D4B7.NIF)).
 
@@ -1181,34 +1181,34 @@ Riften Girl s Replacer v 0.1.esp
 Riften_Female.esp
 // face s
 Sapphire.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 ShowRaceMenuOptions.esp
 Sigrid.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
   IF CHECKSUM("Sigrid.esp", 72F4F16E) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Solitude Girl's Replacer.esp
 IFNOT VAR(UFO) MOD: SupermodelSkyrim.esp
   // moved back to npc faces because it's npc faces overhaul (too many conflicts)
   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
 IFNOT VAR(UFO) MOD: SupermodelDawnguard.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
 Sven.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
   IF CHECKSUM("Sven.esp", 4060CC94) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 // face t
 TheCompanionShort.esp
 TheDrowsOfMorrowind.esp
 Tonilia.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
   IF CHECKSUM("Tonilia.esp", 926DEEA0) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Torvar.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 TTS - Camilla Valerius.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
   IF CHECKSUM("TTS - Camilla Valerius.esp", D2160A9A) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 TTS - Uthgerd the Unbroken.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 // face u
 Ulfric Kulich.esp
 // face v
@@ -1257,9 +1257,9 @@ ExpandedSnowSystems.esp
   IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) DIRTY: 1460 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("ExpandedSnowSystems.esp", 03A9B612) || IF CHECKSUM("ExpandedSnowSystems.esp", 72CC3B0C) && IF VAR(Dawnguard) WARN: Dawnguard.esm found. Use the Dawnguard version of ExpandedSnowSystems.esp instead to have mod work as intended.
   IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) || IF CHECKSUM("ExpandedSnowSystems.esp", 5B79F47D) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-  IF FILE("ClimatesOfTamriel.esm") || IF ACTIVE("ClimatesOfTamriel.esm") WARN: ClimatesOfTamriel.esm is present or is active. Use ExpandedSnowSystems-CoT.esp instead to have mod work as intended.
+  IF ACTIVE("ClimatesOfTamriel.esm") WARN: ClimatesOfTamriel.esm is present or is active. Use ExpandedSnowSystems-CoT.esp instead to have mod work as intended.
 ExpandedSnowSystems-CoT.esp
-  IFNOT FILE("ClimatesOfTamriel.esm") || IFNOT ACTIVE("ClimatesOfTamriel.esm") ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT ACTIVE("ClimatesOfTamriel.esm") ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
 Fewer Snowstorms.esp
   IF CHECKSUM("Fewer Snowstorms.esp", 88CB9260) DIRTY: 7 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: getSnowyV.+\.esp
@@ -1406,7 +1406,7 @@ REGEX: RL - .*\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Realistic Lighting - Dawnguard Patch.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Realistic Lighting.esp
   IF CHECKSUM("Realistic Lighting.esp", 5F40F0F8) DIRTY: 247 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: [Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\.esp
@@ -1457,7 +1457,7 @@ REGEX: ClimatesOfTamriel-VanillaNights-Lvl-[1234]\.esp
 climatesoftamriel.esp
 ClimatesOfTamriel-DLC01-Patch.esp
 ClimatesOfTamriel-Dawnguard-Patch.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ClimatesOfTamriel-Dungeons-Hardcore.esp
   IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ClimatesOfTamriel-Dungeons-Hazardous.esp
@@ -1502,7 +1502,7 @@ EnhancedLightsandFX.esp
 CLARALUX.esp
   IF CHECKSUM("CLARALUX.esp", FD3F3144) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 CLARALUX-DG-Patch.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 CLARALUX-HF-Patch.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
 ENDGROUP: Lighting
@@ -1682,7 +1682,7 @@ ADV GenStoresPlugin.esp
   IF CHECKSUM("ADV GenStoresPlugin.esp", 7E5C17A4) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 advancedcrafting.esp
 Aetherial Forge Advanced.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Aetherium_byAlmazi.esp
 AjenHorseFIX.esp
   IFNOT FILE("Ajen.esm") REQ: Ajen.esm
@@ -1750,7 +1750,7 @@ REGEX: Arrowsmith\w{0,2}\.esp
     IF VAR(RU) && IF FILE("Arrowsmith.esp") && IF VAR(CCO) ERROR: Удалите. Arrowsmith.esp уже включен в мод Complete Crafting Overhaul.
 arrowsmith-dawnguard.esp
   IF FILE("Arrowsmith.esp") INC: Arrowsmith.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF VAR(EN) && IF FILE("arrowsmith-dawnguard.esp") && IF FILE("SkyRe_Main.esp") ERROR: Delete. arrowsmith-dawnguard.esp already included in Complete Crafting Overhaul mod.
     IF VAR(RU) && IF FILE("arrowsmith-dawnguard.esp") && IF FILE("SkyRe_Main.esp") ERROR: Удалите. arrowsmith-dawnguard.esp уже включен в мод Complete Crafting Overhaul.
 	// Not sure but SkyRe_Main.esp is requires the Dawnguard DLC and includes Arrowsmith.esp
@@ -1758,7 +1758,7 @@ Ars Metallica.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 Ars Metallica - Dawnguard.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Ars Metallica - Hearthfire.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
@@ -1827,7 +1827,7 @@ DV Better Sleep.esp
   IF VAR(Dawnguard) && IF FILE("DV Better Sleep.esp") ERROR: Use Dawnguard version, DV Better Sleep Dawnguard.esp
 betterbarter.esp
 BetterChestLoot.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 BetterFishAdded.esp
   TAG: {{BASH: Relev}}
 betterstartingitems.esp
@@ -1849,7 +1849,7 @@ BirdsHF.esp
   IF CHECKSUM("BirdsHF.esp", 9F07F0A4) DIRTY: 368 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BirdsHFclean.esp
   IF FILE("Birds.esp") INC: Birds.esp
-  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
   IF CHECKSUM("BirdsHFclean.esp", B5314156) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BirdsFlocks_FR_2.3.esp
 Birdsofskyrim.esp
@@ -1868,7 +1868,7 @@ Bob The Merchant.esp
   IF CHECKSUM("Bob The Merchant.esp", 05F9D7C3) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BoethiaVolunteer.esp
 Bolts For Weapon Vendors.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 bondolf a rich merchant.esp
 BonesTheDracolich.esp
 Book's Of The Secret Knowledge.esp
@@ -1948,7 +1948,7 @@ Chesko_WearableLantern_Guards.esp
 Chesko_WearableLantern_Candle.esp
 Chesko_WearableLantern_Candle_DG.esp
   IF FILE("Chesko_WearableLantern_Candle.esp") INC: Chesko_WearableLantern_Candle.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Chesko_WearableLantern_Caravaner.esp
 Chesko_SwiftPotion.esp
 SIWLPatch.esp
@@ -2038,12 +2038,12 @@ Creepy Dungeons.esp
     IF VAR(RU) WARN: В большинстве случаев будет конфликтовать со всеми модами, меняющими подземелья.
 /* Removes by hand all unrealistic and ambient lighting in dungeons only */
 CrossbowsExpanded.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 crossbows rebalanced.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 CrossbowsRevamped.esp
   TAG: {{BASH: Delev, Relev}}
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("CrossbowsRevamped.esp", 52F5F6D1) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 CrossbowsRevamped70pctnospawn.esp
   TAG: {{BASH: Delev, Relev}}
@@ -2063,7 +2063,7 @@ BEGINGROUP: Base D
 d_b Whetstone.esp
 DamageEnchantBonus20v2.esp
 Dawnguard Crafting Items by Variooska v3.0.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 REGEX: DBCallingCard.+\.esp
   IF VAR(EN) SAY: Use only one DBCallingCard*.esp
     IF VAR(RU) SAY: Используйте только один DBCallingCard*.esp
@@ -2094,7 +2094,7 @@ Deleveled Skyrim - TCOSS.esp
   TAG: {{BASH: Delev, Relev}}
 DenseGrass.esp
 DFB - Dawnguard - More Crossbow Locations.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 DFB - Random Encounters.esp
 Diadem15.esp
 Diverse Faction Weapons.esp
@@ -2359,7 +2359,7 @@ Immersive Battles.esp
 Immersive Brigands.esp
   IF CHECKSUM("Immersive Brigands.esp", 36958C0C) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Immersive Dawnguard.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Immersive Dawnguard.esp", 3AF84D37) DIRTY: 12 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Immersive Patrols.esp
   IF CHECKSUM("Immersive Patrols.esp", 54BCDA38) DIRTY: 31 ITM, 8 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -2673,7 +2673,7 @@ more plants.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
 more plants dawnguard.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 More Prey animals.esp
 moredragonloot.esp
 MoreFood.esp
@@ -2829,8 +2829,7 @@ REGEX: Real Wildlife Skyrim.*\.esp
   TAG: {{BASH: Relev}}
 Real Wildlife.esp
   TAG: {{BASH: Relev}}
-/* Does this Satisfy SIRWPach.esp and SIRWPatch.esp */
-REGEX: SIRWPat?ch.esp
+REGEX: SIRWPat?ch\.esp
   TAG: {{BASH: Delev, Relev}}
     // not tested
 Real Wildlife Skyrim 0.1 IMCN.esp
@@ -3047,7 +3046,7 @@ Statues.esp
 SteamAchievementUnlocker.esp
   IF CHECKSUM("SteamAchievementUnlocker.esp", 067CB652) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Steel Bolts For All.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 stone_overhaul.esp
 REGEX: StormcloakArmorVariety(OPTION\d)?\.esp
   IF VAR(EN) SAY: Use only one StormcloakArmorVariety esp
@@ -3137,7 +3136,7 @@ tytanis horse armo vendor stand alone.esp
 Tytanis - Horse Armor Vendor.esp
 Tytanis - Farming.esp
 TytanisDawnguardElementalBolts.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ENDGROUP: Base T
 
 BEGINGROUP: Base U
@@ -3277,7 +3276,7 @@ Convenient Horses.esp
   IF CHECKSUM("Convenient Horses.esp", 4D155F9A) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Convenient Horses - Unique Frost.esp
 convenient horses ultimate.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 CrowdedCities.esp
 REGEX: KoS_Outcast(_Lite)?\.esp
   IF VAR(EN) SAY: Use only one KoS_Outcast*.esp
@@ -3318,7 +3317,7 @@ ENDGROUP: General Base Mods
 BEGINGROUP: Load Order Independent Mods
 
 Auto Unequip Ammo.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Auto Unequip Arrows.esp
   IF VAR(EN) && IF FILE("Auto Unequip Ammo.esp") WARN: Redundant. Included in "Auto Unequip Ammo".
     IF VAR(RU) && IF FILE("Auto Unequip Ammo.esp") WARN: Избыточно. Уже включено в "Auto Unequip Ammo".
@@ -3444,13 +3443,13 @@ AdvancedGlassWeaponsPlus.esp
   IF FILE("AdvancedGlassWeapons.esp") INC: AdvancedGlassWeapons.esp
 AEOR.esp
 AetherialBow&Arrows.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 AetheriumSwords.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Delete. Already included in AetheriumSwordsnArmor.esp
     IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp
 AetheriumSwordsnArmor.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Airy Armor.esp
 AK- Daedric Blue Weapons.esp
 Akaviri Dai-Katana.esp
@@ -3570,7 +3569,7 @@ REGEX: AttTWeapons.?\d\.esp
 AttTShields.esp
 AttTStaff.esp
 Auriel's Bow ReloadedRU.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 auriel_bow.esp
 Aurora Blade.esp
 Autumn elven set.esp
@@ -3841,9 +3840,9 @@ CopperPaladinArmorV2.esp
    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp
 CMStrongBoxes.esp
 Combat Remastered - 2H to 1H Dawnguard.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Combat Remastered - 2H to 1H Extended Vanilla Weapons.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ConanSwords.esp
 Lorecraft - Conan.esp
 Craftable Arrows.esp
@@ -3879,15 +3878,15 @@ CrazyVaclavsArrows.esp
 crimson dragon armor.esp
 crimsondaedricarmourwip.esp
 Crossbow_Basic_Collection_LListed_EN.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Crossbow_Basic_Collection_LListed_DE.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Crossbow_Basic_Collection_NoLListed_EN.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Crossbow_Basic_Collection_NoLListed_DE.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Crossbows by Scot.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Crossbows by Scot.esp", 9C9266A8) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Crossbows by Scot.esp", 56839516) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   // two versions, same name
@@ -3920,7 +3919,7 @@ DaedricAssassinArmorLight.esp
 DaedricAssassinArmorHeavy.esp
 DaedricCorset.esp
 DaedricCrossbow.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("DaedricCrossbow.esp", 7A4AF5A4) DIRTY: 2 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DaedricMask.esp
 daedricmaskeng.esp
@@ -3969,7 +3968,7 @@ DawnguardPaladinArmor.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardPaladinArmorCP.esp
    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp
 DawnguardPaladinArmorCP.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("DawnguardPaladinArmorCP.esp", B139B288) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DB_Light_Armor_Robes.esp
 DBShreddedTriss.esp
@@ -4061,7 +4060,7 @@ Dragon Scepter.esp
 DragonArrow.esp
 DragonBane2H.esp
 DragonboneCrossbow.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("DragonboneCrossbow.esp", 294218C5) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DragonBoneEbonsteel.esp
 Dragon Bone Mage Armor.esp
@@ -4165,9 +4164,9 @@ DwarvenPowerArmor.esp
   IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Delete. Already included in AetheriumSwordsnArmor.esp
     IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp
 dwarvenrifle.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 DwarvenRifle_Guilmonex.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 dwarvenscythe.esp
 DwarvenShooter.esp
 dwarvensteel.esp
@@ -4222,10 +4221,10 @@ EK_RingLimiter.esp
 El-Gran-Libro-de-Alquimia.esp
 Elculous.esp
 elegantvampirearmor.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 REGEX: ElementalBlade.(epicv|progression).\.esp
 ElementalXbowbolts.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   // TAG: {{BASH: Graphics}}
 Elemental Staves.esp
 EliteKnightArmor.esp
@@ -4257,7 +4256,7 @@ expertandmasterhoods.esp
 ExplodingArrows.esp
 explosive arrows.esp
 ExplosiveBoltsVisualized.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ExtendedVanillaWeapons.esp
 Eyepatch.esp
 ezio.darkgrey.esp
@@ -4275,7 +4274,7 @@ Faleria.esp
   IF CHECKSUM("Faleria.esp", D624BABC) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Falmer Darkseeker.esp
 Falmer Crossbow.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 FamilyJewels.esp
 FangofHaynekhtnamet.esp
 FantasyWeapons.esp
@@ -4287,7 +4286,7 @@ FFweapons.esp
 Field Mage Craftable Armor.esp
 Field Mage Outfit.esp
 Fifty_Shades_OFGM_LA.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Final TensaZangetsu.esp
 Fine Leather Armor.esp
 FinGleam.esp
@@ -4368,10 +4367,10 @@ GeraltJacket.esp
 Ghost Rider.esp
 ghostlier ghostblade.esp
 Ghosu - Project Flintlock.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
   IF CHECKSUM("Ghosu - Project Flintlock.esp", 0EE1910E) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Ghosu - Project Flintlock - Ammo Addon.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
 Giants hammertime.esp
 Gifted Armor.esp
 Gilgamesh Weapon Set.esp
@@ -4594,7 +4593,7 @@ SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
     IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
 insdevkikyosbow.esp
 InquisitorGear.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Invisible_Helm.esp
   IF CHECKSUM("Invisible_Helm.esp", 3EE48471) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records. It should be removed.
 InvisibleArmorSets.esp
@@ -4786,7 +4785,7 @@ lexyrex - magic arrow.esp
 LFArmors.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("LFArmors.esp", EF8F74B6) WARN: Original file was released before the CK (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
 listenerscrossbow.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 LordOfWar_TW2.esp
 Lorecraft - LFArmors.esp
 LostLongSwords.esp
@@ -4860,7 +4859,7 @@ LSBRuneWeapons.esp
 LubaSkyWings.esp
 Luna's Favor.esp
 LustmordVampireArmor.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ly ftgs.esp
 ly jacket.esp
 ly witch.esp
@@ -4962,7 +4961,7 @@ MorrowindGlass.esp
   IF CHECKSUM("MorrowindGlass.esp", 9099DB14) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("MorrowindGlass.esp", 9099DB14) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 MorrowindSmithing.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 MorrowindSmithingVanilla.esp
   IF VAR(Dawnguard) INC: Use Dawnguard version, MorrowindSmithing.esp
   IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -5165,7 +5164,7 @@ Onechanbara Kagura Set.esp
   IF CHECKSUM("1HDragonboneGreatsword.esp", 0AB9B894) || IF CHECKSUM("1HDragonboneGreatsword.esp", 1159E2EA) && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF CHECKSUM("1HDragonboneGreatsword.esp", 0AB9B894) || IF CHECKSUM("1HDragonboneGreatsword.esp", 1159E2EA) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 One handed Crossbow.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 openfacehelmetsstandalone.esp
 Orcish Sabre.esp
   IF CHECKSUM("Orcish Sabre.esp", 1AF00464) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -5359,10 +5358,10 @@ Rorona.esp
 Rorona3scabbard.esp
 rosegeant.esp
 Royal Daywalker Armor Hoods.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Royal Daywalker Armor Hoods.esp", BE7E3FDD) DIRTY: 0 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Royal Daywalker Armor.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 royal_daedric.esp
 RoyalArmorOfAragorn.esp
 RoyalElven.esp
@@ -5976,13 +5975,13 @@ BEGINGROUP: Items Load Late
 Dr_Bandolier.esp
 // ^ Must load here for "SkyRealism - Capacity and Carry Weight.esp"
 Dr_BandolierDG.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Lorecraft - Bandolier.esp
   IF VAR(EN) && IFNOT FILE("Dr_Bandolier.esp") WARN: Keep 'Dr_Bandolier.esp' aswell!
     IF VAR(RU) && IFNOT FILE("Dr_Bandolier.esp") WARN: 'Dr_Bandolier.esp' также необходим для работы!
 IF VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
   TAG: {{BASH: Delev, Relev}}
-  IFNOT FILE("SPIKE.esm") || IFNOT ACTIVE ("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT ACTIVE ("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Deactivate}} and remove [Relev]
 IF VAR(BFNIAP) MOD: Lorecraft - Immersive Armors.esp
 IF VAR(BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
@@ -6486,7 +6485,7 @@ Aella.esp
   IF CHECKSUM("Aella.esp", 91E4FBB5) DIRTY: 16 ITM, 4 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 AerafalEN.esp
 Aethernautics.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 AGameOfThrones.esp
   IF CHECKSUM("AGameOfThrones.esp", DA07A741) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 AGameOfThronesEnglish.esp
@@ -6528,7 +6527,7 @@ Another Breezehome Basement.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии - expanded basement.esp
 AnisesCabin(GS).esp
 anti-vampnocide.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard (Official Bethesda DLC)
 arbitrary faction additions - forsworn.esp
 ArbitraryFA - Forsworn.esp
 archaeologistguild.esp
@@ -6785,7 +6784,7 @@ Castle Brennenburgh.esp
   IF CHECKSUM("Castle Brennenburgh.esp", A1786E09) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("Castle Brennenburgh.esp", A1786E09) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 Castle Dracula.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Castle Dracula.esp", 3BEE9879) DIRTY: 25 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Castle Stonespire.esp
   IF CHECKSUM("Castle Stonespire.esp", D070A4D3) DIRTY: 37 ITM, 9 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -6861,9 +6860,9 @@ CZHCAD.esp
   // Dirty and clean checksums above
   IF CHECKSUM("CZHCAD.esp", B3418C2A) DIRTY: 4 ITM, 51 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 CZHCAD_DG.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 CZHCAD_HF.esp
-  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
 ENDGROUP: Quests C
 
 BEGINGROUP: Quests D
@@ -6887,7 +6886,7 @@ DarkBrotherhoodRecruits.esp
 darkbrotherhoodsanctuaries.esp
 darkbrotherhoodshield.esp
 darkhouse.esp
-  IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfire (Official Bethesda DLC)
 DarkKnightPaladin.esp
 DarkSoulsBreezehome Mod 0.1.esp
 darkstadt.esp
@@ -6915,12 +6914,12 @@ DeadManor 1.1.esp
   IF FILE("DeadManor 1.0.esp") && IF VAR(EN) WARN: Use either DeadManor 1.0.esp or DeadManor 1.1.esp, not both.
     IF FILE("DeadManor 1.0.esp") && IF VAR(RU) WARN: Используйте любой или DeadManor 1.0.esp или DeadManor 1.1.esp, не обa.
 REGEX: Descentintomadness.*\.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 WIP-Destroy the Thieves Guild.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") && IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", E5C3CF54) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") && IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", BE25DF00) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") && IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", 43FB188C) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") && IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", 4FF5C52F) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) && IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", E5C3CF54) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) && IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", BE25DF00) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) && IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", 43FB188C) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) && IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", 4FF5C52F) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
   IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", E5C3CF54) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("WIP-Destroy the Thieves Guild.esp", 43FB188C) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DetailedCities.esp
@@ -7144,7 +7143,7 @@ Gleaming falls.esp
 Gildergreen Regrown.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 Gobland.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Gobland.esp", 20858F47) DIRTY: 69 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Gold Worth Something.esp
   IF CHECKSUM("Gold Worth Something.esp", AF685A9A) DIRTY: 11 ITM, 2 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -7331,10 +7330,10 @@ HF_Lakeview_Pool_and_Hotbath.esp
   IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 49403248) DIRTY: 8 ITM, 3 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 49403248) || IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 03270F0F) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 49403248) || IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 03270F0F) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
 HF_Lakeview_North_Perimeter_Fence.esp
   IF CHECKSUM("HF_Lakeview_North_Perimeter_Fence.esp", C7E73EB4) DIRTY: 0 ITM, 6 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
 Landscaped_Breezehome.esp
 Landscaped_Honeyside.esp
 Landscaped_Homes_Honeyside.esp
@@ -7360,7 +7359,7 @@ LFox Moon Sugar Manor.esp
 Liberation Beacon.esp
   IF CHECKSUM("Liberation Beacon.esp", EAC2C978) DIRTY: 10 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 lighthouse.esp
-  IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfire (Official Bethesda DLC)
 lighthousefull.esp
 LimbwoodManor.esp
 LittleShrines.esp
@@ -7431,7 +7430,7 @@ MarkersOfSkyrim.esp
 MavensLetter.esp
   IF CHECKSUM("MavensLetter.esp", 6C5AA0A9) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MeekoHusky.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 MercenaryGuild.esp
   IF CHECKSUM("MercenaryGuild.esp", 8539027A) DIRTY: 9 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("MercenaryGuild.esp", 9801AAA0) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -7691,14 +7690,14 @@ rwshrine.esp
 When Vampires Attack.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 Dwarvenhaven.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ENDGROUP: Quests R
 
 BEGINGROUP: Quests S
 
 Safehouse1.0.esp
 SarumansTower.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Saviik City.esp
   IF CHECKSUM("Saviik City.esp", 2A1083E8) DIRTY: 0 ITM, 576 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Saviik City.esp", 2A1083E8) && IF VAR(EN) WARN: This file contains 32 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
@@ -7765,7 +7764,7 @@ Sincar Barrens.esp
 SK_Berserk.esp
   IF CHECKSUM("SK_Berserk.esp", C30C6667) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SlavePack.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 SleepingDangers-SandsofTime.esp
 SlightlyEnhancedBreezehome.esp
 skooma cabin.esp
@@ -7783,7 +7782,7 @@ skyrimdefenders.esp
 Skyrim Home.esp
 skyrimovens.esp
   IF CHECKSUM("skyrimovens.esp", 0FA9E4CA) DIRTY: 0 ITM, 61 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
 Skyrim School of Witchcraft and Wizardry.esp
   IF CHECKSUM("Skyrim School of Witchcraft and Wizardry.esp", E003E0AF) DIRTY: 599 ITM, 67 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SkyrimSewers.esp
@@ -7815,7 +7814,7 @@ solitude sanctuary.esp
 SoLo Solace.esp
   IF CHECKSUM("SoLo Solace.esp", 72642247) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Soul.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 SoulForge.esp
 Sovngarde - completed main quest.esp
   IF VAR(EN) SAY: This mod is not compatible with the last quest in the Main Quest chain. Either disable the .esp before you do it or wait until you complete the main quest.
@@ -8115,7 +8114,7 @@ Vigilant of Stendarr Quests No Joining Requirements Patch.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Vigilant of Stendarr Quests.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Vigilant of Stendarr Quests.esp
 Vjarkell Castle.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Vlindrel Hall - Dragonborn Edition.esp
 VlindrelArmory v2_Nav.esp
 VlindrelArmory.esp
@@ -8153,7 +8152,7 @@ ScImpUniformsWARZONES.esp
 warehouse_landscape.esp
 Wayhouse.esp
 WeatherTop.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("WeatherTop.esp", 57764A83) DIRTY: 1 ITM, 8 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 WestbrookKeep.esp
 Western Watchtower Rebuilt.esp
@@ -8315,14 +8314,14 @@ SkyrimWeightImprovement.esp
   IF CHECKSUM("SkyrimWeightImprovement.esp", B12CA7E5) || IF CHECKSUM("SkyrimWeightImprovement.esp", 6166E301) && IF VAR(Dawnguard) && IF VAR(Hearthfire) SAY: Use Dawnguard and Hearthfires version if you want Dawnguard and Hearthfires items to be adjusted by this mod.
   // Dawnguard version
   IF CHECKSUM("SkyrimWeightImprovement.esp", 770F0BB8) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") && IF CHECKSUM("SkyrimWeightImprovement.esp", 770F0BB8) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") && IF CHECKSUM("SkyrimWeightImprovement.esp", DB1E6677) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF CHECKSUM("SkyrimWeightImprovement.esp", 770F0BB8) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF CHECKSUM("SkyrimWeightImprovement.esp", DB1E6677) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   // Dawnguard and Hearthfires version
   IF CHECKSUM("SkyrimWeightImprovement.esp", 84521D2D) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") || IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") && IF CHECKSUM("SkyrimWeightImprovement.esp", 84521D2D) ERROR: Dawnguard.esm AND Hearthfires.esm are not present or are not active. Skyrim will CTD when loading if using this file without them.
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") || IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") && IF CHECKSUM("SkyrimWeightImprovement.esp", 8FB74AF5) ERROR: Dawnguard.esm AND Hearthfires.esm are not present or are not active. Skyrim will CTD when loading if using this file without them.
+  IFNOT VAR(Dawnguard) || IFNOT VAR(Hearthfire) && IF CHECKSUM("SkyrimWeightImprovement.esp", 84521D2D) ERROR: Dawnguard.esm AND Hearthfires.esm are not present or are not active. Skyrim will CTD when loading if using this file without them.
+  IFNOT VAR(Dawnguard) || IFNOT VAR(Hearthfire) && IF CHECKSUM("SkyrimWeightImprovement.esp", 8FB74AF5) ERROR: Dawnguard.esm AND Hearthfires.esm are not present or are not active. Skyrim will CTD when loading if using this file without them.
   // Dawnguard and Hearthfires items only version
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") || IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") && IF CHECKSUM("SkyrimWeightImprovement.esp", 58D86ADD) ERROR: Dawnguard.esm AND Hearthfires.esm are not present or are not active. Skyrim will CTD when loading if using this file without them.
+  IFNOT VAR(Dawnguard) || IFNOT VAR(Hearthfire) && IF CHECKSUM("SkyrimWeightImprovement.esp", 58D86ADD) ERROR: Dawnguard.esm AND Hearthfires.esm are not present or are not active. Skyrim will CTD when loading if using this file without them.
 unusualgemweightless.esp
 Utopolyst's Item Sorting.esp
 vinis_ingredients.esp
@@ -8507,15 +8506,15 @@ Arvak, Shadowmere's Body - No Saddle.esp
     IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") && IF VAR(RU) WARN: Используйте только один Arvak esp.
 Arvak_Fire.esp
   IF CHECKSUM("Arvak_Fire.esp", 8B83FC98) DIRTY: 3 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Arvak_Frost.esp
   IF CHECKSUM("Arvak_Frost.esp", 21746CA3) DIRTY: 3 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF FILE("Arvak_Fire.esp") && IF VAR(EN) WARN: Use either Arvak_Fire.esp or Arvak_Frost.esp, not both.
      IF FILE("Arvak_Fire.esp") && IF VAR(RU) WARN: Используйте любой, или Arvak_Fire.esp или Arvak_Frost.esp, не оба.
 Arvak_Storm.esp
   IF CHECKSUM("Arvak_Storm.esp", A3FADF0F) DIRTY: 3 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF FILE("Arvak_Fire.esp") || IF FILE("Arvak_Frost.esp") && IF VAR(EN) WARN: Use only one of Arvak_*.esp
     IF FILE("Arvak_Fire.esp") || IF FILE("Arvak_Frost.esp") && IF VAR(RU) WARN: Используйте только один of Arvak_*.esp
 Ash Pile Expiration.esp
@@ -8530,7 +8529,7 @@ Auriels_Arrows.esp
   IFNOT CHECKSUM("Auriels_Arrows.esp", CDADE9F6) && IFNOT CHECKSUM("Auriels_Arrows.esp", 52C0FFEC) && IFNOT CHECKSUM("Auriels_Arrows.esp", 3F52150F) && IFNOT CHECKSUM("Auriels_Arrows.esp", 6E06216E) SAY: This esp may be obsolete. As of 17 DEC 2012, the latest version is 1.3.
   IF CHECKSUM("Auriels_Arrows.esp", CDADE9F6) DIRTY: 5 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Auriels_Arrows.esp", 52C0FFEC) DIRTY: 5 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Auriel's Bow Reloaded.esp
 AutoCamDialogue.esp
 AutoCamSpellCast.esp
@@ -8540,7 +8539,7 @@ BEGINGROUP: Overrides B
 
 Babette.esp
   IF CHECKSUM("Babette.esp", 6596E3CF) DIRTY: 8 ITM, 0 UDR records.  Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Balanced and Split Sword Axe Mace Weapon Perks.esp
 balanced atronachs.esp
 BalancedHeroWeps.esp
@@ -8776,15 +8775,15 @@ Dawnguard - Att.esp
   IF VAR(EN) SAY: This esp has master file ArmmedttTeeth.esm placed before Dawnguard.esm (opposite BOSS).
     IF VAR(RU) SAY: Вопреки порядку загрузки BOSS, мастерфайл этого мода находится перед Dawnguard.esm
 Dawnguard - Join As A Vampire.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 IFNOT FILE("LorebalanceArtifacts.esp") MOD: DawnguardArmorLaup26.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Dawnbreaker Enhanced.esp
 REGEX: DawnguardDawnbreaker_(FireEd|FireED_ST)?\.esp
   IF VAR(EN) WARN: Use only one DawnguardDawnbreaker esp
     IF VAR(RU) WARN: Используйте только один DawnguardDawnbreaker esp
 REGEX: DawnguardDawnbreaker_(SunEd|SunFireED|HolyFireEd)?\.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF VAR(EN) WARN: Use only one DawnguardDawnbreaker esp
     IF VAR(RU) WARN: Используйте только один DawnguardDawnbreaker esp
 Dawnbreaker_PeacefulExplosion.esp
@@ -9032,7 +9031,7 @@ Guards armor replacement.esp
 guardskillcomments.esp
 GuardsNoShoutStop.esp
 GZD - Ancient Falmer Crown.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ENDGROUP: Overrides G
 
 BEGINGROUP: Overrides H
@@ -9326,10 +9325,10 @@ LongerCraftingDurations.esp
 longerblessings.esp
 Lord of Illusion Ring.esp
 LorebalanceArtifacts.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("LorebalanceArtifacts.esp", E22F5916) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 IF FILE("LorebalanceArtifacts.esp") MOD: DawnguardArmorLaup26.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 LoreFriendlyArtifactRebalance.esp
 LoreFriendlyArtifacts.esp
 Lore Friendly Ebony Mail.esp
@@ -9338,7 +9337,7 @@ Low Bouinty mod.esp
 Lower Training Cost and 10 times per level.esp
 lowerlevellegendaryandrevereddragons.esp
   TAG: {{BASH: Relev}}
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 lt_dragonplate_should_be_better_than_daedric.esp
 Lush Grass.esp
 lush grass and trees.esp
@@ -9447,11 +9446,11 @@ mjhKhajiitSpeak.esp
 mjhKhajiitSpeakDLC - Dawnguard.esp
   IF VAR(EN) SAY: This mod overwrites all dialogue enable only when playing Khajiit.
     IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 mjhKhajiitSpeakDLC - Hearthfire.esp
   IF VAR(EN) SAY: This mod overwrites all dialogue enable only when playing Khajiit.
     IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
-  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
 mjhReducedGoldRewards.esp
 MODdisguises.esp
 moon_earthwmars_masser.esp
@@ -9529,7 +9528,7 @@ No Permanent Essentials Redux.esp
   IF VAR(Dawnguard) && IFNOT FILE("No Permanent Essentials Redux -- Dawnguard.esp") REQ: No Permanent Essentials Redux -- Dawnguard.esp for proper operation with Dawnguard.
 No Permanent Essentials Redux -- Dawnguard.esp
   IF CHECKSUM("No Permanent Essentials Redux -- Dawnguard.esp", 11202A14) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IFNOT VAR(USKP) || IFNOT ACTIVE("Unofficial Skyrim Patch.esp") ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IFNOT VAR(UDGP) || IFNOT ACTIVE("Unofficial Dawnguard Patch.esp") ERROR: Unofficial Dawnguard Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 No Permanent Essentials Redux -- Bring Out Your Dead Compatibility.esp
@@ -9547,7 +9546,7 @@ No Perk Prereqs - Smithing Excluded.esp
     IF VAR(RU) && IF REGEX("PerkUP.+\.esp") WARN: Удалите. Уже включено в 'PerkUP esps'
 No Random Dragons.esp
 No Sun.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 dD-No Twitching Dragon Death Animation.esp
 No Vendor Yells.esp
 No_dog_meat.esp
@@ -9889,12 +9888,12 @@ dD - Enhanced Blood Main.esp
   IF VAR(Dawnguard) && IF VAR(SkyMoMod) && IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Dawnguard and Monster Mod.
   IF CHECKSUM("dD - Enhanced Blood Main.esp", 626E031) DIRTY: 16 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 dD-Dawnguard-EBT Patch.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 dD-SkyrimMonsterMod EBT Patch.esp
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
   IF FILE("dD-Dawnguard-EBT Patch.esp") INC: dD-Dawnguard-EBT Patch.esp
 dD-Dawnguard-MonsterMod EBT Patch.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
   IF FILE("dD-Dawnguard-EBT Patch.esp") INC: dD-Dawnguard-EBT Patch.esp
   IF FILE("dD-SkyrimMonsterMod EBT Patch.esp") INC: dD-SkyrimMonsterMod EBT Patch.esp
@@ -10066,7 +10065,7 @@ valkiirs_tastier_food.esp
 valkiirs_tastier_food_hearthfire.esp
   IF FILE("valkiirs_tastier_food.esp") && IF VAR(EN) WARN: Use either valkiirs_tastier_food.esp or valkiirs_tastier_food_hearthfire.esp, not both.
      IF FILE("valkiirs_tastier_food.esp") && IF VAR(RU) WARN: Используйте любой, или valkiirs_tastier_food.esp или valkiirs_tastier_food_hearthfire.esp, не оба.
-  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
 valuablecoins.esp
   IF CHECKSUM("valuablecoins.esp", 80A41AE4) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("valuablecoins.esp", 80A41AE4) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -10087,9 +10086,9 @@ VanillaMonsterLoot.esp
   IF CHECKSUM("VanillaMonsterLoot.esp", DCEE3E1E) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF VAR(Dawnguard) WARN: Use Dawnguard version - ImprovedMonsterLoot.esp
 VampireLordFlys.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 vampire royal hood.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 VariedGuards.esp
 VariedGuards2H.esp
 VariousGuardReplacer.esp
@@ -10150,7 +10149,7 @@ BEGINGROUP: Overrides XYZ
 
 xvisionchildren.esp
 xvisionchildren - hearthfire.esp
-  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
 YChildren of the Sky.esp
 YKBeefierDawnbreaker.esp
 YKBeefsteakierDawnbreaker.esp
@@ -10552,8 +10551,8 @@ IFNOT FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWS-FAMP.esp instead.
 IFNOT FILE("3DNPC.esp") MOD: RND_SkyMoMod-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: SI_RNADPatch.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
   IFNOT FILE("RealisticNeedsandDiseases.esp") REQ: RealisticNeedsandDiseases.esp
 IFNOT FILE("3DNPC.esp") MOD: RealisticRoomRental.esp
   IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -10592,10 +10591,10 @@ SkyRealism - Mass and Materials - Cloaks.esp
   IFNOT FILE("Cloaks.esp") || IFNOT ACTIVE ("Cloaks.esp") ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 SkyRealism - Mass and Materials - Dawnguard.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 SkyRealism - Mass and Materials - Hearthfires.esp
-  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
   IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 SkyRealism - Mass and Materials - MorrowindArmor.esp
   IFNOT FILE("MorrowindArmor.esp") || IFNOT ACTIVE ("MorrowindArmor.esp") ERROR: MorrowindArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -10653,13 +10652,13 @@ SkyRe_Vampirism.esp
     IF VAR(RU) SAY: Возможны конфликты с другими модами, меняющими систему вампиризма.
 UVO - Ultimate Vampirism Overhaul.esp
 Better Vampires.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Better Vampires DG.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF VAR(EN) WARN: Now obsolete.
     IF VAR(RU) WARN: Устарело. Обновите до последней версии.
 Better Vampires ML.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF FILE("Better Vampires.esp") INC: Better Vampires.esp
   IF FILE("Better Vampires DG.esp") INC: Better Vampires DG.esp
 Better Vampires - No DawnGuard.esp
@@ -10707,10 +10706,10 @@ OrientalRace_VampiricThirst_patch.esp
   IFNOT FILE("OrientalRace.esp") REQ: OrientalRace.esp
   IFNOT FILE("mslVampiricThirst.esp") REQ: mslVampiricThirst.esp
 REGEX: UnblockActivate(NoWere)?(NoMap)?\.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Proper Skyrim Vampires.esp
 VampCanActivate.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 become_hybrid.esp
 playervampirerearrange.esp
 power_of_blood.esp
@@ -10719,7 +10718,7 @@ Predator Vision.esp
 Vampire Predator Vision.esp
 naturalisticwerewolf.esp
 Revamped Vampire Lord.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Revamped Vampire Lord HC Ver.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/21660 Revamped Vampire Lord"
     IF VAR(RU) SAY: Устарело. Обновите до последней версии. "http://skyrim.nexusmods.com/mods/21660 Revamped Vampire Lord"
@@ -10734,7 +10733,7 @@ Scary Werewolf 3 sec.esp
   IF FILE("Scary Werewolf Form.esp") INC: Scary Werewolf Form.esp
 Scriptless werewolf bonus.esp
 StrongVampireLord.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ToL_Core_by_Brevi.esp
 ToL_SKSE_by_Brevi.esp
   IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
@@ -10785,15 +10784,15 @@ WiS IV - Werewolf & Vampire.esp
 YetAnotherWerewolfImprovement.esp
   IF VAR(Dawnguard) REQ: "http://skyrim.nexusmods.com/mods/19924 YetAnotherWerewolfImprovement_DG.esp"
 YetAnotherWerewolfImprovement_DG.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF FILE("YetAnotherWerewolfImprovement.esp") INC: YetAnotherWerewolfImprovement.esp
 REGEX: DawnguardDelayedStart(20|30|40|50|999)\.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF FILE("DG-NoAttacks.esp") INC: DG-NoAttacks.esp
   IF VAR(EN) SAY: Use only one DawnguardDelayedStart esp
     IF VAR(RU) SAY: Используйте только один DawnguardDelayedStart esp
 DG-NoAttacks.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ENDGROUP: Vampires and Werewolves
 
 BEGINGROUP: Magic
@@ -10879,7 +10878,7 @@ ExtractOreSpell.esp
   IF VAR(EN) && IF FILE("MidasSkyrim.esp") INC: MidasSkyrim.esp (Spell 'Bound Pickaxe')
     IF VAR(RU) && IF FILE("MidasSkyrim.esp") INC: Midas Magic.esp (Заклинание 'Призыв кирки')
 boundxbows.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 // spells c
 CallAssassins.esp
 Candlespell.esp
@@ -10955,7 +10954,7 @@ DynamicWard.esp
 // spells e
 E0TeleportSpells.esp
 Eclipse - Power.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Elderman's Cure Disease Spell.esp
 ElementalFuryFix.esp
 Elementalist.esp
@@ -11248,7 +11247,7 @@ SummonableCreatures.esp
     IF CHECKSUM("SummonableCreatures.esp", 442DF73F) || IF CHECKSUM("SummonableCreatures.esp", 86FBDC8B) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   IF CHECKSUM("SummonableCreatures.esp", 5E074043) DIRTY: 5 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SummonArvakVoiceSpell.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 SummonAncestorGuardian.esp
 SummonAnimalPets.esp
 SummonCraftingFurniture.esp
@@ -11279,7 +11278,7 @@ The Nights Embrace.esp
 TeleportSpellMod.esp
   IF CHECKSUM("TeleportSpellMod.esp", 9A6FD915) DIRTY: 11 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 testspells.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ThievesGreyFoxSummon.esp
   IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete. Already included in LegendarySouls.esp
     IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
@@ -11508,7 +11507,7 @@ ElemIceWall.esp
 EmpoweredMagic.esp
 EmpoweredMagic_Dawnguard.esp
   IFNOT FILE("EmpoweredMagic.esp") REQ: EmpoweredMagic.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Even Smaller Spell Light Radius.esp
 // sp late f
 FNISspells.esp
@@ -11567,7 +11566,7 @@ Mighty Magick - Scaling.esp
 REGEX: MMO(Alteration|Conjuration|Destruction|Illusion|Restoration)Changes\.esp
 ForgottenMastery.esp
   // must load after Mighty Magic
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("ForgottenMastery.esp", 4D20CBA7) DIRTY: 0 ITM, 1 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MiniLovers.esp
 MiniLoversSoundSpell.esp
@@ -11686,7 +11685,7 @@ BetterWhitePhialEffects.esp
 Black lightened Alchemy.esp
 Black lightened Alchemy ML.esp
 BloodPotionRecipe.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("BloodPotionRecipe.esp", 25395F5D) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Chemistry.esp
 CP_GourdIngredient.esp
@@ -11716,7 +11715,7 @@ BEGINGROUP: Enchantment
 // enchantment
 
 zzzAlmostUnlimitedWeaponEnchant.esp
-  IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Artifact Disenchanting.esp
 Artifact Disenchanting - Dawnguard.esp
 Backstab Enchantment new.esp
@@ -11862,7 +11861,7 @@ Combat Remastered.esp
 Combat Remastered - 2H to 1H.esp
   IFNOT FILE("Combat Remastered.esp") REQ: Combat Remastered.esp
 Combat Remastered - Archery.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Combat Remastered - 2H to 1H 3rdEraWeapMoS.esp
   IFNOT FILE("3rdEraWeaponsMoS.esm") REQ: 3rdEraWeaponsMoS.esm
 Combat Remastered - 2H to 1H Heavy Armory.esp
@@ -11901,7 +11900,7 @@ REGEX: Dual Wield Parrying.*\.esp
   IF FILE("Dual Wield Parrying_ScriptDragon.esp") && IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
   IF VAR(EN) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) REQ: Dawnguard version. Remove and install 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
     IF VAR(RU) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) REQ: Версия для Dawnguard. Удалите это и установите 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
-  IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") &&   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") &&   IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Duel Combat Realism CK.esp
 Duel - Combat Realism FAST.esp
 Duel.esp
@@ -12095,7 +12094,7 @@ ACE Archery Dawnguard Patch.esp
     IF VAR(RU) WARN: Устарело. Обновите до последней версии. Переименовано в ACE Archery.esp
 ACE Archery.esp
   IF CHECKSUM("Crafting300.esp", 46C639C1) INC: Crafting300.esp, to fix this get the compatibility patch found here: "http://skyrim.nexusmods.com/download/70990"
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Lorecraft - Ace Archery.esp
 IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: Crafting300.esp
 IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: More Craftables - Crafting 300 compatibility.esp
@@ -12502,7 +12501,7 @@ SkyRe_Plugin_Morrowloot.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_Witcher 2 Style Dawnguard Armour.esp
 SkyRe_Dreamcloth.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
 REGEX: Acquisitive Soul Gems( FR)?\.esp
   // must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
 HarvestOverhaulSkyReCompatibility.esp
@@ -12522,7 +12521,7 @@ hokutoshinken.esp
 ArmorPerkHelmetRemover.esp
 vinis_alchemy_tree.esp
 BatTravel.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
 bandit raids on holds.esp
 GDO_Plugin_SkyRe.esp
   IFNOT VAR(SkyReM) REQ: SkyrimRedone
@@ -12568,7 +12567,7 @@ balanceddestructionv2.esp
 IFNOT FILE("DeadlySpellImpacts.esp") MOD: balanceddestructionv4.esp
 bassem's better deadly aim perk ^a01.esp
 BeastWithin.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("BeastWithin.esp", D7A74D2E) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 bloodslinger.mastereagleeye.esp
 Bullseye to Dragonslayer Perk.esp
@@ -12622,7 +12621,7 @@ More Usefull Soul Siphon100.esp
 MoreWerewolfPerks.esp
   IF CHECKSUM("MoreWerewolfPerks.esp", DECFC212) DIRTY: 2 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MoonLightPower.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 // Adds items, spells perks.  Placed in lowest suitable group.
 // perks n
 Necromancer.esp
@@ -12732,7 +12731,7 @@ SPERG Vampire Fix.esp
   SAY: Obsolete? Not included in latest download.
 SPERG Dawnguard Patch.esp
   // part of Skyrim Perk Enhancements
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 SleepWell.esp
 Soulmaster 10.esp
 SpeechTree.esp
@@ -12747,7 +12746,7 @@ IF CHECKSUM("Werewolf Loot.esp", D83BDA8C) MOD: Werewolf Loot.esp
 // perks u
 // perks v
 Vampirelordroyal.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
   IF CHECKSUM("Vampirelordroyal.esp", 520F0EF2) DIRTY: 18 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   // ^ moved from skills
 // perks w
@@ -12868,7 +12867,7 @@ NoMoreVanillaHair.esp
   IF CHECKSUM("NoMoreVanillaHair.esp", A31830F1) DIRTY: 1 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT CHECKSUM("NoMoreVanillaHair.esp", A31830F1) && IFNOT CHECKSUM("NoMoreVanillaHair.esp", 7F9635D9) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IFNOT CHECKSUM("NoMoreVanillaHair.esp", A31830F1) && IFNOT CHECKSUM("NoMoreVanillaHair.esp", 7F9635D9) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair". 
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair". 
   REQ: "http://skyrim.nexusmods.com/mods/19623/ Crazy hairs and demoness hairs conversion by zzjay"
   REQ: "http://skyrim.nexusmods.com/mods/3809/ Hair Pack"
   REQ: "http://skyrim.nexusmods.com/mods/18110 Hair packs of TES IV Oblivion"
@@ -12911,7 +12910,7 @@ Extended eye colours.esp
 FantasyEyes.esp
 FlansEyesForSkrim.esp
 GlowEyesArgonianKhajiitVamp.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Glowing Eyes.esp
 Glowing Vampire Eyes.esp
 KhajiitEyes.esp
@@ -12926,12 +12925,12 @@ OrientalEyes.esp
 PortalEyes.esp
 PurpleEyes.esp
 serana1.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 serana1normaleyes.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF FILE("serana1.esp") INC: serana1.esp
 serana1demoneyes.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IF FILE("serana1normaleyes.esp") INC: serana1normaleyes.esp
   IF FILE("serana1.esp") INC: serana1.esp
 TheEyesofBeauty.esp
@@ -13063,7 +13062,7 @@ Witch Elf Race.esp
 witcherinskyrim.esp
 WotA-VaalsarkRace.esp
   IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Yaksha.esp
 ZazimelDrow.esp
 ENDGROUP: Race additions
@@ -13080,7 +13079,7 @@ Children of Skyrim - NORD PRESETS.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Children of Skyrim - NORD PRESETS 1-10 v1.1.esp
 Delphine Makeover Preset.esp
 ESPv1_1.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 ESPv1_1nondependent.esp
 Female Presets 2-3.esp
 Improved Eyes Skyrim - Models.esp
@@ -13150,8 +13149,8 @@ IF FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWS-FAMP.esp instead.
 IF FILE("3DNPC.esp") MOD: RND_SkyMoMod-Patch.esp
 IF FILE("3DNPC.esp") MOD: SI_RNADPatch.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-  IFNOT VAR(Hearthfire) || IFNOT ACTIVE("Hearthfires.esm") ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
   IFNOT FILE("RealisticNeedsandDiseases.esp") REQ: RealisticNeedsandDiseases.esp
 IF FILE("3DNPC.esp") MOD: PotionsBETA.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Bethesda Official DLC)
@@ -13327,7 +13326,7 @@ UFO - Ultimate Follower Overhaul.esp
   IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 6EF3FFBA) DIRTY: 18 ITM, 0 UDR records Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 UFO - Dawnguard AddOn.esp
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 UFO - Heartfire AddOn.esp
   // Typo is name, not typo
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
@@ -13347,7 +13346,7 @@ IF VAR(UFO) MOD: SupermodelSkyrim.esp
   // loaded after UFO only if UFO is installed. This is a compromise.
   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
 IF VAR(UFO) MOD: SupermodelDawnguard.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
 IF VAR(UFO) MOD: My home is your home.esp
   IF CHECKSUM("My home is your home.esp", C36587B3) DIRTY: 3 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -13468,7 +13467,7 @@ BrelynaMaryon.esp
 Brothers.esp
 // companions c
 Caellon.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 CamillaValerius.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("CamillaValerius.esp", 3A9B09D3) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -13479,7 +13478,7 @@ Chadeaux.esp
 ChantelleV2.esp
 Child Adoption.esp
 CinderFrost.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 ClaudiaVampireCompanion.esp
 CleanBalimund.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -13524,7 +13523,7 @@ Dryad Saria.esp
 EerieElves.esp
 EeveeFox.esp
 Enhanced Lydia.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair". 
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair". 
 EkkiiBreezeBasementAFMLydia.esp
 ElizaValentine.esp
 Ellette.esp
@@ -13577,7 +13576,7 @@ Frost_Elves.esp
 // companions g
 GameofThrones-Followers.esp
 godess's of skyrim.esp
-  IFNOT VAR(ApachiiHair) || IFNOT ACTIVE("ApachiiHair.esm") ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 // companions h
 Haeli.esp
   IF CHECKSUM("Haeli.esp", DC8D51C0) DIRTY: 6 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -13796,7 +13795,7 @@ Serana_Revised.esp
     IF VAR(RU) REQ: Модели(Meshes) и тестуры мз мода "http://skyrim.nexusmods.com/mods/21038 Girls of Skyrim - Michelle"
 Serana Revised+upd.esp
 SeranaSecret.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Serafina & co.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IFNOT FILE("TheEyesOfBeauty.esp") REQ: "http://skyrim.nexusmods.com/mods/13722 The Eyes of Beauty"
@@ -13812,7 +13811,7 @@ Skyrim - The three divine brothers.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Brothers.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Brothers.esp
 Sneaky_Serana.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC))
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC))
 SNGakan.esp
 SNMorannon.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
@@ -14157,7 +14156,7 @@ FollowerWander2.esp
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Already included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
 FollowerWander2Serana.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 
 BEGINGROUP: Unlimited Companions
 
@@ -14273,7 +14272,7 @@ Vampire Serana.esp
 VampireCompanionBetav1.esp
 Vashira The blood flash.esp
 VizerinChronicles.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IFNOT FILE("FallOut3Hairs.esm") REQ: "http://skyrim.nexusmods.com/mods/17993 Hair packs of Fallout 3".
   IFNOT FILE("AdditionalNPCFollwerVoices.esp") REQ: "http://skyrim.nexusmods.com/mods/16266 Additional Vanilla NPC Follower Voice Types".
 Viszerinfollower.esp
@@ -14350,7 +14349,7 @@ BEGINGROUP: Race Overrides
 
 XCE.esp
 xced.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
   IFNOT FILE("XCE.esp") REQ: XCE.esp (XCE - Xenius Character Enhancement)
 [MPX]RaceHeights.esp
 [mpx] npc gender race heights v2.esp
@@ -14465,7 +14464,7 @@ MorrowindAblities.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Old Race Settings.esp
 mwcrh&w.esp
 NormalVampireFaces.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 OCS OSR.esp
 Old Race Settings.esp
 PrettyKhajiit.esp
@@ -14666,7 +14665,7 @@ IF FILE("Purewaters.esp") MOD: realrainextended.esp
   IF VAR(EN) SAY: Use only one realrain.esp
     IF VAR(RU) SAY: Используйте только один realrain.esp
 PurewatersDG.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 RND_PureWaters-Patch.esp
 RealisticWaterTextures.esp
   IF VAR(EN) && IF FILE("WATER.esp") WARN: DELETE. Use WATER.esp instead
@@ -14718,7 +14717,7 @@ accurate prison markers.esp
 arvakskull-marker.esp
 Atlas Map Markers.esp
 Atlas Dawnguard.esp
-  IFNOT VAR(Dawnguard) || IFNOT ACTIVE("Dawnguard.esm") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
 Barenziah.esp
 10466_BarenziahQuestM.esp
 BarenziahQuestMarkers.esp
@@ -14774,7 +14773,7 @@ housemarkerfasttravel.esp
   IF CHECKSUM("housemarkerfasttravel.esp", 2181FADE) DIRTY: 3 ITM, 0 UDR Records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 impatienceofasaint-markers.esp
 JiubQuestMarkers.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 jorrvaskr.esp
   IF CHECKSUM("jorrvaskr.esp", 3ABD8B3E) DIRTY: 4 ITM, 0 UDR records. Needs TES5Edit cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Map Markers.esp
@@ -14844,7 +14843,7 @@ Warburg's 3D Paper World Map.esp
   IF VERSION("TES5", "1.8.151.0", <) REQ: Skyrim 1.8+
 Warburg's 3D Paper World Map - Dawnguard.esp
   IFNOT FILE("Warburg's 3D Paper World Map.esp") REQ: Warburg's 3D Paper World Map.esp (The main file)
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 WorldMapInFull3D.esp
   IF VAR(EN) SAY: If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)
     IF VAR(RU) SAY: Если вы используете другие моды. изменяющие карты, такие как Quality World Map with roads, измените параметр uLockedTerrainLOD на 32 для их отображения (только внутри помещений)
