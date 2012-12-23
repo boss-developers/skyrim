@@ -6231,11 +6231,65 @@ LegionOverhaulV25.esp
 /* Designed to work with "Deadly Dragons" mod (v3.1.0) */
 megadragons.esp
 Requiem.esp
+  TAG: {{BASH: Delev, Relev}}
   SAY: Requiem makes a LOT of changes. You may want to consider making and using a User Rules list based on your particular mod loadout.
-  IFNOT VAR(Dawnguard) REQ: Dawnguard. (Official Bethesda DLC)
-  IF CHECKSUM("Requiem.esp", 54D02FF2) DIRTY: 87 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Requiem.esp", 700E9079) || IF CHECKSUM("Requiem.esp", B7313A82) || IF CHECKSUM("Requiem.esp", 50E21B61) && IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF CHECKSUM("Requiem.esp", 700E9079) || IF CHECKSUM("Requiem.esp", B7313A82) || IF CHECKSUM("Requiem.esp", 50E21B61) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+  IF CHECKSUM("Requiem.esp", 3B5FC1DF) || IF CHECKSUM("Requiem.esp", E8CC660A) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IF CHECKSUM("Requiem.esp", 3B5FC1DF) DIRTY: 173 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("Requiem.esp", 3B5FC1DF) && IFNOT CHECKSUM("Requiem.esp", E8CC660A) SAY: This esp may be obsolete. As of 22-DEC-12, the latest version is 0.999.
+Requiem - Alternative Altar Blessing Conditions.esp
+Requiem - CarryWeightIncreaseByStamina5.esp
+Requiem - CleardDungeonRespawnDefaultTime.esp
+Requiem - Difficulty Bar Restored - Nightmare.esp
+Requiem - Difficulty Bar Restored.esp
+  IF FILE("Requiem - Difficulty Bar Restored - Nightmare.esp") && IF VAR(EN) WARN: Use either Requiem - Difficulty Bar Restored - Nightmare.esp or Requiem - Difficulty Bar Restored.esp, not both.
+    IF FILE("Requiem - Difficulty Bar Restored - Nightmare.esp") && IF VAR(RU) WARN: Используйте любой или Requiem - Difficulty Bar Restored - Nightmare.esp или Requiem - Difficulty Bar Restored.esp, не обa.
+Requiem - Disabled General Respawn.esp
+Requiem - Easier Bartering.esp
+Requiem - Faendal & Sven available as Followers.esp
+Requiem - GoldHasNoWeight.esp
+Requiem - Less NPC Spell Damage.esp
+Requiem - More Dragons.esp
+Requiem - No Heartbeat.esp
+Requiem - No messages.esp
+Requiem - No Overencumbered Messages.esp
+  IF FILE("Requiem - No Messages.esp") && IF VAR(EN) WARN: Use either Requiem - No Overencumbered Messages.esp or Requiem - No messages.esp, not both.
+    IF FILE("Requiem - No Messages.esp") && IF VAR(RU) WARN: Используйте любой или Requiem - No Overencumbered Messages.esp или Requiem - No messages.esp, не обa.
+Requiem - No Smithing Books Required for Perks.esp
+Requiem - No Standing Stone Limitation.esp
+Requiem - No Vampire Tweaks.esp
+Requiem - NoDragonFearAura.esp
+Requiem - NPCsDoNotUseAmmo.esp
+Requiem - Oldschool Combat.esp
+Requiem - Resting Bonus for Skill Rates.esp
+Requiem - Restored Rewarding Sounds.esp
+Requiem - Restored Saving Messages.esp
+Requiem - Slower Arrows.esp
+Requiem - Starting Spells.esp
+Requiem - TrainUnitsPerLevel0.esp
+Requiem - TrainUnitsPerLevel10.esp
+  IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(EN) WARN: Use either Requiem - TrainUnitsPerLevel0.esp or Requiem - TrainUnitsPerLevel10.esp, not both.
+    IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(RU) WARN: Используйте любой или Requiem - TrainUnitsPerLevel0.esp или Requiem - TrainUnitsPerLevel10.esp, не обa.
+Requiem - TrainUnitsPerLevel100.esp
+  IF FILE("Requiem - TrainUnitsPerLevel10.esp") || IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(EN) WARN: Use only one of TrainUnitsPerLevel*.esp
+    IF FILE("Requiem - TrainUnitsPerLevel10.esp") || IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(RU) WARN: Используйте только один of TrainUnitsPerLevel*.esp
+Requiem - TrainUnitsPerLevel5.esp
+  IF FILE("Requiem - TrainUnitsPerLevel100.esp") || IF FILE("Requiem - TrainUnitsPerLevel10.esp") || IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(EN) WARN: Use only one of TrainUnitsPerLevel*.esp
+    IF FILE("Requiem - TrainUnitsPerLevel100.esp") || IF FILE("Requiem - TrainUnitsPerLevel10.esp") || IF FILE("Requiem - TrainUnitsPerLevel0.esp") && IF VAR(RU) WARN: Используйте только один of TrainUnitsPerLevel*.esp
+Requiem - Vanilla Continous Spells.esp
+Requiem - Vanilla Death Cam.esp
+Requiem - Vanilla Guards Armor.esp
+Requiem - Vanilla Melee Weapon Reach.esp
+Requiem - Vanilla Pressure Plates.esp
+Requiem - Vanilla Resist Caps.esp
+Requiem - Vanilla Sneaking.esp
+Requiem - Vanilla Standing Stone Effects.esp
+Requiem - Vanilla Starting Skills.esp
+Requiem - Vanilla Time Flow.esp
+Requiem - Vanilla Torches.esp
+Requiem - Weapon Damage Modifier 2x Vanilla.esp
+Requiem - Weapon Damage Modifier 3x Vanilla.esp
+  IF FILE("Requiem - Weapon Damage Modifier 2x Vanilla.esp") && IF VAR(EN) WARN: Use either Requiem - Weapon Damage Modifier 2x Vanilla.esp or Requiem - Weapon Damage Modifier 3x Vanilla.esp, not both.
+    IF FILE("Requiem - Weapon Damage Modifier 2x Vanilla.esp") && IF VAR(RU) WARN: Используйте любой или Requiem - Weapon Damage Modifier 2x Vanilla.esp или Requiem - Weapon Damage Modifier 3x Vanilla.esp, не обa.
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
 Skyrim Hardcore Overhaul.esp
@@ -10781,6 +10835,11 @@ Realistic Running Speed.esp
 Realistic Speed and Jump Fix.esp
 Real Running.esp
 RealTimeReading.esp
+Real Wildlife Skyrim 0.1 IMCN.esp
+  TAG: {{BASH: Delev}}
+  IF CHECKSUM("Real Wildlife Skyrim 0.1 IMCN.esp", 6FF9970F) DIRTY: 322 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF ACTIVE("Real Wildlife Skyrim 0.1 No Food.esp") || IF ACTIVE("Real Wildlife Skyrim 0.1.esp") INC: Real Wildlife Skyrim 0.1.esp or Real Wildlife Skyrim 0.1 No Food.esp
+  // ^ Mod must load before 'IMCN - Overrides.esp'
 Rest_player.esp
 SkyRealism - Time and Travel.esp
 IFNOT FILE("BabettesFeastBalanced.esp") MOD: SkyRealism - Mass and Materials.esp
@@ -10857,11 +10916,6 @@ IMCN FeedPatch.esp
 IMCN Hearthfire Patch.esp
 EOS - IMCN Compatibility.esp
 HarvestOverhaulCreatures_IMCN_Compatibility_Patch.esp
-Real Wildlife Skyrim 0.1 IMCN.esp
-  TAG: {{BASH: Delev}}
-  IF CHECKSUM("Real Wildlife Skyrim 0.1 IMCN.esp", 6FF9970F) DIRTY: 322 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF ACTIVE("Real Wildlife Skyrim 0.1 No Food.esp") || IF ACTIVE("Real Wildlife Skyrim 0.1.esp") INC: Real Wildlife Skyrim 0.1.esp or Real Wildlife Skyrim 0.1 No Food.esp
-  // ^ Mod must load after IMCN - Overrides.esp
 ENDGROUP: Realism
 
 BEGINGROUP: Vampires and Werewolves
