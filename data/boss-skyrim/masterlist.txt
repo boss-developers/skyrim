@@ -400,6 +400,11 @@ SC_Drow Race.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, DrowRace.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, DrowRace.esp
 SCoL Main.esm
+SG_BlacksmithsCavern.esm
+  IF CHECKSUM("SG_BlacksmithsCavern.esm", 564D3A3B) DIRTY: 20 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("SG_BlacksmithsCavern.esm", 564D3A3B) || IF CHECKSUM("SG_BlacksmithsCavern.esm", D3557D78) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("SG_BlacksmithsCavern.esm", 564D3A3B) || IF CHECKSUM("SG_BlacksmithsCavern.esm", D3557D78) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  // dirty and clean checksums
 Sexy Crafting Merchants.esm
 SkyrimSewers.esm
 SkyMoMod.esm
@@ -4978,6 +4983,15 @@ Maliki.esp
   IF CHECKSUM("Maliki.esp", EA4CC153) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Malo_Waffen.esp
   IF FILE("SkyRe_Plugin_Malo_Waffen.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SG_Malo_Waffen.esp") TAG: {{BASH: Deactivate}}
+SG_Malo_Waffen.esp
+  IF CHECKSUM("SG_Malo_Waffen.esp", 3790213B) DIRTY: 3 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("SkyRe_Plugin_Malo_Waffen.esp") INC: SkyRe_Plugin_Malo_Waffen.esp
+  IFNOT ACTIVE("SG_BlacksmithsCavern.esm") ERROR: SG_BlacksmithsCavern.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IF VAR(EN) && IF ACTIVE("Malo_Waffen.esp") SAY: Remember not to load (or to simply delete) Malo_Waffen.esp
+    IF VAR(RU) && IF ACTIVE("Malo_Waffen.esp") SAY: Не забудьте отключить или удалить Malo_Waffen.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 mancika_templarset.esp
   IF CHECKSUM("mancika_templarset.esp", CBAD4542) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_- Cleaning Guide)"
 MapTomes.esp
@@ -5077,8 +5091,9 @@ MultiGlass.esp
 mwCraftableCirclets.esp
 MyArmor.esp
 Mystic.esp
+  IF FILE("SkyRe Mystic Armor and Weapon Set.esp") TAG: {{BASH: Deactivate}}
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Mystic.esp", 67CBB5B2) WARN: Original file was released before the CK (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
-    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Niagras Bleach Pack.esp", 67CBB5B2) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
+    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Mystic.esp", 67CBB5B2) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
 	MysticGloves.esp
 ENDGROUP: Items M
 
@@ -5192,6 +5207,8 @@ nordhero.esp
   TAG: {{BASH: Delev}}
 Nordic Adventurer's Armor.esp
 Nordic Conqueror Armor.esp
+  IF FILE("SkyRe Nordic Conqueror Armor.esp") || IF FILE("SkyRe Nordic Conqueror Armor - Realistic.esp") TAG: {{BASH: Deactivate}}
+  IF CHECKSUM("Nordic Conqueror Armor.esp", 2DFEBD42) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Nordic Warlord Iron Armor.esp
 nordicrangerarmor.esp
 NordicSpears.esp
@@ -5524,10 +5541,14 @@ selobl_Diano.esp
   REQ: UNPB-BBP
 SeraphimStandAlone.esp
 SeraphineHuntedArmor.esp
-  IF VAR(EN) SAY: Be sure you have the correct body mod for the esp.  "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP" or "http://skyrim.nexusmods.com/mods/2666 CBBE".
+  IF VAR(EN) SAY: Be sure you have the correct body mod for the esp. "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP" or "http://skyrim.nexusmods.com/mods/2666 CBBE".
     IF VAR(RU) SAY: Убедитесь, что используете корректный реплейсер тел для этого esp. "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP" или "http://skyrim.nexusmods.com/mods/2666 CBBE".
 SeraticArmor.esp
-REGEX: SeraticHeavyArmor(Dark|Gray)\.esp
+  IF FILE("SkyRe SeraticLight.esp") TAG: {{BASH: Deactivate}}
+SeraticHeavyArmorDark.esp
+  IF FILE("SkyRe SeraticDark.esp") TAG: {{BASH: Deactivate}}
+SeraticHeavyArmorGray.esp
+  IF FILE("SkyRe SeraticGray.esp") TAG: {{BASH: Deactivate}}
 Set.esp
 SexyJersey.esp
 SexyKunoichi2ndByNausicaa.esp
@@ -5771,6 +5792,8 @@ thedovahphrasebook.esp
 TheEbonyBlade.esp
 theRoadstrokerCloaks.esp
 theRoadstrokersRogueSorceress.esp
+  IF FILE("SkyRe Rogue Sorceress.esp") TAG: {{BASH: Deactivate}}
+  IF CHECKSUM("theRoadstrokersRogueSorceress.esp", 5B9C3C9F) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 throwingweapons.esp
 throwing_weapons_leveledlists_plugin.esp
 Throwing_Weapons_Misc_Plugin.esp
@@ -6042,6 +6065,9 @@ BEGINGROUP: Items XYZ
 
 x117 Blades Armor.esp
 XAC.esp
+  IF FILE("SkyRe XAC Stat Swap.esp") || IF FILE("SkyRe XAC Stat Swap Classic.esp") || IF FILE("SkyRe XAC Original.esp") || IF FILE("SkyRe XAC Original Classic.esp") TAG: {{BASH: Deactivate}}
+  IF CHECKSUM("XAC.esp", 7BD34BA7) SAY: This is the SkyRe compatible version.
+  IF CHECKSUM("XAC.esp", 7BD34BA7) && IFNOT FILE("XAC.bsa") WARN: Requires bsa or loose files from original version or this mod will not work.
 Xena.esp
 xFenWot3E.esp
 XIVShanker.esp
@@ -12833,6 +12859,10 @@ SkyRe_Plugin_Malo_Waffen_V3Bugfix.esp
     IF VAR(RU) && IF ACTIVE("Malo_Waffen.esp") SAY: Не забудьте отключить или удалить Malo_Waffen.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_Morrowloot.esp
+  IFNOT FILE("Morrowloot.esp") REQ: Morrowloot.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 REGEX: SkyRe_Plugin_Oriental Weapon&Armor.*\.esp
   IF VAR(EN) && IF ACTIVE("Oriental Weapon&Armor.esp") SAY: Remember not to load (or to simply delete) Oriental Weapon&Armor.esp
     IF VAR(RU) && IF ACTIVE("Oriental Weapon&Armor.esp") SAY: Не забудьте отключить или удалить Oriental Weapon&Armor.esp
@@ -12850,6 +12880,7 @@ SkyRe_Plugin_viciousdawnbreaker.esp
     IF VAR(RU) && IF ACTIVE("viciousdawnbreaker.esp") SAY: Не забудьте отключить или удалить viciousdawnbreaker.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_Witcher 2 Style Dawnguard Armour.esp
 SkyRe  - Jojjo's Dreadknight Patch.esp
   IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp") && IF VAR(EN) WARN: Use only one Skyre Dreadknight
     IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp") && IF VAR(RU) WARN: Используйте только один SkyRe Dreadknight
@@ -12946,15 +12977,76 @@ SkyRe Mystic Armor and Weapon Set.esp
     IF VAR(RU) && IF ACTIVE("Mystic.esp") SAY: Не забудьте отключить или удалить Mystic.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Nordic Conqueror Armor.esp
+  IF VAR(EN) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Remember not to load (or to simply delete) Nordic Conqueror Armor.esp
+    IF VAR(RU) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Не забудьте отключить или удалить Nordic Conqueror Armor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Nordic Conqueror Armor - Realistic.esp
+  IF FILE("SkyRe Nordic Conqueror Armor.esp") && IF VAR(EN) WARN: Use either SkyRe Nordic Conqueror Armor.esp or SkyRe Nordic Conqueror Armor - Realistic.esp, not both.
+    IF FILE("SkyRe Nordic Conqueror Armor.esp") && IF VAR(RU) WARN: Используйте любой или SkyRe Nordic Conqueror Armor.esp или SkyRe Nordic Conqueror Armor - Realistic.esp, не обa.
+  IF VAR(EN) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Remember not to load (or to simply delete) Nordic Conqueror Armor.esp
+    IF VAR(RU) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Не забудьте отключить или удалить Nordic Conqueror Armor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Rogue Sorceress.esp
+  IF VAR(EN) && IF ACTIVE("theRoadstrokersRogueSorceress.esp") SAY: Remember not to load (or to simply delete) theRoadstrokersRogueSorceress.esp
+    IF VAR(RU) && IF ACTIVE("theRoadstrokersRogueSorceress.esp") SAY: Не забудьте отключить или удалить theRoadstrokersRogueSorceress.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe SeraticDark.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe SeraticDark.bsa") WARN: You need to rename "SeraticHeavyArmorDark.bsa" to "SkyRe SeraticDark.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe SeraticDark.bsa") WARN: Вам нужно переименовать "SeraticHeavyArmorDark.bsa" в "SkyRe SeraticDark.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF ACTIVE("SeraticHeavyArmorDark.esp") SAY: Remember not to load (or to simply delete) SeraticHeavyArmorDark.esp
+    IF VAR(RU) && IF ACTIVE("SeraticHeavyArmorDark.esp") SAY: Не забудьте отключить или удалить SeraticHeavyArmorDark.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe SeraticGray.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe SeraticGray.bsa") WARN: You need to rename "SeraticHeavyArmorGray.bsa" to "SkyRe SeraticGray.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe SeraticGray.bsa") WARN: Вам нужно переименовать "SeraticHeavyArmorGray.bsa" в "SkyRe SeraticGray.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF ACTIVE("SeraticHeavyArmorGray.esp") SAY: Remember not to load (or to simply delete) SeraticHeavyArmorGray.esp
+    IF VAR(RU) && IF ACTIVE("SeraticHeavyArmorGray.esp") SAY: Не забудьте отключить или удалить SeraticHeavyArmorGray.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe SeraticLight.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe SeraticLight.bsa") WARN: You need to rename "SeraticArmor.bsa" to "SkyRe SeraticLight.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe SeraticLight.bsa") WARN: Вам нужно переименовать "SeraticArmor.bsa" в "SkyRe SeraticLight.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF ACTIVE("SeraticArmor.esp") SAY: Remember not to load (or to simply delete) SeraticArmor.esp
+    IF VAR(RU) && IF ACTIVE("SeraticArmor.esp") SAY: Не забудьте отключить или удалить SeraticArmor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe XAC Original Classic.esp
+  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+  IFNOT FILE("SkyRe XAC Original Classic.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original Classic.bsa" or this mod won't work.
+  IF VAR(EN) && IF ACTIVE("SkyRe XAC Original Classic.esp") SAY: Remember not to load (or to simply delete) XAC.esp
+    IF VAR(RU) && IF ACTIVE("XAC.esp") SAY: Не забудьте отключить или удалить XAC.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe XAC Original.esp
+  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+  IFNOT FILE("SkyRe XAC Original.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original.bsa" or this mod won't work.
+  IF VAR(EN) && IF ACTIVE("SkyRe XAC Original.esp") SAY: Remember not to load (or to simply delete) XAC.esp
+    IF VAR(RU) && IF ACTIVE("XAC.esp") SAY: Не забудьте отключить или удалить XAC.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe XAC Stat Swap Classic.esp
+  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+  IFNOT FILE("SkyRe XAC Stat Swap Classic.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap Classic.bsa" or this mod won't work.
+  IF VAR(EN) && IF ACTIVE("SkyRe XAC Stat Swap Classic.esp") SAY: Remember not to load (or to simply delete) XAC.esp
+    IF VAR(RU) && IF ACTIVE("SkyRe XAC Stat Swap Classic.esp") SAY: Не забудьте отключить или удалить XAC.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe XAC Stat Swap.esp
+  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+  IFNOT FILE("SkyRe XAC Stat Swap.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap.bsa" or this mod won't work.
+  IF VAR(EN) && IF ACTIVE("SkyRe XAC Stat Swap.esp") SAY: Remember not to load (or to simply delete) XAC.esp
+    IF VAR(RU) && IF ACTIVE("SkyRe XAC Stat Swap.esp") SAY: Не забудьте отключить или удалить XAC.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 Tribunal for Skyre.esp
   IFNOT FILE("Tribunal Robes by Zairaam.esp") REQ Tribunal Robes by Zairaam.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_Morrowloot.esp
-  IFNOT FILE("Morrowloot.esp") REQ: Morrowloot.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_Witcher 2 Style Dawnguard Armour.esp
 SkyRe_Dreamcloth.esp
   IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
 REGEX: Acquisitive Soul Gems( FR)?\.esp
@@ -13362,6 +13454,7 @@ RANs Hair Ver 2.0.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, RANs Hair.esp
 RANs Hair.esp
 RenHair.esp
+SkyrimsALittleFauny.esp
 TelRedHair.esp
 TelDarkRedHair.esp
 tera hair pack.esp
@@ -13985,6 +14078,12 @@ CMHalfElf.esp
 CMNewCompanions.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 Companion Followers.esp
+Companion_Crea.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body" or "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
+  SAY: Be sure you have the correct esp for the body type installed.
+Companion_Lese.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body" or "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
+  SAY: Be sure you have the correct esp for the body type installed.
 CompanionValfar.esp
 conancompanion.esp
 IFNOT REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
@@ -14066,6 +14165,9 @@ GameofThrones-Followers.esp
 godess's of skyrim.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+Grandies_Companion_by_kill.esp
+  IF CHECKSUM("Grandies_Companion_by_kill.esp", F1E5D380) || IF CHECKSUM("Grandies_Companion_by_kill.esp", 03490D91) || IF CHECKSUM("Grandies_Companion_by_kill.esp", B59E33FE) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Grandies_Companion_by_kill.esp", F1E5D380) || IF CHECKSUM("Grandies_Companion_by_kill.esp", 03490D91) || IF CHECKSUM("Grandies_Companion_by_kill.esp", B59E33FE) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 // companions h
 Haeli.esp
   IF CHECKSUM("Haeli.esp", DC8D51C0) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
