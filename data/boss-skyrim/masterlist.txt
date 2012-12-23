@@ -103,7 +103,7 @@ IF FILE("Unofficial Hearthfire Patch.esp") SET: UHFP
     IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1432762-relz-boss-for-skyrim/ здесь"(Eng).
 
 // Recruitment
-  IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions. As of November 30 of 2012 we are still at over 2900+ plugins to add to the Masterlist. Some dating as far back as Augest 19 of 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus forums".
+  IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions. As of 22 December 2012 we are still at over 3100+ plugins to add to the Masterlist. Some dating as far back as 25 August 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus forums".
     IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 3100+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на форумах  "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus".
 
 // SKSE & SKCU
@@ -4087,6 +4087,7 @@ df127enchantedarrows.esp
 df127smithingfur.esp
   IF CHECKSUM("df127smithingfur.esp", 9801E2C9) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 dfnkt-IronArmorSleeves-Craftable.esp
+  IF FILE("SkyRe Iron Armor Chainmail.esp") TAG: {{BASH: Deactivate}}
 dfnkt-IronHelmetHornsRemoved-BothInLvlLists.esp
 REGEX: DG Jewelry\d?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -4562,6 +4563,11 @@ HentaisTemplePlateArmor.esp
 Heroes Kadan.esp
 heroes_ti_clothes.esp
 HeroicDwarven.esp
+  IF FILE("SkyRe Heroic Dwarven Armor and Weapon Set.esp") TAG: {{BASH: Deactivate}}
+  IF CHECKSUM("HeroicDwarven.esp", BCC4742A) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  // ^ Arrows addon
+  IF CHECKSUM("HeroicDwarven.esp", 0301DE0E) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  // ^ Stand-alone set addon
 HeroicStorm.esp
 Herose.esp
 HexanShield.esp
@@ -5054,6 +5060,7 @@ MorrowindSmithingVanilla.esp
   IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("MorrowindSmithingVanilla.esp", 62CFEEB0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 matys mithril armor enhanced.esp
+  IF FILE("SkyRe Mithril Armor.esp") TAG: {{BASH: Deactivate}}
   // Replacer version for MorrowindArmor mod and orginal mod have same name
   IF CHECKSUM("matys mithril armor enhanced.esp", A71FA4F0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("matys mithril armor enhanced.esp", A71FA4F0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
@@ -7335,6 +7342,7 @@ Grey Stead Manor.esp
 greystone castle v1.0.esp
 Grytewake.esp
 Guardian Plate Armor.esp
+  IF FILE("Skyre Guardian Plate Armor.esp") TAG: {{BASH: Deactivate}}
   IF CHECKSUM("Guardian Plate Armor.esp", 5ED4F98F) DIRTY: 4 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Guardian Plate Armor.esp", 15972BCB) DIRTY: 4 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Guenhwyvar.esp
@@ -12776,7 +12784,7 @@ IF VAR(SkyReM) MOD: Morrowloot.esp
   IF VAR(EN) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
     IF VAR(RU) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для правильной работы мода с SkyRe.
 
-// skyre armor patches
+// skyre armor and weapon patches
 REGEX: SkyRe_Plugin_ImmersiveArmor_.+\.esp
   IF VAR(EN) && IF ACTIVE("hothtrooper44_ArmorCompilation.esp") SAY: Remember not to load (or to simply delete) hothtrooper44_ArmorCompilation.esp
     IF VAR(RU) && IF ACTIVE("hothtrooper44_ArmorCompilation.esp") SAY: Не забудьте отключить или удалить hothtrooper44_ArmorCompilation.esp
@@ -12901,6 +12909,21 @@ SkyRe Equipment of Eternal Shine.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF VAR(EN) && IF ACTIVE("EternalShineArmorAndWeapons.esp") SAY: Remember not to load (or to simply delete) 
     IF VAR(RU) && IF ACTIVE("EternalShineArmorAndWeapons.esp") SAY: Не забудьте отключить или удалить 
+Skyre Guardian Plate Armor.esp
+  IF VAR(EN) && IF ACTIVE("Guardian Plate Armor.esp") SAY: Remember not to load (or to simply delete) Guardian Plate Armor.esp
+    IF VAR(RU) && IF ACTIVE("Guardian Plate Armor.esp") SAY: Не забудьте отключить или удалить Guardian Plate Armor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Heroic Dwarven Armor and Weapon Set.esp
+  IF VAR(EN) && IF ACTIVE("HeroicDwarven.esp") SAY: Remember not to load (or to simply delete) HeroicDwarven.esp
+    IF VAR(RU) && IF ACTIVE("HeroicDwarven.esp") SAY: Не забудьте отключить или удалить HeroicDwarven.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Iron Armor Chainmail.esp
+  IF VAR(EN) && IF ACTIVE("dfnkt-IronArmorSleeves-Craftable.esp") SAY: Remember not to load (or to simply delete) dfnkt-IronArmorSleeves-Craftable.esp
+    IF VAR(RU) && IF ACTIVE("dfnkt-IronArmorSleeves-Craftable.esp") SAY: Не забудьте отключить или удалить dfnkt-IronArmorSleeves-Craftable.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe Masters of Death Sicarius Armor.esp
   IF VAR(EN) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp
     IF VAR(RU) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp
@@ -12909,6 +12932,13 @@ SkyRe Masters of Death Sicarius Armor.esp
 SkyRe Masters of Death - Sicarius Armor (Standalone).esp
   IF VAR(EN) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp
     IF VAR(RU) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Mithril Armor.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe Mithril Armor.bsa") WARN: You need to rename "Matys Mithril armor Enhanced.bsa" to "SkyRe Mithril Armor.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe Mithril Armor.bsa") WARN: Вам нужно переименовать "Matys Mithril armor Enhanced.bsa" в "SkyRe Mithril Armor.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF ACTIVE("Matys Mithril armor Enhanced.esp") SAY: Remember not to load (or to simply delete) Matys Mithril armor Enhanced.esp
+    IF VAR(RU) && IF ACTIVE("Matys Mithril armor Enhanced.esp") SAY: Не забудьте отключить или удалить Matys Mithril armor Enhanced.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe Mystic Armor and Weapon Set.esp
