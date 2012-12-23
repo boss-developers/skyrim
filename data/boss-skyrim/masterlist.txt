@@ -76,6 +76,7 @@ IF ACTIVE("GeneralStores.esm") SET: GS
 IF FILE("GM-ForgeAdditions.esp") || IF FILE("GM-ForgeAdditionsLAotB.esp") SET: GMForgeAdd
 IF FILE("GM-ForgeAdditionsLevelledOutfits.esp") && IF FILE("GM-ForgeAdditionsLAotBLevelledOutfits.esp") SET: DualGMLevList
 IF FILE("GM-ForgeAdditions.esp") && IF FILE("GM-ForgeAdditionsLAotB.esp") SET: DualGMForgeAdd
+IF ACTIVE("Imp's More Complex Needs.esm") SET: ICMN
 IF FILE("Lady Body.esp") SET: LB
 IF REGEX("Noble_Artifacts_For_Skyrim_(Eng|Rus|Deu)?\.esp") SET: NobleArtInst
 IF FILE("SkyMoMod.esm") SET: SkyMoMod
@@ -273,8 +274,9 @@ Immersive Patrols.esm
 Immersive Patrols x2.esm
 ImprovedCicero.esm
 Imp's More Complex Needs.esm
-  IF VAR(EN) && IF FILE("imp's more complex needs.esp") SAY: Use either Nexus or Steam Workshop version, not both.
-    IF VAR(RU) && IF FILE("imp's more complex needs.esp") SAY: Используйте любую Nexus или Steam Workshop версию, не оба.
+  IF CHECKSUM("Imp's More Complex Needs.esm", EB90AF33) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF VAR(EN) && IF FILE("imp's more complex needs.esp") WARN: Use either the Nexus (imp's more complex needs.esm) or the Steam Workshop (imp's more complex needs.esp) version, not both.
+    IF VAR(RU) && IF FILE("imp's more complex needs.esp") WARN: Используйте любую Nexus (imp's more complex needs.esm) или Steam Workshop (imp's more complex needs.esp) версию, не оба.
 itsatrap!.esm
 // esms j
 Janus follower.esm
@@ -1871,6 +1873,10 @@ biggermammoths.esp
 Birds.esp
   IF VAR(Hearthfire) INC: Heartfires DLC.  Remove this and install BirdsHF.esp
   IF CHECKSUM("Birds.esp", 200672C3) DIRTY: 376 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Birdsclean.esp
+  IF VAR(Hearthfire) INC: Heartfires DLC.  Remove this and install BirdsHF.esp or BirdsHFclean.esp
+  IF FILE("Birds.esp") && IF VAR(EN) WARN: Use either Birds.esp or Birdsclean.esp, not both.
+    IF FILE("Birds.esp") && IF VAR(RU) WARN: Используйте любой или Birds.esp или Birdsclean.esp, не обa.
 BirdsHF.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, BirdsHFclean.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, BirdsHFclean.esp
@@ -3627,6 +3633,11 @@ Aurora Blade.esp
 Autumn elven set.esp
 AuxilaryEquipment.esp
 Avatar of Baltazar.esp
+  IF CHECKSUM("Avatar of Baltazar.esp", 1233BBAF) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("SkyRe Avatar of Baltazar.esp") TAG: {{BASH: Deactivate}}
+Avatar Of Grenth.esp
+  IF CHECKSUM("Avatar Of Grenth.esp", 1B0CB166) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("SkyRe Avatar of Grenth.esp") TAG: {{BASH: Deactivate}}
 AzzinothWarglaive.esp
 ENDGROUP: Items A
 
@@ -3705,7 +3716,9 @@ Bingles_Buff_Armors.esp
 BinglesSplinterArmor.esp
 BiPolarBlade.esp
 Black Knight Golem Armor.esp
-black mage armor.esp
+Black Mage Armor.esp
+  IF CHECKSUM("Black Mage Armor.esp", 1963E64E) DIRTY: 0 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF FILE("SkyRe Black Mage Armor.esp") TAG: {{BASH: Deactivate}}
 black_hand_robe.esp
   IF CHECKSUM("black_hand_robe.esp", BFF2E35C) DIRTY: 15 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 blackglasses.esp
@@ -3826,6 +3839,7 @@ Chainmailhauberks 1.0.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Chainmailhauberks 1.1.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Chainmailhauberks 1.1.esp
 Chainmailhauberks 1.1.esp
+  IF FILE("SkyRe Chainmail Hauberks.esp") TAG: {{BASH: Deactivate}}
 Chakram.esp
 ChickenStaff.esp
 Child Armor.esp
@@ -3987,11 +4001,6 @@ Dagger of time.esp
 Dagger01.esp
 DaggerCraft.esp
   IF FILE("SkyRe_Plugin_DaggerCraft_1.3.esp") TAG: {{BASH: Deactivate}}
-SkyRe_Plugin_DaggerCraft_1.3.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("DaggerCraft.esp") SAY: Remember not to load (or to simply delete) DaggerCraft.esp
-    IF VAR(RU) && IF ACTIVE("DaggerCraft.esp") SAY: Не забудьте отключить или удалить DaggerCraft.esp
 Damascus_Swords.esp
 DandelionArmor.esp
 dantes rebellion.esp
@@ -4001,6 +4010,9 @@ DarkAssassinArmor.esp
 DarkElvesArmory.esp
 Darklilith.esp
 DarkNemesis.esp
+  IF CHECKSUM("DarkNemesis.esp", 56F07A36) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("DarkNemesis.esp", 56F07A36) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+  IF FILE("SkyRe Dark Nemesis.esp") TAG: {{BASH: Deactivate}}
 DarkKnight&PaladinWS.esp
 DarkPaladinArmor.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardPaladinArmorCP.esp
@@ -4182,12 +4194,8 @@ dragonweapons.esp
     IF CHECKSUM("dragonweapons.esp", 7516E4CE) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Dread Huntress Armor.esp
 Dread Knight Weapon Set.esp
+  IF FILE("SkyRe  - Jojjo's Dreadknight Patch.esp") || IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp") TAG: {{BASH: Deactivate}}
 DreadKnightWeaponSet,esp
-REGEX: SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF ACTIVE("DreadKnightWeaponSet.\esp") || IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Dread Knight Weapon Set mod
-    IF ACTIVE("DreadKnightWeaponSet.\esp") || IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Dread Knight Weapon Set.
 DreadWeapons_Fifthdreads_Weapon_Pack.esp
 Dreadweave Axes.esp
 DreamBurrowsRegalAssassin.esp
@@ -4207,6 +4215,7 @@ Drizzt1.esp
 ds_sword.esp
 DS_to_Dragonbone_Helmet.esp
 Divine Aegis.esp
+  IF FILE("SkyRe Divine Aegis.esp") TAG: {{BASH: Deactivate}}
 Divine Aegis Sword.esp
 DQ3SageOutfit.esp
 DualSwords.esp
@@ -4310,6 +4319,7 @@ Enchanting Scrolls - More Scrolls.esp
   IF CHECKSUM("Enchanting Scrolls - More Scrolls.esp", AE0295B4) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Energy Sword.esp
 EternalShineArmorAndWeapons.esp
+  IF FILE("SkyRe Equipment of Eternal Shine.esp") TAG: {{BASH: Deactivate}}
   IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("EternalShineArmorAndWeapons.esp", 3E85A943) && IF VAR(EN) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("EternalShineArmorAndWeapons.esp", 3E85A943) && IF VAR(RU) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и может содержать неверные записи. Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версиючитайте описание на странице загрузки мода или локализованную исправленную версию, то вам не о чем беспокоиться.
 EtherealEdge.esp
@@ -4798,6 +4808,7 @@ Lady of Death.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 Lady Rappelz.esp
 LanternHands.esp
+Lanterns.esp
 LayerBikini.esp
 LBArmorPack.esp
   IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
@@ -5702,6 +5713,8 @@ temperysgramor.esp
 TemplarArmor.esp
 Temptressdressv1.esp
 Tera.esp
+TeraArmors-CBBEByNausicaa.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 TERAArmors.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 TERA Armors for Skyrim - UNP.esp
@@ -7615,6 +7628,11 @@ Moar Arrows.esp
     IF CHECKSUM("Moar Arrows.esp", 8D27C06A) || IF CHECKSUM("Moar Arrows.esp", 17179139) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   IF CHECKSUM("Moar Arrows.esp", CF22AA26) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 mod 1.esp
+monestery.esp
+  IF CHECKSUM("monestery.esp", 77F8487E) DIRTY: 43 ITM, 16 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("monestery.esp", 77F8487E) || IF CHECKSUM("monestery.esp", 31469B33) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("monestery.esp", 77F8487E) || IF CHECKSUM("monestery.esp", 31469B33) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  IF CHECKSUM("monestery.esp", 77F8487E) || IF CHECKSUM("monestery.esp", 31469B33) WARN: This file contains a corrupted header and it may cause problems with your game.
 moonpath_questdata.esp
 MoreRiftenTrees.esp
 MoreStables.esp
@@ -8771,7 +8789,7 @@ BetterGhostbladeV1glass.esp
   IF FILE("BetterGhostbladeV1.esp") && IF VAR(EN) ERROR: Use only one BetterGhostbladeV1 esp.
     IF FILE("BetterGhostbladeV1.esp") && IF VAR(RU) ERROR: Используйте только один BetterGhostbladeV1 esp.
 BetterItemSorting.esp
-IF REGEX("Headbomb's Better Sorting.*\.esp") MOD: CreeperFollower.esp
+IF REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 Headbomb's Better Sorting - Ammo.esp
 Headbomb's Better Sorting - Books.esp
   IF CHECKSUM("Headbomb's Better Sorting - Books.esp", 7CDF3F2D) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -8830,6 +8848,33 @@ Headbomb's Better Sorting - Spells.esp
 Headbomb's Better Sorting.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Headbomb's Better Sorting - *.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Headbomb's Better Sorting - *.esp
+Better Sorting 1.12 Sboub édition.esp
+  // Headbomb's french
+  IF CHECKSUM("Better Sorting 1.12 Sboub édition.esp", E52FC50D) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Better Sorting 1.12 Sboub édition.esp", E52FC50D) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+Better Sorting FR A 1.12.esp
+  // Headbomb's french
+  IF CHECKSUM("Better Sorting FR A 1.12.esp", A6455DB3) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Better Sorting FR A 1.12.esp", A6455DB3) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+Better Sorting FR B 1.12.esp
+  // Headbomb's french
+  IF CHECKSUM("Better Sorting FR B 1.12.esp", 4F254127) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Better Sorting FR B 1.12.esp", 4F254127) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+Better Sorting FR EA 1.12.esp
+  // Headbomb's french
+  IF CHECKSUM("Better Sorting FR EA 1.12.esp", 39FB7D5C) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Better Sorting FR EA 1.12.esp", 39FB7D5C) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+Better Sorting FR EB 1.12.esp
+  // Headbomb's french
+  IF CHECKSUM("Better Sorting FR EB 1.12.esp", 097D3033) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Better Sorting FR EB 1.12.esp", 097D3033) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+Better Sorting_DV v1.3.esp
+  // Headbomb's german
+  IF CHECKSUM("Better Sorting_DV v1.3.esp", 95CEEFCB) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Better Sorting_DV v1.3.esp", 95CEEFCB) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+Headbomb's Better Sorting -- DE (by sheijian) v1.03.esp
+  IF CHECKSUM("Headbomb's Better Sorting -- DE (by sheijian) v1.03.esp", BC4FACB7) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Headbomb's Better Sorting -- DE (by sheijian) v1.03.esp", BC4FACB7) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 BetterNordHeroWeapons.esp
   IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
@@ -10761,8 +10806,10 @@ Field Alchemy.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 FirstAid.esp
 imp's more complex needs.esp
-  IF VAR(EN) && IF FILE("Imp's More Complex Needs.esm") SAY: Use either Nexus or Steam Workshop version, not both.
-    IF VAR(RU) && IF FILE("Imp's More Complex Needs.esm") SAY: Используйте любую Nexus или Steam Workshop версию, не оба.
+  IF CHECKSUM("imp's more complex needs.esp", DAADC533) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("imp's more complex needs.esp", DAADC533) || IF CHECKSUM("imp's more complex needs.esp", 59466F1E) SAY: Recommended to unsubscribe and delete this mod, then install the "http://skyrim.nexusmods.com/mods/10639 SkyrimNexus version" for more compatibility with other mods.
+  IF VAR(EN) && IF FILE("Imp's More Complex Needs.esm") WARN: Use either Nexus (imp's more complex needs.esm) or Steam Workshop (imp's more complex needs.esp) version, not both.
+    IF VAR(RU) && IF FILE("Imp's More Complex Needs.esm") WARN: Используйте любую Nexus (imp's more complex needs.esm) или Steam Workshop (imp's more complex needs.esp) версию, не оба.
 REGEX: Jump\d{2,3}\.esp
 kuerteeEncumberingLootArmourAndWeapons.esp
   IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
@@ -10914,7 +10961,8 @@ IFNOT VAR(SkyReM) REGEX: vinis_food_and_rest.+\.esp
 IMCN - Overrides.esp
 IMCN FeedPatch.esp
 IMCN Hearthfire Patch.esp
-EOS - IMCN Compatibility.esp
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
+  IFNOT VAR(ICMN) ERROR: Imp's More Complex Needs.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Imp's More Complex Needs.esm
 HarvestOverhaulCreatures_IMCN_Compatibility_Patch.esp
 ENDGROUP: Realism
 
@@ -12727,6 +12775,8 @@ IF VAR(SkyReM) MOD: Morrowloot.esp
     IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
   IF VAR(EN) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
     IF VAR(RU) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для правильной работы мода с SkyRe.
+
+// skyre armor patches
 REGEX: SkyRe_Plugin_ImmersiveArmor_.+\.esp
   IF VAR(EN) && IF ACTIVE("hothtrooper44_ArmorCompilation.esp") SAY: Remember not to load (or to simply delete) hothtrooper44_ArmorCompilation.esp
     IF VAR(RU) && IF ACTIVE("hothtrooper44_ArmorCompilation.esp") SAY: Не забудьте отключить или удалить hothtrooper44_ArmorCompilation.esp
@@ -12741,6 +12791,11 @@ SkyRe_Plugin_Omegared99-WeaponSets.esp
     IF VAR(RU) && IF ACTIVE("Omegared99-WeaponSets.esp") SAY: Не забудьте отключить или удалить Omegared99-WeaponSets.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_DaggerCraft_1.3.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("DaggerCraft.esp") SAY: Remember not to load (or to simply delete) DaggerCraft.esp
+    IF VAR(RU) && IF ACTIVE("DaggerCraft.esp") SAY: Не забудьте отключить или удалить DaggerCraft.esp
 SkyRe_Plugin_DragonBoneWeaponsComplete.esp
   IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa") WARN: You need to rename "DragonBoneWeaponsComplete.bsa" to "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" or this mod won't work.
     IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa") WARN: Вам нужно переименовать "DragonBoneWeaponsComplete.bsa" в "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" для подключения ресурсов мода..
@@ -12748,6 +12803,11 @@ SkyRe_Plugin_DragonBoneWeaponsComplete.esp
     IF VAR(RU) && IF ACTIVE("Dragonbone Weapons Complete.esp") SAY: Не забудьте отключить или удалить 'Dragonbone Weapons Complete.esp'
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+REGEX: SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF ACTIVE("DreadKnightWeaponSet.\esp") || IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Dread Knight Weapon Set mod
+    IF ACTIVE("DreadKnightWeaponSet.\esp") || IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Dread Knight Weapon Set.
 SkyRe_Plugin_DwemerAutoBlade.esp
   IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_DwemerAutoBlade.bsa") WARN: You need to rename "DwemerAutoBlade.bsa" to "SkyRe_Plugin_DwemerAutoBlade.bsa" or this mod won't work.
     IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_DwemerAutoBlade.bsa") WARN: Вам нужно переименовать "DwemerAutoBlade.bsa" в "SkyRe_Plugin_DwemerAutoBlade.bsa" или этот мод не будет работать.
@@ -12770,6 +12830,11 @@ REGEX: SkyRe_Plugin_Oriental Weapon&Armor.*\.esp
     IF VAR(RU) && IF ACTIVE("Oriental Weapon&Armor.esp") SAY: Не забудьте отключить или удалить Oriental Weapon&Armor.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_RegentSwords.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF FILE("RegentSword.esp") SAY: Remember not to load (or to simply delete) RegentSword.esp
+    IF VAR(RU) && IF FILE("RegentSword.esp") SAY: Не забудьте отключить или удалить RegentSword.esp
 SkyRe_Plugin_viciousdawnbreaker.esp
   IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa") WARN: You need to rename "viciousdawnbreaker.bsa" to "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" or this mod won't work.
     IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa") WARN: Вам нужно переименовать "viciousdawnbreaker.bsa" в "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" или этот мод не будет работать.
@@ -12777,11 +12842,65 @@ SkyRe_Plugin_viciousdawnbreaker.esp
     IF VAR(RU) && IF ACTIVE("viciousdawnbreaker.esp") SAY: Не забудьте отключить или удалить viciousdawnbreaker.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe  - Jojjo's Dreadknight Patch.esp
+  IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp") && IF VAR(EN) WARN: Use only one Skyre Dreadknight
+    IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp") && IF VAR(RU) WARN: Используйте только один SkyRe Dreadknight
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Dread Knight Weapon Set.esp
+    IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Dread Knight Weapon.esp
+SkyRe Avatar of Baltazar.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Avatar of Baltazar.esp") SAY: Remember not to load (or to simply delete) Avatar of Baltazar.esp
+    IF VAR(RU) && IF ACTIVE("Avatar of Baltazar.esp") SAY: Не забудьте отключить или удалить Avatar of Baltazar.esp
+SkyRe Avatar of Grenth.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Avatar of Grenth.esp") SAY: Remember not to load (or to simply delete) Avatar of Grenth.esp
+    IF VAR(RU) && IF ACTIVE("Avatar of Grenth.esp") SAY: Не забудьте отключить или удалить Avatar of Grenth.esp
+SkyRe Black Mage Armor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Black Mage Armor.esp") SAY: Remember not to load (or to simply delete) Black Mage Armor.esp
+    IF VAR(RU) && IF ACTIVE("Black Mage Armor.esp") SAY: Не забудьте отключить или удалить Black Mage Armor.esp
+SkyRe Chainmail Hauberks.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Chainmailhauberks 1.1.esp") SAY: Remember not to load (or to simply delete) Chainmailhauberks 1.1.esp
+    IF VAR(RU) && IF ACTIVE("Chainmailhauberks 1.1.esp") SAY: Не забудьте отключить или удалить Chainmailhauberks 1.1.esp
 SkyRe Chinese General Armor and Weapon.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, SkyRe Chinese General Set.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe Chinese General Set.esp
 SkyRe Chinese General Set.esp
-  IF ACTIVE("Song General Armor&weapon.esp") SAY: Remember not to load (or to simply delete) Song General Armor&weapon.esp
+  IF VAR(EN) && IF ACTIVE("Song General Armor&weapon.esp") SAY: Remember not to load (or to simply delete) Song General Armor&weapon.esp
+    IF VAR(RU) && IF ACTIVE("Song General Armor&weapon.esp") SAY: Не забудьте отключить или удалить Song General Armor&weapon.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Chinese General Set - Realistic.esp
+  IF VAR(EN) && IF ACTIVE("SkyRe Chinese General Set - Realistic.esp") SAY: Remember not to load (or to simply delete) Song General Armor&weapon.esp
+    IF VAR(RU) && IF ACTIVE("SkyRe Chinese General Set - Realistic.esp") SAY: Не забудьте отключить или удалить Song General Armor&weapon.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Dark Nemesis.esp
+  IF CHECKSUM("SkyRe Dark Nemesis.esp", FBBC3828) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("SkyRe Dark Nemesis.esp", FBBC3828) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("DarkNemesis.esp") SAY: Remember not to load (or to simply delete) DarkNemesis.esp
+    IF VAR(RU) && IF ACTIVE("DarkNemesis.esp") SAY: Не забудьте отключить или удалить DarkNemesis.esp
+SkyRe Divine Aegis.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Divine Aegis.esp") SAY: Remember not to load (or to simply delete) DarkNemesis.esp
+    IF VAR(RU) && IF ACTIVE("Divine Aegis.esp") SAY: Не забудьте отключить или удалить DarkNemesis.esp
+SkyRe Equipment of Eternal Shine.esp
+  IF CHECKSUM("SkyRe Equipment of Eternal Shine.esp", C47F2C45) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("SkyRe Equipment of Eternal Shine.esp", C47F2C45) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("EternalShineArmorAndWeapons.esp") SAY: Remember not to load (or to simply delete) 
+    IF VAR(RU) && IF ACTIVE("EternalShineArmorAndWeapons.esp") SAY: Не забудьте отключить или удалить 
 SkyRe Masters of Death Sicarius Armor.esp
   IF VAR(EN) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp
     IF VAR(RU) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp
@@ -12797,11 +12916,6 @@ SkyRe Mystic Armor and Weapon Set.esp
     IF VAR(RU) && IF ACTIVE("Mystic.esp") SAY: Не забудьте отключить или удалить Mystic.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_RegentSwords.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF FILE("RegentSword.esp") SAY: Remember not to load (or to simply delete) RegentSword.esp
-    IF VAR(RU) && IF FILE("RegentSword.esp") SAY: Не забудьте отключить или удалить RegentSword.esp
 Tribunal for Skyre.esp
   IFNOT FILE("Tribunal Robes by Zairaam.esp") REQ Tribunal Robes by Zairaam.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
@@ -13843,7 +13957,7 @@ CMNewCompanions.esp
 Companion Followers.esp
 CompanionValfar.esp
 conancompanion.esp
-IFNOT REGEX("Headbomb's Better Sorting.*\.esp") MOD: CreeperFollower.esp
+IFNOT REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 // companions d
 Danicus.esp
 Deadeye.esp
