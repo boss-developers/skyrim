@@ -2754,6 +2754,7 @@ new guards.esp
 NewBeveragesAndMiscItems.esp
 NightingaleArmorTextureFix.esp
 Nightingale Equipment Tweaks.esp
+NoFish.esp
 No Warning - Default Attack Radius.esp
 No Warning - Double Attack Radius.esp
   IF CHECKSUM("No Warning - Double Attack Radius.esp", B79D2CCD) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -2769,7 +2770,7 @@ Nord Needs + Cooking Expanded patch.esp
 NoSaltRecipes.esp
 RecettesSansSel.esp
   // French NoSaltRecipes.esp
-  IF FILE("RecettesSansSel.esp") ERROR: Use NoSaltRecipes.esp or RecettesSansSel.esp, not both.
+  IF FILE("NoSaltRecipes.esp") ERROR: Use NoSaltRecipes.esp or RecettesSansSel.esp, not both.
 NPC Bartering.esp
 NPCPerked.esp
   SAY: Run BOSS before generating the Perked Patch.esp.  Otherwise, the patch created will have it's masters out of order.
@@ -3583,6 +3584,7 @@ archdemonplushighdragon.esp
 Archer's.esp
 Archmage's Boots.esp
 arcticarmor.esp
+ArgonianMercArmor.esp
 Arisverd.esp
 Ariyan.esp
 Armor_Rider.esp
@@ -3940,6 +3942,16 @@ Crane.esp
 CrazyVaclavsArrows.esp
 crimson dragon armor.esp
 crimsondaedricarmourwip.esp
+Crossbows_Basic_Collection_DE.esp
+  IF CHECKSUM("Crossbows_Basic_Collection_DE.esp", C15ADBB3) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Crossbows_Basic_Collection_EN.esp
+  IF CHECKSUM("Crossbows_Basic_Collection_EN.esp", E4A653B4) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF FILE("Crossbows_Basic_Collection_DE.esp") && IF VAR(EN) WARN: Use either Crossbows_Basic_Collection_DE.esp or Crossbows_Basic_Collection_EN.esp, not both.
+    IF FILE("Crossbows_Basic_Collection_DE.esp") && IF VAR(RU) WARN: Используйте любой или Crossbows_Basic_Collection_DE.esp или Crossbows_Basic_Collection_EN.esp, не обa.
 Crossbow_Basic_Collection_LListed_EN.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -4664,6 +4676,7 @@ ISDBlackSting.esp
 IsilGlamdring.esp
 isilNarsil.esp
   IF FILE("SkyRe_Plugin_isilNarsil.esp") TAG: {{BASH: Deactivate}}
+  IF CHECKSUM("isilNarsil.esp", A43571C0) DIRTY: 15 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Lorecraft - isilNarsil.esp
 IorvethLightArmor_v_1_3.esp
 Ivory.esp
@@ -7469,12 +7482,11 @@ LakesideHideaway.esp
 LakeSideHome.esp
   IF CHECKSUM("LakeSideHome.esp", 22F454F4) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HF_Lakeview_Pool_and_Hotbath.esp
-  IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 49403248) DIRTY: 8 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 49403248) || IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 03270F0F) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
-    IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 49403248) || IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 03270F0F) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 856CC724) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 856CC724) && IFNOT CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", A1E1641D) SAY: This esp may be obsolete. As of 24-DEC-12, the latest version is 1.7b.
   IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
 HF_Lakeview_North_Perimeter_Fence.esp
-  IF CHECKSUM("HF_Lakeview_North_Perimeter_Fence.esp", C7E73EB4) DIRTY: 0 ITM, 6 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("HF_Lakeview_North_Perimeter_Fence.esp", 629F69FE) SAY: This esp may be obsolete. As of 24-DEC-12, the latest version is 1.7b.
   IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
 Landscaped_Breezehome.esp
 Landscaped_Honeyside.esp
@@ -9727,19 +9739,6 @@ Mikaelarps disenchantable artifacts.esp
 MiningFaster.esp
 MiningMore.esp
 MISELF_Atromancy.esp
-mjhKhajiitSpeak.esp
-  IF VAR(EN) SAY: This mod overwrites all dialogue enable only when playing Khajiit.
-    IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
-mjhKhajiitSpeakDLC - Dawnguard.esp
-  IF VAR(EN) SAY: This mod overwrites all dialogue enable only when playing Khajiit.
-    IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-mjhKhajiitSpeakDLC - Hearthfire.esp
-  IF VAR(EN) SAY: This mod overwrites all dialogue enable only when playing Khajiit.
-    IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
-  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
-    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
 mjhReducedGoldRewards.esp
 MODdisguises.esp
 moon_earthwmars_masser.esp
@@ -12087,8 +12086,8 @@ BEGINGROUP: Enchantment
 zzzAlmostUnlimitedWeaponEnchant.esp
   IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-Artifact Disenchanting.esp
-Artifact Disenchanting - Dawnguard.esp
+IFNOT VAR(SkyReM) MOD: Artifact Disenchanting.esp
+IFNOT VAR(SkyReM) MOD: Artifact Disenchanting - Dawnguard.esp
 Backstab Enchantment new.esp
 Balanced Crafting Project - Enchanting Part.esp
 Balanced Enchanting v2.esp
@@ -12127,7 +12126,7 @@ Enchant Plus.esp
 EnchantmentCleanser.esp
 zzzEverlastingWeaponEnchant.esp
 Everything is Disenchantable.esp
-FormsEdit.esp
+IFNOT VAR(SkyReM) MOD: FormsEdit.esp
 Fortify Enchanting necklace.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Fortify Enchanting necklace.esp", E170C251) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Fortify Enchanting necklace.esp", E170C251) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и может содержать неверные записи. Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версиючитайте описание на странице загрузки мода или локализованную исправленную версию, то вам не о чем беспокоиться.
@@ -13121,19 +13120,12 @@ SkyRe XAC Stat Swap.esp
     IF VAR(RU) && IF ACTIVE("SkyRe XAC Stat Swap.esp") SAY: Не забудьте отключить или удалить XAC.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Dreamcloth.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
 Tribunal for Skyre.esp
   IFNOT FILE("Tribunal Robes by Zairaam.esp") REQ Tribunal Robes by Zairaam.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Dreamcloth.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
-REGEX: Acquisitive Soul Gems( FR)?\.esp
-  // must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
-HarvestOverhaulSkyReCompatibility.esp
-IF FILE("SkyRe_Main.esp") MOD: OpenFaceHelmets.esp
-Perk_Soul_Siphon_Full_Recharge.esp
-IF FILE("SkyRe_Main.esp") MOD: StavesofSkyrim.esp
-  IF CHECKSUM("StavesofSkyrim.esp", 6A04E2AA) DIRTY: 0 ITM, 5 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SynergyBonuses.esp
 xpMedium.esp
 XPModNormal.esp
@@ -13151,12 +13143,24 @@ bandit raids on holds.esp
 GDO_Plugin_SkyRe.esp
   IFNOT VAR(SkyReM) REQ: SkyrimRedone
   IFNOT FILE("SPIKE.esm") REQ: Guard Dialogue Overhaul
-IF VAR(SkyReM) MOD: Improved Dragon Shouts.esp
-IF VAR(SkyReM) MOD: Improved Dragon Shouts - Dawnguard.esp
-IF VAR(SkyReM) MOD: DragonFire - Improved Dragon Shouts Compatibility.esp
+Perk_Soul_Siphon_Full_Recharge.esp
 xxxLvCap255Creatures.esp
 xxxLvCap255Enemy.esp
 Third Era Attributes for Skyrim - Perks.esp
+
+  // post SkyRe plugins mods  
+REGEX: Acquisitive Soul Gems( FR)?\.esp
+  // must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
+IF VAR(SkyReM) MOD: Artifact Disenchanting.esp
+IF VAR(SkyReM) MOD: Artifact Disenchanting - Dawnguard.esp
+IF VAR(SkyReM) MOD: FormsEdit.esp
+HarvestOverhaulSkyReCompatibility.esp
+IF VAR(SkyReM) MOD: OpenFaceHelmets.esp
+IF VAR(SkyReM) MOD: StavesofSkyrim.esp
+  IF CHECKSUM("StavesofSkyrim.esp", 6A04E2AA) DIRTY: 0 ITM, 5 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+IF VAR(SkyReM) MOD: Improved Dragon Shouts.esp
+IF VAR(SkyReM) MOD: Improved Dragon Shouts - Dawnguard.esp
+IF VAR(SkyReM) MOD: DragonFire - Improved Dragon Shouts Compatibility.esp
 ENDGROUP: Skills, Attributes and Leveling
 
 BEGINGROUP: Player Perks
@@ -14073,6 +14077,10 @@ Alexina.esp
 Alicia.esp
 All Housecarls Are Hunks.esp
 Alma.esp
+AlvhildeLycan.esp
+  IF CHECKSUM("AlvhildeLycan.esp", BE4CD149) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair" and "http://skyrim.nexusmods.com/mods/13722 The Eyes of Beauty". 
+  IF CHECKSUM("AlvhildeLycan.esp", 4A47C015) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT CHECKSUM("AlvhildeLycan.esp", BE4CD149) && IFNOT CHECKSUM("AlvhildeLycan.esp", 4A47C015) SAY: This esp may be obsolete. As of 24-DEC-12, the latest version is 1.3.  
 Amanda.esp
 AmazonianKhajiitAlpha.esp
 Amina.esp
@@ -14099,7 +14107,7 @@ Atvir.esp
 AWC_ArnulfWarzenSchleggerCompanion.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF CHECKSUM("AWC_ArnulfWarzenSchleggerCompanion.esp", 705F2D3E) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("AWC_ArnulfWarzenSchleggerCompanion.esp", 705F2D3E) && IF CHECKSUM("AWC_ArnulfWarzenSchleggerCompanion.esp", 66656E07) SAY: This esp may be obsolete. As of 23-DEC-12, the latest version is 1.1.
+  IFNOT CHECKSUM("AWC_ArnulfWarzenSchleggerCompanion.esp", 705F2D3E) && IFNOT CHECKSUM("AWC_ArnulfWarzenSchleggerCompanion.esp", 66656E07) SAY: This esp may be obsolete. As of 23-DEC-12, the latest version is 1.1.
   // ^ dirty and clean plugin checksums
   // companions b
 Bald_Jiub.esp
@@ -14109,6 +14117,7 @@ Balimund.esp
 Barbarian Companions.esp
 Barsukov.esp
   IF CHECKSUM("Barsukov.esp", F191D03B) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+battlegoat.esp
 BeautifulAela.esp
 Better Companions.esp
 BetterCompanions.esp
@@ -14984,6 +14993,25 @@ ZZZ_Stenvar_Replacer_THAIDEN.esp
 AmazingFollowerTweaks.esp
 zzz_Jenassa_MAKEOVER_by83Willow.esp
   // Must load after AmazingFollowerTweaks.esp
+
+  /* seems to be about the only place where the dialog override works for all khajiit... */
+mjhKhajiitSpeak.esp
+  IF VAR(EN) SAY: This mod overwrites all dialogue enable only when playing Khajiit.
+    IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
+mjhKhajiitSpeakDLC - Dawnguard.esp
+  IF VAR(EN) SAY: This mod overwrites all dialogue enable only when playing Khajiit.
+    IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+mjhKhajiitSpeakDLC - Hearthfire.esp
+  IF VAR(EN) SAY: This mod overwrites all dialogue enable only when playing Khajiit.
+    IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+mjhKhajiitSpeakMod - Moonpath.esp
+  IFNOT ACTIVE("moonpath.esm") ERROR: moonpath.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+mjhKhajiitSpeakMod - Valfar.esp
+  IFNOT ACTIVE("CompanionValfar.esp") ERROR: CompanionValfar.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 ENDGROUP: Companions Load Late
 ENDGROUP: Companions and NPCs
 
