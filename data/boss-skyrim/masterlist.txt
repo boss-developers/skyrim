@@ -1817,7 +1817,6 @@ ENDGROUP: Base A
 BEGINGROUP: Base B
 
 BabettesFeast.esp
-IF FILE("BabettesFeastBalanced.esp") MOD: SkyRealism - Mass and Materials.esp
 BabettesFeastBalanced.esp
 BabettesFeast - IMCN.esp
 BabettesFeastOverpowered.esp
@@ -5025,6 +5024,8 @@ MMR_by_dud.esp
 mm_SenseLife.esp
 MM_SunniesWoe.esp
 Moar Kontent.esp
+MoarJewels.esp
+  IF CHECKSUM("MoarJewels.esp", 80B52779) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 modern weapons.esp
   IF CHECKSUM("modern weapons.esp", F76E0343) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Mods247Helf16.esp
@@ -10951,7 +10952,6 @@ Real Wildlife Skyrim 0.1 IMCN.esp
   // ^ Mod must load before 'IMCN - Overrides.esp'
 Rest_player.esp
 SkyRealism - Time and Travel.esp
-IFNOT FILE("BabettesFeastBalanced.esp") MOD: SkyRealism - Mass and Materials.esp
 SkyRealism - Capacity and Carry Weight.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IFNOT VAR(Dawnguard) && IF CHECKSUM("SkyRealism - Capacity and Carry Weight.esp", E8FE85CD) REQ: Dawnguard (Official Bethesda DLC)
@@ -10961,16 +10961,7 @@ SkyRealism - Capacity and Carry Weight.esp
   IF VAR(EN) && IFNOT REGEX("LeatherBackpack(Brown|Black|DarkBrown)\.esp") REQ: "http://skyrim.nexusmods.com/mods/13732 Leather Backpack".  Install only the black, brown and original varients. Also be sure to choose "Regular" for all install options.
     IF VAR(RU) && IFNOT REGEX("LeatherBackpack(Brown|Black|DarkBrown)\.esp") REQ: "http://skyrim.nexusmods.com/mods/13732 Leather Backpack".  Устанавливайте только черную(black) или коричневую(brown) и оригинальную версию. Также убедитесь, что выбрали "Regular", для всех опций установки.
 SkyRealism - Encumbrance.esp
-SkyRealism - Mass and Materials - 1nivWICCloaks.esp
-  IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-SkyRealism - Mass and Materials - Cloaks.esp
-  IFNOT FILE("Cloaks.esp") || IFNOT ACTIVE ("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT FILE("Cloaks.esp") || IFNOT ACTIVE ("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+SkyRealism - Mass and Materials.esp
 SkyRealism - Mass and Materials - Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -10979,6 +10970,16 @@ SkyRealism - Mass and Materials - Dawnguard.esp
 SkyRealism - Mass and Materials - Hearthfires.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+SkyRealism - Mass and Materials - 1nivWICCloaks.esp
+  IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+SkyRealism - Mass and Materials - Cloaks.esp
+  IFNOT FILE("Cloaks.esp") || IFNOT ACTIVE ("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT FILE("Cloaks.esp") || IFNOT ACTIVE ("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
 SkyRealism - Mass and Materials - MorrowindArmor.esp
@@ -10994,6 +10995,21 @@ SkyRealism - Mass and Materials - PrvtI_HeavyArmory.esp
 SkyRealism - Mass and Materials - WVExpansion.esp
   IFNOT FILE("WVExpansion.esp") || IFNOT ACTIVE ("WVExpansion.esp") && IF VAR(EN) ERROR: WVExpansion.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT FILE("WVExpansion.esp") || IFNOT ACTIVE ("WVExpansion.esp") && IF VAR(RU) ERROR: WVExpansion.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+SkyRealism - Mass and Materials - Dr_Bandolier.esp
+  IFNOT FILE("Dr_Bandolier.esp") || IFNOT ACTIVE ("Dr_Bandolier.esp") && IF VAR(EN) ERROR: Dr_Bandolier.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT FILE("Dr_Bandolier.esp") || IFNOT ACTIVE ("Dr_Bandolier.esp") && IF VAR(RU) ERROR: Dr_Bandolier.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+SkyRealism - Mass and Materials - MoarJewels.esp
+  IFNOT FILE("MoarJewels.esp") || IFNOT ACTIVE ("MoarJewels.esp") && IF VAR(EN) ERROR: MoarJewels.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT FILE("MoarJewels.esp") || IFNOT ACTIVE ("MoarJewels.esp") && IF VAR(RU) ERROR: MoarJewels.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+SkyRealism - Mass and Materials - tailoring.esp
+  IFNOT FILE("tailoring.esp") || IFNOT ACTIVE ("tailoring.esp") && IF VAR(EN) ERROR: tailoring.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT FILE("tailoring.esp") || IFNOT ACTIVE ("tailoring.esp") && IF VAR(RU) ERROR: tailoring.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
 SkyRealism - Portable Crafting Kits.esp
