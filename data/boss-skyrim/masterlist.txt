@@ -2746,7 +2746,8 @@ BEGINGROUP: Base N
 
 Named bosses in skyrim I v1.1.esp
   // TAG: {{BASH: Names}}
-NamedSoulGems.esp
+IFNOT CHECKSUM("NamedSoulGems.esp", A030E3D0) && IFNOT CHECKSUM("NamedSoulGems.esp", 960ED540) MOD: NamedSoulGems.esp
+  IF CHECKSUM("NamedSoulGems.esp", 3B92C13A) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 navetsea female face preset.esp
 NerfCreatureEffect.esp
 new guards.esp
@@ -11972,6 +11973,8 @@ Mighty Magick - Alteration.esp
 Mighty Magick - Alteration Extras.esp
 Mighty Magick - Conjuration.esp
   IF CHECKSUM("Mighty Magick - Conjuration.esp", 4F8E6366) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Mighty Magick - Conjuration.esp", 305961D4) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  // ^ Improved Soultrap compatibility patch
 Mighty Magick - Conjuration Extras.esp
 Mighty Magick - Destruction.esp
   IF CHECKSUM("Mighty Magick - Destruction.esp", 161C16F0) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -12000,6 +12003,12 @@ ForgottenMagic.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("ForgottenMagic.esp", 0F80ED52) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Improved Soultrap.esp
+  // must load after Mighty Magic 
+  IF FILE("NamedSoulGems.esp") ERROR: Use NamedSoulGems compatibility patch instead.
+IF CHECKSUM("NamedSoulGems.esp", A030E3D0) || IF CHECKSUM("NamedSoulGems.esp", 960ED540) MOD: NamedSoulGems.esp
+  // must load after Mighty Magic
+  IF CHECKSUM("NamedSoulGems.esp", A030E3D0) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MiniLovers.esp
 MiniLoversSoundSpell.esp
 MiniLoversAlternative.esp
