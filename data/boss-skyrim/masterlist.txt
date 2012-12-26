@@ -1574,7 +1574,13 @@ AMO - Special.esp
 AMOvanilla - Combat.esp
 AMOvanilla - Special.esp
 REGEX: Dawn_addon_part(\d)\.esp
+REGEX: Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H)?\.esp
+  IF REGEX("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H)?\.esp") && IF VAR(EN) WARN: Use only one Del_ConditionalCombatMusic esp
+    IF REGEX("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H)?\.esp") && IF VAR(RU) WARN: Используйте только один Del_ConditionalCombatMusic esp
 dragonborn with lute.esp
+REGEX: enhanced soundtrack (\d{1,2})\.esp
+  IF VAR(EN) SAY: Adds music but also contains textures and meshes. Loose files will override them
+    IF VAR(RU) SAY: Добавляет музыку, но также включает тесктуры с моделями. Отдельные файлы перезапишут их.
 esisbattlepack.esp
 esiscitypack.esp
 esisenviropack.esp
@@ -1583,9 +1589,6 @@ Fantasy Music Overhaul.esp
   IF CHECKSUM("Fantasy Music Overhaul.esp", 3B6DBCF8) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Fantasy Music Overhaul Redone.esp
 FixCombatMusic.esp
-REGEX: enhanced soundtrack (\d{1,2})\.esp
-  IF VAR(EN) SAY: Adds music but also contains textures and meshes. Loose files will override them
-    IF VAR(RU) SAY: Добавляет музыку, но также включает тесктуры с моделями. Отдельные файлы перезапишут их.
 morrowind_mm_theme.esp
 REGEX: PersonalizedMusic.*\.esp
 REGEX: PM_.+Music_(NoVanilla_)?v.+\.esp
@@ -10811,6 +10814,7 @@ Hunting in Skyrim - No Perks.esp
   // Hunting in skyrim must load before open cities.
 Unique Region Names.esp
 Beautiful Cities.esp
+  IF CHECKSUM("Beautiful Cities.esp", B70CEB49) DIRTY: 0 ITM, 22 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 civilwarcleanup.esp
 CLWhiterun.esp
 detailed outskirts.esp
