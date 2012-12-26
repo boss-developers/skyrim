@@ -164,6 +164,7 @@ REGEX: (83Willows_)?101BUGs.+\.esm
 Skyrim Adventurer's Tent.esm
 AemersRefuge.esm
 AIKhajiitCompanions.esm
+alchstone5x.esm
 All Housecarls Are Hunks.esm
 Ambience Music Overhaul.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version. Renamed to AMO.esm
@@ -182,10 +183,14 @@ Anora follower.esm
   IF CHECKSUM("Anora follower.esm", 319033CE) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 AOM.esm
   IF CHECKSUM("AOM.esm", E032FA90) DIRTY: 8 ITM, 11 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+AP Skyrim.esm
+  IF CHECKSUM("AP Skyrim.esm", 857D5AAC) || IF CHECKSUM("AP Skyrim.esm", CBE8B5C2) && IF VAR(EN) SAY: Obsolete. Update to the latest version. (The esm version produces a massive conflict error which can result in having no dialog.)
+    IF CHECKSUM("AP Skyrim.esm", 857D5AAC) || IF CHECKSUM("AP Skyrim.esm", CBE8B5C2) && IF VAR(RU) SAY: Устарело. Обновите до последней версии. (Esm-версия приводит к многочисленным ошибкам, которые могут привести к отсутствию диалогов.)
 archmageTrophyhall.esm
   IF CHECKSUM("archmageTrophyhall.esm", F788FDF0) DIRTY: 0 ITM, 20 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 ArmedttTeeth.esm
 AsharaDimonizedDress.esm
+AsharaMerchantNPC.esm
 Aurora.esm
 // esms b
 basement.esm
@@ -215,11 +220,14 @@ BoogyManLair.esm
 breezehomebasement.esm
 BSTamriel.esm
 // esms c
+Caellon.esm
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 CastleDKmaster.esm
 CastleDrakhur_masterfle.esm
   IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) DIRTY: 23 ITM, 7 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) &&  IF VAR(EN) WARN: This file contains 6 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("CastleDrakhur_masterfle.esm", 7BC1AE65) &&  IF VAR(RU) WARN: Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+CinderFrost.esm
 CLARALUX - More and Brighter Lights.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии
@@ -227,6 +235,7 @@ ClimatesOfTamriel.esm
   IF CHECKSUM("ClimatesOfTamriel.esm", C110B173) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 CoD Waking Nightmare II.esm
 CraftSketching.esm
+customGraph.esm
 // esms d
 DarkerNights.esm
 DarkerInteriors.esm
@@ -239,6 +248,7 @@ DeadlyDragons.esm
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Deus Mons.esm
 Devani follower.esm
+DFB - Random Encounters.esm
 DirectorsTools.esm
 Domus_Dementis.esm
 DonJuansPlayersClubMaster.esm
@@ -248,9 +258,14 @@ DSpSoB.esm
   IF VAR(EN) WARN: Obsolete. Remove. Not for game play. Not in latest version 07
     IF VAR(RU) WARN: Устарело. Удалите. Исключено из версий 07+
 // esms e
-Evil Lair of Hydra.esm
+REGEX: EagleEyePerk(_defStamina|_half_stamina)?\.esm
+  IF VAR(EN) SAY: Use only one EagleEyePerk esm
+    IF VAR(RU) SAY: Используйте только один EagleEyePerk esm
+  IF VAR(EN) && IF FILE("PerkUP-Archery.esp") WARN: Delete. Already included in 'PerkUP-Archery.esp'
+    IF VAR(RU) && IF FILE("PerkUP-Archery.esp") WARN: Удалите. Уже включено в 'PerkUP-Archery.esp'
 EerieElves.esm
 ETaC - Resources.esm
+Evil Lair of Hydra.esm
 REGEX: Expanded Towns.*\.esm
   IF VAR(EN) SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
     IF VAR(RU) SAY: Устарело, обновите до последней версии Expanded Towns and Cities
@@ -259,9 +274,11 @@ ExplorerDungeonPack.esm
   IF CHECKSUM("ExplorerDungeonPack.esm", F28E0E3C) WARN: This file contains 1 deleted NavMesh record.  TES5Edit cannot repair this and it may cause problems with your game.
 Eyja 1.5.esm
 // esms f
+FluxMOD_ArtifactEffectPerk.esm
 ForbiddenRomance.esm
 // esms g
 GeneralStores.esm
+GetArrowsBack80.esm
 Grytewake.esm
 // esms h
 HBE.esm
@@ -269,6 +286,7 @@ HelmetToggleMasterFile.esm
 hideout.esm
 highfive.esm
 HorseBranding.esm
+HuntersDiscipline.esm
 // esms i
 ImmersiveContent.esm
 Immersive Patrols.esm
@@ -327,6 +345,7 @@ LorecraftESM.esm
 LunariRace.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, LunariRace.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, LunariRace.esp
+Lycanthropy_Audio_by_Brevi.esm
 Lycanthropy_Music.esm
 // esms m
 MagicDuel.esm
@@ -334,6 +353,7 @@ Manantis.esm
 Mannequin.esm
 mannyBlackRock.esm
 mannyDragonhead.esm
+MBMaster.esm
 MiniLovers Idles.esm
 MiniLoversSound.esm
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
@@ -347,8 +367,14 @@ more_Travelers.esm
 Mother_of_Tears_Epics_Eng.esm
 MTAutoStorage.esm
   IF CHECKSUM("MTAutoStorage.esm", 7C0F98CA) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+MTOH.esm
+  IF VAR(EN) SAY: Hair standalone mod for other mods which edit NPCs. If this one is used, MTOH.esp should be disabled.
+    IF VAR(RU) SAY: Автономный мод причесок, меняющий NPC. Если он использован, то MTOH.esp должен быть отключен.
 REGEX: Murder.?.?\.esm
 // esms n
+Natural Characters and Companions.esm
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IFNOT FILE("LovelyHairstyles.esp") REQ: "http://skyrim.nexusmods.com/mods/7403 Lovely Hairstyles".
 Nchuzzrezar.esm
 NeV-P_ExtremeMaterials.esm
   TAG: {{BASH: Delev, Relev}}
@@ -359,6 +385,7 @@ Niires Hjerim(esm).esm
 Niire's Honeyside(esm).esm
   IFNOT VAR(GS) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without the "http://skyrim.nexusmods.com/mods/18340 General Stores" mod.Niire's Proudspire(esm).esm
 Niire'sPortstonesForBertsBreezehomeRemodel.esm
+NoKillMoves.ESM
 NoTint.esm
 NPCs.esm
 // esms o
@@ -409,6 +436,9 @@ SG_BlacksmithsCavern.esm
     IF CHECKSUM("SG_BlacksmithsCavern.esm", 564D3A3B) || IF CHECKSUM("SG_BlacksmithsCavern.esm", D3557D78) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
   // dirty and clean checksums
 Sexy Crafting Merchants.esm
+Skyrim Dark.esm
+Skyrim_Realism.esm
+  IF CHECKSUM("Skyrim_Realism.esm", BC06197F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SkyrimSewers.esm
 SkyMoMod.esm
   TAG: {{BASH: Delev, Relev}}
@@ -422,8 +452,20 @@ SmithBornMaterials.esm
 Smithing Extended.esm
 Solitude A City Of Trade.esm
 SpartanV10.esm
+SpecializedFollowers.esm
+  IF VAR(EN) SAY: Obsolete. Update to latest verion.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+SPTDiverseGuardsSkyrimResources.esm
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+SPTMuscularFemaleRaces.esm
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 SPODUM.esm
 SPIKE.esm
+Succubus.esm
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SuccubusFollower.esp or Succubus Summoning.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SuccubusFollower.esp or Succubus Summoning.esp
 // esms t
 Tamrielic Lore.esm
   IF CHECKSUM("Tamrielic Lore.esm", 1EC8407A) DIRTY: 5 ITM. 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -453,6 +495,7 @@ Unique.esm
 // esms v
 Vigilant of Stendarr Quests Master.esm
   IF CHECKSUM("Vigilant of Stendarr Quests Master.esm", 0B0207CF) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+vinis_food_and_rest.esm
 // esms w
 warehouse.esm
 WARZONES - Civil Unrest.esm
@@ -461,60 +504,17 @@ Warzones French.esm
   IF CHECKSUM("Warzones French.esm", 628534CB) DIRTY: 65 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 WinterholdDestruction.esm
 // esms xyz
-// esms late
-// ---------
-alchstone5x.esm
-REGEX: EagleEyePerk(_defStamina|_half_stamina)?\.esm
-  IF VAR(EN) SAY: Use only one EagleEyePerk esm
-    IF VAR(RU) SAY: Используйте только один EagleEyePerk esm
-  IF VAR(EN) && IF FILE("PerkUP-Archery.esp") WARN: Delete. Already included in 'PerkUP-Archery.esp'
-    IF VAR(RU) && IF FILE("PerkUP-Archery.esp") WARN: Удалите. Уже включено в 'PerkUP-Archery.esp'
-FluxMOD_ArtifactEffectPerk.esm
-GetArrowsBack80.esm
-vinis_food_and_rest.esm
-Lycanthropy_Audio_by_Brevi.esm
-Skyrim Dark.esm
-Skyrim_Realism.esm
-  IF CHECKSUM("Skyrim_Realism.esm", BC06197F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-SPTMuscularFemaleRaces.esm
-  IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-SPTDiverseGuardsSkyrimResources.esm
-  IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-Natural Characters and Companions.esm
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-  IFNOT FILE("LovelyHairstyles.esp") REQ: "http://skyrim.nexusmods.com/mods/7403 Lovely Hairstyles".
-SpecializedFollowers.esm
-  IF VAR(EN) SAY: Obsolete. Update to latest verion.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-AsharaMerchantNPC.esm
-DFB - Random Encounters.esm
-HuntersDiscipline.esm
-MBMaster.esm
-NoKillMoves.ESM
-AP Skyrim.esm
-  IF CHECKSUM("AP Skyrim.esm", 857D5AAC) || IF CHECKSUM("AP Skyrim.esm", CBE8B5C2) && IF VAR(EN) SAY: Obsolete. Update to the latest version. (The esm version produces a massive conflict error which can result in having no dialog.)
-    IF CHECKSUM("AP Skyrim.esm", 857D5AAC) || IF CHECKSUM("AP Skyrim.esm", CBE8B5C2) && IF VAR(RU) SAY: Устарело. Обновите до последней версии. (Esm-версия приводит к многочисленным ошибкам, которые могут привести к отсутствию диалогов.)
-customGraph.esm
-Caellon.esm
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-CinderFrost.esm
-Succubus.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SuccubusFollower.esp or Succubus Summoning.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SuccubusFollower.esp or Succubus Summoning.esp
-MTOH.esm
-  IF VAR(EN) SAY: Hair standalone mod for other mods which edit NPCs. If this one is used, MTOH.esp should be disabled.
-    IF VAR(RU) SAY: Автономный мод причесок, меняющий NPC. Если он использован, то MTOH.esp должен быть отключен.
-Ajen.esm
-Alicia.esm
-Farkasv2.esm
 XFLMain.esm
   IF VERSION("TES5", "1.3.0", <) REQ: Skyrim 1.3+
   IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
   IF FILE("BDO.esp") INC: BDO.esp
   IF VAR(EN) SAY: For safe mod uninstall see special uninstallation instructions on "http://skyrim.nexusmods.com/mods/12933 mod page".
     IF VAR(RU) SAY: Для безопасного удаления мода смотрите инструкции по удалению на "http://skyrim.nexusmods.com/mods/12933 странице мода" или на "http://modgames.net/load/247-1-0-10650 странице локализации".
+// esms late
+// ---------
+Ajen.esm
+Alicia.esm
+Farkasv2.esm
 Daeas.esm
 DArchon.esm
 DrowCompanions.esm
@@ -601,7 +601,6 @@ Bandit Raid.esp
 SuccubusFollower.esp
   SAY: This is actually an esm released as an esp file.
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-  IF FILE("Succubus Summoning.esp") ERROR: Use SuccubusFollower.esp or Succubus Summoning.esp, not both.
 Succubus Summoning.esp
   SAY: This is actually an esm released as an esp file.
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
@@ -7396,6 +7395,12 @@ REGEX: HeartOfThunder 1.+\.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, HeartOfThunder.esp
 HoT Thunderwolf Form.esp
   // Heart of Thunder add-on
+Houses Free and Furnished.esp
+Houses Free and Furnished but Not Hjerim.esp
+  IF FILE("Houses Free and Furnished.esp") && IF VAR(EN) WARN: Use either Houses Free and Furnished.esp or Houses Free and Furnished but Not Hjerim.esp, not both.
+    IF FILE("Houses Free and Furnished.esp") && IF VAR(RU) WARN: Используйте любой или Houses Free and Furnished.esp или Houses Free and Furnished but Not Hjerim.esp, не обa.
+Houses Free and Furnished Hjerim Cleaned Up Patch.esp
+  IFNOT FILE("Houses Free and Furnished.esp") REQ: Houses Free and Furnished.esp
 heartwoodcottage1_v1.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, heartwoodcottage1_v2.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, heartwoodcottage1_v2.esp
@@ -8355,10 +8360,9 @@ Vjarkell Castle.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Vlindrel Hall - Dragonborn Edition.esp
-VlindrelArmory v2_Nav.esp
-VlindrelArmory.esp
-VlindrelArmory v2.esp
-VlindrelArmory v2a.esp
+REGEX: VlindrelArmory( v1.61| v1.62| v2_Nav| v2| v2a)?\.esp
+  IFNOT FILE("VlindrelArmory v2a.esp") && IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, VlindrelArmory v2a.esp
+    IFNOT FILE("VlindrelArmory v2a.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии, VlindrelArmory v2a.esp
 VlindrelForge.esp
 VodahminMahhe.esp
   IF CHECKSUM("VodahminMahhe.esp", 167A4215) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
