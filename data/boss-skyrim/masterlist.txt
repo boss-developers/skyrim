@@ -287,7 +287,7 @@ hideout.esm
 highfive.esm
 HjakhtraevarrTomb.esm
   IF CHECKSUM("HjakhtraevarrTomb.esm", B10B9F8F) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("HjakhtraevarrTomb.esm", B10B9F8F) && IFNOT CHECKSUM("HjakhtraevarrTomb.esm", F22CBB1A) SAY: This esp may be obsolete. As of 17-DEC-12, the latest version is 1.5.
+  IFNOT CHECKSUM("HjakhtraevarrTomb.esm", B10B9F8F) && IFNOT CHECKSUM("HjakhtraevarrTomb.esm", F22CBB1A) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 1.5.
 HorseBranding.esm
 HuntersDiscipline.esm
 // esms i
@@ -1588,10 +1588,16 @@ REGEX: enhanced soundtrack (\d{1,2})\.esp
 esisbattlepack.esp
 esiscitypack.esp
 esisenviropack.esp
+Fantasy Music Full Replace.esp
+Fantasy Music Non-Replace.esp
+  IF FILE("Fantasy Music Full Replace.esp") && IF VAR(EN) WARN: Use either Fantasy Music Full Replace.esp or Fantasy Music Non-Replace.esp, not both.
+    IF FILE("Fantasy Music Full Replace.esp") && IF VAR(RU) WARN: Используйте любой или Fantasy Music Full Replace.esp или Fantasy Music Non-Replace.esp, не обa.
 Fantasy Music Overhaul.esp
-  IF CHECKSUM("Fantasy Music Overhaul.esp", 7E3AC694) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Fantasy Music Overhaul.esp", 3B6DBCF8) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Fantasy Music Full Replace.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Fantasy Music Full Replace.esp
 Fantasy Music Overhaul Redone.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Fantasy Music Full Replace.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Fantasy Music Full Replace.esp
 FixCombatMusic.esp
 morrowind_mm_theme.esp
 REGEX: PersonalizedMusic.*\.esp
@@ -8197,6 +8203,9 @@ ThievesGuildTrapdoor.esp
 ThistleCottage.esp
 throneroom.esp
   IF CHECKSUM("throneroom.esp", 2F04B129) DIRTY: 0 ITM, 32 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Thunderbolt - The Shout Package.esp
+  IF CHECKSUM("Thunderbolt - The Shout Package.esp", C1886DBD) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("Thunderbolt - The Shout Package.esp", C1886DBD) && IFNOT CHECKSUM("Thunderbolt - The Shout Package.esp", 851B6337) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 1.02.
 thundersnow1.esp
 thuumfollowers.esp
 tinyalchemisthut.esp
@@ -8370,6 +8379,10 @@ Vigilant of Stendarr Quests No Joining Requirements Patch.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Vigilant of Stendarr Quests.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Vigilant of Stendarr Quests.esp
 Vjarkell Castle.esp
+  IF CHECKSUM("Vjarkell Castle.esp", 53186F15) DIRTY: 46 ITM, 8 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Vjarkell Castle.esp", 53186F15) || IF CHECKSUM("Vjarkell Castle.esp", BE62E096) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("Vjarkell Castle.esp", 53186F15) || IF CHECKSUM("Vjarkell Castle.esp", BE62E096) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  // ^ diry and clean checksums
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Vlindrel Hall - Dragonborn Edition.esp
@@ -10247,12 +10260,12 @@ SkyTEST-RealisticAnimalBehavior.esp
 SkyTEST-HarderCreatures.esp
 dD - Enhanced Blood Main.esp
   // moved after SkyTest for correct work.
-  SAY: Be sure you have downloaded and installed the script Hotfixes.
   IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
   IF VAR(Dawnguard) && IFNOT VAR(SkyMoMod) && IFNOT FILE("dD-Dawnguard-EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Dawnguard Compatibility_Patch".
   IFNOT VAR(Dawnguard) && IF VAR(SkyMoMod) && IFNOT FILE("dD-SkyrimMonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Monster Mod.
   IF VAR(Dawnguard) && IF VAR(SkyMoMod) && IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Dawnguard and Monster Mod.
-  IF CHECKSUM("dD - Enhanced Blood Main.esp", 626E031) DIRTY: 16 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("dD - Enhanced Blood Main.esp", FD8ABF04) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("dD - Enhanced Blood Main.esp", FD8ABF04) && IFNOT CHECKSUM("dD - Enhanced Blood Main.esp", 4B4F9998) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 3.0a.
 dD-Dawnguard-EBT Patch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -10275,6 +10288,7 @@ dD-No Screen Blood.esp
 dD-No Vanilla Hit Blood Decals Placement.esp
 dD-Reduced Weapon Blood Duration.esp
 dD-Reduced Splatter Size.esp
+dD-Larger Splatter Size.esp
 dD-Reduced Wound Size.esp
 slowerstaminadrain.esp
 REGEX: sneaky bow x\d\d?\.esp
@@ -13524,6 +13538,7 @@ jutsu.esp
 MoreUnarmedKillAnimations15.esp
 NiruinsBusinessPlan.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.2+)
+No death anims.esp
 Onehanded.esp
 PinupsMen.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.2+)
