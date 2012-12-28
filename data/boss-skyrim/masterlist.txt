@@ -285,6 +285,9 @@ HBE.esm
 HelmetToggleMasterFile.esm
 hideout.esm
 highfive.esm
+HjakhtraevarrTomb.esm
+  IF CHECKSUM("HjakhtraevarrTomb.esm", B10B9F8F) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("HjakhtraevarrTomb.esm", B10B9F8F) && IFNOT CHECKSUM("HjakhtraevarrTomb.esm", F22CBB1A) SAY: This esp may be obsolete. As of 17-DEC-12, the latest version is 1.5.
 HorseBranding.esm
 HuntersDiscipline.esm
 // esms i
@@ -370,7 +373,9 @@ MTAutoStorage.esm
 MTOH.esm
   IF VAR(EN) SAY: Hair standalone mod for other mods which edit NPCs. If this one is used, MTOH.esp should be disabled.
     IF VAR(RU) SAY: Автономный мод причесок, меняющий NPC. Если он использован, то MTOH.esp должен быть отключен.
-REGEX: Murder.?.?\.esm
+Murder01.esm
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, HjakhtraevarrTomb.esm
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, HjakhtraevarrTomb.esm
 // esms n
 Natural Characters and Companions.esm
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
@@ -2359,11 +2364,16 @@ here there be monsters.esp
 hq_skyrimmap.esp
 HjerimChests.esp
 High Level Enemies.esp
-  IF CHECKSUM("High Level Enemies.esp", 1C8C37F3) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("High Level Enemies.esp", 1C8C37F3) || IF CHECKSUM("High Level Enemies.esp", 347522FE) && IF VAR(Dawnguard) SAY: Dawnguard detected.  Use the Dawnguard version to add Dawnguard NPCs.
- // Dawnguard version
-  IF CHECKSUM("High Level Enemies.esp", EE48239D) && IFNOT VAR(Dawnguard) ERROR: Dawnguard not detected.  Use the non-Dawnguard version or Skyrim will CTD on loading.
+  IFNOT CHECKSUM("High Level Enemies.esp", A7AA9578) && IFNOT CHECKSUM("High Level Enemies.esp", B9FB4248) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 1.0.
+  // two versions, same name.
+High Level Enemies - Dawnguard.esp
+  IFNOT CHECKSUM("High Level Enemies - Dawnguard.esp", 4C571A23) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 1.0.
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT ACTIVE("High Level Enemies.esp") WARN: High Level Enemies.esp must be active for this file to work properly.
+High Level Enemies - Hardcore.esp
+  IFNOT CHECKSUM("High Level Enemies - Hardcore.esp", 28EEE83F) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 1.0.
 High Level Enemies - Increased Max Resists.esp
+  IFNOT CHECKSUM("High Level Enemies - Increased Max Resists.esp", D1BDD314) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 1.1.
 HigherLevelEnemies.esp
   TAG: {{BASH: Relev}}
 HighlandFarmMilk.esp
@@ -7688,9 +7698,9 @@ MU.esp
 Mudcrab Farm.esp
   IF CHECKSUM("Mudcrab Farm.esp", F90C3CC9) DIRTY: 6 ITM, 6 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT CHECKSUM("Mudcrab Farm.esp", F90C3CC9) && IFNOT CHECKSUM("Mudcrab Farm.esp", 8C03B843) SAY: This esp may be obsolete. As of 25-DEC-12, the latest version is 1.0.
-REGEX: Murder.?.?\.esp
-  IF REGEX("Murder.?.?\.esm") WARN: Use either Murder*.esp or Murder*.esm
-    IF VAR(RU) && IF REGEX("Murder.?.?\.esm") WARN: Используйте любой, или Murder*.esp или Murder*.esm
+Murder01.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, HjakhtraevarrTomb.esm
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, HjakhtraevarrTomb.esm
 Museum.esp
 IFNOT VAR(UFO) MOD: My home is your home.esp
 Mystic Home.esp
@@ -8154,6 +8164,9 @@ theaviary.esp
 Quest_TheBiggerTheyAre.esp
 TheChampionsOfTamriel.esp
   IF CHECKSUM("TheChampionsOfTamriel.esp", A8C8F78A) DIRTY: 30 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+TheClockworkAdventure.esp
+  IF CHECKSUM("TheClockworkAdventure.esp", 16581EB1) DIRTY: 0 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("TheClockworkAdventure.esp", 16581EB1) && IFNOT CHECKSUM("TheClockworkAdventure.esp", F173CF0E) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 0.95.
 TheClone Breezehome.esp
 TheClone Breezehome - alternative.esp
 TheClone Breezehome - housemarkerfasttravel fix.esp
