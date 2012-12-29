@@ -2781,6 +2781,12 @@ Named bosses in skyrim I v1.1.esp
   // TAG: {{BASH: Names}}
 IFNOT CHECKSUM("NamedSoulGems.esp", A030E3D0) && IFNOT CHECKSUM("NamedSoulGems.esp", 960ED540) MOD: NamedSoulGems.esp
   IF CHECKSUM("NamedSoulGems.esp", 3B92C13A) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Names - NPCs.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Names - NPCs - 1_1.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Names - NPCs - 1_1.esp
+Names - NPCs - 1_1.esp
+Names - enemies - impersonal  completely.esp
+  IF CHECKSUM("Names - enemies - impersonal  completely.esp", 13F3D6DA) DIRTY: 57 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 navetsea female face preset.esp
 NerfCreatureEffect.esp
 new guards.esp
@@ -8607,6 +8613,7 @@ Lighter Tools.esp
 lighter_mining_smithing_materials.esp
 Lightweight Potions and Poisons.esp
 lightingredients.esp
+lightjewelry.esp
 lockpickweight.esp
 mini Potion Mod 01.esp
 Misc Items Reweighting.esp
@@ -12205,6 +12212,8 @@ ASX_Potions.esp
 BetterWhitePhialEffects.esp
 Black lightened Alchemy.esp
 Black lightened Alchemy ML.esp
+blackalchemy.esp
+  IF CHECKSUM("blackalchemy.esp", 848E5180) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 BloodPotionRecipe.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -14372,6 +14381,12 @@ Etain the Shewolf.esp
   IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemale"
 ExtraBlades.esp
 // companions f
+REGEX: SimplyFaendal(NoArmor|Specialized)?\.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, UniqueFaendal
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, UniqueFaendal
+REGEX: UniqueFaendal(Specialized)?\.esp
+  IF VAR(EN) WARN: Use only one UniqueFaendal esp
+    IF VAR(RU) WARN: Используйте только один UniqueFaendal esp
 FaseleTheCompanion.esp
   IF CHECKSUM("FaseleTheCompanion.esp", F3D542DB) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Feline Friendship.esp
@@ -14564,6 +14579,10 @@ Lydia_edited.esp
 Lydia_edited_without_scars.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF FILE("Lydia_edited.esp") INC: Lydia_edited.esp
+REGEX: UniqueLydia(Armor|SF|SFArmor|ArmorNoCloak|NoOutfit|SFArmorNoCloak|SFNoOutfit)?\.esp
+  IF VAR(EN) WARN: Use only one UniqueLydia esp.
+    IF VAR(RU) WARN: Используйте только один UniqueLydia esp.
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair.esm". 
 Lyla.esp
 // companions m
 Maerwen Briaerthorne.esp
@@ -14706,10 +14725,6 @@ Tina.esp
 // companions u
 undyingcompanions.esp
 UniqueHouseCarls.esp
-UniqueLydia.esp
-UniqueLydiaArmor.esp
-UniqueLydiaSF.esp
-UniqueLydiaSFArmor.esp
 // companions v
 // companions w
 // companions xyz
