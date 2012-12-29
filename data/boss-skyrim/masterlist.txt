@@ -1278,6 +1278,13 @@ BEGINGROUP: Weather mods and overhauls
   IF CHECKSUM("1 Day Moon Phases.esp", FE2F1935) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Chesko_Frostfall.esp
 enbweather.esp
+  IFNOT CHECKSUM("enbweather.esp", 6E0599FD) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 0.32.Beta.
+  IF ACTIVE("ClimatesOfTamriel.esm") INC: ClimatesOfTamriel.esm
+  IF ACTIVE("Realistic Lighting.esp") INC: Realistic Lighting.esp
+ENB Weather - Exterior Fog Plugin.esp
+  IFNOT CHECKSUM("ENB Weather - Exterior Fog Plugin.esp", B66C3133) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 0.12.Beta.
+  IF ACTIVE("ClimatesOfTamriel.esm") INC: ClimatesOfTamriel.esm
+  IF ACTIVE("Realistic Lighting.esp") INC: Realistic Lighting.esp
 IFNOT FILE("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
   IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp
     IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp
@@ -1405,6 +1412,13 @@ ENDGROUP: Sound mods
 
 BEGINGROUP: Lighting
 alvor's house dynamic.esp
+Blackout_Skyrim.esp
+  IF CHECKSUM("Blackout_Skyrim.esp", 3A1DA448) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("Blackout_Skyrim.esp", 3A1DA448) && IFNOT CHECKSUM("Blackout_Skyrim.esp", 32B32459) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 2.0
+  SAY: This is an ENB mod.  Be sure you have the correct ENB setup installed.
+Blackout_Dawnguard.esp
+  IFNOT CHECKSUM("Blackout_Dawnguard.esp", 7B30F518) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 2.0
+  SAY: This is an ENB mod.  Be sure you have the correct ENB setup installed.
 Bright Lights.esp
 CityLights.esp
 CLARALUX - More and Brighter Lights.esp
@@ -4904,16 +4918,10 @@ LightArmorPack14.esp
 Lightning's Latex Mask.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
-lilithscarver1_0.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest version.
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-lilithscarver2_0.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest version.
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-lilithscarver2_1.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest version.
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-lilithscarver2_2.esp
+REGEX: lilithscarver(1_0|2_0|2_1)?\.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, lilithscarver3_0.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, lilithscarver3_0.esp
+lilithscarver3_0.esp
 lilithscleaver.esp
 lilithsdecapitator1_0.esp
 lilithsdecapitator1h_allinone.esp
