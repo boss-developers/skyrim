@@ -527,6 +527,11 @@ Shayla.esm
 Sirenia.esm
   REQ: "http://skyrim.nexusmods.com/mods/140 Amazing Smooth Females Complete" texture addon.
 Skyrim Dark.esm
+Skyrim Immersive Creatures.esm
+  TAG: {{BASH: Delev}}
+  IFNOT CHECKSUM("Skyrim Immersive Creatures.esm", 974E4B56) SAY: This esp may be obsolete. As of 31-DEC-12, the latest version is 4e.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Skyrim_Realism.esm
   IF CHECKSUM("Skyrim_Realism.esm", BC06197F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 SkyrimSewers.esm
@@ -1384,7 +1389,7 @@ ExpandedSnowSystems.esp
 ExpandedSnowSystems-CoT.esp
   IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Fewer Snowstorms.espasdf
+Fewer Snowstorms.esp
   IF CHECKSUM("Fewer Snowstorms.esp", 88CB9260) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 REGEX: getSnowyV.+\.esp
   IF FILE("Chesko_Frostfall.esp") INC: Chesko_Frostfall.esp
@@ -1690,11 +1695,11 @@ Fantasy Music Non-Replace.esp
   IF FILE("Fantasy Music Full Replace.esp") && IF VAR(EN) WARN: Use either Fantasy Music Full Replace.esp or Fantasy Music Non-Replace.esp, not both.
     IF FILE("Fantasy Music Full Replace.esp") && IF VAR(RU) WARN: Используйте любой или Fantasy Music Full Replace.esp или Fantasy Music Non-Replace.esp, не обa.
 Fantasy Music Overhaul.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Fantasy Music Full Replace.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Fantasy Music Full Replace.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Fantasy Music Full Replace.esp or Fantasy Music Non-Replace.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Fantasy Music Full Replace.esp or Fantasy Music Non-Replace.esp
 Fantasy Music Overhaul Redone.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Fantasy Music Full Replace.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Fantasy Music Full Replace.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Fantasy Music Full Replace.esp or Fantasy Music Non-Replace.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Fantasy Music Full Replace.esp or Fantasy Music Non-Replace.esp
 FixCombatMusic.esp
 morrowind_mm_theme.esp
 REGEX: PersonalizedMusic.*\.esp
@@ -1881,7 +1886,8 @@ ApachiiHelmetWigs.esp
 Arcticia's LifeCycles.esp
 Armored Skeleton.esp
   TAG: {{BASH: Relev}}
-  IF FILE("Skyrim Immersive Creatures.esp") ERROR: Remove. Armored Skeleton.esp is included in Skyrim Immersive Creatures.esp
+  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'
+    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'
 ENG_All_In_One_v1.2.esp
 NoRestorationExploit.esp
 ANB - ArrowsToPicks.esp
@@ -2116,6 +2122,8 @@ Chesko_SwiftPotion.esp
 SIWLPatch.esp
 ClamsDropPearls.esp
 Cliffracers.esp
+  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'
+    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'
 ClothesTearingAddition.esp
 clutter_weapons.esp
 cMKCustomStorageSpells.esp
@@ -3117,8 +3125,12 @@ SkyMoMod.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Skyrim Immersive Creatures.esp
-  TAG: {{BASH: Delev, Relev}}
-  IF CHECKSUM("Skyrim Immersive Creatures.esp", 9F345819) || IF CHECKSUM("Skyrim Immersive Creatures.esp", 31F6B4FF) || IF CHECKSUM("Skyrim Immersive Creatures.esp", DB09F9B0) || IF CHECKSUM("Skyrim Immersive Creatures.esp", ACC6DAE2) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  TAG: {{BASH: Delev}}
+  IFNOT CHECKSUM("Skyrim Immersive Creatures.esp", 2E7191F1) SAY: This esp may be obsolete. As of 31-DEC-12, the latest version is 4e.
+  IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Use either Skyrim Immersive Creatures.esm or Skyrim Immersive Creatures.esp, not both.
+    IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Используйте любой или Skyrim Immersive Creatures.esm или Skyrim Immersive Creatures.esp, не обa.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 SkyMoMod_lists.esp
   TAG: {{BASH: Delev, Relev}}
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
@@ -3743,8 +3755,14 @@ Armures traditionnelles de Bordeciel II.esp
 Armures traditionnelles de Bordeciel III.esp
 Arngrim_Evening_Dress.esp
 REGEX: ArrowsNoGravity(_Fast)?\.esp
+AronsHybrid.esp
+  IF CHECKSUM("AronsHybrid.esp", 267783D2) DIRTY: 14 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'
+    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'
 AronsMechaDragons.esp
   IF CHECKSUM("AronsMechaDragons.esp", 77A605C4) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'
+    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'
 ArrowsOfLight.esp
 ArrowsOfMight1.1.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, ArrowsOfMight1.2.esp
@@ -5758,6 +5776,7 @@ Spellbreakers.esp
 SpellbreakersLOREFRIENDLY.esp
   IF CHECKSUM("SpellbreakersLOREFRIENDLY.esp", D355A267) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("Spellbreakers.esp") ERROR: Use Spellbreakers.esp or SpellbreakersLOREFRIENDLY.esp, not both.
+spell_loot.esp
 Spriggan Armor 2.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
   IF CHECKSUM("Spriggan Armor 2.esp", C5E7B65B) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -6408,10 +6427,10 @@ LegionOverhaulV25.esp
 megadragons.esp
 Requiem.esp
   TAG: {{BASH: Delev, Relev}}
-  SAY: Requiem makes a LOT of changes. You may want to consider making and using a User Rules list based on your particular mod loadout.
-  IF CHECKSUM("Requiem.esp", 3B5FC1DF) || IF CHECKSUM("Requiem.esp", E8CC660A) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
-  IF CHECKSUM("Requiem.esp", 3B5FC1DF) DIRTY: 173 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("Requiem.esp", 3B5FC1DF) && IFNOT CHECKSUM("Requiem.esp", E8CC660A) SAY: This esp may be obsolete. As of 22-DEC-12, the latest version is 0.999.
+  SAY: Requiem makes a LOT of changes. You may want to consider creating and using a Userlist based on your particular mod loadout.
+  IF CHECKSUM("Requiem.esp", E7945687) || IF CHECKSUM("Requiem.esp", 2E4F346A) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IF CHECKSUM("Requiem.esp", E7945687) DIRTY: 170 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("Requiem.esp", E7945687) && IFNOT CHECKSUM("Requiem.esp", 2E4F346A) SAY: This esp may be obsolete. As of 31-DEC-12, the latest version is 1.0
 Requiem - Alternative Altar Blessing Conditions.esp
 Requiem - CarryWeightIncreaseByStamina5.esp
 Requiem - CleardDungeonRespawnDefaultTime.esp
@@ -7444,6 +7463,7 @@ Flatlander_M7001.esp
 Fleetford.esp
   IF REGEX("Briar'sEnd.*\.esp") INC: Briar'sEnd
   IF CHECKSUM("Fleetford.esp", 6D3A13D9) DIRTY: 50 ITM, 31 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+float_your_boat.esp
 Forfeorannaheim.esp
   IF CHECKSUM("Forfeorannaheim.esp", 59266CBF) DIRTY: 51 ITM, 31 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Forges of Skyrim.esp
@@ -7562,6 +7582,7 @@ Houses Free and Furnished but Not Hjerim.esp
     IF FILE("Houses Free and Furnished.esp") && IF VAR(RU) WARN: Используйте любой или Houses Free and Furnished.esp или Houses Free and Furnished but Not Hjerim.esp, не обa.
 Houses Free and Furnished Hjerim Cleaned Up Patch.esp
   IFNOT FILE("Houses Free and Furnished.esp") REQ: Houses Free and Furnished.esp
+Hearthfire Cheat Chests.esp
 heartwoodcottage1_v1.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, heartwoodcottage1_v2.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, heartwoodcottage1_v2.esp
@@ -8599,6 +8620,10 @@ wellcave.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, WellCaveCustom.esp
 WellCaveCustom.esp
   IF CHECKSUM("WellCaveCustom.esp", D3EB5880) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+WerewolfKing.esp
+  IF CHECKSUM("WerewolfKing.esp", 51B93513) DIRTY: 3 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'
+    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'
 WestbrookKeep.esp
 Western Watchtower Rebuilt.esp
   IF CHECKSUM("Western Watchtower Rebuilt.esp", 49E528EE) && IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -10539,6 +10564,8 @@ T01DegaineLieAboutStatue.esp
 TableSalt.esp
 TCO - Travel Cost Overhaul.esp
 terrain bump.esp
+thalmor_disguise.esp
+  IF CHECKSUM("thalmor_disguise.esp", 2C877368) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 The Joy of Perspective.esp
 REGEX: The Skyrim conflict( Light| Medium| Hard)?( DE&O)?( Essential)?.*\.esp
   // TAG: {{BASH: Invent, Names}}
@@ -13551,6 +13578,7 @@ concentrated10.esp
     IF VAR(RU) && IF FILE("PerkUP-Alchemy.esp") WARN: Удалите. Уже включено в 'PerkUP-Alchemy.esp'
 
 // perks d
+damage_skill.esp
 DwemerBombs.esp
   IF CHECKSUM("DwemerBombs.esp", D7BB72C4) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("DwemerBombsNoPerkTree.esp") INC: DwemerBombsNoPerkTree.esp
@@ -14003,6 +14031,9 @@ Decapitate_Children.esp
 Drakian race.esp
   IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
 Draman Skeleton Mod.esp
+  IF CHECKSUM("Draman Skeleton Mod.esp", B45FC825) DIRTY: 185 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'
+    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'
 DrowRace.esp
   IF CHECKSUM("DrowRace.esp", 3A35E3FF) DIRTY: 20 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility". 
