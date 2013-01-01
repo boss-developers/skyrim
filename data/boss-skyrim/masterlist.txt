@@ -8487,6 +8487,11 @@ UDO.esp
   // ^ diry and clean checksums
 UDOchestless.esp
   WARN: UDOChestless.esp does not have Skyrim.esm as a master file.  Most likely it will create duplicates of everything it is supposed to modify.
+Ultimate HD Fire Spells.esp
+  // ^ has no spell data, just cell and world data
+  IF CHECKSUM("Ultimate HD Fire Spells.esp", E79BB5EF) DIRTY: 0 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("Ultimate HD Fire Spells.esp", E79BB5EF) && IFNOT CHECKSUM("Ultimate HD Fire Spells.esp", 25C0B31B) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 1.4a
+  // ^ dirty and clean checksums for current release
 Ultimate training ground.esp
   IF CHECKSUM("Ultimate training ground.esp", 2DE178EF) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 uluchenie ivarsteda.esp
@@ -12676,6 +12681,7 @@ REGEX: Dual Wield Parrying.*\.esp
     IF VAR(RU) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) REQ: Версия для Dawnguard. Удалите это и установите 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
   IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") &&   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") &&   IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Dodge Mod.esp
 Duel Combat Realism CK.esp
 Duel - Combat Realism FAST.esp
 Duel.esp
@@ -12757,6 +12763,11 @@ only1stpfinishers.esp
 REGEX: The Dance of Death.*\.esp
   IF VAR(EN) && IF REGEX("The Dance of Death V.+.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF REGEX("The Dance of Death V.+.esp") WARN: Устарело. Обновите до последней версии.
+TKcombat.esp
+  IF VERSION("SKSE", "0.1.6", <) REQ: "http://skse.silverlock.org SKSE" 1.6+
+  IF VERSION("TES5", "1.7", <) REQ: Skyrim 1.7+
+  IFNOT CHECKSUM("TKcombat.esp", CF4F5142) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 0.4
+  // ^ checksum for current release
 REGEX: Troy1010_ImprovedArmorFormula_Difficulty.+\.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Troy1010_ImprovedArmorFormula 4.0.0.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Troy1010_ImprovedArmorFormula 4.0.0.esp
@@ -14417,7 +14428,7 @@ UFO - Ultimate Follower Overhaul.esp
   IF VERSION("TES5", "1.5.24", <) REQ: Skyrim 1.5.24+
   IF FILE("BDO.esp") INC: BDO.esp
   IF VAR(Dawnguard) && IFNOT FILE("UFO - Dawnguard AddOn.esp") WARN: UFO - Dawnguard AddOn.esp required to work properly with Dawnguard (Official Bethesda DLC)
-  IF VAR(Hearthfire) && IFNOT FILE("UFO - Heartfire AddOn.esp") WARN: UFO - Haertfire AddOn.esp required to work properly with Hearthfires (Official Bethesda DLC)
+  IF VAR(Hearthfire) && IFNOT FILE("UFO - Heartfire AddOn.esp") WARN: UFO - Heartfire AddOn.esp required to work properly with Hearthfires (Official Bethesda DLC)
   IF VAR(EN) SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on "http://skyrim.nexusmods.com/mods/14037 mod page".
     IF VAR(RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода"(Eng) или читайте "http://u.to/GJZaAg это" локализованное ридми.
   IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 6EF3FFBA) DIRTY: 18 ITM, 0 UDR records Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -14433,6 +14444,7 @@ UFO - Heartfire AddOn.esp
 UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
+SIUFOAWCPatch.esp
 TravellersOfSkyrim - UFO Compatibility Patch.esp
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
 ENDGROUP: Ultimate Follower Overhaul
@@ -14553,7 +14565,6 @@ Atvir.esp
 AWC_ArnulfWarzenSchleggerCompanion.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IFNOT CHECKSUM("AWC_ArnulfWarzenSchleggerCompanion.esp", EF2055B2) SAY: This esp may be obsolete. As of 31-DEC-12, the latest version is 0.3.1
-SIUFOAWCPatch.esp
 
 // companions b
 Bald_Jiub.esp
@@ -16156,6 +16167,14 @@ PC Exclusive Animation Path - Elder Race.esp
   IF FILE("AP Skyrim.esp") INC: AP Skyrim.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
 PLAYER WO.esp
+HM_HotkeyMod.esp
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+
+  IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IF VAR(UFO) WARN: UFO detected.  Use the UFO version to have the mod work as intended.
+  IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IFNOT VAR(UFO) ERROR: UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.
+  IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("HM_HotkeyMod.esp", 374C564C) && IFNOT CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IFNOT CHECKSUM("HM_HotkeyMod.esp", 676790BF) && IFNOT CHECKSUM("HM_HotkeyMod.esp", 42671F48) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 0.1
+  // ^ dirty and clean checksums for current release (both version)
 SKSE Hotkeys.esp
   IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
 IF FILE("SKSE Hotkeys.esp") MOD: WetandCold.esp
