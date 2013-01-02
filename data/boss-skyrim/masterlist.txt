@@ -1567,9 +1567,30 @@ Realistic Lighting Patcher.esp
 Rebalance Light.esp
 Rebalance_Light.esp
 13189_Rebalance_Light.esp
+Relighting Skyrim - Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 RemoveAmbientInteriorFog.esp
+  IF CHECKSUM("RemoveAmbientInteriorFog.esp", 2014AA8E) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF VAR(EN) && IF FILE("Realistic Lighting.esp") WARN: Removing the interior Fog will affect Realistic Lighting. Load before RL if you are experiencing errors.
     IF VAR(RU) && IF FILE("Realistic Lighting.esp") WARN: Удаление тумана внутри помещений повлияет на Realistic Lighting. Загружайте перед RL если вы замечаете баги.
+Remove Interior Fog V2 - Skyrim.esp
+  IF FILE("RemoveAmbientInteriorFog.esp") && IF VAR(EN) WARN: Use either RemoveAmbientInteriorFog.esp or Remove Interior Fog V2 *.esp, not both.
+    IF FILE("RemoveAmbientInteriorFog.esp") && IF VAR(RU) WARN: Используйте любой или RemoveAmbientInteriorFog.esp или Remove Interior Fog V2 *.esp, не обa.
+  IF VAR(Dawnguard) SAY: Use Remove Interior Fog V2 - Dawnguard.esp in addition to include Dawnguard locations. 
+  IF VAR(Hearthfire) SAY: Use Remove Interior Fog V2 - Hearthfire.esp in addition to include Hearthfires locations.
+Remove Interior Fog V2 - Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Remove Interior Fog V2 - Hearthfire.esp
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+Remove Interior Fog V2 - Full Version.esp
+  IF REGEX("Remove Interior Fog V2 - (Skyrim|Dawnguard|Hearthfire)?\.esp") ERROR: Do not use the modular versions of Remove Interior Fog V2 with the Full version.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
 fixedeyeadaptation.esp
 dimmed_torches.esp
 enhancedlightingforrealisticlighting.esp
@@ -5697,6 +5718,7 @@ SexyKunoichi2ndByNausicaa.esp
 SF Poison.esp
 Shadow Ranger Gear by Natterforme.esp
 Shard of Azzinoth.esp
+SheddingLaceUD.esp
 ShieldsofSkyrim.esp
 ShieldsofSkyrimLists.esp
   TAG: {{BASH: Relev}}
@@ -6049,6 +6071,9 @@ UNPArmoredBikini.esp
 UNP Jewelry Retextured.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 UNP Jewelry Variants.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, UNP Jewelry Variants V-2.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, UNP Jewelry Variants V-2.esp
+UNP Jewelry Variants V-2.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
 UNP Leather Clothes.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
@@ -7156,17 +7181,12 @@ Castle Brennenburgh.esp
   IF CHECKSUM("Castle Brennenburgh.esp", A1786E09) DIRTY: 25 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Castle Brennenburgh.esp", A1786E09) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("Castle Brennenburgh.esp", A1786E09) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+CastleDKmod.esp
+  IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
 Castle Dracula.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Castle Dracula.esp", 3BEE9879) DIRTY: 25 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-Castle Stonespire.esp
-  IF CHECKSUM("Castle Stonespire.esp", D070A4D3) DIRTY: 37 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF CHECKSUM("Castle Stonespire.esp", D070A4D3) || IF CHECKSUM("Castle Stonespire.esp", 0A749261) && IF VAR(EN) WARN: This file contains 10 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
-    IF CHECKSUM("Castle Stonespire.esp", D070A4D3) || IF CHECKSUM("Castle Stonespire.esp", 0A749261) && IF VAR(RU) WARN:  Этот файл содержит 10 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-Castle Strunmah.esp
-CastleDKmod.esp
-  IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
 CastleDrakhur_updatefile.esp
   IF CHECKSUM("CastleDrakhur_updatefile.esp", D6ED863C) DIRTY: 20 ITM, 102 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("CastleDrakhur_updatefile.esp", D6ED863C) && IF VAR(EN) WARN: This file contains 7 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
@@ -7174,6 +7194,29 @@ CastleDrakhur_updatefile.esp
 CastleGrey.esp
   IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
    // changes default stayatplace AI making horses not stay at dismount location
+Castle Riverwood.esp
+  IF CHECKSUM("Castle Riverwood.esp", A186C265) DIRTY: 7 ITM, 16 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Castle Riverwood.esp", A186C265) || IF CHECKSUM("Castle Riverwood.esp", 04D51E2E) && IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("Castle Riverwood.esp", A186C265) || IF CHECKSUM("Castle Riverwood.esp", 04D51E2E) && IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  // ^ dirty and clesned checksums
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Burg Flusswald.esp
+  // german castle riverwood
+  IF FILE("Castle Riverwood.esp") && IF VAR(EN) WARN: Use either Castle Riverwood.esp or Burg Flusswald.esp, not both.
+    IF FILE("Castle Riverwood.esp") && IF VAR(RU) WARN: Используйте любой или Castle Riverwood.esp или Burg Flusswald.esp, не обa.
+  IF CHECKSUM("Burg Flusswald.esp", 5A7D4171) DIRTY: 7 ITM, 16 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Burg Flusswald.esp", 5A7D4171) || IF CHECKSUM("Burg Flusswald.esp", 447A3103) && IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("Burg Flusswald.esp", 5A7D4171) || IF CHECKSUM("Burg Flusswald.esp", 447A3103) && IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  // ^ dirty and clesned checksums
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Castle Stonespire.esp
+  IF CHECKSUM("Castle Stonespire.esp", D070A4D3) DIRTY: 37 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Castle Stonespire.esp", D070A4D3) || IF CHECKSUM("Castle Stonespire.esp", 0A749261) && IF VAR(EN) WARN: This file contains 10 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("Castle Stonespire.esp", D070A4D3) || IF CHECKSUM("Castle Stonespire.esp", 0A749261) && IF VAR(RU) WARN: Этот файл содержит 10 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  // ^ dirty and clesned checksums
+Castle Strunmah.esp
 CastlevaniaData.esp
 Castlevania.esp
 Cathedral.esp
@@ -7890,6 +7933,7 @@ morthalslegacy.esp
 Mother_of_Tears_Contracts_Eng.esp
 Mother_of_Tears_Dungeons.esp
 Mother_of_Tears_Epics_Eng.esp
+mtBalRuhn.esp
 mtHornrichHearth.esp
 MU.esp
 Mudcrab Farm.esp
