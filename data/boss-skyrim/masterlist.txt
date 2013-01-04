@@ -104,8 +104,8 @@ IF FILE("Unofficial Hearthfire Patch.esp") SET: UHFP
     IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1432762-relz-boss-for-skyrim/ здесь"(Eng).
 
 // Recruitment
-  IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions. As of 22 December 2012 we are still at over 3100+ plugins to add to the Masterlist. Some dating as far back as 25 August 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus forums".
-    IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 3100+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на форумах  "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus".
+  IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions. As of 04 January 2013 we are at over 3400+ plugins to add to the Masterlist. Some dating as far back as 27 August 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus forums".
+    IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 3400+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на форумах  "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus".
 
 // SKSE & SKCU
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
@@ -160,7 +160,7 @@ RaceCompatibility.esm
 // esms #
 28 Days and a Bit 5.esm
   IF CHECKSUM("28 Days and a Bit 5.esm", AF6984AF) DIRTY: 28 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("28 Days and a Bit 5.esm", AF6984AF) && IFNOT CHECKSUM("28 Days and a Bit 5.esm", 1CB0BBF4) SAY: This esm may be obsolete. As of 01-JAN-13, the latest version is 0.7.0
+  IFNOT CHECKSUM("28 Days and a Bit 5.esm", AF6984AF) && IFNOT CHECKSUM("28 Days and a Bit 5.esm", 1CB0BBF4) SAY: This esm may be obsolete. The last entry into BOSS was version 0.7.0 (Checksum AF6984AF or 1CB0BBF4).
   // ^ dirty and clean checksums for current release
 3rdEraWeaponsMoS.esm
 REGEX: (83Willows_)?101BUGs.+\.esm
@@ -338,7 +338,7 @@ hideout.esm
 highfive.esm
 HjakhtraevarrTomb.esm
   IF CHECKSUM("HjakhtraevarrTomb.esm", B10B9F8F) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("HjakhtraevarrTomb.esm", B10B9F8F) && IFNOT CHECKSUM("HjakhtraevarrTomb.esm", F22CBB1A) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 1.5.
+  IFNOT CHECKSUM("HjakhtraevarrTomb.esm", B10B9F8F) && IFNOT CHECKSUM("HjakhtraevarrTomb.esm", F22CBB1A) SAY: This esp may be obsolete. The last entry into BOSS was version 1.5 (Checksum B10B9F8F or F22CBB1A).
 HorseBranding.esm
 HuntersDiscipline.esm
 
@@ -534,7 +534,7 @@ Sirenia.esm
 Skyrim Dark.esm
 Skyrim Immersive Creatures.esm
   TAG: {{BASH: Delev}}
-  IFNOT CHECKSUM("Skyrim Immersive Creatures.esm", 974E4B56) SAY: This esp may be obsolete. As of 31-DEC-12, the latest version is 4e.
+  IFNOT CHECKSUM("Skyrim Immersive Creatures.esm", 974E4B56) SAY: This esp may be obsolete. The last entry into BOSS was version 4e (Checksum 974E4B56).
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Skyrim_Realism.esm
@@ -1379,11 +1379,11 @@ BEGINGROUP: Weather mods and overhauls
   IF CHECKSUM("1 Day Moon Phases.esp", FE2F1935) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Chesko_Frostfall.esp
 enbweather.esp
-  IFNOT CHECKSUM("enbweather.esp", 6E0599FD) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 0.32.Beta.
+  IFNOT CHECKSUM("enbweather.esp", 6E0599FD) SAY: This esp may be obsolete. The last entry into BOSS was version 0.32.Beta (Checksum 6E0599FD).
   IF ACTIVE("ClimatesOfTamriel.esm") INC: ClimatesOfTamriel.esm
   IF ACTIVE("Realistic Lighting.esp") INC: Realistic Lighting.esp
 ENB Weather - Exterior Fog Plugin.esp
-  IFNOT CHECKSUM("ENB Weather - Exterior Fog Plugin.esp", B66C3133) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 0.12.Beta.
+  IFNOT CHECKSUM("ENB Weather - Exterior Fog Plugin.esp", B66C3133) SAY: This esp may be obsolete. The last entry into BOSS was version 0.12.Beta (Checksum B66C3133).
   IF ACTIVE("ClimatesOfTamriel.esm") INC: ClimatesOfTamriel.esm
   IF ACTIVE("Realistic Lighting.esp") INC: Realistic Lighting.esp
 IFNOT FILE("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
@@ -1515,10 +1515,10 @@ BEGINGROUP: Lighting
 alvor's house dynamic.esp
 Blackout_Skyrim.esp
   IF CHECKSUM("Blackout_Skyrim.esp", 3A1DA448) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("Blackout_Skyrim.esp", 3A1DA448) && IFNOT CHECKSUM("Blackout_Skyrim.esp", 32B32459) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 2.0
+  IFNOT CHECKSUM("Blackout_Skyrim.esp", 3A1DA448) && IFNOT CHECKSUM("Blackout_Skyrim.esp", 32B32459) SAY: This esp may be obsolete. The last entry into BOSS was version 2.0 (Checksum 3A1DA448 or 32B32459).
   SAY: This is an ENB mod.  Be sure you have the correct ENB setup installed.
 Blackout_Dawnguard.esp
-  IFNOT CHECKSUM("Blackout_Dawnguard.esp", 7B30F518) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 2.0
+  IFNOT CHECKSUM("Blackout_Dawnguard.esp", 7B30F518) SAY: This esp may be obsolete. The last entry into BOSS was version 2.0 (Checksum 7B30F518).
   SAY: This is an ENB mod.  Be sure you have the correct ENB setup installed.
 Bright Lights.esp
 CityLights.esp
@@ -1754,6 +1754,8 @@ BEGINGROUP: Textures
 //  TES4 (Header only)
 
 VanillaReducedTextures.esp
+ // ^ Placed at top to prevent overwriting smaller texture changes rendering them useless
+VanillaReducedTexturesDG.esp
  // ^ Placed at top to prevent overwriting smaller texture changes rendering them useless
 Andragorn_Replace_Imperial_Sword.esp
 calientevanillaarmor - banditpack curvy.esp
@@ -2008,6 +2010,8 @@ bard  - loren - hjerim.esp
 Barrels and Crates.esp
   TAG: {{BASH: Relev}}
 Batch Crafting Recipes.esp
+Prometheus_BeastSkeletons.esp
+  IFNOT CHECKSUM("Prometheus_BeastSkeletons.esp", 42EE9442) SAY: This esp may be obsolete. The last entry into BOSS was version 5.1 (Checksum 42EE9442).
 Behemoth Dragon.esp
 Belleza DiBella - PNJ Overhaul.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
@@ -2517,16 +2521,12 @@ here there be monsters.esp
 hq_skyrimmap.esp
 HjerimChests.esp
 High Level Enemies.esp
-  IFNOT CHECKSUM("High Level Enemies.esp", A7AA9578) && IFNOT CHECKSUM("High Level Enemies.esp", B9FB4248) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 1.0.
-  // two versions, same name.
 High Level Enemies - Dawnguard.esp
-  IFNOT CHECKSUM("High Level Enemies - Dawnguard.esp", 4C571A23) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 1.0.
   IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
   IFNOT ACTIVE("High Level Enemies.esp") WARN: High Level Enemies.esp must be active for this file to work properly.
 High Level Enemies - Hardcore.esp
-  IFNOT CHECKSUM("High Level Enemies - Hardcore.esp", 28EEE83F) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 1.0.
 High Level Enemies - Increased Max Resists.esp
-  IFNOT CHECKSUM("High Level Enemies - Increased Max Resists.esp", D1BDD314) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 1.1.
+  IFNOT CHECKSUM("High Level Enemies - Increased Max Resists.esp", D1BDD314) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum D1BDD314).
 HigherLevelEnemies.esp
   TAG: {{BASH: Relev}}
 HillmanShack.esp
@@ -3165,7 +3165,7 @@ SkyMoMod.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Skyrim Immersive Creatures.esp
   TAG: {{BASH: Delev}}
-  IFNOT CHECKSUM("Skyrim Immersive Creatures.esp", 2E7191F1) SAY: This esp may be obsolete. As of 31-DEC-12, the latest version is 4e.
+  IFNOT CHECKSUM("Skyrim Immersive Creatures.esp", 2E7191F1) SAY: This esp may be obsolete. The last entry into BOSS was version 4e (Checksum 2E7191F1).
   IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Use either Skyrim Immersive Creatures.esm or Skyrim Immersive Creatures.esp, not both.
     IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Используйте любой или Skyrim Immersive Creatures.esm или Skyrim Immersive Creatures.esp, не обa.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -4863,6 +4863,8 @@ Insanity's Goldbrand.esp
 Insanity's Kahvozein Fang.esp
 Insanity's Ice Blade of the Monarch.esp
 Insanity's Pale Blade.esp
+Insanity's Silver Bow.esp
+  IFNOT CHECKSUM("Insanity's Silver Bow.esp", ACB19591) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum ACB19591).
 Insanity's Sorrow.esp
   IF CHECKSUM("Insanity's Sorrow.esp", 872ACBC) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Insanity's Umbra Sword.esp
@@ -5824,7 +5826,7 @@ spawnshield.esp
 SPBladeOfWoe02.esp
 Spear.esp
   IF CHECKSUM("Spear.esp", B5E0566D) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("Spear.esp", B5E0566D) && IFNOT CHECKSUM("Spear.esp", CFDB32D8) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 2.
+  IFNOT CHECKSUM("Spear.esp", B5E0566D) && IFNOT CHECKSUM("Spear.esp", CFDB32D8) SAY: This esp may be obsolete.  The last entry into BOSS was version 2 (Checksum B5E0566D or CFDB32D8).
 SpectralWeaponPack.esp
 specular bow.esp
 SpeedRings.esp
@@ -6490,7 +6492,7 @@ Requiem.esp
   SAY: Requiem makes a LOT of changes. You may want to consider creating and using a Userlist based on your particular mod loadout.
   IF CHECKSUM("Requiem.esp", E7945687) || IF CHECKSUM("Requiem.esp", 2E4F346A) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
   IF CHECKSUM("Requiem.esp", E7945687) DIRTY: 170 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("Requiem.esp", E7945687) && IFNOT CHECKSUM("Requiem.esp", 2E4F346A) SAY: This esp may be obsolete. As of 31-DEC-12, the latest version is 1.0
+  IFNOT CHECKSUM("Requiem.esp", E7945687) && IFNOT CHECKSUM("Requiem.esp", 2E4F346A) SAY: This esp may be obsolete.  The last entry into BOSS was version 1.0 (Checksum E7945687 or 2E4F346A).
 Requiem - Alternative Altar Blessing Conditions.esp
 Requiem - CarryWeightIncreaseByStamina5.esp
 Requiem - CleardDungeonRespawnDefaultTime.esp
@@ -7086,7 +7088,7 @@ breezehome enhanced.esp
   IF VAR(BertsBHInst) INC: BertsBreezeRemodel
 breezehome extended ~saqk.esp
 Breezehome_FullyUpgradable.esp
-  IFNOT CHECKSUM("Breezehome_FullyUpgradable.esp", 444A410C) && IFNOT CHECKSUM("Breezehome_FullyUpgradable.esp", 6BF49D04) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 1.6.
+  IFNOT CHECKSUM("Breezehome_FullyUpgradable.esp", 444A410C) && IFNOT CHECKSUM("Breezehome_FullyUpgradable.esp", 6BF49D04) SAY: This esp may be obsolete.  The last entry into BOSS was version 1.6 (Checksum 444A410C or 6BF49D04).
   IF CHECKSUM("Breezehome_FullyUpgradable.esp", 444A410C) DIRTY: 22 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Breezehome_FullyUpgradable.esp", 444A410C) || IF CHECKSUM("Breezehome_FullyUpgradable.esp", 6BF49D04) && IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("Breezehome_FullyUpgradable.esp", 444A410C) || IF CHECKSUM("Breezehome_FullyUpgradable.esp", 6BF49D04) && IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
@@ -7136,42 +7138,42 @@ BreezehomeRenovationFemJP.esp
   IF CHECKSUM("BreezehomeRenovationFemJP.esp", 4DF14350) DIRTY: 0 ITM, 19 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("BreezehomeRenovationFemJP.esp", 4DF14350) || IF CHECKSUM("BreezehomeRenovationFemJP.esp", D50EF970) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("BreezehomeRenovationFemJP.esp", 4DF14350) || IF CHECKSUM("BreezehomeRenovationFemJP.esp", D50EF970) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-  IFNOT CHECKSUM("BreezehomeRenovationFemJP.esp", 4DF14350) && IFNOT CHECKSUM("BreezehomeRenovationFemJP.esp", D50EF970) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 1.5
+  IFNOT CHECKSUM("BreezehomeRenovationFemJP.esp", 4DF14350) && IFNOT CHECKSUM("BreezehomeRenovationFemJP.esp", D50EF970) SAY: This esp may be obsolete.  The last entry into BOSS was version 1.5 (Checksum 4DF14350 or D50EF970).
 BreezehomeRenovationFem.esp
   IF REGEX("BreezehomeRenovation(FemJP|JP|FSW|FSWJP)?\.esp") && IF VAR(EN) WARN: Use only one of BreezehomeRenovation*.esp
     IF REGEX("BreezehomeRenovation(FemJP|JP|FSW|FSWJP)?\.esp") && IF VAR(RU) WARN: Используйте только один of BreezehomeRenovation*.esp
   IF CHECKSUM("BreezehomeRenovationFem.esp", 5C313E5B) DIRTY: 0 ITM, 19 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("BreezehomeRenovationFem.esp", 5C313E5B) || IF CHECKSUM("BreezehomeRenovationFem.esp", FFAF3B12) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("BreezehomeRenovationFem.esp", 5C313E5B) || IF CHECKSUM("BreezehomeRenovationFem.esp", FFAF3B12) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-  IFNOT CHECKSUM("BreezehomeRenovationFem.esp", 5C313E5B) && IFNOT CHECKSUM("BreezehomeRenovationFem.esp", FFAF3B12) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 1.5
+  IFNOT CHECKSUM("BreezehomeRenovationFem.esp", 5C313E5B) && IFNOT CHECKSUM("BreezehomeRenovationFem.esp", FFAF3B12) SAY: This esp may be obsolete. The last entry into BOSS was version 1.5 (Checksum 5C313E5B or FFAF3B12).
 BreezehomeRenovationFSWJP.esp
   IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSW)?\.esp") && IF VAR(EN) WARN: Use only one of BreezehomeRenovation*.esp
     IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSW)?\.esp") && IF VAR(RU) WARN: Используйте только один of BreezehomeRenovation*.esp
   IF CHECKSUM("BreezehomeRenovationFSWJP.esp", 08E58DF5) DIRTY: 0 ITM, 29 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("BreezehomeRenovationFSWJP.esp", 08E58DF5) || IF CHECKSUM("BreezehomeRenovationFSWJP.esp", 588A2860) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("BreezehomeRenovationFSWJP.esp", 08E58DF5) || IF CHECKSUM("BreezehomeRenovationFSWJP.esp", 588A2860) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-  IFNOT CHECKSUM("BreezehomeRenovationFSWJP.esp", 08E58DF5) && IFNOT CHECKSUM("BreezehomeRenovationFSWJP.esp", 588A2860) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 1.5
+  IFNOT CHECKSUM("BreezehomeRenovationFSWJP.esp", 08E58DF5) && IFNOT CHECKSUM("BreezehomeRenovationFSWJP.esp", 588A2860) SAY: This esp may be obsolete. The last entry into BOSS was version 1.5 (Checksum 08E58DF5 or 588A2860).
 BreezehomeRenovationFSW.esp
   IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSWJP)?\.esp") && IF VAR(EN) WARN: Use only one of BreezehomeRenovation*.esp
     IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSWJP)?\.esp") && IF VAR(RU) WARN: Используйте только один of BreezehomeRenovation*.esp
   IF CHECKSUM("BreezehomeRenovationFSW.esp", F94B1083) DIRTY: 0 ITM, 29 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("BreezehomeRenovationFSW.esp", F94B1083) || IF CHECKSUM("BreezehomeRenovationFSW.esp", 1969DD9D) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("BreezehomeRenovationFSW.esp", F94B1083) || IF CHECKSUM("BreezehomeRenovationFSW.esp", 1969DD9D) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-  IFNOT CHECKSUM("BreezehomeRenovationFSW.esp", F94B1083) && IFNOT CHECKSUM("BreezehomeRenovationFSW.esp", 1969DD9D) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 1.5
+  IFNOT CHECKSUM("BreezehomeRenovationFSW.esp", F94B1083) && IFNOT CHECKSUM("BreezehomeRenovationFSW.esp", 1969DD9D) SAY: This esp may be obsolete. The last entry into BOSS was version 1.5 (Checksum F94B1083 or 1969DD9D).
 BreezehomeRenovationJP.esp
   IF REGEX("BreezehomeRenovation(Fem|FemJP|FSW|FSWJP)?\.esp") && IF VAR(EN) WARN: Use only one of BreezehomeRenovation*.esp
     IF REGEX("BreezehomeRenovation(Fem|FemJP|FSW|FSWJP)?\.esp") && IF VAR(RU) WARN: Используйте только один of BreezehomeRenovation*.esp
   IF CHECKSUM("BreezehomeRenovationJP.esp", 1B7A18AF) DIRTY: 0 ITM, 19 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("BreezehomeRenovationJP.esp", 1B7A18AF) || IF CHECKSUM("BreezehomeRenovationJP.esp", ED0B3FE7) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("BreezehomeRenovationJP.esp", 1B7A18AF) || IF CHECKSUM("BreezehomeRenovationJP.esp", ED0B3FE7) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-  IFNOT CHECKSUM("BreezehomeRenovationJP.esp", 1B7A18AF) && IFNOT CHECKSUM("BreezehomeRenovationJP.esp", ED0B3FE7) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 1.5
+  IFNOT CHECKSUM("BreezehomeRenovationJP.esp", 1B7A18AF) && IFNOT CHECKSUM("BreezehomeRenovationJP.esp", ED0B3FE7) SAY: This esp may be obsolete. The last entry into BOSS was version 1.5 (Checksum 1B7A18AF or ED0B3FE7).
 BreezehomeRenovation.esp
   IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSW|FSWJP)\.esp") && IF VAR(EN) WARN: Use only one of BreezehomeRenovation*.esp
     IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSW|FSWJP)\.esp") && IF VAR(RU) WARN: Используйте только один of BreezehomeRenovation*.esp
   IF CHECKSUM("BreezehomeRenovation.esp", E4AF58E1) DIRTY: 0 ITM, 19 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("BreezehomeRenovation.esp", E4AF58E1) || IF CHECKSUM("BreezehomeRenovation.esp", 78EC0937) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("BreezehomeRenovation.esp", E4AF58E1) || IF CHECKSUM("BreezehomeRenovation.esp", 78EC0937) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-  IFNOT CHECKSUM("BreezehomeRenovation.esp", E4AF58E1) && IFNOT CHECKSUM("BreezehomeRenovation.esp", 78EC0937) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 1.5
+  IFNOT CHECKSUM("BreezehomeRenovation.esp", E4AF58E1) && IFNOT CHECKSUM("BreezehomeRenovation.esp", 78EC0937) SAY: This esp may be obsolete. The last entry into BOSS was version 1.5 (Checksum E4AF58E1 or 78EC0937).
 BreezehomeRenovation(CN).esp
 REGEX: Breezehome Revised.*\.esp
   IF VAR(EN) WARN: Use only one variant of Breezehome Revised*.esp
@@ -7334,7 +7336,7 @@ CryptOfTheTongues.esp
 crystalis.esp
 CrystalRock.esp
 CZHCAD.esp
-  IFNOT CHECKSUM("CZHCAD.esp", B3418C2A) && IFNOT CHECKSUM("CZHCAD.esp", 11557113) SAY: This may be obsolete. As of 17 DEC 2012, the latest version is 8.5.
+  IFNOT CHECKSUM("CZHCAD.esp", B3418C2A) && IFNOT CHECKSUM("CZHCAD.esp", 11557113) SAY: This may be obsolete. The last entry into BOSS was version 8.5 (Checksum B3418C2A or 11557113).
   // Dirty and clean checksums above
   IF CHECKSUM("CZHCAD.esp", B3418C2A) DIRTY: 4 ITM, 51 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 CZHCAD_DG.esp
@@ -7848,10 +7850,10 @@ LakeSideHome.esp
   IF CHECKSUM("LakeSideHome.esp", 22F454F4) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 HF_Lakeview_Pool_and_Hotbath.esp
   IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 856CC724) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 856CC724) && IFNOT CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", A1E1641D) SAY: This esp may be obsolete. As of 24-DEC-12, the latest version is 1.7b.
+  IFNOT CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 856CC724) && IFNOT CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", A1E1641D) SAY: This esp may be obsolete. The last entry into BOSS was version 1.7b (Checksum 856CC724 or A1E1641D).
   IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
 HF_Lakeview_North_Perimeter_Fence.esp
-  IFNOT CHECKSUM("HF_Lakeview_North_Perimeter_Fence.esp", 629F69FE) SAY: This esp may be obsolete. As of 24-DEC-12, the latest version is 1.7b.
+  IFNOT CHECKSUM("HF_Lakeview_North_Perimeter_Fence.esp", 629F69FE) SAY: This esp may be obsolete. The last entry into BOSS was version 1.7b (Checksum 629F69FE).
   IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
 Landscaped_Breezehome.esp
 Landscaped_Honeyside.esp
@@ -8016,7 +8018,7 @@ mtHornrichHearth.esp
 MU.esp
 Mudcrab Farm.esp
   IF CHECKSUM("Mudcrab Farm.esp", F90C3CC9) DIRTY: 6 ITM, 6 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("Mudcrab Farm.esp", F90C3CC9) && IFNOT CHECKSUM("Mudcrab Farm.esp", 8C03B843) SAY: This esp may be obsolete. As of 25-DEC-12, the latest version is 1.0.
+  IFNOT CHECKSUM("Mudcrab Farm.esp", F90C3CC9) && IFNOT CHECKSUM("Mudcrab Farm.esp", 8C03B843) SAY: This esp may be obsolete. The last entry into BOSS was version 1.0 (Checksum F90C3CC9 or 8C03B843).
 Murder01.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, HjakhtraevarrTomb.esm
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, HjakhtraevarrTomb.esm
@@ -8068,6 +8070,10 @@ NirnFallsManor.esp
 Quest_NoMercy.esp
 NoBleakFalls.esp
   IF CHECKSUM("NoBleakFalls.esp", 7D2AD14B) DIRTY: 0 ITM, 6 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+NoDeathMod.esp
+  IF CHECKSUM("NoDeathMod.esp", B5369ABE) DIRTY: 57 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("NoDeathMod.esp", B5369ABE) && IFNOT CHECKSUM("NoDeathMod.esp", 2F2D8413) SAY: This esp may be obsolete. The last entry into BOSS was version .003 (Checksum B5369ABE or 2F2D8413).
+  // ^ dirty and clean checksums for current release
 Nordricks Grave.esp
 Northern Bathhouses.esp
   IF CHECKSUM("Northern Bathhouses.esp", FBE79F4F) DIRTY: 96 ITM, 12 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -8147,7 +8153,7 @@ Ranger of Tamriel.esp
 Ranger Ridge_v1.esp
 Ranger Ridge_addon.esp
 Ranger's Valley Lodge.esp
-  IFNOT CHECKSUM("Ranger's Valley Lodge.esp", D9ADFDF2) && IFNOT CHECKSUM("Ranger's Valley Lodge.esp", 25160FAC) SAY: This esp may be obsolete. As of 23-DEC-12, the latest version is 2.0b.
+  IFNOT CHECKSUM("Ranger's Valley Lodge.esp", D9ADFDF2) && IFNOT CHECKSUM("Ranger's Valley Lodge.esp", 25160FAC) SAY: This esp may be obsolete. The last entry into BOSS was version 2.0b (Checksum D9ADFDF2 or 25160FAC)).
   IF CHECKSUM("Ranger's Valley Lodge.esp", D9ADFDF2) DIRTY: 41 ITM, 33 UDR record. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Ranger's Valley Lodge.esp", D9ADFDF2) || IF CHECKSUM("Ranger's Valley Lodge.esp", 25160FAC) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("Ranger's Valley Lodge.esp", D9ADFDF2) || IF CHECKSUM("Ranger's Valley Lodge.esp", 25160FAC) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
@@ -8479,7 +8485,7 @@ TheChampionsOfTamriel.esp
   IF CHECKSUM("TheChampionsOfTamriel.esp", A8C8F78A) DIRTY: 30 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 TheClockworkAdventure.esp
   IF CHECKSUM("TheClockworkAdventure.esp", 16581EB1) DIRTY: 0 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("TheClockworkAdventure.esp", 16581EB1) && IFNOT CHECKSUM("TheClockworkAdventure.esp", F173CF0E) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 0.95.
+  IFNOT CHECKSUM("TheClockworkAdventure.esp", 16581EB1) && IFNOT CHECKSUM("TheClockworkAdventure.esp", F173CF0E) SAY: This esp may be obsolete. The last entry into BOSS was version 0.95 (Checksum 16581EB1 or F173CF0E).
 TheClone Breezehome.esp
 TheClone Breezehome - alternative.esp
 TheClone Breezehome - housemarkerfasttravel fix.esp
@@ -8538,7 +8544,7 @@ throneroom.esp
   IF CHECKSUM("throneroom.esp", 2F04B129) DIRTY: 0 ITM, 32 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Thunderbolt - The Shout Package.esp
   IF CHECKSUM("Thunderbolt - The Shout Package.esp", C1886DBD) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("Thunderbolt - The Shout Package.esp", C1886DBD) && IFNOT CHECKSUM("Thunderbolt - The Shout Package.esp", 851B6337) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 1.02.
+  IFNOT CHECKSUM("Thunderbolt - The Shout Package.esp", C1886DBD) && IFNOT CHECKSUM("Thunderbolt - The Shout Package.esp", 851B6337) SAY: This esp may be obsolete. The last entry into BOSS was version 1.02 (Checksum C1886DBD or 851B6337).
 thundersnow1.esp
 thuumfollowers.esp
 tinyalchemisthut.esp
@@ -8618,7 +8624,7 @@ UDO.esm
     IF CHECKSUM("UDO.esm", 23A1B8F9) || IF CHECKSUM("UDO.esm", 2B448032) && IF VAR(RU) WARN: Этот файл содержит  удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
   // ^ diry and clean checksums
 UDO.esp
-  IFNOT CHECKSUM("UDO.esm", 23A1B8F9) && IFNOT CHECKSUM("UDO.esm", 2B448032) SAY: This esp may be obsolete. As of 17-DEC-12, the latest version is 2.3.
+  IFNOT CHECKSUM("UDO.esm", 23A1B8F9) && IFNOT CHECKSUM("UDO.esm", 2B448032) SAY: This esp may be obsolete. The last entry into BOSS was version 2.3 (Checksum 23A1B8F9 or 2B448032).
   IF CHECKSUM("UDO.esp", D7D3445D) DIRTY: 15 ITM, 4448 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("UDO.esm", 23A1B8F9) || IF CHECKSUM("UDO.esm", 2B448032) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("UDO.esm", 23A1B8F9) || IF CHECKSUM("UDO.esm", 2B448032) && IF VAR(RU) WARN: Этот файл содержит  удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
@@ -8628,13 +8634,13 @@ UDOchestless.esp
 Ultimate HD Fire Spells.esp
   // ^ has no spell data, just cell and world data
   IF CHECKSUM("Ultimate HD Fire Spells.esp", E79BB5EF) DIRTY: 0 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("Ultimate HD Fire Spells.esp", E79BB5EF) && IFNOT CHECKSUM("Ultimate HD Fire Spells.esp", 25C0B31B) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 1.4a
+  IFNOT CHECKSUM("Ultimate HD Fire Spells.esp", E79BB5EF) && IFNOT CHECKSUM("Ultimate HD Fire Spells.esp", 25C0B31B) SAY: This esp may be obsolete. The last entry into BOSS was version 1.4a (Checksum E79BB5EF or 25C0B31B).
   // ^ dirty and clean checksums for current release
 Ultimate training ground.esp
   IF CHECKSUM("Ultimate training ground.esp", 2DE178EF) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Ultimate Witcher MOD.esp
   TAG: {{BASH: Relev}}
-  IFNOT CHECKSUM("Ultimate Witcher MOD.esp", 03E5E4EE) SAY: This esp may be obsolete. As of 03-JAN-13, the latest version is 1.8.Alpha
+  IFNOT CHECKSUM("Ultimate Witcher MOD.esp", 03E5E4EE) SAY: This esp may be obsolete. The last entry into BOSS was version 1.8.Alpha (Checksum 03E5E4EE).
 uluchenie ivarsteda.esp
 uluchenie roriksteda.esp
 ulushenie folkrita.esp
@@ -8649,7 +8655,7 @@ unicorncave.esp
   IF CHECKSUM("unicorncave.esp", 40169648) DIRTY: 37 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Unique Places.esp
   IF CHECKSUM("Unique Places.esp", 43524F9F) DIRTY: 47 ITM, 48 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("Unique Places.esp", 43524F9F) && IFNOT CHECKSUM("Unique Places.esp", DB5A6EAE) SAY: This esp may be obsolete. As of 30-DEC-12, the latest version is 1.13
+  IFNOT CHECKSUM("Unique Places.esp", 43524F9F) && IFNOT CHECKSUM("Unique Places.esp", DB5A6EAE) SAY: This esp may be obsolete. The last entry into BOSS was version 1.13 (Checksum 43524F9F or DB5A6EAE).
   // ^ dirty and clean checksums for current release
 Universal Trainer.esp
 unkeptunderstonekeep025.esp
@@ -9174,7 +9180,7 @@ AurielsArrows_BloodCursed.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Auriels_Arrows.esp
 Auriels_Arrows.esp
   // two versions same name
-  IFNOT CHECKSUM("Auriels_Arrows.esp", CDADE9F6) && IFNOT CHECKSUM("Auriels_Arrows.esp", 52C0FFEC) && IFNOT CHECKSUM("Auriels_Arrows.esp", 3F52150F) && IFNOT CHECKSUM("Auriels_Arrows.esp", 6E06216E) SAY: This esp may be obsolete. As of 17 DEC 2012, the latest version is 1.3.
+  IFNOT CHECKSUM("Auriels_Arrows.esp", CDADE9F6) && IFNOT CHECKSUM("Auriels_Arrows.esp", 52C0FFEC) && IFNOT CHECKSUM("Auriels_Arrows.esp", 3F52150F) && IFNOT CHECKSUM("Auriels_Arrows.esp", 6E06216E) SAY: This esp may be obsolete. The last entry into BOSS was version 1.3 (Checksum CDADE9F6 or 52C0FFEC or 3F52150F or 6E06216E).
   IF CHECKSUM("Auriels_Arrows.esp", CDADE9F6) DIRTY: 5 ITM, 0 UDR records.  Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Auriels_Arrows.esp", 52C0FFEC) DIRTY: 5 ITM, 0 UDR records.  Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -10648,7 +10654,7 @@ dD - Enhanced Blood Main.esp
   IFNOT VAR(Dawnguard) && IF VAR(SkyMoMod) && IFNOT FILE("dD-SkyrimMonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Monster Mod.
   IF VAR(Dawnguard) && IF VAR(SkyMoMod) && IFNOT FILE("dD-Dawnguard-MonsterMod EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Skyrim Monster Mod_Compatibility Patch" \ Dawnguard and Monster Mod.
   IF CHECKSUM("dD - Enhanced Blood Main.esp", FD8ABF04) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("dD - Enhanced Blood Main.esp", FD8ABF04) && IFNOT CHECKSUM("dD - Enhanced Blood Main.esp", 4B4F9998) SAY: This esp may be obsolete. As of 28-DEC-12, the latest version is 3.0a.
+  IFNOT CHECKSUM("dD - Enhanced Blood Main.esp", FD8ABF04) && IFNOT CHECKSUM("dD - Enhanced Blood Main.esp", 4B4F9998) SAY: This esp may be obsolete. The last entry into BOSS was version 3.0a (Checksum FD8ABF04 or 4B4F9998).
 dD-Dawnguard-EBT Patch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -11150,7 +11156,7 @@ RRRL-UT-Patch.esp
 WhiterunInEnhanced.esp
 Whiterun Repaired Plus.esp
   IF CHECKSUM("Whiterun Repaired Plus.esp", 17C2C0DE) DIRTY: 0 ITM, 15 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("Whiterun Repaired Plus.esp", 17C2C0DE) && IFNOT CHECKSUM("Whiterun Repaired Plus.esp", D9FFD961) SAY: This esp may be obsolete. As of 31-DEC-12, the latest version is 1.4
+  IFNOT CHECKSUM("Whiterun Repaired Plus.esp", 17C2C0DE) && IFNOT CHECKSUM("Whiterun Repaired Plus.esp", D9FFD961) SAY: This esp may be obsolete. The last entry into BOSS was version 1.4 (Checksum FD8ABF04 or 4B4F9998).
   // ^ dirty and clean checksums for current release
 WinterholdRuinsAddon_V1.esp
   IFNOT FILE("WinterholdDestruction.esm") || IFNOT ACTIVE("WinterholdDestruction.esm") ERROR: WinterholdDestruction.esm is not present or is not active. Skyrim will CTD when loading if using this file.
@@ -11204,7 +11210,7 @@ LakeExpanded01.esp
 LushRiverwood.esp
   IF CHECKSUM("LushRiverwood.esp", 19E662C4) DIRTY: 1 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 MoreForests.esp
-  IFNOT CHECKSUM("MoreForests.esp", A8B7DD63) && IFNOT CHECKSUM("MoreForests.esp", D972DEBF) SAY: This esp may be obsolete. As of 21-DEC-12, the latest version is 1.34.
+  IFNOT CHECKSUM("MoreForests.esp", A8B7DD63) && IFNOT CHECKSUM("MoreForests.esp", D972DEBF) SAY: This esp may be obsolete. The last entry into BOSS was version 1.34 (Checksum A8B7DD63 or D972DEBF).
   IF CHECKSUM("MoreForests.esp", A8B7DD63) DIRTY: 314 ITM, 150 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("MoreForests.esp", A8B7DD63) || IF CHECKSUM("MoreForests.esp", D972DEBF) && IF VAR(EN) WARN: This file contains 8 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("MoreForests.esp", A8B7DD63) || IF CHECKSUM("MoreForests.esp", D972DEBF) && IF VAR(RU) WARN: Этот файл содержит 8 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
@@ -11294,7 +11300,7 @@ REGEX: dD.?- Realistic Ragdoll Force.*\.esp
   IF VAR(EN) SAY: Ragdolls will conflict with other mods that change the skeleton.nif. Check "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers" for compatibly with other skeleton.nif.
     IF VAR(RU) SAY: Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers", для поддержки других версий skeleton.nif.
 Diseased.esp
-  IFNOT CHECKSUM("Diseased.esp", 6AE6CA51) SAY: This esp may be obsolete. As of 19-DEC-12, the latest version is 1.02c.
+  IFNOT CHECKSUM("Diseased.esp", 6AE6CA51) SAY: This esp may be obsolete. The last entry into BOSS was version 1.02c (Checksum 6AE6CA51).
 drink eat sleep.esp
 /* Steam network version is an esp and BSA */
 Fatigue_Effects.esp
@@ -12977,7 +12983,7 @@ REGEX: The Dance of Death.*\.esp
 TKcombat.esp
   IF VERSION("SKSE", "0.1.6", <) REQ: "http://skse.silverlock.org SKSE" 1.6+
   IF VERSION("TES5", "1.7", <) REQ: Skyrim 1.7+
-  IFNOT CHECKSUM("TKcombat.esp", CF4F5142) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 0.4
+  IFNOT CHECKSUM("TKcombat.esp", CF4F5142) SAY: This esp may be obsolete. The last entry into BOSS was version 0.4 (Checksum CF4F5142).
   // ^ checksum for current release
 REGEX: Troy1010_ImprovedArmorFormula_Difficulty.+\.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Troy1010_ImprovedArmorFormula 4.0.0.esp
@@ -14116,7 +14122,7 @@ IFNOT FILE("3DNPC.esp") MOD: IMCN_BabettesFeast-FAMP.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_NCVE-FAMP.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_DestructibleBottles-FAMP.esp
 potsanimated.esp
-  IFNOT CHECKSUM("potsanimated.esp", DF4A70A3) SAY: This esp may be obsolete. As of 25-DEC-12, the latest version is 2.02.
+  IFNOT CHECKSUM("potsanimated.esp", DF4A70A3) SAY: This esp may be obsolete. The last entry into BOSS was version 2.02 (Checksum DF4A70A3).
 See YourSelf drink and eat.esp
 Shake it!.esp
 ShakeIt.esp
@@ -14748,7 +14754,7 @@ Alma.esp
 AlvhildeLycan.esp
   IF CHECKSUM("AlvhildeLycan.esp", BE4CD149) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair" and "http://skyrim.nexusmods.com/mods/13722 The Eyes of Beauty". 
   IF CHECKSUM("AlvhildeLycan.esp", 4A47C015) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
-  IFNOT CHECKSUM("AlvhildeLycan.esp", BE4CD149) && IFNOT CHECKSUM("AlvhildeLycan.esp", 4A47C015) SAY: This esp may be obsolete. As of 24-DEC-12, the latest version is 1.3.  
+  IFNOT CHECKSUM("AlvhildeLycan.esp", BE4CD149) && IFNOT CHECKSUM("AlvhildeLycan.esp", 4A47C015) SAY: This esp may be obsolete. The last entry into BOSS was version 1.3 (Checksum BE4CD149 or 4A47C015).
 Amanda.esp
 AmazonianKhajiitAlpha.esp
 Amina.esp
@@ -14774,7 +14780,7 @@ AshenFollower.esp
 Atvir.esp
 AWC_ArnulfWarzenSchleggerCompanion.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
-  IFNOT CHECKSUM("AWC_ArnulfWarzenSchleggerCompanion.esp", EF2055B2) SAY: This esp may be obsolete. As of 31-DEC-12, the latest version is 0.3.1
+  IFNOT CHECKSUM("AWC_ArnulfWarzenSchleggerCompanion.esp", EF2055B2) SAY: This esp may be obsolete. The last entry into BOSS was version 0.3.1 (Checksum EF2055B2).
 
 // companions b
 Bald_Jiub.esp
@@ -16385,7 +16391,7 @@ HM_HotkeyMod.esp
   IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IF VAR(UFO) WARN: UFO detected.  Use the UFO version to have the mod work as intended.
   IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IFNOT VAR(UFO) ERROR: UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.
   IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IFNOT CHECKSUM("HM_HotkeyMod.esp", 374C564C) && IFNOT CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IFNOT CHECKSUM("HM_HotkeyMod.esp", 676790BF) && IFNOT CHECKSUM("HM_HotkeyMod.esp", 42671F48) SAY: This esp may be obsolete. As of 01-JAN-13, the latest version is 0.1
+  IFNOT CHECKSUM("HM_HotkeyMod.esp", 374C564C) && IFNOT CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IFNOT CHECKSUM("HM_HotkeyMod.esp", 676790BF) && IFNOT CHECKSUM("HM_HotkeyMod.esp", 42671F48) SAY: This esp may be obsolete. The last entry into BOSS was version 0.1 (Checksum 374C564C or CF00AFFD or 676790BF or 42671F48).
   // ^ dirty and clean checksums for current release (both version)
 SKSE Hotkeys.esp
   IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
