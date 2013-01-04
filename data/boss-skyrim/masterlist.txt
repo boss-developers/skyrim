@@ -600,6 +600,8 @@ Tyth.esm
 
 // esms u
 Ultimate Witcher MOD.esm
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Ultimate Witcher MOD.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Ultimate Witcher MOD.esp
 Undercity.esm
 UndergroundBathhouse.esm
   IF CHECKSUM("UndergroundBathhouse.esm", 0FD0CF70) DIRTY: 1 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -2527,9 +2529,6 @@ High Level Enemies - Increased Max Resists.esp
   IFNOT CHECKSUM("High Level Enemies - Increased Max Resists.esp", D1BDD314) SAY: This esp may be obsolete. As of 27-DEC-12, the latest version is 1.1.
 HigherLevelEnemies.esp
   TAG: {{BASH: Relev}}
-HighlandFarmMilk.esp
-  TAG: {{BASH: Relev}}
-  // not tested
 HillmanShack.esp
 HM Child Character.esp
   IFNOT VAR(Dawnguard) && IF CHECKSUM("HM Child Character.esp", F0933FCC) REQ: non-Dawndguard version of HM Child Character.esp
@@ -5200,6 +5199,8 @@ MegaShields.esp
 Melt_Down_Everything.esp
   IF VERSION("SKSE", "0.1.5.9", <) REQ: "http://skse.silverlock.org SKSE" 1.5.9+
 Memeru Outfit.esp
+Merry Xmas 2012.esp
+  IF ACTIVE("ChristmasInSkyrim.esp") SAY: The Xmas present box of this mod conflicts with Xmas tree and the Xmas present boxes of Saturalia - Christmas In Skyrim in Dragonsreach in Whiterun. To resolve this, picking up all Saturalia's Xmas present boxes in Dragonsreach before installing "Xmas Present MOD" or using Console Commands "tcl", "disable", etc is necessary.
 MessiasDarkJester.esp
 mh3_mod.esp
 MHSNW.esp
@@ -6854,7 +6855,6 @@ BEGINGROUP: Quests #
   IF FILE("28 Days and a Bit 5.esm") ERROR: Do not use 28 Days and a Bit 5.esp and 28 Days and a Bit 5.esm at the same time.
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, 28 Days and a Bit 5.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, 28 Days and a Bit 5.esp
-
 3modz_DragonBelly.esp
 ENDGROUP: Quests #
 
@@ -6862,6 +6862,8 @@ BEGINGROUP: Quests A
 
 a_dragons_respect.esp
   IF CHECKSUM("a_dragons_respect.esp", 0F39A808) DIRTY: 16 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+adventcalendar.esp
+  IF CHECKSUM("adventcalendar.esp", 3A7D34AF) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 A REAL Imperial Camp.esp
 a shack by the springs.esp
   IF CHECKSUM("a shack by the springs.esp", DC28E089) DIRTY: 53 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -7735,9 +7737,20 @@ hideoushobo.esp
   IF CHECKSUM("hideoushobo.esp", 1D8EB77F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 hideout.esp
 hideoutcompact.esp
-EMHighviewCottage.esp
+HighlandFarmMilk.esp
+  IF CHECKSUM("HighlandFarmMilk.esp", C569164F) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("HighlandFarmMilk.esp", C569164F) || IF CHECKSUM("HighlandFarmMilk.esp", 9C938FD3) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("HighlandFarmMilk.esp", C569164F) || IF CHECKSUM("HighlandFarmMilk.esp", 9C938FD3) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  // ^ diry and clean checksums v1.7
+  IF CHECKSUM("HighlandFarmMilk.esp", 1258E09A) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("HighlandFarmMilk.esp", 1258E09A) || IF CHECKSUM("HighlandFarmMilk.esp", 9437D693) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("HighlandFarmMilk.esp", 1258E09A) || IF CHECKSUM("HighlandFarmMilk.esp", 9437D693) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  // ^ diry and clean checksums v1.9
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
 HighlyVisibleCrimsonNirnroots.esp
 // Adds standing stones to blackreach (Under ground), not actual quest markers.
+EMHighviewCottage.esp
 customhjerim.esp
   IF CHECKSUM("customhjerim.esp", ACDBBFD5) DIRTY: 4 ITM, 140 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Hjerim Smithy.esp
@@ -8619,6 +8632,9 @@ Ultimate HD Fire Spells.esp
   // ^ dirty and clean checksums for current release
 Ultimate training ground.esp
   IF CHECKSUM("Ultimate training ground.esp", 2DE178EF) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+Ultimate Witcher MOD.esp
+  TAG: {{BASH: Relev}}
+  IFNOT CHECKSUM("Ultimate Witcher MOD.esp", 03E5E4EE) SAY: This esp may be obsolete. As of 03-JAN-13, the latest version is 1.8.Alpha
 uluchenie ivarsteda.esp
 uluchenie roriksteda.esp
 ulushenie folkrita.esp
@@ -14750,7 +14766,6 @@ Angelina Jolie UNP.esp
 REGEX: AnotherFollowerMod_.+\.esp
 Anruin.esp
 Anruin - Faendal Replacer.esp
-BeansAranea.esp
 Arro.esp
 AshenFollowers.esp
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
@@ -14770,11 +14785,6 @@ Barbarian Companions.esp
 Barsukov.esp
   IF CHECKSUM("Barsukov.esp", F191D03B) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 battlegoat.esp
-BeansElves.esp
-beanshousecarls.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, beanshousecarlsfix.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, beanshousecarlsfix.esp
-beanshousecarlsfix.esp
 Better Companions.esp
 BetterCompanions.esp
 Blaze Of Eventide.esp
@@ -14784,7 +14794,6 @@ REGEX: Braithwen Fernleaf( Archer| Auburn| Auburn Auto)?\.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 BreezeHomeChildren.esp
-BeansBrelyna.esp
 BrelynaMaryon.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("BrelynaMaryon.esp", 0A18148F) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -14982,13 +14991,11 @@ inathesorceress.esp
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Inna.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-BeansIona.esp
 IsabelStandalone.esp
 
 // companions j
 Jagon.esp
 jeans2.esp
-BeansJenassa.esp
 JessicaAlba.esp
 Jezebel.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
@@ -15000,7 +15007,6 @@ Jezebel Simon.esp
     IF CHECKSUM("Jezebel Simon.esp", C75CAB33) || IF CHECKSUM("Jezebel Simon.esp", E8D86949) || IF CHECKSUM("Jezebel Simon.esp", 35728E70) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
   IF FILE("Jezebel.esp") && IF VAR(EN) WARN: Use either Jezebel.esp or Jezebel Simon.esp, not both.
      IF FILE("Jezebel.esp") && IF VAR(RU) WARN: Используйте любой, или Jezebel.esp или Jezebel Simon.esp, не оба.
-BeansJordis.esp
 jordis1.1a.esp
 Juliette.esp
 
@@ -15048,7 +15054,6 @@ Llevas Aravel.esp
 LtH_Argonian_Ria.esp
   IF CHECKSUM("LtH_Argonian_Ria.esp", C4D779EA) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Lunariana.esp
-BeansLydia.esp
 Beauty Lydia.esp
   WARN: There are 5 variations of this esp.  ALL 5 contain unexpected (or out of order) records.  None should be used.
 Enhanced Lydia.esp
@@ -15505,6 +15510,18 @@ Pack4-clean.esp
     IF VAR(RU) && IF FILE("Compilationv1-clean.esp") ERROR: Удалите. Compilationv1-clean.esp уже включает эти изменения.
   IF VAR(EN) && IF FILE("pack4-clean.esp") && IF FILE("pack4.esp") SAY: Use only pack4.esp or Pack4-clean.esp, not both.
     IF VAR(RU) && IF FILE("pack4-clean.esp") && IF FILE("pack4.esp") SAY: Используйте или pack4.esp или Pack4-clean.esp, не оба.
+BeansElves.esp
+  // must load after beans compilation
+beanshousecarls.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, beanshousecarlsfix.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, beanshousecarlsfix.esp
+beanshousecarlsfix.esp
+BeansAranea.esp
+BeansBrelyna.esp
+BeansIona.esp
+BeansJenassa.esp
+BeansJordis.esp
+BeansLydia.esp
 BFFAnimalCompanions.esp
 Respectful_Lydia-Letsseeit_subtitle.esp
 Respectful_Lydia-Whatdoyouwantmetocarry_subtitle.esp
