@@ -14661,7 +14661,6 @@ UFO - Heartfire AddOn.esp
 UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
-SIUFOAWCPatch.esp
 TravellersOfSkyrim - UFO Compatibility Patch.esp
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
 ENDGROUP: Ultimate Follower Overhaul
@@ -14781,7 +14780,9 @@ Atvir.esp
 AWC_ArnulfWarzenSchleggerCompanion.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IFNOT CHECKSUM("AWC_ArnulfWarzenSchleggerCompanion.esp", EF2055B2) SAY: This esp may be obsolete. The last entry into BOSS was version 0.3.1 (Checksum EF2055B2).
-
+SIUFOAWCPatch.esp
+  // must load after AWC_Arnulf, not with other SIUOF patches
+  
 // companions b
 Bald_Jiub.esp
 Balimund.esp
