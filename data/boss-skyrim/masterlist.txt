@@ -1149,6 +1149,7 @@ Carlotta.esp
 Children of Skyrim - TOWN GUARDS.esp
 Companion People.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+Crazy Sexy Cicero.esp
 CustomUthgerd.esp
 Cute Girl s Replacer Markarth v01.esp
 Cute Girl s Replacer Riften v 0.2.esp
@@ -1714,9 +1715,6 @@ AMO - Special.esp
 AMOvanilla - Combat.esp
 AMOvanilla - Special.esp
 REGEX: Dawn_addon_part(\d)\.esp
-REGEX: Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H)?\.esp
-  IF REGEX("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H)?\.esp") && IF VAR(EN) WARN: Use only one Del_ConditionalCombatMusic esp
-    IF REGEX("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H)?\.esp") && IF VAR(RU) WARN: Используйте только один Del_ConditionalCombatMusic esp
 dragonborn with lute.esp
 REGEX: enhanced soundtrack (\d{1,2})\.esp
   IF VAR(EN) SAY: Adds music but also contains textures and meshes. Loose files will override them
@@ -1728,6 +1726,10 @@ Fantasy Music Full Replace.esp
 Fantasy Music Non-Replace.esp
 Fantasy Music Overhaul.esp
 Fantasy Music Overhaul Redone.esp
+REGEX: Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp
+  // should load after fantasy music overhaul
+  IF REGEX("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp") && IF VAR(EN) WARN: Use only one Del_ConditionalCombatMusic esp
+    IF REGEX("Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp") && IF VAR(RU) WARN: Используйте только один Del_ConditionalCombatMusic esp
 FixCombatMusic.esp
 morrowind_mm_theme.esp
 REGEX: PersonalizedMusic.*\.esp
@@ -2185,6 +2187,9 @@ Console Books.esp
   IF CHECKSUM("Console Books.esp", 6AE62CA9) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Cooking Mod - Yummy in Your Tummy.esp
 CookingExpanded.esp
+CookingExpanded - Hearthfire.esp
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
 CookingExpanded - EoS.esp
 CookingExpanded - IMCN.esp
 SkyRealism - Feast and Famine - Cooking Expanded.esp
@@ -2915,7 +2920,6 @@ Names - enemies - impersonal  completely.esp
   IF CHECKSUM("Names - enemies - impersonal  completely.esp", 13F3D6DA) DIRTY: 57 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 NaturalClock.esp
   IFNOT CHECKSUM("NaturalClock.esp", E4906A23) SAY: This esp may be obsolete. The last entry into BOSS was version 4.1 (Checksum E4906A23).
-navetsea female face preset.esp
 NerfCreatureEffect.esp
 new guards.esp
 NewBeveragesAndMiscItems.esp
@@ -4306,6 +4310,8 @@ Demon Sword.esp
 DemonHunterArmor.esp
   IF VAR(EN) SAY: Be sure you have the correct version for the body type installed: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body" or "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
     IF VAR(RU) SAY: Убедитесь что у вас установлена корректная версия типа тел: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED женское тело UNP" или "http://skyrim.nexusmods.com/mods/2666 женское тело CBBE".
+DemonHunterV2armor.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 Demothris.esp
 DesertWindByNausicaa.esp
 desperado attire.esp
@@ -6004,6 +6010,8 @@ theRoadstrokerCloaks.esp
 theRoadstrokersRogueSorceress.esp
   IF FILE("SkyRe Rogue Sorceress.esp") TAG: {{BASH: Deactivate}}
   IF CHECKSUM("theRoadstrokersRogueSorceress.esp", 5B9C3C9F) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+The Well Dressed Mage.esp
+  IFNOT CHECKSUM("The Well Dressed Mage.esp", E0A12E44) SAY: This esp may be obsolete. The last entry into BOSS was version 0.1b (Checksum E0A12E44).
 throwingweapons.esp
 throwing_weapons_leveledlists_plugin.esp
 Throwing_Weapons_Misc_Plugin.esp
@@ -8109,6 +8117,7 @@ Northern Bathhouses.esp
     IF CHECKSUM("Northern Bathhouses.esp", FBE79F4F) && IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 nowellrocks.esp
 NPC - Shady Fences.esp
+NS_Crescent.esp
 ENDGROUP: Quests N
 
 BEGINGROUP: Quests O
@@ -9533,6 +9542,7 @@ Daedric Artifact Enhancements.esp
 Daedric Artifacts Overlord.esp
 Daedric Light Armor - Rebalanced.esp
   IF CHECKSUM("Daedric Light Armor - Rebalanced.esp", BA0A6590) WARN: This file was released before the CK (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
+DaedricPunishmentForSweetrolls.esp
 DaedricWOP.esp
 dangerous animals.esp
   IF CHECKSUM("dangerous animals.esp", D2E559A6) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -10254,6 +10264,7 @@ More Diverse Enchanting Options.esp
 more dragons.esp
 /* v2.9.1 only one esp */
 More Dynamic Shadows.esp
+  IF CHECKSUM("More Dynamic Shadows.esp", 60E49DC8) DIRTY: 20 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 More Ore.esp
 More Powerful Daedric Artifacts.esp
   // TAG: {{BASH: Stats}}
@@ -12744,11 +12755,30 @@ Path of Shadows - Alchemy.esp
 PISE-Reduced Potions.esp
   TAG: {{BASH: Delev, Relev}}
 poison diseaseSpells.esp
-REGEX: PTAlchemyFoodOverhaul(_\d_\d)?\.esp
+PTAlchemyFoodOverhaul.esp
+  IFNOT CHECKSUM("PTAlchemyFoodOverhaul.esp", 1C19F0EE) SAY: This esp may be obsolete. The last entry into BOSS was version 1.2 (Checksum 1C19F0EE).
+  IF VAR(EN) WARN: Use only one of PT Alchemy / Food Overhaul esp
+    IF VAR(RU) WARN: Используйте только один of PT Alchemy / Food Overhaul esp
+  IFNOT REGEX("PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp") REQ: PTAlchemyOverhaul_SkillRate_*.esp
 PTAlchemyFoodOverhaul_BetterSorting.esp
+  IFNOT CHECKSUM("PTAlchemyFoodOverhaul_BetterSorting.esp", 37E0F2F5) SAY: This esp may be obsolete. The last entry into BOSS was version 1.2 (Checksum 37E0F2F5).
+  IF VAR(EN) WARN: Use only one of PT Alchemy / Food Overhaul esp
+    IF VAR(RU) WARN: Используйте только один of PT Alchemy / Food Overhaul esp
+  IFNOT REGEX("PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp") REQ: PTAlchemyOverhaul_SkillRate_*.esp
 PTAlchemyOverhaul_ONLY.esp
+  IFNOT CHECKSUM("PTAlchemyOverhaul_ONLY.esp", 1C9C2805) SAY: This esp may be obsolete. The last entry into BOSS was version 1.2 (Checksum 1C9C2805).
+  IF VAR(EN) WARN: Use only one of PT Alchemy / Food Overhaul esp
+    IF VAR(RU) WARN: Используйте только один of PT Alchemy / Food Overhaul esp
+  IFNOT REGEX("PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp") REQ: PTAlchemyOverhaul_SkillRate_*.esp
 PTAlchemyOverhaul_ONLY_BetterSorting.esp
+  IFNOT CHECKSUM("PTAlchemyOverhaul_ONLY_BetterSorting.esp", 7BEF6681) SAY: This esp may be obsolete. The last entry into BOSS was version 1.2 (Checksum 7BEF6681).
+  IF VAR(EN) WARN: Use only one of PT Alchemy / Food Overhaul esp
+    IF VAR(RU) WARN: Используйте только один of PT Alchemy / Food Overhaul esp
+  IFNOT REGEX("PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp") REQ: PTAlchemyOverhaul_SkillRate_*.esp
 PTFoodOverhaul_ONLY.esp
+  IFNOT CHECKSUM("PTFoodOverhaul_ONLY.esp", 7069727D) SAY: This esp may be obsolete. The last entry into BOSS was version 1.2 (Checksum 7069727D).
+  IF VAR(EN) WARN: Use only one of PT Alchemy / Food Overhaul esp
+    IF VAR(RU) WARN: Используйте только один of PT Alchemy / Food Overhaul esp
 selbs_alchemybalance.esp
 SkyrimPowerfulPotions.esp
 skoomacooking.esp
@@ -13296,6 +13326,14 @@ REGEX: PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp
   IF VAR(EN) SAY: Use only one PTAlchemyOverhaul_SkillRate esp
     IF VAR(RU) SAY: Используйте только один PTAlchemyOverhaul_SkillRate esp
 CookingExpanded - PTAlchFood.esp
+  IFNOT ACTIVE("CookingExpanded.esp") ERROR: CookingExpanded.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT ACTIVE("PTAlchemyFoodOverhaul.esp") ERROR: PTAlchemyFoodOverhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+CookingExpanded - PTAlchFood_BS.esp
+  IFNOT ACTIVE("CookingExpanded.esp") ERROR: CookingExpanded.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT ACTIVE("PTAlchemyOverhaul_ONLY_BetterSorting.esp") ERROR: PTAlchemyOverhaul_ONLY_BetterSorting.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+CookingExpanded - PTFood_ONLY.esp
+  IFNOT ACTIVE("CookingExpanded.esp") ERROR: CookingExpanded.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT ACTIVE("PTFoodOverhaul_ONLY.esp") ERROR: PTFoodOverhaul_ONLY.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 // skills q
 // skills r
 RacialSkillBoost.esp
@@ -13895,6 +13933,42 @@ concentrated10.esp
 
 // perks d
 damage_skill.esp
+DUT-ExpandedPerks-Alchemy.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Alchemy.esp", E46A2A83) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum E46A2A83).
+DUT-ExpandedPerks-Alteration.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Alteration.esp", FACBFE52) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum FACBFE52).
+DUT-ExpandedPerks-Archery.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Archery.esp", DAE1A084) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum DAE1A084).
+DUT-ExpandedPerks-Block.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Block.esp", EFCBCD00) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum EFCBCD00).
+DUT-ExpandedPerks-Conjuration.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Conjuration.esp", 6A8A0FF5) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum 6A8A0FF5).
+DUT-ExpandedPerks-Destruction.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Destruction.esp", 5E95705D) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum 5E95705D).
+DUT-ExpandedPerks-Enchanting.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Enchanting.esp", 8706F0F6) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum 8706F0F6).
+DUT-ExpandedPerks-HeavyArmor.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-HeavyArmor.esp", 7560951D) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum 7560951D).
+DUT-ExpandedPerks-Illusion.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Illusion.esp", B60AF136) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum B60AF136).
+DUT-ExpandedPerks-LightArmor.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-LightArmor.esp", 2F42593C) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum 2F42593C).
+DUT-ExpandedPerks-Lockpicking.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Lockpicking.esp", C8DDBE43) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum C8DDBE43).
+DUT-ExpandedPerks-OneHanded.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-OneHanded.esp", D53E79F1) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum D53E79F1).
+DUT-ExpandedPerks-Pickpocket.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Pickpocket.esp", D5672FC0) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum D5672FC0).
+DUT-ExpandedPerks-Restoration.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Restoration.esp", 0AF0B204) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum 0AF0B204).
+DUT-ExpandedPerks-Smithing.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Smithing.esp", FAF68237) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum FAF68237).
+DUT-ExpandedPerks-Sneak.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-Sneak.esp", 6F31530B) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum 6F31530B).
+DUT-ExpandedPerks-TwoHanded.esp
+  IFNOT CHECKSUM("DUT-ExpandedPerks-TwoHanded.esp", C64DFC67) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum C64DFC67).
+DUT-Optional-HarderLocks.esp
+  IFNOT CHECKSUM("DUT-Optional-HarderLocks.esp", C32048FE) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum C32048FE).
 DwemerBombs.esp
   IF CHECKSUM("DwemerBombs.esp", D7BB72C4) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF FILE("DwemerBombsNoPerkTree.esp") INC: DwemerBombsNoPerkTree.esp
@@ -14193,9 +14267,9 @@ AllHairs.esp
 ApachiiHair.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles.esp
-IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStylesELVES.esp
-IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles-FemaleOnly.esp
+IFNOT VAR(UFO) MOD: ApachiiHairStyles.esp
+IFNOT VAR(UFO) MOD: ApachiiHairStylesELVES.esp
+IFNOT VAR(UFO) MOD: ApachiiHairStyles-FemaleOnly.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 bald hair.esp
 Beards.esp
@@ -14443,11 +14517,13 @@ BEGINGROUP: Character Presets
 If someone feels it could be placed better, feel free to move it */
 
 ArnoldPreset.esp
+AsharaSkyrimCharacterPresetsReplacer.esp
 Children of Skyrim - NORD PRESETS 1-10 v1.1.esp
 Children of Skyrim - NORD PRESETS 11-20.esp
 Children of Skyrim - NORD PRESETS.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Children of Skyrim - NORD PRESETS 1-10 v1.1.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Children of Skyrim - NORD PRESETS 1-10 v1.1.esp
+Crazy Sexy Cicero Imperial Male Preset.esp
 Delphine Makeover Preset.esp
 ESPv1_1.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -14461,6 +14537,7 @@ Kawaii Face Presets.esp
 KhaleesiFacePreset.esp
   IF CHECKSUM("KhaleesiFacePreset.esp", 42C16D17) WARN: This file is broken and will not work.
 Male Presets 2-3.esp
+navetsea female face preset.esp
 Presets 2-3.esp
 SGFemalePresets.esp
 unfu.esp
@@ -14769,6 +14846,10 @@ ENDGROUP: Ultimate Follower Overhaul
 BEGINGROUP: Post UFO
 // Other mods that must loaded after UFO(if UFO is installed).
 
+IF VAR(UFO) MOD: ApachiiHairStyles.esp
+IF VAR(UFO) MOD: ApachiiHairStylesELVES.esp
+IF VAR(UFO) MOD: ApachiiHairStyles-FemaleOnly.esp
+  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 IF VAR(UFO) MOD: SupermodelSkyrim.esp
   // loaded after UFO only if UFO is installed. This is a compromise.
   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
@@ -14788,13 +14869,6 @@ IF VAR(UFO) MOD: CWBattleUlfric.esp
 IF VAR(UFO) MOD: OriginalrecipeUlfric.esp
   IF FILE("CWBattleUlfric.esp") INC: CWBattleUlfric.esp
 ENDGROUP: Post UFO
-
-// dont't know where these sould go.  To be loaded after UFO when UFO is present
-IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles.esp
-IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStylesELVES.esp
-IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: ApachiiHairStyles-FemaleOnly.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
-
 
 BEGINGROUP: NPC Distance, Face & Makeup Overrides
 // Distance Tweaks before Face & Makeup Overrides
@@ -14884,7 +14958,7 @@ AWC_ArnulfWarzenSchleggerCompanion.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IFNOT CHECKSUM("AWC_ArnulfWarzenSchleggerCompanion.esp", EF2055B2) SAY: This esp may be obsolete. The last entry into BOSS was version 0.3.1 (Checksum EF2055B2).
 SIUFOAWCPatch.esp
-  // must load after AWC_Arnulf, not with other SIUOF patches
+  // must load after AWC_Arnulf, not with other SIUFO patches
 
 // companions b
 Bald_Jiub.esp
@@ -15891,7 +15965,6 @@ REGEX: AROP- Redguard.+\.esp
   IF VAR(EN) && IF FILE("AROP- Redguard Edition.esp") && IF FILE("AROP- Redguard Edition - SS.esp") SAY: Use only one: AROP- Redguard Edition.esp or AROP- Redguard Edition - SS.esp
     IF VAR(RU) && IF FILE("AROP- Redguard Edition.esp") && IF FILE("AROP- Redguard Edition - SS.esp") SAY: Используйте только один мод: AROP- Redguard Edition.esp или AROP- Redguard Edition - SS.esp
   // I suspect that AROP is a replacement to the Better Racials- below...
-AsharaSkyrimCharacterPresetsReplacer.esp
 AutoCastRacials.esp
 AutoCastPowers.esp
   IF CHECKSUM("AutoCastPowers.esp", EA872E4C) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -16374,10 +16447,27 @@ tox Dragon Map Markers.esp
 REGEX: Unmarked Places - .+\.esp
 PaperMapHeightEnhanced.esp
   SAY: PaperMapHeightEnhanced.esp incompatible with mods that change the map.swf
+Warburg's 3D Paper World Map v2.2.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Warburg's 3D Paper World Map - Texture *.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Warburg's 3D Paper World Map - Texture *.esp
 Warburg's 3D Paper World Map.esp
-  IF VERSION("TES5", "1.8.151.0", <) REQ: Skyrim 1.8+
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Warburg's 3D Paper World Map - Texture *.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Warburg's 3D Paper World Map - Texture *.esp
+Warburg's 3D Paper World Map - Texture 1.esp
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
+  IFNOT CHECKSUM("Warburg's 3D Paper World Map - Texture 1.esp", AAFE91D6) SAY: This esp may be obsolete. The last entry into BOSS was version 3.3 (Checksum AAFE91D6).
+Warburg's 3D Paper World Map - Texture 2.esp
+  IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") && IF VAR(EN) WARN: Use only one of Warburg's 3D Paper World Map - Texture *.esp
+    IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") && IF VAR(RU) WARN: Используйте только один of Warburg's 3D Paper World Map - Texture *.esp
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
+  IFNOT CHECKSUM("Warburg's 3D Paper World Map - Texture 2.esp", AAFE91D6) SAY: This esp may be obsolete. The last entry into BOSS was version 3.3 (Checksum AAFE91D6).
+Warburg's 3D Paper World Map - Texture 3.esp
+  IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(EN) WARN: Use only one of Warburg's 3D Paper World Map - Texture *.esp
+    IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(RU) WARN: Используйте только один of Warburg's 3D Paper World Map - Texture *.esp
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
+  IFNOT CHECKSUM("Warburg's 3D Paper World Map - Texture 3.esp", AAFE91D6) SAY: This esp may be obsolete. The last entry into BOSS was version 3.3 (Checksum AAFE91D6).
 Warburg's 3D Paper World Map - Dawnguard.esp
-  IFNOT FILE("Warburg's 3D Paper World Map.esp") REQ: Warburg's 3D Paper World Map.esp (The main file)
+  IFNOT FILE("Warburg's 3D Paper World Map.esp") && IFNOT REGEX("Warburg's 3D Paper World Map - Texture (1|2|3)\.esp") REQ: Warburg's 3D Paper World Map - Texture *.esp (The main file)
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 WorldMapInFull3D.esp
