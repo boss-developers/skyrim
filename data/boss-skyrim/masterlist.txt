@@ -97,7 +97,7 @@ IF FILE("Unofficial Hearthfire Patch.esp") SET: UHFP
 // Global messages
 
 // Upgrade message for 1.7+ users:
-  IF VAR(EN) && IF VERSION("BOSS", "2.1.0.0", <) GLOBAL WARN: An update for BOSS (v2.1.0) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
+  IF VAR(EN) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: An update for BOSS (v2.1.1) has been released. Download it at "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
     IF VAR(RU) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Вышло обновление для BOSS версии 2.1.1. Скачать его вы можете на "http://code.google.com/p/better-oblivion-sorting-software/downloads/list странице проекта BOSS", на Google Code.
 
 // BOSS Thread
@@ -105,7 +105,7 @@ IF FILE("Unofficial Hearthfire Patch.esp") SET: UHFP
     IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1432762-relz-boss-for-skyrim/ здесь"(Eng).
 
 // Recruitment
-  IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions. As of 04 January 2013 we are at over 3400+ plugins to add to the Masterlist. Some dating as far back as 27 August 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja on the "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks forums" or the "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus forums".
+  IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions. As of 04 January 2013 we are at over 3400+ plugins to add to the Masterlist. Some dating as far back as 27 August 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM WrinklyNinja ("http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks", "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus") or Aellis ("http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks", "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus").
     IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 3400+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с WrinklyNinja, через личные сообщения, на форумах  "http://forums.bethsoft.com/user/359506-wrinklyninja/ Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=310742/ Nexus".
 
 // SKSE & SKCU
@@ -1546,8 +1546,9 @@ ImmersiveContentLateLightPatch.esp
 ImmersiveContentVeryLateLightPatch.esp
   IF FILE("ImmersiveContentLateLightPatch.esp") INC: ImmersiveContentLateLightPatch.esp, use only one LateLightPatch.
 kuerteeDisableLightsFarFromActors.esp
+  IFNOT CHECKSUM("kuerteeDisableLightsFarFromActors.esp", A70B22D5) SAY: This esp may be obsolete. The last entry into BOSS was version 0.536 (Checksum A70B22D5).
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
-  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
 magiclightshadows.esp
 MikeFoxs_CorrectLighting.esp
   IF CHECKSUM("MikeFoxs_CorrectLighting.esp", D2B44EBE) DIRTY: 0 ITM, 302 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -1727,14 +1728,8 @@ esiscitypack.esp
 esisenviropack.esp
 Fantasy Music Full Replace.esp
 Fantasy Music Non-Replace.esp
-  IF FILE("Fantasy Music Full Replace.esp") && IF VAR(EN) WARN: Use either Fantasy Music Full Replace.esp or Fantasy Music Non-Replace.esp, not both.
-    IF FILE("Fantasy Music Full Replace.esp") && IF VAR(RU) WARN: Используйте любой или Fantasy Music Full Replace.esp или Fantasy Music Non-Replace.esp, не обa.
 Fantasy Music Overhaul.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Fantasy Music Full Replace.esp or Fantasy Music Non-Replace.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Fantasy Music Full Replace.esp or Fantasy Music Non-Replace.esp
 Fantasy Music Overhaul Redone.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Fantasy Music Full Replace.esp or Fantasy Music Non-Replace.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Fantasy Music Full Replace.esp or Fantasy Music Non-Replace.esp
 FixCombatMusic.esp
 morrowind_mm_theme.esp
 REGEX: PersonalizedMusic.*\.esp
@@ -2271,6 +2266,9 @@ Cumulable Blessings.esp
   IF CHECKSUM("Cumulable Blessings.esp", DA1971DC) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IF CHECKSUM("Cumulable Blessings.esp", BCC10635) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Cupid_ArrowBeGone.esp
+CUYC_CleanUpYourCorpses.esp
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
 ENDGROUP: Base C
 
 BEGINGROUP: Base D
@@ -2917,6 +2915,8 @@ Names - NPCs.esp
 Names - NPCs - 1_1.esp
 Names - enemies - impersonal  completely.esp
   IF CHECKSUM("Names - enemies - impersonal  completely.esp", 13F3D6DA) DIRTY: 57 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+NaturalClock.esp
+  IFNOT CHECKSUM("NaturalClock.esp", E4906A23) SAY: This esp may be obsolete. The last entry into BOSS was version 4.1 (Checksum E4906A23).
 navetsea female face preset.esp
 NerfCreatureEffect.esp
 new guards.esp
@@ -3601,9 +3601,13 @@ Ket_PictureLoadscreens.esp
     IF CHECKSUM("Ket_PictureLoadscreens.esp", 3A81E5EB) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 kontrol.esp
 kuerteeAutoFirstThirdPersonView.esp
-  IF CHECKSUM("kuerteeAutoFirstThirdPersonView.esp", 44B0D8BF) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("kuerteeAutoFirstThirdPersonView.esp", CC2E2B71) SAY: This esp may be obsolete. The last entry into BOSS was version 0.627 (Checksum CC2E2B71).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
 kuerteeAutoSaveAndTime.esp
-  IF CHECKSUM("kuerteeAutoSaveAndTime.esp", 1B5B09F7) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("kuerteeAutoSaveAndTime.esp", 8250F7A5) SAY: This esp may be obsolete. The last entry into BOSS was version 0.631 (Checksum 8250F7A5).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
 loading screens for increased knowledge.esp
 Mark Books as Read.esp
 Mart's Savegame DeBloatifier.esp
@@ -3620,6 +3624,24 @@ Skyrim Timed AutoSave Helper
 skyui.esp
 iHUD.esp
   // Must load after SkyUI
+kuerteeAutoFirstThirdPersonView MCM.esp
+  IFNOT ACTIVE("kuerteeAutoFirstThirdPersonView.esp") ERROR: kuerteeAutoFirstThirdPersonView.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT CHECKSUM("kuerteeAutoFirstThirdPersonView MCM.esp", FC07C42F) SAY: This esp may be obsolete. The last entry into BOSS was version 0.627 (Checksum FC07C42F).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
+  // Not sure if need to load after SkyUI
+kuerteeAutoSaveAndTime MCM.esp
+  IFNOT ACTIVE("kuerteeAutoSaveAndTime.esp") ERROR: kuerteeAutoSaveAndTime.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT CHECKSUM("kuerteeAutoSaveAndTime MCM.esp", BF4E28F9) SAY: This esp may be obsolete. The last entry into BOSS was version 0.631 (Checksum BF4E28F9).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
+  // Not sure if need to load after SkyUI
+kuerteeDisableLightsFarFromActors MCM.esp
+  IFNOT ACTIVE("kuerteeDisableLightsFarFromActors.esp") ERROR: kuerteeDisableLightsFarFromActors.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT CHECKSUM("kuerteeDisableLightsFarFromActors MCM.esp", 95D9BBC7) SAY: This esp may be obsolete. The last entry into BOSS was version 0.536 (Checksum 95D9BBC7).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
+  // Not sure if need to load after SkyUI
 REGEX: TimedAutoSave(\d\d)\.esp
 Troy1010_GameSettings_ImprovedCombatRegen 1.0.0.esp
 towAutoFP.esp
@@ -4993,6 +5015,7 @@ BEGINGROUP: Items L
 
 Lacey Clover.esp
 LadyBatByNausicaa.esp
+LadyLaceCloaks_EN.esp
 Lady of Death.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 Lady Rappelz.esp
@@ -6867,6 +6890,8 @@ a_dragons_respect.esp
   IF CHECKSUM("a_dragons_respect.esp", 0F39A808) DIRTY: 16 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 adventcalendar.esp
   IF CHECKSUM("adventcalendar.esp", 3A7D34AF) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("adventcalendar.esp", 871D9583) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  // two versions, same name
 A REAL Imperial Camp.esp
 a shack by the springs.esp
   IF CHECKSUM("a shack by the springs.esp", DC28E089) DIRTY: 53 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -8449,6 +8474,14 @@ TalosCamp.esp
   IF CHECKSUM("TalosCamp.esp", 48D354D4) DIRTY: 10 ITM, 97 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 tam.esp
 TamagenManor.esp
+Tame Beast.esp
+  IF CHECKSUM("Tame Beast.esp", 162E47A1) DIRTY: 52 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF CHECKSUM("Tame Beast.esp", 305B14B5) DIRTY: 53 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  // two versions, same name
+  IFNOT CHECKSUM("Tame Beast.esp", 6031E55F) && IFNOT CHECKSUM("Tame Beast.esp", 305B14B5) && IFNOT CHECKSUM("Tame Beast.esp", 162E47A1) && IFNOT CHECKSUM("Tame Beast.esp", 4E6FD82B) SAY: This esp may be obsolete. The last entry into BOSS was version 1.3 (Checksum 162E47A1 or 4E6FD82B or 6031E55F or 305B14B5).
+  // ^ dirty and clean checksums for current release
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Taverns.esp
 TDP-Karlu's refuge.esp
 TDP-Rivercave.esp
@@ -11293,8 +11326,14 @@ Skyrim_realism.esp
 BasicHumanNeeds.esp
 Basic Human Needs - Food Drink and Sleep
 kuerteeBattleFatigueAndInjuries.esp
-  IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
-  IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
+  IFNOT CHECKSUM("kuerteeBattleFatigueAndInjuries.esp", E5511F76) SAY: This esp may be obsolete. The last entry into BOSS was version 0.634 (Checksum E5511F76).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
+kuerteeBattleFatigueAndInjuries MCM.esp
+  IFNOT ACTIVE("kuerteeBattleFatigueAndInjuries.esp") ERROR: kuerteeBattleFatigueAndInjuries.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT CHECKSUM("kuerteeBattleFatigueAndInjuries MCM.esp", 8FEE5C73) SAY: This esp may be obsolete. The last entry into BOSS was version 0.634 (Checksum 8FEE5C73).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
 REGEX: AdvancedFoodandRestENG( lazy)?\.esp
 Better Hunting.esp
 REGEX: dD.?- Realistic Ragdoll Force.*\.esp
@@ -11320,9 +11359,14 @@ kuerteeEncumberingLootArmourAndWeapons.esp
   IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
   IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
 kuerteeEatAndSleep.esp
-  IF CHECKSUM("kuerteeEatAndSleep.esp", CE3A5E41) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
-  IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
-  IF VERSION("TES5", "1.5.26", <) REQ: Skyrim 1.5.26+
+  IFNOT CHECKSUM("kuerteeEatAndSleep.esp", 52D32666) SAY: This esp may be obsolete. The last entry into BOSS was version 0.664 (Checksum 52D32666).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
+kuerteeEatAndSleep MCM.esp
+  IFNOT ACTIVE("kuerteeEatAndSleep.esp") ERROR: kuerteeEatAndSleep.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT CHECKSUM("kuerteeEatAndSleep MCM.esp", B7AE3924) SAY: This esp may be obsolete. The last entry into BOSS was version 0.664 (Checksum B7AE3924).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
 Medium hit.esp
   IF REGEX("dD.?- Realistic Ragdoll Force.*\.esp") INC: Realistic Ragdoll Force
 Realistic hit.esp
@@ -12132,6 +12176,8 @@ SpellForceLightning.esp
 spelllumen.esp
 SpellMassForce.esp
 spellphantomform.esp
+SpellsOfTheThirdEra.esp
+  IF CHECKSUM("SpellsOfTheThirdEra.esp", 31CCE33F) DIRTY: 29 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Spell-Special Beam Cannon.esp
 spelltome conjurar las Naciones Unidas Tiger.esp
 sprigganandwispmother.esp
@@ -14434,6 +14480,7 @@ BEGINGROUP: Companions and NPCs
 
 BEGINGROUP: Companions Load Early
 
+// pre ufo #
 3DNPC.esp
 IF FILE("3DNPC.esp") MOD: NerniesSolitudeExpansion.esp
   IF CHECKSUM("NerniesSolitudeExpansion.esp", 304709FF) DIRTY: 52 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
@@ -14518,21 +14565,31 @@ IF FILE("3DNPC.esp") MOD: RRRE-ToS_Oakwood_hf-Patch.esp
 IF FILE("3DNPC.esp") MOD: RRRE-Moonpath-Patch.esp
 IF FILE("3DNPC.esp") MOD: RRRL-ETaC-Villages-Complete-Patch.esp
 RRRE-3DNPCv2-Patch.esp
+
+// pre ufo a
 Althirs Companion and Carriage Command v1.1.esp
 AccurateCompanionGuild.esp
 Amara.esp
 animal_euphorium.esp
 Anora follower.esp
+
+// pre ufo b
 Beyrana.esp
 begleittiger.esp
   IF CHECKSUM("begleittiger.esp", A3222EF4) DIRTY: 11 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 Brynjolf & Vex Followers.esp
+
+// pre ufo c
+
+// pre ufo d
 DFB - Companions Lost No More.esp
   IF CHECKSUM("DFB - Companions Lost No More.esp", 500DD498) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 DFB - Companions Lost No More - Dawnguard.esp
 DFB - Disable Hidden Follower Bows & Arrows.esp
   IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can remove all default followers equpment with UFO.
     IF VAR(RU) && IF VAR(UFO) SAY: Этот мод избыточен для 'UFO - Ultimate Follower Overhaul.esp'. Вы можете удалить весь скрытый инвентарь у компаньонов с помощью UFO.
+
+// pre ufo e
 EASamhairE_1_1.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 EASamhairNE_1_1.esp
@@ -14557,6 +14614,8 @@ Essential Vigilance.esp
 Unkillable Lydia.esp
 Eternal Bunny Pet.esp
 Eternal Bunny Pet (Gray Silent).esp
+
+// pre ufo f
 FairKhajiit.esp
 femcalder.esp
 Feralfade.esp
@@ -14567,7 +14626,11 @@ follower pack orcs.esp
   IF CHECKSUM("follower pack orcs.esp", F226DDFB) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 FreezeMasterAmaya.esp
 friendlybrynjolf.esp
+
+// pre ufo g
 Gabby Companion.esp
+
+// pre ufo h
 HorseCompanions.esp
   IF VAR(EN) && IF VAR(UFO) WARN: HorseCompanions.es is included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
     IF VAR(RU) && IF VAR(UFO) WARN: HorseCompanions.es уже включен в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
@@ -14578,9 +14641,15 @@ Horses for followers.esp
 hot carlsv1.esp
 HothFollower.esp
 Hroki Wife Companion.esp
+
+// pre ufo i
 AIKhajiitCompanions.esp
+
+// pre ufo j
 Ja´dirr + Kharjo Makeover.esp
 JohnTheAssassin.esp
+
+// pre ufo k
 KCustomFollowers.esp
 IFNOT VAR(UFO) MOD: KTNUlfric.esp
   IF CHECKSUM("KTNUlfric.esp", 8CF90F55) && IF VAR(UFO) ERROR: Use the UFO version of KTNUlfric.esp
@@ -14590,32 +14659,61 @@ IFNOT VAR(UFO) MOD: KTNUlfric.esp
 IFNOT VAR(UFO) MOD: CWBattleUlfric.esp
 IFNOT VAR(UFO) MOD: OriginalrecipeUlfric.esp
   IF FILE("CWBattleUlfric.esp") INC: CWBattleUlfric.esp
+
+// pre ufo l
 Lively Followers.esp
 lospaco.esp
+
+// pre ufo m
 Mabari.esp
   IF CHECKSUM("Mabari.esp", E3FA50FA) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 mercenariesplus.esp
 multifollowerlite.esp
 Nilvas Reinhardt.esp
+
+// pre ufo n
 NoFollowerTorch.esp
+
+// pre ufo o
+
+// pre ufo p
 PetBearOslo.esp
   IF CHECKSUM("PetBearOslo.esp", 7614B5F9) || IF CHECKSUM("PetBearOslo.esp", EA58D0C9) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("PetBearOslo.esp", 7614B5F9) || IF CHECKSUM("PetBearOslo.esp", EA58D0C9) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+
+// pre ufo q
+
+// pre ufo r
+
+// pre ufo s
 sec_goatfrey.esp
 SelminaDArchon1.esp
 REGEX: SPODUM v.+\.esp
 StrayDogFix.esp
+
+// pre ufo t
 TCG.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
     IF VAR(RU) && IF VAR(UFO) WARN: Уже включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO
 TCGStarterKit.esp
 Tornis.esp
+
+// pre ufo u
+
+// pre ufo v
 REGEX: Vashira the Crimson Flash( shorter named)?\.esp
+Viconia.esp
+  IF CHECKSUM("Viconia.esp", 735A2800) DIRTY: 3 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("Viconia.esp", 735A2800) && IFNOT CHECKSUM("Viconia.esp", 450A5BE2) SAY: This esp may be obsolete. The last entry into BOSS was version 1.2 (Checksum 735A2800 or 450A5BE2).
+  // ^ dirty and clean checksums for current release
 voidMountedFollowers.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO.
     IF VAR(RU) && IF VAR(UFO) WARN: Включено в UFO - Ultimate Follower Overhaul.esp, удалите и используйте UFO.
   IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Already included in BDO.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
+// pre ufo w
+
+// pre ufo xyz
 ENDGROUP: Companions Load Early
 
 BEGINGROUP: Questgiver NPCs
