@@ -83,6 +83,7 @@ IF ACTIVE("RaceCompatibility.esm") SET: RaceComp
 IF FILE("SkyMoMod.esm") SET: SkyMoMod
 IF REGEX("SkyRe_.+\.esp") SET: SkyRe
 IF FILE("SkyRe_Main.esp") || IF FILE("SkyRe_Main_NoDawnguard.esp") SET: SkyReM
+IF ACTIVE("SkyUI.esp") SET: SkyUI
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 IF FILE("UFO - Ultimate Follower Overhaul.esp") SET: UFO
 IF FILE("Update.esm") SET: Update
@@ -1825,6 +1826,13 @@ StaticMeshImprovementMod.esp
 SloManaRegen.esp
 SurvivalistIngenuity.esp
   TAG: {{BASH: Delev, Relev}}
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("SurvivalistIngenuity.esp", 58F2B4DC) DIRTY: 62 ITM, 60 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IFNOT CHECKSUM("SurvivalistIngenuity.esp", 58F2B4DC) && IFNOT CHECKSUM("SurvivalistIngenuity.esp", C87F8293) SAY: This esp may be obsolete. The last entry into BOSS was version 0.9.9.8 (Checksum 58F2B4DC or C87F8293).
+  // ^ dirty and clean checksums for current release
 SI_NoSaltOreMapMarkers.esp
 SI_PrizesDoubled.esp
 SI_VanillaMerchants.esp
@@ -3105,6 +3113,8 @@ SaderHorses.esp
 SabreFurBag.esp
 sanctuarycleanup.esp
 SaveHotKey.esp
+  IF VAR(SkyUI) && IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SaveHotKeyMCM.esp
+    IF VAR(SkyUI) && IF VAR(RU) SAY: Устарело. Обновите до последней версии, SaveHotKeyMCM.esp
 SB - Loot Mod.esp
   TAG: {{BASH: Delev, Relev}}
   // tags not tested
@@ -3624,27 +3634,6 @@ RealTime.esp
 SkyRealism - Skills and Statistics.esp
 Skyrim Better Performance.esp
 Skyrim Timed AutoSave Helper
-skyui.esp
-iHUD.esp
-  // Must load after SkyUI
-kuerteeAutoFirstThirdPersonView MCM.esp
-  IFNOT ACTIVE("kuerteeAutoFirstThirdPersonView.esp") ERROR: kuerteeAutoFirstThirdPersonView.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-  IFNOT CHECKSUM("kuerteeAutoFirstThirdPersonView MCM.esp", FC07C42F) SAY: This esp may be obsolete. The last entry into BOSS was version 0.627 (Checksum FC07C42F).
-  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
-  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
-  // Not sure if need to load after SkyUI
-kuerteeAutoSaveAndTime MCM.esp
-  IFNOT ACTIVE("kuerteeAutoSaveAndTime.esp") ERROR: kuerteeAutoSaveAndTime.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-  IFNOT CHECKSUM("kuerteeAutoSaveAndTime MCM.esp", BF4E28F9) SAY: This esp may be obsolete. The last entry into BOSS was version 0.631 (Checksum BF4E28F9).
-  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
-  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
-  // Not sure if need to load after SkyUI
-kuerteeDisableLightsFarFromActors MCM.esp
-  IFNOT ACTIVE("kuerteeDisableLightsFarFromActors.esp") ERROR: kuerteeDisableLightsFarFromActors.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-  IFNOT CHECKSUM("kuerteeDisableLightsFarFromActors MCM.esp", 95D9BBC7) SAY: This esp may be obsolete. The last entry into BOSS was version 0.536 (Checksum 95D9BBC7).
-  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
-  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
-  // Not sure if need to load after SkyUI
 REGEX: TimedAutoSave(\d\d)\.esp
 Troy1010_GameSettings_ImprovedCombatRegen 1.0.0.esp
 towAutoFP.esp
@@ -3655,6 +3644,33 @@ WarriorRest.esp
 war zone fix.esp
 IFNOT FILE("SKSE Hotkeys.esp") MOD: WetandCold.esp
 ENDGROUP: Load Order Independent Mods
+
+// SkyUI - Not sure if MCM mods need to be loaded after Skyui, but better to be safe
+skyui.esp
+iHUD.esp
+  // Must load after SkyUI
+kuerteeAutoFirstThirdPersonView MCM.esp
+  IFNOT ACTIVE("kuerteeAutoFirstThirdPersonView.esp") ERROR: kuerteeAutoFirstThirdPersonView.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT CHECKSUM("kuerteeAutoFirstThirdPersonView MCM.esp", FC07C42F) SAY: This esp may be obsolete. The last entry into BOSS was version 0.627 (Checksum FC07C42F).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3+
+kuerteeAutoSaveAndTime MCM.esp
+  IFNOT ACTIVE("kuerteeAutoSaveAndTime.esp") ERROR: kuerteeAutoSaveAndTime.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT CHECKSUM("kuerteeAutoSaveAndTime MCM.esp", BF4E28F9) SAY: This esp may be obsolete. The last entry into BOSS was version 0.631 (Checksum BF4E28F9).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3+
+kuerteeDisableLightsFarFromActors MCM.esp
+  IFNOT ACTIVE("kuerteeDisableLightsFarFromActors.esp") ERROR: kuerteeDisableLightsFarFromActors.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT CHECKSUM("kuerteeDisableLightsFarFromActors MCM.esp", 95D9BBC7) SAY: This esp may be obsolete. The last entry into BOSS was version 0.536 (Checksum 95D9BBC7).
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3+
+SaveHotKeyMCM.esp
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.4", <) REQ: "http://skse.silverlock.org SKSE" 1.6.4+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3+
 
 BEGINGROUP: Items
   // Armor, Weapons, Clothes and recipes for them craft
@@ -8162,6 +8178,9 @@ ProudspireSmithy1.2.esp
 ProudspireManorImprovements.esp
 Pueblo.esp
 puffs soul gems.esp
+PumpingIron.esp
+  IF CHECKSUM("PumpingIron.esp", 2805293D) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+
 PuppetMaster2.1.esp
   IF CHECKSUM("PuppetMaster2.1.esp", B09450A0) DIRTY: 4 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 PuppetMasterBoss.esp
@@ -13035,6 +13054,9 @@ Killmove + only player.esp
 Killmove Control.esp
 REGEX: killmoverandom-\d\d\d?-L\.esp
 kuerteeFightOrFly.esp
+  IFNOT CHECKSUM("kuerteeFightOrFly.esp", 74C991BA) SAY: This esp may be obsolete. The last entry into BOSS was version 0.67 (Checksum 74C991BA).
+kuerteeFightOrFly MCM.esp
+  IFNOT CHECKSUM("kuerteeFightOrFly MCM.esp", 7F5CD54C) SAY: This esp may be obsolete. The last entry into BOSS was version 0.67 (Checksum 7F5CD54C).
 REGEX: Epic Dual Wielding V.+\.esp
 REGEX: KillMoveRandom \d{2,3}\.esp
   IF VAR(EN) SAY: Obsolete. Upgrade to latest version.
@@ -13509,6 +13531,10 @@ SkyRe_StandingStones.esp
     IF VAR(RU) && IF FILE("StaRe.esp") SAY: Не забудьте отключить или удалить StaRe.esp
   IF FILE("Drakian race.esp") INC: Drakian race
   IF FILE("Signs and Guardians.esp") INC: Signs and Guardians.esp
+SkyRe_Survivalism.esp
+  IFNOT ACTIVE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT ACTIVE("Chesko_Frostfall.esp") REQ: Chesko_Frostfall.esp
+  IF CHECKSUM("SkyRe_Survivalism.esp", AA2D4FD7) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
 IF VAR(SkyReM) MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
