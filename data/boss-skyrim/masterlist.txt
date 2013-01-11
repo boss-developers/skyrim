@@ -92,7 +92,10 @@ IF FILE("Update.esm") SET: Update
 IF FILE("Unofficial Skyrim Patch.esp") SET: USKP
 IF FILE("Unofficial Dawnguard Patch.esp") SET: UDGP
 IF FILE("Unofficial Hearthfire Patch.esp") SET: UHFP
-
+//
+// Bashed Patch variable
+// IF REGEX("Bashed Patch.*\.esp") SET: BP
+//
 // ================================================================
 //
 // Global messages
@@ -16206,6 +16209,8 @@ ENDGROUP: Message suppression/changing overrides
 BEGINGROUP: Respawn & day length overrides
 
 72HoursRespawn.esp
+  IF VAR(EN) && IF VAR(BP) SAY: Use Bashed Patch tweak instead.
+    IF VAR(RU) && IF VAR(BP) SAY: Используйте вместо этого настройку башед патча.
 AllRespawn.esp
 fastercellrespawn.esp
 bloodcoins.esp
@@ -16229,12 +16234,20 @@ NoClearedCellRespawn.esp
   IF VAR(EN) && IF FILE("NoCellRespawn.esp") ERROR: Use either NoCellRespawn.esp or NoClearedCellRespawn.esp, not both.
     IF VAR(RU) && IF FILE("NoCellRespawn.esp") ERROR: Используйте любой, или NoCellRespawn.esp или NoClearedCellRespawn.esp, не оба.
 REGEX: Respawn\w{3,5}Days{0,1}\.esp
+  IF VAR(EN) && IF VAR(BP) SAY: Use Bashed Patch tweak instead.
+    IF VAR(RU) && IF VAR(BP) SAY: Используйте вместо этого настройку башед патча.
 shorter_respawns.esp
 REGEX: SkyRim \d+ DeadBody Remover\.esp
 REGEX: SkyRim \d Day DeadBody Timer\.esp
 REGEX: SkyRim \d Day Respawn\.esp
+  IF VAR(EN) && IF VAR(BP) SAY: Use Bashed Patch tweak instead.
+    IF VAR(RU) && IF VAR(BP) SAY: Используйте вместо этого настройку башед патча.
 REGEX: skyrimespawn\d{0,1}\.esp
+  IF VAR(EN) && IF VAR(BP) SAY: Use Bashed Patch tweak instead.
+    IF VAR(RU) && IF VAR(BP) SAY: Используйте вместо этого настройку башед патча.
 Skyrim 120 Day Respawn.esp
+  IF VAR(EN) && IF VAR(BP) SAY: Use Bashed Patch tweak instead.
+    IF VAR(RU) && IF VAR(BP) SAY: Используйте вместо этого настройку башед патча.
 REGEX: Skyrim \d{1,2} Day Vendor Respawn\.esp
 SlowRespawn_NoClearedCellRespawn.esp
   IF FILE("NoCellRespawn.esp") || IF FILE("NoClearedCellRespawn.esp") && IF VAR(EN) ERROR: Use only one of NoCellRespawn *.esp
@@ -16244,8 +16257,12 @@ REGEX: Dynamic.?Timescale\.esp
 longerdays_v1.esp
 RealSkyrimTimeScale - Medium Duration.esp
 REGEX: Skyrim Timescale \d+\.esp
+  IF VAR(EN) && IF VAR(BP) SAY: Use Bashed Patch tweak instead.
+    IF VAR(RU) && IF VAR(BP) SAY: Используйте вместо этого настройку башед патча.
 sliders10.esp
 REGEX: Timescale\d{1,2}\.esp
+  IF VAR(EN) && IF VAR(BP) SAY: Use Bashed Patch tweak instead.
+    IF VAR(RU) && IF VAR(BP) SAY: Используйте вместо этого настройку башед патча.
 ENDGROUP: Respawn & day length overrides
 
 BEGINGROUP: Shader Mods
