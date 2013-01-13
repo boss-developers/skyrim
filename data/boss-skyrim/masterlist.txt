@@ -11456,10 +11456,27 @@ Populated Cities 2.esp
   IF CHECKSUM("Populated Cities 2.esp", 5FC72375) DIRTY: 59 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 raggedshortcut_oc.esp
 BetterCitiesWhiterun.esp
+
+// Translplanted the Realistic Room Rental stuff here because it causes door problems with Open Cities Skyrim - Arthmoor
+IFNOT FILE("3DNPC.esp") MOD: RealisticRoomRental.esp
+  IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+IFNOT FILE("3DNPC.esp") MOD: RealisticRoomRental-Basic.esp
+  IF FILE("RealisticRoomRental.esp") INC: RealisticRoomRental.esp
+IFNOT FILE("3DNPC.esp") MOD: RRRE-Lite.esp
+  IF CHECKSUM("RRRE-Lite.esp", 653ACD5D) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+  IF FILE("RealisticRoomRental.esp") INC: RealisticRoomRental.esp
+  IF FILE("RealisticRoomRental-Basic.esp") INC: RealisticRoomRental-Basic.esp
+IFNOT FILE("3DNPC.esp") MOD: RRRE-ToS_Oakwood-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RRRE-ToS_Oakwood_hf-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RRRE-Moonpath-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RRRL-ETaC-Villages-Complete-Patch.esp
+
 Open Cities Skyrim.esp
   IF CHECKSUM("Open Cities Skyrim.esp", 022AD2C8) WARN: Stolen content. Please show respect for authors' rights and download from a legitimate source "http://skyrim.nexusmods.com/mods/8058".
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 Open Cities Skyrim -- No Gates.esp
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+OCS + Hearthfire Patch.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 TQC-OC.esp
   // Thieves Guild Shortcut - Open Cities compatible. Must be loaded after Open Cities.
@@ -11561,18 +11578,6 @@ IFNOT FILE("3DNPC.esp") MOD: SI_RNADPatch.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
   IFNOT FILE("RealisticNeedsandDiseases.esp") REQ: RealisticNeedsandDiseases.esp
-IFNOT FILE("3DNPC.esp") MOD: RealisticRoomRental.esp
-  IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
-IFNOT FILE("3DNPC.esp") MOD: RealisticRoomRental-Basic.esp
-  IF FILE("RealisticRoomRental.esp") INC: RealisticRoomRental.esp
-IFNOT FILE("3DNPC.esp") MOD: RRRE-Lite.esp
-  IF CHECKSUM("RRRE-Lite.esp", 653ACD5D) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
-  IF FILE("RealisticRoomRental.esp") INC: RealisticRoomRental.esp
-  IF FILE("RealisticRoomRental-Basic.esp") INC: RealisticRoomRental-Basic.esp
-IFNOT FILE("3DNPC.esp") MOD: RRRE-ToS_Oakwood-Patch.esp
-IFNOT FILE("3DNPC.esp") MOD: RRRE-ToS_Oakwood_hf-Patch.esp
-IFNOT FILE("3DNPC.esp") MOD: RRRE-Moonpath-Patch.esp
-IFNOT FILE("3DNPC.esp") MOD: RRRL-ETaC-Villages-Complete-Patch.esp
 Realistic Weapon Weights.esp
   //  TAG: {{BASH: Stats}}
 Realistic Running Speed.esp
@@ -16769,7 +16774,6 @@ Compatibility patch - PHT, IA, CoS & WIC.esp
   IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
 GDFoodCompatability.esp
-OCS + Hearthfire Patch.esp
 SPTConsistentOlderPeopleEEOPatch.esp
   IFNOT FILE("ethereal_elven_overhaul.esp") || IFNOT ACTIVE ("ethereal_elven_overhaul.esp") && IF VAR(EN) ERROR: ethereal_elven_overhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT FILE("ethereal_elven_overhaul.esp") || IFNOT ACTIVE ("ethereal_elven_overhaul.esp") && IF VAR(RU) ERROR: ethereal_elven_overhaul.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
