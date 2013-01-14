@@ -11921,6 +11921,7 @@ Avada Kedavra.esp
 
 // spells b
 Balanced_Magic.esp
+Balanced_Magic_Dawnguard.esp
 Bandit's Dream Spell.esp
 BanishLight.esp
   IF VAR(EN) WARN: May not work properly with lighting mods.
@@ -14455,6 +14456,7 @@ bald hair.esp
 Beards.esp
 Beautiful Hair.esp
 Black Hair Is Black.esp
+CazyMale.esp
 IFNOT FILE("Dibella's Beauty - NPC Overhaul.esp") MOD: Cazy Hairs-by zzjay.esp
 FallOut3Hairs.esp
 Fh hairs-by zzjay.esp
@@ -15576,9 +15578,6 @@ Salit.esp
 Sden.esp
 Sebastion.esp
 SelminaDArchon.esp
-FollowerWander2Serana.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 JNPC_Serana.esp
 JNPC_SeranaB.esp
   IF FILE("JNPC_Serana.esp") && IF VAR(EN) WARN: Use either JNPC_Serana.esp or JNPC_SeranaB.esp, not both.
@@ -16072,6 +16071,10 @@ BEGINGROUP: Companions Load Late
 followernoama.esp
 followerhavok.esp
 FollowersAlwaysEquipFromInventory.esp
+FollowerWander2Serana.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+// Moved FollowerWander2Serana.esp from companions to companions load late so it loads after the main followers can relax .esp
 Khaliza of Gilane.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
