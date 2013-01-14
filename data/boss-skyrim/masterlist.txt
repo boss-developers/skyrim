@@ -3360,6 +3360,11 @@ susi!!.esp
   IF CHECKSUM("susi!!.esp", 061D8423) DIRTY: 2 ITM, 7 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit") 
 Svs Super Collection Jewelry.esp
 SweetRollin.esp
+SwiftPotion.esp
+  IFNOT CHECKSUM("SwiftPotion.esp", E08D9F45) SAY: This esp may be obsolete. The last entry into BOSS was version 1.1 (Checksum E08D9F45).
+  IFNOT VAR(SkyUI) WARN: SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM configuration menue.
+  IF ACTIVE("Chesko_SwiftPotion.esp") && IF VAR(EN) WARN: Use either Chesko_SwiftPotion.esp or SwiftPotion.esp, not both.
+    IF ACTIVE("Chesko_SwiftPotion.esp") && IF VAR(RU) WARN: Используйте любой или Chesko_SwiftPotion.esp или SwiftPotion.esp, не обa.
 SwordMelting.esp
 DrinksAddition.esp
 ItemProcessingAddition.esp
@@ -4494,6 +4499,10 @@ DragonplateHelmFix.esp
 DragonPriestMaskJournal.esp
 dragonpriestmasks.esp
 Dragonrend.esp
+DragonsBanev1.esp
+  IFNOT CHECKSUM("DragonsBanev1.esp", 8C997BC8) && IFNOT CHECKSUM("DragonsBanev1.esp", 3DD23EEE) SAY: This esp may be obsolete. The last entry into BOSS was version 1.2 (Checksum 8C997BC8 or 3DD23EEE).
+  // ^ dirty and clean checksums for current release
+  IF CHECKSUM("DragonsBanev1.esp", 8C997BC8) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 REGEX: Dragonscale.?hood.*\.esp
 dragonslayer.esp
 dragonslayer_axe.esp
@@ -4899,6 +4908,7 @@ highimpactarrows.esp
 Highlander Katana.esp
 highric Armor.esp
 Highric.esp
+HistArmor3.esp
 HmmWhatToWear.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
 HM Soul Gem Shifter.esp
