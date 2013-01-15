@@ -6870,6 +6870,13 @@ D.S.I. Dragon Size Increase + MD.esp
 REGEX: (ERSO 03.2 patch - )?(MD with )?DeadlyD( and)? DDiversified( Dawnguard)?( Unleveled)?\.esp
   // Compatibility patch for Mighty Dragons, Deadly Dragons and/or Dragons Diversified
 DeadlyDragonsArmory.esp
+DeadlyMonsters.esp
+  // companion to deadly dragons
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(SkyUI) WARN: SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM configuration menue.
+  IF VERSION("SKSE", "0.1.6.6", <) REQ: "http://skse.silverlock.org SKSE" 1.6.6+
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 ENDGROUP: Deadly and Mighty Dragons
 
 BEGINGROUP: ERSO End
@@ -11542,6 +11549,7 @@ IFNOT FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF FILE("Purewaters.esp") && IFNOT FILE("RND_PureWaters-Patch.esp") REQ: RND_PureWaters-Patch.esp
   IF FILE("Realistic Wildlife Loot - Realistic.esp") && IFNOT FILE("RND_RWL-Patch.esp") REQ: RND_RWL-Patch.esp
   IF FILE("Real Wildlife Skyrim 0.1.esp") && IFNOT FILE("RND_RWS-Patch.esp") REQ: RND_RWS-Patch.esp
+  IF VAR(USKP) && IFNOT FILE("RND_USKP-Patch.esp") REQ: RND_USKP-Patch.esp
   IF FILE("Water.esp") && IFNOT FILE("RND_Water-Patch.esp") REQ: RND_Water-Patch.esp
   IF FILE("PotionsBETA.esp") && IFNOT FILE("RND_FAMP.esp") REQ: RND_FAMP.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
@@ -11562,6 +11570,7 @@ IFNOT FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWS-FAMP.esp instead.
 IFNOT FILE("3DNPC.esp") MOD: RND_SkyMoMod-Patch.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_USKP-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: SI_RNADPatch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -14733,6 +14742,7 @@ IF FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF FILE("Purewaters.esp") && IFNOT FILE("RND_PureWaters-Patch.esp") REQ: RND_PureWaters-Patch.esp
   IF FILE("Realistic Wildlife Loot - Realistic.esp") && IFNOT FILE("RND_RWL-Patch.esp") REQ: RND_RWL-Patch.esp
   IF FILE("Real Wildlife Skyrim 0.1.esp") && IFNOT FILE("RND_RWS-Patch.esp") REQ: RND_RWS-Patch.esp
+  IF VAR(USKP) && IFNOT FILE("RND_USKP-Patch.esp") REQ: RND_USKP-Patch.esp
   IF FILE("Water.esp") && IFNOT FILE("RND_Water-Patch.esp") REQ: RND_Water-Patch.esp
   IF FILE("PotionsBETA.esp") && IFNOT FILE("RND_FAMP.esp") REQ: RND_FAMP.esp
 IF FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
@@ -14753,6 +14763,7 @@ IF FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWS-FAMP.esp instead.
 IF FILE("3DNPC.esp") MOD: RND_SkyMoMod-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_USKP-Patch.esp
 IF FILE("3DNPC.esp") MOD: SI_RNADPatch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
