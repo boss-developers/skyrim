@@ -16639,20 +16639,6 @@ Warburg's 3D Paper World Map v2.2.esp
 Warburg's 3D Paper World Map.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Warburg's 3D Paper World Map - Texture *.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Warburg's 3D Paper World Map - Texture *.esp
-Warburg's 3D Paper World Map - Texture 1.esp
-  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
-Warburg's 3D Paper World Map - Texture 2.esp
-  IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") && IF VAR(EN) WARN: Use only one of Warburg's 3D Paper World Map - Texture *.esp
-    IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") && IF VAR(RU) WARN: Используйте только один of Warburg's 3D Paper World Map - Texture *.esp
-  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
-Warburg's 3D Paper World Map - Texture 3.esp
-  IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(EN) WARN: Use only one of Warburg's 3D Paper World Map - Texture *.esp
-    IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(RU) WARN: Используйте только один of Warburg's 3D Paper World Map - Texture *.esp
-  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
-Warburg's 3D Paper World Map - Dawnguard.esp
-  IFNOT FILE("Warburg's 3D Paper World Map.esp") && IFNOT REGEX("Warburg's 3D Paper World Map - Texture (1|2|3)\.esp") REQ: Warburg's 3D Paper World Map - Texture *.esp (The main file)
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 WorldMapInFull3D.esp
   IF VAR(EN) SAY: If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)
     IF VAR(RU) SAY: Если вы используете другие моды. изменяющие карты, такие как Quality World Map with roads, измените параметр uLockedTerrainLOD на 32 для их отображения (только внутри помещений)
@@ -16787,6 +16773,20 @@ REGEX: World_Map_Height_Pitch_Tweak.*\.esp
   IF VERSION("TES5", "1.8.151.0", <) REQ: Skyrim 1.8.151+
   IF VAR(EN) SAY: Use only one World_Map_Height_Pitch_Tweak esp.
     IF VAR(RU) SAY: Используйте только один World_Map_Height_Pitch_Tweak esp.
+Warburg's 3D Paper World Map - Texture 1.esp
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
+Warburg's 3D Paper World Map - Texture 2.esp
+  IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") && IF VAR(EN) WARN: Use only one of Warburg's 3D Paper World Map - Texture *.esp
+    IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") && IF VAR(RU) WARN: Используйте только один of Warburg's 3D Paper World Map - Texture *.esp
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
+Warburg's 3D Paper World Map - Texture 3.esp
+  IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(EN) WARN: Use only one of Warburg's 3D Paper World Map - Texture *.esp
+    IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(RU) WARN: Используйте только один of Warburg's 3D Paper World Map - Texture *.esp
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
+Warburg's 3D Paper World Map - Dawnguard.esp
+  IFNOT FILE("Warburg's 3D Paper World Map.esp") && IFNOT REGEX("Warburg's 3D Paper World Map - Texture (1|2|3)\.esp") REQ: Warburg's 3D Paper World Map - Texture *.esp (The main file)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 ENDGROUP: Extra Late
 
 ENDGROUP: Load Late
