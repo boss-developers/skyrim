@@ -888,9 +888,12 @@ lightplacement.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, lightingfix.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, lightingfix.esp
 lightingfix.esp
-  IF CHECKSUM("lightingfix.esp", A534E1EA) && IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF CHECKSUM("lightingfix.esp", A534E1EA) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   IF CHECKSUM("lightingfix.esp", B22ED6C8) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+Relighting Skyrim - Dawnguard.esp
+  // moved as suggested in bsg thread 28 post 105
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF FILE("lightingfix.esp") WARN: Using lightingfix.esp along with Relighting Skyrim - Dawnguard.esp is likely to cause lighting inconsistencies.
 lydia chair fix.esp
 
 // fixes m
@@ -1583,13 +1586,18 @@ REGEX: Realistic Lighting( - Full| - Addon)\.esp
 REGEX: RL - .*\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-Realistic Lighting - Dawnguard Patch.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+EnhancedLightsandFX.esp
+  // moved as suggested in bsg thread 28 post 105
 Realistic Lighting.esp
   IF CHECKSUM("Realistic Lighting.esp", 5F40F0F8) DIRTY: 247 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 REGEX: [Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\.esp
   IFNOT FILE("Realistic Lighting.esp") REQ: Realistic Lighting with Customization
+Realistic Lighting Patcher.esp
+  // moved as suggested in bsg thread 28 post 105
+Realistic Lighting - Dawnguard Patch.esp
+  // moved as suggested in bsg thread 28 post 105
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 realrain.esp
   IF VAR(EN) && IF FILE("realrainBWRLWC.esp") SAY: Use only one realrain.esp
     IF VAR(RU) && IF FILE("realrainBWRLWC.esp") SAY: Используйте только один realrain.esp
@@ -1600,13 +1608,9 @@ realrainCoT.esp
 realrainextended.esp
   IF FILE("realrainCoT.esp") || IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(EN) SAY: Use only one realrain.esp
     IF FILE("realrainCoT.esp") || IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(RU) SAY: Используйте только один realrain.esp
-Realistic Lighting Patcher.esp
 Rebalance Light.esp
 Rebalance_Light.esp
 13189_Rebalance_Light.esp
-Relighting Skyrim - Dawnguard.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 RemoveAmbientInteriorFog.esp
   IF CHECKSUM("RemoveAmbientInteriorFog.esp", 2014AA8E) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
   IF VAR(EN) && IF FILE("Realistic Lighting.esp") WARN: Removing the interior Fog will affect Realistic Lighting. Load before RL if you are experiencing errors.
@@ -1701,7 +1705,6 @@ Zfixed Lights RCRN.esp
 Light Up Dawnguard.esp
 LightRoom.esp
 WM_Warmer_Lights.esp
-EnhancedLightsandFX.esp
 CLARALUX.esp
   IF CHECKSUM("CLARALUX.esp", FD3F3144) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 CLARALUX-DG-Patch.esp
