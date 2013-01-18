@@ -4319,9 +4319,11 @@ Equipment - Armor - Dark Imperial Armor.esp
 Darklilith.esp
 DarkMageRobes.esp
 DarkNemesis.esp
+  IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
+    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Dovahkiin Mercenary Armor and Weapons CBBE.esp", CE5E555B) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и может содержать неверные записи. Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версиючитайте описание на странице загрузки мода или локализованную исправленную версию, то вам не о чем беспокоиться.
   IF CHECKSUM("DarkNemesis.esp", 56F07A36) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("DarkNemesis.esp", 56F07A36) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
-  IF FILE("SkyRe Dark Nemesis.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe Dark Nemesis.esp") && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) TAG: {{BASH: Deactivate}}
 DarkKnight&PaladinWS.esp
 DarkPaladinArmor.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardPaladinArmorCP.esp
@@ -13889,13 +13891,13 @@ SkyRe Dark Nemesis.esp
     IF CHECKSUM("SkyRe Dark Nemesis.esp", FBBC3828) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("DarkNemesis.esp") SAY: Remember not to load (or to simply delete) DarkNemesis.esp
-    IF VAR(RU) && IF ACTIVE("DarkNemesis.esp") SAY: Не забудьте отключить или удалить DarkNemesis.esp
+  IF VAR(EN) && IF ACTIVE("DarkNemesis.esp") && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Remember not to load (or to simply delete) DarkNemesis.esp
+    IF VAR(RU) && IF ACTIVE("DarkNemesis.esp") && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Не забудьте отключить или удалить DarkNemesis.esp
 SkyRe Divine Aegis.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("Divine Aegis.esp") SAY: Remember not to load (or to simply delete) DarkNemesis.esp
-    IF VAR(RU) && IF ACTIVE("Divine Aegis.esp") SAY: Не забудьте отключить или удалить DarkNemesis.esp
+  IF VAR(EN) && IF ACTIVE("Divine Aegis.esp")  && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Remember not to load (or to simply delete) DarkNemesis.esp
+    IF VAR(RU) && IF ACTIVE("Divine Aegis.esp")  && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Не забудьте отключить или удалить DarkNemesis.esp
 SkyRe Equipment of Eternal Shine.esp
   IF CHECKSUM("SkyRe Equipment of Eternal Shine.esp", C47F2C45) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("SkyRe Equipment of Eternal Shine.esp", C47F2C45) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
