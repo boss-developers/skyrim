@@ -6600,6 +6600,7 @@ HarvestOverhaulDawnguard.esp
 HarvestOverhaulCreatures.esp
 HarvestOverhaulCreaturesDawnguard.esp
   IFNOT FILE("HarvestOverhaulCreatures.esp") INC: HarvestOverhaulCreatures.esp
+HarvestOverhaulCreaturesDawnguardHearthfire.esp
 // Harvest Overhaul Compatibility patches located after mods patched Skyre_main.esp and IMCN - Overrides.esp as author suggests
 HarvestOverhaul_100Chance.esp
   IF VAR(EN) SAY: Obsolete.  Delete, no replacement in latest version.
@@ -7415,6 +7416,10 @@ ENDGROUP: Quests B
 
 BEGINGROUP: Quests C
 
+CabinInFalkreath.esp
+        IF CHECKSUM("CabinInFalkreath.esp", 9E315876) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here". 
+CabinInFalkreathLocks.esp
+        IF CHECKSUM("CabinInFalkreathLocks.esp", F0AEDD7D) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
 Cabin in the woods.esp
 CabinInRiverwoodV1.1.esp
 CaethspellCavernPlayerHome.esp
@@ -9343,6 +9348,9 @@ AccessibleMerchantStorage.esp
 Accessible Vendor Chests.esp
 IFNOT REGEX("EmpoweredMagic.+\.esp") && IFNOT VAR(SkyRe) REGEX: Acquisitive Soul Gems( FR)?\.esp
 Achievement Remover.esp
+AchieveThat.esp
+  IFNOT VAR(SkyUI) REQ: SkyUI 3.1+ Required
+    IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 AdaptiveNightEye.esp
 AddChoices01.esp
 Adoption.esp
@@ -14876,6 +14884,7 @@ IF FILE("3DNPC.esp") MOD: RND_DestructibleBottles-FAMP.esp
 RRRE-3DNPCv2-Patch.esp
 
 // pre ufo a
+aela the huntress.esp
 Althirs Companion and Carriage Command v1.1.esp
 AccurateCompanionGuild.esp
 Akasha.esp
@@ -14999,6 +15008,7 @@ PetBearOslo.esp
 // pre ufo r
 
 // pre ufo s
+Sakal.esp
 sec_goatfrey.esp
 SelminaDArchon1.esp
 REGEX: SPODUM v.+\.esp
