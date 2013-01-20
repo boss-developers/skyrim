@@ -593,6 +593,7 @@ Tamrielic Lore.esm
   IF CHECKSUM("Tamrielic Lore.esm", 1EC8407A) DIRTY: 5 ITM. 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 Tang mo follower.esm
   IF CHECKSUM("Tang mo follower.esm", 0363AF98) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+TERAArmors.esm
 Terramis_DungeonMaster.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Terramis_Dungeon_01.esm
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Terramis_Dungeon_01.esm
@@ -6080,7 +6081,7 @@ TCOSS.esp
   TAG: {{BASH: Delev, Relev}}
 The_IVth_Legion.esp
   IF CHECKSUM("The_IVth_Legion.esp", 03008AAA) DIRTY: 9 ITM, 41 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit") 
-        IF CHECKSUM("The_IVth_Legion.esp",  75065DE5) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here". 
+    IF CHECKSUM("The_IVth_Legion.esp",  75065DE5) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here". 
 temperysgramor.esp
 TemplarArmor.esp
 Temptressdressv1.esp
@@ -6096,7 +6097,7 @@ TERA Armors for Skyrim - UNP.esp
 TERA Armors for Skyrim - UNPB-BBP.esp
   REQ: "http://skyrim.nexusmods.com/mods/14899 UNP Blessed Body (UNPB)".
 TERAArmors - Leveled Lists.esp
-  TAG: {{BASH: Relev}}
+  IF CHECKSUM("TERAArmors - Leveled Lists.esp", 91A368B1) DIRTY: 17 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit") 
 tera bows.esp
 tera robe 18a.esp
 tera swords.esp
@@ -10656,16 +10657,24 @@ ENDGROUP: Overrides O
 BEGINGROUP: Overrides P
 
 Painful traps.esp
+Paralyze.esp
+Paralyze-1.1b.esp
+  IF FILE("Paralyze.esp") INC: Paralyze.esp
+Passive dragons.esp
+PalistovSpinningArrows.esp
+PalistovSpinningArrows_CloserQuiversLongerArrows.esp
+  REQ: "http://skyrim.nexusmods.com/mods/5711 Closer Quivers and Longer Arrows" to work properly.
+PalistovSpinningArrows_Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+PalistovSpinningArrows_ImmersiveWeapons.esp
+  IFNOT ACTIVE("SPIKE.esm") ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
 PeacefulMudcrabs.esp
 MZ Peaceful Slaughterfish.esp
 PermanentWerewolfNightEye.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, BeastWithinNightEye.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, BeastWithinNightEye.esp
 PerQ.esp
-Paralyze.esp
-Paralyze-1.1b.esp
-  IF FILE("Paralyze.esp") INC: Paralyze.esp
-Passive dragons.esp
 playing_children.esp
 pf_lightfootcompanions.esp
   IFNOT FILE("playing_children.esp") REQ: playing_children.esp
@@ -16192,12 +16201,16 @@ Alternative Startfraktionen - Abgeschworener.esp
 Alternative Startfraktionen - Bandit.esp
 Alternative Startfraktionen - Hexe.esp
 Alternative Startfraktionen - Silberne Hand.esp
+Bandit Start.esp
+  IF CHECKSUM("Bandit Start.esp", 57D4E755) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 Forsworn Start.esp
-  IF CHECKSUM("Forsworn Start.esp", 8F99E26B) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 Live Another Life.esp
   IF VAR(EN) WARN: This version is not supported due to corruption caused by TESVSnip. Please upgrade as soon as possible to version 2.0+
     IF VAR(RU) WARN: Эта версия не поддерживается из за нарушений, вызванных программой TESVSnip. Пожалуйста, обновите так быстро как возможно до версии 2.0 или выше.
 Necromancer Start.esp
+  IF CHECKSUM("Necromancer Start.esp", AB37346B) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+  IF CHECKSUM("Necromancer Start.esp", DB6B67C7) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+  // ^^^ two versions, same name
 newlife.esp
 No Starting Spells.esp
 Quick Start - Skip the Opening Sequence.esp
@@ -16209,11 +16222,17 @@ Random Alternate Start.esp
 RAS - Riverwood CharGen.esp
   IF FILE("Alternate Start - Live Another Life.esp") INC: Alternate Start - Live Another Life.esp
   IFNOT FILE("Random Alternate Start.esp") REQ: Random Alternate Start.esp
+Silver Hand Start.esp
+  IF CHECKSUM("Silver Hand Start.esp", 33A16D73) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 SkBBP - Start on Level Zero.esp
 IF FILE("Alternate Start - Live Another Life.esp") MOD: Starting Spell Choice.esp
 Starting Spell Choice - Life Another Life Patch.esp
   IFNOT FILE("Alternate Start - Live Another Life.esp") REQ: Alternate Start - Live Another Life.esp
   IFNOT FILE("Starting Spell Choice.esp") REQ: Starting Spell Choice.esp
+Thalmor Start.esp
+  IF CHECKSUM("Thalmor Start.esp", 9B29F1C6) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+Witch Start.esp
+  IF CHECKSUM("Witch Start.esp", 77F5D848) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 ENDGROUP: Alternative starts
 
 BEGINGROUP: Race Overrides
@@ -16325,7 +16344,6 @@ RaceRevamp.esp
 Races and Doomstones.esp
 Races Reviewed by Theme.esp
 ReducedCarryWeight - 150.esp
-SkyrimSizesLore.esp
 Khajiit Awesome.esp
 Khajiit Racial Tweek.esp
 More Hair Colors.esp
@@ -16339,6 +16357,28 @@ NormalVampireFaces.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 OCS OSR.esp
 Old Race Settings.esp
+PC Exclusive Animation Path - Argonian.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+PC Exclusive Animation Path - Breton.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+PC Exclusive Animation Path - DarkElf.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+PC Exclusive Animation Path - HighElf.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+PC Exclusive Animation Path - Imperial.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+PC Exclusive Animation Path - Khajiit.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+PC Exclusive Animation Path - Nord.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+PC Exclusive Animation Path - ORC.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+PC Exclusive Animation Path - RedGuard.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+PC Exclusive Animation Path - WoodElf.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+PC Exclusive Animation Path - 0 - Main.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
 PrettyKhajiit.esp
 Race Abilities and Skills Redone.esp
   IF CHECKSUM("Race Abilities and Skills Redone.esp", E4A1C5F7) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
@@ -16356,6 +16396,7 @@ SVPaleVampires.esp
   IF REGEX("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp") && IF VAR(EN) INC: Serana-ish*.esp
     IF REGEX("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp") IF VAR(RU) INC: Serana-ish*.esp
 Skyrim Sizes.esp
+SkyrimSizesLore.esp
 strongerwerewolf.esp
 TamrielClasses.esp
 ThatsRacist.esp
