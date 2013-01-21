@@ -4773,6 +4773,7 @@ ENDGROUP: Items F
 BEGINGROUP: Items G
 
 Gabriel Belmont's Armor.esp
+GandalfStaffWepMod.esp
 GandalfLightstaff.esp
 Gatti12Jewelry.esp
 Gatti14Yumiko.esp
@@ -15237,6 +15238,8 @@ AWC_ArnulfWarzenSchleggerCompanion.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 SIUFOAWCPatch.esp
   // must load after AWC_Arnulf, not with other SIUFO patches
+Azog.esp
+  IF CHECKSUM("Azog.esp", 5A6D9903) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 
 // companions b
 Bald_Jiub.esp
@@ -15747,6 +15750,9 @@ Thieves Guild Followers.esp
   IF CHECKSUM("Thieves Guild Followers.esp", F6ADA4DE) || IF CHECKSUM("Thieves Guild Followers.esp", 355D31EE) || IF CHECKSUM("Thieves Guild Followers.esp", 4B1DC5DF) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("Thieves Guild Followers.esp", F6ADA4DE) || IF CHECKSUM("Thieves Guild Followers.esp", 355D31EE) || IF CHECKSUM("Thieves Guild Followers.esp", 4B1DC5DF) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   IF CHECKSUM("Thieves Guild Followers.esp", A533DC5E) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+ThorinArmor.esp		
+  IF CHECKSUM("ThorinArmor.esp", 3D8583F0) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit") 
+    IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"	
 timek_Damius.esp
 Tina.esp
 (TWE) Dandelion NPC.esp
@@ -16681,6 +16687,7 @@ BEGINGROUP: Map marker Tweaks
 accurate prison markers.esp
 arvakskull-marker.esp
 Atlas Map Markers.esp
+Atlas Blackreach.esp
 Atlas Dawnguard.esp
   IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
 Atlas Hearthfire.esp
