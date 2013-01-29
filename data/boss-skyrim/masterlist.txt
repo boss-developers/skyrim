@@ -4084,8 +4084,8 @@ BetterArchmagesRobesMedium2.esp
 BFPU Orcish Armor.esp
 Bikini Clothes.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
-  IF VAR(EN) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
-    IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
+  IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Bikini Clothes.esp", 16DC7E96) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
+    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Bikini Clothes.esp", 16DC7E96) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и может содержать неверные записи. Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версиючитайте описание на странице загрузки мода или локализованную исправленную версию, то вам не о чем беспокоиться.
 bikiniADEC.esp
   REQ: "http://skyrim.nexusmods.com/mods/5390 Acdale EyeCandy Body ADEC".
   IF CHECKSUM("bikiniADEC.esp", C44993C7) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
@@ -6139,6 +6139,7 @@ stoutheartarmor.esp
   IF CHECKSUM("stoutheartarmor.esp", 7E65336D) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("stoutheartarmor.esp", 7E65336D) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Strapless Bikinis.esp
+  SAY: Obsolete, included in Sharlikran's Compatability Patch.
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
   IF VAR(EN) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
