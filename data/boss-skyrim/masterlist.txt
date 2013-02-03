@@ -13648,12 +13648,6 @@ SB - Sneak Mod.esp
 ShadowPlay.esp
 SkyRealism - Detection Durations.esp
 REGEX: Sneak Hand Bonus - X(\d\.\d|\d{1,2})\.esp
-Sneak Tools.esp
-  IF VAR(EN) && IF VAR(SkyReM) ERROR: Delete. Already included in SkyRe_Main.esp.
-    IF VAR(RU) && IF VAR(SkyReM) ERROR: Удалите. Уже включено в SkyRe_Main.esp.
-    // Info from SkyRe changes log.
-Sneak Tools Vanilla Hoods.esp
-Sneak Tools Vanilla Masks.esp
 SneakMult15.esp
 NoSneakAttackSound.esp
 ENDGROUP: Thievery, Sneaking and Crime
@@ -14269,6 +14263,7 @@ PerkReset SkyRe Compatibility Patch.esp
 IF VAR(SkyReM) MOD: vinis_food_and_rest.esp
     IF VAR(RU) SAY: Используйте мод vinis_food_and_rest и не вкладывайте очки умений в перки "Мясоедство" и "Вегетарианство", добавленные из SkyRe_Main.esp.
 IF VAR(SkyReM) REGEX: vinis_food_and_rest.+\.esp
+SkyRe_CraftingFix.esp
 SkyRe_EncounterZones.esp
 IFNOT REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
 SkyRe_EnemyScaling.esp
@@ -14661,6 +14656,10 @@ xxxLvCap255Enemy.esp
 Third Era Attributes for Skyrim - Perks.esp
 
   // post SkyRe plugins mods
+Sneak Tools.esp
+Sneak Tools Vanilla Hoods.esp
+Sneak Tools Vanilla Masks.esp
+// Sneak Tools.esp - removed error message based on SkyRE changelog & revised load order to load after SkyRE as per Sneak Tools author's comments in thread 29; post 115
 REGEX: Acquisitive Soul Gems( FR)?\.esp
   // must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
 Enhanced Soul Trap.esp
