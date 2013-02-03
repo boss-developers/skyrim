@@ -6704,6 +6704,24 @@ BEGINGROUP: Overhauls
 
 BEGINGROUP: General Overhauls
 ASIS-Encounter Zones.esp
+REGEX: Better Sorting by eclips3 - Ingredients .+\.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+	IF ACTIVE("Better Sorting by eclips3 - Ingredients (Weightless).esp")|| IF ACTIVE("Better Sorting by eclips3 - Ingredients (Vanilla Weight).esp")|| IF ACTIVE("Better Sorting by eclips3 - Ingredients (Light Weight).esp") SAY: Use only 1 Better Sorting by eclips3 - Ingredients .esp file
+REGEX: Better Sorting by eclips3 - Soul Gems .+\.esp 	
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF ACTIVE("Better Sorting by eclips3 - Soul Gems (Named).esp") && IF ACTIVE("Better Sorting by eclips3 - Soul Gems (Numbered).esp") SAY: Use only 1 Better Sorting by eclips3 - Soul Gem .esp file
+REGEX: Better Sorting by eclips3 - Books .+\.esp 	
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF ACTIVE("Better Sorting by eclips3 - Books (Before).esp") && IF ACTIVE("Better Sorting by eclips3 - Books (After).esp") SAY: Use only 1 Better Sorting by eclips3 - Books .esp file
+REGEX: Better Sorting by eclips3 - Food .+\.esp 	
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF ACTIVE("Better Sorting by eclips3 - Food (Weightless).esp")|| IF ACTIVE("Better Sorting by eclips3 - Food (Vanilla Weight).esp")|| IF ACTIVE("Better Sorting by eclips3 - Food (Light Weight).esp") SAY: Use only 1 Better Sorting by eclips3 - Food .esp file
+REGEX: Better Sorting by eclips3 - Potions .+\.esp 	
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF ACTIVE("Better Sorting by eclips3 - Potions (Weightless).esp")|| IF ACTIVE("Better Sorting by eclips3 - Potions (Vanilla Weight).esp")|| IF ACTIVE("Better Sorting by eclips3 - Potions (Light Weight).esp") SAY: Use only 1 Better Sorting by eclips3 - Potions .esp file	
+Better Sorting by eclips3 - Spells.esp	
+Better Sorting by eclips3 - Misc.esp	 
+Better Sorting by eclips3 - Ammo.esp
 REGEX: Smithing Perks Overhaul( - Balanced)?.esp
   IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Smithing Perks Overhaul.esp", 92158BE3) && IFNOT CHECKSUM("Smithing Perks Overhaul - Balanced.esp",  80AAE7FF) SAY: Does not contain unexpected (or out of order) records or TESVSnip truncation issues as found in other mods by various authors.  However, a newer esp fixed and cleaned with TES5Edit can be obtained here that may provide added stability. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
   IF FILE("PerkUP-Smithing.esp") INC: PerkUP-Smithing.esp
