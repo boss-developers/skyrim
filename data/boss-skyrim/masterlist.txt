@@ -1492,6 +1492,10 @@ BEGINGROUP: Sound mods
 
 addwinterholdmusic.esp
 Bardsoundsmalukah.esp
+REGEX: DFG's Blade & Dagger Sheathe Sounds.*\.esp
+  IF CHECKSUM("DFG's Blade & Dagger Sheathe Sounds.esp", 3F16767E) DIRTY: 11 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit") 
+    IF CHECKSUM("DFG's Blade & Dagger Sheathe Sounds_Dawnguard.esp", 533F47EC) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit") 
+      IFNOT VAR(Dawnguard) && IF Active("DFG's Blade & Dagger Sheathe Sounds_Dawnguard.esp") ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 BWS.esp
 Clanking Armor.esp
   IF CHECKSUM("Clanking Armor.esp", 7055B881) DIRTY: 5 ITMs, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
@@ -2670,6 +2674,7 @@ Immersive Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Immersive Dawnguard.esp", 3AF84D37) DIRTY: 23 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+Immersive Factions.esp
 Immersive Patrols.esp
   IF CHECKSUM("Immersive Patrols.esp", 54BCDA38) DIRTY: 31 ITM, 8 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 Immersive Travelers.esp
@@ -2779,6 +2784,8 @@ kuerteeHorseCommandsVerB.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, kuerteeHorseCommandsVerB2.esp
 kuerteeHorseCommandsVerB2.esp
 kuerteeProfessions.esp
+  IF CHECKSUM("kuerteeProfessions.esp", A0DA9A22) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit") 
+    IF CHECKSUM("kuerteeProfessions.esp", 5F580BB5) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 Kuun's angels drop armor.esp
 Kuun's angels drop worn armor.esp
   IF FILE("Kuun's angels drop armor.esp") && IF VAR(EN) WARN: Use either Kuun's angels drop armor.esp or Kuun's angels drop worn armor.esp, not both.
@@ -4177,6 +4184,8 @@ bouncy_booties.esp
 bouncy_belts_and_stockings.esp
   IF VAR(EN) REQ: UNP or UNPB body. Should work with all versions.
     IF VAR(RU) REQ: UNP или UNPB. Должно работать со всеми версиями.
+BoundGear.esp
+  IF CHECKSUM("BoundGear.esp", 67848836) DIRTY: 9 ITM, 41 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")	
 bound weapons redux.esp
 bow of destiny mk 2.esp
 BowofIorveth.esp
@@ -4544,7 +4553,7 @@ dogintoblackhusky.esp
 Doom Heavy Set.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
 Doomshard Bow.esp
-d0nutz's armory - Iron Axes.esp
+REGEX: d0nutz's armory - Iron (Axes|Daggers|Maces)?\.esp
 Double Axes Standalone.esp
 REGEX: Dovahkiin Mercenary Armor and Weapons (CBBE|UNP)?\.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Dovahkiin Mercenary Armor and Weapons CBBE.esp", C376FC4) && IFNOT CHECKSUM("Dovahkiin Mercenary Armor and Weapons UNP.esp", C376FC4) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -6343,6 +6352,7 @@ TrissArmorRetextured.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("TrissArmorRetextured.esp", 342AD937) WARN: Original file was released before the CK (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
 TrissStaff.esp
 TrissStandalone.esp
+True Bound Armors.esp
 ts_fetishwardrobe_characterbodysize.esp
 ts_fetishwardrobe_femalebodysize.esp
 TS_FetishPantyhoseOutfits.esp
@@ -11975,6 +11985,9 @@ SkyRealism - Mass and Materials - Hearthfires.esp
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
   IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT FILE("SkyRealism - Mass and Materials.esp") || IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+SkyRealism - Mass and Materials - ExpandedJewelryCrafting.esp
+  IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE ("ExpandedJewelryCrafting.esp") ERROR: ExpandedJewelryCrafting.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 SkyRealism - Mass and Materials - 1nivWICCloaks.esp
   IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
