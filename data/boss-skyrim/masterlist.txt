@@ -59,6 +59,7 @@ IF FILE("..\ScriptDragon.dll") SET: SCDR
 // Added as many plugins are likely to require DLC.
 IF ACTIVE("Dawnguard.esm") SET: Dawnguard
 IF ACTIVE("Hearthfires.esm") SET: Hearthfire
+IF ACTIVE("Dragonborn.esm") SET: Dragonborn
 //
 // Plugins
 IF ACTIVE("ApachiiHair.esm") SET: ApachiiHair
@@ -92,6 +93,7 @@ IF FILE("Update.esm") SET: Update
 IF FILE("Unofficial Skyrim Patch.esp") SET: USKP
 IF FILE("Unofficial Dawnguard Patch.esp") SET: UDGP
 IF FILE("Unofficial Hearthfire Patch.esp") SET: UHFP
+IF FILE("Unofficial Dragonborn Patch.esp") SET: UDBP
 //
 // Bashed Patch variable
 // IF REGEX("Bashed Patch.*\.esp") SET: BP
@@ -1113,6 +1115,9 @@ Unofficial Dawnguard Patch.esp
   TAG: {{BASH: Delev, Relev}}
 Unofficial Hearthfire Patch.esp
   IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+Unofficial Dragonborn Patch.esp
+  IFNOT VAR(Dragonborn) REQ: Dragonborn (Official Bethesda DLC)
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 // fixes that must be loaded after Unofficial DLC Patches
 EveryVampireEyesGrow.esp
