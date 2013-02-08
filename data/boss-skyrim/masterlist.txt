@@ -1065,6 +1065,7 @@ BreezhomeAlchemyLabFix.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 chopping_block_wood_fires.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
+  IF VAR(EN) ERROR: Delete. Fixed in Bethesda's official update February 2012.
 Correctif - HighResTexturePack.esp
 Dawnguard Breezehome Fix.esp
   IF CHECKSUM("HF-MoveSpouse.esp", 330AED25) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
@@ -1119,6 +1120,8 @@ Unofficial Hearthfire Patch.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 Unofficial Dragonborn Patch.esp
   IFNOT VAR(Dragonborn) REQ: Dragonborn (Official Bethesda DLC)
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+Unofficial High Resolution Patch.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 // fixes that must be loaded after Unofficial DLC Patches
 EveryVampireEyesGrow.esp
