@@ -1669,20 +1669,7 @@ Warmer Magic Lights v2 - Big.esp
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Warmer Magic Lights v2 - Big.esp", DE4F928D) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
 IC-Lighting.esp
 NoTint.esp
-ClimatesOfTamriel-Dungeons&Interiors.esp
-REGEX: ClimatesOfTamriel-VanillaNights-Lvl-[1234]\.esp
-climatesoftamriel.esp
-ClimatesOfTamriel-DLC01-Patch.esp
-ClimatesOfTamriel-Dawnguard-Patch.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-ClimatesOfTamriel-Dungeons-Hardcore.esp
-  IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
-ClimatesOfTamriel-Dungeons-Hazardous.esp
-  IF FILE("ClimatesOfTamriel-Dungeons-Hardcore.esp") INC: ClimatesOfTamriel-Dungeons-Hardcore.esp
-ClimatesOfTamriel-Interiors-Cold.esp
-ClimatesOfTamriel-Interiors-Warm.esp
-  IF FILE("ClimatesOfTamriel-Interiors-Cold.esp") INC: ClimatesOfTamriel-Interiors-Cold.esp
+// Moved ClimatesOfTamriel From Here
 SI_DarkerNightsAddon.esp
   IFNOT FILE("ClimatesOfTamriel.esm") REQ: Climates of Tamriel
 MintyLightningMod.esp
@@ -12002,6 +11989,26 @@ Realistic Lighting Overhaul - Minor Cities & Town Interiors.esp
 Realistic Lighting Overhaul - Major City Interiors.esp
 Realistic Lighting Overhaul - 3.5 Weathers.esp	
 Realistic Lighting Overhaul - 3.5 Dawnguard Weathers.esp
+//placed ClimatesOfTamriel per http://skyrim.nexusmods.com/articles/853/
+ClimatesOfTamriel-Dungeons&Interiors.esp
+  INC: Realistic Lighting Overhaul
+REGEX: ClimatesOfTamriel-VanillaNights-Lvl-[1234]\.esp
+climatesoftamriel.esp
+ClimatesOfTamriel-DLC01-Patch.esp
+ClimatesOfTamriel-Dawnguard-Patch.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+ClimatesOfTamriel-Dungeons-Hardcore.esp
+  IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+  INC: Realistic Lighting Overhaul
+ClimatesOfTamriel-Dungeons-Hazardous.esp
+  IF FILE("ClimatesOfTamriel-Dungeons-Hardcore.esp") INC: ClimatesOfTamriel-Dungeons-Hardcore.esp
+  INC: Realistic Lighting Overhaul
+ClimatesOfTamriel-Interiors-Cold.esp
+  INC: Realistic Lighting Overhaul
+ClimatesOfTamriel-Interiors-Warm.esp
+  IF FILE("ClimatesOfTamriel-Interiors-Cold.esp") INC: ClimatesOfTamriel-Interiors-Cold.esp
+  INC: Realistic Lighting Overhaul
 ENDGROUP: IMGS and LIGH Load Late
 ENDGROUP: Image Space and Lighting Changes
 
