@@ -1610,36 +1610,7 @@ kuerteeDisableLightsFarFromActors.esp
 magiclightshadows.esp
 MikeFoxs_CorrectLighting.esp
   IF CHECKSUM("MikeFoxs_CorrectLighting.esp", D2B44EBE) DIRTY: 0 ITM, 302 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
-REGEX: Realistic Lighting( - Full| - Addon)\.esp
-    IF VAR(RU) SAY: Используйте только один LightAdjuster esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-REGEX: RL - .*\.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-EnhancedLightsandFX.esp
-  // moved as suggested in bsg thread 28 post 105
-RLO - Dungeons for ELnFX.esp
-RLO - Illuminated Spells for ELnFX.esp
-RLO - Major City Interiors for ELnFX.esp
-RLO - Minor Cities & Town Interiors for ELnFX.esp
-  //placement for the above 4 entries as per BOSS thread 29; post 104
-Realistic Lighting.esp
-  IF CHECKSUM("Realistic Lighting.esp", 5F40F0F8) DIRTY: 247 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
-REGEX: [Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\.esp
-  IFNOT FILE("Realistic Lighting.esp") REQ: Realistic Lighting with Customization
-Realistic Lighting Patcher.esp
-  // moved as suggested in bsg thread 28 post 105
-Realistic Lighting - Dawnguard Patch.esp
-  // moved as suggested in bsg thread 28 post 105
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-Realistic Lighting Overhaul - Illuminated Spells.esp
-Realistic Lighting Overhaul - Dungeons.esp
-Realistic Lighting Overhaul - Minor Cities & Town Interiors.esp
-Realistic Lighting Overhaul - Major City Interiors.esp
-Realistic Lighting Overhaul - 3.5 Weathers.esp	
-Realistic Lighting Overhaul - 3.5 Dawnguard Weathers.esp
+// Moved Realistic Lighting From Here
 realrain.esp
   IF VAR(EN) && IF FILE("realrainBWRLWC.esp") SAY: Use only one realrain.esp
     IF VAR(RU) && IF FILE("realrainBWRLWC.esp") SAY: Используйте только один realrain.esp
@@ -11994,6 +11965,43 @@ TQC-OC.esp
   // Thieves Guild Shortcut - Open Cities compatible. Must be loaded after Open Cities.
 ENDGROUP: City Overhauls
 
+BEGINGROUP: Image Space and Lighting Changes
+
+BEGINGROUP: IMGS and LIGH Load Late
+
+REGEX: Realistic Lighting( - Full| - Addon)\.esp
+    IF VAR(RU) SAY: Используйте только один LightAdjuster esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+REGEX: RL - .*\.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+EnhancedLightsandFX.esp
+  // moved as suggested in bsg thread 28 post 105
+RLO - Dungeons for ELnFX.esp
+RLO - Illuminated Spells for ELnFX.esp
+RLO - Major City Interiors for ELnFX.esp
+RLO - Minor Cities & Town Interiors for ELnFX.esp
+  //placement for the above 4 entries as per BOSS thread 29; post 104
+Realistic Lighting.esp
+  IF CHECKSUM("Realistic Lighting.esp", 5F40F0F8) DIRTY: 247 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+REGEX: [Rr]eal[Rr]ain(BW)(Vanilla|RLWC2_2)\.esp
+  IFNOT FILE("Realistic Lighting.esp") REQ: Realistic Lighting with Customization
+Realistic Lighting Patcher.esp
+  // moved as suggested in bsg thread 28 post 105
+Realistic Lighting - Dawnguard Patch.esp
+  // moved as suggested in bsg thread 28 post 105
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Realistic Lighting Overhaul - Illuminated Spells.esp
+Realistic Lighting Overhaul - Dungeons.esp
+Realistic Lighting Overhaul - Minor Cities & Town Interiors.esp
+Realistic Lighting Overhaul - Major City Interiors.esp
+Realistic Lighting Overhaul - 3.5 Weathers.esp	
+Realistic Lighting Overhaul - 3.5 Dawnguard Weathers.esp
+ENDGROUP: IMGS and LIGH Load Late
+ENDGROUP: Image Space and Lighting Changes
+
 BEGINGROUP: Realism
 
 // realism mods
@@ -13379,228 +13387,7 @@ Vampiric_Drain_Fix.esp
 Vampiric_Drain_Fix_BloodChalice.esp
   IF FILE("Vampire Lord Serana Fixed.esp") INC: Vampire Lord Serana Fixed.esp
   IF FILE("Vampiric_Drain_Fix.esp") INC: Vampiric_Drain_Fix.esp
-Voice_of_the_Sky.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Voice_of_the_Sky.esp
 REGEX: WiS IV - AI & Spells for NPC( - No Knockdown)?\.esp
   IF VAR(EN) SAY: Use only one WiS IV - AI & Spells for NPC esp
     IF VAR(RU) SAY: Используйте только один WiS IV - AI & Spells for NPC esp
