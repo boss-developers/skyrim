@@ -1023,6 +1023,10 @@ VampireInvisibleItemsFix.esp
 VampiresHoodFix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
+vampirelorddrainlifefix.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+    IF FILE("Unofficial Dawnguard Patch.esp") WARN: Delete. Already included in 'Unofficial Dawnguard Patch.esp'
+// As per thread on the mod's Steam Workshop page http://steamcommunity.com/sharedfiles/filedetails/?id=89925318	
 Vulkanglas statt Malachit.esp
 
 // fixes w
@@ -2208,6 +2212,7 @@ Chesko_WearableLantern_Candle_DG.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Chesko_WearableLantern_Caravaner.esp
 Chesko_SwiftPotion.esp
+chopmorewood.esp
 SIWLPatch.esp
 ClamsDropPearls.esp
 Cliffracers.esp
@@ -2283,6 +2288,7 @@ CraftableCloudStorage(GS).esp
   IFNOT VAR(GS) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without the "http://skyrim.nexusmods.com/mods/18340 General Stores" mod.Niire's Proudspire(esm).esm
 CraftableEmptySoulstoneswithoutblack.esp
 REGEX: Craftable Soulstones.+\.esp
+craftablegold.esp
 craftablelockpicks.esp
 craftable soulgems.esp
 Craftable Soulstoneswithforge.esp
@@ -3619,6 +3625,7 @@ WantedPosters.esp
   IF CHECKSUM("WantedPosters.esp", 436EBC46) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit") 
     IF CHECKSUM("WantedPosters.esp", F5123590) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit") 
       IF CHECKSUM("WantedPosters.esp", 30717872) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+weir_weightlessingredient.esp	  
 WerewolfAftermathEquipper.esp
 WerewolfAftermathAutoEquipper.esp
 werewolfloadscreenreduction.esp
@@ -4346,6 +4353,10 @@ Lorecraft - Conan.esp
 Craftable Arrows.esp
 Craftable Artifacts.esp
 craftable bloodpotion.esp
+craftableboundweapons.esp
+  IF CHECKSUM("craftableboundweapons.esp", 01C2FAE4) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+craftable crossbows and bolts.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)  
 Craftable Dragon Priest Masks.esp
 Craftable Ebony Mail and Blade.esp
 REGEX: craftable gold coins \d?.+\.esp
@@ -8621,6 +8632,9 @@ NoDeathMod.esp
 Nordricks Grave.esp
 NoMoreAlter.esp
   // IF CHECKSUM("Inns and Taverns.esp", C43DB4D5) DIRTY: 116 ITM, 107 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit") 
+nomorecobwebsfortdawnguard.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+    IF CHECKSUM("nomorecobwebsfortdawnguard.esp.esp", 3081AFF2) DIRTY: 0 ITM, 91 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 Northern Bathhouses.esp
   IF CHECKSUM("Northern Bathhouses.esp", FBE79F4F) DIRTY: 96 ITM, 12 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
   IF CHECKSUM("Northern Bathhouses.esp", FBE79F4F) && IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
@@ -12584,6 +12598,10 @@ DarkBrotherhoodAstrid.esp
     IF VAR(RU) && IFNOT FILE("LegendarySouls.esp") SAY: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
   IF CHECKSUM("DarkBrotherhoodAstrid.esp", 20A8055D) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 db_voidassassin.esp
+dawnguardian thralls.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+dead thrall on anything.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
 Dead Thrall on Anything level 100.esp
 DeadlyTelekinesis.esp
   IF CHECKSUM("DeadlyTelekinesis.esp", 20A8055D) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
@@ -14683,6 +14701,9 @@ concentrated10.esp
 
 // perks d
 damage_skill.esp
+dawnguardwolfbuff.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+    IF CHECKSUM("dawnguardwolfbuff.esp", D06A5695) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 DUT-ExpandedPerks-Alchemy.esp
 DUT-ExpandedPerks-Alteration.esp
 DUT-ExpandedPerks-Archery.esp
