@@ -5095,6 +5095,8 @@ Holynegociator.esp
 HonestAbe.esp
 IFNOT VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
   TAG: {{BASH: Delev, Relev}}
+  IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 1B01C914) || IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 983EFB9E) WARN: This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches. It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.
+  IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 1B01C914) || IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 983EFB9E) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT FILE("SPIKE.esm") || IFNOT ACTIVE ("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT FILE("SPIKE.esm") || IFNOT ACTIVE ("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: SPIKE.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Deactivate}} and remove [Relev]
@@ -6680,6 +6682,8 @@ Lorecraft - Bandolier.esp
     IF VAR(RU) && IFNOT FILE("Dr_Bandolier.esp") WARN: 'Dr_Bandolier.esp' также необходим для работы!
 IF VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
   TAG: {{BASH: Delev, Relev}}
+  IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 1B01C914) || IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 983EFB9E) WARN: This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches.  It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.
+  IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 1B01C914) || IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 983EFB9E) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning guide")
   IFNOT ACTIVE ("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE ("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: SPIKE.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Deactivate}} and remove [Relev]
@@ -11224,26 +11228,62 @@ Skyrim Survival Suite - Nourriture.esp
   IF CHECKSUM("Survival Suite - Sommeil.esp", DD9D0F1A) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit") 
 Skyrim Survival Suite - Sommeil.esp  
 Sneak Tweak.esp
-SkyJubs_Invisible_Helmets_English_Main_1_2.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+REGEX: SkyJubs_Invisible_Helmets_English_Main_1_(2|3|3v|4|4v)\.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SkyJubs_Invisible_Helmets_Eng_Main.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyJubs_Invisible_Helmets_Eng_Main.esp.
+SkyJubs_Invisible_Helmets_Eng_Main.esp
+REGEX: SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF REGEX("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp
+SkyJubs_Invisible_Helmets_Eng_Main_OnlyHelmets.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF REGEX("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp
+SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+SkyJubs_Invisible_Helmets_Eng_Plugin_DragonboneEbonsteel.esp
+  WARN: This mod does not have DragonBoneEbonsteel.esp as a master. It will create duplicates instead of modifying the originals.
+SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+SkyJubs_Invisible_Helmets_Eng_Plugin_DragonKnightArmor.esp
+  WARN: This mod does not have DK_Armor_By_Hothtrooper44.esp as a master. It will create duplicates instead of modifying the originals.
+SkyJubs_Invisible_Helmets_Eng_Plugin_InquisitionSet.esp
+  WARN: This mod does not have Inquisitor Set.esp as a master. It will create duplicates instead of modifying the originals.
 SkyJubs_Invisible_Helmets_German_Main_1_2.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-SkyJubs_Invisible_Helmets_English_Main_1_3.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-SkyJubs_Invisible_Helmets_English_Main_1_3v.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-SkyJubs_Invisible_Helmets_English_Main_1_4.esp
-SkyJubs_Invisible_Helmets_English_Main_1_4v.esp
-  IF FILE("SkyJubs_Invisible_Helmets_English_Main_1_4.esp") INC: SkyJubs_Invisible_Helmets_English_Main_1_4.esp
-SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_2.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_3.esp
-  SAY: This mod does not have any of the HothTrooper44 Armor mods as a master. It will create duplicates instead of modifying the originals.
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp.
+SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+REGEX: SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp") INC: SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp
+SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp") INC: SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp
+  IF REGEX("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp
+  IF REGEX("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp
+SkyJubs_Invisible_Helmets_Ger_Main_OnlyHelmets.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF REGEX("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp") INC: SkyJubs_Invisible_Helmets_Ger_MainAll_Headdress.esp
+  IF REGEX("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp") INC: SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp
+SkyJubs_Invisible_Helmets_Ger_Plugin_Dawnguard.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp") INC: SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+SkyJubs_Invisible_Helmets_Ger_Plugin_Dragonborn.esp
+  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp") INC: SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+REGEX: SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_(2|3)\.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, a hothtrooper44_ArmorCompilation.esp replacement.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, hothtrooper44_ArmorCompilation.esp.
 Skyrim_Dragon Update.esp
   TAG: {{BASH: Delev, Relev}}
     // tags not tested
@@ -17024,8 +17064,12 @@ ethereal_elven_overhaul.esp
   IF VAR(EN) && IF FILE("SkyRe_Races.esp") && IFNOT CHECKSUM("ethereal_elven_overhaul.esp", 38515FFF) INC: SkyRe Races.  A compatibility patch is available "http://skyrim.nexusmods.com/mods/29185 here".
 //    IF VAR(RU) && IF FILE("SkyRe_Races.esp") SAY: Убедитесь, что используете совместимую версию, которую можно скачать "http://skyrim.nexusmods.com/mods/24273/ отсюда".
 EEO patch.esp
-  IFNOT ACTIVE("Skyre_Races.esp") ERROR: Skyre_Races.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-  IFNOT ACTIVE("ethereal_elven_overhaul.esp") ERROR: ethereal_elven_overhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT ACTIVE("Skyre_Races.esp") && IF VAR(EN) ERROR: Skyre_Races.esp is not present or is not active. Skyrim will CTD when loading if using this file without Skyre_Races.esp
+    IFNOT ACTIVE("Skyre_Races.esp") && IF VAR(RU) ERROR: Skyre_Races.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Skyre_Races.esp
+  IFNOT ACTIVE("ethereal_elven_overhaul.esp") && IF VAR(EN) ERROR: ethereal_elven_overhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without ethereal_elven_overhaul.esp
+    IFNOT ACTIVE("ethereal_elven_overhaul.esp") IF VAR(RU) ERROR: ethereal_elven_overhaul.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла ethereal_elven_overhaul.esp
   // Skyre compatibility patch
 Vampire Skin Color Fix.esp
   //reordered as per thread 29; post117
@@ -17684,7 +17728,7 @@ Perk Patch.esp
 RBS.esp
 ReProccer.esp
 WTF.esp
-  SAY: May need "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. Several test generations of this SkyProc Patch included ITMs. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+  SAY: May need "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. Several test generations of this SkyProc Patch included ITMs. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit Cleaning Guide")
 ENDGROUP: Dynamic Plugins
 
 /* Normaly only Dynamic plugins created by SkyProc go here.  Try to limit placing any plugins here.
