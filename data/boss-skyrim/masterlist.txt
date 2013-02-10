@@ -11437,8 +11437,8 @@ SneakNamira.esp
 Snotgurg Useful Food.esp
 SortPotionsRU.esp
 Soul Gems Rebalanced.esp
-REGEX: Soul Gems Differ.*\.esp
-Soul Gems Glow When Full.esp
+IF REGEX("Acquisitive Soul Gems( FR)?\.esp") REGEX: Soul Gems Differ.*\.esp
+IF REGEX("Acquisitive Soul Gems( FR)?\.esp") MOD: Soul Gems Glow When Full.esp
 SoultrapSummons.esp
 sparse start.esp
 SpecialGhostblade.esp
@@ -13331,6 +13331,8 @@ EmpoweredMagic_Dawnguard.esp
   IFNOT FILE("EmpoweredMagic.esp") REQ: EmpoweredMagic.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+IFNOT REGEX("Acquisitive Soul Gems( FR)?\.esp") MOD: Enhanced Soul Trap.esp
+  IF CHECKSUM("Enhanced Soul Trap.esp", C5F82F49) SAY: Use the Acquisitive Soul Gems non-compatible version.
 Even Smaller Spell Light Radius.esp
 
 // sp late f
@@ -13428,6 +13430,7 @@ MorePowerfulNecromancy.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, mpn.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, mpn.esp
 More Visible Soul Trap Effect.esp
+  SAY: This mod has been reported to have problems. Recommend removing and replacing with "http://skyrim.nexusmods.com/mods/30087 Enhanced Projectile Soul Trap"
 mpn.esp
 
 // sp late n
@@ -14713,11 +14716,14 @@ Third Era Attributes for Skyrim - Perks.esp
 Sneak Tools.esp
 Sneak Tools Vanilla Hoods.esp
 Sneak Tools Vanilla Masks.esp
-// Sneak Tools.esp - removed error message based on SkyRE changelog & revised load order to load after SkyRE as per Sneak Tools author's comments in thread 29; post 115
-REGEX: Acquisitive Soul Gems( FR)?\.esp
+  // Sneak Tools.esp - removed error message based on SkyRE changelog & revised load order to load after SkyRE as per Sneak Tools author's comments in thread 29; post 115
+IF REGEX("EmpoweredMagic.+\.esp") && IF VAR(SkyRe) REGEX: Acquisitive Soul Gems( FR)?\.esp
   // must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
-Enhanced Soul Trap.esp
-//Place directly below Acquisitive Soul Gems.esp as per author's discussion thread: http://skyrim.nexusmods.com/mods/30087
+IF REGEX("Acquisitive Soul Gems( FR)?\.esp") MOD: Enhanced Soul Trap.esp
+  IF CHECKSUM("Enhanced Soul Trap.esp", B4803235) SAY: Use the Acquisitive Soul Gems compatible version.
+  // Place directly below Acquisitive Soul Gems.esp as per author's discussion thread: http://skyrim.nexusmods.com/mods/30087
+IF REGEX("Acquisitive Soul Gems( FR)?\.esp") REGEX: Soul Gems Differ.*\.esp
+IF REGEX("Acquisitive Soul Gems( FR)?\.esp") MOD: Soul Gems Glow When Full.esp
 IF VAR(SkyReM) MOD: Artifact Disenchanting.esp
 IF VAR(SkyReM) MOD: Artifact Disenchanting - Dawnguard.esp
 IF VAR(SkyReM) MOD: FormsEdit.esp
