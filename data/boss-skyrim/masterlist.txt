@@ -3729,16 +3729,30 @@ REGEX: KoS_Outcast(_Lite)?\.esp
   IF VAR(EN) SAY: Use only one KoS_Outcast*.esp
     IF VAR(RU) SAY: Используйте только один KoS_Outcast*.esp
 CiviliansWillNotDie.esp
+  IF VAR(RU) WARN: Устарело, обновите до версии 0.7 и выше - CWND-Basic.esp
 CiviliansWillNotDieChild.esp
+  IF VAR(RU) WARN: Устарело, обновите до версии 0.7 и выше - CWND-KillChild.esp
   IF FILE("CiviliansWillNotDie.esp") INC: CiviliansWillNotDie.esp
   IF VAR(RU) SAY: Данная версия мода убирает в детских расах пометку "Child".
-CiviliansWillNotDiePatches.esp
+CiviliansWillNotDiePatches.esp - CWND-UnofficialPatches.esp
+  IF VAR(RU) WARN: Устарело, обновите до версии 0.7 и выше - CWND-UnofficialPatches.esp
   IF FILE("CiviliansWillNotDie.esp") INC: CiviliansWillNotDie.esp
   IF FILE("CiviliansWillNotDieChild.esp") INC: CiviliansWillNotDieChild.esp
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", C0754EA7) && IF VERSION("TES5", "1.7", <) REQ: Skyrim 1.7+
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", 2336B8B8) && IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
   IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch
   IF CHECKSUM("CiviliansWillNotDiePatches.esp", C0754EA7) SAY: Устарело. Обновите до "http://modgames.net/load/247-1-0-13970 CiviliansWillNotDiePatches.esp" 0.6+
+CWND-Basic.esp
+  IF VAR(RU) && IFNOT VERSION("TES5", "1.6.89.0.6", =) REQ: Skyrim 1.6.89.0.6
+  IF VAR(RU) && IFNOT FILE("CWND-UnofficialPatches.esp") && IF VERSION("TES5", "1.8.151.0.7", =) WARN: Не работает с версиями Скайрим 1.8.151.0.7 и выше. Используйте вместо этого альтернативную версию - CWND-UnofficialPatches.esp
+  IF VAR(Dragonborn) && IFNOT FILE("CWND-Dragonborn.esp") REQ: CWND-Dragonborn.esp
+CWND-KillChild.esp
+CWND-UnofficialPatches.esp
+  IF VAR(RU) && IF VERSION("TES5", "1.8.151.0.7", <) REQ: Skyrim 1.8.151.0.7+
+  IF VAR(RU) && IF FILE("CWND-Basic.esp") INC: CWND-Basic.esp
+  IF VAR(Dragonborn) && IFNOT FILE("CWND-Dragonborn.esp") REQ: CWND-Dragonborn.esp
+CWND-Dragonborn.esp
+  IFNOT VAR(Dragonborn) REQ: Dragonborn DLC
 Darwins_Primitive_Times.esp
 REGEX: DarwinsHT_.+\.esp
 Destructible_bottles.esp
