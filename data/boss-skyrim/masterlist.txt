@@ -807,7 +807,6 @@ Conjuration Fix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
 correctif ombres.esp
-Correctif - Skyrim.esp
 CriticalChargeFix.esp
   IFNOT CHECKSUM("CriticalChargeFix.esp", A35E7560) WARN: Obsolete. Update to current version to fix a corrupted file.
   IF VAR(EN) && IF FILE("PerkUP-TwoHanded.esp") WARN: Delete. Already included in 'PerkUP-TwoHanded.esp'
@@ -1057,6 +1056,7 @@ USKP_addon ENG.esp
 
 // fixes that must load after USKP
 Arrow and Imperial Armor Fix.esp
+Correctif - Skyrim.esp
 RaceCompatibilityUSKPOverride.esp
 ENDGROUP: Vanilla fixes
 
@@ -5798,6 +5798,8 @@ Nine_Divines_Amulet_nonOP.esp
     IF VAR(RU) SAY: Устарело обновите до последней версии..
 Nine_Divines_Amulet_nonOP_1.1.esp
   IF FILE("Nine_Divines_Amulet_1.1.esp") INC: Nine_Divines_Amulet_1.1.esp
+ninjaarmor.esp
+  IF CHECKSUM("ninjaarmor.esp", 6A5C0876) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ninjatos.esp
 Nocturnal Spirit.esp
 Noble Coliseum Champion Armour.esp
@@ -8651,6 +8653,18 @@ MeekoHusky.esp
 MeekoHuskyEssential.esp	
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF FILE("MeekoHusky.esp") && IF VAR(EN) WARN: Use only one of MeekoHusky *.esp
+    IF FILE("MeekoHusky.esp") && IF VAR(RU) WARN: Используйте только один of MeekoHusky *.esp
+MeekoHuskyArmored.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF FILE("MeekoHusky.esp") || IF FILE("MeekoHuskyEssential.esp") && IF VAR(EN) WARN: Use only one of MeekoHusky *.esp
+    IF FILE("MeekoHusky.esp") || IF FILE("MeekoHuskyEssential.esp") && IF VAR(RU) WARN: Используйте только один of MeekoHusky *.esp
+MeekoHuskyArmoredEssential.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF FILE("MeekoHusky.esp") || IF FILE("MeekoHuskyArmored.esp") || IF FILE("MeekoHuskyEssential.esp") && IF VAR(EN) WARN: Use only one of MeekoHusky *.esp
+    IF FILE("MeekoHusky.esp") || IF FILE("MeekoHuskyArmored.esp") || IF FILE("MeekoHuskyEssential.esp") && IF VAR(RU) WARN: Используйте только один of MeekoHusky *.esp
 MercenaryGuild.esp
   IF CHECKSUM("MercenaryGuild.esp", 8539027A) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("MercenaryGuild.esp", 9801AAA0) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -12227,6 +12241,11 @@ ClimatesOfTamriel-Interiors-Cold.esp
 ClimatesOfTamriel-Interiors-Warm.esp
   IF FILE("ClimatesOfTamriel-Interiors-Cold.esp") INC: ClimatesOfTamriel-Interiors-Cold.esp
   INC: Realistic Lighting Overhaul
+NoEyeAdaptation.esp
+NoEyeAdaptation - Climates of Tamriel.esp
+NoEyeAdaptation - RCRN Shaders.esp 
+NoEyeAdaptation - Realistic Lighting.esp 
+NoEyeAdaptation - URWL.esp 
 ENDGROUP: IMGS and LIGH Load Late
 ENDGROUP: Image Space and Lighting Changes
 
@@ -15262,6 +15281,12 @@ Grimoa_83WillowsDreadlocks_Nonreplacing.esp
 hair.esp
 Hair-Specular Fix.esp
 hornsareforever.esp
+KidsColouredEyesV2.esp
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+KidsColouredEyesNoHF.esp
+  IF FILE("KidsColouredEyesV2.esp") && IF VAR(EN) WARN: Use either KidsColouredEyesV2.esp or KidsColouredEyesNoHF.esp, not both.
+    IF FILE("KidsColouredEyesV2.esp") && IF VAR(RU) WARN: Используйте любой или KidsColouredEyesV2.esp или KidsColouredEyesNoHF.esp, не обa.
 LovelyHairstyles.esp
 LovelyHairstylesLITE.esp
   IF FILE("LovelyHairstyles.esp") && IF VAR(EN) WARN: Use either LovelyHairstyles.esp or LovelyHairstylesLITE.esp, not both.
@@ -15444,6 +15469,9 @@ HBR_OhmesRaht(Khajiit)_Standalone.esp
   IF CHECKSUM("HBR_OhmesRaht(Khajiit)_Standalone.esp", 6BC5C8FE) DIRTY: 42 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Kaleen2.esp
 LunariRace.esp
+BMatera.esp
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility". 
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 Matera.esp
   IF CHECKSUM("Matera.esp", 1E48287E) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 matera race eye.esp
@@ -17913,6 +17941,7 @@ RBS.esp
 ReProccer.esp
 ReProccerNONPLAYERfix.esp
 WIC ReProccer Patch.esp
+Miscellaneous ReProccer Patch.esp
 WTF.esp
   SAY: May need "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. Several test generations of this SkyProc Patch included ITMs. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ENDGROUP: Dynamic Plugins
