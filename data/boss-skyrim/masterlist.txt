@@ -3537,6 +3537,7 @@ Tamriel Compendium - Skill Books.esp
   // Requires TAG: {{BASH: Relev}} ?
 REGEX: Tamriel Compendium( -)?( Skill Book Version)?\.esp
   TAG: {{BASH: Relev}}
+Telvanni Bug Musk.esp
 test silver.esp
 ThalmorBanditVamp.esp
 thalmorimmersiondialogue.esp
@@ -5599,6 +5600,7 @@ Maxwell Outfit.esp
 REGEX: Mechanos Dwemer SteamPunk - .+\.esp
 ME3 MP Armours.esp
 MECR_Classic_Nord_Shields.esp
+Medusa and Drakul Armors.esp
 MegaShields.esp
 Melt_Down_Everything.esp
   IF VERSION("SKSE", "0.1.5.9", <) REQ: "http://skse.silverlock.org SKSE" 1.5.9+
@@ -6412,6 +6414,7 @@ ThalmorEliteArmor.esp
 ThalmorRobesEnchantment.esp
 ThalmorRobesEnchantment_2.esp
 ThalmorStandalone.esp
+Thanatos Dragonx.esp
 Thane's Blade.esp
 THBoneHawkRingCraftable.esp
 THCraftableVampireArmory.esp
@@ -7340,6 +7343,7 @@ ENDGROUP: ERSO End
 
 BEGINGROUP: Overhauls Load Late
 
+MIDFollowMeCloser.esp
 mehrdrachenstufen.esp
   TAG: {{BASH: Relev}}
 ENDGROUP: Overhauls Load Late
@@ -8637,6 +8641,9 @@ REGEX: MB_GreyHaven_(1|2).*\.esp
   WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".  
     IF CHECKSUM("MB_GreyHaven_1.esp", C2739EE3) || IF CHECKSUM("MB_GreyHaven_2.esp", F80BC53C) DIRTY: 20 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 MeekoHusky.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+MeekoHuskyEssential.esp	
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 MercenaryGuild.esp
@@ -17772,11 +17779,13 @@ Compatibility Patch - PHL WIC.esp
 Cooking Expanded - RND Support.esp	
 GDFoodCompatability.esp
 HelmetToggle - Omegared99ArmorCompilation Patch.esp
+RND_RWLReduced-Patch.esp
 SPTConsistentOlderPeopleEEOPatch.esp
   IFNOT FILE("ethereal_elven_overhaul.esp") || IFNOT ACTIVE ("ethereal_elven_overhaul.esp") && IF VAR(EN) ERROR: ethereal_elven_overhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT FILE("ethereal_elven_overhaul.esp") || IFNOT ACTIVE ("ethereal_elven_overhaul.esp") && IF VAR(RU) ERROR: ethereal_elven_overhaul.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IFNOT FILE("SPTConsistentOlderPeople.esp") || IFNOT ACTIVE ("SPTConsistentOlderPeople.esp") && IF VAR(EN) ERROR: SPTConsistentOlderPeople.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT FILE("SPTConsistentOlderPeople.esp") || IFNOT ACTIVE ("SPTConsistentOlderPeople.esp") && IF VAR(RU) ERROR: SPTConsistentOlderPeople.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+RND_RWLReduced-Patch.esp 
 REGEX: SSS .+ Patch\.esp
 SSS Deadly Dragons Patch A.esp
 SSS Deadly Dragons Patch B.esp
@@ -17786,6 +17795,7 @@ SSS Deadly Dragons Patch C.esp
 SSS Immersive Armors Add-on.esp
 TD&UV Patch .esp
 The Asteria - Dwemer Airship(GS).esp
+towHarvestDLCPatch_DBDG.esp
 TRO_BasicNeeds_WATERPatch.esp
 /* Must load after WATER */
 WP - UFO1.2i - Patch.esp
@@ -17896,6 +17906,7 @@ Perk Patch.esp
 RBS.esp
 ReProccer.esp
 ReProccerNONPLAYERfix.esp
+WIC ReProccer Patch.esp
 WTF.esp
   SAY: May need "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. Several test generations of this SkyProc Patch included ITMs. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ENDGROUP: Dynamic Plugins
