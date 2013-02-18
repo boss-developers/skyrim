@@ -63,8 +63,8 @@ IF ACTIVE("Dragonborn.esm") SET: Dragonborn
 //
 // Plugins
 IF ACTIVE("ApachiiHair.esm") SET: ApachiiHair
-IF FILE("ApachiiHairFemales.esm") SET: ApachiiHairF
-IF FILE("ApachiiHairMales.esm") SET: ApachiiHairM
+IF ACTIVE("ApachiiHairFemales.esm") SET: ApachiiHairF
+IF ACTIVE("ApachiiHairMales.esm") SET: ApachiiHairM
 IF FILE("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
 IF ACTIVE("BBLuxurySuite.esm") SET: BBLS
 IF REGEX("BertsBreezehome.+\.es[pm]") SET: BertsBHInst
@@ -1058,6 +1058,7 @@ USKP_addon ENG.esp
 Arrow and Imperial Armor Fix.esp
 Correctif - Skyrim.esp
 RaceCompatibilityUSKPOverride.esp
+USKP Patcher for RaceCompatibility.esp
 ENDGROUP: Vanilla fixes
 
 BEGINGROUP: DLC Fixes
@@ -1255,6 +1256,12 @@ Farkas v2.esp
 Farkas v3.esp
 Fianna.esp
 Fixed Pureblood Vampires.esp
+Follower_Addon_1_1_.esp
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair.esm". 
+  IFNOT VAR(ApachiiHairF) ERROR: ApachiiHairFemales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemales.esm". 
+  IFNOT VAR(ApachiiHairM) ERROR: ApachiiHairMales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairMales.esm". 
+Follower_Addon_V2_.esp
+  IF FILE("Follower_Addon_1_1_.esp") INC: Follower_Addon_1_1_.esp
 FraliaGrayMane.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("FraliaGrayMane.esp", D017BDCC) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -1336,7 +1343,11 @@ NPC_Hair_Rep_Forsworn_Bandit.esp
 NPC_Hair_Rep_Necro.esp
   IF VAR(EN) REQ: "http://skyrim.nexusmods.com/mods/10168 Apachii", Coolsims Hair
 NPC_Overhaul_1_1_.esp
-   IFNOT VAR(ApachiiHair) || IFNOT VAR(ApachiiHairF) || IFNOT VAR(ApachiiHairM) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair, ApachiiSkyHairFemales & ApachiiSkyHairMale"
+  IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair.esm". 
+  IFNOT VAR(ApachiiHairF) ERROR: ApachiiHairFemales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair.esm". 
+  IFNOT VAR(ApachiiHairM) ERROR: ApachiiHairMales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair.esm". 
+NPC_Overhaul_V2_.esp
+  IF FILE("NPC_Overhaul_1_1_.esp") INC: NPC_Overhaul_1_1_.esp
 NPC_Hair_Replace_Bandit_Forsworn.esp
   IF VAR(EN) REQ: "http://skyrim.nexusmods.com/mods/10168 Apachii", Coolsims Hair
 
@@ -5211,9 +5222,6 @@ ENDGROUP: Items H
 
 BEGINGROUP: Items I
 
-Ironman5000 Weapon Overhaul.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, I5KWeaponOH.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, I5KWeaponOH.esp
 I5KWeaponOH.esp
   TAG: {{BASH: Delev, Relev}}
 ibr_sedethul.esp
@@ -5231,6 +5239,8 @@ Imperial_Greek armor.esp
 InfernoGreatSword.esp
 InfinityBlade.esp
 Infinity Blade Hero Set.esp
+InigoPerkPointGiver.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
 Inquisitor Set.esp
 InsanitysCelticKatana.esp
   IF FILE("SkyRe_Plugin_InsanitysCelticKatana_1.2.esp") TAG: {{BASH: Deactivate}}
@@ -5262,14 +5272,17 @@ Invisible_Helm.esp
   IF CHECKSUM("Invisible_Helm.esp", 3EE48471) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records. It should be removed.
 InvisibleArmorSets.esp
 InvisRing.esp
+IorvethLightArmor_v_1_3.esp
+Iorveth.esp
+Ironman5000 Weapon Overhaul.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, I5KWeaponOH.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, I5KWeaponOH.esp
 ISDBlackSting.esp
 IsilGlamdring.esp
 isilNarsil.esp
   IF FILE("SkyRe_Plugin_isilNarsil.esp") TAG: {{BASH: Deactivate}}
   IF CHECKSUM("isilNarsil.esp", A43571C0) DIRTY: 15 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Lorecraft - isilNarsil.esp
-IorvethLightArmor_v_1_3.esp
-Iorveth.esp
 Ivory.esp
 IVth_Imperial_Legion_Revamp.esp
 ENDGROUP: Items I
@@ -6917,6 +6930,13 @@ Bouilleur de cru.esp
 enhancedgameplay.esp
 Expanded Apothecary Inventory.esp
   IF CHECKSUM("Expanded Apothecary Inventory.esp", 761777FF) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Grimy_Enchantment.esp
+  // four diferent versions with same name
+  TAG: {{BASH: Relev}}
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("Grimy_Enchantment.esp", 7A9291E3) || IF CHECKSUM("Grimy_Enchantment.esp", 4C1F39C0) DIRTY: 47 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Grimy_Enchantment.esp", E8494AAE) || IF CHECKSUM("Grimy_Enchantment.esp", DFEB1716) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HarvestOverhaul.esp
 HarvestOverhaulDawnguard.esp
 HarvestOverhaulCreatures.esp
