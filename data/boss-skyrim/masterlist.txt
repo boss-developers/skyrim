@@ -2019,6 +2019,10 @@ arrowsmith-dawnguard.esp
   IF VAR(EN) && IF FILE("arrowsmith-dawnguard.esp") && IF VAR(CCO) ERROR: Delete. arrowsmith-dawnguard.esp already included in Complete Crafting Overhaul.
     IF VAR(RU) && IF FILE("arrowsmith-dawnguard.esp") && IF VAR(CCO) ERROR: Удалите. arrowsmith-dawnguard.esp уже включен в мод Complete Crafting Overhaul.
 	// Not sure but SkyRe_Main.esp is requires the Dawnguard DLC and includes Arrowsmith.esp
+arrowboltupgrades.esp
+  TAG: {{BASH: Relev}}
+    IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+      IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)	
 Ars Metallica.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 Ars Metallica - Dawnguard.esp
@@ -2309,6 +2313,7 @@ Craftable and Placeable Havok-enabled Bedrolls .esp
 craftable - draugr.esp
 CraftableCloudStorage(GS).esp
   IFNOT VAR(GS) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without the "http://skyrim.nexusmods.com/mods/18340 General Stores" mod.Niire's Proudspire(esm).esm
+CraftableEbonyMail.esp
 CraftableEmptySoulstoneswithoutblack.esp
 REGEX: Craftable Soulstones.+\.esp
 craftablegold.esp
@@ -2583,6 +2588,7 @@ Four New Dragons.esp
 fpImmersiveMiningFull.esp
 fpImmersiveMiningLite.esp
 fpImmersiveMiningPickaxes.esp
+Free travel to any holds.esp
 FullyEquippedBlacksmiths.esp
 Furbag.esp
 REGEX: FurnitureLootOverhaul(_3.0)?\.esp
@@ -2649,6 +2655,8 @@ GSTH.esp
 guardedborders.esp
 GuardianStonesExpanded.esp
   IF CHECKSUM("GuardianStonesExpanded.esp", BDBF79E7) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+guard's don't change outfits.esp
+  IF CHECKSUM("guard's don't change outfits.esp", 62B9ED5B) DIRTY: 39 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 GuardsGuardThePlayer.esp
 GuessDistance.esp	   
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
@@ -3206,6 +3214,7 @@ ENDGROUP: Base P
 BEGINGROUP: Base Q
 
 questknowledge.esp
+quiet_whiterun_kids.esp
 q mannequins and more.esp
 ENDGROUP: Base Q
 
@@ -4270,6 +4279,7 @@ Blindfolds_of_Skyrim.esp
 bloodscale.esp
 BloodWitchArmor.esp
 bluearchmage.esp
+blueglasst.esp
 BlueJeans.esp
 blueswordcrafter.esp
 BlutKult_Dwarven_Axes.esp
@@ -6904,6 +6914,8 @@ REGEX: Smithing Perks Overhaul( - Balanced)?.esp
     IF VAR(RU) && IF FILE("Smithing Perks Overhaul - Balanced.esp") && IF FILE("Smithing Perks Overhaul.esp") SAY: Используйте только один мод - Smithing Perks Overhaul.esp или Smithing Perks Overhaul - Balanced.esp
   IF VAR(EN) && IF FILE("Complete Crafting Overhaul.esp") SAY: Use 'Smithing Perks Overhaul - Balanced.esp' with Complete Crafting Overhaul mod
     IF VAR(RU) && IF FILE("Complete Crafting Overhaul.esp") SAY: С модом Complete Crafting Overhaul используйте 'Smithing Perks Overhaul - Balanced.esp'
+Smithing Perks Overhaul - ITA.esp
+Smithing Perks Overhaul - Balanced - ITA.esp	
 REGEX: Complete Crafting Overhaul( - BS version)?\.esp
   IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Complete Crafting Overhaul.esp", 8534CD3C) && IFNOT CHECKSUM("Complete Crafting Overhaul - BS version.esp", 193D9214) SAY: Does not contain unexpected (or out of order) records or TESVSnip truncation issues as found in other mods by various authors.  However, a newer esp fixed and cleaned with TES5Edit can be obtained here that may provide added stability. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
   IF FILE("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
@@ -8456,6 +8468,9 @@ HoneySmithy2.esp
 HOUSE - Whiterun Ruins.esp
   IF CHECKSUM("HOUSE - Whiterun Ruins.esp", 8AB21225) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 House1.esp
+HOUSE - Noble Breezehome.esp
+HOUSE - Noble Breezehome (Stand Alone).esp
+  IF CHECKSUM("HOUSE - Noble Breezehome (Stand Alone).esp", 1C3282B2) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HouseOfHorrorsAlternateEnding.esp
 houseofredaspens.esp
 HousesofSkyrimConnected.esp		
@@ -10970,6 +10985,8 @@ ManlyLonghammer.esp
 Mannequin Infinitus.esp
 Mannequin.esp
 MannequinReplacerImperial.esp
+MannequinReplacerImperialFemal.esp
+MannequinReplacerNord.esp
 SNPrettyMannequins.esp
 Marriage Expanded.esp
 Marriable Serana.esp
@@ -16469,6 +16486,7 @@ SNMelissa.esp
 Michelle.esp
 Mina.esp
 Misha.esp
+MistiBalue.esp
 Mjoll.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("Mjoll.esp", CD371A27) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
