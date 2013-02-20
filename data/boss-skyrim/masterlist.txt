@@ -7677,6 +7677,10 @@ IF FILE("BetterBreezehome.esp") MOD: FalkreathCastle.esp
 betterbreezehome.esp
   IF VAR(BertsBHInst) INC: BertsBreezeRemodel
 BetterCitiesWindhelm.esp
+REGEX: bettercities(morebees|docksolitude|jarlshouses|newfarm)?\.esp
+  IF CHECKSUM("bettercitiesdocksolitude.esp", 953F6085) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+    IF CHECKSUM("bettercitiesjarlshouses.esp", 776C8B0D) DIRTY: 0 ITM, 54 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+      IF CHECKSUM("bettercitiesnewfarm.esp", 3F73AFCE) DIRTY: 1 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 BetterDarkBrotherhood.esp
   IF CHECKSUM("BetterDarkBrotherhood.esp", 06E40868) DIRTY: 118 ITM, 27 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BetterDGEntrance.esp
@@ -16223,6 +16227,8 @@ ElizaValentine.esp
 Ellette.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 EmilieFrost.esp
+REGEX: EncHorse(Black|BlackAndWhite|Brown|Grey|Palomino|SaddledBlack|SaddledBlackAndWhite|SaddledBrown|SaddledGrey|SaddledPalomino)?\.esp	
+  WARN: This file contains unexpected (or out of order) records and it should be removed.
 eola1.3.esp
 Erik.esp
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version. "http://skyrim.nexusmods.com/mods/20729 Ashara's Follower Faces"
@@ -16257,6 +16263,10 @@ Fezzik the Giant.esp
   IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 FFBosmer.esp
+FFDogs.esp
+  IF Checksum ("FFDogs.esp", 907CBDCD) WARN: Broken as per "http://skyrim.nexusmods.com/mods/30297 author's notes"	
+REGEX: FF(Bretons|BretonClaribelle|Imperials|Redguards)?\.esp	  
+  IF CHECKSUM("FFBretonClaribelle.esp", CA543D50) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 FFNordDawsyn.esp
   IF FILE("FFNords.esp") ERROR: Included in FFNords.esp
   IF CHECKSUM("FFNordDawsyn.esp", 77750ED7) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
