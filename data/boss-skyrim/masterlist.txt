@@ -163,6 +163,9 @@ ApachiiHair.esm
 ApachiiHairFemales.esm
 ApachiiHairMales.esm
 FallOut3Hairs.esm
+MoT_First_LoadOrder_File_After_Skyrim.esm
+  IF CHECKSUM("MoT_First_LoadOrder_File_After_Skyrim.esm",  6D3163AD)|| IF CHECKSUM("MoT_First_LoadOrder_File_After_Skyrim.esm",  14FF794F)  WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".  
+    IF CHECKSUM("MoT_First_LoadOrder_File_After_Skyrim.esm", 6D3163AD) DIRTY: 11 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 oblivion hair.esm
 Oblivion hair2.esm
 RaceCompatibility.esm
@@ -2619,6 +2622,10 @@ GBob_More_Minor_Vendors.esp
 GDAmulets.esp
 gemstoneconversion.esp
 general npc fixes.esp
+REGEX: GeneralStores(Proudspire|Breezehome|VlindrelHall|Honeyside)?\.esp
+  IFNOT File ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
+    IF CHECKSUM("GeneralStoresVlindrelHall.esp", 3AA2C5E6) DIRTY: 0 ITM, 8 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+      IF CHECKSUM("GeneralStoresHoneyside.esp", 6F6C3A0C) DIRTY: 0 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 GenebrisTreasureChests.esp
   TAG: {{BASH: Delev, Relev}}
   // not sure about Delev
@@ -2773,6 +2780,7 @@ increasegrassdensity.esp
 IngredientsOfTamriel.esp
 IngredientStore.esp
 ingridtheartist.esp
+REGEX: Intense Difficulty (2x|4x|8x|16x|32x)?\.esp
 invulnerablestandardhorses.esp
 invulnerableuniquehorses.esp
 Invulnerable Horses - Brave.esp
@@ -8792,6 +8800,7 @@ morthalslegacy.esp
 Mother_of_Tears_Contracts_Eng.esp
 Mother_of_Tears_Dungeons.esp
 Mother_of_Tears_Epics_Eng.esp
+REGEX: MoT - (Misc 1|Scripts 1|Sounds 1|Visual 1|Visual 2|Visual 3|Visual 4)?\.esp
 MouthoftheWorld.esp
   IF CHECKSUM("MouthoftheWorld.esp", A9EA7BA5) DIRTY: 43 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here". 
 mtBalRuhn.esp
@@ -16550,6 +16559,7 @@ My_Little_kitty_non_replaced.esp
 
 // companions n
 Natural Characters and Companions.esp
+REGEX: new(jenassa|lydia)?\.esp
 Nirana.esp
 njada1a.esp
 njada1b.esp
@@ -17893,6 +17903,15 @@ Compatibility Patch - PHL WIC.esp
     IFNOT FILE("1nivWICCloaks.esp") || IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
 Cooking Expanded - RND Support.esp	
 GDFoodCompatability.esp
+GeneralStores(CCS-DG).esp
+  IFNOT FILE ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
+    IF FILE ("GeneralStores(CCS-DG).esp") && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+GeneralStores(CCS-DG-HF).esp
+  IFNOT FILE ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm   
+	IF FILE ("GeneralStores(CCS-DG-HF)") && IFNOT VAR(Dawnguard)|| IFNOT VAR(Hearthfire) ERROR: REQUIRES BOTH Dawnguard.esm and Hearthfires.esm. Skyrim will CTD when loading if using this file without Dawnguard AND Hearthfires (Official Bethesda DLC)
+GeneralStores(CCS-HF).esp
+  IFNOT FILE ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
+    IF FILE ("GeneralStores(CCS-HF).esp") && IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
 HelmetToggle - Omegared99ArmorCompilation Patch.esp
 RND_RWLReduced-Patch.esp
 SPTConsistentOlderPeopleEEOPatch.esp
@@ -17957,6 +17976,10 @@ HM_HotkeyMod.esp
   IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IF VAR(UFO) WARN: UFO detected.  Use the UFO version to have the mod work as intended.
   IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IFNOT VAR(UFO) ERROR: UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.
   IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+MoT_Last_LoadOrder_File.esp
+// Author's "http://skyrim.nexusmods.com/mods/6272 notes" say to place at the end of the load order
+  IF CHECKSUM("MoT_Last_LoadOrder_File.esp",  211C2134)|| IF CHECKSUM("MoT_Last_LoadOrder_File.esp",  442E1E10)  WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".  
+    IF CHECKSUM("MoT_Last_LoadOrder_File.esp", 211C2134) DIRTY: 180 ITM, 51 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")  
 PTAlchemyOverhaul_SkillRate_0_33.esp
 // PTAlchemyOverhaul_SkillRate_x_xx musxt load after anything that changes leveling rate of skill
   SAY: Use only one of the PTAlchemyOverhaul_SkillRate_x_x.esp
