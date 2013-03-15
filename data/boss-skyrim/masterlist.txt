@@ -345,6 +345,7 @@ Extended Colors.esm
 Eyja 1.5.esm
 
 // esms f
+Fantasy Music Overhaul.esm
 Farkasv2.esm
 FluxMOD_ArtifactEffectPerk.esm
 FM - HaafingarHall.esm
@@ -6653,6 +6654,7 @@ UnderC.esp
 REGEX: UniqueLeveledItemsUpgrade(1dot3)?\.esp
   IF VAR(EN) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Устарело. Обновите до последней версии.
+Unique Uniques.esp
 UniqueRadiantAndPartyClothes.esp
 UnKindBow.esp
 UNPArmoredBikini.esp
@@ -10273,6 +10275,12 @@ BetterNordHeroWeapons.esp
   IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 BetterQuestObjectives.esp
+BetterQuestObjectives-Dawnguard.esp
+   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+BetterQuestObjectives-Hearthfire.esp
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
 IF REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 Headbomb's Better Sorting - Ammo.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Ammo.esp", 58924631) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -17690,6 +17698,9 @@ IF FILE("Purewaters.esp") MOD: realrainextended.esp
 PurewatersDG.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+PurewatersDB.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 RND_PureWaters-Patch.esp
 RealisticWaterTextures.esp
   IF VAR(EN) && IF FILE("WATER.esp") WARN: DELETE. Use WATER.esp instead
@@ -18061,13 +18072,13 @@ Cooking Expanded - RND Support.esp
 GDFoodCompatability.esp
 GeneralStores(CCS-DG).esp
   IFNOT FILE ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
-    IF FILE ("GeneralStores(CCS-DG).esp") && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 GeneralStores(CCS-DG-HF).esp
   IFNOT FILE ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm   
-	IF FILE ("GeneralStores(CCS-DG-HF)") && IFNOT VAR(Dawnguard)|| IFNOT VAR(Hearthfire) ERROR: REQUIRES BOTH Dawnguard.esm and Hearthfires.esm. Skyrim will CTD when loading if using this file without Dawnguard AND Hearthfires (Official Bethesda DLC)
+	IFNOT VAR(Dawnguard)|| IFNOT VAR(Hearthfire) ERROR: REQUIRES BOTH Dawnguard.esm and Hearthfires.esm. Skyrim will CTD when loading if using this file without Dawnguard AND Hearthfires (Official Bethesda DLC)
 GeneralStores(CCS-HF).esp
   IFNOT FILE ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
-    IF FILE ("GeneralStores(CCS-HF).esp") && IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
 HelmetToggle - Omegared99ArmorCompilation Patch.esp
 RND_RWLReduced-Patch.esp
 SPTConsistentOlderPeopleEEOPatch.esp
