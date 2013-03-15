@@ -1,0 +1,41 @@
+/* This file contains messages that are used frequently throughout the Skyrim masterlist (to be used for quick reference/pasting)
+
+Translations are also provided where possible. Please try to include these whenever you use corresponding messages.
+Remember to include the spacing in front of messages.
+
+Note: The point of standardizing messages is so that everyone is on the same page and the messages users recieve are consistent. They will be identifiable quickly and easily to both users and comitters.
+ */
+//
+// ================================================================
+//
+// DLC Dependancy Messages
+//
+// Dawnguard Dependancy
+//
+   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+//
+// Hearthfire Dependancy
+//
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+//
+// Dragonborn Dependancy
+//
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+//
+//
+// ================================================================
+//
+// Dirty Messages
+//
+// ITTM and UDR
+//
+  IF CHECKSUM("plugin", Checksum) DIRTY: x ITM, y UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+// Remember to fill in the appropriate details.
+//
+// Deleted Navmesh
+//
+  IF CHECKSUM("plugin", Checksum) && IF VAR(EN) WARN: This file contains x deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("plugin", Checksum) && IF VAR(RU) WARN: Этот файл содержит x удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
