@@ -563,6 +563,7 @@ SC_Drow Race.esm
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, DrowRace.esp
 SkyrimForBattle.esm
 SCoL Main.esm
+SexiS.esm
 Sexy Crafting Merchants.esm
 SG_BlacksmithsCavern.esm
   IF CHECKSUM("SG_BlacksmithsCavern.esm", 564D3A3B) DIRTY: 20 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -1816,7 +1817,7 @@ esisenviropack.esp
 Fantasy Music Full Replace.esp
 Fantasy Music Non-Replace.esp
 REGEX: FMO - (Non-Replacer Version|Replacer Version)?\.esp
-  IF VAR(EN) WARN: Outdated. Please obtain the latest version from "http://skyrim.nexusmods.com/mods/28583 Skyrim Nexus".
+  WARN: Outdated. Please obtain the latest version from "http://skyrim.nexusmods.com/mods/28583 Skyrim Nexus".
 Fantasy Music Overhaul.esp
 fantasy music overhaul - no vanilla music.esp
 fantasy music overhaul - unique town music.esp
@@ -15487,6 +15488,8 @@ ActionPoser.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
 AP Skyrim.esp
   WARN: Obsolete? Esp not included in latest version.
+AP Skyrim-Dev.esp
+  IF CHECKSUM("AP Skyrim-Dev.esp", EF92E2EE) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BySbire_FemaleBehavoir.esp
 dD-No Spinning Death Animation.esp
 DIWS_SlowerWalk.esp
@@ -15539,6 +15542,8 @@ IFNOT FILE("3DNPC.esp") MOD: RND_NCVE-FAMP.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_DestructibleBottles-FAMP.esp
 potsanimated.esp
 See YourSelf drink and eat.esp
+SexiSCupid.esp
+  IFNOT FILE("SexiS.esm") ERROR: SexiS.esm is not present or is not active. Skyrim will CTD when loading if using this file without SexiS
 Shake it!.esp
 ShakeIt.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
@@ -15804,7 +15809,7 @@ New Playable Races by Budcat v4.0.esp
 NewSuccubusRace.esp
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
   IF VAR(EN) && IF CHECKSUM("NewSuccubusRace.esp", F3C4E9C8) DIRTY: 94 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  WARN: Mod contains undeleted French data that will conflict with all magic overhauls that add spell-damage scaling. 
+  WARN: Mod contains undeleted French data that might cause conflicts. If this becomes a problem, please contact the author and urge them to clean their mod.
 Nidia Race.esp
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility". 
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
@@ -17357,6 +17362,11 @@ mjhKhajiitSpeakDLC - Hearthfire.esp
     IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+mjhKhajiitSpeakDLC - Dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+REGEX: mjhKhajiitSpeakExtra - (Ohmes-Raht|Dagi-Raht)?\.esp
+  SAY: Use only one Khajiit Speak Extra plugin.
 mjhKhajiitSpeakMod - Convenient Horses.esp
   IFNOT ACTIVE("Convenient Horses.esp") ERROR: Convenient Horses.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 mjhKhajiitSpeakMod - Expensive Investments.esp
