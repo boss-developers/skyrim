@@ -1136,10 +1136,12 @@ Unofficial Dawnguard Patch.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   TAG: {{BASH: Delev, Relev}}
 Unofficial Hearthfire Patch.esp
-  IFNOT VAR(Hearthfire) REQ: Hearthfire (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 Unofficial Dragonborn Patch.esp
-  IFNOT VAR(Dragonborn) REQ: Dragonborn (Official Bethesda DLC)
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   TAG: {{BASH: Delev}}
 Unofficial High Resolution Patch.esp
@@ -3937,13 +3939,14 @@ DYNAVISION Dynamic Depth of Field.esp
   IF VAR(EN) SAY: Make sure you have not switched DoF off in your ini file. If you don't see any effect, open you Skyrimprefs.ini and look for 'bDoDepthOfField'. Make sure it is set to 1.
     IF VAR(RU) SAY: Убедитесь, что вы не выключили DoF в вашем ini-файле. Если вы не видите эффекта, откройте ваш Skyrimprefs.ini и найдите строку 'bDoDepthOfField'. Убедитесь, что она имеет значение 1.
 Footprints.esp
+Footprints - Ash.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 horsefp.esp
 IMAGINATOR - Visual Control for Skyrim.esp
 JaySUS Improved Loadscreens.esp
 Ket_3DLoadscreens.esp
 Ket_PictureLoadscreens.esp
-  IF CHECKSUM("Ket_PictureLoadscreens.esp", 3A81E5EB) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
-    IF CHECKSUM("Ket_PictureLoadscreens.esp", 3A81E5EB) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 kontrol.esp
 kuerteeAutoFirstThirdPersonView.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
@@ -6764,7 +6767,9 @@ Warrior Cleric Julianos - Credo.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Cleric Armours - Credo.esp
 Warsword.esp
 The Way of the Voice.esp
-REGEX: WayoftheVoice\d\.esp
+WayoftheVoice.esp
+WayoftheVoice_words_renamed.esp
+WayoftheVoice_words_renamed_DG.esp
 weddingdresses.esp
 WeaponsOfTheShogunate.esp
 REGEX: Weapons of the Third Era.+\.esp
@@ -15334,6 +15339,14 @@ Skyrim Perk Enhancements.esp
 Skyrim Perk Enhancements (optional).esp
   SAY: Obsolete? Not included in latest download.
 SkyrimForBattlePerk.esp
+SmithingTree.esp
+  TAG: {{BASH: Delev}}
+SmithingTreeDG.esp
+  TAG: {{BASH: Delev}}
+  IF FILE("SmithingTree.esp") && IF VAR(EN) WARN: Use either SmithingTree.esp or SmithingTreeDG.esp, not both.
+    IF FILE("SmithingTree.esp") && IF VAR(RU) WARN: Используйте любой или SmithingTree.esp или SmithingTreeDG.esp, не обa.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 SPERG Vampire Fix.esp
   // part of Skyrim Perk Enhancements
   SAY: Obsolete? Not included in latest download.
