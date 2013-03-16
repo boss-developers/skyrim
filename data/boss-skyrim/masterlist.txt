@@ -111,8 +111,8 @@ IF ACTIVE("Unofficial Dragonborn Patch.esp") SET: UDBP
     IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1444621-relz-boss-for-skyrim/ здесь"(Eng).
 
 // Recruitment
-  IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions. As of 13 March 2013 we are at over 4900+ plugins to add to the Masterlist dating as far back as 16 September 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM Aellis at "http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks" or "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus".
-    IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 4900+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с Aellis, через личные сообщения, на форумах  "http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus".
+  IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions. As of 13 March 2013 we are at over 4900+ plugins to add to the Masterlist dating as far back as 16 September 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM Aellis ("http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks Forums" or "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus Mods").
+    IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 4900+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с Aellis, через личные сообщения, на форумах ("http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks Forums" или "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus Mods").
 
 // SKSE & SKCU
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
@@ -424,6 +424,8 @@ LevelersTower.esm
 LianVera-v2.1.esm
 LiFE.esm
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body" or "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
+Lighting.esm
+  // this is a companion mod
 Liliath.esm
   IF VAR(EN) && IF FILE("Pretty Followers.esm") WARN: Delete. Already included in 'Pretty Followers.esm'
     IF VAR(RU) && IF FILE("Pretty Followers.esm") WARN: Удалите. Уже включено в 'Pretty Followers.esm'
@@ -489,6 +491,7 @@ Niire's Honeyside(esm).esm
 Niire's Proudspire(esm).esm
   IFNOT VAR(GS) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without the "http://skyrim.nexusmods.com/mods/18340 General Stores" mod.Niire's Proudspire(esm).esm
 Niire'sPortstonesForBertsBreezehomeRemodel.esm
+NinaGale.esm
 NoKillMoves.ESM
 NoTint.esm
 NPC.esm
@@ -2673,7 +2676,7 @@ GDAmulets.esp
 gemstoneconversion.esp
 general npc fixes.esp
 REGEX: GeneralStores(Proudspire|Breezehome|VlindrelHall|Honeyside)?\.esp
-  IFNOT File ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
+  IFNOT VAR(GS) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
     IF CHECKSUM("GeneralStoresVlindrelHall.esp", 3AA2C5E6) DIRTY: 0 ITM, 8 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
       IF CHECKSUM("GeneralStoresHoneyside.esp", 6F6C3A0C) DIRTY: 0 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 GenebrisTreasureChests.esp
@@ -7890,13 +7893,13 @@ boss dungeon2.esp
 bossdungeon3.esp
 bossdungeon4.esp
 breezehomedragonbornedition.esp
-Breezehome Mannequin.esp
-  IF CHECKSUM("Breezehome Mannequin.esp", BD71FEBC) DIRTY: 2 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-Breezehome Mannequins Lite.esp
-Breezehome Mannequins.esp
-  IF FILE("Breezehome Mannequins Lite.esp") INC: Breezehome Mannequins Lite.esp
+breezehome-darkdream.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Breezehomeexpansion-darkdream.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Breezehomeexpansion-darkdream.esp
 breezehome enhanced.esp
   IF VAR(BertsBHInst) INC: BertsBreezeRemodel
+Breezehomeexpansion-darkdream.esp
+  IF CHECKSUM("Breezehomeexpansion-darkdream.esp", A89E0AEA) DIRTY: 3 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 breezehome extended ~saqk.esp
 Breezehome_FullyUpgradable.esp
   IF CHECKSUM("Breezehome_FullyUpgradable.esp", 444A410C) DIRTY: 22 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -7910,6 +7913,11 @@ REGEX: Breezehome_FullyUpgradable_v.+\.esp
 Breezehome_Fully_Upgradeable.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Breezehome_FullyUpgradable.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Breezehome_FullyUpgradable.esp
+Breezehome Mannequin.esp
+  IF CHECKSUM("Breezehome Mannequin.esp", BD71FEBC) DIRTY: 2 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Breezehome Mannequins Lite.esp
+Breezehome Mannequins.esp
+  IF FILE("Breezehome Mannequins Lite.esp") INC: Breezehome Mannequins Lite.esp
 Breezehome Remodeled Finely.esp
   IF VAR(BertsBHInst) INC: BertsBreezeRemodel
 Breezehome Sovngarde Portal.esp
@@ -8828,6 +8836,8 @@ LMSkyrimBetterPlayerHomes.esp
 LocalizedGuildJobs.esp
 Loreius.esp
   IF CHECKSUM("Loreius.esp", 5E55AA50) DIRTY: 11 ITM, 5 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Loriath.esp
+  IF CHECKSUM("Loriath.esp", 20A0E383) DIRTY: 49 ITM, 145 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Lost Dwemer Forge.esp
   IF CHECKSUM("Project-Legacy.esp", CD0E4CC5) DIRTY: 37 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Lost Paradise.esp
@@ -14269,6 +14279,7 @@ REGEX: killmoverandom-\d\d\d?-L\.esp
 kuerteeFightOrFly.esp
 kuerteeFightOrFly MCM.esp
 REGEX: Epic Dual Wielding V.+\.esp
+KillAnimationAlways.esp
 REGEX: KillMoveRandom \d{2,3}\.esp
   IF VAR(EN) SAY: Obsolete. Upgrade to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии
@@ -16533,6 +16544,8 @@ FFNordYsilia.esp
 FFNords.esp
   IF CHECKSUM("FFNords.esp", 32CDDEAF) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 FionaValentine.esp
+FollowerBerserker.esp
+  IF CHECKSUM("FollowerBerserker.esp", 5A8CEE25) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Froydis.esp
 REGEX: FTBS_.+\.esp
   WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -16612,6 +16625,7 @@ improved followers.esp
 inathesorceress.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+ingun_vamp.esp
 Inna.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Iona_CombatDual.esp
@@ -16699,6 +16713,9 @@ LianVera-v2.1.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, LianVera-v2.5.esp
 LianVera-v2.5.esp
   IF CHECKSUM("LianVera-v2.5.esp", 37AF13C0) DIRTY: 28 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Lighting.esp
+  // this is a companion mod
+  IF CHECKSUM("Lighting.esp", C732945F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 liliath.esp
   IF VAR(EN) && IF FILE("Pretty Followers.esp") WARN: Delete. Already included in 'Pretty Followers.esp'
     IF VAR(RU) && IF FILE("Pretty Followers.esp") WARN: Удалите. Уже включено в 'Pretty Followers.esp'
@@ -16828,6 +16845,7 @@ My_Little_kitty_non_replaced.esp
 // companions n
 Natural Characters and Companions.esp
 REGEX: new(jenassa|lydia)?\.esp
+NinaGale.esp
 Nirana.esp
 njada1a.esp
 njada1b.esp
