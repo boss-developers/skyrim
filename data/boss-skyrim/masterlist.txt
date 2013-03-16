@@ -346,6 +346,7 @@ Eyja 1.5.esm
 
 // esms f
 Fantasy Music Overhaul.esm
+  SAY: Outdated as per author's instructions. Please obtain the newest version "http://skyrim.nexusmods.com/mods/28583/ here".
 Farkasv2.esm
 FluxMOD_ArtifactEffectPerk.esm
 FM - HaafingarHall.esm
@@ -1814,8 +1815,9 @@ Fantasy Music Full Replace.esp
 Fantasy Music Non-Replace.esp
 REGEX: FMO - (Non-Replacer Version|Replacer Version)?\.esp
   IF VAR(EN) WARN: Outdated. Please obtain the latest version from "http://skyrim.nexusmods.com/mods/28583 Skyrim Nexus".
-REGEX: Fantasy Music Overhaul( - Unique Town Music| - Combat Music| - no vanilla music)?\.esp
-  IF VAR(EN) WARN: Outdated. Please obtain the latest version from "http://skyrim.nexusmods.com/mods/28583 Skyrim Nexus".
+Fantasy Music Overhaul.esp
+fantasy music overhaul - no vanilla music.esp
+fantasy music overhaul - unique town music.esp
 Fantasy Music Overhaul Redone.esp
 REGEX: Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp
   // should load after fantasy music overhaul
@@ -11468,6 +11470,7 @@ PalistovSpinningArrows_ImmersiveWeapons.esp
   IFNOT ACTIVE("SPIKE.esm") ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
 PeacefulMudcrabs.esp
 MZ Peaceful Slaughterfish.esp
+Pelagius Wing - Unlit Candles.esp
 PermanentWerewolfNightEye.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, BeastWithinNightEye.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, BeastWithinNightEye.esp
@@ -12464,9 +12467,12 @@ Realistic Lighting - Dawnguard Patch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 RLO - Occlusion Culling Performance Patch.esp
+//Updated RLO load order as per http://bit.ly/XIkuj0
 Realistic Lighting Overhaul - Illuminated Spells.esp
 Realistic Lighting Overhaul - Dungeons.esp
+Realistic Lighting Overhaul - Dawnguard.esp
 Realistic Lighting Overhaul - Minor Cities & Town Interiors.esp
+Realistic Lighting Overhaul - Major City Exteriors.esp
 Realistic Lighting Overhaul - Major City Interiors.esp
 Realistic Lighting Overhaul - 3.5 Weathers.esp	
 Realistic Lighting Overhaul - 3.5 Dawnguard Weathers.esp
@@ -12817,6 +12823,10 @@ ToL_Core_by_Brevi.esp
 ToL_SKSE_by_Brevi.esp
   IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
 Tales_of_Lycanthropy.esp
+TS_BloodOmNomNom.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("TS_BloodOmNomNom.esp", 817AD7A9) DIRTY: 0 ITM, 12 UDR records.  Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BloodmoonRising.esp
   IF CHECKSUM("BloodmoonRising.esp", 53B3CE8C) DIRTY: 9 ITM, 0 UDR records.  Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Werewolf Loot - ToL compatible.esp
@@ -17309,7 +17319,7 @@ AmazingFollowerTweaks-SandboxNearer.esp
 zzz_Jenassa_MAKEOVER_by83Willow.esp
   // Must load after AmazingFollowerTweaks.esp
 
-  /* seems to be about the only place where the dialog override works for all khajiit... */
+  // seems to be about the only place where the dialog override works for all khajiit...
 mjhKhajiitSpeak.esp
   IF VAR(EN) SAY: This mod overwrites all dialogue enable only when playing Khajiit.
     IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
@@ -17323,8 +17333,26 @@ mjhKhajiitSpeakDLC - Hearthfire.esp
     IF VAR(RU) SAY: Этот мод перезаписывает все диалоги. Используйте только если играете за Каджита.
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+mjhKhajiitSpeakMod - Convenient Horses.esp
+  IFNOT ACTIVE("Convenient Horses.esp") ERROR: Convenient Horses.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+mjhKhajiitSpeakMod - Expensive Investments.esp
+  IFNOT ACTIVE("Expensive Investments.esp") ERROR: Expensive Investments.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+mjhKhajiitSpeakMod - Followers Can Relax.esp
+  IFNOT ACTIVE("FollowerWander2.esp") ERROR: FollowerWander2.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+mjhKhajiitSpeakMod - Hoth.esp
+  IFNOT ACTIVE("HothFollower.esp") ERROR: HothFollower.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+mjhKhajiitSpeakMod - Localized Thieves Guild Jobs.esp
+  IFNOT ACTIVE("LocalizedGuildJobs.esp") ERROR: LocalizedGuildJobs.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 mjhKhajiitSpeakMod - Moonpath.esp
   IFNOT ACTIVE("moonpath.esm") ERROR: moonpath.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+mjhKhajiitSpeakMod - NPC Bartering.esp
+  IFNOT ACTIVE("NPC Bartering.esp") ERROR: NPC Bartering.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+mjhKhajiitSpeakMod - Realistic Needs And Diseases.esp
+  IFNOT ACTIVE("RealisticNeedsandDiseases.esp") ERROR: RealisticNeedsandDiseases.esp is not present or not active. Skyrim will CTD when loading if using this file without it.
+mjhKhajiitSpeakMod - The Choice Is Yours.esp
+  IFNOT ACTIVE("TheChoiceIsYours.esp") ERROR: TheChoiceIsYours.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+mjhKhajiitSpeakMod - The Paarthurnax Dilemma.esp
+  IFNOT ACTIVE("The Paarthurnax Dilemma.esp") ERROR: The Paarthurnax Dilemma.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 mjhKhajiitSpeakMod - Valfar.esp
   IFNOT ACTIVE("CompanionValfar.esp") ERROR: CompanionValfar.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 ENDGROUP: Companions Load Late
@@ -17823,6 +17851,7 @@ Atlas Blackreach.esp
 Atlas Dawnguard.esp
   IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
 Atlas Hearthfire.esp
+Atlas Dragonborn.esp
 Barenziah.esp
 10466_BarenziahQuestM.esp
 BarenziahQuestMarkers.esp
