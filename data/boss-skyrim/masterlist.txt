@@ -1083,6 +1083,8 @@ BreezhomeAlchemyLabFix.esp
   IF VAR(EN) && IF FILE("Unofficial Dawnguard Patch.esp") ERROR: Delete. Already included in Unofficial Dawnguard Patch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Command Dragon.esp
+	IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is inactive. Skyrim will CTD when loading if you use this mod without Dragonborn (Official Bethesda DLC)
 chopping_block_wood_fires.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
   IF VAR(EN) ERROR: Delete. Fixed in Bethesda's official update February 2012.
@@ -1807,7 +1809,10 @@ esiscitypack.esp
 esisenviropack.esp
 Fantasy Music Full Replace.esp
 Fantasy Music Non-Replace.esp
-Fantasy Music Overhaul.esp
+REGEX: FMO - (Non-Replacer Version|Replacer Version)?\.esp
+  IF VAR(EN) WARN: Outdated. Please obtain the latest version from "http://skyrim.nexusmods.com/mods/28583 Skyrim Nexus".
+REGEX: Fantasy Music Overhaul( - Unique Town Music| - Combat Music| - no vanilla music)?\.esp
+  IF VAR(EN) WARN: Outdated. Please obtain the latest version from "http://skyrim.nexusmods.com/mods/28583 Skyrim Nexus".
 Fantasy Music Overhaul Redone.esp
 REGEX: Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp
   // should load after fantasy music overhaul
@@ -2722,6 +2727,8 @@ High Level Enemies.esp
 High Level Enemies - Dawnguard.esp
   IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
   IFNOT ACTIVE("High Level Enemies.esp") WARN: High Level Enemies.esp must be active for this file to work properly.
+High Level Enemies - Dragonborn.esp
+  IFNOT VAR(Dragonborn) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dragonborn.esm (Official Bethesda DLC)
 High Level Enemies - Hardcore.esp
 High Level Enemies - Increased Max Resists.esp
 HigherLevelEnemies.esp
@@ -4029,6 +4036,7 @@ BEGINGROUP: Items #
 1CuteKnightArmor.esp
 1handedWarhammers.esp
 3dmlingfsfs.esp
+300Sword.esp
 1nivPantsArmor.esp
 [ voidcraft ] the armory.esp
 [ voidcraft ] the armory - dawnguard.esp
@@ -4298,6 +4306,8 @@ betterlookingebonymail.esp
 BFPU Orcish Armor.esp
 BGdarkdragonwingaxe.esp
 BGreddragonaxe.esp
+Bigger Badder Lich King Version 2.0.esp
+Bigger Badder Lich King additional Smaller Versions.esp
 Bikini Clothes.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Bikini Clothes.esp", 16DC7E96) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -6724,6 +6734,8 @@ Velvec Outfit.esp
 VelveteenArmor.esp
 Veteran Nord Plate.esp
 VHunterArmor.esp
+ViceroyInquisitor.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
 Vicious Heart.esp
 viciousdawnbreaker.esp
   IF FILE("SkyRe_Plugin_viciousdawnbreaker.esp") TAG: {{BASH: Deactivate}}
@@ -8621,6 +8633,8 @@ HousesofSkyrimConnected.esp
 Hunt01.esp
 Hunter.esp
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
+HuntersLakeHouse1-5.esp
+  IF CHECKSUM("HuntersLakeHouse1-5.esp", AA229D1B) DIRTY: 231 ITM, 0 UDR. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Hunter's Mod.esp
 Hunter's Campsite v1.1.esp
 HuntForTheWayStones.esp
@@ -9165,6 +9179,8 @@ Riverwood Smelter.esp
 RiverwoodCabin.esp
 RiverwoodExpEnv01.esp
   IF CHECKSUM("RiverwoodExpEnv01.esp", A785BE6B) DIRTY: 26 ITM, 13 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here". 
+RiverwoodHotSprings.esp
+  IF CHECKSUM("RiverwoodHotSprings.esp", F545E78A) DIRTY: 25 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 RiverwoodHouse.esp
 Riverwood House Of Tree.esp
   IF CHECKSUM("Riverwood House Of Tree.esp", 0A35ADC2) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here". 
@@ -10390,7 +10406,8 @@ betterwards-nostagger.esp
 Bigger Badder Lich King.esp
 Bigger dragons.esp
 biggerbears.esp
-Binocular Vision For NPCs while Sneaking.esp
+REGEX: Binocular Vision (Game Settings 135|Game Settings 150|For NPCs While Sneaking)?\.esp
+  SAY: Use only one Binocular Vision esp.
 bleedeffects.esp
 Blizzard v 1.4.esp
 BlockSparkles.esp
@@ -11739,6 +11756,10 @@ dD - Enhanced Blood Main.esp
 dD-Dawnguard-EBT Patch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+	
+dD-Dragonborn-Dawnguard-EBT Patch.esp
+  IFNOT VAR(Dragonborn) || IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm and/or Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without them.
+  IFNOT FILE("dD - Enhanced Blood Main.esp") ERROR: dD - Enhanced Blood Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without dD - Enhanced Blood Main.esp.
 dD-SkyrimMonsterMod EBT Patch.esp
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
   IF FILE("dD-Dawnguard-EBT Patch.esp") INC: dD-Dawnguard-EBT Patch.esp
@@ -14140,6 +14161,7 @@ REGEX: Dual Wield Parrying.*\.esp
   IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") &&   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") &&   IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Dodge Mod.esp
+DragonCombatOverhaul.esp
 Duel Combat Realism CK.esp
 Duel - Combat Realism FAST.esp
 Duel.esp
@@ -15735,6 +15757,10 @@ New Playable Races by Budcat v3.0.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, New Playable Races by Budcat v4.0.esp
 New Playable Races by Budcat v4.0.esp
   IF CHECKSUM("New Playable Races by Budcat v4.0.esp", 8E8CCA8C) DIRTY: 80 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+NewSuccubusRace.esp
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+  IF VAR(EN) && IF CHECKSUM("NewSuccubusRace.esp", F3C4E9C8) DIRTY: 94 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  WARN: Mod contains undeleted French data that will conflict with all magic overhauls that add spell-damage scaling. 
 Nidia Race.esp
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility". 
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
@@ -16261,6 +16287,7 @@ Barbarian Companions.esp
 Barsukov.esp
   IF CHECKSUM("Barsukov.esp", F191D03B) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 battlegoat.esp
+Bee_V.esp
 belrand1a.esp
 Better Companions.esp
 BetterCompanions.esp
