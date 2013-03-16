@@ -705,6 +705,8 @@ BEGINGROUP: Official DLC Files
 
 portal2mod.esp
   IF CHECKSUM("portal2mod.esp", F0C49703) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Portal2ModRus.esp
+  // should this be placed here??
 HighResTexturePack01.esp
 HighResTexturePack02.esp
 HighResTexturePack03.esp
@@ -2629,6 +2631,21 @@ followerhuntingbowfix.esp
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже включено в BDO.esp
   IF VAR(EN) && IF REGEX("Better Followers - [SBNP].*\.esp") WARN: Delete. Already included in Better followers
     IF VAR(RU) && IF REGEX("Better Followers - [SBNP].*\.esp") WARN: Удалите. Уже включено в мод Better followers
+FixFollowerBow.esp
+FixFollowerBow_12Arrows.esp
+FollowerDaedricBow12.esp
+FollowerDwarvenBow12.esp
+FollowerEbonyBow12.esp
+FollowerElvenBow12.esp
+FollowerGlassBow12.esp
+FollowerHuntingBow12.esp
+REGEX: FollowerHuntingBow(_20|_40|_60|_80|_100)?\.esp
+  IF VAR(EN) WARN: Use only one of FollowerHuntingBow*.esp
+    IF VAR(RU) WARN: Используйте только один of FollowerHuntingBow*.esp
+FollowerLongbow_12.esp
+FollowerOrcishBow12.esp
+Follower Healing Potion and Arrows.esp
+Follower Magicka and Healting Potion.esp
 Forge In Every House.esp
   IF CHECKSUM("Forge In Every House.esp", 986A1C0C) DIRTY: 4 ITM, 70 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Four New Dragons.esp
@@ -3179,6 +3196,7 @@ New_Beverages_and_Misc_Items.esp
 NichaDV.2.0.esp
 NightingaleArmorTextureFix.esp
 Nightingale Equipment Tweaks.esp
+No DB Mooks.esp
 NoFish.esp
 No Warning - Default Attack Radius.esp
 No Warning - Double Attack Radius.esp
@@ -4148,10 +4166,12 @@ Andragorn's Armoury.esp
 Andragorn_Weapons.esp
 Angelic_Demonic.esp
 AngisBetterBow.esp
-  IF CHECKSUM("AngisBetterBow.esp",  BFF9CA9C) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-AngisEvenBetterBow.esp  
-  IF CHECKSUM("AngisEvenBetterBow.esp", BFF9CA9C) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".	
-AngisEvenBetterBetterBow.esp  
+AngisEvenBetterBow.esp
+  IF FILE("AngisBetterBow.esp") && IF VAR(EN) WARN: Use only one of AngisBetterBow esp
+    IF FILE("AngisBetterBow.esp") && IF VAR(RU) WARN: Используйте только один of AngisBetterBow esp
+AngisEvenBetterBetterBow.esp
+  IF FILE("AngisBetterBow.esp") || IF FILE("AngisEvenBetterBow.esp") && IF VAR(EN) WARN: Use only one of AngisBetterBow esp
+    IF FILE("AngisBetterBow.esp") || IF FILE("AngisEvenBetterBow.esp") && IF VAR(RU) WARN: Используйте только один of AngisBetterBow esp
 REGEX: Animetica.+\.esp
 AnotherBlackThievesGuildArmor_v2.1.esp
 AoD - Dianqing Armor.esp
@@ -5445,6 +5465,8 @@ JSwordsDistribution_Lieux.esp
   IF VAR(EN) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Delete. Already included in SkyRe_Plugin_JaySuSSwords_1.3D.esp.
     IF VAR(RU) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Удалите. Уже включено в SkyRe_Plugin_JaySuSSwords_1.3D.esp.
 Deleveled Skyrim - JSwords.esp
+  TAG: {{BASH: Delev, Relev}}
+Deleveled Skyrim - JSwordsDistributionBalancePlugin.esp
   TAG: {{BASH: Delev, Relev}}
 AttTJSwords.esp
 Lorecraft - JSwords.esp
@@ -8937,6 +8959,8 @@ More Winterhold Flora.esp
 Morninghood Manor.esp
   IF CHECKSUM("Morninghood Manor.esp", 76F0CB25) DIRTY: 7 ITM, 13 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Moria.esp
+MorthalFortified.esp
+  IF CHECKSUM("MorthalFortified.esp", F463C9FF) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 morthalhouse.esp
 morthalslegacy.esp
 Mother_of_Tears_Contracts_Eng.esp
@@ -9557,6 +9581,8 @@ The Red Paw.esp
 Thermopylae.esp
   IF CHECKSUM("Thermopylae.esp", 70E4B395) DIRTY: 31 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 thereserve.esp
+The Scribes Lectern.esp
+  IF CHECKSUM("The Scribes Lectern.esp", EB185B71) DIRTY: 10 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 The Secret Room of Breezehome (En).esp
 The Secret Room of Breezehome.esp
   IF VAR(EN) && IF FILE("secretroom-bh-en.esp") SAY: Use only one 'The Secret Room of Breezehome.esp' or 'secretroom-bh-en.esp'
@@ -10903,18 +10929,6 @@ HT_traveltax.esp
 hunter's discipline - 100%.esp
 Hypothermia.esp
 ThanasHypothermia.esp
-FixFollowerBow.esp
-FixFollowerBow_12Arrows.esp
-FollowerDaedricBow12.esp
-FollowerDwarvenBow12.esp
-FollowerEbonyBow12.esp
-FollowerElvenBow12.esp
-FollowerGlassBow12.esp
-FollowerHuntingBow12.esp
-FollowerLongbow_12.esp
-FollowerOrcishBow12.esp
-Follower Healing Potion and Arrows.esp
-Follower Magicka and Healting Potion.esp
 hqworkbenchandgrindstone.esp
 Shadowmere-Essential.esp
 PalominoHorse-Essential.esp
@@ -15859,7 +15873,7 @@ ESPv1_1.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 ESPv1_1nondependent.esp
-Female Presets 2-3.esp
+REGEX: Female Presets( 2-3)?\.esp
 Improved Eyes Skyrim - Models.esp
 Kawaii Face Presets.esp
   IF CHECKSUM("Kawaii Face Presets.esp", 2774F3D6) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
@@ -16300,6 +16314,9 @@ AshenFollowers.esp
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 AshenFollower.esp
+Atari.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Atvir.esp
 AWC_ArnulfWarzenSchleggerCompanion.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
