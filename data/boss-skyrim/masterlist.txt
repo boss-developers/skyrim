@@ -573,6 +573,9 @@ Skyrim Immersive Creatures.esm
   TAG: {{BASH: Delev}}
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Skyrim Project Optimization.esm
+Skyrim Project Optimization - Dawnguard.esm
+Skyrim Project Optimization - Dragonborn.esm
 Skyrim_Realism.esm
   IF CHECKSUM("Skyrim_Realism.esm", BC06197F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 SkyrimSewers.esm
@@ -6537,6 +6540,7 @@ TeraHEFArmors.esp
 Terobe6CBBE3RY.esp
 TERX-Set.esp
 testfinal.esp
+TG.esp
 TGBowsDrawFaster.esp
 // Adds gloves, doesn't alter bows.
 REGEX: TH3WICK3D1-.+\.esp
@@ -10298,6 +10302,7 @@ BetterNordHeroWeapons.esp
   IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 BetterQuestObjectives.esp
+  IF CHECKSUM("BetterQuestObjectives.esp", BCD35920) && IF VAR(EN) WARN: This file is out of date. Please obtain the new version "http://skyrim.nexusmods.com/mods/32695 here".
 BetterQuestObjectives-Dawnguard.esp
    IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -13710,6 +13715,9 @@ EmpoweredMagic_Dawnguard.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 IFNOT REGEX("Acquisitive Soul Gems( FR)?\.esp") MOD: Enhanced Soul Trap.esp
   IF CHECKSUM("Enhanced Soul Trap.esp", C5F82F49) SAY: Use the Acquisitive Soul Gems non-compatible version.
+EmpoweredMagic_Dragonborn.esp
+  IFNOT FILE("EmpoweredMagic.esp") REQ: EmpoweredMagic.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
 Even Smaller Spell Light Radius.esp
 
 // sp late f
@@ -14162,6 +14170,7 @@ REGEX: Dual Wield Parrying.*\.esp
     IF FILE("Dual Wield Parrying_RandomAttacks_Dawnguard.esp") &&   IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Dodge Mod.esp
 DragonCombatOverhaul.esp
+DragonCombatOverhaulDragonBornPatch.esp
 Duel Combat Realism CK.esp
 Duel - Combat Realism FAST.esp
 Duel.esp
@@ -14481,7 +14490,7 @@ Improved Expert Spells.esp
 REGEX: Improved Master Spells.*\.esp
 // skills j
 JokeMOD-SilentRunning.esp
-JulesPerkRankAssign.esp
+REGEX: Jules(PerkRankAssign|RankPerks)?\.esp
 // skills k
 kuerteeSkillBasedDamageMultipliers.esp
   IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
