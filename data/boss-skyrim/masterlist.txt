@@ -10319,19 +10319,6 @@ BetterQuestObjectives-Dawnguard.esp
 BetterQuestObjectives-Hearthfire.esp
   IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
-BetterQuestObjectives-BSaQB-BSPatch.esp
-  IFNOT FILE("Better Skill and Quest Books Names - BS.esp") && IF VAR(EN) ERROR: Better Skill and Quest Books Names - BS.esp is not present or is not active. Skyrim will CTD when loading if this file is active without it.	
-BetterQuestObjectives-BSaQBPatch.esp
-  IFNOT FILE("Better Skill and Quest Books Names.esp") && IF VAR(EN) ERROR: Better Skill and Quest Books Names.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names.esp
-BetterQuestObjectives-ESFCompanionsPatch.esp
-  IFNOT FILE("ESFCompanions.esp") ERROR: ESFCompanions.esp is not present or is not active. Skyrim will CTD when loading if this file is active without ESFCompanions.esp
-	IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-BetterQuestObjectives-RequiemPatch.esp
-  IFNOT FILE("Requiem.esp") ERROR: Requiem.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem.esp
-BetterQuestObjectives-SkyRePatch.esp
-  IFNOT FILE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if this file is active without SkyRe_Main.esp
-BetterQuestObjectives-TheChoiceIsYoursPatch.esp
-	IFNOT FILE("TheChoiceIsYours.esp") && IF VAR(EN) ERROR: TheChoiceIsYours.esp is not present or is not active. Skyrim will CTD when loading if this file is active without TheChoiceIsYours.esp
 IF REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 Headbomb's Better Sorting - Ammo.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Ammo.esp", 58924631) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -18020,6 +18007,19 @@ BEGINGROUP: Compatibility Patches
 // Only if no conflicts are made in between
 //
 REGEX: Agony's Sorting Frenzy - .+\.esp
+BetterQuestObjectives-BSaQBPatch.esp
+  IFNOT FILE("Better Skill and Quest Books Names.esp") ERROR: Better Skill and Quest Books Names.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names
+BetterQuestObjectives-BSaQB-BSPatch.esp
+  IFNOT FILE("Better Skill and Quest Books Names - BS.esp") ERROR: Better Skill and Quest Books Names - BS.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names - BS	
+BetterQuestObjectives-ESFCompanionsPatch.esp
+  IFNOT FILE("ESFCompanions.esp") ERROR: ESFCompanions.esp is not present or is not active. Skyrim will CTD when loading if this file is active without ESFCompanions
+	IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+BetterQuestObjectives-RequiemPatch.esp
+  IFNOT FILE("Requiem.esp") ERROR: Requiem.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+BetterQuestObjectives-SkyRePatch.esp
+  IFNOT FILE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if this file is active without SkyRe_Main
+BetterQuestObjectives-TheChoiceIsYoursPatch.esp
+	IFNOT FILE("TheChoiceIsYours.esp") ERROR: TheChoiceIsYours.esp is not present or is not active. Skyrim will CTD when loading if this file is active without TheChoiceIsYours
 DeadlyCombat_PISE_Patch.esp
   IFNOT FILE("DeadlyCombat.esp") && IFNOT FILE("PISE.esp") REQ: DeadlyCombat.esp and PISE.esp
 GeneralStores-SkyMoMod.esp
