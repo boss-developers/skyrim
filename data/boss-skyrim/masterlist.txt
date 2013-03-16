@@ -18247,15 +18247,9 @@ MoT_Last_LoadOrder_File.esp
 // Author's "http://skyrim.nexusmods.com/mods/6272 notes" say to place at the end of the load order
   IF CHECKSUM("MoT_Last_LoadOrder_File.esp",  211C2134)|| IF CHECKSUM("MoT_Last_LoadOrder_File.esp",  442E1E10)  WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".  
     IF CHECKSUM("MoT_Last_LoadOrder_File.esp", 211C2134) DIRTY: 180 ITM, 51 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")  
-PTAlchemyOverhaul_SkillRate_0_33.esp
+REGEX: PTAlchemyOverhaul_SkillRate_(0|1)_\d{1, 2}\.esp
 // PTAlchemyOverhaul_SkillRate_x_xx musxt load after anything that changes leveling rate of skill
-  SAY: Use only one of the PTAlchemyOverhaul_SkillRate_x_x.esp
-PTAlchemyOverhaul_SkillRate_0_5.esp
-  SAY: Use only one of the PTAlchemyOverhaul_SkillRate_x_x.esp
-PTAlchemyOverhaul_SkillRate_0_75.esp
-  SAY: Use only one of the PTAlchemyOverhaul_SkillRate_x_x.esp
-PTAlchemyOverhaul_SkillRate_1_0.esp
-  SAY: Use only one of the PTAlchemyOverhaul_SkillRate_x_x.esp    
+  SAY: Use only one of the PTAlchemyOverhaul_SkillRate_x_x.esp  
 SKSE Hotkeys.esp
   IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
 IF FILE("SKSE Hotkeys.esp") MOD: WetandCold.esp
