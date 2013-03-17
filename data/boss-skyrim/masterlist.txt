@@ -4141,6 +4141,8 @@ Alchemic Tomes.esp
 Alienzerox_White_Fur_Robe&Hood_FEMALE_ONLY_0-1-01.esp
 Alienzerox_White_Fur_Robe&Hood_LA_FEMALE_ONLY_0-1-02.esp
 AllowAmuletRing.esp
+REGEX: (alldlcsharedchest|sharedplayerchest)?\.esp
+  SAY: Please use only one Shared Chest esp.
 Altair`s Dagger.esp
 Alternate_Armor_Appearances_v1.20.esp
 Althirs Camping Tools English.esp
@@ -4369,6 +4371,7 @@ BlackSacramentDBreplacer.esp
 Black Scaled Armor MOD.esp
   IF CHECKSUM("Black Scaled Armor MOD.esp", 852855A6) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("Black Scaled Armor MOD.esp", 852855A6) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+Blacksmith Chest.esp
 Blacksword.esp
 blackswordsman.esp
   IF FILE("SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp") TAG: {{BASH: Deactivate}}
@@ -14578,6 +14581,9 @@ MBSword.esp
 MD A better level progression.esp
 MD - Real Unleveled Skyrim.esp
 MD - Tougher named NPCs.esp
+MergedThieverySkill.esp
+  IF CHECKSUM("MergedThieverySkill.esp", 1617A10D) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF ACTIVE("SkyRe_Main.esm") || IF VAR(SkyReM) ERROR: Will conflict with SkyRe, as both mods alter the skill trees. Please pick only one.
 More Exp Chance.esp
 More Exp Change for cooking.esp
 MorePP.esp
@@ -16985,10 +16991,14 @@ ThorinArmor.esp
   IF CHECKSUM("ThorinArmor.esp", 3D8583F0) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here". 
     IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"	
 timek_Damius.esp
+<<<<<<< .mine
+timek_Yumi.esp
+=======
 timek_Laluna.esp
 timek_Yumi.esp
   IF CHECKSUM("timek_Yumi.esp", EC1F1979) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("timek_Yumi.esp", EC1F1979) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+>>>>>>> .r6509
 Tina.esp
 (TWE) Dandelion NPC.esp
 Tougher guards v2.esp
