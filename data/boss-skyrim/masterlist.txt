@@ -3500,10 +3500,15 @@ SkyMoMod.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Skyrim Immersive Creatures.esp
   TAG: {{BASH: Delev}}
-  IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Use either Skyrim Immersive Creatures.esm or Skyrim Immersive Creatures.esp, not both.
-    IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Используйте любой или Skyrim Immersive Creatures.esm или Skyrim Immersive Creatures.esp, не обa.
+  IF CHECKSUM("Skyrim Immersive Creatures.esp", 2EEAD88A) SAY: This is the Lore-Friendly version by jackstarr.  Do not use the original esp or esm by lifestorock.
+  IFNOT CHECKSUM("Skyrim Immersive Creatures.esp", 2EEAD88A) && IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Use either Skyrim Immersive Creatures.esm or Skyrim Immersive Creatures.esp, not both.
+    IFNOT CHECKSUM("Skyrim Immersive Creatures.esp", 2EEAD88A) && IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Используйте любой или Skyrim Immersive Creatures.esm или Skyrim Immersive Creatures.esp, не обa.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Skyrim Immersive Creatures - DLC2.esp
+  IF CHECKSUM("Skyrim Immersive Creatures - DLC2.esp", C64CF88A) && IFNOT ACTIVE("Skyrim Immersive Creatures.esm") ERROR: This addon is for use with Skyrim Immersive Creatures.esm, not Skyrim Immersive Creatures.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 SkyMoMod_lists.esp
   TAG: {{BASH: Delev, Relev}}
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
@@ -17887,8 +17892,8 @@ WATER DB.esp
 WATER DB Waves.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-  IF FILE("WATER DB.esp") && IF VAR(EN) SAY: Use only one realrain.esp
-    IF FILE("WATER DB.esp") && IF VAR(RU) SAY: Используйте только один realrain.esp
+  IF FILE("WATER DB.esp") && IF VAR(EN) WARN: Use only one WATER DB esp.
+    IF FILE("WATER DB.esp") && IF VAR(RU) WARN: Используйте только один WATER DB esp.
 WATER - Get Wet.esp
 /* I Think Water F.X. and Water FX - Get Wet are obsolete. */
 Water F.X.esp
