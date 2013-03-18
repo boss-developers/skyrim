@@ -12659,6 +12659,7 @@ IFNOT FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF VAR(USKP) && IFNOT FILE("RND_USKP-Patch.esp") REQ: RND_USKP-Patch.esp
   IF FILE("Water.esp") && IFNOT FILE("RND_Water-Patch.esp") REQ: RND_Water-Patch.esp
   IF FILE("PotionsBETA.esp") && IFNOT FILE("RND_FAMP.esp") REQ: RND_FAMP.esp
+  IF REGEX("Unique BOOZE Bottles.*\.esp") && IFNOT FILE("RND_UniqueBoozeBottles-Patch.esp") REQ: RND_UniqueBoozeBottles-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_BabettesFeast-FAMP.esp instead.
 IFNOT FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
@@ -12681,6 +12682,8 @@ IFNOT FILE("3DNPC.esp") MOD: RND_USKP-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: SI_RNADPatch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_Dragonborn-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: Disease Descriptions_RND Compatibile.esp
+IFNOT FILE("3DNPC.esp") MOD: RND_UniqueBoozeBottles-Patch.esp
+  IF REGEX("Unique BOOZE Bottles.*\.esp") SAY: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
 Realistic Weapon Weights.esp
   //  TAG: {{BASH: Stats}}
 Realistic Running Speed.esp
@@ -16001,6 +16004,7 @@ IF FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF VAR(USKP) && IFNOT FILE("RND_USKP-Patch.esp") REQ: RND_USKP-Patch.esp
   IF FILE("Water.esp") && IFNOT FILE("RND_Water-Patch.esp") REQ: RND_Water-Patch.esp
   IF FILE("PotionsBETA.esp") && IFNOT FILE("RND_FAMP.esp") REQ: RND_FAMP.esp
+  IF REGEX("Unique BOOZE Bottles.*\.esp") && IFNOT FILE("RND_UniqueBoozeBottles-Patch.esp") REQ: RND_UniqueBoozeBottles-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_BabettesFeast-FAMP.esp instead.
 IF FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
@@ -16055,6 +16059,8 @@ IF FILE("3DNPC.esp") MOD: IMCN_BabettesFeast-FAMP.esp
 IF FILE("3DNPC.esp") MOD: RND_NCVE-FAMP.esp
 IF FILE("3DNPC.esp") MOD: RND_DestructibleBottles-FAMP.esp
 IF FILE("3DNPC.esp") MOD: RND_Dragonborn-Patch.esp
+IF FILE("3DNPC.esp") MOD: RND_UniqueBoozeBottles-Patch.esp
+  IF REGEX("Unique BOOZE Bottles.*\.esp") SAY: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
 RRRE-3DNPCv2-Patch.esp
 
 // pre ufo a
@@ -17881,6 +17887,7 @@ REGEX: DTHSpellMageArmorEffectReplacer.+\.esp
     IF VAR(RU) SAY: Используйте только один DTHSpellMageArmorEffectReplacer*.esp
 getSnowy.esp
 Glowtastic.esp
+ImpWeapEnchFX.esp
 LFox Improved Night Eye No Blur.esp
 Replacer Visuals for Spell Effects.esp
 Showermod.esp
