@@ -2141,6 +2141,8 @@ Better Aura Whisper & Detect Aura Spell.esp
     IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
 Better Embers.esp
 Better Skill and Quest Books Names.esp
+BetterQuestObjectives-BSaQBPatch.esp
+  IFNOT FILE("Better Skill and Quest Books Names.esp") ERROR: Better Skill and Quest Books Names.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names
 DV Better Sleep Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF FILE("DV Better Sleep Dawnguard.esp") ERROR: Use non-Dawnguard version, DV Better Sleep.esp
 DV Better Sleep.esp
@@ -7242,6 +7244,8 @@ Requiem - Weapon Damage Modifier 2x Vanilla.esp
 Requiem - Weapon Damage Modifier 3x Vanilla.esp
   IF FILE("Requiem - Weapon Damage Modifier 2x Vanilla.esp") && IF VAR(EN) WARN: Use either Requiem - Weapon Damage Modifier 2x Vanilla.esp or Requiem - Weapon Damage Modifier 3x Vanilla.esp, not both.
     IF FILE("Requiem - Weapon Damage Modifier 2x Vanilla.esp") && IF VAR(RU) WARN: Используйте любой или Requiem - Weapon Damage Modifier 2x Vanilla.esp или Requiem - Weapon Damage Modifier 3x Vanilla.esp, не обa.
+BetterQuestObjectives-RequiemPatch.esp
+  IFNOT FILE("Requiem.esp") ERROR: Requiem.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
 Skyrim Hardcore Overhaul.esp
@@ -8424,6 +8428,9 @@ epiccreaturesskyrim.esp
   IF CHECKSUM("epiccreaturesskyrim.esp", 4DD72040) DIRTY: 25 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 EroticStatues.esp
 ESFCompanions.esp
+BetterQuestObjectives-ESFCompanionsPatch.esp
+  IFNOT FILE("ESFCompanions.esp") ERROR: ESFCompanions.esp is not present or is not active. Skyrim will CTD when loading if this file is active without ESFCompanions
+	IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 Essassinse_kill.esp
 REGEX: ETK - Whiterun V(1.1|1.31|1.4|1.42)?\.esp
 Everspring Grotto.esp
@@ -10483,6 +10490,8 @@ Weightless Soulgems and Fragments - Better Sorting (PseudoVanilla).esp
 Weightless Soulgems and Fragments - Better Sorting (Ranked).esp
 Weightless Ores, Ingots, Firewood and Coal - Better Sorting.esp
 Better Skill and Quest Books Names - BS.esp
+BetterQuestObjectives-BSaQB-BSPatch.esp
+  IFNOT FILE("Better Skill and Quest Books Names - BS.esp") ERROR: Better Skill and Quest Books Names - BS.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names - BS
  // Must load after better sorting.
 REGEX: BetterSkillBooks.*\.esp
 BetterStaffofCorruption.esp
@@ -11946,6 +11955,8 @@ TheChoiceIsYours.esp
 TheChoiceIsYours_Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+BetterQuestObjectives-TheChoiceIsYoursPatch.esp
+  IFNOT FILE("TheChoiceIsYours.esp") ERROR: TheChoiceIsYours.esp is not present or is not active. Skyrim will CTD when loading if this file is active without TheChoiceIsYours
 the_god_auriel.esp
   IF CHECKSUM("the_god_auriel.esp", 44C9D999) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -14829,10 +14840,11 @@ SkyRe_Survivalism.esp
   IFNOT ACTIVE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IFNOT ACTIVE("Chesko_Frostfall.esp") REQ: Chesko_Frostfall.esp
   IF CHECKSUM("SkyRe_Survivalism.esp", AA2D4FD7) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BetterQuestObjectives-SkyRePatch.esp
+  IFNOT FILE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if this file is active without SkyRe_Main
 IF VAR(SkyReM) MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
-  IF VAR(EN) SAY: Recommend to load morrowloot after any plugins that have a Relev tag and changes same with morrowloot LL because they also add vanilla records removed by morrowloot
-    // please fix grammar. )
+  IF VAR(EN) SAY: It is recommended to load morrowloot after any plugins that have a Relev tag which change the same leveled lists as morrowloot because they will re-add vanilla records removed by morrowloot.
     IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
   IF VAR(EN) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
     IF VAR(RU) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для правильной работы мода с SkyRe.
@@ -18126,20 +18138,7 @@ BEGINGROUP: Compatibility Patches
 // Compatability Patches which must load after a certain mod go here
 // Only if no conflicts are made in between
 //
-REGEX: Agony's Sorting Frenzy - .+\.esp
-BetterQuestObjectives-BSaQBPatch.esp
-  IFNOT FILE("Better Skill and Quest Books Names.esp") ERROR: Better Skill and Quest Books Names.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names
-BetterQuestObjectives-BSaQB-BSPatch.esp
-  IFNOT FILE("Better Skill and Quest Books Names - BS.esp") ERROR: Better Skill and Quest Books Names - BS.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names - BS	
-BetterQuestObjectives-ESFCompanionsPatch.esp
-  IFNOT FILE("ESFCompanions.esp") ERROR: ESFCompanions.esp is not present or is not active. Skyrim will CTD when loading if this file is active without ESFCompanions
-	IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-BetterQuestObjectives-RequiemPatch.esp
-  IFNOT FILE("Requiem.esp") ERROR: Requiem.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
-BetterQuestObjectives-SkyRePatch.esp
-  IFNOT FILE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if this file is active without SkyRe_Main
-BetterQuestObjectives-TheChoiceIsYoursPatch.esp
-  IFNOT FILE("TheChoiceIsYours.esp") ERROR: TheChoiceIsYours.esp is not present or is not active. Skyrim will CTD when loading if this file is active without TheChoiceIsYours
+REGEX: Agony's Sorting Frenzy - .+\.esp	
 DeadlyCombat_PISE_Patch.esp
   IFNOT FILE("DeadlyCombat.esp") || IFNOT FILE("PISE.esp") REQ: DeadlyCombat.esp and PISE.esp
 GeneralStores-SkyMoMod.esp
