@@ -518,6 +518,11 @@ Overlord Tower.esm
 REGEX: OverlookTower.*\.esm
 
 // esms p
+paradise_halls_base.esm
+  IF VERSION("SKSE", "0.1.6.8", <) REQ: "http://skse.silverlock.org SKSE" 1.6.8+.
+paradise_halls_core.esm
+  IF VERSION("SKSE", "0.1.6.8", <) REQ: "http://skse.silverlock.org SKSE" 1.6.8+.
+  IFNOT FILE("paradise_halls_base.esm") REQ: paradise_halls_base.esm
 PerkReset.esm
 REGEX: PersonalizedMusic.*\.esm
 phiNoFF.esm
@@ -16238,6 +16243,25 @@ NoFollowerTorch.esp
 // pre ufo o
 
 // pre ufo p
+PAHAPDialoguePatcher.esp
+  IFNOT FILE("paradise_halls_base.esm") REQ: paradise_halls_base.esm
+  IFNOT FILE("paradise_halls_core.esm") REQ: paradise_halls_core.esm
+  IFNOT FILE("AP Skyrim.esm") REQ: AP Skyrim.esm
+  IF CHECKSUM("PAHAPDialoguePatcher.esp", 8FC75A5B) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+paradise_halls.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+paradise_halls_farengars_study.esp
+  IFNOT FILE("paradise_halls_base.esm") REQ: paradise_halls_base.esm
+  IFNOT FILE("paradise_halls_core.esm") REQ: paradise_halls_core.esm
+paradise_halls_fellglow_slave_camp.esp
+  IFNOT FILE("paradise_halls_base.esm") REQ: paradise_halls_base.esm
+  IFNOT FILE("paradise_halls_core.esm") REQ: paradise_halls_core.esm
+  IF CHECKSUM("paradise_halls_fellglow_slave_camp.esp", A2742491) DIRTY: 6 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+PAHExtender.esp
+  IFNOT FILE("paradise_halls_base.esm") REQ: paradise_halls_base.esm
+  IFNOT FILE("paradise_halls_core.esm") REQ: paradise_halls_core.esm
+  IF CHECKSUM("PAHExtender.esp", 71628FB6) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 PetBearOslo.esp
   IF CHECKSUM("PetBearOslo.esp", 7614B5F9) || IF CHECKSUM("PetBearOslo.esp", EA58D0C9) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("PetBearOslo.esp", 7614B5F9) || IF CHECKSUM("PetBearOslo.esp", EA58D0C9) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
