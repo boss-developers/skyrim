@@ -4491,6 +4491,9 @@ ENDGROUP: Items B
 
 BEGINGROUP: Items C
 
+Cabbage In Pot.esp
+  //Adds a cabbage. In a pot. That's seriously it.
+  IF CHECKSUM("Cabbage In Pot.esp", 8491BB6b) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Caius Sword.esp
 Calmdefir.esp
 calyps-investigator.esp
@@ -13231,6 +13234,8 @@ Brighter MageLight.esp
 boundxbows.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+BoundWeapons_Iconized.esp
+  //Changes the spell preview model for Bound Weapons to have an ethereal version of the weapon.
 
 // spells c
 CallAssassins.esp
@@ -15600,6 +15605,8 @@ Perky.esp
   IF CHECKSUM("Perky.esp", DFA3ACCE) DIRTY: 35 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 IF FILE("Perky.esp") MOD: Ish's Respec Mod.esp
   TAG: {{BASH: Relev}}
+perk tweak.esp
+  IF VAR(SkyReM) WARN: Conflicts with SkyRe, as both make changes to perks. Unintended changes may occur if both are active.
 PerkyRespecPatch.esp
   IFNOT FILE("Ish's Respec Mod.esp") REQ: Ish's Respec Mod.esp
 REGEX: PPE_Perk-.+\.esp
@@ -18480,6 +18487,8 @@ GeneralStores(CCS-HF).esp
     IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
 HelmetToggle - Omegared99ArmorCompilation Patch.esp
 Helmet Toggle - Deadly Dragons Armory Patch.esp
+NPCsUseAmmo_IWPatch.esp
+  IFNOT FILE("Immersive Weapons.esp") ERROR: Immersive Weapons.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Immersive Weapons.esp
 RND_RWLReduced-Patch.esp
 SPTConsistentOlderPeopleEEOPatch.esp
   IFNOT ACTIVE("ethereal_elven_overhaul.esp") && IF VAR(EN) ERROR: ethereal_elven_overhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
