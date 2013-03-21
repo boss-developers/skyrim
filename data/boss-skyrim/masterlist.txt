@@ -12660,6 +12660,15 @@ REGEX: RL - .*\.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 EnhancedLightsandFX.esp
   // moved as suggested in bsg thread 28 post 105
+ELFX - Moonpath.esp
+  IF VAR (EN) && IF FILE("EnhancedLightsandFX.esp") WARN: Use only one - EnhancedLightsandFX.esp or ELFX - Moonpath.esp or ELFX - NoBreezehome.esp or ELFX - NoTaverns.esp
+    IF VAR (RU) && IF FILE("EnhancedLightsandFX.esp") WARN: Используйте только один -  EnhancedLightsandFX.esp или ELFX - Moonpath.esp или ELFX - NoBreezehome.esp или ELFX - NoTaverns.esp
+ELFX - NoBreezehome.esp
+  IF FILE("EnhancedLightsandFX.esp") || IF FILE("ELFX - Moonpath.esp") && IF VAR(EN) WARN: Use only one - EnhancedLightsandFX.esp or ELFX - Moonpath.esp or ELFX - NoBreezehome.esp or ELFX - NoTaverns.esp
+    IF FILE("EnhancedLightsandFX.esp") || IF FILE("ELFX - Moonpath.esp") && IF VAR(RU) WARN: Используйте только один -  EnhancedLightsandFX.esp или ELFX - Moonpath.esp или ELFX - NoBreezehome.esp или ELFX - NoTaverns.esp
+ELFX - NoTaverns.esp
+  IF FILE("EnhancedLightsandFX.esp") || IF FILE("ELFX - Moonpath.esp") || IF FILE("ELFX - NoBreezehome.esp") && IF VAR(EN) WARN: Use only one - EnhancedLightsandFX.esp or ELFX - Moonpath.esp or ELFX - NoBreezehome.esp or ELFX - NoTaverns.esp
+    IF FILE("EnhancedLightsandFX.esp") || IF FILE("ELFX - Moonpath.esp") || IF FILE("ELFX - NoBreezehome.esp") && IF VAR(RU) WARN: Используйте только один -  EnhancedLightsandFX.esp или ELFX - Moonpath.esp или ELFX - NoBreezehome.esp или ELFX - NoTaverns.esp
 RLO - Dungeons for ELnFX.esp
 RLO - Illuminated Spells for ELnFX.esp
 RLO - Major City Interiors for ELnFX.esp
