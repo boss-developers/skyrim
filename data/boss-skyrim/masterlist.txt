@@ -853,6 +853,9 @@ BreezehomeLightingFix.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
 breezehomeshadowfix.esp
   IF CHECKSUM("breezehomeshadowfix.esp", F416A7C9) DIRTY: 0 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Breezehome-hf-CTD-fix.esp
+  IF VAR(EN) SAY: Delete. Obsolete.
+    IF VAR(RU SAY: Удалите. Устарел.
 Brynjolf Dialogue Fix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
@@ -3209,6 +3212,7 @@ kuerteeHorseCommandsVerB.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, kuerteeHorseCommandsVerB2.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, kuerteeHorseCommandsVerB2.esp
 kuerteeHorseCommandsVerB2.esp
+kuerteeHorseCommandsVerB2 MCM.esp
 kuerteeProfessions.esp
   IF CHECKSUM("kuerteeProfessions.esp", A0DA9A22) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here". 
     IF CHECKSUM("kuerteeProfessions.esp", 5F580BB5) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -5891,6 +5895,8 @@ LeazerBoundArmor.esp
 Lee Sams und Mu-Ryeongs Waffen.esp
 Leeloo_Monokini.esp
 LeftHandRings.esp
+LeftHandRings - Dawnguard.esp
+  IFNOT VAR(Dawnguard) REQ: Dawnguard DLC
 legend of kod suleyk.esp
 Legendary Necromancer Amulet.esp
 Legendary Shield of Ysgramor.esp
@@ -7119,7 +7125,7 @@ BEGINGROUP: Items W
 REGEX: W2_HelmetPack(-2)?\.esp
 WaterArrows.esp
 WaterArrowsAndBolts.esp
-  IF VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesda DLC)
 waterwalkring.esp
 Wandererarmor.esp
 Wanderer Armor.esp
@@ -9672,10 +9678,10 @@ mannyDragonhead.esp
     IF VAR(RU) && IF FILE("mannyDragonhead.esm") SAY: Используйте или mannyDragonhead.esm или mannyDragonhead.esp
 mannywallofskyrim.esp
 Mapseller.esp
-  IF VAR(Dawnguard) REQ: Dawnguard version, MapsellerDawnguard.esp
+  IF VAR(Dawnguard) && IFNOT FILE("MapsellerDawnguard.esp") REQ: MapsellerDawnguard.esp
   IF CHECKSUM("Mapseller.esp", ED585B65) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 MapsellerDV.esp
-  IF VAR(Dawnguard) REQ: Dawnguard version, MapsellerDawnguardDV.esp
+  IF VAR(Dawnguard) && IFNOT FILE("MapsellerDawnguard.esp") REQ: MapsellerDawnguardDV.esp
   IF FILE("Mapseller.esp") INC: Mapseller.esp
   IF CHECKSUM("MapsellerDV.esp", E9AD27FD) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 MapsellerDawnguard.esp
@@ -15469,7 +15475,11 @@ MartialArtist.esp
 MBAxe.esp
 MBBow.esp
 MBDaggerAlone.esp
+  IF VAR(EN) && IF VAR(Dawnguard) ERROR: Delete. Already included in Dawnguard DLC
+    IF VAR(RU) && IF VAR(Dawnguard) ERROR: Удалите. Уже включено в Dawnguard DLC
 MBDagger.esp
+  IF VAR(EN) && IF VAR(Dawnguard) ERROR: Delete. Already included in Dawnguard DLC
+    IF VAR(RU) && IF VAR(Dawnguard) ERROR: Удалите. Уже включено в Dawnguard DLC
 MBSword.esp
 MD A better level progression.esp
 MD - Real Unleveled Skyrim.esp
