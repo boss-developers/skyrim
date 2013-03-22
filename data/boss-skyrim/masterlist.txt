@@ -7897,6 +7897,455 @@ Monster Wars No Blue Stripes.esp
 Monster Wars - No BS, No Witcher, No Protectors.esp
 Monster Wars - Venator Daemonous.esp
 ENDGROUP: Monster Wars
+
+BEGINGROUP: SkyRe
+
+/* SkyRe Section */
+SkyRe_Main.esp
+  TAG: {{BASH: Relev, Delev}}
+    //TAG: {{BASH: Delev, Names, Relev}}
+  IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
+  IFNOT VAR(Dawnguard) REQ: Dawnguard DLC (SkyRe 0.99.17+)
+  IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
+  IF FILE("ACE Speech.esp") INC: ACE Speech.esp
+  IF FILE("Perky.esp") INC: Perky.esp (Syynx's Perky)
+  IF REGEX("PerkUP-.*\.esp") INC: PerkUP
+  IF REGEX("Uncapped Perks.*\.esp") INC: Uncapped perks
+  IF VAR(EN) && IF VAR(CCO) INC: Complete Crafting Overhaul (doubles in crafting)
+    IF VAR(RU) && IF VAR(CCO) INC: Complete Crafting Overhaul (дубликаты в меню крафтинга)
+  IF VAR(EN) && IF FILE("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
+    IF VAR(RU) && IF FILE("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
+  IF VAR(EN) WARN: The SkyRe has many conflicts with other mods.  Please read the readme before playing with mod. This will prevent many problems. Read it "http://skyrim.nexusmods.com/mods/9286 here".
+    IF VAR(RU) WARN: SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его "http://skyrim.nexusmods.com/mods/9286 здесь"(Англ.) или "http://u.to/EpZaAg здесь".
+  IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" for full perk functional
+    IF VAR(RU) && IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" для полного функционирования перков.
+  IF VAR(EN) && IF FILE("interface\lockpickingmenu.swf") SAY: If lockpicikng is not work then try to delete 'interface\lockpickingmenu.swf'
+    IF VAR(RU) && IF FILE("interface\lockpickingmenu.swf") SAY: Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл 'interface\lockpickingmenu.swf'
+  IF VAR(EN) SAY: If you have a problem with aiming try to install "http://skyrim.nexusmods.com/mods/13652 this" mod.
+    IF VAR(RU) SAY: Если у вас проблемы с прицеливанием, попробуйте установить "http://skyrim.nexusmods.com/mods/13652 этот" мод.
+  IF VAR(EN) SAY: To make aiming easier, recommend to add the following lines to Skyrim.ini:
+    IF VAR(RU) SAY: Чтобы сделать прицеливание проще, добавьте в ваш Skyrim.ini следующие строки:
+  SAY:   [Actor]
+  SAY:   fVisibleNavmeshMoveDist=12288.0000
+  SAY:   [Combat]
+  SAY:   f1PArrowTiltUpAngle=0.64
+  SAY:   f3PArrowTiltUpAngle=0.64
+  SAY:   fMagnetismStrafeHeadingMult=0.0
+  SAY:   fMagnetismLookingMult=0.0
+SkyRe_Main_NoDawnguard.esp
+  TAG: {{BASH: Relev, Delev}}
+    //TAG: {{BASH: Delev, Names, Relev}}
+  IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
+  IF VAR(Dawnguard) INC: Dawnguard DLC
+  IF FILE("SkyRe_Main.esp") INC: SkyRe_Main.esp
+  IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
+  IF FILE("ACE Speech.esp") INC: ACE Speech.esp
+  IF FILE("Perky.esp") INC: Perky.esp (Syynx's Perky)
+  IF REGEX("PerkUP-.*\.esp") INC: PerkUP
+  IF REGEX("Uncapped Perks.*\.esp") INC: Uncapped perks
+  IF VAR(EN) && IF VAR(CCO) INC: Complete Crafting Overhaul (doubles in crafting)
+    IF VAR(RU) && IF VAR(CCO) INC: Complete Crafting Overhaul (дубликаты в меню крафтинга)
+  IF VAR(EN) && IF FILE("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
+    IF VAR(RU) && IF FILE("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
+  IF VAR(EN) WARN: The SkyRe has many conflicts with other mods.  Please read the readme before playing with mod. This will prevent many problems. Read it "http://skyrim.nexusmods.com/mods/9286 here".
+    IF VAR(RU) WARN: SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его "http://skyrim.nexusmods.com/mods/9286 здесь"(Англ.) или "http://u.to/EpZaAg здесь".
+  IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" for full perk functional
+    IF VAR(RU) && IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" для полного функционирования перков.
+  IF VAR(EN) && IF FILE("interface\lockpickingmenu.swf") SAY: If lockpicikng is not work then try to delete 'interface\lockpickingmenu.swf'
+    IF VAR(RU) && IF FILE("interface\lockpickingmenu.swf") SAY: Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл 'interface\lockpickingmenu.swf'
+  IF VAR(EN) SAY: If you have a problem with aiming try to install "http://skyrim.nexusmods.com/mods/13652 this" mod.
+    IF VAR(RU) SAY: Если у вас проблемы с прицеливанием, попробуйте установить "http://skyrim.nexusmods.com/mods/13652 этот" мод.
+  IF VAR(EN) SAY: To make aiming easier, recommend to add the following lines to Skyrim.ini:
+    IF VAR(RU) SAY: Чтобы сделать прицеливание проще, добавьте в ваш Skyrim.ini следующие строки:
+  SAY:   [Actor]
+  SAY:   fVisibleNavmeshMoveDist=12288.0000
+  SAY:   [Combat]
+  SAY:   f1PArrowTiltUpAngle=0.64
+  SAY:   f3PArrowTiltUpAngle=0.64
+  SAY:   fMagnetismStrafeHeadingMult=0.0
+  SAY:   fMagnetismLookingMult=0.0
+SkyRe_Combat.esp
+  IFNOT VAR(SkyReM) REQ: SkyRe_Main.esp
+Lorecraft - SkyRe.esp
+SkyRe_Comp.esp
+  IF VAR(EN) && IFNOT FILE("PerkReset SkyRe Compatibility Patch.esp") SAY: Recommend to use "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp" instead.
+    IF VAR(RU) && IFNOT FILE("PerkReset SkyRe Compatibility Patch.esp") SAY: Рекомендуется использовать вместо этого "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp".
+  IF VAR(EN) && IF FILE("PerkReset SkyRe Compatibility Patch.esp") ERROR: Delete and use 'PerkReset SkyRe Compatibility Patch.esp' instead.
+    IF VAR(RU) && IF FILE("PerkReset SkyRe Compatibility Patch.esp") ERROR: Удалите и используйте вместо этого 'PerkReset SkyRe Compatibility Patch.esp'.
+  IF VAR(EN) && IF FILE("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
+    IF VAR(RU) && IF FILE("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
+PerkReset SkyRe Compatibility Patch.esp
+  IF VAR(EN) && IF FILE("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
+    IF VAR(RU) && IF FILE("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
+SkyRe_CraftingFix.esp
+SkyRe_EncounterZones.esp
+IFNOT REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
+SkyRe_EnemyScaling.esp
+  TAG: {{BASH: Relev}}
+SkyRe_Enemies.esp
+  IF VAR(EN) WARN: Obsolete. Update to latest version of SkyRe and use SkyRe_EnemyScaling.esp instead
+    IF VAR(RU) WARN: Устарело обновите до последней версии SkyRe и используйте SkyRe_EnemyScaling.esp вместо этого.
+  TAG: {{BASH: Relev}}
+SkyRe_Lighting.esp
+  IF VAR(EN) SAY: Only for non ENB users
+    IF VAR(RU) SAY: Только для не ENB пользователей.
+SkyRe_Perk_Tomes.esp
+  IFNOT ACTIVE("Skyre_Main.esp") ERROR: Skyre_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+SkyRe_StandingStones.esp
+  IF VAR(EN) && IF FILE("StaRe.esp") SAY: Remember not to load (or to simply delete) StaRe.esp
+    IF VAR(RU) && IF FILE("StaRe.esp") SAY: Не забудьте отключить или удалить StaRe.esp
+  IF FILE("Drakian race.esp") INC: Drakian race
+  IF FILE("Signs and Guardians.esp") INC: Signs and Guardians.esp
+SkyRe_Survivalism.esp
+  IFNOT ACTIVE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT ACTIVE("Chesko_Frostfall.esp") REQ: Chesko_Frostfall.esp
+  IF CHECKSUM("SkyRe_Survivalism.esp", AA2D4FD7) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BetterQuestObjectives-SkyRePatch.esp
+  IFNOT FILE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if this file is active without SkyRe_Main
+IF VAR(SkyReM) MOD: Morrowloot.esp
+  TAG: {{BASH: Delev, Relev}}
+  IF VAR(EN) SAY: It is recommended to load morrowloot after any plugins that have a Relev tag which change the same leveled lists as morrowloot because they will re-add vanilla records removed by morrowloot.
+    IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
+  IF VAR(EN) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
+    IF VAR(RU) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для правильной работы мода с SkyRe.
+
+// skyre armor and weapon patches
+SkyRe_Plugin_BaratheonArmor_1.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("BaratheonArmor.esp") SAY: Remember not to load (or to simply delete) BaratheonArmor.esp
+    IF VAR(RU) && IF ACTIVE("BaratheonArmor.esp") SAY: Не забудьте отключить или удалить BaratheonArmor.esp
+SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("blackswordsman.esp") SAY: Remember not to load (or to simply delete) blackswordsman.esp
+    IF VAR(RU) && IF ACTIVE("blackswordsman.esp") SAY: Не забудьте отключить или удалить blackswordsman.esp .
+SkyRe_Plugin_BetterBows_1.4.1.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("HBetterBows.esp") SAY: Remember not to load (or to simply delete) HBetterBows.esp
+    IF VAR(RU) && IF ACTIVE("HBetterBows.esp") SAY: Не забудьте отключить или удалить HBetterBows.esp
+SkyRe_Plugin_BowofIorveth_1.2.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("BowofIorveth.esp") SAY: Remember not to load (or to simply delete) BowofIorveth.esp
+    IF VAR(RU) && IF ACTIVE("BowofIorveth.esp") SAY: Не забудьте отключить или удалить BowofIorveth.esp
+SkyRe_Plugin_DaggerCraft_1.3.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("DaggerCraft.esp") SAY: Remember not to load (or to simply delete) DaggerCraft.esp
+    IF VAR(RU) && IF ACTIVE("DaggerCraft.esp") SAY: Не забудьте отключить или удалить DaggerCraft.esp
+SkyRe_Plugin_DragonBoneWeaponsComplete_1.03.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_DragonBoneWeaponsComplete.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa") WARN: You need to rename "DragonBoneWeaponsComplete.bsa" to "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa") WARN: Вам нужно переименовать "DragonBoneWeaponsComplete.bsa" в "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" для подключения ресурсов мода..
+  IF VAR(EN) && IF ACTIVE("Dragonbone Weapons Complete.esp") SAY: Remember not to load (or to simply delete) 'Dragonbone Weapons Complete.esp'
+    IF VAR(RU) && IF ACTIVE("Dragonbone Weapons Complete.esp") SAY: Не забудьте отключить или удалить 'Dragonbone Weapons Complete.esp'
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+REGEX: SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF ACTIVE("DreadKnightWeaponSet.\esp") || IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Dread Knight Weapon Set mod
+    IF ACTIVE("DreadKnightWeaponSet.\esp") || IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Dread Knight Weapon Set.
+SkyRe_Plugin_DwemerAutoBlade.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_DwemerAutoBlade.bsa") WARN: You need to rename "DwemerAutoBlade.bsa" to "SkyRe_Plugin_DwemerAutoBlade.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_DwemerAutoBlade.bsa") WARN: Вам нужно переименовать "DwemerAutoBlade.bsa" в "SkyRe_Plugin_DwemerAutoBlade.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF ACTIVE("DwemerAutoBlade.esp") SAY: Remember not to load (or to simply delete) DwemerAutoBlade.esp
+    IF VAR(RU) && IF ACTIVE("DwemerAutoBlade.esp") SAY: Не забудьте отключить или удалить DwemerAutoBlade.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_HedgeKnightArmor_1.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("HedgeKnight.esp") SAY: Remember not to load (or to simply delete) HedgeKnight.esp
+    IF VAR(RU) && IF ACTIVE("HedgeKnight.esp") SAY: Не забудьте отключить или удалить HedgeKnight.esp
+SkyRe_hothtrooper44_ArmorCompilation.esp
+  // same as below??
+  IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: hothtrooper44_ArmorCompilation.esp
+  IFNOT VAR(SkyReM) REQ: SkyRe_Main.esp
+REGEX: SkyRe_Plugin_ImmersiveArmor_.+\.esp
+  IF VAR(EN) && IF ACTIVE("hothtrooper44_ArmorCompilation.esp") SAY: Remember not to load (or to simply delete) hothtrooper44_ArmorCompilation.esp
+    IF VAR(RU) && IF ACTIVE("hothtrooper44_ArmorCompilation.esp") SAY: Не забудьте отключить или удалить hothtrooper44_ArmorCompilation.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_InsanitysCelticKatana_1.2.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("InsanitysCelticKatana.esp") SAY: Remember not to load (or to simply delete) InsanitysCelticKatana.esp
+    IF VAR(RU) && IF ACTIVE("InsanitysCelticKatana.esp") SAY: Не забудьте отключить или удалить InsanitysCelticKatana.esp
+SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
+    IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
+SkyRe_Plugin_isilNarsil.esp
+  IF VAR(EN) && IF ACTIVE("isilNarsil.esp") SAY: Remember not to load (or to simply delete) isilNarsil.esp
+    IF VAR(RU) && IF ACTIVE("isilNarsil.esp") SAY: Не забудьте отключить или удалить isilNarsil.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_JaySuSSwords_1.3D.esp
+  TAG: {{BASH: Delev}}
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SkyRe_Plugin_JaySuSSwords.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe_Plugin_JaySuSSwords.esp
+  IF VAR(EN) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_JaySuSSwords.esp
+  TAG: {{BASH: Delev}}
+  IF VAR(EN) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF CHECKSUM("SkyRe_Plugin_JaySuSSwords.esp", 33879A9F) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+SkyRe_Plugin_Malo_Waffen_V3Bugfix.esp
+  IF VAR(EN) && IF ACTIVE("Malo_Waffen.esp") SAY: Remember not to load (or to simply delete) Malo_Waffen.esp
+    IF VAR(RU) && IF ACTIVE("Malo_Waffen.esp") SAY: Не забудьте отключить или удалить Malo_Waffen.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_Morrowloot.esp
+  IFNOT FILE("Morrowloot.esp") REQ: Morrowloot.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+REGEX: SkyRe_Plugin_NicoroshiCreations.*\.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Nicoroshi Creations.esp") SAY: Remember not to load (or to simply delete) Nicoroshi Creations.esp
+    IF VAR(RU) && IF ACTIVE("Nicoroshi Creations.esp") SAY: Не забудьте отключить или удалить Nicoroshi Creations.esp
+SkyRe_Plugin_NordicHunterLightArmor_1.2.esp
+  IF VAR(EN) && IF FILE("hunterarmorv1.2.esp") SAY: Possible already include the hunterarmorv1.2.esp
+    IF VAR(RU) && IF FILE("hunterarmorv1.2.esp") SAY: Возможно уже включено в hunterarmorv1.2.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_Omegared99-WeaponSets.esp
+  IF VAR(EN) && IF ACTIVE("Omegared99-WeaponSets.esp") SAY: Remember not to load (or to simply delete) Omegared99-WeaponSets.esp
+    IF VAR(RU) && IF ACTIVE("Omegared99-WeaponSets.esp") SAY: Не забудьте отключить или удалить Omegared99-WeaponSets.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_Omegared99sACv3_6.esp
+  IF VAR(EN) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
+    IF VAR(RU) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: Вам все еще нужен Omegared99-Compilation.esm
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_Omegared99sArmorCompilation.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SkyRe_Plugin_Omegared99sACv3_6.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe_Plugin_Omegared99sACv3_6.esp
+  IF VAR(EN) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
+    IF VAR(RU) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: Вам все еще нужен Omegared99-Compilation.esm
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_Omegared99sArmorCompilation_3.5a.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version of SkyRe.
+    IF VAR(RU) SAY: Устарело обновите до последней версии SkyRe.
+  IF VAR(EN) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+REGEX: SkyRe_Plugin_Oriental Weapon&Armor.*\.esp
+  IF VAR(EN) && IF ACTIVE("Oriental Weapon&Armor.esp") SAY: Remember not to load (or to simply delete) Oriental Weapon&Armor.esp
+    IF VAR(RU) && IF ACTIVE("Oriental Weapon&Armor.esp") SAY: Не забудьте отключить или удалить Oriental Weapon&Armor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_RedguardKnightArmor_3.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF FILE("RedguardKnight.esp") SAY: Remember not to load (or to simply delete) RedguardKnight.esp
+    IF VAR(RU) && IF FILE("RedguardKnight.esp") SAY: Не забудьте отключить или удалить RedguardKnight.esp
+SkyRe_Plugin_RegentSwords.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF FILE("RegentSword.esp") SAY: Remember not to load (or to simply delete) RegentSword.esp
+    IF VAR(RU) && IF FILE("RegentSword.esp") SAY: Не забудьте отключить или удалить RegentSword.esp
+SkyRe_Plugin_VagabondArmor_5.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("VagabondArmor.esp") SAY: Remember not to load (or to simply delete) VagabondArmor.esp
+    IF VAR(RU) && IF ACTIVE("VagabondArmor.esp") SAY: Не забудьте отключить или удалить VagabondArmor.esp
+SkyRe_Plugin_VanguardArmor_3.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("VanguardArmor.esp") SAY: Remember not to load (or to simply delete) VanguardArmor.esp
+    IF VAR(RU) && IF ACTIVE("VanguardArmor.esp") SAY: Не забудьте отключить или удалить VanguardArmor.esp
+SkyRe_Plugin_viciousdawnbreaker.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa") WARN: You need to rename "viciousdawnbreaker.bsa" to "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa") WARN: Вам нужно переименовать "viciousdawnbreaker.bsa" в "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF ACTIVE("viciousdawnbreaker.esp") SAY: Remember not to load (or to simply delete) viciousdawnbreaker.esp
+    IF VAR(RU) && IF ACTIVE("viciousdawnbreaker.esp") SAY: Не забудьте отключить или удалить viciousdawnbreaker.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Plugin_WarchiefArmor_4.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("warchiefarmor.esp") SAY: Remember not to load (or to simply delete) warchiefarmor.esp
+    IF VAR(RU) && IF ACTIVE("warchiefarmor.esp") SAY: Не забудьте отключить или удалить warchiefarmor.esp
+SkyRe_Plugin_Witcher 2 Style Dawnguard Armour.esp
+SkyRe  - Jojjo's Dreadknight Patch.esp
+  IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp") && IF VAR(EN) WARN: Use only one Skyre Dreadknight
+    IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp") && IF VAR(RU) WARN: Используйте только один SkyRe Dreadknight
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Dread Knight Weapon Set.esp
+    IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Dread Knight Weapon.esp
+SkyRe Avatar of Baltazar.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Avatar of Baltazar.esp") SAY: Remember not to load (or to simply delete) Avatar of Baltazar.esp
+    IF VAR(RU) && IF ACTIVE("Avatar of Baltazar.esp") SAY: Не забудьте отключить или удалить Avatar of Baltazar.esp
+SkyRe Avatar of Grenth.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Avatar of Grenth.esp") SAY: Remember not to load (or to simply delete) Avatar of Grenth.esp
+    IF VAR(RU) && IF ACTIVE("Avatar of Grenth.esp") SAY: Не забудьте отключить или удалить Avatar of Grenth.esp
+SkyRe Black Mage Armor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Black Mage Armor.esp") SAY: Remember not to load (or to simply delete) Black Mage Armor.esp
+    IF VAR(RU) && IF ACTIVE("Black Mage Armor.esp") SAY: Не забудьте отключить или удалить Black Mage Armor.esp
+SkyRe Chainmail Hauberks.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Chainmailhauberks 1.1.esp") SAY: Remember not to load (or to simply delete) Chainmailhauberks 1.1.esp
+    IF VAR(RU) && IF ACTIVE("Chainmailhauberks 1.1.esp") SAY: Не забудьте отключить или удалить Chainmailhauberks 1.1.esp
+SkyRe Chinese General Armor and Weapon.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, SkyRe Chinese General Set.esp
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe Chinese General Set.esp
+SkyRe Chinese General Set.esp
+  IF VAR(EN) && IF ACTIVE("Song General Armor&weapon.esp") SAY: Remember not to load (or to simply delete) Song General Armor&weapon.esp
+    IF VAR(RU) && IF ACTIVE("Song General Armor&weapon.esp") SAY: Не забудьте отключить или удалить Song General Armor&weapon.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Chinese General Set - Realistic.esp
+  IF VAR(EN) && IF ACTIVE("SkyRe Chinese General Set - Realistic.esp") SAY: Remember not to load (or to simply delete) Song General Armor&weapon.esp
+    IF VAR(RU) && IF ACTIVE("SkyRe Chinese General Set - Realistic.esp") SAY: Не забудьте отключить или удалить Song General Armor&weapon.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Dark Nemesis.esp
+  IF CHECKSUM("SkyRe Dark Nemesis.esp", FBBC3828) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("SkyRe Dark Nemesis.esp", FBBC3828) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("DarkNemesis.esp") && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Remember not to load (or to simply delete) DarkNemesis.esp
+    IF VAR(RU) && IF ACTIVE("DarkNemesis.esp") && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Не забудьте отключить или удалить DarkNemesis.esp
+SkyRe Divine Aegis.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Divine Aegis.esp")  && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Remember not to load (or to simply delete) DarkNemesis.esp
+    IF VAR(RU) && IF ACTIVE("Divine Aegis.esp")  && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Не забудьте отключить или удалить DarkNemesis.esp
+SkyRe Equipment of Eternal Shine.esp
+  IF CHECKSUM("SkyRe Equipment of Eternal Shine.esp", C47F2C45) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("SkyRe Equipment of Eternal Shine.esp", C47F2C45) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("EternalShineArmorAndWeapons.esp") SAY: Remember not to load (or to simply delete)
+    IF VAR(RU) && IF ACTIVE("EternalShineArmorAndWeapons.esp") SAY: Не забудьте отключить или удалить
+Skyre Guardian Plate Armor.esp
+  IF VAR(EN) && IF ACTIVE("Guardian Plate Armor.esp") SAY: Remember not to load (or to simply delete) Guardian Plate Armor.esp
+    IF VAR(RU) && IF ACTIVE("Guardian Plate Armor.esp") SAY: Не забудьте отключить или удалить Guardian Plate Armor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Heroic Dwarven Armor and Weapon Set.esp
+  IF VAR(EN) && IF ACTIVE("HeroicDwarven.esp") SAY: Remember not to load (or to simply delete) HeroicDwarven.esp
+    IF VAR(RU) && IF ACTIVE("HeroicDwarven.esp") SAY: Не забудьте отключить или удалить HeroicDwarven.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Iron Armor Chainmail.esp
+  IF VAR(EN) && IF ACTIVE("dfnkt-IronArmorSleeves-Craftable.esp") SAY: Remember not to load (or to simply delete) dfnkt-IronArmorSleeves-Craftable.esp
+    IF VAR(RU) && IF ACTIVE("dfnkt-IronArmorSleeves-Craftable.esp") SAY: Не забудьте отключить или удалить dfnkt-IronArmorSleeves-Craftable.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Masters of Death Sicarius Armor.esp
+  IF VAR(EN) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp
+    IF VAR(RU) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Masters of Death - Sicarius Armor (Standalone).esp
+  IF VAR(EN) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp
+    IF VAR(RU) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Mithril Armor.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe Mithril Armor.bsa") WARN: You need to rename "Matys Mithril armor Enhanced.bsa" to "SkyRe Mithril Armor.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe Mithril Armor.bsa") WARN: Вам нужно переименовать "Matys Mithril armor Enhanced.bsa" в "SkyRe Mithril Armor.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF ACTIVE("Matys Mithril armor Enhanced.esp") SAY: Remember not to load (or to simply delete) Matys Mithril armor Enhanced.esp
+    IF VAR(RU) && IF ACTIVE("Matys Mithril armor Enhanced.esp") SAY: Не забудьте отключить или удалить Matys Mithril armor Enhanced.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Mystic Armor and Weapon Set.esp
+  IF VAR(EN) && IF ACTIVE("Mystic.esp") SAY: Remember not to load (or to simply delete) Mystic.esp
+    IF VAR(RU) && IF ACTIVE("Mystic.esp") SAY: Не забудьте отключить или удалить Mystic.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Nordic Conqueror Armor.esp
+  IF VAR(EN) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Remember not to load (or to simply delete) Nordic Conqueror Armor.esp
+    IF VAR(RU) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Не забудьте отключить или удалить Nordic Conqueror Armor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Nordic Conqueror Armor - Realistic.esp
+  IF FILE("SkyRe Nordic Conqueror Armor.esp") && IF VAR(EN) WARN: Use either SkyRe Nordic Conqueror Armor.esp or SkyRe Nordic Conqueror Armor - Realistic.esp, not both.
+    IF FILE("SkyRe Nordic Conqueror Armor.esp") && IF VAR(RU) WARN: Используйте любой или SkyRe Nordic Conqueror Armor.esp или SkyRe Nordic Conqueror Armor - Realistic.esp, не обa.
+  IF VAR(EN) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Remember not to load (or to simply delete) Nordic Conqueror Armor.esp
+    IF VAR(RU) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Не забудьте отключить или удалить Nordic Conqueror Armor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe Rogue Sorceress.esp
+  IF VAR(EN) && IF ACTIVE("theRoadstrokersRogueSorceress.esp") SAY: Remember not to load (or to simply delete) theRoadstrokersRogueSorceress.esp
+    IF VAR(RU) && IF ACTIVE("theRoadstrokersRogueSorceress.esp") SAY: Не забудьте отключить или удалить theRoadstrokersRogueSorceress.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe SeraticDark.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe SeraticDark.bsa") WARN: You need to rename "SeraticHeavyArmorDark.bsa" to "SkyRe SeraticDark.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe SeraticDark.bsa") WARN: Вам нужно переименовать "SeraticHeavyArmorDark.bsa" в "SkyRe SeraticDark.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF ACTIVE("SeraticHeavyArmorDark.esp") SAY: Remember not to load (or to simply delete) SeraticHeavyArmorDark.esp
+    IF VAR(RU) && IF ACTIVE("SeraticHeavyArmorDark.esp") SAY: Не забудьте отключить или удалить SeraticHeavyArmorDark.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe SeraticGray.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe SeraticGray.bsa") WARN: You need to rename "SeraticHeavyArmorGray.bsa" to "SkyRe SeraticGray.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe SeraticGray.bsa") WARN: Вам нужно переименовать "SeraticHeavyArmorGray.bsa" в "SkyRe SeraticGray.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF ACTIVE("SeraticHeavyArmorGray.esp") SAY: Remember not to load (or to simply delete) SeraticHeavyArmorGray.esp
+    IF VAR(RU) && IF ACTIVE("SeraticHeavyArmorGray.esp") SAY: Не забудьте отключить или удалить SeraticHeavyArmorGray.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe SeraticLight.esp
+  IF VAR(EN) && IFNOT FILE("SkyRe SeraticLight.bsa") WARN: You need to rename "SeraticArmor.bsa" to "SkyRe SeraticLight.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe SeraticLight.bsa") WARN: Вам нужно переименовать "SeraticArmor.bsa" в "SkyRe SeraticLight.bsa" или этот мод не будет работать.
+  IF VAR(EN) && IF ACTIVE("SeraticArmor.esp") SAY: Remember not to load (or to simply delete) SeraticArmor.esp
+    IF VAR(RU) && IF ACTIVE("SeraticArmor.esp") SAY: Не забудьте отключить или удалить SeraticArmor.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe XAC Original Classic.esp
+  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+  IFNOT FILE("SkyRe XAC Original Classic.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original Classic.bsa" or this mod won't work.
+  IF VAR(EN) && IF ACTIVE("SkyRe XAC Original Classic.esp") SAY: Remember not to load (or to simply delete) XAC.esp
+    IF VAR(RU) && IF ACTIVE("XAC.esp") SAY: Не забудьте отключить или удалить XAC.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe XAC Original.esp
+  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+  IFNOT FILE("SkyRe XAC Original.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original.bsa" or this mod won't work.
+  IF VAR(EN) && IF ACTIVE("SkyRe XAC Original.esp") SAY: Remember not to load (or to simply delete) XAC.esp
+    IF VAR(RU) && IF ACTIVE("XAC.esp") SAY: Не забудьте отключить или удалить XAC.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe XAC Stat Swap Classic.esp
+  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+  IFNOT FILE("SkyRe XAC Stat Swap Classic.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap Classic.bsa" or this mod won't work.
+  IF VAR(EN) && IF ACTIVE("SkyRe XAC Stat Swap Classic.esp") SAY: Remember not to load (or to simply delete) XAC.esp
+    IF VAR(RU) && IF ACTIVE("SkyRe XAC Stat Swap Classic.esp") SAY: Не забудьте отключить или удалить XAC.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe XAC Stat Swap.esp
+  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+  IFNOT FILE("SkyRe XAC Stat Swap.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap.bsa" or this mod won't work.
+  IF VAR(EN) && IF ACTIVE("SkyRe XAC Stat Swap.esp") SAY: Remember not to load (or to simply delete) XAC.esp
+    IF VAR(RU) && IF ACTIVE("SkyRe XAC Stat Swap.esp") SAY: Не забудьте отключить или удалить XAC.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+SkyRe_Dreamcloth.esp
+  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+Tribunal for Skyre.esp
+  IFNOT FILE("Tribunal Robes by Zairaam.esp") REQ Tribunal Robes by Zairaam.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+ENDGROUP: SkyRe
 ENDGROUP: Overhauls
 
 BEGINGROUP: Quests and Locations
@@ -13172,8 +13621,7 @@ IFNOT FILE("3DNPC.esp") MOD: NerniesCityandVillage_TRO_BasicNeeds_Patch.esp
   SAY: This esp's master files are not in BOSS sort order.
 CookingExpanded - TRO_BN.esp
 SkBBP - Lore-Friendly Stats and Encumbrance.esp
-IFNOT VAR(SkyReM) MOD: vinis_food_and_rest.esp
-IFNOT VAR(SkyReM) REGEX: vinis_food_and_rest.+\.esp
+vinis_food_and_rest.*\.esp
 /* Imps More Complex Needs - Vampirism to load after other vampire feeding mods */
 IMCN - Overrides.esp
 IMCN FeedPatch.esp
@@ -15140,457 +15588,8 @@ REGEX: WiS IV - leveld World X\d+\.esp
   IF VAR(EN) SAY: Use only one WiS IV - leveld World esp
     IF VAR(RU) SAY: Используйте только один WiS IV - leveld World esp
 // skills xyz
-// skills wahteva...
-SkyRe_Main.esp
-  TAG: {{BASH: Relev, Delev}}
-    //TAG: {{BASH: Delev, Names, Relev}}
-  IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
-  IFNOT VAR(Dawnguard) REQ: Dawnguard DLC (SkyRe 0.99.17+)
-  IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
-  IF FILE("ACE Speech.esp") INC: ACE Speech.esp
-  IF FILE("Perky.esp") INC: Perky.esp (Syynx's Perky)
-  IF REGEX("PerkUP-.*\.esp") INC: PerkUP
-  IF REGEX("Uncapped Perks.*\.esp") INC: Uncapped perks
-  IF VAR(EN) && IF VAR(CCO) INC: Complete Crafting Overhaul (doubles in crafting)
-    IF VAR(RU) && IF VAR(CCO) INC: Complete Crafting Overhaul (дубликаты в меню крафтинга)
-  IF VAR(EN) && IF FILE("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
-    IF VAR(RU) && IF FILE("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
-  IF VAR(EN) WARN: The SkyRe has many conflicts with other mods.  Please read the readme before playing with mod. This will prevent many problems. Read it "http://skyrim.nexusmods.com/mods/9286 here".
-    IF VAR(RU) WARN: SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его "http://skyrim.nexusmods.com/mods/9286 здесь"(Англ.) или "http://u.to/EpZaAg здесь".
-  IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" for full perk functional
-    IF VAR(RU) && IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" для полного функционирования перков.
-  IF VAR(EN) && IF FILE("interface\lockpickingmenu.swf") SAY: If lockpicikng is not work then try to delete 'interface\lockpickingmenu.swf'
-    IF VAR(RU) && IF FILE("interface\lockpickingmenu.swf") SAY: Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл 'interface\lockpickingmenu.swf'
-  IF VAR(EN) SAY: If you have a problem with aiming try to install "http://skyrim.nexusmods.com/mods/13652 this" mod.
-    IF VAR(RU) SAY: Если у вас проблемы с прицеливанием, попробуйте установить "http://skyrim.nexusmods.com/mods/13652 этот" мод.
-  IF VAR(EN) SAY: To make aiming easier, recommend to add the following lines to Skyrim.ini:
-    IF VAR(RU) SAY: Чтобы сделать прицеливание проще, добавьте в ваш Skyrim.ini следующие строки:
-  SAY:   [Actor]
-  SAY:   fVisibleNavmeshMoveDist=12288.0000
-  SAY:   [Combat]
-  SAY:   f1PArrowTiltUpAngle=0.64
-  SAY:   f3PArrowTiltUpAngle=0.64
-  SAY:   fMagnetismStrafeHeadingMult=0.0
-  SAY:   fMagnetismLookingMult=0.0
-SkyRe_Main_NoDawnguard.esp
-  TAG: {{BASH: Relev, Delev}}
-    //TAG: {{BASH: Delev, Names, Relev}}
-  IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
-  IF VAR(Dawnguard) INC: Dawnguard DLC
-  IF FILE("SkyRe_Main.esp") INC: SkyRe_Main.esp
-  IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
-  IF FILE("ACE Speech.esp") INC: ACE Speech.esp
-  IF FILE("Perky.esp") INC: Perky.esp (Syynx's Perky)
-  IF REGEX("PerkUP-.*\.esp") INC: PerkUP
-  IF REGEX("Uncapped Perks.*\.esp") INC: Uncapped perks
-  IF VAR(EN) && IF VAR(CCO) INC: Complete Crafting Overhaul (doubles in crafting)
-    IF VAR(RU) && IF VAR(CCO) INC: Complete Crafting Overhaul (дубликаты в меню крафтинга)
-  IF VAR(EN) && IF FILE("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
-    IF VAR(RU) && IF FILE("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
-  IF VAR(EN) WARN: The SkyRe has many conflicts with other mods.  Please read the readme before playing with mod. This will prevent many problems. Read it "http://skyrim.nexusmods.com/mods/9286 here".
-    IF VAR(RU) WARN: SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его "http://skyrim.nexusmods.com/mods/9286 здесь"(Англ.) или "http://u.to/EpZaAg здесь".
-  IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" for full perk functional
-    IF VAR(RU) && IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" для полного функционирования перков.
-  IF VAR(EN) && IF FILE("interface\lockpickingmenu.swf") SAY: If lockpicikng is not work then try to delete 'interface\lockpickingmenu.swf'
-    IF VAR(RU) && IF FILE("interface\lockpickingmenu.swf") SAY: Если вы не можете взломать замки, не появляется окно со взломом, то попробуйте удалить или переименовать файл 'interface\lockpickingmenu.swf'
-  IF VAR(EN) SAY: If you have a problem with aiming try to install "http://skyrim.nexusmods.com/mods/13652 this" mod.
-    IF VAR(RU) SAY: Если у вас проблемы с прицеливанием, попробуйте установить "http://skyrim.nexusmods.com/mods/13652 этот" мод.
-  IF VAR(EN) SAY: To make aiming easier, recommend to add the following lines to Skyrim.ini:
-    IF VAR(RU) SAY: Чтобы сделать прицеливание проще, добавьте в ваш Skyrim.ini следующие строки:
-  SAY:   [Actor]
-  SAY:   fVisibleNavmeshMoveDist=12288.0000
-  SAY:   [Combat]
-  SAY:   f1PArrowTiltUpAngle=0.64
-  SAY:   f3PArrowTiltUpAngle=0.64
-  SAY:   fMagnetismStrafeHeadingMult=0.0
-  SAY:   fMagnetismLookingMult=0.0
-SkyRe_Combat.esp
-  IFNOT VAR(SkyReM) REQ: SkyRe_Main.esp
-Lorecraft - SkyRe.esp
-SkyRe_Comp.esp
-  IF VAR(EN) && IFNOT FILE("PerkReset SkyRe Compatibility Patch.esp") SAY: Recommend to use "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp" instead.
-    IF VAR(RU) && IFNOT FILE("PerkReset SkyRe Compatibility Patch.esp") SAY: Рекомендуется использовать вместо этого "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp".
-  IF VAR(EN) && IF FILE("PerkReset SkyRe Compatibility Patch.esp") ERROR: Delete and use 'PerkReset SkyRe Compatibility Patch.esp' instead.
-    IF VAR(RU) && IF FILE("PerkReset SkyRe Compatibility Patch.esp") ERROR: Удалите и используйте вместо этого 'PerkReset SkyRe Compatibility Patch.esp'.
-  IF VAR(EN) && IF FILE("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
-    IF VAR(RU) && IF FILE("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
-PerkReset SkyRe Compatibility Patch.esp
-  IF VAR(EN) && IF FILE("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
-    IF VAR(RU) && IF FILE("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
-IF VAR(SkyReM) MOD: vinis_food_and_rest.esp
-    IF VAR(RU) SAY: Используйте мод vinis_food_and_rest и не вкладывайте очки умений в перки "Мясоедство" и "Вегетарианство", добавленные из SkyRe_Main.esp.
-IF VAR(SkyReM) REGEX: vinis_food_and_rest.+\.esp
-SkyRe_CraftingFix.esp
-SkyRe_EncounterZones.esp
-IFNOT REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
-SkyRe_EnemyScaling.esp
-  TAG: {{BASH: Relev}}
-SkyRe_Enemies.esp
-  IF VAR(EN) WARN: Obsolete. Update to latest version of SkyRe and use SkyRe_EnemyScaling.esp instead
-    IF VAR(RU) WARN: Устарело обновите до последней версии SkyRe и используйте SkyRe_EnemyScaling.esp вместо этого.
-  TAG: {{BASH: Relev}}
-SkyRe_Lighting.esp
-  IF VAR(EN) SAY: Only for non ENB users
-    IF VAR(RU) SAY: Только для не ENB пользователей.
-SkyRe_StandingStones.esp
-  IF VAR(EN) && IF FILE("StaRe.esp") SAY: Remember not to load (or to simply delete) StaRe.esp
-    IF VAR(RU) && IF FILE("StaRe.esp") SAY: Не забудьте отключить или удалить StaRe.esp
-  IF FILE("Drakian race.esp") INC: Drakian race
-  IF FILE("Signs and Guardians.esp") INC: Signs and Guardians.esp
-SkyRe_Survivalism.esp
-  IFNOT ACTIVE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-  IFNOT ACTIVE("Chesko_Frostfall.esp") REQ: Chesko_Frostfall.esp
-  IF CHECKSUM("SkyRe_Survivalism.esp", AA2D4FD7) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-BetterQuestObjectives-SkyRePatch.esp
-  IFNOT FILE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if this file is active without SkyRe_Main
-IF VAR(SkyReM) MOD: Morrowloot.esp
-  TAG: {{BASH: Delev, Relev}}
-  IF VAR(EN) SAY: It is recommended to load morrowloot after any plugins that have a Relev tag which change the same leveled lists as morrowloot because they will re-add vanilla records removed by morrowloot.
-    IF VAR(RU) SAY: Для предотвращения появления некоторых вещей у продавцов, желательно помещать Morrowloot.esp после любых модов, которые имеют тег Relev(добавляют записи в уровневые списки) и меняют одни и те же уровневые списки, что и Morrowloot, иначе эти моды добавят удаленные записи обратно в ур.списки. Изменение уровневых списков разными модами можно посмотреть в отчете, который появляется после создания башед патча.
-  IF VAR(EN) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") SAY: You need the SkyRe compatibility patch for this to work as intended with SkyRe.
-    IF VAR(RU) && IF VAR(SkyRe) && IFNOT FILE("SkyRe_Plugin_Morrowloot.esp") WARN: Вам нужно установить патч совместимости для правильной работы мода с SkyRe.
 
-// skyre armor and weapon patches
-SkyRe_Plugin_BaratheonArmor_1.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("BaratheonArmor.esp") SAY: Remember not to load (or to simply delete) BaratheonArmor.esp
-    IF VAR(RU) && IF ACTIVE("BaratheonArmor.esp") SAY: Не забудьте отключить или удалить BaratheonArmor.esp
-SkyRe_Plugin_BerserkBlackSwordsmanArmor.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("blackswordsman.esp") SAY: Remember not to load (or to simply delete) blackswordsman.esp
-    IF VAR(RU) && IF ACTIVE("blackswordsman.esp") SAY: Не забудьте отключить или удалить blackswordsman.esp .
-SkyRe_Plugin_BetterBows_1.4.1.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("HBetterBows.esp") SAY: Remember not to load (or to simply delete) HBetterBows.esp
-    IF VAR(RU) && IF ACTIVE("HBetterBows.esp") SAY: Не забудьте отключить или удалить HBetterBows.esp
-SkyRe_Plugin_BowofIorveth_1.2.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("BowofIorveth.esp") SAY: Remember not to load (or to simply delete) BowofIorveth.esp
-    IF VAR(RU) && IF ACTIVE("BowofIorveth.esp") SAY: Не забудьте отключить или удалить BowofIorveth.esp
-SkyRe_Plugin_DaggerCraft_1.3.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("DaggerCraft.esp") SAY: Remember not to load (or to simply delete) DaggerCraft.esp
-    IF VAR(RU) && IF ACTIVE("DaggerCraft.esp") SAY: Не забудьте отключить или удалить DaggerCraft.esp
-SkyRe_Plugin_DragonBoneWeaponsComplete_1.03.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_DragonBoneWeaponsComplete.esp
-  IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa") WARN: You need to rename "DragonBoneWeaponsComplete.bsa" to "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" or this mod won't work.
-    IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_DragonBoneWeaponsComplete.bsa") WARN: Вам нужно переименовать "DragonBoneWeaponsComplete.bsa" в "SkyRe_Plugin_DragonBoneWeaponsComplete.bsa" для подключения ресурсов мода..
-  IF VAR(EN) && IF ACTIVE("Dragonbone Weapons Complete.esp") SAY: Remember not to load (or to simply delete) 'Dragonbone Weapons Complete.esp'
-    IF VAR(RU) && IF ACTIVE("Dragonbone Weapons Complete.esp") SAY: Не забудьте отключить или удалить 'Dragonbone Weapons Complete.esp'
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-REGEX: SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF ACTIVE("DreadKnightWeaponSet.\esp") || IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Dread Knight Weapon Set mod
-    IF ACTIVE("DreadKnightWeaponSet.\esp") || IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Dread Knight Weapon Set.
-SkyRe_Plugin_DwemerAutoBlade.esp
-  IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_DwemerAutoBlade.bsa") WARN: You need to rename "DwemerAutoBlade.bsa" to "SkyRe_Plugin_DwemerAutoBlade.bsa" or this mod won't work.
-    IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_DwemerAutoBlade.bsa") WARN: Вам нужно переименовать "DwemerAutoBlade.bsa" в "SkyRe_Plugin_DwemerAutoBlade.bsa" или этот мод не будет работать.
-  IF VAR(EN) && IF ACTIVE("DwemerAutoBlade.esp") SAY: Remember not to load (or to simply delete) DwemerAutoBlade.esp
-    IF VAR(RU) && IF ACTIVE("DwemerAutoBlade.esp") SAY: Не забудьте отключить или удалить DwemerAutoBlade.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_HedgeKnightArmor_1.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("HedgeKnight.esp") SAY: Remember not to load (or to simply delete) HedgeKnight.esp
-    IF VAR(RU) && IF ACTIVE("HedgeKnight.esp") SAY: Не забудьте отключить или удалить HedgeKnight.esp
-SkyRe_hothtrooper44_ArmorCompilation.esp
-  // same as below??
-  IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: hothtrooper44_ArmorCompilation.esp
-  IFNOT VAR(SkyReM) REQ: SkyRe_Main.esp
-REGEX: SkyRe_Plugin_ImmersiveArmor_.+\.esp
-  IF VAR(EN) && IF ACTIVE("hothtrooper44_ArmorCompilation.esp") SAY: Remember not to load (or to simply delete) hothtrooper44_ArmorCompilation.esp
-    IF VAR(RU) && IF ACTIVE("hothtrooper44_ArmorCompilation.esp") SAY: Не забудьте отключить или удалить hothtrooper44_ArmorCompilation.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_InsanitysCelticKatana_1.2.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("InsanitysCelticKatana.esp") SAY: Remember not to load (or to simply delete) InsanitysCelticKatana.esp
-    IF VAR(RU) && IF ACTIVE("InsanitysCelticKatana.esp") SAY: Не забудьте отключить или удалить InsanitysCelticKatana.esp
-SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
-    IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
-SkyRe_Plugin_isilNarsil.esp
-  IF VAR(EN) && IF ACTIVE("isilNarsil.esp") SAY: Remember not to load (or to simply delete) isilNarsil.esp
-    IF VAR(RU) && IF ACTIVE("isilNarsil.esp") SAY: Не забудьте отключить или удалить isilNarsil.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_JaySuSSwords_1.3D.esp
-  TAG: {{BASH: Delev}}
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SkyRe_Plugin_JaySuSSwords.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe_Plugin_JaySuSSwords.esp
-  IF VAR(EN) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_JaySuSSwords.esp
-  TAG: {{BASH: Delev}}
-  IF VAR(EN) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF CHECKSUM("SkyRe_Plugin_JaySuSSwords.esp", 33879A9F) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-SkyRe_Plugin_Malo_Waffen_V3Bugfix.esp
-  IF VAR(EN) && IF ACTIVE("Malo_Waffen.esp") SAY: Remember not to load (or to simply delete) Malo_Waffen.esp
-    IF VAR(RU) && IF ACTIVE("Malo_Waffen.esp") SAY: Не забудьте отключить или удалить Malo_Waffen.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_Morrowloot.esp
-  IFNOT FILE("Morrowloot.esp") REQ: Morrowloot.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-REGEX: SkyRe_Plugin_NicoroshiCreations.*\.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("Nicoroshi Creations.esp") SAY: Remember not to load (or to simply delete) Nicoroshi Creations.esp
-    IF VAR(RU) && IF ACTIVE("Nicoroshi Creations.esp") SAY: Не забудьте отключить или удалить Nicoroshi Creations.esp
-SkyRe_Plugin_NordicHunterLightArmor_1.2.esp
-  IF VAR(EN) && IF FILE("hunterarmorv1.2.esp") SAY: Possible already include the hunterarmorv1.2.esp
-    IF VAR(RU) && IF FILE("hunterarmorv1.2.esp") SAY: Возможно уже включено в hunterarmorv1.2.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_Omegared99-WeaponSets.esp
-  IF VAR(EN) && IF ACTIVE("Omegared99-WeaponSets.esp") SAY: Remember not to load (or to simply delete) Omegared99-WeaponSets.esp
-    IF VAR(RU) && IF ACTIVE("Omegared99-WeaponSets.esp") SAY: Не забудьте отключить или удалить Omegared99-WeaponSets.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_Omegared99sACv3_6.esp
-  IF VAR(EN) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
-    IF VAR(RU) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: Вам все еще нужен Omegared99-Compilation.esm
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_Omegared99sArmorCompilation.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SkyRe_Plugin_Omegared99sACv3_6.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe_Plugin_Omegared99sACv3_6.esp
-  IF VAR(EN) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
-    IF VAR(RU) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: Вам все еще нужен Omegared99-Compilation.esm
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_Omegared99sArmorCompilation_3.5a.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version of SkyRe.
-    IF VAR(RU) SAY: Устарело обновите до последней версии SkyRe.
-  IF VAR(EN) && IFNOT FILE("Omegared99-Compilation.esm") ERROR: You still need Omegared99-Compilation.esm
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-REGEX: SkyRe_Plugin_Oriental Weapon&Armor.*\.esp
-  IF VAR(EN) && IF ACTIVE("Oriental Weapon&Armor.esp") SAY: Remember not to load (or to simply delete) Oriental Weapon&Armor.esp
-    IF VAR(RU) && IF ACTIVE("Oriental Weapon&Armor.esp") SAY: Не забудьте отключить или удалить Oriental Weapon&Armor.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_RedguardKnightArmor_3.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF FILE("RedguardKnight.esp") SAY: Remember not to load (or to simply delete) RedguardKnight.esp
-    IF VAR(RU) && IF FILE("RedguardKnight.esp") SAY: Не забудьте отключить или удалить RedguardKnight.esp
-SkyRe_Plugin_RegentSwords.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF FILE("RegentSword.esp") SAY: Remember not to load (or to simply delete) RegentSword.esp
-    IF VAR(RU) && IF FILE("RegentSword.esp") SAY: Не забудьте отключить или удалить RegentSword.esp
-SkyRe_Plugin_VagabondArmor_5.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("VagabondArmor.esp") SAY: Remember not to load (or to simply delete) VagabondArmor.esp
-    IF VAR(RU) && IF ACTIVE("VagabondArmor.esp") SAY: Не забудьте отключить или удалить VagabondArmor.esp
-SkyRe_Plugin_VanguardArmor_3.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("VanguardArmor.esp") SAY: Remember not to load (or to simply delete) VanguardArmor.esp
-    IF VAR(RU) && IF ACTIVE("VanguardArmor.esp") SAY: Не забудьте отключить или удалить VanguardArmor.esp
-SkyRe_Plugin_viciousdawnbreaker.esp
-  IF VAR(EN) && IFNOT FILE("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa") WARN: You need to rename "viciousdawnbreaker.bsa" to "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" or this mod won't work.
-    IF VAR(RU) && IFNOT FILE("SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa") WARN: Вам нужно переименовать "viciousdawnbreaker.bsa" в "SkyRe_Plugin_SkyRe_Plugin_viciousdawnbreaker.bsa" или этот мод не будет работать.
-  IF VAR(EN) && IF ACTIVE("viciousdawnbreaker.esp") SAY: Remember not to load (or to simply delete) viciousdawnbreaker.esp
-    IF VAR(RU) && IF ACTIVE("viciousdawnbreaker.esp") SAY: Не забудьте отключить или удалить viciousdawnbreaker.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Plugin_WarchiefArmor_4.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("warchiefarmor.esp") SAY: Remember not to load (or to simply delete) warchiefarmor.esp
-    IF VAR(RU) && IF ACTIVE("warchiefarmor.esp") SAY: Не забудьте отключить или удалить warchiefarmor.esp
-SkyRe_Plugin_Witcher 2 Style Dawnguard Armour.esp
-SkyRe  - Jojjo's Dreadknight Patch.esp
-  IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp") && IF VAR(EN) WARN: Use only one Skyre Dreadknight
-    IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp") && IF VAR(RU) WARN: Используйте только один SkyRe Dreadknight
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Dread Knight Weapon Set.esp
-    IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Dread Knight Weapon.esp
-SkyRe Avatar of Baltazar.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("Avatar of Baltazar.esp") SAY: Remember not to load (or to simply delete) Avatar of Baltazar.esp
-    IF VAR(RU) && IF ACTIVE("Avatar of Baltazar.esp") SAY: Не забудьте отключить или удалить Avatar of Baltazar.esp
-SkyRe Avatar of Grenth.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("Avatar of Grenth.esp") SAY: Remember not to load (or to simply delete) Avatar of Grenth.esp
-    IF VAR(RU) && IF ACTIVE("Avatar of Grenth.esp") SAY: Не забудьте отключить или удалить Avatar of Grenth.esp
-SkyRe Black Mage Armor.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("Black Mage Armor.esp") SAY: Remember not to load (or to simply delete) Black Mage Armor.esp
-    IF VAR(RU) && IF ACTIVE("Black Mage Armor.esp") SAY: Не забудьте отключить или удалить Black Mage Armor.esp
-SkyRe Chainmail Hauberks.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("Chainmailhauberks 1.1.esp") SAY: Remember not to load (or to simply delete) Chainmailhauberks 1.1.esp
-    IF VAR(RU) && IF ACTIVE("Chainmailhauberks 1.1.esp") SAY: Не забудьте отключить или удалить Chainmailhauberks 1.1.esp
-SkyRe Chinese General Armor and Weapon.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version, SkyRe Chinese General Set.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe Chinese General Set.esp
-SkyRe Chinese General Set.esp
-  IF VAR(EN) && IF ACTIVE("Song General Armor&weapon.esp") SAY: Remember not to load (or to simply delete) Song General Armor&weapon.esp
-    IF VAR(RU) && IF ACTIVE("Song General Armor&weapon.esp") SAY: Не забудьте отключить или удалить Song General Armor&weapon.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe Chinese General Set - Realistic.esp
-  IF VAR(EN) && IF ACTIVE("SkyRe Chinese General Set - Realistic.esp") SAY: Remember not to load (or to simply delete) Song General Armor&weapon.esp
-    IF VAR(RU) && IF ACTIVE("SkyRe Chinese General Set - Realistic.esp") SAY: Не забудьте отключить или удалить Song General Armor&weapon.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe Dark Nemesis.esp
-  IF CHECKSUM("SkyRe Dark Nemesis.esp", FBBC3828) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
-    IF CHECKSUM("SkyRe Dark Nemesis.esp", FBBC3828) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("DarkNemesis.esp") && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Remember not to load (or to simply delete) DarkNemesis.esp
-    IF VAR(RU) && IF ACTIVE("DarkNemesis.esp") && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Не забудьте отключить или удалить DarkNemesis.esp
-SkyRe Divine Aegis.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("Divine Aegis.esp")  && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Remember not to load (or to simply delete) DarkNemesis.esp
-    IF VAR(RU) && IF ACTIVE("Divine Aegis.esp")  && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Не забудьте отключить или удалить DarkNemesis.esp
-SkyRe Equipment of Eternal Shine.esp
-  IF CHECKSUM("SkyRe Equipment of Eternal Shine.esp", C47F2C45) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
-    IF CHECKSUM("SkyRe Equipment of Eternal Shine.esp", C47F2C45) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("EternalShineArmorAndWeapons.esp") SAY: Remember not to load (or to simply delete)
-    IF VAR(RU) && IF ACTIVE("EternalShineArmorAndWeapons.esp") SAY: Не забудьте отключить или удалить
-Skyre Guardian Plate Armor.esp
-  IF VAR(EN) && IF ACTIVE("Guardian Plate Armor.esp") SAY: Remember not to load (or to simply delete) Guardian Plate Armor.esp
-    IF VAR(RU) && IF ACTIVE("Guardian Plate Armor.esp") SAY: Не забудьте отключить или удалить Guardian Plate Armor.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe Heroic Dwarven Armor and Weapon Set.esp
-  IF VAR(EN) && IF ACTIVE("HeroicDwarven.esp") SAY: Remember not to load (or to simply delete) HeroicDwarven.esp
-    IF VAR(RU) && IF ACTIVE("HeroicDwarven.esp") SAY: Не забудьте отключить или удалить HeroicDwarven.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe Iron Armor Chainmail.esp
-  IF VAR(EN) && IF ACTIVE("dfnkt-IronArmorSleeves-Craftable.esp") SAY: Remember not to load (or to simply delete) dfnkt-IronArmorSleeves-Craftable.esp
-    IF VAR(RU) && IF ACTIVE("dfnkt-IronArmorSleeves-Craftable.esp") SAY: Не забудьте отключить или удалить dfnkt-IronArmorSleeves-Craftable.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe Masters of Death Sicarius Armor.esp
-  IF VAR(EN) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp
-    IF VAR(RU) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe Masters of Death - Sicarius Armor (Standalone).esp
-  IF VAR(EN) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Remember not to load (or to simply delete) Masters of Death - Sicarius Armor (Standalone).esp
-    IF VAR(RU) && IF ACTIVE("Masters of Death - Sicarius Armor (Standalone).esp") SAY: Не забудьте отключить или удалить Masters of Death - Sicarius Armor (Standalone).esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe Mithril Armor.esp
-  IF VAR(EN) && IFNOT FILE("SkyRe Mithril Armor.bsa") WARN: You need to rename "Matys Mithril armor Enhanced.bsa" to "SkyRe Mithril Armor.bsa" or this mod won't work.
-    IF VAR(RU) && IFNOT FILE("SkyRe Mithril Armor.bsa") WARN: Вам нужно переименовать "Matys Mithril armor Enhanced.bsa" в "SkyRe Mithril Armor.bsa" или этот мод не будет работать.
-  IF VAR(EN) && IF ACTIVE("Matys Mithril armor Enhanced.esp") SAY: Remember not to load (or to simply delete) Matys Mithril armor Enhanced.esp
-    IF VAR(RU) && IF ACTIVE("Matys Mithril armor Enhanced.esp") SAY: Не забудьте отключить или удалить Matys Mithril armor Enhanced.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe Mystic Armor and Weapon Set.esp
-  IF VAR(EN) && IF ACTIVE("Mystic.esp") SAY: Remember not to load (or to simply delete) Mystic.esp
-    IF VAR(RU) && IF ACTIVE("Mystic.esp") SAY: Не забудьте отключить или удалить Mystic.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe Nordic Conqueror Armor.esp
-  IF VAR(EN) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Remember not to load (or to simply delete) Nordic Conqueror Armor.esp
-    IF VAR(RU) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Не забудьте отключить или удалить Nordic Conqueror Armor.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe Nordic Conqueror Armor - Realistic.esp
-  IF FILE("SkyRe Nordic Conqueror Armor.esp") && IF VAR(EN) WARN: Use either SkyRe Nordic Conqueror Armor.esp or SkyRe Nordic Conqueror Armor - Realistic.esp, not both.
-    IF FILE("SkyRe Nordic Conqueror Armor.esp") && IF VAR(RU) WARN: Используйте любой или SkyRe Nordic Conqueror Armor.esp или SkyRe Nordic Conqueror Armor - Realistic.esp, не обa.
-  IF VAR(EN) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Remember not to load (or to simply delete) Nordic Conqueror Armor.esp
-    IF VAR(RU) && IF ACTIVE("Nordic Conqueror Armor.esp") SAY: Не забудьте отключить или удалить Nordic Conqueror Armor.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe Rogue Sorceress.esp
-  IF VAR(EN) && IF ACTIVE("theRoadstrokersRogueSorceress.esp") SAY: Remember not to load (or to simply delete) theRoadstrokersRogueSorceress.esp
-    IF VAR(RU) && IF ACTIVE("theRoadstrokersRogueSorceress.esp") SAY: Не забудьте отключить или удалить theRoadstrokersRogueSorceress.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe SeraticDark.esp
-  IF VAR(EN) && IFNOT FILE("SkyRe SeraticDark.bsa") WARN: You need to rename "SeraticHeavyArmorDark.bsa" to "SkyRe SeraticDark.bsa" or this mod won't work.
-    IF VAR(RU) && IFNOT FILE("SkyRe SeraticDark.bsa") WARN: Вам нужно переименовать "SeraticHeavyArmorDark.bsa" в "SkyRe SeraticDark.bsa" или этот мод не будет работать.
-  IF VAR(EN) && IF ACTIVE("SeraticHeavyArmorDark.esp") SAY: Remember not to load (or to simply delete) SeraticHeavyArmorDark.esp
-    IF VAR(RU) && IF ACTIVE("SeraticHeavyArmorDark.esp") SAY: Не забудьте отключить или удалить SeraticHeavyArmorDark.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe SeraticGray.esp
-  IF VAR(EN) && IFNOT FILE("SkyRe SeraticGray.bsa") WARN: You need to rename "SeraticHeavyArmorGray.bsa" to "SkyRe SeraticGray.bsa" or this mod won't work.
-    IF VAR(RU) && IFNOT FILE("SkyRe SeraticGray.bsa") WARN: Вам нужно переименовать "SeraticHeavyArmorGray.bsa" в "SkyRe SeraticGray.bsa" или этот мод не будет работать.
-  IF VAR(EN) && IF ACTIVE("SeraticHeavyArmorGray.esp") SAY: Remember not to load (or to simply delete) SeraticHeavyArmorGray.esp
-    IF VAR(RU) && IF ACTIVE("SeraticHeavyArmorGray.esp") SAY: Не забудьте отключить или удалить SeraticHeavyArmorGray.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe SeraticLight.esp
-  IF VAR(EN) && IFNOT FILE("SkyRe SeraticLight.bsa") WARN: You need to rename "SeraticArmor.bsa" to "SkyRe SeraticLight.bsa" or this mod won't work.
-    IF VAR(RU) && IFNOT FILE("SkyRe SeraticLight.bsa") WARN: Вам нужно переименовать "SeraticArmor.bsa" в "SkyRe SeraticLight.bsa" или этот мод не будет работать.
-  IF VAR(EN) && IF ACTIVE("SeraticArmor.esp") SAY: Remember not to load (or to simply delete) SeraticArmor.esp
-    IF VAR(RU) && IF ACTIVE("SeraticArmor.esp") SAY: Не забудьте отключить или удалить SeraticArmor.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe XAC Original Classic.esp
-  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
-  IFNOT FILE("SkyRe XAC Original Classic.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original Classic.bsa" or this mod won't work.
-  IF VAR(EN) && IF ACTIVE("SkyRe XAC Original Classic.esp") SAY: Remember not to load (or to simply delete) XAC.esp
-    IF VAR(RU) && IF ACTIVE("XAC.esp") SAY: Не забудьте отключить или удалить XAC.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe XAC Original.esp
-  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
-  IFNOT FILE("SkyRe XAC Original.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original.bsa" or this mod won't work.
-  IF VAR(EN) && IF ACTIVE("SkyRe XAC Original.esp") SAY: Remember not to load (or to simply delete) XAC.esp
-    IF VAR(RU) && IF ACTIVE("XAC.esp") SAY: Не забудьте отключить или удалить XAC.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe XAC Stat Swap Classic.esp
-  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
-  IFNOT FILE("SkyRe XAC Stat Swap Classic.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap Classic.bsa" or this mod won't work.
-  IF VAR(EN) && IF ACTIVE("SkyRe XAC Stat Swap Classic.esp") SAY: Remember not to load (or to simply delete) XAC.esp
-    IF VAR(RU) && IF ACTIVE("SkyRe XAC Stat Swap Classic.esp") SAY: Не забудьте отключить или удалить XAC.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe XAC Stat Swap.esp
-  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
-  IFNOT FILE("SkyRe XAC Stat Swap.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap.bsa" or this mod won't work.
-  IF VAR(EN) && IF ACTIVE("SkyRe XAC Stat Swap.esp") SAY: Remember not to load (or to simply delete) XAC.esp
-    IF VAR(RU) && IF ACTIVE("SkyRe XAC Stat Swap.esp") SAY: Не забудьте отключить или удалить XAC.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-SkyRe_Dreamcloth.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
-Tribunal for Skyre.esp
-  IFNOT FILE("Tribunal Robes by Zairaam.esp") REQ Tribunal Robes by Zairaam.esp
-  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
-    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-
-// plugins with skyre as master, must be loaded after skyre_main.esp
-SkyRe_Perk_Tomes.esp
-  IFNOT ACTIVE("Skyre_Main.esp") ERROR: Skyre_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-// ------------------------------
+//[Issue SkyRe] These plugins have SkyRe as a master and most likely need relocating to fit it's not load position.
 SynergyBonuses.esp
 xpMedium.esp
 XPModNormal.esp
