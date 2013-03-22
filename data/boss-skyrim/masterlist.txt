@@ -3642,6 +3642,9 @@ solitude smelter.esp
 solssecretstash.esp
 SortiertesInventar.esp
 Soul Eater The Enchantment Removing Chest.esp
+  IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+
+  IF CHECKSUM("Soul Eater The Enchantment Removing Chest.esp", 9D754581) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("Soul Eater The Enchantment Removing Chest.esp", 9D754581) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 SpaceWikingSpecialEffectFreyjaGems.esp
 spectralfrostdragon.esp
 SpeedPotionsV1.2.esp
@@ -17112,6 +17115,10 @@ SFR_Onmund.esp
 Onmund.esp
   IF VAR(EN) SAY: Obsolete. Update to "http://skyrim.nexusmods.com/mods/20729 latest version."
     IF VAR(RU) SAY: Устарело. Обновите до "http://skyrim.nexusmods.com/mods/20729 последней версии."
+Onmund by CrimsonFairy.esp
+Human Onmund.esp
+  IF CHECKSUM("Human Onmund.esp", 5A191ACA) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Human Onmund.esp", 5A191ACA) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 
 // companions p
 Pluto.esp
