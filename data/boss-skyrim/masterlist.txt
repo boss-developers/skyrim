@@ -8006,8 +8006,6 @@ SkyRe_Survivalism.esp
   IFNOT ACTIVE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IFNOT ACTIVE("Chesko_Frostfall.esp") REQ: Chesko_Frostfall.esp
   IF CHECKSUM("SkyRe_Survivalism.esp", AA2D4FD7) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-BetterQuestObjectives-SkyRePatch.esp
-  IFNOT FILE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if this file is active without SkyRe_Main
 IF VAR(SkyReM) MOD: Morrowloot.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: It is recommended to load morrowloot after any plugins that have a Relev tag which change the same leveled lists as morrowloot because they will re-add vanilla records removed by morrowloot.
@@ -11218,6 +11216,8 @@ BetterQuestObjectives-ESFCompanionsPatch.esp
 	IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
 BetterQuestObjectives-RequiemPatch.esp
   IFNOT FILE("Requiem.esp") ERROR: Requiem.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+BetterQuestObjectives-SkyRePatch.esp
+  IFNOT FILE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if this file is active without SkyRe_Main
 IF REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 Headbomb's Better Sorting - Ammo.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Ammo.esp", 58924631) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
