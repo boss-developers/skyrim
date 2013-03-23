@@ -16532,6 +16532,11 @@ EnhancedCompanionGuildNoCosmetic.esp
 Eileen.esp
 IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMCompViljaSkyrim.esp
   IF CHECKSUM("EMCompViljaSkyrim.esp", C45D4383) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMViljaInSolstheimAddOn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IFNOT FILE("EMCompViljaSkyrim.esp") && IF VAR(EN) ERROR: EMCompViljaSkyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without "EMCompViljaSkyrim http://skyrim.nexusmods.com/mods/26393"
+    IFNOT FILE("EMCompViljaSkyrim.esp") && IF VAR(RU) ERROR: EMCompViljaSkyrim.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "EMCompViljaSkyrim http://skyrim.nexusmods.com/mods/26393"
 Essential followers - all followers.esp
   IF VAR(EN) && IF VAR(UFO) SAY: Is redundant for 'UFO - Ultimate Follower Overhaul.esp'. You can make essential any your followers with UFO.
     IF VAR(RU) && IF VAR(UFO) WARN: Этот мод избыточен при использовании  UFO - Ultimate Follower Overhaul.esp. Вы можете сделать любых ваших партнеров бессмертными с помощью возможностей UFO.
@@ -17769,6 +17774,11 @@ DogCompanionsToFoxes.esp
 DudestiaMultiMarriages.esp
 IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMCompViljaSkyrim.esp
   IF CHECKSUM("EMCompViljaSkyrim.esp", C45D4383) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMViljaInSolstheimAddOn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IFNOT FILE("EMCompViljaSkyrim.esp") && IF VAR(EN) ERROR: EMCompViljaSkyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without "EMCompViljaSkyrim http://skyrim.nexusmods.com/mods/26393"
+    IFNOT FILE("EMCompViljaSkyrim.esp") && IF VAR(RU) ERROR: EMCompViljaSkyrim.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "EMCompViljaSkyrim http://skyrim.nexusmods.com/mods/26393"
 FriendlyFireTolerance99not4.esp
 REGEX: FollowMeNicely(AndHugMeMyLove)?(Dammit-)?(LetUsChat|AllOptionsOn)?(LessRepetitiveChatter)?\.esp
 REGEX: FollowMeNicelyDammit-(ShutUpAndFight|RunLittleRabbitRun|LetsUsChat)?\.esp

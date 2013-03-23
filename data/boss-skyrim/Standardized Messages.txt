@@ -26,6 +26,13 @@ Note: Standardized messages allow users to receive a consistent message for each
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 //
+// --Other Dependancy Messages--
+//
+// -Standard Dependancy-
+//
+  IFNOT FILE("plugin") && IF VAR(EN) ERROR: <Plugin name> is not present or is not active. Skyrim will CTD when loading if using this file without <Plugin name without extension>
+    IFNOT FILE("plugin") && IF VAR(RU) ERROR: <Plugin name> отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла <Plugin name without extension>
+// Remember to fill in the appropriate details. If a link to the plugin's download page is on hand make the "<Plugin name without extension>" a link.
 //
 // ================================================================
 //
@@ -33,13 +40,13 @@ Note: Standardized messages allow users to receive a consistent message for each
 //
 // -ITM and UDR-
 //
-  IF CHECKSUM("plugin", Checksum) DIRTY: x ITM, y UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("plugin", Checksum) DIRTY: <x> ITM, <y> UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 // Remember to fill in the appropriate details (If there are 0 ITM or UDR, please insert a 0)
 //
 // -Deleted Navmesh- (updated to no-checksum reporting, ~3/22/2013)
 //
-  IF VAR(EN) WARN: This file contains x deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
-    IF VAR(RU) WARN: Этот файл содержит x удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  IF VAR(EN) WARN: This file contains <x> deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит <x> удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 // Remember to fill in the appropriate number
 //
 // ================================================================
