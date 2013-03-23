@@ -11210,7 +11210,7 @@ BetterQuestObjectives-Hearthfire.esp
   IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
 BetterQuestObjectives-BSaQBPatch.esp
-  IFNOT FILE("Better Skill and Quest Books Names.esp") ERROR: Better Skill and Quest Books Names.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names
+  IFNOT FILE("Better Skill and Quest Books Names.esp") REQ: "http://skyrim.nexusmods.com/mods/10125 Better Skill and Quest Books Names"
 BetterQuestObjectives-ESFCompanionsPatch.esp
   IFNOT FILE("ESFCompanions.esp") ERROR: ESFCompanions.esp is not present or is not active. Skyrim will CTD when loading if this file is active without ESFCompanions
 	IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -18776,13 +18776,12 @@ SPTConsistentOlderPeopleEEOPatch.esp
     IFNOT ACTIVE("ethereal_elven_overhaul.esp") && IF VAR(RU) ERROR: ethereal_elven_overhaul.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(EN) ERROR: SPTConsistentOlderPeople.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(RU) ERROR: SPTConsistentOlderPeople.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-RND_RWLReduced-Patch.esp 
-REGEX: SSS .+ Patch\.esp
+RND_RWLReduced-Patch.esp
 SSS Deadly Dragons Patch A.esp
 SSS Deadly Dragons Patch B.esp
+  IF FILE("SSS Deadly Dragons Patch A.esp") && IFNOT FILE("SSS Deadly Dragons Patch C.esp") && IF VAR(EN) WARN: Use only one of the SSS Deadly Dragons Patches.
 SSS Deadly Dragons Patch C.esp
-  IF FILE("SSS Deadly Dragons Patch A.esp") && IF VAR(EN) WARN: Use either SSS Deadly Dragons Patch A.esp or SSS Deadly Dragons Patch B.esp, not both.
-    IF FILE("SSS Deadly Dragons Patch A.esp") && IF VAR(RU) WARN: Используйте любой, или SSS Deadly Dragons Patch A.esp или SSS Deadly Dragons Patch B.esp, не обa.
+  IF FILE("SSS Deadly Dragons Patch A.esp") || IF FILE("SSS Deadly Dragons Patch B.esp") && IF VAR(EN) WARN: Use only one of the SSS Deadly Dragons Patches.
 SSS Immersive Armors Add-on.esp
 TD&UV Patch .esp
 The Asteria - Dwemer Airship(GS).esp
@@ -18795,7 +18794,6 @@ ENDGROUP: Compatibility Patches
 BEGINGROUP: SkyUi and MiscUi Mods
 
 RaceMenu.esp
-  IF FILE("SSS Deadly Dragons Patch A.esp") && IF VAR(EN) WARN: Use either SSS Deadly Dragons Patch A.esp or SSS Deadly Dragons Patch B.esp, not both.
   IF VERSION("SKSE", "0.1.6.6", <) REQ: "http://skse.silverlock.org SKSE" 1.6.6+
 RaceMenuPlugin.esp
   SAY: RaceMenuPlugin is optional and provides support to alter Height, Breast, Glute and Biceps. If you experience issues with it, disable RaceMenuPlugin.esp and inform the author.
