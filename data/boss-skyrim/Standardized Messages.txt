@@ -9,26 +9,26 @@ Note: Standardized messages allow users to receive a consistent message for each
 //
 // ================================================================
 //
-// --DLC Dependancy Messages--
+// --DLC Dependency Messages--
 //
-// -Dawnguard Dependancy-
+// -Dawnguard Dependency-
 //
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 //
-// -Hearthfire Dependancy-
+// -Hearthfire Dependency-
 //
   IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
 //
-// -Dragonborn Dependancy-
+// -Dragonborn Dependency-
 //
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 //
-// --Other Dependancy Messages--
+// --Other Dependency Messages--
 //
-// -Standard Dependancy-
+// -Standard Dependency-
 //
   IFNOT FILE("plugin") && IF VAR(EN) ERROR: <Plugin name> is not present or is not active. Skyrim will CTD when loading if using this file without <Plugin name without extension>
     IFNOT FILE("plugin") && IF VAR(RU) ERROR: <Plugin name> отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла <Plugin name without extension>
@@ -48,6 +48,13 @@ Note: Standardized messages allow users to receive a consistent message for each
   IF VAR(EN) WARN: This file contains <x> deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит <x> удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 // Remember to fill in the appropriate number
+//
+// -Out of order records (likely pre-CK)
+//
+  IF CHECKSUM("plugin", Checksum) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("plugin", Checksum) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+// Remember to fill in the appropriate details.
+//
 //
 // ================================================================
 //
