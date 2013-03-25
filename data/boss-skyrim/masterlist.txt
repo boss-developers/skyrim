@@ -5676,6 +5676,21 @@ ibr_sedethul.esp
 Ice Armour.esp
   IF VAR(EN) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Download it here:"http://steamcommunity.com/sharedfiles/filedetails/?id=83061079" or here:"http://skyrim.nexusmods.com/mods/20868".
     IF VAR(RU) && IFNOT FILE("Elemental Base.esp") REQ: Elemental Base Pack. Ищите его "http://steamcommunity.com/sharedfiles/filedetails/?id=83061079 здесь" или "http://skyrim.nexusmods.com/mods/20868 здесь".
+ImmersiveLoot.esp
+  TAG: {{BASH: Delev, Relev}}
+  IF CHECKSUM("ImmersiveLoot.esp", F2377244) DIRTY: 73 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+ImmersiveLoot - Stats.esp
+ImmersiveLoot - Dawnguard.esp
+  TAG: {{BASH: Delev, Relev}}
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("ImmersiveLoot.esp") REQ: ImmersiveLoot.esp
+ImmersiveLoot - DGStats.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+ImmersiveCells.esp
+  TAG: {{BASH: Relev}}
+  IF CHECKSUM("ImmersiveCells.esp", 332080B8) DIRTY: 2 ITM, 10 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 imp_guard_helm.esp
 imp_helm.esp
   IF CHECKSUM("imp_helm.esp", B5CC3F9D) DIRTY:  3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -7350,6 +7365,20 @@ CraftableODPM.esp
   IF CHECKSUM("CraftableODPM.esp", 4804B647) && IF VAR(EN) WARN: Obsolete. Update to latest version.
     IF CHECKSUM("CraftableODPM.esp", 4804B647) && IF VAR(RU) WARN: Устарело. Обновите до последней версии.
   IF CHECKSUM("CraftableODPM.esp", B19B9231)  DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+ImmersiveLoot - ImmersiveArmors.esp
+  TAG: {{BASH: Delev, Relev}}
+  IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: hothtrooper44_ArmorCompilation.esp
+  IFNOT FILE("ImmersiveLoot.esp") REQ: ImmersiveLoot.esp
+ImmersiveLoot - MorrowindArmor.esp
+  TAG: {{BASH: Delev, Relev}}
+  IFNOT FILE("ImmersiveLoot.esp") REQ: ImmersiveLoot.esp
+  IFNOT FILE("MorrowindArmor.esp") REQ: MorrowindArmor.esp
+ImmersiveLoot - RegentArmoury.esp
+  TAG: {{BASH: Delev, Relev}}
+  IF CHECKSUM("ImmersiveLoot - RegentArmoury.esp", B79EDD7F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IFNOT FILE("RegentSword.esp") REQ: RegentSword.esp
+ImmersiveLoot - Bandoliers.esp
+  IFNOT FILE("Dr_Bandolier.esp") REQ: Dr_Bandolier.esp
 SG_HothTrooper.esp
   SAY: Remember to install ALL 6 original mods before activating this patch or Skyrim will crash when it can't find the supporting files.
   IF CHECKSUM("SG_HothTrooper.esp", C7B7E357) DIRTY: 8 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
