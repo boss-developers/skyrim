@@ -142,16 +142,16 @@ Update.esm
   IF CHECKSUM("Update.esm", E5B67BDA) DIRTY: 92 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("Update.esm", 412D96FB) DIRTY: 50 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   // This is version 1.8 of Update.esm
-  IF CHECKSUM("Update.esm", 7F464083) DIRTY: 73 ITM, 1 UDR records with 3.0.28. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Update.esm", 7F464083) DIRTY: 73 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Dawnguard.esm
-  IF CHECKSUM("Dawnguard.esm", BD72CCF3) DIRTY: 607 ITM, 82 UDR records with 3.0.28. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Dawnguard.esm", BD72CCF3) DIRTY: 607 ITM, 82 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF VERSION("TES5", "1.7.7", <) REQ: Skyrim 1.7.7+
   TAG: {{BASH: Delev, Relev}}
 Hearthfires.esm
-  IF CHECKSUM("Hearthfires.esm", AF82CE6A) DIRTY: 171 ITM, 11 UDR records with 3.0.28. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Hearthfires.esm", AF82CE6A) DIRTY: 171 ITM, 11 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF VERSION("TES5", "1.7.7", <) REQ: Skyrim 1.7.7+
 Dragonborn.esm
-  IF CHECKSUM("Dragonborn.esm", A9F83BFF) DIRTY: 57 ITM, 8 UDR records with 3.0.28. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Dragonborn.esm", A9F83BFF) DIRTY: 57 ITM, 8 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 
 ENDGROUP: Official ESMs
@@ -160,7 +160,7 @@ BEGINGROUP: ESMs
 
 // esms early
 Unofficial Skyrim Patch.esm
-  IF VAR(EN) ERROR: This esm file WILL damage your game. We strongly advise that you use the official version of "http://skyrim.nexusmods.com/mods/19 Unofficial Skyrim Patch".
+  IF VAR(EN) ERROR: This esm file WILL damage your game. We strongly advise that you use the official version of the "http://skyrim.nexusmods.com/mods/19 Unofficial Skyrim Patch".
     IF VAR(RU) ERROR: Этот esm-файл может повредить вашу игру. Настоятельно рекомендуется использовать "http://skyrim.nexusmods.com/mods/19 официальную версию патча".
 Correctif - Skyrim.esm
 ApachiiHair.esm
@@ -7617,6 +7617,23 @@ Skyrim_New Balance.esp
 TheHelm.esp
 WoTS - Overhaul Version.esp
   IF CHECKSUM("WoTS - Overhaul Version.esp", 64810379) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+// SUBGROUP: YASH
+YASH.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IFNOT VAR(USKP) && IF VAR(EN) ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without the "http://skyrim.nexusmods.com/mods/19 Unofficial Skyrim Patch"
+    IFNOT VAR(USKP) && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла the "http://skyrim.nexusmods.com/mods/19 Unofficial Skyrim Patch"
+  IFNOT VAR(UDGP) && IF VAR(EN) ERROR: Unofficial Dawnguard Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without the "http://skyrim.nexusmods.com/mods/23491 Unofficial Dawnguard Patch"
+    IFNOT VAR(UDGP) && IF VAR(RU) ERROR: Unofficial Dawnguard Patch.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла the "http://skyrim.nexusmods.com/mods/23491 Unofficial Dawnguard Patch"
+  IFNOT VAR(UHFP) && IF VAR(EN) ERROR: Unofficial Hearthfire Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without the "http://skyrim.nexusmods.com/mods/25127 Unofficial Hearthfire Patch"
+    IFNOT VAR(UHFP) && IF VAR(RU) ERROR: Unofficial Hearthfire Patch.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла the "http://skyrim.nexusmods.com/mods/25127 Unofficial Hearthfire Patch"
+  IFNOT VAR(UDBP) && IF VAR(EN) ERROR: Unofficial Dragonborn Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without the "http://skyrim.nexusmods.com/mods/31083 Unofficial Dragonborn Patch"
+    IFNOT VAR(UDBP) && IF VAR(RU) ERROR: Unofficial Dragonborn Patch.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла the "http://skyrim.nexusmods.com/mods/31083 Unofficial Dragonborn Patch"
+// SUBGROUP: YASH
 ENDGROUP:  General Overhauls
 
 BEGINGROUP: Dragons hunt in Swarms
@@ -13547,6 +13564,7 @@ RealisticCarryWeight.esp
   IF CHECKSUM("RealisticCarryWeight.esp", DA01FD93) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 IFNOT FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF FILE("BabettesFeastBalanced.esp") && IFNOT FILE("RND_BabettesFeast-Patch.esp") REQ: RND_BabettesFeast-Patch.esp
+  IF FILE("Cliffracers.esp") && IFNOT FILE("RND_Cliffracers-Patch.esp") REQ: RND_Cliffracers-Patch.esp
   IF VAR(Dawnguard) && IFNOT FILE("RND_Dawnguard-Patch.esp") REQ: RND_Dawnguard-Patch.esp
   IF FILE("Destructible_bottles.esp") && IFNOT FILE("RND_DestructibleBottles-Patch.esp") REQ: RND_DestructibleBottles-Patch.esp
   IF FILE("Drinking Fountains of Skyrim.esp") && IFNOT FILE("RND_DrinkingFountains-Patch.esp") REQ: RND_DrinkingFountains-Patch.esp
@@ -13561,6 +13579,7 @@ IFNOT FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF REGEX("Unique BOOZE Bottles.*\.esp") && IFNOT FILE("RND_UniqueBoozeBottles-Patch.esp") REQ: RND_UniqueBoozeBottles-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_BabettesFeast-FAMP.esp instead.
+IFNOT FILE("3DNPC.esp") MOD: RND_Cliffracers-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_DestructibleBottles-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_DestructibleBottles-FAMP.esp instead.
@@ -16476,6 +16495,7 @@ IF FILE("3DNPC.esp") MOD: NerniesCityandVillage_TRO_BasicNeeds_Patch.esp
   SAY: This esp's master files are not in BOSS sort order.
 IF FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF FILE("BabettesFeastBalanced.esp") && IFNOT FILE("RND_BabettesFeast-Patch.esp") REQ: RND_BabettesFeast-Patch.esp
+  IF FILE("Cliffracers.esp") && IFNOT FILE("RND_Cliffracers-Patch.esp") REQ: RND_Cliffracers-Patch.esp
   IF VAR(Dawnguard) && IFNOT FILE("RND_Dawnguard-Patch.esp") REQ: RND_Dawnguard-Patch.esp
   IF FILE("Destructible_bottles.esp") && IFNOT FILE("RND_DestructibleBottles-Patch.esp") REQ: RND_DestructibleBottles-Patch.esp
   IF FILE("Drinking Fountains of Skyrim.esp") && IFNOT FILE("RND_DrinkingFountains-Patch.esp") REQ: RND_DrinkingFountains-Patch.esp
@@ -16490,6 +16510,7 @@ IF FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF REGEX("Unique BOOZE Bottles.*\.esp") && IFNOT FILE("RND_UniqueBoozeBottles-Patch.esp") REQ: RND_UniqueBoozeBottles-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_BabettesFeast-FAMP.esp instead.
+IF FILE("3DNPC.esp") MOD: RND_Cliffracers-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_DestructibleBottles-Patch.esp
   IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_DestructibleBottles-FAMP.esp instead.
@@ -16587,7 +16608,7 @@ EASamhairE_1_1.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
 EASamhairNE_1_1.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
-  IF FILE("EASamhairE_1_1.esp") ERROR: Use EASamhairE_1_1.esp or EASamhairNE_1_1.esp, not both.
+  IF FILE("EASamhairE_1_1.esp") WARN: Use EASamhairE_1_1.esp or EASamhairNE_1_1.esp, not both.
 EnhancedCompanionGuildNoCosmetic.esp
 Eileen.esp
 IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMCompViljaSkyrim.esp
@@ -16678,9 +16699,12 @@ NoFollowerTorch.esp
 
 // pre ufo p
 PAHAPDialoguePatcher.esp
-  IFNOT FILE("paradise_halls_base.esm") ERROR: This mod requires paradise_halls_base.esm
-  IFNOT FILE("paradise_halls_core.esm") ERROR: This mod requires paradise_halls_core.esm
-  IFNOT FILE("AP Skyrim.esm") ERROR: This mod requires AP Skyrim.esm
+  IFNOT FILE("paradise_halls_base.esm") ERROR: paradise_halls_base.esm is not present or is not active. Skyrim will CTD when loading if using this file without paradise_halls_base
+    IFNOT FILE("paradise_halls_base.esm") && IF VAR(RU) ERROR: paradise_halls_base.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла paradise_halls_base
+  IFNOT FILE("paradise_halls_core.esm") ERROR: paradise_halls_core.esm is not present or is not active. Skyrim will CTD when loading if using this file without paradise_halls_core
+    IFNOT FILE("paradise_halls_core.esm") && IF VAR(RU) ERROR: paradise_halls_core.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла paradise_halls_core
+  IFNOT FILE("AP Skyrim.esm") ERROR: AP Skyrim.esm is not present or is not active. Skyrim will CTD when loading if using this file without AP Skyrim
+    IFNOT FILE("AP Skyrim.esm") && IF VAR(RU) ERROR: AP Skyrim.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла AP Skyrim
   IF CHECKSUM("PAHAPDialoguePatcher.esp", 8FC75A5B) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 paradise_halls.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -16983,8 +17007,6 @@ CMBoethiahSacrifice.esp
 CMCompanionLevel.esp
   IF VAR(EN) && IF VERSION("TES5", "1.5.26", >) ERROR: Delete. This mod is no longer necessary, since Skyrim Patch v.1.6 has fixed the bug. Companions will now level their skills every time the Player levels up.
     IF VAR(RU) && IF VERSION("TES5", "1.5.26", >) ERROR: Удалите. Этот мод больше не важен. Поскольку патч 1.6+ исправляет баг.  Компаньоны теперь будут повышать свои навыки, каждый раз, при поднятии уровня игрока.
-  IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Already included in BDO.esp
-    IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
 CMHalfElf.esp
   IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
   IFNOT FILE("CMHalfElf.esm") REQ: CMHalfElf.esm
@@ -17005,7 +17027,8 @@ IFNOT REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 
 // companions d
 Damsella.esp
-  IF CHECKSUM("Damsella.esp", D21DE993) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM("Damsella.esp", D21DE993) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Damsella.esp", D21DE993) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Danicus.esp
 Deadeye.esp
 dbaddmembers.esp
