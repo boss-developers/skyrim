@@ -4252,6 +4252,12 @@ Auto Unequip Arrows.esp
 AutoHarvest.esp
 AutoLoot.esp
 KaceAutoloot.esp
+rt_Animal - Processing.esp
+  IF FILE("rt_AutoHarvest.esp") INC: rt_AutoHarvest.esp, use only one of these.
+rt_AutoHarvest.esp
+  IFNOT CHECKSUM("rt_AutoHarvest.esp", BBDBA57A) && IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IF CHECKSUM("rt_AutoHarvest.esp", CC380C07) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("rt_AutoHarvest.esp", CC380C07) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 AutomaticItemStorage.esp
 CAS.esp
   IF VAR(EN) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Only use the save features of either "CAS" or "kuertee's auto-save and time"
@@ -9211,6 +9217,10 @@ DragonmournInn.esp
   IF CHECKSUM("DragonmournInn.esp", CC0C0DD7) DIRTY: 343 ITM, 19 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF VAR(EN) WARN: This file contains 4 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 4 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+dragonpeaks.esp
+  IF CHECKSUM("dragonpeaks.esp", C11AEB0A) DIRTY: 1975 ITM, 701 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit.  Этот мод может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 dragonsoulgem.esp
   IF CHECKSUM("dragonsoulgem.esp", 0C33C407) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 DragonspireEstate.esp
@@ -16438,6 +16448,7 @@ TheStygian.esp
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 TemptressVixen.esp
+Tigre Race.esp
 VampireRace.esp
   IF CHECKSUM("VampireRace.esp", 9A3DCEB3) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Witch Elf Race.esp
