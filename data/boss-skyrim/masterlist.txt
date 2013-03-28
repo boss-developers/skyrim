@@ -1898,6 +1898,7 @@ SoS - Civilization.esp
   IF VAR(EN) WARN: The Sounds of Skyrim collection have been causing a lot of bugs and corrupting saves, even when removed and caused stuttering.
     IF VAR(RU) WARN: В Sounds of Skyrim найден серьёзный баг, приводящий к "раздуванию" файлов сохранений. Рекомендуется отключить все модули мода и удалить все их файлы.
     // Must be removed after fixing of bugs.
+SoundPropagationOverhaul.esp
 the real fus ro dah.esp
 Thundering Shouts.esp
 zeldaaudio.esp
@@ -3014,6 +3015,7 @@ GuessDistance.esp
 guild battlemage.esp
 GunjarNoFool.esp
   IF CHECKSUM("GunjarNoFool.esp", CC07C650) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+GypsyEyesCaravan.esp
 ENDGROUP: Base G
 
 BEGINGROUP: Base H
@@ -11504,6 +11506,7 @@ CCO - Permanent Birthsigns.esp
   IF CHECKSUM("CCO - Permanent Birthsigns.esp", 9CB120EE) DIRTY:  0 ITM, 24 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 CharredSkeeverReplacer.esp
 chicken.esp
+ChopForever.esp
 CiceroDistanceFix.esp
 Circlet with Helms.esp
   IF CHECKSUM("Circlet with Helms.esp", FBEC072E) DIRTY:  2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -13065,6 +13068,7 @@ WiS IV - Double ArrowDamage.esp
   TAG: {{BASH: Stats}}
 WiS IV - Double Arrow Damage.esp
   TAG: {{BASH: Stats}}
+wizDynamicThings.esp
 WoodChoppingExtended.esp
   WARN: This file contains 00000000 FormID errors and errors with two REFR records and should be removed.
 workhorse.esp
@@ -13484,15 +13488,8 @@ REGEX: RL - .*\.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 EnhancedLightsandFX.esp
   // moved as suggested in bsg thread 28 post 105
-ELFX - Moonpath.esp
-  IF VAR (EN) && IF FILE("EnhancedLightsandFX.esp") WARN: Use only one - EnhancedLightsandFX.esp or ELFX - Moonpath.esp or ELFX - NoBreezehome.esp or ELFX - NoTaverns.esp
-    IF VAR (RU) && IF FILE("EnhancedLightsandFX.esp") WARN: Используйте только один -  EnhancedLightsandFX.esp или ELFX - Moonpath.esp или ELFX - NoBreezehome.esp или ELFX - NoTaverns.esp
-ELFX - NoBreezehome.esp
-  IF FILE("EnhancedLightsandFX.esp") || IF FILE("ELFX - Moonpath.esp") && IF VAR(EN) WARN: Use only one - EnhancedLightsandFX.esp or ELFX - Moonpath.esp or ELFX - NoBreezehome.esp or ELFX - NoTaverns.esp
-    IF FILE("EnhancedLightsandFX.esp") || IF FILE("ELFX - Moonpath.esp") && IF VAR(RU) WARN: Используйте только один -  EnhancedLightsandFX.esp или ELFX - Moonpath.esp или ELFX - NoBreezehome.esp или ELFX - NoTaverns.esp
-ELFX - NoTaverns.esp
-  IF FILE("EnhancedLightsandFX.esp") || IF FILE("ELFX - Moonpath.esp") || IF FILE("ELFX - NoBreezehome.esp") && IF VAR(EN) WARN: Use only one - EnhancedLightsandFX.esp or ELFX - Moonpath.esp or ELFX - NoBreezehome.esp or ELFX - NoTaverns.esp
-    IF FILE("EnhancedLightsandFX.esp") || IF FILE("ELFX - Moonpath.esp") || IF FILE("ELFX - NoBreezehome.esp") && IF VAR(RU) WARN: Используйте только один -  EnhancedLightsandFX.esp или ELFX - Moonpath.esp или ELFX - NoBreezehome.esp или ELFX - NoTaverns.esp
+REGEX: ELFX - (Moonpath|NoBreezehome|NoTaverns)\.esp
+ELFXEnhancer.esp
 RLO - Dungeons for ELnFX.esp
 RLO - Illuminated Spells for ELnFX.esp
 RLO - Major City Interiors for ELnFX.esp
