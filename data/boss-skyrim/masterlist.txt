@@ -4306,6 +4306,10 @@ mart's nirnroot glow fix.esp
 Mart's Savegame DeBloatifier.esp
 MDX_MenuAutoAccept.esp
 NPCPhotoBooth.esp
+RaceMenu.esp
+  IF VERSION("SKSE", "0.1.6.6", <) REQ: "http://skse.silverlock.org SKSE" 1.6.6+
+RaceMenuPlugin.esp
+  SAY: RaceMenuPlugin is optional and provides support to alter Height, Breast, Glute and Biceps. If you experience issues with it, disable RaceMenuPlugin.esp and inform the author.
 REGEX: SkyRealism - Simple Save System.+\.esp
   IF VAR(EN) SAY: Only use one SkyRealism - Simple Save System*.esp
     IF VAR(RU) SAY: Используйте только один SkyRealism - Simple Save System*.esp
@@ -16340,6 +16344,8 @@ Warpaint Immortal.esp
 warpaintattoo.esp
 REGEX: wyldtat\d\d?\.esp
 wyldtats.esp
+WyldMenuPlugFemale.esp
+WyldMenuPlugMale.esp
 XCEMwW.esp
 krimson'swarpaints.esp
 Siamese Khajiit.esp
@@ -18936,17 +18942,6 @@ TRO_BasicNeeds_WATERPatch.esp
 /* Must load after WATER */
 WP - UFO1.2i - Patch.esp
 ENDGROUP: Compatibility Patches
-
-BEGINGROUP: SkyUi and MiscUi Mods
-
-RaceMenu.esp
-  IF VERSION("SKSE", "0.1.6.6", <) REQ: "http://skse.silverlock.org SKSE" 1.6.6+
-RaceMenuPlugin.esp
-  SAY: RaceMenuPlugin is optional and provides support to alter Height, Breast, Glute and Biceps. If you experience issues with it, disable RaceMenuPlugin.esp and inform the author.
-WyldMenuPlugFemale.esp
-  //wyldtats proper is up above in warpaints section. These are racemenu plugins, sorted with RM just in case.
-WyldMenuPlugMale.esp  
-ENDGROUP: SkyUi and MiscUi Mods
 
 BEGINGROUP: Extra Late
 // For plugins which must be after all others
