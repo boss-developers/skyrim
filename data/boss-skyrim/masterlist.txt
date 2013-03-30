@@ -1852,6 +1852,7 @@ REGEX: DFG's Blade & Dagger Sheathe Sounds.*\.esp
 BWS.esp
 Clanking Armor.esp
   IF CHECKSUM("Clanking Armor.esp", 7055B881) DIRTY: 5 ITMs, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+ClimatesOfTamriel-Sound.esp
 CookingSound.esp
 DFG's Blade & Dagger Sheathe Sounds.esp
 DragonHitSoundFix.esp
@@ -13551,12 +13552,15 @@ RLO - Adaptive Interiors Vanilla Weathers Patch.esp
 // placed ClimatesOfTamriel per http://skyrim.nexusmods.com/articles/853/
 ClimatesOfTamriel-Dungeons&Interiors.esp
   INC: Realistic Lighting Overhaul
-REGEX: ClimatesOfTamriel-VanillaNights-Lvl-[1234]\.esp
+REGEX: ClimatesOfTamriel-(Vanilla)?Nights-(Lvl|Level)-[12345678]\.esp
 climatesoftamriel.esp
 ClimatesOfTamriel-DLC01-Patch.esp
 ClimatesOfTamriel-Dawnguard-Patch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+ClimatesOfTamriel-Dragonborn-Patch.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 ClimatesOfTamriel-Dungeons-Hardcore.esp
   IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   INC: Realistic Lighting Overhaul
