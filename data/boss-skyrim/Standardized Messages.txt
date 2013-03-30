@@ -18,7 +18,7 @@ Note: Standardized messages allow users to receive a consistent message for each
 //
 // -Hearthfire Dependency-
 //
-  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
 //
 // -Dragonborn Dependency-
@@ -63,4 +63,12 @@ Note: Standardized messages allow users to receive a consistent message for each
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 // IF a download link to the latest version is on hand, make the last two words a link.
+//
+// ================================================================
+// --Different versions of one file--
+//
+  IF VAR(EN) SAY: Use only one <Plugin name>.
+    IF VAR(RU) SAY: Используйте только один <Plugin name>.
+// Usually must added for REGEX lines with different versions of one file.
+// Remember to fill in the appropriate details.
 //
