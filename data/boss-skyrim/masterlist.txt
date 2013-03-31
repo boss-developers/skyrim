@@ -11351,8 +11351,6 @@ BetterQuestObjectives-Dawnguard.esp
 BetterQuestObjectives-Hearthfire.esp
   IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
-BetterQuestObjectives-BSaQBPatch.esp
-  IFNOT FILE("Better Skill and Quest Books Names.esp") REQ: "http://skyrim.nexusmods.com/mods/10125 Better Skill and Quest Books Names"
 BetterQuestObjectives-ESFCompanionsPatch.esp
   IFNOT FILE("ESFCompanions.esp") ERROR: ESFCompanions.esp is not present or is not active. Skyrim will CTD when loading if this file is active without ESFCompanions
 	IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -11441,6 +11439,8 @@ Weightless Soulgems and Fragments - Better Sorting (PseudoVanilla).esp
 Weightless Soulgems and Fragments - Better Sorting (Ranked).esp
 Weightless Ores, Ingots, Firewood and Coal - Better Sorting.esp
 Better Skill and Quest Books Names - BS.esp
+BetterQuestObjectives-BSaQBPatch.esp
+  IFNOT FILE("Better Skill and Quest Books Names.esp") || IFNOT FILE("Better Skill and Quest Books Names - BS.esp") REQ: "http://skyrim.nexusmods.com/mods/10125 Better Skill and Quest Books Names"
 BetterQuestObjectives-BSaQB-BSPatch.esp
   IFNOT FILE("Better Skill and Quest Books Names - BS.esp") ERROR: Better Skill and Quest Books Names - BS.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names - BS
  // Must load after better sorting.
