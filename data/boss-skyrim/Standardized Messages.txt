@@ -43,13 +43,13 @@ Note: Standardized messages allow users to receive a consistent message for each
   IF CHECKSUM("plugin", Checksum) DIRTY: <x> ITM, <y> UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 // Remember to fill in the appropriate details (If there are 0 ITM or UDR, please insert a 0)
 //
-// -Deleted Navmesh- (updated to no-checksum reporting, ~3/22/2013)
+// -Deleted Navmesh- (no-checksum reporting)
 //
   IF VAR(EN) WARN: This file contains <x> deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит <x> удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-// Remember to fill in the appropriate number
+// Remember to fill in the appropriate number.
 //
-// -Out of order records (likely pre-CK)
+// -Out of order records (likely pre-Creation Kit)
 //
   IF CHECKSUM("plugin", Checksum) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("plugin", Checksum) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
@@ -69,6 +69,6 @@ Note: Standardized messages allow users to receive a consistent message for each
 //
   IF VAR(EN) SAY: Use only one <Plugin name>.
     IF VAR(RU) SAY: Используйте только один <Plugin name>.
-// Usually must added for REGEX lines with different versions of one file.
+// Append this message for REGEX lines that esxpress different versions of one file.
 // Remember to fill in the appropriate details.
 //
