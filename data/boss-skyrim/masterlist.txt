@@ -596,7 +596,7 @@ Sirenia.esm
   REQ: "http://skyrim.nexusmods.com/mods/140 Amazing Smooth Females Complete" texture addon.
 Skyrim Dark.esm
 Skyrim Immersive Creatures.esm
-  TAG: {{BASH: Delev}}
+  TAG: {{BASH: Delev}} Note that users of versions below 5.1.1 should also include the Relev tag.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Skyrim_Realism.esm
@@ -3804,8 +3804,10 @@ SkyMoMod.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+IF FILE("Skyrim Immersive Creatures.esp") MOD: SleepingDangers-SandsofTime.esp
+  IF CHECKSUM("SleepingDangers-SandsofTime.esp", 16C5FEDD) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Skyrim Immersive Creatures.esp
-  TAG: {{BASH: Delev}}
+  TAG: {{BASH: Delev}} Note that users of versions below 5.1.1 should also include the Relev tag.
   IF CHECKSUM("Skyrim Immersive Creatures.esp", 2EEAD88A) SAY: This is the Lore-Friendly version by jackstarr.  Do not use the original esp or esm by lifestorock.
   IFNOT CHECKSUM("Skyrim Immersive Creatures.esp", 2EEAD88A) && IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Use either Skyrim Immersive Creatures.esm or Skyrim Immersive Creatures.esp, not both.
     IFNOT CHECKSUM("Skyrim Immersive Creatures.esp", 2EEAD88A) && IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Используйте любой или Skyrim Immersive Creatures.esm или Skyrim Immersive Creatures.esp, не обa.
@@ -10335,7 +10337,7 @@ SK_Berserk.esp
 SlavePack.esp
   IFNOT VAR("ApachiiHair.esm") && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
     IFNOT VAR("ApachiiHair.esm") && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
-SleepingDangers-SandsofTime.esp
+IFNOT FILE("Skyrim Immersive Creatures.esp") MOD: SleepingDangers-SandsofTime.esp
   IF CHECKSUM("SleepingDangers-SandsofTime.esp", 16C5FEDD) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 SlightlyEnhancedBreezehome.esp
 skooma cabin.esp
