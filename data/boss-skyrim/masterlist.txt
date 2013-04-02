@@ -2383,7 +2383,6 @@ BEGINGROUP: Base B
 
 BabettesFeast.esp
 BabettesFeastBalanced.esp
-BabettesFeast - IMCN.esp
 BabettesFeastOverpowered.esp
 BabettesFeastWeakerEffects.esp
 Badmagic - Starting Gear Choice.esp
@@ -13647,12 +13646,38 @@ FirstAid.esp
 Imp's More Complex Needs.esp
 imp's more complex needs.esp
   IF CHECKSUM("imp's more complex needs.esp", DAADC533) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IF CHECKSUM("imp's more complex needs.esp", DAADC533) || IF CHECKSUM("imp's more complex needs.esp", 59466F1E) SAY: Recommended to unsubscribe and delete this mod, then install the "http://skyrim.nexusmods.com/mods/10639 SkyrimNexus version" for more compatibility with other mods.
+  IF CHECKSUM("imp's more complex needs.esp", DAADC533) || IF CHECKSUM("imp's more complex needs.esp", 59466F1E) SAY: It is recommended that you unsubscribe from and delete this mod, then install the "http://skyrim.nexusmods.com/mods/10639 SkyrimNexus version" for more compatibility with other mods.
   IF VAR(EN) && IF FILE("Imp's More Complex Needs.esm") WARN: Use either Nexus (imp's more complex needs.esm) or Steam Workshop (imp's more complex needs.esp) version, not both.
     IF VAR(RU) && IF FILE("Imp's More Complex Needs.esm") WARN: Используйте любую Nexus (imp's more complex needs.esm) или Steam Workshop (imp's more complex needs.esp) версию, не оба.
+IMCN - Dawnguard.esp
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+    IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+IMCN - Hearthfire.esp
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+    IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+IMCN - Dragonborn.esp
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+    IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+BabettesFeast - IMCN.esp
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+    IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
 CookingExpanded - IMCN.esp
-  // must be placed after IMCN
-  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+    IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+IMCN - Drinking Fountains of Skyrim.esp
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+    IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+IMCN - Requiem Patch.esp
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+    IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+  IFNOT ACTIVE("Requiem.esp") && IF VAR(EN) ERROR: Requiem.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/19281 Requiem"
+    IFNOT ACTIVE("Requiem.esp") && IF VAR(RU) ERROR: Requiem.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла "http://skyrim.nexusmods.com/mods/19281 Requiem"
 REGEX: Jump\d{2,3}\.esp
 kuerteeEncumberingLootArmourAndWeapons.esp
   IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
