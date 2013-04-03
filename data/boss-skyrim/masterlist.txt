@@ -5558,6 +5558,7 @@ GoldTeraH17.esp
 GondorianArmour.esp
 GondorianRangerArmor.esp
 GondorianRangerBow.esp
+GondorShield.esp
 GOT Knight Armor.esp
 GOT Knight Armor 2.esp
 GoT_Sigils.esp
@@ -11651,6 +11652,9 @@ REGEX: DawnguardDawnbreaker_(SunEd|SunFireED|HolyFireEd)?\.esp
     IF VAR(RU) WARN: Используйте только один DawnguardDawnbreaker esp
 Dawnbreaker_PeacefulExplosion.esp
 db-nightshade-replacer.esp
+DB_XVCAetaClothingFix.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 Deadly Traps.esp
 Death Reload (30 Minutes).esp
 REGEX: Default Torches - .+\.esp
@@ -12565,6 +12569,9 @@ PerQ.esp
 playing_children.esp
 pf_lightfootcompanions.esp
   IFNOT FILE("playing_children.esp") REQ: playing_children.esp
+Playable Alternate Thieves Guild Armor Redux.esp
+Playable Alternate Thieves Guild Armor Redux -- NPC.esp
+  IFNOT FILE("Playable Alternate Thieves Guild Armor Redux.esp") ERROR: This mod requires Playable Alternate Thieves Guild Armor Redux.esp
 playerhousechests.esp
 potions_0_1.esp
 poisons_0_1.esp
@@ -17158,6 +17165,10 @@ CamillaValerius.esp
 CarlottaValentia.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("CarlottaValentia.esp", 99430670) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+CGKarena.esp 
+  IF CHECKSUM("CGKarena.esp", 4973DA86) && IFNOT VAR(ApachiiHairF) ERROR: ApachiiHairFemales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemales.esm". 
+  IF CHECKSUM("CGKarena.esp", F4FA7C33) && IFNOT VAR(ApachiiHairF) ERROR: ApachiiHairFemales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemales.esm". 
+  //not all versions need the hair esm
 Chadeaux.esp
 ChantelleV2.esp
 Child Adoption.esp
