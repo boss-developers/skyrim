@@ -9273,6 +9273,11 @@ dragonsoulgem.esp
   IF CHECKSUM("dragonsoulgem.esp", 0C33C407) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 DragonspireEstate.esp
 DragonsReach_Hideout_Assassin_Redesign2_0.esp
+DragonsReach_Hideout_Assassin_Redesign3_0.esp
+  IFNOT FILE("DragonsReach_Hideout.esm") ERROR: This mod requires DragonsReach_Hideout.esm
+  IF CHECKSUM("DragonsReach_Hideout_Assassin_Redesign3_0.esp", F5B9F021) DIRTY: 11 ITM, 177 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 DragonsReach_Hideout_Nightingale_alternative.esp
 REGEX: DragonsReach_Hideout_(Plus|Assassin|Nightingale)\.esp
   IF VAR(EN) SAY: Use only one DragonsReach_Hideout_*.esp
@@ -11803,6 +11808,7 @@ FasterNordHeroWeps.esp
 FasterSpeeds.esp
 FastTravelFromIndoors.esp
 Filling Food & Restful Sleep.esp
+FierceLydia.esp
 flags of victory.esp
 FImperialCuirass.esp
 fixwards.esp
@@ -12354,6 +12360,9 @@ More Salt Please.esp
 MoreSalt.esp
   IF CHECKSUM("MoreSalt.esp", 492E06A5) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   TAG: {{BASH: Relev}}
+More Salt Please - Dragonborn addon.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 MoreVendorGold_1_01.esp
 MorokeiFixNoHelmet.esp
 MorokeiFixCloth.esp
@@ -12678,6 +12687,9 @@ Silencer's Vestments - Replacer.esp
 SilentRuneSpells_v100.esp
 SilentRuneSpellsUncap_v100.esp
   IF FILE("SilentRuneSpells_v100.esp") INC: SilentRuneSpells_v100.esp
+SkaalKidAetaCoat.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 skooma.esp
 Skooma Incorporated.esp
 SkyHide Fur, Hide & Leather Only - Optional.esp
@@ -19103,6 +19115,10 @@ Warburg's 3D Paper World Map - Dawnguard.esp
   IFNOT FILE("Warburg's 3D Paper World Map.esp") && IFNOT REGEX("Warburg's 3D Paper World Map - Texture (1|2|3)\.esp") REQ: Warburg's 3D Paper World Map - Texture *.esp (The main file)
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Warburg's 3D Paper World Map - Dragonborn.esp
+  IFNOT FILE("Warburg's 3D Paper World Map.esp") && IFNOT REGEX("Warburg's 3D Paper World Map - Texture (1|2|3)\.esp") REQ: Warburg's 3D Paper World Map - Texture *.esp (The main file)
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 ENDGROUP: Extra Late
 
 ENDGROUP: Load Late
