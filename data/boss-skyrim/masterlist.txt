@@ -11988,12 +11988,11 @@ REGEX: Helmet Toggle - Imp_.+ Patch\.esp
     IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IFNOT ACTIVE("HelmetToggleVanillaHelmets.esp") && IF VAR(EN) ERROR: HelmetToggleVanillaHelmets.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("HelmetToggleVanillaHelmets.esp") && IF VAR(RU) ERROR: HelmetToggleVanillaHelmets.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-HelmetToggle - Dawnguard Patch.esp
+REGEX: HelmetTogg.+(Dawnguard)+\.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-HelmetToggleDawnguardHelmets.esp
 Hemet2CircletReplacer.esp
 REGEX: Hellspawn Shadowmere.*\.esp
   IF VAR(EN) SAY: Use only one Hellspawn Shadowmere esp
@@ -19107,99 +19106,48 @@ GeneralStores(CCS-DG-HF).esp
 GeneralStores(CCS-HF).esp
   IFNOT FILE ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
   IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
-//Still mulling how best to do regex fixup of below compat patches, without stepping on higher-up set of mods that includes REGEX: Helmet Toggle - Imp_.+ Patch\.esp and others
-HelmetToggle - Omegared99ArmorCompilation Patch.esp
+//There is a whole other chunk of similar-named Helmet Toggles higher up in list; this is just the intermod compatibility patches
+REGEX: Helmet ?Toggle - (Omegared99|Deadly Dragons Arm|Divine Aeg|hothtrooper44|Jacko0s|Knight of Th|Listeners|Lore Friendly|LPotD|Nights Watch|Schwertleite|Seratic|Silver Dragon|SkyRe_|Weapons of the Third).+ Patch\.esp IS IN PREP
   IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(EN) ERROR: Omegared99-Compilation.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(RU) ERROR: Omegared99-Compilation.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Deadly Dragons Armory Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("DeadlyDragonsArmory.esp") && IF VAR(EN) ERROR: DeadlyDragonsArmory.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("DeadlyDragonsArmory.esp") && IF VAR(RU) ERROR: DeadlyDragonsArmory.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Divine Aegis Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Divine Aegis.esp") && IF VAR(EN) ERROR: Divine Aegis.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Divine Aegis.esp") && IF VAR(RU) ERROR: Divine Aegis.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - hothtrooper44_ArmorCompilation Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Jacko0s Knightly Armory Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("JoOsSkyrimKnightlyArmory.esp") && IF VAR(EN) ERROR: JoOsSkyrimKnightlyArmory.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("JoOsSkyrimKnightlyArmory.esp") && IF VAR(RU) ERROR: JoOsSkyrimKnightlyArmory.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Knight of Thorns Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Knight Of Thorns Armor.esp") && IF VAR(EN) ERROR: Knight Of Thorns Armor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Knight Of Thorns Armor.esp") && IF VAR(RU) ERROR: Knight Of Thorns Armor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Listeners Armor Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("listernersarmorset.esp") && IF VAR(EN) ERROR: listernersarmorset.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("listernersarmorset.esp") && IF VAR(RU) ERROR: listernersarmorset.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Lore Friendly Armor Pack Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("LFArmors.esp") && IF VAR(EN) ERROR: LFArmors.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("LFArmors.esp") && IF VAR(RU) ERROR: LFArmors.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - LPotD Armor Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("LPotD Armor.esp") && IF VAR(EN) ERROR: LPotD Armor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("LPotD Armor.esp") && IF VAR(RU) ERROR: LPotD Armor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Nights Watch Armor Heavy Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(EN) ERROR: NightsWatchArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(RU) ERROR: NightsWatchArmor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Nights Watch Armor Light Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(EN) ERROR: NightsWatchArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(RU) ERROR: NightsWatchArmor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Schwertleite Set Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Schwertleite Set.esp") && IF VAR(EN) ERROR: Schwertleite Set.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Schwertleite Set.esp") && IF VAR(RU) ERROR: Schwertleite Set.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Seratic Dark Armor Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("SeraticHeavyArmorDark.esp") && IF VAR(EN) ERROR: SeraticHeavyArmorDark.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("SeraticHeavyArmorDark.esp") && IF VAR(RU) ERROR: SeraticHeavyArmorDark.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Seratic Gray Armor Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("SeraticHeavyArmorGray.esp") && IF VAR(EN) ERROR: SeraticHeavyArmorGray.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("SeraticHeavyArmorGray.esp") && IF VAR(RU) ERROR: SeraticHeavyArmorGray.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Seratic Light Armor Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("seraticarmor.esp") && IF VAR(EN) ERROR: seraticarmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("seraticarmor.esp") && IF VAR(RU) ERROR: seraticarmor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Silver Dragon Armor Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("SilverDragonArmor.esp") && IF VAR(EN) ERROR: SilverDragonArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("SilverDragonArmor.esp") && IF VAR(RU) ERROR: SilverDragonArmor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - SkyRe_Main Patch.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Helmet Toggle - Weapons of the Third Era MoS edition Patch.esp
-  IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(EN) ERROR: 3rdEraWeaponsMoS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(RU) ERROR: 3rdEraWeaponsMoS.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("HelmetToggle - Omegared99ArmorCompilation Patch.esp") && IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(EN) ERROR: Omegared99-Compilation.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("HelmetToggle - Omegared99ArmorCompilation Patch.esp") && IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(RU) ERROR: Omegared99-Compilation.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Deadly Dragons Armory Patch.esp") && IFNOT ACTIVE("DeadlyDragonsArmory.esp") && IF VAR(EN) ERROR: DeadlyDragonsArmory.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Deadly Dragons Armory Patch.esp") && IFNOT ACTIVE("DeadlyDragonsArmory.esp") && IF VAR(RU) ERROR: DeadlyDragonsArmory.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Divine Aegis Patch.esp") && IFNOT ACTIVE("Divine Aegis.esp") && IF VAR(EN) ERROR: Divine Aegis.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Divine Aegis Patch.esp") && IFNOT ACTIVE("Divine Aegis.esp") && IF VAR(RU) ERROR: Divine Aegis.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - hothtrooper44_ArmorCompilation Patch.esp") && IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - hothtrooper44_ArmorCompilation Patch.esp") && IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Jacko0s Knightly Armory Patch.esp") && IFNOT ACTIVE("JoOsSkyrimKnightlyArmory.esp") && IF VAR(EN) ERROR: JoOsSkyrimKnightlyArmory.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Jacko0s Knightly Armory Patch.esp") && IFNOT ACTIVE("JoOsSkyrimKnightlyArmory.esp") && IF VAR(RU) ERROR: JoOsSkyrimKnightlyArmory.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Knight of Thorns Patch.esp") && IFNOT ACTIVE("Knight Of Thorns Armor.esp") && IF VAR(EN) ERROR: Knight Of Thorns Armor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Knight of Thorns Patch.esp") && IFNOT ACTIVE("Knight Of Thorns Armor.esp") && IF VAR(RU) ERROR: Knight Of Thorns Armor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Listeners Armor Patch.esp") && IFNOT ACTIVE("listernersarmorset.esp") && IF VAR(EN) ERROR: listernersarmorset.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Listeners Armor Patch.esp") && IFNOT ACTIVE("listernersarmorset.esp") && IF VAR(RU) ERROR: listernersarmorset.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Lore Friendly Armor Pack Patch.esp") && IFNOT ACTIVE("LFArmors.esp") && IF VAR(EN) ERROR: LFArmors.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Lore Friendly Armor Pack Patch.esp") && IFNOT ACTIVE("LFArmors.esp") && IF VAR(RU) ERROR: LFArmors.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - LPotD Armor Patch.esp") && IFNOT ACTIVE("LPotD Armor.esp") && IF VAR(EN) ERROR: LPotD Armor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - LPotD Armor Patch.esp") && IFNOT ACTIVE("LPotD Armor.esp") && IF VAR(RU) ERROR: LPotD Armor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Nights Watch Armor Heavy Patch.esp") && IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(EN) ERROR: NightsWatchArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Nights Watch Armor Heavy Patch.esp") && IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(RU) ERROR: NightsWatchArmor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Nights Watch Armor Light Patch.esp") && IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(EN) ERROR: NightsWatchArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Nights Watch Armor Light Patch.esp") && IFNOT ACTIVE("NightsWatchArmor.esp") && IF VAR(RU) ERROR: NightsWatchArmor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Schwertleite Set Patch.esp") && IFNOT ACTIVE("Schwertleite Set.esp") && IF VAR(EN) ERROR: Schwertleite Set.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Schwertleite Set Patch.esp") && IFNOT ACTIVE("Schwertleite Set.esp") && IF VAR(RU) ERROR: Schwertleite Set.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Seratic Dark Armor Patch.esp") && IFNOT ACTIVE("SeraticHeavyArmorDark.esp") && IF VAR(EN) ERROR: SeraticHeavyArmorDark.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Seratic Dark Armor Patch.esp") && IFNOT ACTIVE("SeraticHeavyArmorDark.esp") && IF VAR(RU) ERROR: SeraticHeavyArmorDark.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Seratic Gray Armor Patch.esp") && IFNOT ACTIVE("SeraticHeavyArmorGray.esp") && IF VAR(EN) ERROR: SeraticHeavyArmorGray.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Seratic Gray Armor Patch.esp") && IFNOT ACTIVE("SeraticHeavyArmorGray.esp") && IF VAR(RU) ERROR: SeraticHeavyArmorGray.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Seratic Light Armor Patch.esp") && IFNOT ACTIVE("seraticarmor.esp") && IF VAR(EN) ERROR: seraticarmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Seratic Light Armor Patch.esp") && IFNOT ACTIVE("seraticarmor.esp") && IF VAR(RU) ERROR: seraticarmor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Silver Dragon Armor Patch.esp") && IF FILE("Helmet Toggle - LPotD Armor Patch.esp") && IFNOT ACTIVE("SilverDragonArmor.esp") && IF VAR(EN) ERROR: SilverDragonArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Silver Dragon Armor Patch.esp") && IF FILE("Helmet Toggle - LPotD Armor Patch.esp") && IFNOT ACTIVE("SilverDragonArmor.esp") && IF VAR(RU) ERROR: SilverDragonArmor.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - SkyRe_Main Patch.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF FILE("Helmet Toggle - SkyRe_Main Patch.esp") && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF FILE("Helmet Toggle - SkyRe_Main Patch.esp") && IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - SkyRe_Main Patch.esp") && IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Helmet Toggle - Weapons of the Third Era MoS edition Patch.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(EN) ERROR: 3rdEraWeaponsMoS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Helmet Toggle - Weapons of the Third Era MoS edition Patch.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(RU) ERROR: 3rdEraWeaponsMoS.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
 NPCsUseAmmo_IWPatch.esp
   IFNOT FILE("Immersive Weapons.esp") ERROR: Immersive Weapons.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Immersive Weapons.esp
 RND_RWLReduced-Patch.esp
