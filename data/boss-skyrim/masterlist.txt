@@ -1370,8 +1370,6 @@ BreezhomeAlchemyLabFix.esp
   IF VAR(EN) && IF VAR(UDGP) ERROR: Delete. Already included in Unofficial Dawnguard Patch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-Command Dragon.esp
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is inactive. Skyrim will CTD when loading if you use this mod without Dragonborn (Official Bethesda DLC)
 chopping_block_wood_fires.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
   IF VAR(EN) ERROR: Delete. Fixed in Bethesda's official update February 2013.
@@ -2127,6 +2125,8 @@ REGEX: FMO - (Non-Replacer Version|Replacer Version)?\.esp
 Fantasy Music Overhaul.esp
 fantasy music overhaul - no vanilla music.esp
 fantasy music overhaul - unique town music.esp
+Symphonies Of Skyrim.esp
+  IF CHECKSUM("Symphonies Of Skyrim.esp", 7D9E7A5F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Fantasy Music Overhaul Redone.esp
 REGEX: Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace| - FMOR Replace)?\.esp
   // should load after fantasy music overhaul
@@ -2471,17 +2471,19 @@ Birdsclean.esp
   IF VAR(Hearthfire) INC: Heartfires DLC.  Remove this and install BirdsHF.esp or BirdsHFclean.esp
   IF FILE("Birds.esp") && IF VAR(EN) WARN: Use either Birds.esp or Birdsclean.esp, not both.
     IF FILE("Birds.esp") && IF VAR(RU) WARN: Используйте любой или Birds.esp или Birdsclean.esp, не обa.
+  IF CHECKSUM("Birdsclean.esp", DCF07465) DIRTY: 45 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BirdsHF.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, BirdsHFclean.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, BirdsHFclean.esp
-  IFNOT VAR(Hearthfire) REQ: Heartfires (Official Bethesda DLC).
+  IFNOT VAR(Hearthfire) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
   IF FILE("Birds.esp") INC: Birds.esp
   IF CHECKSUM("BirdsHF.esp", 9F07F0A4) DIRTY: 368 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BirdsHFclean.esp
   IF FILE("Birds.esp") INC: Birds.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
-  IF CHECKSUM("BirdsHFclean.esp", B5314156) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("BirdsHFclean.esp", B5314156) DIRTY: 48 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BirdsFlocks_FR_2.3.esp
 Birdsofskyrim.esp
   IF CHECKSUM("Birdsofskyrim.esp", CF25ED24) DIRTY: 31 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -7712,6 +7714,15 @@ Skyrim Hardcore Overhaul.esp
 Skyrim_New Balance.esp
   TAG: {{BASH: Delev, Relev}}
 TheHelm.esp
+Tropical Skyrim.esp
+  SAY: Other environmental mods may be incompatible. See "http://skyrim.nexusmods.com/mods/33017 Incompatibility notes" for general advice.
+  IF CHECKSUM("Tropical Skyrim.esp", EE3DA029) DIRTY: 1945 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Tropical Skyrim.esp", 452961DF) DIRTY: 1943 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Tropical Skyrim -- Birds.esp
+  IF CHECKSUM("Tropical Skyrim -- Birds.esp", CF25ED24) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Tropical Skyrim -- Less Bloom.esp Checksum: C599B0AB
+  SAY: Other environmental mods may be incompatible. See "http://skyrim.nexusmods.com/mods/33017 Incompatibility notes" for general advice.
+  IF CHECKSUM("Tropical Skyrim -- Less Bloom.esp", C599B0AB) DIRTY: 1945 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 WoTS - Overhaul Version.esp
   IF CHECKSUM("WoTS - Overhaul Version.esp", 64810379) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 // SUBGROUP: YASH
@@ -14981,6 +14992,7 @@ IFNOT REGEX("Acquisitive Soul Gems( FR)?\.esp") MOD: Enhanced Soul Trap.esp
 EmpoweredMagic_Dragonborn.esp
   IFNOT FILE("EmpoweredMagic.esp") REQ: EmpoweredMagic.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 Even Smaller Spell Light Radius.esp
 
 // sp late f
@@ -15405,6 +15417,9 @@ Combat Remastered - 2H to 1H Heavy Armory.esp
 CombatMorale.esp
 CombatMoraleNoLootBag.esp
   IF FILE("CombatMorale.esp") INC: CombatMorale.esp, use only one CombatMorale esp.
+Command Dragon.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 DamageMultiplier.esp
 DeadlyCombat.esp
 DeadlyCombat_HardcoreDamage.esp
