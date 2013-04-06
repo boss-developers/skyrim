@@ -18945,155 +18945,75 @@ DeadlyCombat_PISE_Patch.esp
   IFNOT FILE("DeadlyCombat.esp") || IFNOT FILE("PISE.esp") REQ: DeadlyCombat.esp and PISE.esp
 GeneralStores-SkyMoMod.esp
 CCO - Uninstaller.esp
-Compatibility Patch - PHL & Cloaks of Skyrim.esp
+//REGEX combos of 6 dependencies follow: as PHL/PHT-primary groups; with CoS +/- IA,WIC(s) assorted combos; note some patches are functional duplicates with different names
+REGEX: Compatibility Patch - (PHL & Cloaks of Skyrim|PHL CoS)\.esp
   IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHL & Immersive armor.esp
+REGEX: Compatibility Patch - (PHL, IA & CoS|PHL, IA CoS|PHL, CoS, WIC IA)\.esp
   IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHL, IA & CoS.esp
-  IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHT & Cloaks of Skyrim.esp
+  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Compatibility patch - PHL, CoS, WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Compatibility patch - PHL, CoS, WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+REGEX: Compatibility Patch - (PHL WIC|PHL, CoS WIC}\.esp
+  IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Compatibility Patch - PHL, CoS WIC.esp") && IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Compatibility Patch - PHL, CoS WIC.esp") && IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Compatibility Patch - PHL, CoS WIC.esp") && IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(EN) ERROR: 1nivWICSkyCloaksPatch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Compatibility Patch - PHL, CoS WIC.esp") && IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(RU) ERROR: 1nivWICSkyCloaksPatch.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+REGEX: Compatibility Patch - (PHL & Immersive armor|PHL IA|PHL WIC IA)\.esp
+  IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Compatibility Patch - PHL WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Compatibility Patch - PHL WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.	
+REGEX: Compatibility Patch - (PHT & Cloaks of Skyrim|PHT CoS)\.esp
   IFNOT ACTIVE("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHT & Immersive armor.esp
+REGEX: Compatibility Patch - (PHT, IA & CoS|PHT, IA CoS|PHT, IA, CoS & WIC|PHT, CoS, WIC IA)\.esp
+  IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Compatibility patch - PHT, IA, CoS & WIC.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Compatibility patch - PHT, IA, CoS & WIC.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Compatibility patch - PHT, CoS, WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Compatibility patch - PHT, CoS, WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+REGEX: Compatibility Patch - (PHT, CoS & WIC|PHT, CoS WIC}\.esp
+  IFNOT ACTIVE("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  IF FILE("Compatibility Patch - PHT, CoS WIC.esp") && IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(EN) ERROR: 1nivWICSkyCloaksPatch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Compatibility Patch - PHT, CoS WIC.esp") && IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(RU) ERROR: 1nivWICSkyCloaksPatch.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+REGEX: Compatibility Patch - (PHT & Immersive armor|PHT IA|PHT WIC IA)\.esp
   IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IFNOT ACTIVE ("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE ("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHT & WIC.esp
+  IF FILE("Compatibility Patch - PHT WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Compatibility Patch - PHT WIC IA.esp") && IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+REGEX: Compatibility Patch - (PHT & WIC|PHT WIC)\.esp
   IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
   IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHT, IA & CoS.esp
-  IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE ("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHT, CoS & WIC.esp
-  IFNOT ACTIVE("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility patch - PHT, IA, CoS & WIC.esp
-  IFNOT ACTIVE("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility patch - PHT IA.esp
-  IFNOT ACTIVE("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility patch - PHL IA.esp
-  IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHT WIC IA.esp
-  IFNOT ACTIVE("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHL WIC IA.esp
-  IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHT, IA CoS.esp
-  IFNOT ACTIVE("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHL, IA CoS.esp
-  IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility patch - PHT, CoS, WIC IA.esp
-  IFNOT ACTIVE("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility patch - PHL, CoS, WIC IA.esp
-  IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHL, CoS WIC.esp
-  IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(EN) ERROR: 1nivWICSkyCloaksPatch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(RU) ERROR: 1nivWICSkyCloaksPatch.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHT, CoS WIC.esp	
-  IFNOT ACTIVE("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(EN) ERROR: 1nivWICSkyCloaksPatch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICSkyCloaksPatch.esp") && IF VAR(RU) ERROR: 1nivWICSkyCloaksPatch.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHT CoS.esp
-  IFNOT ACTIVE("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHL CoS.esp
-  IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHT WIC.esp
-  IFNOT ACTIVE("People Have Torches.esp") && IF VAR(EN) ERROR: People Have Torches.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Torches.esp") && IF VAR(RU) ERROR: People Have Torches.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-Compatibility Patch - PHL WIC.esp
-  IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(RU) ERROR: People Have Lanterns.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
-  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла.
+  //end of PHL, PHT patch set
 Cooking Expanded - RND Support.esp	
 DragonCombatOverhaul - Requiem Patch.esp
 GDFoodCompatability.esp
