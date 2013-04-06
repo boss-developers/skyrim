@@ -514,8 +514,9 @@ NPC.esm
 NPCs.esm
 
 // esms o
-REGEX: OblHairs(01|02|03|04|05|06|07)?\.esm
-  SAY: Too many hair packs may cause stability issues; see "http://skyrim.nexusmods.com/mods/18110 author's notes"
+REGEX: OblHairs(\d\d)?\.esm
+  IF VAR(EN) SAY: Too many hair packs may cause stability issues; see "http://skyrim.nexusmods.com/mods/18110 author's notes"
+    IF VAR(RU) SAY: Слишком много наборов причесок могут вызвать проблемы со стабильностью. Смотрите "http://skyrim.nexusmods.com/mods/18110 заметки автора"
 OblMaleHairs01.esm
 okaazah.esm
 Omegared99-Compilation.esm
@@ -528,9 +529,10 @@ ORS_MorthalPain.esm
 ORS_SolitudeGate.esm
   IF CHECKSUM("ORS_SolitudeGate.esm", 31BACFAE) DIRTY: 26 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Overlord Tower.esm
-   IF CHECKSUM("Overlord Tower.esm", 067A4293) DIRTY: 29 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Overlord Tower.esm", 067A4293) DIRTY: 29 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
        IF CHECKSUM("Overlord Tower.esm", 25E0E990) DIRTY: 47 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-	     SAY: Use either good or evil version
+  IF VAR(EN) SAY: Use either good or evil version
+    IF VAR(RU) SAY: Используйте либо good либо evil версию
 REGEX: OverlookTower.*\.esm
 
 // esms p
@@ -598,7 +600,8 @@ Sirenia.esm
   REQ: "http://skyrim.nexusmods.com/mods/140 Amazing Smooth Females Complete" texture addon.
 Skyrim Dark.esm
 Skyrim Immersive Creatures.esm
-  TAG: {{BASH: Delev}} Note that users of versions below 5.1.1 should also include the Relev tag.
+  TAG: {{BASH: Delev, Relev}}
+    // Note that users of versions below 5.1.1 should also include the Relev tag. Added to tags(no problems with it).
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Skyrim_Realism.esm
