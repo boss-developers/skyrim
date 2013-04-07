@@ -1686,8 +1686,10 @@ NPC_Overhaul_1_1_.esp
   IFNOT VAR(ApachiiHairM) ERROR: ApachiiHairMales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair.esm". 
 NPC_Overhaul_V2_.esp
   IF FILE("NPC_Overhaul_1_1_.esp") INC: NPC_Overhaul_1_1_.esp
-//moved up the following faces from overrides; broader regex series in progress 
-REGEX: ThievesguildNPCOverhaul_byHarodath__.+\.esp
+REGEX: (N|ThievesguildN)PCOverha.+byHaroda.+\.esp
+  //Warning applies across the ""http://skyrim.nexusmods.com/mods/15116 entire large esp set" pre-4/2013; some but not all are dirty as well. Checksum-specific dirty reports not playing well with the regex'ed output, so leave as only this.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 NPC_Hair_Replace_Bandit_Forsworn.esp
   IF VAR(EN) REQ: "http://skyrim.nexusmods.com/mods/10168 Apachii", Coolsims Hair
 
