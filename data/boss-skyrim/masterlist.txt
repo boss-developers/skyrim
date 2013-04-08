@@ -5739,7 +5739,11 @@ IFNOT VAR(BFNIAP) MOD: SI_WicCosIaPatch.esp
 HoodsAndCirclets.esp
 HotaruByNausicaa.esp
 HotProperty.esp
-  IF CHECKSUM("HotProperty.esp", 04D56694) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("HotProperty.esp", E6EAB3A8) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("HotProperty.esp", 04D56694) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("HotProperty.esp", CF3D3CF6) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HUM_Armor.esp
 HunEbonyArmorStandalone.esp
   IF CHECKSUM("HunEbonyArmorStandalone.esp", F7132DAC) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -8705,6 +8709,8 @@ Asgrim's Hold.esp
   IF CHECKSUM("Asgrim's Hold.esp", A22B2395) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 AssassinsSquads.esp
   IF CHECKSUM("AssassinsSquads.esp", 09D13B98) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Atmospheric Whiterun.esp
+  IF CHECKSUM("Atmospheric Whiterun.esp", 531DC18D) DIRTY: 25 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Auditorium.esp
 Aurora.esp
 REGEX: AutumnLodge\((Female|Male)Mannequin\)\.esp
