@@ -7377,7 +7377,7 @@ BEGINGROUP: Items XYZ
 
 x117 Blades Armor.esp
 XAC.esp
-  IF FILE("SkyRe XAC Stat Swap.esp") || IF FILE("SkyRe XAC Stat Swap Classic.esp") || IF FILE("SkyRe XAC Original.esp") || IF FILE("SkyRe XAC Original Classic.esp") TAG: {{BASH: Deactivate}}
+  IF REGEX("SkyRe XAC Stat (Original|Swap)( Classic)?\.esp") TAG: {{BASH: Deactivate}}
   IF CHECKSUM("XAC.esp", 7BD34BA7) SAY: This is the SkyRe compatible version.
   IF CHECKSUM("XAC.esp", 7BD34BA7) && IFNOT FILE("XAC.bsa") WARN: Requires bsa or loose files from original version or this mod will not work.
 Xena.esp
@@ -8197,7 +8197,8 @@ SkyRe_StandingStones.esp
   IF FILE("Drakian race.esp") INC: Drakian race
   IF FILE("Signs and Guardians.esp") INC: Signs and Guardians.esp
 SkyRe_Survivalism.esp
-  IFNOT ACTIVE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without SkyRe_Main.esp
+    IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла SkyRe_Main.esp
   IFNOT ACTIVE("Chesko_Frostfall.esp") REQ: Chesko_Frostfall.esp
   IF CHECKSUM("SkyRe_Survivalism.esp", AA2D4FD7) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 IF VAR(SkyReM) MOD: Morrowloot.esp
@@ -8510,35 +8511,44 @@ SkyRe SeraticLight.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe XAC Original Classic.esp
-  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
-  IFNOT FILE("SkyRe XAC Original Classic.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original Classic.bsa" or this mod won't work.
+  IF VAR(EN) SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+    IF VAR(RU) SAY: Устарело. Используйте вместо этого "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre".
+  IF VAR(EN) && IFNOT FILE("SkyRe XAC Original Classic.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original Classic.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe XAC Original Classic.bsa") WARN: Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Original Classic.bsa" или этот мод работать не будет.
   IF VAR(EN) && IF ACTIVE("SkyRe XAC Original Classic.esp") SAY: Remember not to load (or to simply delete) XAC.esp
-    IF VAR(RU) && IF ACTIVE("XAC.esp") SAY: Не забудьте отключить или удалить XAC.esp
+    IF VAR(RU) && IF ACTIVE("SkyRe XAC Original Classic.esp") SAY: Не забудьте отключить или удалить XAC.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe XAC Original.esp
-  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
-  IFNOT FILE("SkyRe XAC Original.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original.bsa" or this mod won't work.
+  IF VAR(EN) SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+    IF VAR(RU) SAY: Устарело. Используйте вместо этого "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre".
+  IF VAR(EN) && IFNOT FILE("SkyRe XAC Original.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Original.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe XAC Original.bsa") WARN: Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Original.bsa" или этот мод работать не будет.
   IF VAR(EN) && IF ACTIVE("SkyRe XAC Original.esp") SAY: Remember not to load (or to simply delete) XAC.esp
-    IF VAR(RU) && IF ACTIVE("XAC.esp") SAY: Не забудьте отключить или удалить XAC.esp
+    IF VAR(RU) && IF ACTIVE("SkyRe XAC Original.esp") SAY: Не забудьте отключить или удалить XAC.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe XAC Stat Swap Classic.esp
-  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
-  IFNOT FILE("SkyRe XAC Stat Swap Classic.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap Classic.bsa" or this mod won't work.
+  IF VAR(EN) SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+    IF VAR(RU) SAY: Устарело. Используйте вместо этого "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre".
+  IF VAR(EN) && IFNOT FILE("SkyRe XAC Stat Swap Classic.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap Classic.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe XAC Stat Swap Classic.bsa") WARN: Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Stat Swap Classic.bsa" или этот мод работать не будет.
   IF VAR(EN) && IF ACTIVE("SkyRe XAC Stat Swap Classic.esp") SAY: Remember not to load (or to simply delete) XAC.esp
     IF VAR(RU) && IF ACTIVE("SkyRe XAC Stat Swap Classic.esp") SAY: Не забудьте отключить или удалить XAC.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe XAC Stat Swap.esp
-  SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
-  IFNOT FILE("SkyRe XAC Stat Swap.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap.bsa" or this mod won't work.
+  IF VAR(EN) SAY: Obsolete. Use "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre" instead.
+    IF VAR(RU) SAY: Устарело. Используйте вместо этого "http://skyrim.nexusmods.com/mods/23231 XAC-1_20-Skyre".
+  IF VAR(EN) && IFNOT FILE("SkyRe XAC Stat Swap.bsa") WARN: If you downloaded the bsa version of XAC, you need to rename "XAC.bsa" to "SkyRe XAC Stat Swap.bsa" or this mod won't work.
+    IF VAR(RU) && IFNOT FILE("SkyRe XAC Stat Swap.bsa") WARN: Если вы загрузили bsa-версию XAC, вам нужно переименовать "XAC.bsa" в "SkyRe XAC Stat Swap.bsa" или этот мод работать не будет.
   IF VAR(EN) && IF ACTIVE("SkyRe XAC Stat Swap.esp") SAY: Remember not to load (or to simply delete) XAC.esp
     IF VAR(RU) && IF ACTIVE("SkyRe XAC Stat Swap.esp") SAY: Не забудьте отключить или удалить XAC.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Dreamcloth.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Tribunal for Skyre.esp
   IFNOT FILE("Tribunal Robes by Zairaam.esp") REQ Tribunal Robes by Zairaam.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
@@ -8565,7 +8575,8 @@ BEGINGROUP: Quests #
 10021_01Dom.v.3.0.esp
 13363_newmorthal.esp
 28 Days and a Bit 5.esp
-  IF FILE("28 Days and a Bit 5.esm") ERROR: Do not use 28 Days and a Bit 5.esp and 28 Days and a Bit 5.esm at the same time.
+  IF VAR(EN) && IF FILE("28 Days and a Bit 5.esm") ERROR: Do not use '28 Days and a Bit 5.esp' and '28 Days and a Bit 5.esm' at the same time.
+    IF VAR(RU) && IF FILE("28 Days and a Bit 5.esm") ERROR: Не используйте одновременно '28 Days and a Bit 5.esp' и '28 Days and a Bit 5.esm'.
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, 28 Days and a Bit 5.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, 28 Days and a Bit 5.esp
 3modz_DragonBelly.esp
@@ -11767,6 +11778,7 @@ Distant DetailHF.esp
   IF CHECKSUM("Distant DetailHF.esp", 7AE9614F) DIRTY: 328 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 DiversePriests.esp
 MOD: Dödligalegatus.esp
+  // Removing the MOD: tag from this seems to cause crashes.
 dogtogermanshepard2fix.esp
 doublebounddmg.esp
   // TAG: {{BASH: Stats}}
