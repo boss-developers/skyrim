@@ -2866,6 +2866,7 @@ Dwemer Certified.esp
 Dwemer Povazka from Hiro.esp
 Dwemer Spectres.esp
 dualcastingcostfixed.esp
+DummyTraining.esp
 dwarven_scrap_renamed.esp
 DwarvenSphere.esp
 DungeonQuestAwareness.esp
@@ -14111,6 +14112,9 @@ Scary Werewolf Form.esp
 Scary Werewolf 3 sec.esp
   IF FILE("Scary Werewolf Form.esp") INC: Scary Werewolf Form.esp
 Scriptless werewolf bonus.esp
+Shoo_TestCRVampFix.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 StrongVampireLord.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -14129,6 +14133,10 @@ Werewolf Loot - ToL compatible.esp
 REGEX: True Vampirism - .+\.esp
 UltVampire.esp
 userrequestbetterww.esp
+vampfix.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  SAY: This mod's ITM records are intentional for its function.
 REGEX: vampire_tweaks(_feed_on_kids)?\.esp
 vampire sight.esp
 Vampire Toggle.esp
@@ -16028,7 +16036,7 @@ IF VAR(SkyReM) MOD: RealPermanentBlessings.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 IF VAR(SkyReM) MOD: StavesofSkyrim.esp
-  IF CHECKSUM("StavesofSkyrim.esp", 6A04E2AA) DIRTY: 0 ITM, 5 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("StavesofSkyrim.esp", A456B6CD) || IF CHECKSUM("StavesofSkyrim.esp", 938B07D0) || IF CHECKSUM("StavesofSkyrim.esp", 265E9C99) || IF CHECKSUM("StavesofSkyrim.esp", 43E13A2E) || IF CHECKSUM("StavesofSkyrim.esp", 6A04E2AA) DIRTY: 4 ITM, 5 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ENDGROUP: Skills, Attributes and Leveling
 
 BEGINGROUP: Player Perks
@@ -16308,7 +16316,7 @@ SleepWell.esp
 Soulmaster 10.esp
 SpeechTree.esp
 IFNOT FILE("SkyRe_Main.esp") MOD: StavesofSkyrim.esp
-  IF CHECKSUM("StavesofSkyrim.esp", 6A04E2AA) DIRTY: 0 ITM, 5 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("StavesofSkyrim.esp", A456B6CD) || IF CHECKSUM("StavesofSkyrim.esp", 938B07D0) || IF CHECKSUM("StavesofSkyrim.esp", 265E9C99) || IF CHECKSUM("StavesofSkyrim.esp", 43E13A2E) || IF CHECKSUM("StavesofSkyrim.esp", 6A04E2AA) DIRTY: 4 ITM, 5 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Stealth Skills Rebalanced_COMPLETE.esp
   TAG: {{BASH: Delev}}
 Stealth Skills Rebalanced_LOCKPICKING.esp
