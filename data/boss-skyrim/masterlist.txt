@@ -448,6 +448,7 @@ Liliath.esm
 lilyelf.esm
   IF VAR(EN) && IF FILE("Pretty Followers.esm") WARN: Delete. Already included in 'Pretty Followers.esm'
     IF VAR(RU) && IF FILE("Pretty Followers.esm") WARN: Удалите. Уже включено в 'Pretty Followers.esm'
+Lootification.esm
 LorecraftESM.esm
 LunariRace.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, LunariRace.esp
@@ -5806,6 +5807,10 @@ ImmersiveLoot - Dawnguard.esp
 ImmersiveLoot - DGStats.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+ImmersiveLoot - Dragonborn.esp
+  TAG: {{BASH: Delev, Relev}}
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 ImmersiveCells.esp
   TAG: {{BASH: Relev}}
   IF CHECKSUM("ImmersiveCells.esp", 332080B8) DIRTY: 2 ITM, 10 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -19195,6 +19200,34 @@ REGEX: Helmet ?Toggle - (Omegared99|Deadly Dragons Arm|Divine Aeg|hothtrooper44|
     IF FILE("Helmet Toggle - SkyRe_Main Patch.esp") && IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IF FILE("Helmet Toggle - Weapons of the Third Era MoS edition Patch.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(EN) ERROR: 3rdEraWeaponsMoS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IF FILE("Helmet Toggle - Weapons of the Third Era MoS edition Patch.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(RU) ERROR: 3rdEraWeaponsMoS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+//Following are compatibility patches that may not be necessary under later versions of Lootification.esm
+REGEX: (3rdEraWeaponsMoS|Armonizer|crafting300|Dragonborn|Immersive Armors|Ivory|RaistlenRobes|Thalmor|Tribunal Robes -|WVExpansion) Lootification\.esp
+  IFNOT ACTIVE("Lootification.esm") && IF VAR(EN) ERROR: Lootification.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Lootification.esm") && IF VAR(RU) ERROR: Lootification.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF FILE("3rdEraWeaponsMoS Lootification.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(EN) ERROR: 3rdEraWeaponsMoS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("3rdEraWeaponsMoS Lootification.esp") && IFNOT ACTIVE("3rdEraWeaponsMoS.esm") && IF VAR(RU) ERROR: 3rdEraWeaponsMoS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF FILE("Armonizer Lootification.esp") && IFNOT ACTIVE("Ket_ARMONIZER_v2.esm") && IF VAR(EN) ERROR: Ket_ARMONIZER_v2.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Armonizer Lootification.esp") && IFNOT ACTIVE("Ket_ARMONIZER_v2.esm") && IF VAR(RU) ERROR: Ket_ARMONIZER_v2.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF FILE("Armonizer Lootification.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF FILE("Armonizer Lootification.esp") && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF FILE("crafting300 Lootification.esp") && IFNOT ACTIVE("Crafting300.esp") && IF VAR(EN) ERROR: Crafting300.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("crafting300 Lootification.esp") && IFNOT ACTIVE("Crafting300.esp") && IF VAR(RU) ERROR: Crafting300.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF FILE("Dragonborn Lootification.esp") && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IF FILE("Dragonborn Lootification.esp") && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IF FILE("Immersive Armors Lootification.esp") && IFNOT ACTIVE("SPIKE.esm") && IF VAR(EN) ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Immersive Armors Lootification.esp") && IFNOT ACTIVE("SPIKE.esm") && IF VAR(RU) ERROR: SPIKE.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF FILE("Immersive Armors Lootification.esp") && IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Immersive Armors Lootification.esp") && IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF FILE("Ivory Lootification.esp") && IFNOT ACTIVE("Ivory.esp") && IF VAR(EN) ERROR: Ivory.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Ivory Lootification.esp") && IFNOT ACTIVE("Ivory.esp") && IF VAR(RU) ERROR: Ivory.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF FILE("RaistlenRobes Lootification.esp") && IFNOT ACTIVE("RaistlinRobes.esp") && IF VAR(EN) ERROR: RaistlinRobes.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("RaistlenRobes Lootification.esp") && IFNOT ACTIVE("RaistlinRobes.esp") && IF VAR(RU) ERROR: RaistlinRobes.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF FILE("Thalmor Lootification.esp") && IFNOT ACTIVE("ThalmorStandalone.esp") && IF VAR(EN) ERROR: ThalmorStandalone.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Thalmor Lootification.esp") && IFNOT ACTIVE("ThalmorStandalone.esp") && IF VAR(RU) ERROR: ThalmorStandalone.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF FILE("Tribunal Robes - Lootification.esp") && IFNOT ACTIVE("Tribunal Robes by Zairaam.esp") && IF VAR(EN) ERROR: Tribunal Robes by Zairaam.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("Tribunal Robes - Lootification.esp") && IFNOT ACTIVE("Tribunal Robes by Zairaam.esp") && IF VAR(RU) ERROR: Tribunal Robes by Zairaam.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF FILE("WVExpansion Lootification.esp") && IFNOT ACTIVE("WVExpansion.esp") && IF VAR(EN) ERROR: WVExpansion.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF FILE("WVExpansion Lootification.esp") && IFNOT ACTIVE("WVExpansion.esp") && IF VAR(RU) ERROR: WVExpansion.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 NPCsUseAmmo_IWPatch.esp
   IFNOT FILE("Immersive Weapons.esp") ERROR: Immersive Weapons.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Immersive Weapons.esp
 RND_RWLReduced-Patch.esp
