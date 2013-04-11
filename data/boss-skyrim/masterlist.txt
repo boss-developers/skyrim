@@ -273,7 +273,8 @@ ClimatesOfTamriel.esm
   IF CHECKSUM("ClimatesOfTamriel.esm", C30AB34E) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the "http://skyrim.nexusmods.com/mods/17802/ updated plugin".
   IF CHECKSUM("ClimatesOfTamriel.esm", C110B173) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 CMHalfElf.esm
-  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 CMNewCompanions.esm
 CK's Companions.esm
 // must load after CMNewCompanions.esm
@@ -670,7 +671,8 @@ TRO_BasicNeeds.esm
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, TRO_BasicNeeds.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, TRO_BasicNeeds.esp
 TurnDownXrace.esm
-  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 Tyth.esm
 
 // esms u
@@ -14132,7 +14134,8 @@ NoWerewolfFormCooldown.esp
   IF VAR(EN) SAY: Possible conflicts with other Werewolf-mods
     IF VAR(RU) SAY: Возможны конфликты с другими модами, меняющими оборотней.
 OrientalRace_VampiricThirst_patch.esp
-  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
   IFNOT FILE("OrientalRace.esp") REQ: OrientalRace.esp
   IFNOT FILE("mslVampiricThirst.esp") REQ: mslVampiricThirst.esp
 REGEX: UnblockActivate(NoWere)?(NoMap)?\.esp
@@ -14702,6 +14705,8 @@ power tomes nightvision - steam version.esp
 PowerMasterTheTimeAndSpace.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+PrimalSpells.esp 
+  IF CHECKSUM("PrimalSpells.esp", 683FD4E5) DIRTY: 1 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 PsijicIachesisSummon.esp
   IF VAR(EN) && IF FILE("LegendarySouls.esp") ERROR: Delete. Already included in LegendarySouls.esp
     IF VAR(RU) && IF FILE("LegendarySouls.esp") ERROR: Удалите. Включено в LegendarySouls.esp
@@ -16691,7 +16696,8 @@ dagi_raht_race.esp
 DarkRaces.esp
 Decapitate_Children.esp
 Drakian race.esp
-  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 Draman Skeleton Mod.esp
   IF CHECKSUM("Draman Skeleton Mod.esp", B45FC825) DIRTY: 185 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'
@@ -16763,9 +16769,13 @@ New Playable Races by Budcat v4.0.esp
   IF CHECKSUM("New Playable Races by Budcat v4.0.esp", 8E8CCA8C) DIRTY: 80 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 NewSuccubusRace.esp
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
   IF VAR(EN) && IF CHECKSUM("NewSuccubusRace.esp", F3C4E9C8) DIRTY: 94 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   WARN: Mod contains undeleted French data that might cause conflicts. If this becomes a problem, please contact the author and urge them to clean their mod.
 Nidia Race.esp
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility". 
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+Noiral.esp
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility". 
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 NPR 4.0 w Unarmed Compatibility by Budcat.esp
@@ -16780,6 +16790,7 @@ OculosInferniRace.esp
 OhmesRaht.esp
 OrientalRace.esp
 PersianRace.esp
+Playable Children PLUS.esp
 playable dremora.esp
 qmod01shadowscale.esp
 race+.esp
@@ -16813,7 +16824,8 @@ VampireRace.esp
 Witch Elf Race.esp
 witcherinskyrim.esp
 WotA-VaalsarkRace.esp
-  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 WUS - Witcher Race.esp
