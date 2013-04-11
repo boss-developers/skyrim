@@ -1062,15 +1062,17 @@ HM DB CookQuestFix.esp
 housecarl greetings fix.esp
 
 // fixes i
-invinciblehawkfix.esp
-  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
-    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
 imperialhelmetfix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
 ImperialHelmetHeavyFix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
+invinciblehawkfix.esp
+  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
+    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
+Invisibility Eyes Fix.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
 
 // fixes j
 
@@ -4859,6 +4861,7 @@ Cabbage In Pot.esp
   IF CHECKSUM("Cabbage In Pot.esp", 8491BB6b) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Caius Sword.esp
 Calmdefir.esp
+calyps-animal-ears.esp
 calyps-investigator.esp
 calyps-razorarmor.esp
 CaneKatana.esp
@@ -5445,6 +5448,8 @@ EternalShineArmorAndWeapons.esp
     IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("EternalShineArmorAndWeapons.esp", 3E85A943) && IF VAR(RU) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и может содержать неверные записи. Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версиючитайте описание на странице загрузки мода или локализованную исправленную версию, то вам не о чем беспокоиться.
 EtherealEdge.esp
 Evil MasterMind Armor.esp
+EvolvingBoundWeapons.esp
+  IF CHECKSUM("EvolvingBoundWeapons.esp", 475D55F6) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ExiledBladesArmor.esp
 ExpandedJewelryCrafting.esp
 exparrow.esp
@@ -6587,6 +6592,7 @@ PrvtI_HeavyArmory.esp
     // included
 PrvtI_HeavyArmory_DG_Addon.esp
   TAG: {{BASH: Delev, Relev}}
+prvti_heavyarmory_dawnguard.esp
 psijic mage.esp
 Psiijic_Master_Outfits.esp
 PsilocybinMushrooms.esp
@@ -6631,6 +6637,7 @@ Rapplez Armor.esp
 REGEX: Raven Set v.*\.esp
 RavenArmor.esp
 Ravenous Elegance.esp
+Rayne Armor.esp
 RealFireArrows.esp
 Really Radiant Raiment.esp
 RealmshatterArmorpack_v001.esp
@@ -6862,6 +6869,11 @@ Skimpy Plate Armor.esp
   IF CHECKSUM("Skimpy Plate Armor.esp", A6E601D4) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Skimpy Plate Armor.esp", A6E601D4) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 SkimpySilverlight.esp
+skinripper essentials kit.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  TAG: {{BASH: Delev, Relev}}
+  IF CHECKSUM("skinripper essentials kit.esp", E29A7006) DIRTY: 11 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 skyforgedShields.esp
 SkyforgeWeapons.esp
 SkyHeels.esp
@@ -7417,6 +7429,7 @@ XAC.esp
   IF CHECKSUM("XAC.esp", 7BD34BA7) && IFNOT FILE("XAC.bsa") WARN: Requires bsa or loose files from original version or this mod will not work.
 Xena.esp
 xFenWot3E.esp
+XiNafay - Kitty Corset.esp
 XIVShanker.esp
 XVIa.esp
 yangyang_BeautyQueen.esp
