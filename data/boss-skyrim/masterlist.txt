@@ -187,7 +187,7 @@ Skyrim Project Optimization - Dawnguard.esm
 Skyrim Project Optimization - Dragonborn.esm
 Skyrim Project Optimization - No Homes.esm
   IF FILE("Skyrim Project Optimization - No Homes.esp") ERROR: Use Skyrim Project Optimization - No Homes.esm or Skyrim Project Optimization - No Homes.esp, not both.
-Skyrim Project Optimization - No Homes - Full Version.esm Checksum: B7953267
+Skyrim Project Optimization - No Homes - Full Version.esm
   IF FILE("Skyrim Project Optimization - No Homes - Full Version.esp") ERROR: Use Skyrim Project Optimization - No Homes - Full Version.esm or Skyrim Project Optimization - No Homes - Full Version.esp, not both.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -3647,6 +3647,7 @@ Perfect Legionnaire 3.0.esp
 Perk Books.esp
 Perks Unbound.esp
   IF VAR(Dawnguard) && IFNOT FILE ("Perks Unbound - Dawnguard.esp") REQ: Perks Unbound - Dawnguard.esp
+  IF VAR(Dragonborn) && IFNOT FILE ("Perks Unbound - Dragonborn.esp") REQ: Perks Unbound - Dragonborn.esp
 Perks Unbound - Helmless Warrior.esp
   IF VAR(Dawnguard) && IFNOT FILE ("Perks Unbound - Dawnguard.esp") REQ: Perks Unbound - Dawnguard.esp
   IF FILE("Perks Unbound.esp") && IF VAR(EN) WARN: Use either Perks Unbound.esp or Perks Unbound - Helmless Warrior.esp, not both.
@@ -3654,6 +3655,9 @@ Perks Unbound - Helmless Warrior.esp
 Perks Unbound - Dawnguard.esp
   IFNOT FILE ("Perks Unbound.esp") && IFNOT FILE ("Perks Unbound - Helmless Warrior.esp") && IF VAR(EN) REQ: Perks Unbound.esp or Perks Unbound - Helmless Warrior.esp
     IFNOT FILE ("Perks Unbound.esp") && IFNOT FILE ("Perks Unbound - Helmless Warrior.esp") && IF VAR(RU) REQ: Perks Unbound.esp или Perks Unbound - Helmless Warrior.esp
+Perks Unbound - Dragonborn.esp Checksum: 331FF6E6
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 PerkPointPotion.esp
 PerkReset.esp
   IF VAR(EN) WARN: Rename this file to PerkReset.esm.
