@@ -67,7 +67,7 @@ IF ACTIVE("ApachiiHairFemales.esm") SET: ApachiiHairF
 IF ACTIVE("ApachiiHairMales.esm") SET: ApachiiHairM
 IF FILE("BandolierForNPCsImmersiveArmorsPatch.esp") SET: BFNIAP
 IF ACTIVE("BBLuxurySuite.esm") SET: BBLS
-IF REGEX("BertsBreezehome.+\.es[pm]") SET: BertsBHInst
+IF REGEX("(0001)?BertsBreezehome.+\.es[pm]") SET: BertsBHInst
 IF REGEX("Complete Crafting Overhaul( - BS version)?\.esp") SET: CCO
 IF REGEX("DragonSwarms.*\.esp") SET: DSwarmInst
 IF FILE("DS-MoreAgressionForRemover.esp") SET: IncDSwarmMorAgress
@@ -2866,6 +2866,14 @@ DD_Dawnguard Additions.esp
 DD_Dragonborn Additions.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
+DF127EnchantedArrows2.0.esp
+  TAG: {{BASH: Relev}}
+  IF CHECKSUM("DF127EnchantedArrows2.0.esp", 6504A925) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+DF127EnchantedArrowsandBolts.esp 
+  TAG: {{BASH: Relev}}
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("DF127EnchantedArrowsandBolts.esp", A859BC56) DIRTY: 37 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 REGEX: Don.?Juan.*\.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
@@ -13901,6 +13909,9 @@ BEGINGROUP: Image Space and Lighting Changes
 
 BEGINGROUP: IMGS and LIGH Load Late
 
+Realistic Lighting Overhaul - Dungeon Lighting.esp
+  IF CHECKSUM("Realistic Lighting Overhaul - Dungeon Lighting.esp", CB2AEEAF) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  //optional file with author instructions to place just above main RLO file(s)
 REGEX: Realistic Lighting( - Full| - Addon)\.esp
     IF VAR(RU) SAY: Используйте только один LightAdjuster esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -13912,6 +13923,7 @@ EnhancedLightsandFX.esp
   // moved as suggested in bsg thread 28 post 105
 REGEX: ELFX - (Moonpath|NoBreezehome|NoTaverns)\.esp
 ELFXEnhancer.esp
+CinematicFireFX.esp 
 RLO - Dungeons for ELnFX.esp
 RLO - Illuminated Spells for ELnFX.esp
 RLO - Major City Interiors for ELnFX.esp
