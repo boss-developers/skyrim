@@ -1888,6 +1888,9 @@ Rainbows.esp
 Rainclip.esp
 RevampedExteriorFog.esp
   IF FILE("Realistic Lighting.esp") INC: Realistic Lighting.esp
+Dragonbornfogdistance.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 Supreme Fog.esp
   IF CHECKSUM("Supreme Fog.esp", 4B1EB3A6) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Supreme Storms.esp
@@ -2902,14 +2905,19 @@ DSpSoB.esp
   IF REGEX("dD.?- Realistic Ragdoll Force.*\.esp") && IFNOT FILE("Neovalen Race Compatibility.esp") REQ: Neovalen Race Compatibility.esp
   IF VAR(EN) && IF VAR(Dawnguard) SAY: Make sure you use Dawnguard version.
     IF VAR(RU) && IF VAR(Dawnguard) SAY: Убедитесь, что используете Dawnguard-версию.
+Dual Sheath Redux.esp
+  IF VERSION("TES5", "1.9.32", <) REQ: Skyrim v1.9.32.0+
+  IF VERSION("SKSE", "0.1.6.13", <) REQ: "http://skse.silverlock.org SKSE" 1.6.13+
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.4+
+  REQ: Java Runtime Environment 7 update 17+
+dualcastingcostfixed.esp
+DummyTraining.esp
+DungeonQuestAwareness.esp
+dwarven_scrap_renamed.esp
+DwarvenSphere.esp
 Dwemer Certified.esp
 Dwemer Povazka from Hiro.esp
 Dwemer Spectres.esp
-dualcastingcostfixed.esp
-DummyTraining.esp
-dwarven_scrap_renamed.esp
-DwarvenSphere.esp
-DungeonQuestAwareness.esp
 DynamicSpells.esp
 DynamicTorches.esp
 ENDGROUP: Base D
@@ -4552,6 +4560,8 @@ AetheriumSwords.esp
 AetheriumSwordsnArmor.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+AgedRoundShield.esp
+  TAG: {{BASH: Relev}}
 Airy Armor.esp
 AK- Daedric Blue Weapons.esp
 Akaviri Dai-Katana.esp
@@ -4755,6 +4765,8 @@ BBP_Apple.esp
 BBP_Dragon_Princess.esP
 BBLSspouse.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
+BDYEB.esp
+  TAG: {{BASH: Relev}}
 BeastmastersAxe.esp
 Befouler.esp
 BelethorGoods.esp
@@ -4888,6 +4900,8 @@ Bucklers-Complete.esp
 Bucklers - Buckler Only.esp
 Bucklers Only.esp
 BulatKnife.esp
+Bulwark of Azzinoth.esp
+  TAG: {{BASH: Relev}}
 ENDGROUP: Items B
 
 BEGINGROUP: Items C
@@ -6276,6 +6290,8 @@ Maxwell Outfit.esp
 REGEX: Mechanos Dwemer SteamPunk - .+\.esp
 ME3 MP Armours.esp
 MECR_Classic_Nord_Shields.esp
+Medium Buckler.esp
+  TAG: {{BASH: Relev}}
 Medusa and Drakul Armors.esp
 MegaShields.esp
 Melt_Down_Everything.esp
@@ -6528,10 +6544,12 @@ Oblvion.esp
 Obsidian.esp
 Obsidian Axe.esp
 REGEX: OchinClothingMod\d\d_.+\.esp
+OlafsGear.esp
+OldKnightShield.esp
+  TAG: {{BASH: Relev}}
 Omegared99-Compilation.esp
   IF VAR(EN) SAY: Obsolete. Upgrade to latest version
     IF VAR(RU) SAY: Устарело обновите до последней версии.
-OlafsGear.esp
 Omegared99-WeaponSets.esp
 Omegared99-LvLList-CompOnly.esp
   TAG: {{BASH: Relev}}
@@ -6554,6 +6572,8 @@ One handed Crossbow.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 openfacehelmetsstandalone.esp
+Orc Cresent Shield.esp
+  TAG: {{BASH: Relev}}
 Orcish Sabre.esp
   IF CHECKSUM("Orcish Sabre.esp", 1AF00464) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 OrcishMaskedHelmet.esp
@@ -7001,6 +7021,10 @@ Standalone Monk Hoods.esp
 StandalonePack20.esp
 star killer armor.esp
 StarExpandedJewelry.esp
+Stark Clean.esp
+  TAG: {{BASH: Relev}}
+Stark Rusted.esp
+  TAG: {{BASH: Relev}}
 stbucorvomask.esp
   IF CHECKSUM("stbucorvomask.esp", 71C90D5E) DIRTY: 4 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 steampunkmace.esp
@@ -7086,6 +7110,10 @@ Tamrielic Artifacts - Goldbrand - Eltonbrand.esp
   IF CHECKSUM("Tamrielic Artifacts - Goldbrand - Eltonbrand.esp", 496766F9) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Tamrielic Artifacts - Umbra.esp
 TamrielicArtifactsV1-1.esp
+Targaryen Clean.esp
+  TAG: {{BASH: Relev}}
+Targaryen Rusted.esp
+  TAG: {{BASH: Relev}}
 TargeoftheBloodedImproved.esp
 TBSC_BodySuit.esp
   REQ: "http://skyrim.nexusmods.com/mods/4888 CHSBHC - BBP female body".
@@ -7100,6 +7128,10 @@ The_IVth_Legion.esp
 tea junkie bow.esp
   IF CHECKSUM("tea junkie bow.esp", 5EE180C6) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 temperysgramor.esp
+Templar Clean.esp
+  TAG: {{BASH: Relev}}
+Templar Rusted.esp
+  TAG: {{BASH: Relev}}
 TemplarArmor.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("TemplarArmor.esp", EE0395E4) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("TemplarArmor.esp", EE0395E4) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и может содержать неверные записи. Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версиючитайте описание на странице загрузки мода или локализованную исправленную версию, то вам не о чем беспокоиться.
@@ -19642,6 +19674,7 @@ IF REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
   // must load after asis patch and deactivated before patch creation. (T3nd0's note from Bethesda SkyRe thread)
   IF VAR(EN) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Deactivate 'SkyRe_EnemyAI.esp' before creation of ASIS patch and activate only after creation of ASIS patch.
     IF VAR(RU) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Отключите 'SkyRe_EnemyAI.esp' перед созданием ASIS-патча и активируйте только после создания.
+Dual Sheath Redux Patch.esp
 Perk Patch.esp
 RBS.esp
 ReProccer.esp
