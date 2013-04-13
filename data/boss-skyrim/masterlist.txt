@@ -8074,6 +8074,16 @@ REGEX: ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)
   IFNOT REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") REQ: "http://skyrim.nexusmods.com/mods/3829 Deadly Dragons" (6.3.5)
   IF VAR(EN) SAY: Use only one ERSO 03 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.
+REGEX: ERSO 03.1a - .+\.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF VAR(EN) SAY: Use only one ERSO 03.1a file.
+    IF VAR(RU) SAY: Используйте только один файл ERSO 03.1a.
+REGEX: ERSO 03.1b - .+\.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IF VAR(EN) SAY: Use only one ERSO 03.1b file.
+    IF VAR(RU) SAY: Используйте только один файл ERSO 03.1b.
 REGEX: ERSO 03.3 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dawnguard Dragons\.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
