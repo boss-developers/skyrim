@@ -8059,7 +8059,7 @@ REGEX: (ERSO 03 - )?(Soft)?(Super)?(Nightmare)?(Slighty| Slighty)?(Mighty| Might
 REGEX: (ERSO 03.2 patch - )?(MD with )?DeadlyD( and)? DDiversified( Dawnguard)?( Unleveled)?\.esp
   // Compatibility patch for Mighty Dragons, Deadly Dragons and/or Dragons Diversified
   WARN: ERSO 03.2 plugins are no longer recommended or supported by the mod author.
-//Following sets: MD + (DG | DB | DD}
+//Following sets: MD + (DG | DB | DD)
 REGEX: ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)? DG\.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -8147,12 +8147,7 @@ ERSO 06 - Mighty Odahviing v.4.0.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 REGEX: ERSO 0\d - Wait More Time( Before Next)? Dragon Encounter (\()?x\d\.\d(\))?( v\.\d\.\d)?\.esp
 REGEX: ERSO 07 - (Super )?(Slighty )?Mighty Dragon Priests\.esp
-  // Seperate entry for ERSO version, makes things easier.
-ERSO 08 - RUS-00 Main.esp
-ERSO 08 - RUS-00 Main plus Dawnguard.esp
-  IF VAR(EN) SAY: Use only one ERSO 08 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 08.
-ERSO 08 - RUS-00 Main plus Dawnguard Dragonborn.esp
+REGEX: ERSO 08 - RUS-00 Main( plus Dawnguard)?( Dragonborn}?\.esp
   IF VAR(EN) SAY: Use only one ERSO 08 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 08.
 ERSO 08.1 - ERSO MIRAAK.esp
@@ -8161,13 +8156,9 @@ ERSO 08.2 - ERSO HARKON.esp
 REGEX: ERSO 09 - RUS-Npcs.*\.esp
   IF VAR(EN) SAY: Use only one ERSO 09 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 09.
-ERSO 09 - Vendor Trainer Quest-giver protected.esp
+REGEX: ERSO 09 - Vendor Trainer Quest-giver protected( USKP)?\.esp
   IF VAR(EN) SAY: Use only one ERSO 09 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 09.
-ERSO 09 - Vendor Trainer Quest-giver protected USKP.esp
-  IF VAR(EN) SAY: Use only one ERSO 09 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 09.
-ERSO 09.1 - Essential Children.esp
+    IF VAR(RU) SAY: Используйте только один файл ERSO 09.ERSO 09.1 - Essential Children.esp
 ERSO 09.2 - Radiance.esp
 ERSO 10 - RUS-(SIM)-Travellers and Adventurers.esp
 ERSO 10.02 - Adventurers and Travelers.esp
