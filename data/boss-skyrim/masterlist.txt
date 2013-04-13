@@ -14814,7 +14814,11 @@ REGEX: Phenderix's Magic Evolved( -)?( No Perks| Cheat)?\.esp
 REGEX: Phenderix's Magic Evolved -( Cleaned)?( - No Perks)?\.esp
   IF VAR(EN) SAY: Use only one of Phenderix's Magic Evolved esp
     IF VAR(RU) SAY: Используйте только один of Phenderix's Magic Evolved esp
+Phenderix's Ultimate Magic System.esp
+  IF CHECKSUM("Phenderix's Ultimate Magic System.esp", 87ACA9AE) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Phenderix AI Add-On.esp
+enchantthreeeffects.esp
+  //reportedly must be loaded after Phenderix's Magic Evolved
 Physic Magic 0.8v.esp
 Pilfer.esp
   IF CHECKSUM("Pilfer.esp", C6B774F0) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -15020,9 +15024,6 @@ wkyddUnlockingSpell.esp
 
 // spells xyz
 ENDGROUP: General Spells
-
-enchantthreeeffects.esp
-  // Must be loaded after Phenderix's Magic Evolved, temporarily placed here
 
 BEGINGROUP: Shouts
 
@@ -18117,8 +18118,12 @@ TulliusHogan.esp
 // companions u
 undyingcompanions.esp
 UniqueHouseCarls.esp
+Uthgerd Kriegswolfe.esp
+  IF CHECKSUM("Uthgerd Kriegswolfe.esp", A83E8A5E) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("pluginUthgerd Kriegswolfe.esp", A83E8A5E) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Uthgerd-TCG.esp
 Uthgerd-Dovas_Angels-TCG.esp
+
 
 // companions v
 
