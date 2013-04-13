@@ -1564,6 +1564,7 @@ Carlotta.esp
 Children of Skyrim - TOWN GUARDS.esp
 ColourEyesNoDGHF.esp
   IF CHECKSUM("ColourEyesNoDGHF.esp", 3B2F32FC) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Companionsguildrevamp.esp
 Companion People.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 CustomUthgerd.esp
@@ -8004,21 +8005,9 @@ ERSO 01 - Vanilla Race Redone v.1.4.esp
 ERSO 01 - Vanilla Races Redone.esp
    IF VAR(EN) SAY: Use only one ERSO 01 file.
      IF VAR(RU) SAY: Используйте только один файл ERSO 01.
-ERSO 01 - VRR HighElflore.esp
-   IF VAR(EN) SAY: Use only one ERSO 01 file.
-     IF VAR(RU) SAY: Используйте только один файл ERSO 01.
-ERSO 01 - VRR only new heights.esp
-   IF VAR(EN) SAY: Use only one ERSO 01 file.
-     IF VAR(RU) SAY: Используйте только один файл ERSO 01.
-ERSO 01 - VRR with Running.esp
-   IF VAR(EN) SAY: Use only one ERSO 01 file.
-     IF VAR(RU) SAY: Используйте только один файл ERSO 01.
-ERSO 01 - VRRHighElflore with Running.esp
-   IF VAR(EN) SAY: Use only one ERSO 01 file.
-     IF VAR(RU) SAY: Используйте только один файл ERSO 01.
-ERSO 01 - VRR with Running Hardcore.esp
-   IF VAR(EN) SAY: Use only one ERSO 01 file.
-     IF VAR(RU) SAY: Используйте только один файл ERSO 01.
+REGEX: ERSO 01 - VRR.+\.esp
+  IF VAR(EN) SAY: Use only one ERSO 01 file.
+    IF VAR(RU) SAY: Используйте только один файл ERSO 01.
 ERSO 02 - Enhanced Fauna and Monsters for Skyrim v.2.0.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -8036,6 +8025,7 @@ BEGINGROUP: Deadly and Mighty Dragons
 IF FILE("DeadlyDiversifiedDragonsPatch.esp") MOD: DragonsDiversified.esp
 REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp
   TAG: {{BASH: Delev, Relev}}
+  // This is the Deadly Dragons main file.
 DeadlyDragons_Addon.esp
 DeadlyDragonsX.esp
   TAG: {{BASH: Delev, Relev}} not tested
@@ -8065,124 +8055,23 @@ REGEX: (ERSO 03 - )?(Soft)?(Super)?(Nightmare)?(Slighty| Slighty)?(Mighty| Might
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) && IF REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT REGEX("MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Use the "http://skyrim.nexusmods.com/mods/13423 compatibility patch" for deadly dragons.
     IF VAR(RU) && IF REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") && IFNOT REGEX("MD with DeadlyD and DDiversified( Unleveled)?\.esp") SAY: Используйте "http://skyrim.nexusmods.com/mods/13423 патч совместимости" для мода Deadly Dragons.
-  // Mighty Dragons main file
-D.S.I. Dragon Size Increase + MD.esp
+  // This is the Mighty Dragons main file.
 REGEX: (ERSO 03.2 patch - )?(MD with )?DeadlyD( and)? DDiversified( Dawnguard)?( Unleveled)?\.esp
   // Compatibility patch for Mighty Dragons, Deadly Dragons and/or Dragons Diversified
   WARN: ERSO 03.2 plugins are no longer recommended or supported by the mod author.
-ERSO 03 - Mighty Dragons DB.esp
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Mighty Dragons DD.esp
-  IFNOT REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") REQ: "http://skyrim.nexusmods.com/mods/3829 Deadly Dragons" (6.3.5)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Mighty Dragons DG.esp
+//Following sets: MD + (DG | DB | DD}
+REGEX: ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)? DG\.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF VAR(EN) SAY: Use only one ERSO 03 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Mighty Dragons Unleveled DB.esp
+REGEX: ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)? DB\.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
   IF VAR(EN) SAY: Use only one ERSO 03 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Mighty Dragons Unleveled DD.esp
+REGEX: ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)? DD\.esp
   IFNOT REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") REQ: "http://skyrim.nexusmods.com/mods/3829 Deadly Dragons" (6.3.5)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Mighty Dragons Unleveled DG.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Nightmare Mighty Dragons DB.esp
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Nightmare Mighty Dragons DD.esp
-  IFNOT REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") REQ: "http://skyrim.nexusmods.com/mods/3829 Deadly Dragons" (6.3.5)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Nightmare Mighty Dragons DG.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-ERSO 03 - Nightmare Mighty Dragons Unleveled DB.esp
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Nightmare Mighty Dragons Unleveled DD.esp
-  IFNOT REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") REQ: "http://skyrim.nexusmods.com/mods/3829 Deadly Dragons" (6.3.5)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Nightmare Mighty Dragons Unleveled DG.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Slighty Mighty Dragons DB.esp
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Slighty Mighty Dragons DD.esp
-  IFNOT REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") REQ: "http://skyrim.nexusmods.com/mods/3829 Deadly Dragons" (6.3.5)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Slighty Mighty Dragons DG.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Slighty Mighty Dragons Unleveled DB.esp
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Nightmare Mighty Dragons DB.esp
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Slighty Mighty Dragons Unleveled DD.esp
-  IFNOT REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") REQ: "http://skyrim.nexusmods.com/mods/3829 Deadly Dragons" (6.3.5)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Slighty Mighty Dragons Unleveled DG.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Super Mighty Dragons DB.esp
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Super Mighty Dragons DD.esp
-  IFNOT REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") REQ: "http://skyrim.nexusmods.com/mods/3829 Deadly Dragons" (6.3.5)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Super Mighty Dragons DG.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Super Mighty Dragons Unleveled DB.esp
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Super Mighty Dragons Unleveled DD.esp
-  IFNOT REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") REQ: "http://skyrim.nexusmods.com/mods/3829 Deadly Dragons" (6.3.5)
-  IF VAR(EN) SAY: Use only one ERSO 03 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 03.
-ERSO 03 - Super Mighty Dragons Unleveled DG.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF VAR(EN) SAY: Use only one ERSO 03 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.
 
@@ -8227,6 +8116,7 @@ ERSO 03.4 - Super Mighty Dragonborn Dragons.esp
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
   IF VAR(EN) SAY: Use only one ERSO 03.4 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.4.
+D.S.I. Dragon Size Increase + MD.esp
 DeadlyDragonsArmory.esp
 DeadlyMonsters.esp
   // companion to deadly dragons
