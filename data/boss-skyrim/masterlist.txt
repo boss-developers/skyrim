@@ -15790,6 +15790,7 @@ The Dance of Death - Dawnguard Edition.esp
   IF FILE("The Dance of Death.esp") && IF VAR(EN) WARN: Use either The Dance of Death.esp or The Dance of Death - Dawnguard Edition.esp, not both.
     IF FILE("The Dance of Death.esp") && IF VAR(RU) WARN: Используйте любой или The Dance of Death.esp или The Dance of Death - Dawnguard Edition.esp, не обa.
 The Dance of Death - Ultimate Edition.esp
+  IF CHECKSUM("The Dance of Death - Ultimate Edition.esp", 21A635C6) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 TKcombat.esp
   IF VERSION("SKSE", "0.1.6", <) REQ: "http://skse.silverlock.org SKSE" 1.6+
   IF VERSION("TES5", "1.7", <) REQ: Skyrim 1.7+
@@ -17310,16 +17311,17 @@ UFO - Ultimate Follower Overhaul.esp
   IF VAR(Hearthfire) && IFNOT FILE("UFO - Heartfire AddOn.esp") WARN: UFO - Heartfire AddOn.esp required to work properly with Hearthfires (Official Bethesda DLC)
   IF VAR(EN) SAY: For safe install need dismiss all your followers, save, delete all included mods, load again, save and install UFO. For safe uninstall or update see special instructions on "http://skyrim.nexusmods.com/mods/14037 mod page".
     IF VAR(RU) SAY: Для безопасной установки, нужно отпустить всех ваших компаньонов, сохранить, удалить все включенные в UFO моды, загрузить, опять сохранить, сохранить и установить UFO. Для безопасного удаления или обновления мода, смотрите специальные инструкции на "http://skyrim.nexusmods.com/mods/14037 странице мода"(Eng) или читайте "http://u.to/GJZaAg это" локализованное ридми.
-  IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 6EF3FFBA) DIRTY: 18 ITM, 0 UDR records Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 6EF3FFBA) || IF CHECKSUM("UFO - Ultimate Follower Overhaul.esp", 396AE69F) DIRTY: 18 ITM, 0 UDR records Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 UFO - Dawnguard AddOn.esp
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("UFO - Dawnguard AddOn.esp", 0A7A56D2) DIRTY: 18 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 UFO - Heartfire AddOn.esp
   // Typo is name, not typo
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
   IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
-  IF CHECKSUM("UFO - Hearthfire AddOn.esp", 047AA94A) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("UFO - Heartfire AddOn.esp", 047AA94A) DIRTY: 29 ITM, 18 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
@@ -18123,7 +18125,6 @@ Uthgerd Kriegswolfe.esp
     IF CHECKSUM("pluginUthgerd Kriegswolfe.esp", A83E8A5E) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Uthgerd-TCG.esp
 Uthgerd-Dovas_Angels-TCG.esp
-
 
 // companions v
 
