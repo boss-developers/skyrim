@@ -11770,6 +11770,8 @@ BetterNordHeroWeapons.esp
     IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 BetterQuestObjectives.esp
   IF CHECKSUM("BetterQuestObjectives.esp", BCD35920) && IF VAR(EN) WARN: This file is out of date. Please obtain the new version "http://skyrim.nexusmods.com/mods/32695 here".
+  IFNOT VAR(USKP) && IF VAR(EN) ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(USKP) && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 BetterQuestObjectives-Dawnguard.esp
    IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -11777,12 +11779,21 @@ BetterQuestObjectives-Hearthfire.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
 BetterQuestObjectives-ESFCompanionsPatch.esp
-  IFNOT FILE("ESFCompanions.esp") ERROR: ESFCompanions.esp is not present or is not active. Skyrim will CTD when loading if this file is active without ESFCompanions
-	IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("ESFCompanions.esp") && IF VAR(EN) ERROR: ESFCompanions.esp is not present or is not active. Skyrim will CTD when loading if this file is active without ESFCompanions
+    IFNOT FILE("ESFCompanions.esp") && IF VAR(RU) ERROR: ESFCompanions.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("BetterQuestObjectives-ESFCompanionsPatch.esp", D49C6FE4) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+BetterQuestObjectives-PaarDilemmaPatch.esp Checksum: 596C0600
+  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+    IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("The Paarthurnax Dilemma.esp") && IF VAR(EN) ERROR: The Paarthurnax Dilemma.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+    IFNOT FILE("The Paarthurnax Dilemma.esp") && IF VAR(RU) ERROR: The Paarthurnax Dilemma.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 BetterQuestObjectives-RequiemPatch.esp
-  IFNOT FILE("Requiem.esp") ERROR: Requiem.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+  IFNOT FILE("Requiem.esp") && IF VAR(EN) ERROR: Requiem.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+    IFNOT FILE("Requiem.esp") && IF VAR(RU) ERROR: Requiem.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 BetterQuestObjectives-SkyRePatch.esp
-  IFNOT FILE("SkyRe_Main.esp") ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if this file is active without SkyRe_Main
+  IFNOT FILE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if this file is active without SkyRe_Main
+    IFNOT FILE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 IF REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 Headbomb's Better Sorting - Ammo.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Ammo.esp", 58924631) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -12941,6 +12952,14 @@ NoTraining.esp
 non-leveled items.esp
 Non-player Armor.esp
 NonEssentialChilds.esp
+NonEssentialChildren.esp Checksum: BAE841DB this HF
+  IF CHECKSUM("NonEssentialChildren.esp", BAE841DB) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("NonEssentialChildren.esp", BAE841DB) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+BetterQuestObjectives-NECPatch.esp Checksum: F0489D51
+  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+    IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("NonEssentialChildren.esp") && IF VAR(EN) ERROR: NonEssentialChildren.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+    IFNOT FILE("NonEssentialChildren.esp") && IF VAR(RU) ERROR: NonEssentialChildren.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 NordResist-50stamina.esp
 NordResist-25%.esp
 NothingSellsForZero.esp
@@ -13993,6 +14012,11 @@ BFT Ships and Carriages - HF.esp
 // Translplanted the Realistic Room Rental stuff here because it causes door problems with Open Cities Skyrim - Arthmoor
 RealisticRoomRental.esp
   IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BetterQuestObjectives-PersidRRentalPatch.esp
+  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+    IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("RealisticRoomRental.esp") && IF VAR(EN) ERROR: RealisticRoomRental.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+    IFNOT FILE("RealisticRoomRental.esp") && IF VAR(RU) ERROR: RealisticRoomRental.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 RealisticRoomRental-Basic.esp
   IF FILE("RealisticRoomRental.esp") INC: RealisticRoomRental.esp
 RRRE-Lite.esp
@@ -18744,6 +18768,11 @@ Alternative Startfraktionen - Abgeschworener.esp
 Alternative Startfraktionen - Bandit.esp
 Alternative Startfraktionen - Hexe.esp
 Alternative Startfraktionen - Silberne Hand.esp
+BetterQuestObjectives-AlternateStartPatch.esp
+  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+    IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("Alternate Start - Live Another Life.esp") && IF VAR(EN) ERROR: Alternate Start - Live Another Life.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+    IFNOT FILE("Alternate Start - Live Another Life.esp") && IF VAR(RU) ERROR: Alternate Start - Live Another Life.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 Bandit Start.esp
   IF CHECKSUM("Bandit Start.esp", 57D4E755) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Forsworn Start.esp
