@@ -2313,6 +2313,11 @@ SIRW.esp
   TAG: {{BASH: Delev, Relev}} not tested
 SIMIIPatch.esp
 Vidani's Bag of Holding.esp
+TradeBarter.esp
+  TAG: {{BASH: Delev}}
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
+  //Recommended to be loaded before Economics of Skyrim  
 Economics of Skyrim.esp
   TAG: {{BASH: Delev, Relev}}
   IF CHECKSUM("Economics of Skyrim.esp", 0C3C5505) DIRTY: 16 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -4447,6 +4452,8 @@ DEAsprint&jump.esp
 Dragon Soul Relinquishment.esp
   IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
 DragonWarrior-Effects.esp
+DynamicNaming.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
 Dynavision.esp
   IF VAR(EN) WARN: DYNAVISION will work with most ENB configuations, however if you are using ENB, remember to turn OFF the ENB DOF feature in your graphics options
     IF VAR(RU) WARN: DYNAVISION будет работать с большинством ENB конфигураций, однако, если вы используете  ENB, не забудьте выключить опцию ENB DOF , в настройках графики.
@@ -4651,6 +4658,7 @@ AmazonArmor.esp
 AmbrosiaFashions.esp
   IF CHECKSUM("AmbrosiaFashions.esp", 5625FC4F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Amiella Outfit.esp
+aMidianborn_Skyforge_Weapons.esp
 amk Border Lace Lingerie.esp
 AmuletteDesNeuf.esp
 AmuletOfHomecoming.esp
@@ -6702,6 +6710,10 @@ PrvtI_HeavyArmory.esp
 PrvtI_HeavyArmory_DG_Addon.esp
   TAG: {{BASH: Delev, Relev}}
 prvti_heavyarmory_dawnguard.esp
+Guard Weapons - Heavy Armory - Halberds.esp
+  IF CHECKSUM("Guard Weapons - Heavy Armory - Halberds.esp", BAF5E2E4) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  REQ: "http://skyrim.nexusmods.com/mods/21120 Heavy Armory"
+  //not explicitly dependent on Heavy Armory at release: this may change?
 psijic mage.esp
 Psiijic_Master_Outfits.esp
 PsilocybinMushrooms.esp
@@ -7733,6 +7745,8 @@ REGEX: Smithing Perks Overhaul( - Balanced)?\.esp
     IF VAR(RU) && IF FILE("Complete Crafting Overhaul.esp") SAY: С модом Complete Crafting Overhaul используйте 'Smithing Perks Overhaul - Balanced.esp'
 Smithing Perks Overhaul - ITA.esp
 Smithing Perks Overhaul - Balanced - ITA.esp	
+Weapons & Armor_Fixes.esp
+  //despite name, newer version(s) have become Smithing Perk Overhaul too
 REGEX: Complete Crafting Overhaul( - BS version)?\.esp
   IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Complete Crafting Overhaul.esp", 8534CD3C) && IFNOT CHECKSUM("Complete Crafting Overhaul - BS version.esp", 193D9214) SAY: Does not contain unexpected (or out of order) records or TESVSnip truncation issues as found in other mods by various authors.  However, a newer esp fixed and cleaned with TES5Edit can be obtained here that may provide added stability. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
   IF FILE("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
@@ -7773,10 +7787,12 @@ Grimy_Enchantment.esp
   IF CHECKSUM("Grimy_Enchantment.esp", E8494AAE) || IF CHECKSUM("Grimy_Enchantment.esp", DFEB1716) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HarvestOverhaul.esp
 HarvestOverhaulDawnguard.esp
+HarvestOverhaulDawnguardDragonborn.esp
 HarvestOverhaulCreatures.esp
 HarvestOverhaulCreaturesDawnguard.esp
   IFNOT FILE("HarvestOverhaulCreatures.esp") INC: HarvestOverhaulCreatures.esp
 HarvestOverhaulCreaturesDawnguardHearthfire.esp
+HarvestOverhaulCreaturesDawnguardHearthfireDragonborn.esp
 // Harvest Overhaul Compatibility patches located after mods patched Skyre_main.esp and IMCN - Overrides.esp as author suggests
 HarvestOverhaul_100Chance.esp
   IF VAR(EN) SAY: Obsolete.  Delete, no replacement in latest version.
@@ -12963,6 +12979,7 @@ BetterQuestObjectives-NECPatch.esp
 NordResist-50stamina.esp
 NordResist-25%.esp
 NothingSellsForZero.esp
+NpcHavokHit.esp
 NPCShutUP.esp
 NPCshutUPaboutflames.esp
 NPCsMoveatPlayerSpeed.esp
@@ -14523,7 +14540,7 @@ userrequestbetterww.esp
 vampfix.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-  SAY: This mod's ITM records are intentional for its function.
+  SAY: This mod's ITM records are intentional for its function. Do not clean with TES5Edit.
 REGEX: vampire_tweaks(_feed_on_kids)?\.esp
 vampire sight.esp
 Vampire Toggle.esp
@@ -15713,6 +15730,7 @@ zzzAlmostUnlimitedWeaponEnchant.esp
     IF CHECKSUM("zzzAlmostUnlimitedWeaponEnchant.esp", 7F641330) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 IFNOT VAR(SkyReM) MOD: Artifact Disenchanting.esp
 IFNOT VAR(SkyReM) MOD: Artifact Disenchanting - Dawnguard.esp
+IFNOT VAR(SkyReM) MOD: Artifact Disenchanting - Dragonborn.esp
 Backstab Enchantment new.esp
 Balanced Crafting Project - Enchanting Part.esp
 Balanced Enchanting v2.esp
@@ -16421,6 +16439,7 @@ IF REGEX("Acquisitive Soul Gems( FR)?\.esp") REGEX: Soul Gems Differ.*\.esp
 IF REGEX("Acquisitive Soul Gems( FR)?\.esp") MOD: Soul Gems Glow When Full.esp
 IF VAR(SkyReM) MOD: Artifact Disenchanting.esp
 IF VAR(SkyReM) MOD: Artifact Disenchanting - Dawnguard.esp
+IF VAR(SkyReM) MOD: Artifact Disenchanting - Dragonborn.esp
 IF VAR(SkyReM) MOD: FormsEdit.esp
 HarvestOverhaulSkyReCompatibility.esp
 IF VAR(SkyReM) MOD: Improved Dragon Shouts.esp
