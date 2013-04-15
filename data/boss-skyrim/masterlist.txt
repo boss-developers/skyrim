@@ -618,6 +618,8 @@ SC_Drow Race.esm
 SkyrimForBattle.esm
 SCoL Main.esm
 SexiS.esm
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
 Sexy Crafting Merchants.esm
 SG_BlacksmithsCavern.esm
   IF CHECKSUM("SG_BlacksmithsCavern.esm", 564D3A3B) DIRTY: 20 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -3474,9 +3476,15 @@ Lost Art of the Blacksmith.esp
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Lost Art of the Blacksmith.esp", 1720F631) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
 Lost Art of the Blacksmith-Bethesdasafe.esp
 lovecraftbooks.esp
-//Added warning as per G.C. Issue 304
+LoversComfort.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" 3.4+
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+  IFNOT ACTIVE("SexiS.esm") && IF VAR(EN) ERROR: SexiS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SexiS.esm") && IF VAR(RU) ERROR: SexiS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 lt_better_horses.esp
   If VAR(EN) ERROR: Do not use. Mod is abandoned and known to cause permanent save corruption.
+  //Added warning as per G.C. Issue 304
 lt_better_horses_uninstaller.esp
 HMBHPatch.esp
 SIBHPatch.esp
@@ -3888,6 +3896,11 @@ See Your Neighbor.esp
 SephDragonAuras.esp
 ser house market fix.esp
 SevenFightsAldudagga.esp
+SexiSWorkingGirl.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+  IFNOT ACTIVE("SexiS.esm") && IF VAR(EN) ERROR: SexiS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SexiS.esm") && IF VAR(RU) ERROR: SexiS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 sextoys-calyps-2.esp
 Sexy Crafting Merchants.esp
 shadow_slayer_3x.esp
@@ -11025,6 +11038,9 @@ thievesguildexit.esp
 ThiefSecretEntrances.esp
   IF CHECKSUM("ThiefSecretEntrances.esp", F2CCB43F) DIRTY: 18 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ThievesGuildTrapdoor.esp
+  IF CHECKSUM("ThievesGuildTrapdoor.esp", 8E258333) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 ThistleCottage.esp
 throneroom.esp
   IF CHECKSUM("throneroom.esp", 2F04B129) DIRTY: 0 ITM, 32 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -16802,6 +16818,7 @@ DynamicallyIncreasedWalkSpeed.esp
 effeminatenazeem.esp
 ElinRaceIdle.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
+FemaleCityGuardsAndSoldiers.esp
 Feminine Orc Animation by D.esp
 Interactive Skyrim.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
@@ -16849,8 +16866,18 @@ IFNOT FILE("3DNPC.esp") MOD: RND_NCVE-FAMP.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_DestructibleBottles-FAMP.esp
 potsanimated.esp
 See YourSelf drink and eat.esp
+SexiSArrokAnimations.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
 SexiSCupid.esp
-  IFNOT FILE("SexiS.esm") ERROR: SexiS.esm is not present or is not active. Skyrim will CTD when loading if using this file without SexiS
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+  IFNOT ACTIVE("SexiS.esm") && IF VAR(EN) ERROR: SexiS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SexiS.esm") && IF VAR(RU) ERROR: SexiS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+SexiSDefeated.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+  IFNOT ACTIVE("SexiS.esm") && IF VAR(EN) ERROR: SexiS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SexiS.esm") && IF VAR(RU) ERROR: SexiS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 Shake it!.esp
 ShakeIt.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
