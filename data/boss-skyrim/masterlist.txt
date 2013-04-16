@@ -1129,6 +1129,7 @@ REGEX: KeeningFix.*\.esp
 KeeningSmithing.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
+Khajiit Claws - 15dmg.esp
 KillThemGenerals.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
@@ -2026,6 +2027,8 @@ REGEX: Dark( |e[r|st]+[ ]?)?Nights( and Bright Skies| No Weather)?\.esp
 REGEX: Dark(er)? Nights(B|_(\d{1,2})?(b+[lr])?)\.esp
 CLO.esp
 CLO - Custom Lighting Overlay.esp
+Darker_Caves_Dungeons_Ruins_Nights.esp
+  IF CHECKSUM("Darker_Caves_Dungeons_Ruins_Nights.esp", E46B4DF1) DIRTY: 721 ITM, 1489 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 DarkerSkyrimLighting.esp
 Encryptions Water Arrow.esp
 ImmersiveContentExteriorLighting.esp
@@ -6726,6 +6729,7 @@ PrvtI_HeavyArmory.esp
 PrvtI_HeavyArmory_DG_Addon.esp
   TAG: {{BASH: Delev, Relev}}
 prvti_heavyarmory_dawnguard.esp
+prvti_heavyarmory_dragonborn.esp
 Guard Weapons - Heavy Armory - Halberds.esp
   IF CHECKSUM("Guard Weapons - Heavy Armory - Halberds.esp", BAF5E2E4) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   REQ: "http://skyrim.nexusmods.com/mods/21120 Heavy Armory"
@@ -12466,6 +12470,9 @@ Cowardly horses sprint for longer.esp
 Housecarl - Wear anything.esp
 housecarl_fem.esp
 HousecarlMarkarth.esp
+Housecarls Are Hotties.esp
+  IF FILE("Housecarls Can Wear Anything.esp") INC: Housecarls Can Wear Anything.esp	
+Housecarls Are Hotties MALE NPC edit Only.esp
 Housecarls Can Wear Anything.esp
 REGEX: Housecarls improved AI( \+ higher lvl cap)?\.esp
   IF VAR(EN) && IF VAR(UFO) WARN: Improved AI included in UFO - Ultimate Follower Overhaul.esp, delete and use UFO
@@ -17934,6 +17941,9 @@ REGEX: FTBS_.+\.esp
 
 // companions g
 GameofThrones-Followers.esp
+Gli Beindae.esp Checksum: 931B6A8
+  IF VAR(EN) WARN: This file contains <x> deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит <x> удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 godess's of skyrim.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
