@@ -5813,6 +5813,8 @@ HedgeKnight.esp
   IF FILE("SkyRe_Plugin_HedgeKnightArmor_1.esp") TAG: {{BASH: Deactivate}}
   IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
 HellionArrows_v1.15.esp
+HellionArrows_v1.2.esp
+  IF CHECKSUM("HellionArrows_v1.2.esp", B83DB305) DIRTY: 5 ITM, 7 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Hell Sword.esp
 REGEX: Henrys Ring of Light( v1-0)?\.esp
   IF VAR(EN) && IF FILE("Henrys Ring of Light v1-0.esp") SAY: Obsolete. Update to latest version.
@@ -7759,8 +7761,11 @@ REGEX: Smithing Perks Overhaul( - Balanced)?\.esp
     IF VAR(RU) && IF FILE("Complete Crafting Overhaul.esp") SAY: С модом Complete Crafting Overhaul используйте 'Smithing Perks Overhaul - Balanced.esp'
 Smithing Perks Overhaul - ITA.esp
 Smithing Perks Overhaul - Balanced - ITA.esp	
+Smithing Perks Overhaul_Remade.esp
+  IF CHECKSUM("Smithing Perks Overhaul_Remade.esp", E957FD42) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("Smithing Perks Overhaul_Remade.esp", E957FD42) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Weapons & Armor_Fixes.esp
-  //despite name, newer version(s) have become Smithing Perk Overhaul too
+  //despite name, newer version(s) have become Smithing Perk Overhaul_Remade too
 REGEX: Complete Crafting Overhaul( - BS version)?\.esp
   IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Complete Crafting Overhaul.esp", 8534CD3C) && IFNOT CHECKSUM("Complete Crafting Overhaul - BS version.esp", 193D9214) SAY: Does not contain unexpected (or out of order) records or TESVSnip truncation issues as found in other mods by various authors.  However, a newer esp fixed and cleaned with TES5Edit can be obtained here that may provide added stability. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
   IF FILE("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
@@ -11439,6 +11444,7 @@ IngredientReweight.esp
 Items Weight Adjustment.esp
 LeatherWeightFix(0.1).esp
 lessheavyfirewood.esp
+lighterdbs.esp
 lighterdragonitems.esp
 lightdragonpreistmasks.esp
 lighterdragonscalesandbones.esp
