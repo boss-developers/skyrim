@@ -5972,13 +5972,17 @@ InigoPerkPointGiver.esp
 Inquisitor Set.esp
 InsanitysCelticKatana.esp
   IF FILE("SkyRe_Plugin_InsanitysCelticKatana_1.2.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_InsanitysCelticKatana.esp") TAG: {{BASH: Deactivate}}
 Insanity's Chrysamere.esp
 Insanity's Craftable Dragonbane.esp
+  IF FILE("Insanity's Craftable Dragonbane.esp") TAG: {{BASH: Deactivate}}
 Insanity's Dragonbane.esp
 Insanity's Dragon Katana.esp
   IF FILE("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_InsanitysDragonKatana.esp") TAG: {{BASH: Deactivate}}
 InsanitysDragonKatana.esp
   IF FILE("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_InsanitysDragonKatana.esp") TAG: {{BASH: Deactivate}}
 Insanity's Empire Longswords.esp
 Insanity's Goldbrand.esp
 Insanity's Kahvozein Fang.esp
@@ -8512,7 +8516,22 @@ SkyRe_Plugin_InsanitysCelticKatana_1.2.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF VAR(EN) && IF ACTIVE("InsanitysCelticKatana.esp") SAY: Remember not to load (or to simply delete) InsanitysCelticKatana.esp
     IF VAR(RU) && IF ACTIVE("InsanitysCelticKatana.esp") SAY: Не забудьте отключить или удалить InsanitysCelticKatana.esp
+SkyRe_Plugin_InsanitysCelticKatana.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("nsanitysCelticKatana.esp") SAY: Remember not to load (or to simply delete) nsanitysCelticKatana.esp
+    IF VAR(RU) && IF ACTIVE("nsanitysCelticKatana.esp") SAY: Не забудьте отключить или удалить nsanitysCelticKatana.esp
+SkyRe_Plugin_InsanitysCraftableDragonbane.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Insanity's Craftable Dragonbane.esp") SAY: Remember not to load (or to simply delete) Insanity's Craftable Dragonbane.esp
+    IF VAR(RU) && IF ACTIVE("Insanity's Craftable Dragonbane.esp") SAY: Не забудьте отключить или удалить Insanity's Craftable Dragonbane.esp
 SkyRe_Plugin_InsanitysDragonKatana_1.2.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
+    IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(RU) SAY: Не забудьте отключить или удалить мод Insanitys Dragon Katana
+SkyRe_Plugin_InsanitysDragonKatana.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF FILE("InsanitysDragonKatana.esp") || IF FILE("Insanity's Dragon Katana.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Insanitys Dragon Katana mod
@@ -12525,6 +12544,8 @@ ImprovedMonsterLoot.esp
   TAG: {{BASH: Relev}}
   IF CHECKSUM("ImprovedMonsterLoot.esp", B9CE5D33) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 improvedoverpowered.esp
+Improved Poisons.esp
+  IF CHECKSUM("Improved Poisons.esp", E0929501) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Improved Potions.esp
 Improved Radiant Rewards.esp
 Improved Radiant Rewards Lower.esp
