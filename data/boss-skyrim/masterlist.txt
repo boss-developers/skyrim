@@ -2815,6 +2815,7 @@ ENDGROUP: Base C
 
 BEGINGROUP: Base D
 
+DaedraHeartArcadia2.esp
 Daedric Weapons-Armor to Ingots.esp
 d_b Whetstone.esp
 DamageEnchantBonus.esp
@@ -2873,6 +2874,7 @@ DragonbornDisenchanting.esp
 Dragon Bridge Home.esp
 DragonChristine.esp
 DragonCrownCraftable.esp
+DragonHeart.esp Active
 Dragonlings 1.0 - A dragon sub-species.esp
   TAG: {{BASH: Delev}}
 DragonPlateCrownCraftable.esp
@@ -14021,6 +14023,9 @@ BEGINGROUP: City Overhauls
 
 Unique Region Names.esp
   IF CHECKSUM("Unique Region Names - Dragonborn.esp", 0E71DBFD) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Unique Region Names - Dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 Beautiful Cities.esp
   IF CHECKSUM("Beautiful Cities.esp", B70CEB49) DIRTY: 0 ITM, 22 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 civilwarcleanup.esp
@@ -17198,6 +17203,7 @@ RZW_ChubbyRaces.esp
 SC_Drow Race.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, DrowRace.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, DrowRace.esp
+Shadowscale Argonian Race.esp
 SkyTEST-MysticLands.esp
   IF CHECKSUM("SkyTEST-MysticLands.esp", 98D9ED8B) DIRTY: 20 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 StarWarsRaces.esp
@@ -18351,6 +18357,13 @@ Sophia.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 Soriana.esp
 SpectralHordeSpell.esp
+REGEX: SprigganFollower(_lvl\d)?\d?\.esp
+  IF VAR(EN) WARN: Use only one SprigganFollower esp.
+    IF VAR(RU) WARN: Используйте только один SprigganFollower esp.
+  IF FILE("SprigganFollower.esp") && IF CHECKSUM("SprigganFollower.esp", 1179651) DIRTY: 2 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF FILE("SprigganFollower_lvl1.esp") && IF CHECKSUM("SprigganFollower_lvl1.esp", 3E675448) DIRTY: 2 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF FILE("SprigganFollower_lvl25.esp") && IF CHECKSUM("SprigganFollower_lvl25.esp", 22F1546B) DIRTY: 2 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF FILE("SprigganFollower_lvl50.esp") && IF CHECKSUM("SprigganFollower_lvl50.esp", 3045F427) DIRTY: 2 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Stella.esp
 StenvarGB.esp
 Stenvar.esp
@@ -18980,6 +18993,9 @@ Nicer-Looking Khajiit.esp
 NorcRace_OrcRaceReplacer.esp
 nord_nightseye01.esp
   IF CHECKSUM("nord_nightseye01.esp", BB8B06A8) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+QuickKhajiitsAttackSpeed.esp
+QuickKhajiitsMovementSpeed.esp
+QuickKhajiitsboth.esp
 Race Tweaks.esp
 RaceRevamp.esp
 Races and Doomstones.esp
