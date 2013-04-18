@@ -4237,6 +4237,12 @@ Unique items.esp
 UPS Camp.esp
 UniqueEverything.esp
   IF CHECKSUM("UniqueEverything.esp", 9AB1ACCF) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Unleveled_Skyrim_Items.esp
+  TAG: {{BASH: Delev, Relev}}
+Unleveled_Dragonborn_Items.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  TAG: {{BASH: Delev, Relev}}
 UseableSawmill.esp
 Usefulremains.esp
 Useful_Stuff_of_Usefuless.esp
@@ -9131,6 +9137,9 @@ REGEX: bettercities(morebees|docksolitude|jarlshouses|newfarm)?\.esp
       IF CHECKSUM("bettercitiesnewfarm.esp", 3F73AFCE) DIRTY: 1 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 BetterDarkBrotherhood.esp
   IF CHECKSUM("BetterDarkBrotherhood.esp", 06E40868) DIRTY: 118 ITM, 27 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("BetterDarkBrotherhood.esp", E0C083AD) DIRTY: 149 ITM, 26 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 BetterDGEntrance.esp
   IF CHECKSUM("BetterDGEntrance.esp", 2EB928AB) DIRTY: 14 ITM, 14 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BetterJorrvaskr.esp
