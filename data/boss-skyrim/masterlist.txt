@@ -4041,7 +4041,15 @@ Skyrim Scaling Stopper - Misc Edits.esp
 Skyrim Scaling Stopper - Vanilla Dragon Scaling Patch.esp
   TAG: {{BASH: Delev, Relev}}
 SkyrimGranary.esp
-SkyrimImprovedPuddles.esp
+REGEX: SkyrimImprovedPuddles(.+)?\.esp
+  IF VAR(EN) SAY: Use only one SkyrimImprovedPuddles esp.
+    IF VAR(RU) SAY: Используйте только один SkyrimImprovedPuddles esp.
+  IF FILE("SkyrimImprovedPuddles-Dawnguard.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF FILE("SkyrimImprovedPuddles-Dawnguard.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF FILE("SkyrimImprovedPuddles-HearthFires.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-HF-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IF FILE("SkyrimImprovedPuddles-HearthFires.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-HF-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IF FILE("SkyrimImprovedPuddles-Dragonborn.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-HF-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IF FILE("SkyrimImprovedPuddles-Dragonborn.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-HF-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 SkyrimLive.esp
 SkyrimsUniqueTreasures.esp
 SkyscraperGiants.esp
