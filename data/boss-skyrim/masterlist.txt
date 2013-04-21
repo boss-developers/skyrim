@@ -14632,6 +14632,14 @@ Lycanthropy_Main_by_Brevi.esp
 MaintainingVampireAppearance.esp
 matedrestedwolf.esp
 MIVs Vampirism Overhaul.esp
+mslVampiricThirst.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
+  IF CHECKSUM("mslVampiricThirst.esp", FAFB18C2) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) SAY: Conflicts with other mods that change the vampirism system.
+    IF VAR(RU) SAY: конфликты с другими модами, меняющими систему вампиризма.
+  //contains some perks, so could put lower down there; a user says put before Skyre plugins, which are above this? So split the difference and put here for now.
 NoWerewolfFormCooldown.esp
   IF VAR(EN) SAY: Possible conflicts with other Werewolf-mods
     IF VAR(RU) SAY: Возможны конфликты с другими модами, меняющими оборотней.
