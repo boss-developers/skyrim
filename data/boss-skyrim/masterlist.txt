@@ -774,6 +774,12 @@ ZZZ_Stenvar_Replacer_THAIDEN.esm
 Bandit Raid.esp
   IF VAR(EN) SAY: This is actually an esm released as an esp file.
     IF VAR(RU) SAY: На самом деле это esm-файл, выпущенный как esp.
+Skyrim Project Optimization - Full Version.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
+  IF FILE("Skyrim Project Optimization - Full Version.esm") ERROR: Use Skyrim Project Optimization - Full Version.esm or Skyrim Project Optimization - Full Version.esp, not both.
 Skyrim Project Optimization - No Homes.esp
   IF FILE("Skyrim Project Optimization - No Homes.esm") ERROR: Use Skyrim Project Optimization - No Homes.esm or Skyrim Project Optimization - No Homes.esp, not both.
 Skyrim Project Optimization - No Homes - Full Version.esp
@@ -1941,14 +1947,13 @@ WMGAtmosphericENBPlugin.esp
 ENDGROUP: Weather mods and overhauls
 
 BEGINGROUP: Sound mods
-// Sound plugins and sound packs that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
-//
+// Sound plugins; also, sound packs that are packaged with a BSA file, while the ESP lists only the TES4 Skyrim header, example:
 // Some Sounds.esp
 //  TES4 (Header only)
 //
 // It appears that *ANY* sound is ok to be placed here.
-//
 
+Additional Player Voices for Skyrim.esp
 addwinterholdmusic.esp
 Bardsoundsmalukah.esp
 REGEX: DFG's Blade & Dagger Sheathe Sounds.*\.esp
@@ -14939,6 +14944,10 @@ COR - Dremora Lord Thrall.esp
 cremation.esp
   IF CHECKSUM("cremation.esp", 849D7480) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 CurseSpell.esp
+Customizable weights.esp
+REGEX: CW - 0(.\d)? weight potions\.esp
+  IF VAR(EN) SAY: Use only one Customizable weight potions esp
+    IF VAR(RU) SAY: Используйте только один Customizable weight potions esp
 
 // spells d
 Darkness.esp
@@ -17984,6 +17993,7 @@ DogCompanions.esp
 DogsRevamped.esp
 REGEX: Dova's Angels - (Iona|Jordis|Lydia|Mjoll|Saadia|Sylgja|Uthgerd)?\ - V(4|5)?\.esp             
   WARN: This file contains unexpected (or out of order) records and should be removed.
+Dovabear.esp
 Dragoon.esp
   IF CHECKSUM("Dragoon.esp", B683CACB) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Draquel.esp
