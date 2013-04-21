@@ -389,6 +389,23 @@ ForbiddenRomance.esm
 GameOfThronesArmors.esm
 GeneralStores.esm
   IF CHECKSUM("GeneralStores.esm", 04B8B6DA) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+GeneralDisplays.esm
+  IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+GeneralDisplays - DG.esm
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("GeneralDisplays.esm") && IF VAR(EN) ERROR: GeneralDisplays.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("GeneralDisplays.esm") && IF VAR(RU) ERROR: GeneralDisplays.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+GeneralDisplays - DB.esm Checksum: 931C66B9
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("GeneralDisplays.esm") && IF VAR(EN) ERROR: GeneralDisplays.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("GeneralDisplays.esm") && IF VAR(RU) ERROR: GeneralDisplays.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 GetArrowsBack80.esm
 GiantChild.esm
   IF CHECKSUM("GiantChild.esm", 479C279C) DIRTY: 0 ITM, 8 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -3090,14 +3107,40 @@ BEGINGROUP: Base G
 GBob_More_Minor_Vendors.esp
 GDAmulets.esp
 gemstoneconversion.esp
-general npc fixes.esp
-REGEX: GeneralStores(Proudspire|Breezehome|VlindrelHall|Honeyside)?\.esp
-  IFNOT VAR(GS) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
-    IF CHECKSUM("GeneralStoresVlindrelHall.esp", 3AA2C5E6) DIRTY: 0 ITM, 8 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
-      IF CHECKSUM("GeneralStoresHoneyside.esp", 6F6C3A0C) DIRTY: 0 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 GenebrisTreasureChests.esp
   TAG: {{BASH: Delev, Relev}}
   // not sure about Delev
+general npc fixes.esp
+//de-REGEXed the following, below: GeneralStores(Proudspire|Breezehome|VlindrelHall|Honeyside)?\.esp due to varying dirt reports among them
+GeneralStoresBreezehome.esp
+  IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+GeneralStoresHoneyside.esp
+  IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("GeneralStoresHoneyside.esp", 6F6C3A0C) DIRTY: 0 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+GeneralStoresProudspire.esp
+  IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("GeneralStoresProudspire.esp", 7DFCB25D) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+GeneralStoresVlindrelHall.esp
+  IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("GeneralStoresVlindrelHall.esp", 3AA2C5E6) DIRTY: 0 ITM, 8 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+  IF CHECKSUM("GeneralStoresVlindrelHall.esp", C3C58F71) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+General Stores for Severin Manor.esp
+  IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+GeneralStoresGlue.esp
+  IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+GeneralStoresGlueDragonborn.esp
+  IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 genpeople.esp
 genpeople lite.esp
 genpeopleliter.esp
@@ -10812,12 +10855,14 @@ SharedStorage.esp
     IF VAR(RU) && IF FILE("WyvernCliff.esp") WARN: Удалите. Уже включено в 'WyvernCliff.esp'
 ShayksBAQ.esp
 ShezriesHFKitchen.esp
-  IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
-  IF CHECKSUM("ShezriesHFKitchen.esp", 9E35B611) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("ShezriesHFKitchen.esp", 9E35B611) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("ShezriesHFKitchen.esp", C7058330) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ShezriesHFKitchenHel.esp
-  IFNOT VAR(Hearthfire) REQ: Hearthfires (Official Bethesda DLC)
-  IF CHECKSUM("ShezriesHFKitchenHel.esp", DC5FE37C) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("ShezriesHFKitchenHel.esp", DC5FE37C) DIRTY: 19 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("ShezriesHFKitchenHel.esp", BD5ACD77) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ShezriesWinstadHearthfireKitchen.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
@@ -11397,6 +11442,7 @@ ICP Whiterun Exterior.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, ICP Whiterun Exterior.esp
 whiterunexenhanced.esp
 Whiterun Ferns.esp
+  IF CHECKSUM("Whiterun Ferns.esp", 1C31E69B) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 WinterholdDestruction.esp
 Whiterun GREENized.esp
 WhitrunRebuild.esp
@@ -11461,6 +11507,7 @@ Zelda Whiterun.esp
 ZU_Refuse_Joining_The_Nightingales.esp
 Zwerge in Dwemer.esp
 zzzbasement.esp
+  IF CHECKSUM("zzzbasement.esp", 5F88132) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ENDGROUP: Quests XYZ
 ENDGROUP: Quests and Locations
 
