@@ -4197,9 +4197,10 @@ TraderEvo.esp
 training mannequin.esp
 Training Dummies XP.esp
   IF CHECKSUM("Training Dummies XP.esp", 8BCA1FAC) DIRTY: 47 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".  
-Training Dummies XP Dawnguard.esp  
+Training Dummies XP Dawnguard.esp
 Transmute Iron First.esp
 transmuteironorefirst.esp
+Traps Make Noise.esp
 TravellersOfSkyrim.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -12205,6 +12206,11 @@ Distant DetailHF.esp
   IF FILE("Distant Detail.esp") INC: Distant Detail.esp
   IF CHECKSUM("Distant DetailHF.esp", 7AE9614F) DIRTY: 328 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 DiversePriests.esp
+DiversePriests_BringOutYourDeadPatch.esp
+  IFNOT ACTIVE("DiversePriests.esp") && IF VAR(EN) ERROR: DiversePriests.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("DiversePriests.esp") && IF VAR(RU) ERROR: DiversePriests.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("Bring Out Your Dead.esp") && IF VAR(EN) ERROR: Bring Out Your Dead.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Bring Out Your Dead.esp") && IF VAR(RU) ERROR: Bring Out Your Dead.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 MOD: Dödligalegatus.esp
   // Removing the MOD: tag from this seems to cause crashes.
 dogtogermanshepard2fix.esp
@@ -19628,6 +19634,11 @@ REGEX: Compatibility Patch - (PHT & WIC|PHT WIC)\.esp
     IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   //end of PHL, PHT patch set
 Cooking Expanded - RND Support.esp	
+DiversePriests_ConsistentOlderPeoplePatch.esp
+  IFNOT ACTIVE("DiversePriests.esp") && IF VAR(EN) ERROR: DiversePriests.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("DiversePriests.esp") && IF VAR(RU) ERROR: DiversePriests.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(EN) ERROR: SPTConsistentOlderPeople.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(RU) ERROR: SPTConsistentOlderPeople.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 DragonCombatOverhaul - Requiem Patch.esp
 GDFoodCompatability.esp
 GeneralStores(CCS-DG).esp
