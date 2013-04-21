@@ -399,7 +399,7 @@ GeneralDisplays - DG.esm
     IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IFNOT ACTIVE("GeneralDisplays.esm") && IF VAR(EN) ERROR: GeneralDisplays.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("GeneralDisplays.esm") && IF VAR(RU) ERROR: GeneralDisplays.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-GeneralDisplays - DB.esm Checksum: 931C66B9
+GeneralDisplays - DB.esm
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
   IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -12069,6 +12069,7 @@ Bigger dragons.esp
 biggerbears.esp
 REGEX: Binocular Vision (Game Settings 135|Game Settings 150|For NPCs While Sneaking)?\.esp
   SAY: Use only one Binocular Vision esp.
+  IF CHECKSUM("Binocular Vision Game Settings 135.esp", 9C56E282) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 bleedeffects.esp
 Blizzard v 1.4.esp
 BlockSparkles.esp
@@ -12553,6 +12554,7 @@ REGEX: Hellspawn Shadowmere.*\.esp
 Helmets - Khajiit Ears Hair.esp
 helmless_warrior.esp
 Helms and Circlets.esp
+  IF CHECKSUM("Helms and Circlets.esp", 36521312) DIRTY: 11 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HelmsWithCirclets.esp
 hfsm.esp
 Hide all headgear - Heavy.esp
