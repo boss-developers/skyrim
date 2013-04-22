@@ -37,7 +37,7 @@ Message keywords should be indented by two spaces and followed by a colon ':' th
 // Variables
 
 // Language setup. Only for BOSS 2.1+
-// Language conditional 'IF VAR(EN)' need only for translated messages.
+// Language conditional 'IF VAR(EN)' need only for translated messages. Dont add '&& IF VAR(EN) ' conditional for messages without translation.
 IF LANG("chinese") SET: EN
   // Not translated. Set default EN.
 IF LANG("english") SET: EN
@@ -113,7 +113,7 @@ IF ACTIVE("Unofficial High Resolution Patch.esp") SET: UHRP
 
 // Recruitment
   IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions. As of 07 April 2013 we are at over 5400+ plugins to add to the Masterlist dating as far back as September 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM Aellis ("http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks Forums" or "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus Mods").
-    IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количество размещенных уникальных плагинов на данный момент свыше 4970+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с Aellis, через личные сообщения, на форумах ("http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks Forums" или "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus Mods"). Требуется хотя бы базовое знание английского.
+    IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количеством предоставленных отчетов с неизвестными плагинами. На 7 апреля 2013 года их уже свыше 5400+. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с Aellis, через личные сообщения, на форумах ("http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus Mods"). Требуется хотя бы базовое знание английского.
 
 // SKSE & SKCU
   IF VAR(EN) && IF VAR(SKCU) && IFNOT FILE("SKSE") GLOBAL WARN: You have installed Skyrim Community Uncapper but SKSE not found! See SKSE download page: "http://skse.silverlock.org/".
@@ -2341,7 +2341,8 @@ SI_VanillaPrizes.esp
   IF VAR(EN) && IF FILE("SI_PrizesDoubled.esp") ERROR: Use either SI_PrizesDoubled.esp or SI_VanillaPrizes.esp, not both.
     IF VAR(RU) && IF FILE("SI_PrizesDoubled.esp") ERROR: Используйте любой, или SI_PrizesDoubled.esp или SI_VanillaPrizes.esp, не оба.
 SIRW.esp
-  TAG: {{BASH: Delev, Relev}} not tested
+  TAG: {{BASH: Delev, Relev}}
+    // not tested
 SIMIIPatch.esp
 Vidani's Bag of Holding.esp
 TradeBarter.esp
@@ -3812,7 +3813,8 @@ Project-Legacy.esp
 ProtectYourself.esp
 psychosteve_stone of barenziah.esp
 REGEX: Prides of Skyrim( weak)?\.esp
-  TAG: {{BASH: Delev, Relev}} not tested
+  TAG: {{BASH: Delev, Relev}}
+    // not tested
 Pupetteer Master.esp
 ENDGROUP: Base P
 
@@ -4024,7 +4026,9 @@ SkyMoMod.esp
 IF FILE("Skyrim Immersive Creatures.esp") MOD: SleepingDangers-SandsofTime.esp
   IF CHECKSUM("SleepingDangers-SandsofTime.esp", 16C5FEDD) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Skyrim Immersive Creatures.esp
-  TAG: {{BASH: Delev}} Note that users of versions below 5.1.1 should also include the Relev tag.
+  TAG: {{BASH: Delev}} 
+  IF VAR(EN) SAY: That users of versions below 5.1.1 should also include the Relev tag.
+    IF VAR(RU) SAY: Пользователи версий ниже 5.1.1 должны также включить тег Relev.
   IF CHECKSUM("Skyrim Immersive Creatures.esp", 2EEAD88A) SAY: This is the Lore-Friendly version by jackstarr.  Do not use the original esp or esm by lifestorock.
   IFNOT CHECKSUM("Skyrim Immersive Creatures.esp", 2EEAD88A) && IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Use either Skyrim Immersive Creatures.esm or Skyrim Immersive Creatures.esp, not both.
     IFNOT CHECKSUM("Skyrim Immersive Creatures.esp", 2EEAD88A) && IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Используйте любой или Skyrim Immersive Creatures.esm или Skyrim Immersive Creatures.esp, не обa.
@@ -4041,9 +4045,8 @@ SkyMoMod_lists.esp
   IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   IF REGEX("SkyMoMod Lore.+\.esp") INC: SkyMoMod Lore * v10.esp's
-   // commented until new message is translated.
-  // IF VAR(EN) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: If you're using only the original "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod", this esp is obsolete. If you're using the Lore-Friendly mod, disreagrd this note.
-  //    IF VAR(RU) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: Устарело(только при использовании "http://skyrim.nexusmods.com/mods/9694 оригинального" мода). Обновите до последней версии.
+  IF VAR(EN) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: If you're using only the original "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod", this esp is obsolete. If you're using the Lore-Friendly mod, disregard this note.
+    IF VAR(RU) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: Если вы используете оригинальный "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod", то этот esp устарел. Если вы используете Lore-Friendly мод, игнорируйте это сообщение.
 REGEX: SkyMoMod Lore.+\.esp
   TAG: {{BASH: Delev}}
   IF VAR(EN) SAY: Use only one SkyMoMod Lore esp.
@@ -4206,7 +4209,7 @@ Tailoring No Perks.esp
   IF FILE("Tailoring.esp") ERROR: Use Tailoring.esp or Tailoring No Perks.esp, not both.
   IF CHECKSUM("Tailoring No Perks.esp", 49889E2D) DIRTY: 0 ITM, 32 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Tamriel Compendium - Skill Books.esp
-  // Requires TAG: {{BASH: Relev}} ?
+  TAG: {{BASH: Relev}}
 REGEX: Tamriel Compendium( -)?( Skill Book Version)?\.esp
   TAG: {{BASH: Relev}}
 teg_civilwar_restore.esp
@@ -8199,21 +8202,26 @@ REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp
   // This is the Deadly Dragons main file.
 DeadlyDragons_Addon.esp
 DeadlyDragonsX.esp
-  TAG: {{BASH: Delev, Relev}} not tested
+  TAG: {{BASH: Delev, Relev}}
+    // not tested
 DeadlyDragonsCraft.esp
-  TAG: {{BASH: Delev, Relev}} not tested
+  TAG: {{BASH: Delev, Relev}}
+    // not tested
 DeadlyDragonsSpells.esp
 MasterOfMagic.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 // Is a beta (now old) version of DeadlyDragonsSpells.
 DeadlyDragonsCreature.esp
-  TAG: {{BASH: Delev, Relev}} not tested
+  TAG: {{BASH: Delev, Relev}}
+    // not tested
 DeadlyDragonsEF.esp
 REGEX: DeadlyDragonsPISE( DV)?\.esp
-  TAG: {{BASH: Delev, Relev}} not tested
+  TAG: {{BASH: Delev, Relev}}
+    // not tested
 REGEX: DeadlyDragonsHardPISE( DV)?\.esp
-  TAG: {{BASH: Delev, Relev}} not tested
+  TAG: {{BASH: Delev, Relev}}
+    // not tested
 REGEX: DeadlyDragonsSpawn.*\.esp
 IFNOT FILE("DeadlyDiversifiedDragonsPatch.esp") MOD: DragonsDiversified.esp
 DeadlyDiversifiedDragonsPatch.esp
@@ -10239,9 +10247,11 @@ Lakeside Manor.esp
     IF CHECKSUM("Lakeside Manor.esp", B8F91EA1) DIRTY: 7 ITM, 11 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HF_Lakeview_Pool_and_Hotbath.esp
   IF CHECKSUM("HF_Lakeview_Pool_and_Hotbath.esp", 856CC724) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
 HF_Lakeview_North_Perimeter_Fence.esp
-  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
 Landscaped_Breezehome.esp
 Landscaped_Honeyside.esp
 Landscaped_Homes_Honeyside.esp
@@ -10930,6 +10940,7 @@ Skyrim Home.esp
 skyrimovens.esp
   IF CHECKSUM("skyrimovens.esp", 0FA9E4CA) DIRTY: 0 ITM, 61 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
 Skyrim School of Witchcraft and Wizardry.esp
   IF CHECKSUM("Skyrim School of Witchcraft and Wizardry.esp", E003E0AF) DIRTY: 599 ITM, 67 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Skyrim Toilets.esp
@@ -13823,7 +13834,8 @@ BEGINGROUP: Overrides XYZ
 
 xvisionchildren.esp
 xvisionchildren - hearthfire.esp
-  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
 YChildren of the Sky.esp
 YKBeefierDawnbreaker.esp
 YKBeefsteakierDawnbreaker.esp
@@ -14372,7 +14384,8 @@ Diseased.esp
 drink eat sleep.esp
 /* Steam network version is an esp and BSA */
 Fatigue_Effects.esp
-  IF CHECKSUM("Fatigue_Effects.esp", A4C14B80) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("Fatigue_Effects.esp", A4C14B80) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Fatigue_Effects.esp", A4C14B80) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Fatigue_Effects_LoadingScreens.esp
 Field Alchemy.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
@@ -14452,30 +14465,36 @@ IFNOT FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF FILE("PotionsBETA.esp") && IFNOT FILE("RND_FAMP.esp") REQ: RND_FAMP.esp
   IF REGEX("Unique BOOZE Bottles.*\.esp") && IFNOT FILE("RND_UniqueBoozeBottles-Patch.esp") REQ: RND_UniqueBoozeBottles-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
-  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_BabettesFeast-FAMP.esp instead.
+  IF FILE("PotionsBETA.esp") && IF VAR(EN) ERROR: Remove. Use RND_BabettesFeast-FAMP.esp instead.
+    IF FILE("PotionsBETA.esp") && IF VAR(RU) ERROR: Удалите. Используйте RND_RWS-FAMP.esp вместо этого.
 IFNOT FILE("3DNPC.esp") MOD: RND_Cliffracers-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_DestructibleBottles-Patch.esp
-  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_DestructibleBottles-FAMP.esp instead.
+  IF FILE("PotionsBETA.esp") && IF VAR(EN) ERROR: Remove. Use RND_DestructibleBottles-FAMP.esp instead.
+    IF FILE("PotionsBETA.esp") && IF VAR(RU) ERROR: Удалите. Используйте RND_RWS-FAMP.esp вместо этого.
 IFNOT FILE("3DNPC.esp") MOD: RND_DrinkingFountains-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_ETaC-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_HearthFires-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_HighlandMilkFarm-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_NCVE-Patch.esp
-  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_NCVE-FAMP.esp instead.
+  IF FILE("PotionsBETA.esp") && IF VAR(EN) ERROR: Remove. Use RND_NCVE-FAMP.esp instead.
+    IF FILE("PotionsBETA.esp") && IF VAR(RU) ERROR: Удалите. Используйте RND_RWS-FAMP.esp вместо этого.
 IFNOT FILE("3DNPC.esp") MOD: RND_NerniesRangerPack-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_Requiem-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
-  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWL-FAMP.esp instead.
+  IF FILE("PotionsBETA.esp") && IF VAR(EN) ERROR: Remove. Use RND_RWL-FAMP.esp instead.
+    IF FILE("PotionsBETA.esp") && IF VAR(RU) ERROR: Удалите. Используйте RND_RWS-FAMP.esp вместо этого.
 IFNOT FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
-  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWS-FAMP.esp instead.
+  IF FILE("PotionsBETA.esp") && IF VAR(EN) ERROR: Remove. Use RND_RWS-FAMP.esp instead.
+    IF FILE("PotionsBETA.esp") && IF VAR(RU) ERROR: Удалите. Используйте RND_RWS-FAMP.esp вместо этого.
 IFNOT FILE("3DNPC.esp") MOD: RND_SkyMoMod-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_USKP-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: SI_RNADPatch.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_Dragonborn-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: Disease Descriptions_RND Compatibile.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_UniqueBoozeBottles-Patch.esp
-  IF REGEX("Unique BOOZE Bottles.*\.esp") SAY: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
+  IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(EN) SAY: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
+    IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(RU) SAY: Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.
 Realistic Weapon Weights.esp
   //  TAG: {{BASH: Stats}}
 Realistic Running Speed.esp
@@ -14578,8 +14597,10 @@ REGEX: vinis_food_and_rest.*\.esp
 IMCN - Overrides.esp
 IMCN FeedPatch.esp
 IMCN Hearthfire Patch.esp
-  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires.esm (Official Bethesda DLC)
-  IFNOT VAR(ICMN) ERROR: Imp's More Complex Needs.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Imp's More Complex Needs.esm
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(ICMN) && IF VAR(EN) ERROR: Imp's More Complex Needs.esm is not present or is not active. Skyrim will CTD when loading if using this file without Imp's More Complex Needs.esm.
+    IFNOT VAR(ICMN) && IF VAR(RU) ERROR: Imp's More Complex Needs.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Imp's More Complex Needs.esm.
 HarvestOverhaulCreatures_IMCN_Compatibility_Patch.esp
 ENDGROUP: Realism
 
@@ -17485,23 +17506,28 @@ IF FILE("3DNPC.esp") MOD: RealisticNeedsandDiseases.esp
   IF FILE("PotionsBETA.esp") && IFNOT FILE("RND_FAMP.esp") REQ: RND_FAMP.esp
   IF REGEX("Unique BOOZE Bottles.*\.esp") && IFNOT FILE("RND_UniqueBoozeBottles-Patch.esp") REQ: RND_UniqueBoozeBottles-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_BabettesFeast-Patch.esp
-  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_BabettesFeast-FAMP.esp instead.
+  IF FILE("PotionsBETA.esp") && IF VAR(EN) ERROR: Remove. Use RND_BabettesFeast-FAMP.esp instead.
+    IF FILE("PotionsBETA.esp") && IF VAR(RU) ERROR: Удалите. Используйте RND_RWS-FAMP.esp вместо этого.
 IF FILE("3DNPC.esp") MOD: RND_Cliffracers-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_Dawnguard-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_DestructibleBottles-Patch.esp
-  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_DestructibleBottles-FAMP.esp instead.
+  IF FILE("PotionsBETA.esp") && IF VAR(EN) ERROR: Remove. Use RND_DestructibleBottles-FAMP.esp instead.
+    IF FILE("PotionsBETA.esp") && IF VAR(RU) ERROR: Удалите. Используйте RND_RWS-FAMP.esp вместо этого.
 IF FILE("3DNPC.esp") MOD: RND_DrinkingFountains-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_ETaC-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_HearthFires-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_HighlandMilkFarm-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_NCVE-Patch.esp
-  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_NCVE-FAMP.esp instead.
+  IF FILE("PotionsBETA.esp") && IF VAR(EN) ERROR: Remove. Use RND_NCVE-FAMP.esp instead.
+    IF FILE("PotionsBETA.esp") && IF VAR(RU) ERROR: Удалите. Используйте RND_RWS-FAMP.esp вместо этого.
 IF FILE("3DNPC.esp") MOD: RND_NerniesRangerPack-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_Requiem-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_RWL-Patch.esp
-  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWL-FAMP.esp instead.
+  IF FILE("PotionsBETA.esp") && IF VAR(EN) ERROR: Remove. Use RND_RWL-FAMP.esp instead.
+    IF FILE("PotionsBETA.esp") && IF VAR(RU) ERROR: Удалите. Используйте RND_RWS-FAMP.esp вместо этого.
 IF FILE("3DNPC.esp") MOD: RND_RWS-Patch.esp
-  IF FILE("PotionsBETA.esp") ERROR: Remove. Use RND_RWS-FAMP.esp instead.
+  IF FILE("PotionsBETA.esp") && IF VAR(EN) ERROR: Remove. Use RND_RWS-FAMP.esp instead.
+    IF FILE("PotionsBETA.esp") && IF VAR(RU) ERROR: Удалите. Используйте RND_RWS-FAMP.esp вместо этого.
 IF FILE("3DNPC.esp") MOD: RND_SkyMoMod-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_USKP-Patch.esp
 IF FILE("3DNPC.esp") MOD: SI_RNADPatch.esp
@@ -17540,7 +17566,8 @@ IF FILE("3DNPC.esp") MOD: RND_NCVE-FAMP.esp
 IF FILE("3DNPC.esp") MOD: RND_DestructibleBottles-FAMP.esp
 IF FILE("3DNPC.esp") MOD: RND_Dragonborn-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_UniqueBoozeBottles-Patch.esp
-  IF REGEX("Unique BOOZE Bottles.*\.esp") SAY: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
+  IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(EN) SAY: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
+    IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(RU) SAY: Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.
 RRRE-3DNPCv2-Patch.esp
 
 // pre ufo a
