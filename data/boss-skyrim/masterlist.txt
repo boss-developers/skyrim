@@ -2974,6 +2974,9 @@ Dual Sheath Redux.esp
 dualcastingcostfixed.esp
 DummyTraining.esp
 DungeonQuestAwareness.esp
+MAQ NS.esp
+MAQ S.esp
+  //French translations of DQA
 dwarven_scrap_renamed.esp
 DwarvenSphere.esp
 Dwemer Certified.esp
@@ -17302,6 +17305,8 @@ Monli.esp
   IF CHECKSUM("Monli.esp", 75A81077) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 MysticalElvesV1.5.esp
 mxfrostelfrace.esp
+Nazgultest.esp
+  IF CHECKSUM("Nazgultest.esp", FEBDFEED) DIRTY: 26 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 NedeRace.esp
 Neovalen Race Compatibility.esp
   IFNOT FILE("DSpSoB.esp") REQ: "http://skyrim.nexusmods.com/mods/17746 Duel Sheath plus Shields on Back"
@@ -17332,6 +17337,20 @@ OculosInferniRace.esp
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 OhmesRaht.esp
 OrientalRace.esp
+  //the modern Ashen race main file. Not all variants were tested in 5edit 3.0.29, so checksum/dirt reports are likely incomplete.
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+  IF CHECKSUM("OrientalRace.esp", D9E80FF5) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("OrientalRace.esp", D9E80FF5) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("OrientalRace.esp", F8DB1304) || IF CHECKSUM("OrientalRace.esp", D9E80FF5) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+CuteDesigns.esp
+  //beauty tweaks specific to Ashen race
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+  IFNOT ACTIVE("OrientalRace.esp") && IF VAR(EN) ERROR: OrientalRace.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("OrientalRace.esp") && IF VAR(RU) ERROR: OrientalRace.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("CuteDesigns.esp", FF625067) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("CuteDesigns.esp", FF625067) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 PersianRace.esp
 Playable Children PLUS.esp
 playable dremora.esp
