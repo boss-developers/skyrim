@@ -460,7 +460,7 @@ Lanterns Of Skyrim - All In One - Main.esm
   IF VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC) SAY: Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.
   IFNOT VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 042A3DE0) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC) or use the non-Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm
     IFNOT VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 042A3DE0) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC) or use the non-Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm
-  IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 1E83E045) DIRTY: 24 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC) || IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 1E83E045) DIRTY: 24 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 REGEX: Lanterns Of Skyrim - All In One( 2x brighter)?\.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -9642,6 +9642,7 @@ dawnstarsanctuaryrespawns.esp
 dawnstarsanctuaryslightexpansion.esp
 RIC_Dawnstar.esp
   IF CHECKSUM("RIC_Dawnstar.esp", 83D60E6F) DIRTY: 27 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("RIC_Dawnstar.esp", 998E6FA5) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 dbretreat.esp
 dbriverwoodsanctuary.esp
 DCR_Heavy_Weapons_Set.esp
@@ -13957,9 +13958,21 @@ Green and White Windhelm.esp
 // tav h
 HoldStables.esp
 // tav i
+ImpeREAL Empire - Unique Cities - Falkreath.esp
 // tav j
 // tav k
 // tav l
+Lanterns of Skyrim - All In One - Dawnstar Expanded Patch.esp
+  IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(EN) ERROR: Lanterns Of Skyrim - All In One - Main.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(RU) ERROR: Lanterns Of Skyrim - All In One - Main.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT FILE("RIC_Dawnstar.esp") REQ: RIC_Dawnstar.esp
+  IF CHECKSUM("Lanterns of Skyrim - All In One - Dawnstar Expanded Patch.esp", 336F1CE9) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Lanterns of Skyrim - All In One - Winterhold Destruction Ruins.esp
+  IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(EN) ERROR: Lanterns Of Skyrim - All In One - Main.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(RU) ERROR: Lanterns Of Skyrim - All In One - Main.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("WinterholdDestruction.esm") && IF VAR(EN) ERROR: WinterholdDestruction.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("WinterholdDestruction.esm") && IF VAR(RU) ERROR: WinterholdDestruction.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("Lanterns of Skyrim - All In One - Winterhold Destruction Ruins.esp", 22902F71) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Log Cabin Riften.esp
   IF CHECKSUM("Log Cabin Riften.esp", CB696C6C) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("Log Cabin Riften.esp", CB696C6C) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
