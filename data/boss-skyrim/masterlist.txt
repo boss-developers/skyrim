@@ -4262,6 +4262,11 @@ TravellersOfSkyrim.esp
 TravellersOfSkyrim - Vanilla.esp
 TravellersOfSkyrim - Light.esp
   IF FILE("TravellersOfSkyrim - Vanilla.esp") INC: TravellersOfSkyrim - Vanilla.esp
+TravellersOfSkyrim - Dragonborn Addon.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IFNOT ACTIVE("TravellersOfSkyrim.esm") && IF VAR(EN) ERROR: TravellersOfSkyrim.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("TravellersOfSkyrim.esm") && IF VAR(RU) ERROR: TravellersOfSkyrim.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 TravellersOfSkyrim - Alchemists Vanilla.esp
   IF FILE("TravellersOfSkyrim - Light.esp") || IF FILE("TravellersOfSkyrim - Vanilla.esp") INC: TravellersOfSkyrim - Vanilla.esp and / or TravellersOfSkyrim - Light.esp
 TravellersOfSkyrim - Apothecaries Vanilla.esp
@@ -4587,6 +4592,8 @@ REGEX: SkyRealism - Simple Save System.+\.esp
   IF VAR(EN) SAY: Only use one SkyRealism - Simple Save System*.esp
     IF VAR(RU) SAY: Используйте только один SkyRealism - Simple Save System*.esp
 ORS_MM.esp
+Player Size Adjuster.esp
+  IF VERSION("SKSE", "0.1.6.9", <) REQ: "http://skse.silverlock.org SKSE" 1.6.9+
 RealTime.esp
 SkyRealism - Skills and Statistics.esp
 Skyrim Better Performance.esp
@@ -7168,6 +7175,8 @@ SpellbreakersLOREFRIENDLY.esp
   IF CHECKSUM("SpellbreakersLOREFRIENDLY.esp", D355A267) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF FILE("Spellbreakers.esp") ERROR: Use Spellbreakers.esp or SpellbreakersLOREFRIENDLY.esp, not both.
 spell_loot.esp
+SPOA_shield.esp
+SPOAsilverknight.esp
 Spriggan Armor 2.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
   IF CHECKSUM("Spriggan Armor 2.esp", C5E7B65B) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -10982,6 +10991,9 @@ UAL002_solitude_smelter01.esp
 solitude sanctuary.esp
 SoLo Solace.esp
   IF CHECKSUM("SoLo Solace.esp", 72642247) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Solstheim - The Lost Levels.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 REGEX: someprivacyplease_doo(r|r_heljarchen)?\.esp 
 Soul.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -13054,6 +13066,17 @@ NGEC.esp
 Nightingale Maskless.esp
 nightingale_armor_tweak.esp
 NightingaleNotSuck1.esp
+NMFWLM_vanilla.esp
+  //moved up from poses sec: these are not new animations, but simple overrides by disabling Opposite Gender Ani setting.
+NMFWLM_dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+NMFWLM_hearthfire.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+NMFWLM_dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 No Annoying Skeleton Sound.esp
 No Axe or Pickaxe required.esp
 No Crime gold.esp
@@ -17039,7 +17062,6 @@ Lydia-Jordis-Iona-Use-Female-Animations.esp
 MoreUnarmedKillAnimations15.esp
 NiruinsBusinessPlan.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.2+)
-NMFWLM_vanilla.esp
 No death anims.esp
 Onehanded.esp
 PinupsMen.esp
