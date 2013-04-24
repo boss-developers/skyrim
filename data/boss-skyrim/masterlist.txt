@@ -1174,11 +1174,16 @@ lightplacement.esp
 lightingfix.esp
   IF CHECKSUM("lightingfix.esp", B22ED6C8) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 RelightingSkyrim.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Relighting Skyrim - Dawnguard.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   // moved as suggested in bsg thread 28 post 105
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-  IF FILE("lightingfix.esp") WARN: Using lightingfix.esp along with Relighting Skyrim - Dawnguard.esp is likely to cause lighting inconsistencies.
+  IF FILE("lightingfix.esp") && IF VAR(EN) WARN: Using lightingfix.esp along with Relighting Skyrim - Dawnguard.esp is likely to cause lighting inconsistencies.
+    IF FILE("lightingfix.esp") && IF VAR(EN) WARN: Использование lightingfix.esp вместе с Relighting Skyrim - Dawnguard.esp может вызвать несоответствия освещения.
 lydia chair fix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
@@ -2149,9 +2154,15 @@ Further Dark Dungeons for ENB.esp
   IF FILE("Dark Dungeons for ENB.esp") INC: Dark Dungeons for ENB.esp
 Dark Dungeons for Dawnguard.esp
 bigdanscozyvillages.esp
+Relighting Skyrim.esp
+  // load order for RS mods recommended from autor of RS
+Relighting Skyrim - Update.esp
 OLSE.esp
 OLSE for Dawnguard.esp
   IF CHECKSUM("OLSE for Dawnguard.esp", 931F68BD) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Relighting Skyrim - Dawnguard Edition.esp
+Relighting Skyrim - Hearthfires Edition.esp
+Relighting Skyrim - Dragonborn Edition.esp
 SkyrimURWL.esp
 slowereyeadapt.esp
 Supreme Storms - Cot Version.esp
@@ -2217,7 +2228,8 @@ esisenviropack.esp
 Fantasy Music Full Replace.esp
 Fantasy Music Non-Replace.esp
 REGEX: FMO - (Non-Replacer Version|Replacer Version)?\.esp
-  WARN: Outdated. Please obtain the latest version from "http://skyrim.nexusmods.com/mods/28583 Skyrim Nexus".
+  IF VAR(EN) SAY: Obsolete. Update to "http://skyrim.nexusmods.com/mods/28583 latest version".
+    IF VAR(RU) SAY: Устарело. Обновите до "http://skyrim.nexusmods.com/mods/28583 последней версии".
 Fantasy Music Overhaul.esp
   IF CHECKSUM("fantasy music overhaul.esp", FA0711C6) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 fantasy music overhaul - no vanilla music.esp
@@ -2345,7 +2357,7 @@ SIRW.esp
     // not tested
 SIMIIPatch.esp
 UUSkyPP Dragon Bridge Horse Marker Fix.esp
-  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+  DIRTY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
   //reversion to go between USKP and forthcoming Touring Carriages, which will go into Base section
 Vidani's Bag of Holding.esp
 TradeBarter.esp
@@ -2369,7 +2381,8 @@ _pocketcampsite.esp
 5GiantToes.esp
 REGEX: (83Willows_)?101BUGs.+\.esp
   TAG: {{BASH: Delev, Relev}}
-  IF REGEX("(83Willows_)?101BUGs.+\.esm") ERROR: Remove this mod when esm is being used.
+  IF VAR(EN) && IF REGEX("(83Willows_)?101BUGs.+\.esm") ERROR: Remove this mod when esm is being used.
+    IF VAR(RU) && IF REGEX("(83Willows_)?101BUGs.+\.esm") ERROR: Удалите этот мод когда используется esm-версия.
 ENDGROUP: Base #
 
 BEGINGROUP: Base A
@@ -2511,13 +2524,13 @@ BabettesFeast.esp
 Babettes Feast v1_2.esp
 BabettesFeastBalanced.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("BabettesFeastBalanced.esp", 163783) WARN: Original file was released before the CK (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
-    IF VAR(RU) IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("BabettesFeastBalanced.esp", 163783) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
+    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("BabettesFeastBalanced.esp", 163783) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
 BabettesFeastOverpowered.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("BabettesFeastOverpowered.esp", 2FCAAB55) WARN: Original file was released before the CK (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
-    IF VAR(RU) IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("BabettesFeastOverpowered.esp", 2FCAAB55) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
+    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("BabettesFeastOverpowered.esp", 2FCAAB55) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
 BabettesFeastWeakerEffects.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("BabettesFeastWeakerEffects.esp", 9649B6A6) WARN: Original file was released before the CK (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
-    IF VAR(RU) IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("BabettesFeastWeakerEffects.esp", 9649B6A6) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
+    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("BabettesFeastWeakerEffects.esp", 9649B6A6) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
 Badmagic - Starting Gear Choice.esp
 Back off, [Subject Name Here]!.esp
   IF VAR(EN) && IF FILE("Back off, Barbas!.esp") ERROR: Use either Back off, Barbas!.esp or Back off, [Subject Name Here]!.esp, not both.
@@ -2558,13 +2571,15 @@ Belleza DiBella - PNJ Overhaul.esp
 Better Alchemy Loot.esp
 Better Aura Whisper & Detect Aura Spell.esp
   IF CHECKSUM("Better Aura Whisper & Detect Aura Spell.esp", 6B9403CC) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here". 
-    IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 Better Embers.esp
 Better Skill and Quest Books Names.esp
 DV Better Sleep Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF FILE("DV Better Sleep Dawnguard.esp") ERROR: Use non-Dawnguard version, DV Better Sleep.esp
 DV Better Sleep.esp
-  IF VAR(Dawnguard) && IF FILE("DV Better Sleep.esp") ERROR: Use Dawnguard version, DV Better Sleep Dawnguard.esp
+  IF VAR(Dawnguard) && IF FILE("DV Better Sleep.esp") && IF VAR(EN) ERROR: Use Dawnguard version, DV Better Sleep Dawnguard.esp
+    IF VAR(Dawnguard) && IF FILE("DV Better Sleep.esp") && IF VAR(RU) ERROR: Используйте Dawnguard-версию, DV Better Sleep Dawnguard.esp
 betterbarter.esp
 BetterChestLoot.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -2657,7 +2672,8 @@ cao_InventoryPacks.esp
 cao_DweSchematicsBuy.esp
   IF CHECKSUM("cao_DweSchematicsBuy.esp", 7E85692A) WARN: This file contains unexpected (or out of order) records and it should be removed.
 cao_DweSchematicsCheat.esp
-  IF CHECKSUM("cao_DweSchematicsCheat.esp", 7E7B9B1A) WARN: This file contains unexpected (or out of order) records and it should be removed.
+  IF CHECKSUM("cao_DweSchematicsCheat.esp", 7E7B9B1A) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("cao_DweSchematicsCheat.esp", 7E7B9B1A) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
   IF FILE("cao_DweSchematicsBuy.esp") && IF VAR(EN) ERROR: Use only one cao_DweSchematics esp.
     IF FILE("cao_DweSchematicsBuy.esp") && IF VAR(RU) ERROR: Используйте только один cao_DweSchematics esp.
 cao_DweSchematicsSearch.esp
@@ -2672,7 +2688,7 @@ cao_goldbrand_WT.esp
     IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
 cao_ToolsTrade_BuyRL.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("cao_ToolsTrade_BuyRL.esp", BABA4014) WARN: Original file was released before the CK (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
-    IF VAR(RU) IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("cao_ToolsTrade_BuyRL.esp", BABA4014) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
+    IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("cao_ToolsTrade_BuyRL.esp", BABA4014) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012). Очищенный и исправленный патч совместимости может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Файлы на указанной странице не русифицированы и после их русификации данное сообщение может отображаться вновь. Если вы используете исправленную версию(читайте описание на странице загрузки мода) или локализованную исправленную версию, то вам не о чем беспокоиться.
 CarryWeightSpells.esp
   IF CHECKSUM("CarryWeightSpells.esp", 8A3C392A) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Carriage1.esp
@@ -3050,7 +3066,7 @@ Expensive Transports 20x.esp
   IF CHECKSUM("Expensive Transports 20x.esp", F88C8F09) && IF VAR(Dawnguard) ERROR: Use Dawngaurd version.
   IF CHECKSUM("Expensive Transports 20x.esp", EA972067) && IFNOT VAR(Dawnguard) ERROR: Use non-Dawngaurd version.
    IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 10x Linear.esp") && IF VAR(EN) ERROR: Use only one of Expensive Transports *.esp
-     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") IF FILE("Expensive Transports 10x Linear.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports *.esp
+     IF FILE("Expensive Transports 5x.esp") || IF FILE("Expensive Transports 10x.esp") || IF FILE("Expensive Transports 10x Linear.esp") && IF VAR(RU) ERROR: Используйте только один of Expensive Transports *.esp
 ExpensiveCarriagesInns.esp
 ExpensiveCarriagesInns_x5.esp
 Expensive Investments.esp
@@ -9865,8 +9881,8 @@ Ebon Mine.esp
 Elvenwood.esp
 ElysiumEstate.esp
   IF CHECKSUM("ElysiumEstate.esp", F0182534) DIRTY: 3 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IF CHECKSUM("ElysiumEstate.esp", F0182534) IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
-    IF CHECKSUM("ElysiumEstate.esp", F0182534) IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  IF CHECKSUM("ElysiumEstate.esp", F0182534) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF CHECKSUM("ElysiumEstate.esp", F0182534) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
     //author fixed nav 2.0+, so updated nav warning to checksum-dependent on a prior version
 EK_UnusualApplications.esp
 EkkiiBreeze.esp
@@ -18945,8 +18961,8 @@ HugMe.esp
 LZA Follower Trade Priority.esp
 Merchant Follower Vyctara.esp
 REGEX: move.?it(LWT)?\.esp
-  IF VAR(EN) && IF REGEX("Better Followers - [SBNP].*\.esp") INC: Better Followers, BF already have same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.
-    IF VAR(RU) && IF FILE("Better Follower Improvements.esp") IF REGEX("Better Followers - [SBNP].*\.esp") INC: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.
+  IF VAR(EN) && IF FILE("Better Follower Improvements.esp") && IF REGEX("Better Followers - [SBNP].*\.esp") INC: Better Followers, BF already have same functions. Use only if you need to set settings from moveit - fBumpReactionSmallWaitTimer to 2 (0.3 in BF) and fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 in BF) other settings same as in BF.
+    IF VAR(RU) && IF FILE("Better Follower Improvements.esp") && IF REGEX("Better Followers - [SBNP].*\.esp") INC: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.
   IF VAR(EN) && IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") WARN: Use only one move it esp
     IF VAR(RU) && IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") WARN: Используйте только один move it esp
 MrKrabs.esp
@@ -19326,7 +19342,7 @@ REGEX: Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp
     IF VAR(RU) WARN: Используйте только один Serana-ish esp.
 SVPaleVampires.esp
   IF REGEX("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp") && IF VAR(EN) INC: Serana-ish*.esp
-    IF REGEX("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp") IF VAR(RU) INC: Serana-ish*.esp
+    IF REGEX("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp") && IF VAR(RU) INC: Serana-ish*.esp
 skyrimonline.esp
 Skyrim Sizes.esp
 SkyrimSizesLore.esp
@@ -19371,7 +19387,7 @@ EEO patch.esp
   IFNOT ACTIVE("Skyre_Races.esp") && IF VAR(EN) ERROR: Skyre_Races.esp is not present or is not active. Skyrim will CTD when loading if using this file without Skyre_Races.esp
     IFNOT ACTIVE("Skyre_Races.esp") && IF VAR(RU) ERROR: Skyre_Races.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Skyre_Races.esp
   IFNOT ACTIVE("ethereal_elven_overhaul.esp") && IF VAR(EN) ERROR: ethereal_elven_overhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without ethereal_elven_overhaul.esp
-    IFNOT ACTIVE("ethereal_elven_overhaul.esp") IF VAR(RU) ERROR: ethereal_elven_overhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без ethereal_elven_overhaul.esp
+    IFNOT ACTIVE("ethereal_elven_overhaul.esp") && IF VAR(RU) ERROR: ethereal_elven_overhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без ethereal_elven_overhaul.esp
   // Skyre compatibility patch
 Vampire Skin Color Fix.esp
   //reordered as per thread 29; post117
