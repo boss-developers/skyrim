@@ -2030,8 +2030,8 @@ better_torches.esp
 better_torches_brighter_torchlight.esp
   IF CHECKSUM("better_torches_brighter_torchlight.esp", 9BEBAD4D) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("better_torches_brighter_torchlight.esp", 9BEBAD4D) || IF CHECKSUM("better_torches_brighter_torchlight.esp", CB5777CE) WARN: This mod appears to have a duplicated cell. You may encounter 'weirdness' in the Riften Ratway.
-  IF FILE("better_torches.esp") && IF VAR(EN) WARN: Use either better_torches.esp or better_torches_brighter_torchlight,esp, not both.
-    IF FILE("better_torches.esp") && IF VAR(RU) WARN: Используйте любой или better_torches.esp или better_torches_brighter_torchlight,esp, не обa.
+  IF FILE("better_torches.esp") && IF VAR(EN) WARN: Use either better_torches.esp or better_torches_brighter_torchlight.esp, not both.
+    IF FILE("better_torches.esp") && IF VAR(RU) WARN: Используйте любой или better_torches.esp или better_torches_brighter_torchlight.esp, не обa.
 Blackout_Skyrim.esp
   IF CHECKSUM("Blackout_Skyrim.esp", 3A1DA448) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   SAY: This is an ENB mod.  Be sure you have the correct ENB setup installed.
@@ -4901,8 +4901,7 @@ BarbarianAxe.esp
 BarbarianFur.esp
 Barbarian Jewelry.esp
 BaratheonArmor.esp
-  IF FILE("SkyRe_Plugin_BaratheonArmor_1.esp") TAG: {{BASH: Deactivate}}
-  IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_BaratheonArmor_1.esp") || IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
 Bard'sLeap.esp
 Basara.esp
 /* bat3.esp, hawk2.esp, wyvern4.esp contain Item Records */
@@ -5288,7 +5287,7 @@ daedric weapons complete.esp
 Dagger of time.esp
 Dagger01.esp
 DaggerCraft.esp
-  IF FILE("SkyRe_Plugin_DaggerCraft_1.3.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_DaggerCraft_1.3.esp") || IF FILE("SkyRe_Plugin_DaggerCraft.esp") TAG: {{BASH: Deactivate}}
 Dalls_Skelos_Weapons.esp
   TAG: {{BASH: Relev}}
 Damascus_Swords.esp
@@ -5509,7 +5508,7 @@ dragonweapons.esp
 Dread Huntress Armor.esp
 Dread Knight Weapon Set.esp
   IF FILE("SkyRe  - Jojjo's Dreadknight Patch.esp") || IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet_0.99.esp") TAG: {{BASH: Deactivate}}
-DreadKnightWeaponSet,esp
+DreadKnightWeaponSet.esp
 DreadWeapons_Fifthdreads_Weapon_Pack.esp
 Dreadweave Axes.esp
 DreamBurrowsRegalAssassin.esp
@@ -5880,7 +5879,7 @@ Hartherz1.2.esp
 HartherzEnglish.esp
 Hawke Armor.esp
 HBetterBows.esp
-  IF FILE("SkyRe_Plugin_BetterBows_1.4.1.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_BetterBows_1.4.1.esp") || IF FILE("SkyRe_Plugin_BetterBows.esp") TAG: {{BASH: Deactivate}}
 headtaker.esp
   IF CHECKSUM("headtaker.esp", D43E7148) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HealerRobes.esp
@@ -5900,8 +5899,7 @@ HeavyBows.esp
   IF CHECKSUM("HeavyBows.esp", 03D45749) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HedgeKnight.esp
   IF CHECKSUM("HedgeKnight.esp", A7A55AB3) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IF FILE("SkyRe_Plugin_HedgeKnightArmor_1.esp") TAG: {{BASH: Deactivate}}
-  IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_HedgeKnightArmor_1.esp") || IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
 HellionArrows_v1.15.esp
 HellionArrows_v1.2.esp
   IF CHECKSUM("HellionArrows_v1.2.esp", B83DB305) DIRTY: 5 ITM, 7 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -6056,18 +6054,15 @@ InigoPerkPointGiver.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
 Inquisitor Set.esp
 InsanitysCelticKatana.esp
-  IF FILE("SkyRe_Plugin_InsanitysCelticKatana_1.2.esp") TAG: {{BASH: Deactivate}}
-  IF FILE("SkyRe_Plugin_InsanitysCelticKatana.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_InsanitysCelticKatana_1.2.esp") || IF FILE("SkyRe_Plugin_InsanitysCelticKatana.esp") TAG: {{BASH: Deactivate}}
 Insanity's Chrysamere.esp
 Insanity's Craftable Dragonbane.esp
   IF FILE("Insanity's Craftable Dragonbane.esp") TAG: {{BASH: Deactivate}}
 Insanity's Dragonbane.esp
 Insanity's Dragon Katana.esp
-  IF FILE("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") TAG: {{BASH: Deactivate}}
-  IF FILE("SkyRe_Plugin_InsanitysDragonKatana.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") || IF FILE("SkyRe_Plugin_InsanitysDragonKatana.esp") TAG: {{BASH: Deactivate}}
 InsanitysDragonKatana.esp
-  IF FILE("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") TAG: {{BASH: Deactivate}}
-  IF FILE("SkyRe_Plugin_InsanitysDragonKatana.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_InsanitysDragonKatana_1.2.esp") || IF FILE("SkyRe_Plugin_InsanitysDragonKatana.esp") TAG: {{BASH: Deactivate}}
 Insanity's Empire Longswords.esp
 Insanity's Goldbrand.esp
 Insanity's Kahvozein Fang.esp
@@ -6426,8 +6421,7 @@ REGEX: MaleClericArmor(Heavy|Light|Cloth)?\.esp
 Maliki.esp
   IF CHECKSUM("Maliki.esp", EA4CC153) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Malo_Waffen.esp
-  IF FILE("SkyRe_Plugin_Malo_Waffen.esp") TAG: {{BASH: Deactivate}}
-  IF FILE("SG_Malo_Waffen.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_Malo_Waffen.esp") || IF FILE("SG_Malo_Waffen.esp") TAG: {{BASH: Deactivate}}
 SG_Malo_Waffen.esp
   IF CHECKSUM("SG_Malo_Waffen.esp", 3790213B) DIRTY: 3 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF FILE("SkyRe_Plugin_Malo_Waffen.esp") INC: SkyRe_Plugin_Malo_Waffen.esp
@@ -6887,8 +6881,7 @@ RedeadTrissDresses.esp
 Redguard Shield.esp
 RedguardKnight.esp
   IF CHECKSUM("RedguardKnight.esp", 8D48F1C3) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IF FILE("SkyRe_Plugin_RedguardKnightArmor_3.esp") TAG: {{BASH: Deactivate}}
-  IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_RedguardKnightArmor_3.esp") || IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
 Lorecraft - RedguardKnight.esp
 RegentSword.esp
   IF FILE("SkyRe_Plugin_RegentSword.esp") TAG: {{BASH: Deactivate}}
@@ -7009,6 +7002,7 @@ sevensts.esp
 Skyforge Steel Weapons - Craftable.esp 
 Skyrim Scaling Stopper - Misc Edits - Dawnguard.esp
 Scoiatael Weapons.esp
+  IF FILE("SkyRe_Plugin_Scoiatael Weapons.esp") TAG: {{BASH: Deactivate}}
 Sekirei.esp
 SC.esp
 ScaleArmor.esp
@@ -7527,8 +7521,7 @@ ENDGROUP: Items U
 BEGINGROUP: Items V
 
 VagabondArmor.esp
-  IF FILE("SkyRe_Plugin_VagabondArmor_5.esp") TAG: {{BASH: Deactivate}}
-  IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_VagabondArmor_5.esp") || IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
 Valdacil's Light Armor Robes.esp
 Vampguard.esp
   IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesada DLC)
@@ -7544,8 +7537,7 @@ VampireMasterSet.esp
 Vampiric Sword.esp
 VampiricDagger.esp
 VanguardArmor.esp
-  IF FILE("SkyRe_Plugin_VanguardArmor_3.esp") TAG: {{BASH: Deactivate}}
-  IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_VanguardArmor_3.esp") || IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
 variant_armor_masks.esp
 Various Items OE.esp
 Velvec Outfit.esp
@@ -7583,8 +7575,7 @@ wanlifu Dress.esp
 warchief armor.esp
   IF FILE("SkyRe_Plugin_WarchiefArmor_4.esp") TAG: {{BASH: Deactivate}}
 WarchiefArmor.esp
-  IF FILE("SkyRe_Plugin_WarchiefArmor_4.esp") TAG: {{BASH: Deactivate}}
-  IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
+  IF FILE("SkyRe_Plugin_WarchiefArmor_4.esp") || IF FILE("SG_HothTrooper.esp") TAG: {{BASH: Deactivate}}
 WarchiefsMight.esp
 Lorecraft - hothtrooper44 armors.esp
   IF VAR(EN) SAY: Do not load any of the original .ESP files that come with hothtrooper44's original mods.
@@ -8501,6 +8492,7 @@ SkyRe_Main_NoDawnguard.esp
   SAY:   fMagnetismLookingMult=0.0
 SkyRe_Combat.esp
   IFNOT VAR(SkyReM) REQ: SkyRe_Main.esp
+SkyRe_Combat_Tweak.esp
 Lorecraft - SkyRe.esp
 SkyRe_Comp.esp
   IF VAR(EN) && IFNOT FILE("PerkReset SkyRe Compatibility Patch.esp") SAY: Recommend to use "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp" instead.
@@ -8526,6 +8518,11 @@ SkyRe_Lighting.esp
     IF VAR(RU) SAY: Только для не ENB пользователей.
 SkyRe_Perk_Tomes.esp
   IFNOT ACTIVE("Skyre_Main.esp") ERROR: Skyre_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+SkyRe_Plugin_Perks_ Broadsword.esp
+  IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 SkyRe_StandingStones.esp
   IF VAR(EN) && IF FILE("StaRe.esp") SAY: Remember not to load (or to simply delete) StaRe.esp
     IF VAR(RU) && IF FILE("StaRe.esp") SAY: Не забудьте отключить или удалить StaRe.esp
@@ -8560,12 +8557,22 @@ SkyRe_Plugin_BetterBows_1.4.1.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF VAR(EN) && IF ACTIVE("HBetterBows.esp") SAY: Remember not to load (or to simply delete) HBetterBows.esp
     IF VAR(RU) && IF ACTIVE("HBetterBows.esp") SAY: Не забудьте отключить или удалить HBetterBows.esp
+SkyRe_Plugin_BetterBows.esp	
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("HBetterBows.esp") SAY: Remember not to load (or to simply delete) HBetterBows.esp
+    IF VAR(RU) && IF ACTIVE("HBetterBows.esp") SAY: Не забудьте отключить или удалить HBetterBows.esp
 SkyRe_Plugin_BowofIorveth_1.2.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF VAR(EN) && IF ACTIVE("BowofIorveth.esp") SAY: Remember not to load (or to simply delete) BowofIorveth.esp
     IF VAR(RU) && IF ACTIVE("BowofIorveth.esp") SAY: Не забудьте отключить или удалить BowofIorveth.esp
 SkyRe_Plugin_DaggerCraft_1.3.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("DaggerCraft.esp") SAY: Remember not to load (or to simply delete) DaggerCraft.esp
+    IF VAR(RU) && IF ACTIVE("DaggerCraft.esp") SAY: Не забудьте отключить или удалить DaggerCraft.esp
+SkyRe_Plugin_DaggerCraft.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF VAR(EN) && IF ACTIVE("DaggerCraft.esp") SAY: Remember not to load (or to simply delete) DaggerCraft.esp
@@ -8704,6 +8711,11 @@ SkyRe_Plugin_RegentSwords.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF VAR(EN) && IF FILE("RegentSword.esp") SAY: Remember not to load (or to simply delete) RegentSword.esp
     IF VAR(RU) && IF FILE("RegentSword.esp") SAY: Не забудьте отключить или удалить RegentSword.esp
+SkyRe_Plugin_Scoiatael Weapons.esp
+  IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
+    IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+  IF VAR(EN) && IF ACTIVE("Scoiatael Weapons.esp") SAY: Remember not to load (or to simply delete) Scoiatael Weapons.esp
+    IF VAR(RU) && IF ACTIVE("Scoiatael Weapons.esp") SAY: Не забудьте отключить или удалить Scoiatael Weapons.esp
 SkyRe_Plugin_VagabondArmor_5.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
