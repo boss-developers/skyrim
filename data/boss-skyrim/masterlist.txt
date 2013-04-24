@@ -9967,7 +9967,8 @@ Fleetford.esp
 float_your_boat.esp
 FM - HHall Exterior.esp
 FM - UNP Merchants.esp
-  WARN: UNP Clothing Merchants contains too many clothing mods for BOSS to check individually.  Read the readme for details.  Leaving the other mods installed is not recommended.
+  IF VAR(EN) WARN: UNP Clothing Merchants contains too many clothing mods for BOSS to check individually.  Read the readme for details.  Leaving the other mods installed is not recommended.
+    IF VAR(RU) WARN: UNP Clothing Merchants включает слишком много модов на одежду, чтобы проверять каждый из них в BOSS.  Для больших подробностей читайте документацию.  Оставлять другие моды установленными не рекомендуется.
 Forfeorannaheim.esp
   IF CHECKSUM("Forfeorannaheim.esp", 59266CBF) DIRTY: 51 ITM, 31 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Forges of Skyrim.esp
@@ -10197,7 +10198,7 @@ Hunter's Campsite v1.1.esp
 HuntForTheWayStones.esp
 Hunting in Skyrim.esp
 Hunting in Skyrim - No Perks.esp
-  IF FILE("Hunting in Skyrim.esp") INC: Hunting in Skyrim (Please use only one version)
+  IF FILE("Hunting in Skyrim.esp") INC: Hunting in Skyrim
   //older comment, while in City Overhauls: Hunting in skyrim must load before open cities.
   //update 4/2013: HiS set appeared misplaced down at top of City Overhauls in any case. It's more like a Q&L mod. Trial re-placement here. -LD
 HvilaHome.esp
@@ -11325,11 +11326,12 @@ ENDGROUP: Quests T
 BEGINGROUP: Quests U
 
 ub_invite_any_npc.esp
-  IFNOT FILE("UndergroundBathhouse.esm") ERROR: This mod requires UndergroundBathhouse.esm
+  IFNOT FILE("UndergroundBathhouse.esm") REQ: UndergroundBathhouse.esm
 UDO.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-  WARN: UDO.esm is mis-named.  It is NOT an esm file.
+  IF VAR(EN) SAY: UDO.esm is mis-named.  It is NOT an esm file.
+    IF VAR(RU) SAY: UDO.esm неверно назван.  Это не esm-файл.
   IF CHECKSUM("UDO.esm", 23A1B8F9) DIRTY: 0 ITM, 3835 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
@@ -11338,7 +11340,8 @@ UDO.esp
   IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 UDOchestless.esp
-  WARN: UDOChestless.esp does not have Skyrim.esm as a master file.  Most likely it will create duplicates of everything it is supposed to modify.
+  IF VAR(EN) SAY: UDOChestless.esp does not have Skyrim.esm as a master file.  Most likely it will create duplicates of everything it is supposed to modify.
+    IF VAR(RU) SAY: UDOChestless.esp не имеет Skyrim.esm в мастерфайлах.  Наиболее вероятно будут созданны дубликаты всего, что было модифицировано.
 Ultimate HD Fire Spells.esp
   // ^ has no spell data, just cell and world data
   IF CHECKSUM("Ultimate HD Fire Spells.esp", E79BB5EF) DIRTY: 0 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -11516,12 +11519,13 @@ whiterunppl1.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, whiterunppl1.esm
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, whiterunppl1.esm
 whiterunppl1.esm
-  SAY: This is NOT a true esm file.  It is mis-named.
+  IF VAR(EN) SAY: This is NOT a true esm file.  It is mis-named.
+   IF VAR(RU) SAY: Это не настоящий esm-файл.  Неверно назван.
 Whiterun Spruce by ReVan1199.esp
 Whiterun Trees.esp
   IF CHECKSUM("Whiterun Trees.esp", D2995274) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("Whiterun Trees.esp", 226D7357)  IF VAR(EN) SAY: Obsolete. Update to latest version "http://skyrim.nexusmods.com/mods/8240 Whiterun Trees 1.1.esp"
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии "http://skyrim.nexusmods.com/mods/8240 Whiterun Trees 1.1.esp"
+   IF VAR(RU) SAY: Устарело. Обновите до последней версии "http://skyrim.nexusmods.com/mods/8240 Whiterun Trees"
 Whiterun Trees 1.1.esp
   IF CHECKSUM("Whiterun Trees.esp", D2995274) WARN: Different mod with same name. Probably incompatible.
 ICP Whiterun Exterior.esp
