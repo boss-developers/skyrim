@@ -2344,6 +2344,9 @@ SIRW.esp
   TAG: {{BASH: Delev, Relev}}
     // not tested
 SIMIIPatch.esp
+UUSkyPP Dragon Bridge Horse Marker Fix.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+  //reversion to go between USKP and forthcoming Touring Carriages, which will go into Base section
 Vidani's Bag of Holding.esp
 TradeBarter.esp
   TAG: {{BASH: Delev}}
@@ -4620,6 +4623,10 @@ iHUD.esp
   // Must load after SkyUI
 less_intrusive_hud.esp
   //reportedly "goes with" iHUD
+DragonSoulConverter.esp
+  IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
+  IF VERSION("SKSE", "0.1.6.13", <) REQ: "http://skse.silverlock.org SKSE" 1.6.13+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.4+
 kuerteeAutoFirstThirdPersonView MCM.esp
   IFNOT ACTIVE("kuerteeAutoFirstThirdPersonView.esp") ERROR: kuerteeAutoFirstThirdPersonView.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
@@ -4639,6 +4646,10 @@ SaveHotKeyMCM.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.4", <) REQ: "http://skse.silverlock.org SKSE" 1.6.4+.
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3+
+SkyrimSpellCleaner.esp
+  IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
+  IF VERSION("SKSE", "0.1.6.13", <) REQ: "http://skse.silverlock.org SKSE" 1.6.13+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.4+
 ENDGROUP: MCM Mods
 
 BEGINGROUP: Items
@@ -7001,9 +7012,6 @@ sevensts.esp
   IF CHECKSUM("sevensts.esp", 114A07BC) DIRTY: 0 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Skyforge Steel Weapons - Craftable.esp 
 Skyrim Scaling Stopper - Misc Edits - Dawnguard.esp
-Scoiatael Weapons.esp
-  IF FILE("SkyRe_Plugin_Scoiatael Weapons.esp") TAG: {{BASH: Deactivate}}
-Sekirei.esp
 SC.esp
 ScaleArmor.esp
 Scalpel.esp
@@ -7016,6 +7024,9 @@ Scarves! Skyrim Edition!.esp
 REGEX: Scene's (Blood|Fire|Frost) Dragon Armour\.esp
 schwert2.esp
 Schwertleite Set.esp
+Scoiatael Weapons.esp
+  IF FILE("SkyRe_Plugin_Scoiatael Weapons.esp") TAG: {{BASH: Deactivate}}
+  IF CHECKSUM("Scoiatael Weapons.esp", 7AA5E3BB) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Scoiatael.esp
 ScoiataelBow.esp
 ScorpioBlade.esp
@@ -7027,11 +7038,12 @@ Seadog.esp
 secretofspellbreaker.esp
 seducesets.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
-seethroughlook.esp
 REGEX: SED7-CBBE3.+\.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body"
 SED7-BettermalesFLACID_SILVEREDITION_malePiercing_PA.esp
   REQ: "http://skyrim.nexusmods.com/mods/2488 Better males"
+seethroughlook.esp
+Sekirei.esp
 selobl_Diano.esp
   REQ: "http://skyrim.nexusmods.com/mods/14899 UNP Blessed Body (UNPB)".
 SeraphimStandAlone.esp
