@@ -5738,6 +5738,7 @@ finnsword.esp
 FistWraps.esp
 FionaOutfit.esp
 Fire Blade.esp
+FJ_TsunArmor.esp
 FlameAtronachArmor.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 Flare Arrow Brighter.esp
@@ -14304,7 +14305,10 @@ RRRE-ToS_Oakwood-Patch.esp
 RRRE-ToS_Oakwood_hf-Patch.esp
 RRRE-Moonpath-Patch.esp
 RRRL-ETaC-Villages-Complete-Patch.esp
-
+MHYH_RentRoomFollower.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  //test placement- a My Home is Your Home optional that looks independent from its "parent"
+  
 SkyrimSewers.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF CHECKSUM("SkyrimSewers.esp", 6C30E0BA) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -17088,6 +17092,9 @@ ElinRaceIdle.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
 FemaleCityGuardsAndSoldiers.esp
 Feminine Orc Animation by D.esp
+HeartBreaker.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 Interactive Skyrim.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+
