@@ -16463,10 +16463,6 @@ ACE Archery.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 Lorecraft - Ace Archery.esp
-IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: Crafting300.esp
-IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: More Craftables - Crafting 300 compatibility.esp
-IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: RecyclingModCrafting300.esp
-  IFNOT FILE("Crafting300.esp") REQ: "http://skyrim.nexusmods.com/mods/2933 Crafting 300 - Armoury of Tamriel"
 ACE Armor.esp
 ACE Enchanting.esp
 ACE Magic.esp
@@ -16474,7 +16470,11 @@ ACE Melee.esp
 ACE Smithing.esp
 ACE Synergy.esp
 ACE Archery-Weapons of the Third Era Patch.esp
-IF CHECKSUM("ACE Archery-Weapons of the Third Era Patch.esp", 873EAB94) WARN: This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.
+  IF CHECKSUM("ACE Archery-Weapons of the Third Era Patch.esp", 873EAB94) WARN: This file contains unresolved errors and should be removed. Somehow the Skyrim master entry is duplicated twice.
+IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: Crafting300.esp
+IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: More Craftables - Crafting 300 compatibility.esp
+IF CHECKSUM("Crafting300.esp", FFCC056A) || IF CHECKSUM("Crafting300.esp", 50142D0D) MOD: RecyclingModCrafting300.esp
+  IFNOT FILE("Crafting300.esp") REQ: "http://skyrim.nexusmods.com/mods/2933 Crafting 300 - Armoury of Tamriel"
 IF VAR(EN) && IF REGEX("ACE .*\.esp") MOD: WayOfTheMonk.esp
 LB_MuchAdoSnowElves_ACE_Patch_Light.esp
   IFNOT FILE("ACE Archery.esp") REQ: ACE Archery.esp
