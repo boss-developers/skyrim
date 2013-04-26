@@ -2708,6 +2708,21 @@ CCMaterialsandPerks.esp
 CCTailoring.esp
 CCMainFile.esp
 chamberpotoftheageless.esp
+Change Follower Outfits Redux.esp
+Change Follower Outfits Redux -- Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Change Follower Outfits Redux -- Hearthfire.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+Change Follower Outfits Redux -- Dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+Change Follower Outfits Redux -- USKP 1.2 Farkas Compatability.esp
+  IFNOT VAR(USKP) && IF VAR(EN) ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(USKP) && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(EN) ERROR: Change Follower Outfits Redux.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(RU) ERROR: Change Follower Outfits Redux.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 Chau.esp
 cheatguide.esp
 Chesko_MorrowindPotionNames.esp
@@ -19793,10 +19808,12 @@ BEGINGROUP: Compatibility Patches
 // Only if no conflicts are made in between
 //
 REGEX: Agony's Sorting Frenzy - .+\.esp	
-DeadlyCombat_PISE_Patch.esp
-  IFNOT FILE("DeadlyCombat.esp") || IFNOT FILE("PISE.esp") REQ: DeadlyCombat.esp and PISE.esp
-GeneralStores-SkyMoMod.esp
 CCO - Uninstaller.esp
+Change Follower Outfits Redux -- Lively Followers Compatability.esp
+  IFNOT ACTIVE("Lively Followers.esp") && IF VAR(EN) ERROR: Lively Followers.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Lively Followers.esp") && IF VAR(RU) ERROR: Lively Followers.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(EN) ERROR: Change Follower Outfits Redux.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(RU) ERROR: Change Follower Outfits Redux.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 //REGEX combos of 6 dependencies follow: as PHL/PHT-primary groups; with CoS +/- IA,WIC(s) assorted combos; note some patches are functional duplicates with different names
 REGEX: Compatibility Patch - (PHL & Cloaks of Skyrim|PHL CoS)\.esp
   IFNOT ACTIVE("People Have Lanterns.esp") && IF VAR(EN) ERROR: People Have Lanterns.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -19867,6 +19884,8 @@ REGEX: Compatibility Patch - (PHT & WIC|PHT WIC)\.esp
     IFNOT ACTIVE ("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   //end of PHL, PHT patch set
 Cooking Expanded - RND Support.esp	
+DeadlyCombat_PISE_Patch.esp
+  IFNOT FILE("DeadlyCombat.esp") || IFNOT FILE("PISE.esp") REQ: DeadlyCombat.esp and PISE.esp
 DiversePriests_ConsistentOlderPeoplePatch.esp
   IFNOT ACTIVE("DiversePriests.esp") && IF VAR(EN) ERROR: DiversePriests.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("DiversePriests.esp") && IF VAR(RU) ERROR: DiversePriests.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
@@ -19874,6 +19893,7 @@ DiversePriests_ConsistentOlderPeoplePatch.esp
     IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(RU) ERROR: SPTConsistentOlderPeople.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 DragonCombatOverhaul - Requiem Patch.esp
 GDFoodCompatability.esp
+GeneralStores-SkyMoMod.esp
 GeneralStores(CCS-DG).esp
   IFNOT ACTIVE("GeneralStores.esm") && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without GeneralStores.esm
     IFNOT ACTIVE("GeneralStores.esm") && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без GeneralStores.esm
