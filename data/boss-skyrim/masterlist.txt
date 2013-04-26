@@ -2568,6 +2568,8 @@ Belleza DiBella - PNJ Overhaul.esp
   IFNOT FILE("Cazy Hairs-by zzjay.esp") REQ: "http://skyrim.nexusmods.com/mods/19623 Cazy Hairs-by zzjay.esp"
   IFNOT FILE("Fh hairs-by zzjay.esp") REQ: Fh hairs-by zzjay.esp
 Better Alchemy Loot.esp
+Betteranimals.esp
+  IF CHECKSUM("Betteranimals.esp", 1B17E909) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Better Aura Whisper & Detect Aura Spell.esp
   IF CHECKSUM("Better Aura Whisper & Detect Aura Spell.esp", 6B9403CC) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here". 
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -6232,6 +6234,10 @@ kefarmor.esp
 ket_fang.esp
 ket_goldbrand.esp
 ket_umbra.esp
+Ket_WEAPONIZER.esp
+  TAG: {{BASH: Delev, Relev}}
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 khajiitearrings.esp
 khajit-ears.esp
 KhantuArmor.esp
@@ -14757,6 +14763,9 @@ Advanced Vampires.esp
 AdvancedWerewolf.esp
 REGEX: Advanced Vampires No sun damage.*\.esp
 REGEX: Advanced Vampires sun damage.*\.esp
+ajd_allowmultipleregift.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Alternate_Vampires.esp
 arsvampires.esp
 REGEX: Better.?Werewolf.*\.esp
@@ -19734,6 +19743,7 @@ Map Markers Complete OC.esp
 Map Markers Shrines.esp
 MapMarksProject.esp
 minemapmarkers.esp
+MinesOfSkyrim.esp
 moremapmarkers.esp
 Necessary Map Markers (all files included).esp
 Necessary Map Markers with alternate house.esp
