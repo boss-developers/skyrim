@@ -1174,16 +1174,23 @@ lightplacement.esp
 lightingfix.esp
   IF CHECKSUM("lightingfix.esp", B22ED6C8) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 RelightingSkyrim.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+  // Load order from author of RS
+Relighting Skyrim - Update.esp
+IF ACTIVE("RelightingSkyrim.esp") MOD: OLSE.esp
+IF ACTIVE("RelightingSkyrim.esp") MOD: OLSE for Dawnguard.esp
+  IF CHECKSUM("OLSE for Dawnguard.esp", 931F68BD) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Relighting Skyrim - Dawnguard.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   // moved as suggested in bsg thread 28 post 105
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
   IF FILE("lightingfix.esp") && IF VAR(EN) WARN: Using lightingfix.esp along with Relighting Skyrim - Dawnguard.esp is likely to cause lighting inconsistencies.
-    IF FILE("lightingfix.esp") && IF VAR(EN) WARN: Использование lightingfix.esp вместе с Relighting Skyrim - Dawnguard.esp может вызвать несоответствия освещения.
+    IF FILE("lightingfix.esp") && IF VAR(RU) WARN: Использование lightingfix.esp вместе с Relighting Skyrim - Dawnguard.esp может вызвать несоответствия освещения.
+Relighting Skyrim - HearthFires.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
+Relighting Skyrim - Dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
 lydia chair fix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
@@ -2153,15 +2160,9 @@ Further Dark Dungeons for ENB.esp
   IF FILE("Dark Dungeons for ENB.esp") INC: Dark Dungeons for ENB.esp
 Dark Dungeons for Dawnguard.esp
 bigdanscozyvillages.esp
-Relighting Skyrim.esp
-  // load order for RS mods recommended from autor of RS
-Relighting Skyrim - Update.esp
-OLSE.esp
-OLSE for Dawnguard.esp
+IFNOT ACTIVE("RelightingSkyrim.esp") MOD: OLSE.esp
+IFNOT ACTIVE("RelightingSkyrim.esp") MOD: OLSE for Dawnguard.esp
   IF CHECKSUM("OLSE for Dawnguard.esp", 931F68BD) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-Relighting Skyrim - Dawnguard Edition.esp
-Relighting Skyrim - Hearthfires Edition.esp
-Relighting Skyrim - Dragonborn Edition.esp
 SkyrimURWL.esp
 slowereyeadapt.esp
 Supreme Storms - Cot Version.esp
@@ -13470,7 +13471,8 @@ Skyrim bigger trees.esp
   IF CHECKSUM("Skyrim bigger trees.esp", 7FAAD905) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("Skyrim bigger trees.esp", A36A4E87) DIRTY: 32 ITM, 18 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 SFO - Expanded Diversity.esp
-  IF ACTIVE("SFO - Expanded Diversity.esp") && IF ACTIVE("Skyrim Flora Overhaul.esp") SAY: Uninstall old version of Skyrim Flora Overhaul if using SFO - Expanded Diversity.esp
+  IF ACTIVE("SFO - Expanded Diversity.esp") && IF ACTIVE("Skyrim Flora Overhaul.esp") && IF VAR(EN) SAY: Uninstall old version of Skyrim Flora Overhaul if using SFO - Expanded Diversity.esp
+    IF ACTIVE("SFO - Expanded Diversity.esp") && IF ACTIVE("Skyrim Flora Overhaul.esp") && IF VAR(RU) SAY: Удалите старую версию Skyrim Flora Overhaul, если используется SFO - Expanded Diversity.esp.
 // MUST load after both Riften bigger trees & Skyrim bigger trees as well as anything else that modifies trees  
 Skyrim Survival Suite - Nourriture.esp	 
   IF CHECKSUM("Survival Suite - Sommeil.esp", DD9D0F1A) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here". 
