@@ -421,6 +421,12 @@ hideout.esm
 highfive.esm
 HjakhtraevarrTomb.esm
   IF CHECKSUM("HjakhtraevarrTomb.esm", B10B9F8F) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+HmmWhatToWear.esm
+HmmWhatToWearDawnGuard.esm
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT ACTIVE("HmmWhatToWear.esm") && IF VAR(EN) ERROR: HmmWhatToWear.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("HmmWhatToWear.esm") && IF VAR(RU) ERROR: HmmWhatToWear.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 HorseBranding.esm
 HuntersDiscipline.esm
 
@@ -6005,6 +6011,10 @@ Highric.esp
 HistArmor3.esp
 HmmWhatToWear.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
+HmmWhatToWearMerged.esp
+  TAG: {{BASH: Delev, Relev}}
+  IFNOT ACTIVE("HmmWhatToWear.esm") && IF VAR(EN) ERROR: HmmWhatToWear.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("HmmWhatToWear.esm") && IF VAR(RU) ERROR: HmmWhatToWear.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 HM Soul Gem Shifter.esp
 holdbounties.esp
 holy armor.esp
@@ -6691,6 +6701,7 @@ Nicoroshi Creations.esp
 Night Eye Ring.esp
 Night_Dweller_Armor.esp
 NightasyBondageArmor.esp
+NightasySecrets.esp
 Nightingale Armor for Mages.esp
 Nightingale Shield.esp
 Nightingale_with_DBenchants.esp
