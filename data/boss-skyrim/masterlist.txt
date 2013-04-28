@@ -5844,6 +5844,7 @@ GattiQBCollection.esp
 GattiUNPCollection.esp
 GauntletsGluttonousPower.esp
 REGEX: GDRanger(Armor|Dress)\.esp
+GDAttire.esp
 GDWeaponry.esp
 Gearblade.esp
 Gemtastic.esp
@@ -11225,6 +11226,8 @@ The Drunkard Drinks v1.00.esp
 The Fancy Flagon.esp
 The Fifth Gate.esp
   IFNOT VAR(Dawnguard) ERROR: Game will CTD without Dawnguard (Official Bethesda DLC)
+The Force.esp
+  IF CHECKSUM("The Force.esp", F697BCE7) DIRTY: 22 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 thefrontier.esp
   IF CHECKSUM("thefrontier.esp", 13762B47) DIRTY: 200 ITM, 22 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("TheFrontier.esp", BEE47B46) DIRTY: 8 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -18095,7 +18098,14 @@ BrelynaMaryon.esp
   IF CHECKSUM("BrelynaMaryon.esp", 0A18148F) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Brothers.esp
 REGEX: BVLT - (Argonian|Ashen|Dark Elf|High Elf|Human|Khajiit|Wood Elf)?\.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   WARN: This file contains unexpected (or out of order) records and should be removed.
+Vampire Lord - Transformation Overhaul Female.esp Checksum: 6BCA646B
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  WARN: This file contains unexpected (or out of order) records and should be removed.
+  //different name but same set as BVLT, so placed here
 
 // companions c
 Caellon.esp
