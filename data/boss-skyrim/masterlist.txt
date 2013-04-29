@@ -6840,6 +6840,8 @@ BEGINGROUP: Items P
 Paladin.esp
 PaladinArmor.esp
 Pauldrons.esp
+PBGearRings.esp
+  IF VERSION("SKSE", "0.1.5.08", <) REQ: "http://skse.silverlock.org SKSE" 1.5.08+
 PENIS.esp
   REQ: "http://skyrim.nexusmods.com/mods/2488 Nudes - FavoredSoulMeshes - ErectVersion"
 PhoenixArmor.esp
@@ -14818,6 +14820,9 @@ mslVampiricThirst.esp
   IF VAR(EN) SAY: Conflicts with other mods that change the vampirism system.
     IF VAR(RU) SAY: конфликты с другими модами, меняющими систему вампиризма.
   //contains some perks, so could put lower down there; a user says put before Skyre plugins, which are above this? So split the difference and put here for now.
+New Vamp Plus.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 NoWerewolfFormCooldown.esp
   IF VAR(EN) SAY: Possible conflicts with other Werewolf-mods
     IF VAR(RU) SAY: Возможны конфликты с другими модами, меняющими оборотней.
@@ -15844,6 +15849,7 @@ MagicDuel_French.esp
 Magicka balance.esp
 REGEX: magickaregen.*\.esp
 MagicUnderControl.esp
+SummonsUnderControl.esp
 Mighty Magick - Alteration.esp
   IF CHECKSUM("Mighty Magick - Alteration.esp", 89544A70) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Mighty Magick - Alteration Extras.esp
@@ -15899,6 +15905,7 @@ MorePowerfulNecromancy.esp
 More Visible Soul Trap Effect.esp
   SAY: This mod has been reported to have problems. Recommend removing and replacing with "http://skyrim.nexusmods.com/mods/30087 Enhanced Projectile Soul Trap"
 mpn.esp
+MagicUnderControl_MPNcompatible.esp
 
 // sp late n
 necromancy_endlesszombies.esp
