@@ -2602,6 +2602,22 @@ BetterFishAdded.esp
   TAG: {{BASH: Relev}}
 betterstartingitems.esp
 bbLager.esp
+  TAG: {{BASH: Delev, Relev}}
+  IF CHECKSUM("bbLager.esp", 68C5A371) DIRTY: 30 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) WARN: This file contains 3 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 3 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+bbLagerDGPatch.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT ACTIVE("bbLager.esp") && IF VAR(EN) ERROR: bbLager.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("bbLager.esp") && IF VAR(RU) ERROR: bbLager.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+bbLagerLight.esp
+  IF CHECKSUM("bbLagerLight.esp", 7AEA5A0A) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+bbLagerLightExtPatch.esp
+  IFNOT ACTIVE("bbLager.esp") && IF VAR(EN) ERROR: bbLager.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("bbLager.esp") && IF VAR(RU) ERROR: bbLager.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("bbLagerLight.esp") && IF VAR(EN) ERROR: bbLagerLight.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("bbLagerLight.esp") && IF VAR(RU) ERROR: bbLagerLight.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 REGEX: BellyachesNewDragonSpecies_?(Tougher)?(Factionless)?(Dragons)?\.esp
   IF CHECKSUM("BellyachesNewDragonSpecies_FactionlessDragons.esp", AA96F38F) DIRTY: 118 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("BellyachesNewDragonSpecies.esp", 685E2580) DIRTY: 117 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -7050,6 +7066,7 @@ romulusarmor.esp
   IF CHECKSUM("romulusarmor.esp", 355FE880) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Rorona.esp
 Rorona3scabbard.esp
+rosarmor.esp
 rosegeant.esp
 Royal Daywalker Armor Hoods.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -14497,6 +14514,10 @@ Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp
 Realistic Lighting Overhaul - 3.5 Weathers.esp	
 Realistic Lighting Overhaul - 3.5 Dawnguard Weathers.esp
 RLO - Adaptive Interiors Vanilla Weathers Patch.esp
+SV - The Outdoors.esp
+  IF CHECKSUM("SV - The Outdoors.esp", 8A040F19) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  //reported to be compatible if run post-RL
+  
 // placed ClimatesOfTamriel per http://skyrim.nexusmods.com/articles/853/
 ClimatesOfTamriel-Dungeons&Interiors.esp
   INC: Realistic Lighting Overhaul
@@ -19937,6 +19958,31 @@ BEGINGROUP: Compatibility Patches
 // Only if no conflicts are made in between
 //
 REGEX: Agony's Sorting Frenzy - .+\.esp	
+bbLager101BugsHRPatch.esp
+  IFNOT ACTIVE("bbLager.esp") && IF VAR(EN) ERROR: bbLager.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("bbLager.esp") && IF VAR(RU) ERROR: bbLager.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("83Willows_101BUGS_V4_HighRes.esp") && IF VAR(EN) ERROR: 83Willows_101BUGS_V4_HighRes.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("83Willows_101BUGS_V4_HighRes.esp") && IF VAR(RU) ERROR: 83Willows_101BUGS_V4_HighRes.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+bbLager101BugsLRPatch.es
+  IFNOT ACTIVE("bbLager.esp") && IF VAR(EN) ERROR: bbLager.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("bbLager.esp") && IF VAR(RU) ERROR: bbLager.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("83Willows_101BUGS_V4_LowRes.esp") && IF VAR(EN) ERROR: 83Willows_101BUGS_V4_LowRes.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("83Willows_101BUGS_V4_LowRes.esp") && IF VAR(RU) ERROR: 83Willows_101BUGS_V4_LowRes.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+bbLager2HypoPatch.esp
+  IFNOT ACTIVE("bbLager.esp") && IF VAR(EN) ERROR: bbLager.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("bbLager.esp") && IF VAR(RU) ERROR: bbLager.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("bbLagerLight.esp") && IF VAR(EN) ERROR: bbLagerLight.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("bbLagerLight.esp") && IF VAR(RU) ERROR: bbLagerLight.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("Hypothermia.esp") && IF VAR(EN) ERROR: Hypothermia.espp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Hypothermia.esp") && IF VAR(RU) ERROR: Hypothermia.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+bbLagerLightHypoPatch.esp
+  IFNOT ACTIVE("Hypothermia.esp") && IF VAR(EN) ERROR: Hypothermia.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Hypothermia.esp") && IF VAR(RU) ERROR: Hypothermia.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+bbLagerLMBalancingPatch.esp
+  IFNOT ACTIVE("bbLager.esp") && IF VAR(EN) ERROR: bbLager.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("bbLager.esp") && IF VAR(RU) ERROR: bbLager.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("LMBalancingDV.esp") && IF VAR(EN) ERROR: LMBalancingDV.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("LMBalancingDV.esp") && IF VAR(RU) ERROR: LMBalancingDV.espp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 CCO - Uninstaller.esp
 Change Follower Outfits Redux -- Lively Followers Compatability.esp
   IFNOT ACTIVE("Lively Followers.esp") && IF VAR(EN) ERROR: Lively Followers.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
