@@ -20016,8 +20016,10 @@ Cooking Expanded - RND Support.esp
 DeadlyCombat_PISE_Patch.esp
   IFNOT FILE("DeadlyCombat.esp") || IFNOT FILE("PISE.esp") REQ: DeadlyCombat.esp and PISE.esp
 SPTConsistentOlderPeopleCompatability.esp
-  IFNOT ACTIVE("SPTConsistentOlderPeople.esp") ERROR: SPTConsistentOlderPeople.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-  IFNOT ACTIVE("Bring Out Your Dead.esp") ERROR: Bring Out Your Dead.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(EN) ERROR: SPTConsistentOlderPeople.esp is not present or is not active. Skyrim will CTD when loading if using this file without Conistant Older People
+    IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(RU) ERROR: SPTConsistentOlderPeople.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Conistant Older People
+  IFNOT ACTIVE("Bring Out Your Dead.esp") && IF VAR(EN) ERROR: Bring Out Your Dead.esp is not present or is not active. Skyrim will CTD when loading if using this file without Bring Out Your Dead
+    IFNOT ACTIVE("Bring Out Your Dead.esp") && IF VAR(RU) ERROR: Bring Out Your Dead.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Bring Out Your Dead
 DiversePriests_ConsistentOlderPeoplePatch.esp
   IFNOT ACTIVE("DiversePriests.esp") && IF VAR(EN) ERROR: DiversePriests.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("DiversePriests.esp") && IF VAR(RU) ERROR: DiversePriests.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
@@ -20250,6 +20252,8 @@ RBS.esp
 ReProccer.esp
 ReProccerNONPLAYERfix.esp
 ReProccerDragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
 WIC ReProccer Patch.esp
 Miscellaneous ReProccer Patch.esp
 WTF.esp
