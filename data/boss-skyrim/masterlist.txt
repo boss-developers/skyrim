@@ -7576,7 +7576,7 @@ UnderC.esp
 REGEX: UniqueLeveledItemsUpgrade(1dot3)?\.esp
   IF VAR(EN) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Устарело. Обновите до последней версии.
-Unique Uniques.esp
+IFNOT VAR(SkyReM) MOD: Unique Uniques.esp
 UniqueRadiantAndPartyClothes.esp
 UnKindBow.esp
 UNPArmoredBikini.esp
@@ -9013,6 +9013,8 @@ Tribunal for Skyre.esp
   IFNOT FILE("Tribunal Robes by Zairaam.esp") REQ Tribunal Robes by Zairaam.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
+IF VAR(SkyReM) MOD: Unique Uniques.esp
+// William - InsanitySorrow recommends that UU loads after SkyRe if installed.
 ENDGROUP: SkyRe
 ENDGROUP: Overhauls
 
@@ -12229,6 +12231,7 @@ Better Skill and Quest Books Names - BS.esp
 BetterQuestObjectives-BSaQBPatch.esp
   IFNOT FILE("Better Skill and Quest Books Names.esp") || IFNOT FILE("Better Skill and Quest Books Names - BS.esp") REQ: "http://skyrim.nexusmods.com/mods/10125 Better Skill and Quest Books Names"
 BetterQuestObjectives-BSaQB-BSPatch.esp
+  ERROR: This file is obselte. Please use the universal patch on the Even Better Quest Objectives page.
   IFNOT FILE("Better Skill and Quest Books Names - BS.esp") ERROR: Better Skill and Quest Books Names - BS.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names - BS
  // Must load after better sorting.
 REGEX: BetterSkillBooks.*\.esp
@@ -13315,13 +13318,14 @@ NoTraining.esp
 non-leveled items.esp
 Non-player Armor.esp
 NonEssentialChilds.esp
+  IF VAR(EN) SAY: Obsolete. Use the updated version at http://skyrim.nexusmods.com/mods/32450
 NonEssentialChildren.esp
   IF CHECKSUM("NonEssentialChildren.esp", BAE841DB) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF CHECKSUM("NonEssentialChildren.esp", BAE841DB) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 BetterQuestObjectives-NECPatch.esp
-  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Even Better Quest Objectives
     IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-  IFNOT FILE("NonEssentialChildren.esp") && IF VAR(EN) ERROR: NonEssentialChildren.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
+  IFNOT FILE("NonEssentialChildren.esp") && IF VAR(EN) ERROR: NonEssentialChildren.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Kryptolyr's Non-Essential Children
     IFNOT FILE("NonEssentialChildren.esp") && IF VAR(RU) ERROR: NonEssentialChildren.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 NordResist-50stamina.esp
 NordResist-25%.esp
@@ -13813,7 +13817,7 @@ TheChoiceIsYours_Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 BetterQuestObjectives-TheChoiceIsYoursPatch.esp
-  IFNOT FILE("TheChoiceIsYours.esp") ERROR: TheChoiceIsYours.esp is not present or is not active. Skyrim will CTD when loading if this file is active without TheChoiceIsYours
+  IFNOT FILE("TheChoiceIsYours.esp") ERROR: TheChoiceIsYours.esp is not present or is not active. Skyrim will CTD when loading if this file is active without The Choice Is Yours
 the_god_auriel.esp
   IF CHECKSUM("the_god_auriel.esp", 44C9D999) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -14394,10 +14398,10 @@ BFT Ships and Carriages - HF.esp
 RealisticRoomRental.esp
   IF CHECKSUM("RealisticRoomRental.esp", 484EF81F) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BetterQuestObjectives-PersidRRentalPatch.esp
-  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
-    IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-  IFNOT FILE("RealisticRoomRental.esp") && IF VAR(EN) ERROR: RealisticRoomRental.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
-    IFNOT FILE("RealisticRoomRental.esp") && IF VAR(RU) ERROR: RealisticRoomRental.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Realistic Room Rental
+    IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Realistic Room Rental
+  IFNOT FILE("RealisticRoomRental.esp") && IF VAR(EN) ERROR: RealisticRoomRental.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Realistic Room Rental
+    IFNOT FILE("RealisticRoomRental.esp") && IF VAR(RU) ERROR: RealisticRoomRental.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Realistic Room Rental
 RealisticRoomRental-Basic.esp
   IF FILE("RealisticRoomRental.esp") INC: RealisticRoomRental.esp
 RRRE-Lite.esp
@@ -14416,6 +14420,9 @@ MHYH_RentRoomFollower.esp
 SkyrimSewers.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF CHECKSUM("SkyrimSewers.esp", 6C30E0BA) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+
+IF FILE("Open Cities Skyrim.esp") Atlas Map Markers.esp
+// Author recommends loading above Open Cities Skyrim if installed.
 
 // Open Cities Skyrim group needs to be the last one in this section.
 Open Cities Skyrim.esp
@@ -19263,10 +19270,10 @@ Alternative Startfraktionen - Bandit.esp
 Alternative Startfraktionen - Hexe.esp
 Alternative Startfraktionen - Silberne Hand.esp
 BetterQuestObjectives-AlternateStartPatch.esp
-  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
-    IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-  IFNOT FILE("Alternate Start - Live Another Life.esp") && IF VAR(EN) ERROR: Alternate Start - Live Another Life.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
-    IFNOT FILE("Alternate Start - Live Another Life.esp") && IF VAR(RU) ERROR: Alternate Start - Live Another Life.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Even Better Quest Objectives
+    IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Even Better Quest Objectives
+  IFNOT FILE("Alternate Start - Live Another Life.esp") && IF VAR(EN) ERROR: Alternate Start - Live Another Life.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Alternate Start - Live Another Life
+    IFNOT FILE("Alternate Start - Live Another Life.esp") && IF VAR(RU) ERROR: Alternate Start - Live Another Life.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Alternate Start - Live Another Life
 Bandit Start.esp
   IF CHECKSUM("Bandit Start.esp", 57D4E755) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Forsworn Start.esp
@@ -19769,7 +19776,7 @@ BEGINGROUP: Map marker Tweaks
 
 accurate prison markers.esp
 arvakskull-marker.esp
-Atlas Map Markers.esp
+IFNOT FILE("Open Cities Skyrim.esp") Atlas Map Markers.esp
 Atlas Blackreach.esp
 Atlas Dawnguard.esp
   IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
