@@ -3729,6 +3729,10 @@ MoreHeartsAndFlesh.esp
   // Possibly requires tags.
 MoreLanterns.esp
 MoreVillageAnimals.esp
+  SAY: Obselete. Upgrade to latest version.
+MVABasic.esp
+MVAIvarstead.esp
+MVARorikstead.esp
 Morozik75_Better_Skillbook_Rus.esp
 Moss Rocks.esp
 masser_and_secunda_from_morr.esp
@@ -14409,6 +14413,7 @@ RRRE-Lite.esp
   IF FILE("RealisticRoomRental.esp") INC: RealisticRoomRental.esp
   IF FILE("RealisticRoomRental-Basic.esp") INC: RealisticRoomRental-Basic.esp
 RRR_Hearthfire-Patch.esp
+RRR_Dragonborn-Patch.esp
 RRRE-ToS_Oakwood-Patch.esp
 RRRE-ToS_Oakwood_hf-Patch.esp
 RRRE-Moonpath-Patch.esp
@@ -14421,7 +14426,7 @@ SkyrimSewers.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF CHECKSUM("SkyrimSewers.esp", 6C30E0BA) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 
-IF FILE("Open Cities Skyrim.esp") Atlas Map Markers.esp
+IF FILE("Open Cities Skyrim.esp") MOD: Atlas Map Markers.esp
 // Author recommends loading above Open Cities Skyrim if installed.
 
 // Open Cities Skyrim group needs to be the last one in this section.
@@ -19776,7 +19781,7 @@ BEGINGROUP: Map marker Tweaks
 
 accurate prison markers.esp
 arvakskull-marker.esp
-IFNOT FILE("Open Cities Skyrim.esp") Atlas Map Markers.esp
+IFNOT FILE("Open Cities Skyrim.esp") MOD: Atlas Map Markers.esp
 Atlas Blackreach.esp
 Atlas Dawnguard.esp
   IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
@@ -20010,6 +20015,9 @@ REGEX: Compatibility Patch - (PHT & WIC|PHT WIC)\.esp
 Cooking Expanded - RND Support.esp	
 DeadlyCombat_PISE_Patch.esp
   IFNOT FILE("DeadlyCombat.esp") || IFNOT FILE("PISE.esp") REQ: DeadlyCombat.esp and PISE.esp
+SPTConsistentOlderPeopleCompatability.esp
+  IFNOT ACTIVE("SPTConsistentOlderPeople.esp") ERROR: SPTConsistentOlderPeople.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  IFNOT ACTIVE("Bring Out Your Dead.esp") ERROR: Bring Out Your Dead.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
 DiversePriests_ConsistentOlderPeoplePatch.esp
   IFNOT ACTIVE("DiversePriests.esp") && IF VAR(EN) ERROR: DiversePriests.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("DiversePriests.esp") && IF VAR(RU) ERROR: DiversePriests.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
@@ -20241,6 +20249,7 @@ Perk Patch.esp
 RBS.esp
 ReProccer.esp
 ReProccerNONPLAYERfix.esp
+ReProccerDragonborn.esp
 WIC ReProccer Patch.esp
 Miscellaneous ReProccer Patch.esp
 WTF.esp
