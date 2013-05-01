@@ -3280,6 +3280,7 @@ ENDGROUP: Base G
 BEGINGROUP: Base H
 
 Half-sized Snowberries.esp
+hc5changerace.esp
 housecat.esp
 hdplants+herbs.esp
 Hearthfire Sorting.esp
@@ -11794,6 +11795,7 @@ Rebalanced Potion Weight.esp
 reduceditemweights.esp
 Reweighed Potions.esp
 Reweighed Potions - All Light.esp
+RZL - Septims.esp
 Scale Tipper.esp
 scrollweight - copy.esp
 REGEX: SkyrimCoinReplacer.*\.esp
@@ -13824,6 +13826,7 @@ BEGINGROUP: Overrides T
 
 T01DegaineLieAboutStatue.esp
 TableSalt.esp
+TanningSmeltingExp.esp
 TCO - Travel Cost Overhaul.esp
 TernIntoOsprey.esp
 terrain bump.esp
@@ -17474,6 +17477,7 @@ ButterflyFemaleWarpaint_2_1.esp
 Daedric Letters Warpaints.esp
 DragonWarpaint.esp
 krimson'swarpaints.esp
+ksArgonianWarPaint.esp
 ksKhajiitWarpaints.esp
  //two ver both with CRC B296D5C2; only 1 req SKSE, so leave unspecified
 Siamese Khajiit.esp
@@ -17507,6 +17511,10 @@ mjhImprovedRaces.esp
     IF VAR(RU) INC: Все моды, которые изменяют расы или их описания.
 CherryRace.esp
 ChildRace.esp
+Cimmerian.esp 
+  IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("Cimmerian.esp", 1DCF01BA) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 CustomRaces.esp
 DaedricElves.esp
   IF CHECKSUM("DaedricElves.esp", D761AFB4) DIRTY: 20 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here". 
@@ -18193,6 +18201,27 @@ Azog.esp
   IF CHECKSUM("Azog.esp", 5A6D9903) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 
 // companions b
+babesofskyrim.esp
+  IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("babesofskyrim.esp", D6E256DE) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Dawnguard babes.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+DragonbornBabes.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+DLCBabes.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 Bald_Jiub.esp
 Balimund.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
