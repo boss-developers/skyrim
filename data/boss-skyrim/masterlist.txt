@@ -1457,6 +1457,10 @@ Arrow and Imperial Armor Fix.esp
 Bethesda_Hi-Res_Optimized.esp
 Correctif - Skyrim.esp
 RaceCompatibilityUSKPOverride.esp
+  IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 USKP Patcher for RaceCompatibility.esp
 ENDGROUP: Vanilla fixes
 
@@ -13315,7 +13319,7 @@ No Vendor Yells.esp
 No_dog_meat.esp
 no_essential_COs.esp
 no_guard_warning_after_shouts.esp
-REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg)\.esp
+REGEX: NoAutoQuestStart_ThievesGuild_(High|Med|Reg|regular)\.esp
   IF VAR(EN) SAY: Obsolete.  Update to latest renamed version, Thieves Guild Requirements.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Thieves Guild Requirements.esp
 NoAutoAim.esp
@@ -17574,6 +17578,11 @@ GiantChild.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, GiantChild.esm
   IF FILE("GiantChild.esm") ERROR: Remove. Replaced by GiantChild.esm
 GreybeardRace.esp
+Half Orc Race.esp
+  IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 HBR_Marshwalker(Argonian)_Standalone.esp
   IF CHECKSUM("HBR_Marshwalker(Argonian)_Standalone.esp", 8E76E40F) DIRTY: 21 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HBR_OhmesRaht(Khajiit)_Standalone.esp
@@ -18590,6 +18599,7 @@ KhajiitChildren.esp
 khajiitmarriage.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии
+khajiitmore.esp
 KhaleesiStandalone.esp
   IF CHECKSUM("KhaleesiStandalone.esp", 04311F8C) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Khargra.esp
