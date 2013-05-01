@@ -4114,6 +4114,7 @@ Skyrim Immersive Creatures.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Skyrim Immersive Creatures.esp", 9F345819) || IF CHECKSUM("Skyrim Immersive Creatures.esp", 31F6B4FF) || IF CHECKSUM("Skyrim Immersive Creatures.esp", DB09F9B0) || IF CHECKSUM("Skyrim Immersive Creatures.esp", ACC6DAE2) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Skyrim Immersive Creatures - DLC2.esp
+  TAG: {{BASH: Delev, Relev}} // according to author's post - http://forums.bethsoft.com/topic/1457307-relz-boss-for-skyrim/#entry22591508
   IF CHECKSUM("Skyrim Immersive Creatures - DLC2.esp", C64CF88A) && IFNOT ACTIVE("Skyrim Immersive Creatures.esm") ERROR: This addon is for use with Skyrim Immersive Creatures.esm, not Skyrim Immersive Creatures.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
@@ -8411,7 +8412,13 @@ BEGINGROUP: ERSO End
 // Note that some ERSO files are in the "Deadly and Mighty" Dragons group
 
 ERSO 03.5 - New Dragon Loots.esp
-  TAG: {{BASH: Relev}}
+  TAG: {{BASH: Relev, Delev}}
+  IF VAR(EN) SAY: Use only one ERSO 03.5 file.
+    IF VAR(RU) SAY: Используйте только один файл ERSO 03.5.
+ERSO 03.5 - New Dragon Super Loots.esp
+  TAG: {{BASH: Relev, Delev}}
+  IF VAR(EN) SAY: Use only one ERSO 03.5 file.
+    IF VAR(RU) SAY: Используйте только один файл ERSO 03.5.
 ERSO 04 - Mighty Dragon Priests v.4.0.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -8425,13 +8432,12 @@ ERSO 06 - Mighty Odahviing v.4.0.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 REGEX: ERSO 0\d - Wait More Time( Before Next)? Dragon Encounter (\()?x\d\.\d(\))?( v\.\d\.\d)?\.esp
-REGEX: ERSO 07 - (Super )?(Slighty )?Mighty Dragon Priests\.esp
+REGEX: ERSO 07 - (Super )?(Slighty )?(Mighty )?(Nightmare )?Dragon Priests\.esp
 REGEX: ERSO 08 - RUS-00 Main( plus Dawnguard)?( Dragonborn)?\.esp
   IF VAR(EN) SAY: Use only one ERSO 08 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 08.
-ERSO 08.1 - ERSO MIRAAK.esp
-ERSO 08.1 - ERSO MIRAAKD.esp
-ERSO 08.2 - ERSO HARKON.esp
+REGEX: ERSO 08.1 - ERSO( SUPER)?( EXTREME)? MIRAAK(D)?\.esp
+REGEX: ERSO 08.2 - ERSO( SUPER)?( EXTREME)? HARKON\.esp
 REGEX: ERSO 09 - RUS-Npcs.*\.esp
   IF VAR(EN) SAY: Use only one ERSO 09 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 09.
@@ -8444,6 +8450,12 @@ ERSO 10.02 - Adventurers and Travelers.esp
 ERSO 11 - RUS-(SIM)-Assassins and Thieves.esp
 ERSO 12 - RUS-(SIM)-Werewolves.esp
 ERSO 13 - MD - A Better Level Progression.esp
+  IF VAR(EN) SAY: Use only one ERSO 13 file.
+    IF VAR(RU) SAY: Используйте только один файл ERSO 13
+ERSO 13 - MD - ABLP 50 Hardcore.esp
+// Hardcore version of A Better Level Progression
+  IF VAR(EN) SAY: Use only one ERSO 13 file.
+    IF VAR(RU) SAY: Используйте только один файл ERSO 13
 REGEX: ERSO 13.02 .*\.esp
   // Lower Skill Gain
   IF VAR(EN) SAY: Use only one ERSO 13.02 file.
@@ -14475,9 +14487,6 @@ BEGINGROUP: Image Space and Lighting Changes
 
 BEGINGROUP: IMGS and LIGH Load Late
 
-Realistic Lighting Overhaul - Dungeon Lighting.esp
-  IF CHECKSUM("Realistic Lighting Overhaul - Dungeon Lighting.esp", CB2AEEAF) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  //optional file with author instructions to place just above main RLO file(s)
 REGEX: Realistic Lighting( - Full| - Addon)\.esp
     IF VAR(RU) SAY: Используйте только один LightAdjuster esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -14511,16 +14520,20 @@ Realistic Lighting Overhaul - Illuminated Spells.esp
 Realistic Lighting Overhaul - Dungeons.esp
   IF CHECKSUM("Realistic Lighting Overhaul - Dungeons.esp", 18AD5FEB) DIRTY: 18 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Realistic Lighting Overhaul - Dawnguard.esp
+Realistic Lighting Overhaul - Dawnguard Interiors.esp
 Realistic Lighting Overhaul - Minor Cities & Town Interiors.esp
 Realistic Lighting Overhaul - Major City Exteriors.esp
 Realistic Lighting Overhaul - Major City Interiors.esp
   IF CHECKSUM("Realistic Lighting Overhaul - Major City Interiors.esp", 033A5FD6) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-Realistic Lighting Overhaul - Dawnguard Interiors.esp
 Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp
   IF CHECKSUM("Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp", 53706BFB) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-Realistic Lighting Overhaul - 3.5 Weathers.esp	
 Realistic Lighting Overhaul - 3.5 Dawnguard Weathers.esp
+Realistic Lighting Overhaul - 3.5 Weathers.esp	
 RLO - Adaptive Interiors Vanilla Weathers Patch.esp
+RLO - Major City Exteriors - No Guard Torches.esp
+Realistic Lighting Overhaul - Dungeon Lighting.esp
+  IF CHECKSUM("Realistic Lighting Overhaul - Dungeon Lighting.esp", CB2AEEAF) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  //optional file with author instructions to place just below main RLO file(s)
 // placed ClimatesOfTamriel per http://skyrim.nexusmods.com/articles/853/
 ClimatesOfTamriel-Dungeons&Interiors.esp
   INC: Realistic Lighting Overhaul
