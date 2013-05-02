@@ -5394,6 +5394,7 @@ DandelionArmor.esp
 dantes rebellion.esp
 DAO Morrigan's Robes.esp
 Dark Crusader Reforged - Klingen-Set.esp
+Dark Illusion Armor.esp
 Dark Knight.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -6156,6 +6157,8 @@ ImperialArmor.esp
 imperialdragonarmor.esp
 Imperial Dragon Armor.esp
 Imperial_Greek armor.esp
+imperialrobes.esp
+  IF CHECKSUM("imperialrobes.esp", 519A4055) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 InfernoGreatSword.esp
 InfinityBlade.esp
 Infinity Blade Hero Set.esp
@@ -17671,6 +17674,10 @@ SC_Drow Race.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, DrowRace.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, DrowRace.esp
 Shadowscale Argonian Race.esp
+SirenRace.esp
+  IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("SirenRace.esp", 166A1F4F) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 SkyTEST-MysticLands.esp
   IF CHECKSUM("SkyTEST-MysticLands.esp", 98D9ED8B) DIRTY: 20 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 StarWarsRaces.esp
@@ -18604,6 +18611,9 @@ KhaleesiStandalone.esp
   IF CHECKSUM("KhaleesiStandalone.esp", 04311F8C) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Khargra.esp
 Khargra - Ghorbash Replacer.esp
+Kitana.esp
+  IF CHECKSUM("Kitana.esp", BCF5969B) || IF CHECKSUM("Kitana.esp", 2077B972) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Kitana.esp", BCF5969B) || IF CHECKSUM("Kitana.esp", 2077B972) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 KMM_2a.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии
