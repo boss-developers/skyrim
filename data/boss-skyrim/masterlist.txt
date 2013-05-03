@@ -5016,8 +5016,6 @@ BBP_ArmorPack2.esp
   REQ: "http://skyrim.nexusmods.com/mods/4888 CHSBHC - BBP - Nude and Jiggly Mod"
 BBP_Apple.esp
 BBP_Dragon_Princess.esP
-BBLSspouse.esp
-  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 BDYEB.esp
   TAG: {{BASH: Relev}}
 BeastmastersAxe.esp
@@ -7358,21 +7356,6 @@ SuccubusUNPByNausicaa.esp
 SuccubusCBBEByNausicaa.esp
 Succubus_CBBEByNausicaa.esp
 SuccubusCBBE3GiftByNausicaa.esp
-SummerWearSA.esp
-  IF CHECKSUM("SummerWearSA.esp", D91C8FE5) && IF VAR(EN) SAY: Obsolete. Update to "http://skyrim.nexusmods.com/mods/25237 latest version".
-    IF CHECKSUM("SummerWearSA.esp", D91C8FE5) && IF VAR(RU) SAY: Устарело. Обновите до "http://skyrim.nexusmods.com/mods/25237 последней версии".
-  IFNOT FILE("SummerWear.esm") ERROR: This mod requires SummerWear.esm
-  IF CHECKSUM("SummerWearSA.esp", 7CB5C5EA) DIRTY: 24 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-SummerWearBBLS.esp
-  IFNOT VAR(BBLS) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if this file is active without the "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite" mod.
-  IFNOT FILE("SummerWear.esm") ERROR: This mod requires SummerWear.esm
-  IF CHECKSUM("SummerWearBBLS.esp", E9CA2DDC) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-BBLSSummerWear.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-SummerWearUBH.esp
-  IFNOT FILE("UndergroundBathhouse.esm") ERROR: This mod requires UndergroundBathhouse.esm
-  IF CHECKSUM("ummerWearUBH.esp", 22D2AC81) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Summon Animal Pets DV.esp
 SummonAnimalPets_immersive.esp
 SummonAnimalPets_immortal.esp
@@ -9268,16 +9251,72 @@ Batcave.esp
 BATTLE FIELDS.esp
   IF CHECKSUM("BATTLE FIELDS.esp", C428F6B7) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BBLuxurySuiteExt.esp
+  IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("BBLuxurySuiteExt.esp", E11BCEE0) DIRTY: 24 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BBLSapachii.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
-BBLSsecretArmourRoom.esp
-  IFNOT FILE("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
-  IF CHECKSUM("BBLSsecretArmourRoom.esp", BBF453F1) DIRTY: 2 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BBLSHousecarlsmovein.esp
+  IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("BBLSHousecarlsmovein.esp", 1D59D907) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BBLSspouse.esp
+  IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("BBLSspouse.esp", FD08E557) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BBLSVisitors.esp
+  IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("BBLSVisitors.esp", D208AA75) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BBLSMotseerOutfits.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 BBLSmusic.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
-BBLSapachii.esp
+BBLSBoMHFTeleport.esp
+BBLSGuysApachii.esp
+  IFNOT VAR(ApachiiHair) REQ: Apachii Sky Hair.
+  IFNOT VAR(BBLS) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if this file is active without the "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite" mod.
+BBLuxurySuiteClassier.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
+BBLuxurySuiteClassierDisplayRoom.esp
+  IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("BBLuxurySuiteClassierDisplayRoom.esp", 91E5FC6A) DIRTY: 0 ITM, 6 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BBLuxurySuiteDisplayRoom.esp
+  IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("BBLuxurySuiteDisplayRoom.esp", 2D4A79CB) DIRTY: 0 ITM, 6 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BBLSsecretArmourRoom.esp
+  IFNOT FILE("BBLuxurySuite.esm") REQ: BBLuxurySuite.esm
+  IF CHECKSUM("BBLSsecretArmourRoom.esp", BBF453F1) DIRTY: 2 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+SummerWearSA.esp
+  IF CHECKSUM("SummerWearSA.esp", D91C8FE5) && IF VAR(EN) SAY: Obsolete. Update to "http://skyrim.nexusmods.com/mods/25237 latest version".
+    IF CHECKSUM("SummerWearSA.esp", D91C8FE5) && IF VAR(RU) SAY: Устарело. Обновите до "http://skyrim.nexusmods.com/mods/25237 последней версии".
+  IFNOT FILE("SummerWear.esm") ERROR: This mod requires SummerWear.esm
+  IF CHECKSUM("SummerWearSA.esp", 7CB5C5EA) DIRTY: 24 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+SummerWearBBLS.esp
+  IFNOT VAR(BBLS) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if this file is active without the "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite" mod.
+  IFNOT FILE("SummerWear.esm") ERROR: This mod requires SummerWear.esm
+  IF CHECKSUM("SummerWearBBLS.esp", E9CA2DDC) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BBLSSummerWear.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+SummerWearUBH.esp
+  IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("SummerWearUBH.esp", 22D2AC81) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BBLS_PatioFurniture.esp
+  IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("ApachiiHairFemales.esm") && IF VAR(EN) ERROR: ApachiiHairFemales.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ApachiiHairFemales.esm") && IF VAR(RU) ERROR: ApachiiHairFemales.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("SummerWear.esm") && IF VAR(EN) ERROR: SummerWear.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SummerWear.esm") && IF VAR(RU) ERROR: SummerWear.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("BBLS_PatioFurniture.esp", 90C691) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  //not just furniture- more like a whole tiki bar area
+  //reference for placements in the above BBLS, SW set- SW's author: http://skyrim.nexusmods.com/articles/907/
 BBLSGeneralStoresbyNatilde.esp
   IF CHECKSUM("BBLSGeneralStoresbyNatilde.esp", 0578E287) DIRTY: 0 ITM, 22 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IFNOT VAR(GS) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without the "http://skyrim.nexusmods.com/mods/18340 General Stores" mod.
@@ -9715,6 +9754,8 @@ CityShrines.esp
 CK's Might of the Legion.esp
   IFNOT FILE("WARZONES - Civil Unrest.esm") REQ: WARZONES - Civil Unrest.esm
 Clam Farm.esp
+ClassierTempleofMara.esp
+  IF CHECKSUM("ClassierTempleofMara.esp", 22B65274) DIRTY: 12 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 cleaner_volkihar.esp
   IF CHECKSUM("cleaner_volkihar.esp", E0E95E75) DIRTY: 15 ITM, 134 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ClearFields.esp
@@ -11460,6 +11501,11 @@ ENDGROUP: Quests T
 
 BEGINGROUP: Quests U
 
+BBLuxurySuiteUndergroundBathhouse.esp
+  IF CHECKSUM("BBLuxurySuiteUndergroundBathhouse.esp", 487E17E1) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+  //superseded by BBLS/UB merge, below?
 ub_invite_any_npc.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
@@ -19239,18 +19285,6 @@ marriagemod - alpha v3.esp
 // ENDGROUP: Multimarriage
 ENDGROUP: Unlimited Companions
 
-
-BBLSHousecarlsmovein.esp
-  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
-BBLSVisitors.esp
-  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
-BBLuxurySuiteClassier.esp
-  IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
-BBLSBoMHFTeleport.esp
-BBLuxurySuiteUndergroundBathhouse.esp
-  IF CHECKSUM("BBLuxurySuiteUndergroundBathhouse.esp", 487E17E1) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
-    IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 CerwidenCompanion.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 CerwidenAppearancePatch.esp
@@ -20103,10 +20137,6 @@ BEGINGROUP: Load Late
 Arrows renamed for better sorting.esp
 // Must load after arrow tweaks (AT - *)
 AZ Khajiit Vampire No Color Change.esp
-BBLSGuysApachii.esp
-  IF VERSION("TES5", "0.1.6.89", <) REQ: Skyrim 1.6.89+
-  IFNOT VAR(ApachiiHair) REQ: Apachii Sky Hair.
-  IFNOT VAR(BBLS) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if this file is active without the "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite" mod.
 
 BEGINGROUP: Compatibility Patches
 // Compatibility Patches which must load after a certain mod go here
