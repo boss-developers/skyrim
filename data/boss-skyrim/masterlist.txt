@@ -4577,6 +4577,10 @@ CWND-UnofficialPatches.esp
   IF VAR(RU) && IF VERSION("TES5", "1.8.151.0.7", <) REQ: Skyrim 1.8.151.0.7+
   IF VAR(RU) && IF FILE("CWND-Basic.esp") INC: CWND-Basic.esp
   IF VAR(Dragonborn) && IFNOT FILE("CWND-Dragonborn.esp") REQ: CWND-Dragonborn.esp
+CWND-UnofficialPatches_LB.esp
+  IF VAR(RU) && IF FILE("CWND-UnofficialPatches.esp") INC: CWND-UnofficialPatches.esp
+  IF VAR(RU) && IF FILE("CWND-Basic.esp") INC: CWND-Basic.esp
+  IF VAR(RU) && IFNOT VAR(USKP) && IFNOT FILE("Lady Body.esm") WARN: Помимо Unofficial Skyrim Patch v1.3.2a требуется еще и esm версия плагина "Lady Body" [LB] v2.1. Это очень важно, т.к. иначе вызовет вылеты и баги, если этих файлов нет.
 CWND-Dragonborn.esp
   IFNOT VAR(Dragonborn) REQ: Dragonborn DLC
 Darwins_Primitive_Times.esp
