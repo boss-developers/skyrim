@@ -1476,7 +1476,6 @@ BreezhomeAlchemyLabFix.esp
 chopping_block_wood_fires.esp
   IFNOT FILE("HighResTexturePack01.esp") || IFNOT FILE("HighResTexturePack02.esp") REQ: DLC HighResTexturePack
   IF VAR(EN) ERROR: Delete. Fixed in Bethesda's official update February 2013.
-Correctif - HighResTexturePack.esp
 Dawnguard Breezehome Fix.esp
   IF CHECKSUM("Dawnguard Breezehome Fix.esp", 330AED25) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF VAR(EN) && IF VAR(UDGP) ERROR: Delete. Already included in Unofficial Dawnguard Patch.esp
@@ -1558,6 +1557,10 @@ Unofficial Dragonborn Patch.esp
   TAG: {{BASH: Delev}}
 Unofficial High Resolution Patch.esp
 // fixes that must be loaded after Unofficial DLC Patches
+Correctif - Dawnguard.esp
+Correctif - Hearthfire.esp
+Correctif - Dragonborn.esp
+Correctif - HighResTexturePack.esp
 EveryVampireEyesGrow.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -4861,7 +4864,6 @@ AmazonArmor.esp
 AmbrosiaFashions.esp
   IF CHECKSUM("AmbrosiaFashions.esp", 5625FC4F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Amiella Outfit.esp
-aMidianborn_Skyforge_Weapons.esp
 amk Border Lace Lingerie.esp
 AmuletteDesNeuf.esp
 AmuletOfHomecoming.esp
@@ -14191,6 +14193,8 @@ ENDGROUP: Overrides XYZ
 
 BEGINGROUP: Overrides Late
 
+aMidianborn_Skyforge_Weapons.esp
+// Moved to Overrides Late to fix an issues with the new weapon textures not appearing with Guard Dialog Overhaul installed - William
 LMBalancingDV.esp
 LMBalancingDawnguardDV.esp
 IF FILE("LMBalancingDawnguardDV.esp") MOD:improvedrealistic.esp
@@ -20478,8 +20482,10 @@ BEGINGROUP: Dynamic Plugins
 Automatic Variants.esp
 ASIS-Dependency.esp
 ASIS.esp
+/*
   IF VAR(EN) && IF VAR(SkyReM) WARN: Unmark Automatic Perks and Automatic Spells flags in ASIS patch options. Or you will have bugs and CTDs in game when using SkyRe and ASIS.
     IF VAR(RU) && IF VAR(SkyReM) WARN: Отключите флажки Automatic Perks и Automatic Spells в опциях патча. Если этого не сделать, то будут серьезные проблемы с АИ, при использовании SkyRe и ASIS (патч наделит неписей и мобов перками и заклинаниями, приводящими к периодическому замораживанию неписей, а также вылетам на рабочий стол).
+Message does not appear to be relevant with newer SkyRe versions. - William */
 Automatic Spells.esp
 Automatic Variations.esp
 Customized AI.esp
