@@ -5213,19 +5213,35 @@ CircletOfIllumination.esp
 Cleric Armours - Credo.esp
 ClericCraftable.esp
 Cloaks.esp
-  TAG: {{BASH: Relev}}
+  IF FILE("Cloaks - No Imperial.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) SAY: Use only one cloaks*esp
+    IF FILE("Cloaks - No Imperial.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
   IF CHECKSUM("Cloaks.esp", 35C871DE) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("Cloaks.esp", D8F94C02) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Cloaks - No Imperial.esp
-  IF FILE("Cloaks.esp") && IF VAR(EN) SAY: Use only one cloaks*esp
-    IF FILE("Cloaks.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
+  IF FILE("Cloaks.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) SAY: Use only one cloaks*esp
+    IF FILE("Cloaks.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
   IF CHECKSUM("Cloaks - No Imperial.esp", D5733582) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Cloaks - No Imperial.esp", 1C6298CE) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Cloaks - Player Only.esp
   IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial.esp") && IF VAR(EN) SAY: Use only one cloaks*esp
     IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
   IF CHECKSUM("Cloaks - Player Only.esp", 317B2066) DIRTY: 50 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Cloaks - Player Only.esp", 2453C2E4) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Cloaks - Dawnguard.esp
-  TAG: {{BASH: Relev}}
+  IF FILE("Cloaks - No Imperial - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(EN) SAY: Use only one cloaks*Dawnguard.esp
+    IF FILE("Cloaks - No Imperial - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Cloaks - No Imperial - Dawnguard.esp
+  IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(EN) SAY: Use only one cloaks*Dawnguard.esp
+    IF FILE("Cloaks.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Cloaks - Player Only - Dawnguard.esp
+  IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - No Imperial - Dawnguard.esp") && IF VAR(EN) SAY: Use only one cloaks*Dawnguard.esp
+    IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial - Dawnguard.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 REGEX: Lorecraft - Cloaks(\d{1,3})( No Imperial| PlayerOnly)?\.esp
   TAG: {{BASH: Relev}}
   IF VAR(EN) SAY: Use only one Lorecraft - Cloaks
@@ -5236,6 +5252,8 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
     IF VAR(RU) SAY: Обновите до новой версии Cloaks 09
 1nivWICCloaks.esp
   TAG: {{BASH: Relev}}
+  IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(EN) WARN: Use only one WICCloaks esp.
+     IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
   IF VAR(EN) && IF FILE("Cloaks.esp") && IFNOT FILE("1nivWICSkyCloaksPatch.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
     IF VAR(RU) && IF FILE("Cloaks.esp") && IFNOT FILE("1nivWICSkyCloaksPatch.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
   IF VAR(EN) && IF FILE("Cloaks - No Imperial.esp") && IFNOT FILE("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
@@ -5244,15 +5262,33 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
   IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(EN) WARN: Use only one WICCloaks esp.
      IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
 1nivWICCloaksNoGuards.esp
-  IF VAR(EN) && IF FILE("1nivWICCloaks.esp") WARN: Use only one WICCloaks esp.
-    IF VAR(RU) && IF FILE("1nivWICCloaks.esp") WARN: Используйте только один WICCloaks esp.
+  TAG: {{BASH: Relev}}
+  IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaks.esp") && IF VAR(EN) WARN: Use only one WICCloaks esp.
+     IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaks.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
   IF VAR(EN) && IF REGEX("Cloaks( - No Imperial)?\.esp") INC: Cloaks of skyrim (even with compatibility patch). To fix this use another WICCloaks esp or uninstall cloaks of skyrim.
     IF VAR(RU) && IF REGEX("Cloaks( - No Imperial)?\.esp") INC: Cloaks of skyrim (даже с патчем совместимости). Для исправления этого используйте другой WICCloaks esp или удалите cloaks of skyrim.
 1nivWICSkyCloaksPatch.esp
-  TAG: {{BASH: Relev}}
+  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IF CHECKSUM("1nivWICSkyCloaksPatch.esp", 2A8CAD17) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 1nivWICSkyCloaksPatch-No Imp.esp
+  IFNOT ACTIVE("Cloaks - No Imperial.esp") && IF VAR(EN) ERROR: Cloaks - No Imperial.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Cloaks - No Imperial.esp") && IF VAR(RU) ERROR: Cloaks - No Imperial.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IF FILE("1nivWICSkyCloaksPatch.esp") INC: 1nivWICSkyCloaksPatch esp
+1nivWICSkyCloaksPatch-NoGuards.esp
+  IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("1nivWICSkyCloaksPatch-NoGuards.esp") && IF VAR(EN) ERROR: 1nivWICSkyCloaksPatch-NoGuards.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("1nivWICSkyCloaksPatch-NoGuards.esp") && IF VAR(RU) ERROR: 1nivWICSkyCloaksPatch-NoGuards.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+1nivWICSkyCloaksPatch-No ImpGuards.esp Checksum: F3F63568
+  IFNOT ACTIVE("Cloaks - No Imperial.esp") && IF VAR(EN) ERROR: Cloaks - No Imperial.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Cloaks - No Imperial.esp") && IF VAR(RU) ERROR: Cloaks - No Imperial.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("1nivWICSkyCloaksPatch-NoGuards.esp") && IF VAR(EN) ERROR: 1nivWICSkyCloaksPatch-NoGuards.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("1nivWICSkyCloaksPatch-NoGuards.esp") && IF VAR(RU) ERROR: 1nivWICSkyCloaksPatch-NoGuards.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 1nivWICCloaksLorecraft.esp
 1nivWICCloaksCRAFTLorecraft.esp
 cloakplus.esp
