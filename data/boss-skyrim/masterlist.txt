@@ -783,6 +783,7 @@ ZZZ_Stenvar_Replacer_THAIDEN.esm
 Bandit Raid.esp
   IF VAR(EN) SAY: This is actually an esm released as an esp file.
     IF VAR(RU) SAY: На самом деле это esm-файл, выпущенный как esp.
+Skyrim Project Optimization.esp
 Skyrim Project Optimization - Full Version.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -4701,6 +4702,14 @@ Stop followers unsheathing.esp
 REGEX: TimedAutoSave(\d\d)?\.esp
 Troy1010_GameSettings_ImprovedCombatRegen 1.0.0.esp
 towAutoFP.esp
+Uncle Sheo does JaySus.esp
+  IFNOT ACTIVE("JSwords.esm") && IF VAR(EN) ERROR: JSwords.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("JSwords.esm") && IF VAR(RU) ERROR: JSwords.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+Uncle Sheo does JaySuS NO TITLE.esp
+  IFNOT ACTIVE("JSwords.esm") && IF VAR(EN) ERROR: JSwords.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("JSwords.esm") && IF VAR(RU) ERROR: JSwords.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF VAR(EN) && IF FILE("Uncle Sheo does JaySus.esp") && IF FILE("Uncle Sheo does JaySuS NO TITLE.esp") SAY: Use only one Uncle Sheo does JaySuS esp
+    IF VAR(RU) && IF FILE("Uncle Sheo does JaySus.esp") && IF FILE("Uncle Sheo does JaySuS NO TITLE.esp") SAY: Используйте только один Uncle Sheo does JaySuS esp
 VanillaUsesCustom.esp
   IF VAR(EN) SAY: Obsolete.  Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -10512,6 +10521,10 @@ KatixasBeerBrewery.esp
     IF CHECKSUM("KatixasBeerBrewery.esp", F7327160) || IF CHECKSUM("KatixasBeerBrewery.esp", 6D656E96) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   IF CHECKSUM("KatixasBeerBrewery.esp", 331EDC48) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 KatixasCiderhouse.esp
+KingdomOfForsworn.esp
+  IF CHECKSUM("KingdomOfForsworn.esp", 7D205F1E) DIRTY: 83 ITM, 55 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) WARN: This file contains 6 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 kittyehdogarmory.esp
   IF CHECKSUM("kittyehdogarmory.esp", E5628EB6) DIRTY: 0 ITM, 137 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 KohdiRoadsideRuins.esp
@@ -13407,6 +13420,7 @@ mjhReducedGoldRewards.esp
 MODdisguises.esp
 moon_earthwmars_masser.esp
 more ai processing.esp
+MoreArrows.esp
 More Diverse Enchanting Options.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, "http://skyrim.nexusmods.com/mods/25802/ Way of the Spellblade".
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/25802/ Way of the Spellblade".
@@ -18421,6 +18435,7 @@ Annael.esp
 Annekke.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
   IF CHECKSUM("Annekke.esp", D2E8A173) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Annoying Navi.esp
 REGEX: AnotherFollowerMod_.+\.esp
 Anruin.esp
 Anruin - Faendal Replacer.esp
