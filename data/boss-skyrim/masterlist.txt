@@ -454,7 +454,8 @@ JSwordsDV.esm
 
 // esms k
 Ket_ARMONIZER_v2.esm
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 kuerteeInventoryAndWeight.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -1393,7 +1394,8 @@ VampiresHoodFix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
 vampirelorddrainlifefix.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
     IF FILE("Unofficial Dawnguard Patch.esp") WARN: Delete. Already included in 'Unofficial Dawnguard Patch.esp'
 Vampire Orcs Welcome in Strongholds.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
@@ -2928,7 +2930,8 @@ DamageEnchantBonus.esp
 DamageEnchantBonus20.esp
 DamageEnchantBonus20v2.esp
 dawnguard craftable armor and weapons.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Dawnguard Crafting Items by Variooska v3.0.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -3311,11 +3314,13 @@ hq_skyrimmap.esp
 HjerimChests.esp
 High Level Enemies.esp
 High Level Enemies - Dawnguard.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF VAR(EN) && IFNOT ACTIVE("High Level Enemies.esp") WARN: High Level Enemies.esp must be active for this file to work properly.
     IF VAR(RU) && IFNOT ACTIVE("High Level Enemies.esp") WARN: High Level Enemies.esp должен быть активирован, для корректной работы.
 High Level Enemies - Dragonborn.esp
-  IFNOT VAR(Dragonborn) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dragonborn.esm (Official Bethesda DLC)
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 High Level Enemies - Hardcore.esp
 High Level Enemies - Increased Max Resists.esp
 High Level Enemies - Raised Ability Caps.esp
@@ -5332,7 +5337,8 @@ craftable bloodpotion.esp
 craftableboundweapons.esp
   IF CHECKSUM("craftableboundweapons.esp", 01C2FAE4) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 craftable crossbows and bolts.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Craftable Dragon Priest Masks.esp
 Craftable Ebony Mail and Blade.esp
 REGEX: craftable gold coins \d?.+\.esp
@@ -5611,7 +5617,8 @@ Lorecraft - Dragonbone Weapons Complete.esp
 Lorecraft - Dragon Bone Weapons.esp
   IFNOT FILE("LorecraftESM.esm") REQ: "http://skyrim.nexusmods.com/mods/9959 Lorecraft" 4.05b+
 dragonborndagger.esp
-  IFNOT VAR(Dawnguard) ERROR: Skyrim will CTD on loading without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 dragonborngarb.esp
 Dragonborn Armory.esp
   IF CHECKSUM("Dragonborn Armory.esp", D0B8F0E3) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -5954,10 +5961,12 @@ getoverherebow.esp
 Ghost Rider.esp
 ghostlier ghostblade.esp
 Ghosu - Project Flintlock.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Ghosu - Project Flintlock.esp", 0EE1910E) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Ghosu - Project Flintlock - Ammo Addon.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Ghosu - Weapon Pack 1.esp
 Giants hammertime.esp
 Gifted Armor.esp
@@ -7722,7 +7731,8 @@ voidarmor.esp
 voidcraft_jewelry.esp
 Vorpal.esp
 VRHood.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 ENDGROUP: Items V
 
 BEGINGROUP: Items W
@@ -7986,26 +7996,34 @@ BEGINGROUP: Overhauls
 BEGINGROUP: General Overhauls
 ASIS-Encounter Zones.esp
 REGEX: Better Sorting by eclips3 - Ingredients .+\.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 	IF ACTIVE("Better Sorting by eclips3 - Ingredients (Weightless).esp") || IF ACTIVE("Better Sorting by eclips3 - Ingredients (Vanilla Weight).esp") || IF ACTIVE("Better Sorting by eclips3 - Ingredients (Light Weight).esp") SAY: Use only 1 Better Sorting by eclips3 - Ingredients .esp file
 REGEX: Better Sorting by eclips3 - Soul Gems .+\.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
     IF ACTIVE("Better Sorting by eclips3 - Soul Gems (Named).esp") && IF ACTIVE("Better Sorting by eclips3 - Soul Gems (Numbered).esp") SAY: Use only 1 Better Sorting by eclips3 - Soul Gem .esp file
 REGEX: Better Sorting by eclips3 - Books .+\.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
     IF ACTIVE("Better Sorting by eclips3 - Books (Before).esp") && IF ACTIVE("Better Sorting by eclips3 - Books (After).esp") SAY: Use only 1 Better Sorting by eclips3 - Books .esp file
 REGEX: Better Sorting by eclips3 - Food .+\.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
     IF ACTIVE("Better Sorting by eclips3 - Food (Weightless).esp") || IF ACTIVE("Better Sorting by eclips3 - Food (Vanilla Weight).esp") || IF ACTIVE("Better Sorting by eclips3 - Food (Light Weight).esp") SAY: Use only 1 Better Sorting by eclips3 - Food .esp file
 REGEX: Better Sorting by eclips3 - Potions .+\.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
     IF ACTIVE("Better Sorting by eclips3 - Potions (Weightless).esp") || IF ACTIVE("Better Sorting by eclips3 - Potions (Vanilla Weight).esp") || IF ACTIVE("Better Sorting by eclips3 - Potions (Light Weight).esp") SAY: Use only 1 Better Sorting by eclips3 - Potions .esp file
 Better Sorting by eclips3 - Spells.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Better Sorting by eclips3 - Misc.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Better Sorting by eclips3 - Ammo.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 REGEX: Smithing Perks Overhaul( - Balanced)?\.esp
   IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Smithing Perks Overhaul.esp", 92158BE3) && IFNOT CHECKSUM("Smithing Perks Overhaul - Balanced.esp",  80AAE7FF) SAY: Does not contain unexpected (or out of order) records or TESVSnip truncation issues as found in other mods by various authors.  However, a newer esp fixed and cleaned with TES5Edit can be obtained here that may provide added stability. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
   IF FILE("PerkUP-Smithing.esp") INC: PerkUP-Smithing.esp
@@ -9229,7 +9247,8 @@ Another Breezehome Basement.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии - expanded basement.esp
 AnisesCabin(GS).esp
 anti-vampnocide.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 arbitrary faction additions - forsworn.esp
 ArbitraryFA - Forsworn.esp
 archaeologistguild.esp
@@ -10798,7 +10817,8 @@ Nordricks Grave.esp
 NoMoreAlter.esp
   // IF CHECKSUM("Inns and Taverns.esp", C43DB4D5) DIRTY: 116 ITM, 107 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 nomorecobwebsfortdawnguard.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
     IF CHECKSUM("nomorecobwebsfortdawnguard.esp.esp", 3081AFF2) DIRTY: 0 ITM, 91 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Northern Bathhouses.esp
   IF CHECKSUM("Northern Bathhouses.esp", FBE79F4F) DIRTY: 96 ITM, 12 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -11043,7 +11063,8 @@ riverwoodpicnicarea.esp
 robbersroost.esp
 ROEBETA.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
-  IFNOT VAR(Dawnguard) ERROR: Skyrim will CTD without Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("ROEBETA.esp", 8880D3D2) DIRTY: 62 ITM, 10 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
