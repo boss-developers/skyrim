@@ -659,7 +659,7 @@ Sirenia.esm
 Skyrim Dark.esm
 Skyrim Immersive Creatures.esm
   TAG: {{BASH: Delev, Relev}}
-    // Note that users of versions below 5.1.1 should also include the Relev tag. Added to tags(no problems with it).
+  // Note that users of versions below 5.1.1 should also include the Relev tag. Added to tags(no problems with it).
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 Skyrim_Realism.esm
@@ -2035,18 +2035,21 @@ SoS - The Dungeons.esp
   IF VAR(EN) WARN: The Sounds of Skyrim collection have been causing a lot of bugs and corrupting saves, even when removed and caused stuttering.
     IF VAR(RU) WARN: В Sounds of Skyrim найден серьёзный баг, приводящий к "раздуванию" файлов сохранений. Рекомендуется отключить все модули мода и удалить все их файлы.
 SoS - The Wilds.esp
-    // Must be removed after fixing of bugs.
+  // Must be removed after fixing of bugs.
   IF VAR(EN) WARN: The Sounds of Skyrim collection have been causing a lot of bugs and corrupting saves, even when removed and caused stuttering.
     IF VAR(RU) WARN: В Sounds of Skyrim найден серьёзный баг, приводящий к "раздуванию" файлов сохранений. Рекомендуется отключить все модули мода и удалить все их файлы.
 SoS - Civilization.esp
-    // Must be removed after fixing of bugs.
+  // Must be removed after fixing of bugs.
   IF VAR(EN) WARN: The Sounds of Skyrim collection have been causing a lot of bugs and corrupting saves, even when removed and caused stuttering.
     IF VAR(RU) WARN: В Sounds of Skyrim найден серьёзный баг, приводящий к "раздуванию" файлов сохранений. Рекомендуется отключить все модули мода и удалить все их файлы.
-    // Must be removed after fixing of bugs.
+  // Must be removed after fixing of bugs.
 SoundPropagationOverhaul.esp
   IF CHECKSUM("SoundPropagationOverhaul.esp", 3363BA8F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+SoS - The Dungeons-PatchSPO.esp
+SoS - The Wilds-PatchSPO.esp
+SoS - Civilization-PatchSPO.esp
 FootstepsSoundsOverhaul.esp
-	//As per author's instructions to sort after SPO.
+  //As per author's instructions to sort after SPO.
 the real fus ro dah.esp
 Thundering Shouts.esp
 zeldaaudio.esp
@@ -2065,9 +2068,11 @@ better_torches_brighter_torchlight.esp
     IF FILE("better_torches.esp") && IF VAR(RU) WARN: Используйте любой или better_torches.esp или better_torches_brighter_torchlight.esp, не обa.
 Blackout_Skyrim.esp
   IF CHECKSUM("Blackout_Skyrim.esp", 3A1DA448) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  SAY: This is an ENB mod.  Be sure you have the correct ENB setup installed.
+  IF VAR(EN) SAY: This is an ENB mod.  Be sure you have the correct ENB setup installed.
+    IF VAR(RU) SAY: Это ENB-мод.  Убедитесь, что у вас установлена корректная версия ENB.
 Blackout_Dawnguard.esp
-  SAY: This is an ENB mod.  Be sure you have the correct ENB setup installed.
+  IF VAR(EN) SAY: This is an ENB mod.  Be sure you have the correct ENB setup installed.
+    IF VAR(RU) SAY: Это ENB-мод.  Убедитесь, что у вас установлена корректная версия ENB.
 Bright Lights.esp
 CityLights.esp
 CLARALUX - More and Brighter Lights.esp
@@ -2374,7 +2379,7 @@ SI_VanillaPrizes.esp
     IF VAR(RU) && IF FILE("SI_PrizesDoubled.esp") ERROR: Используйте любой, или SI_PrizesDoubled.esp или SI_VanillaPrizes.esp, не оба.
 SIRW.esp
   TAG: {{BASH: Delev, Relev}}
-    // not tested
+  // not tested
 SIMIIPatch.esp
 UUSkyPP Dragon Bridge Horse Marker Fix.esp
   DIRTY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
@@ -2952,7 +2957,7 @@ REGEX: Decorator Assistant.+\.esp
     IF VAR(RU) SAY: Используйте только один Decorator Assistant*.esp
 DecorativeTrophies.esp
   TAG: {{BASH: Relev}}
-    // not sure about 'Relev' tag, maybe need 'Invent' tag(after it comp. in WB) need to check
+  // not sure about 'Relev' tag, maybe need 'Invent' tag(after it comp. in WB) need to check
 Daedric chain.esp
 DaedricCrownCraftable.esp
 Deeper Snow.esp
@@ -3908,7 +3913,7 @@ ProtectYourself.esp
 psychosteve_stone of barenziah.esp
 REGEX: Prides of Skyrim( weak)?\.esp
   TAG: {{BASH: Delev, Relev}}
-    // not tested
+  // not tested
 Pupetteer Master.esp
 ENDGROUP: Base P
 
@@ -3980,7 +3985,7 @@ Real Wildlife.esp
   TAG: {{BASH: Relev}}
 REGEX: SIRWPat?ch\.esp
   TAG: {{BASH: Delev, Relev}}
-    // not tested
+  // not tested
 recipeammoarrows.esp
 recipeingots.esp
 RecyclingMod.esp
@@ -4231,7 +4236,7 @@ Smithing Tailoring.esp
 /* from Steam Workshop */
 smithingextended.esp
   TAG: {{BASH: Delev, Relev}}
-    // tag not tested
+  // tag not tested
 smithingsupplies.esp
 SmithingTomes.esp
 solitude smelter.esp
@@ -4251,7 +4256,7 @@ REGEX: SPTFemaleGuards(InPlace)?\.esp
     IF VAR(RU) SAY:  Устарело. Обновите до SPTDiverseGuards
 SPTDiverseGuardsSkyrim.esp
   TAG: {{BASH: Delev}}
-    // not tested
+  // not tested
 srmcompanioncart.esp
 StaRe.esp
   IF VAR(EN) SAY: Obsolete. Update to 'SkyRe_StandingStones.esp'
@@ -6138,7 +6143,7 @@ IFNOT VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
   IFNOT ACTIVE("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: SPIKE.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Deactivate}} and remove [Relev]
-    // not tested
+  // not tested
 IFNOT VAR(BFNIAP) MOD: Lorecraft - Immersive Armors.esp
 IFNOT VAR(BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
@@ -7014,7 +7019,7 @@ PrvtIChrysamere.esp
 PrvtI_HeavyArmory.esp
   TAG: {{BASH: Relev}}
   IF VAR(SkyReM) INC: SkyRe_Main.esp
-    // included
+  // included
 PrvtI_HeavyArmory_DG_Addon.esp
   TAG: {{BASH: Delev, Relev}}
 prvti_heavyarmory_dawnguard.esp
@@ -7804,7 +7809,7 @@ WeaponsOf3E - No Leveled Lists.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest Weapons of the Third Era MoS edition
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   TAG: {{BASH: Delev, Relev}}
-    // for versions <1.5
+  // for versions <1.5
   IF VAR(EN) && IF VAR(SkyReM) WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'
     IF VAR(RU) && IF VAR(SkyReM) WARN: Удалите. WeaponsOf3E уже включен в 'SkyRe_Main.esp'
   IF REGEX("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp") INC: WeaponsOf3E*.esp
@@ -8408,10 +8413,10 @@ REGEX: DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp
 DeadlyDragons_Addon.esp
 DeadlyDragonsX.esp
   TAG: {{BASH: Delev, Relev}}
-    // not tested
+  // not tested
 DeadlyDragonsCraft.esp
   TAG: {{BASH: Delev, Relev}}
-    // not tested
+  // not tested
 DeadlyDragonsSpells.esp
 MasterOfMagic.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -8419,14 +8424,14 @@ MasterOfMagic.esp
 // Is a beta (now old) version of DeadlyDragonsSpells.
 DeadlyDragonsCreature.esp
   TAG: {{BASH: Delev, Relev}}
-    // not tested
+  // not tested
 DeadlyDragonsEF.esp
 REGEX: DeadlyDragonsPISE( DV)?\.esp
   TAG: {{BASH: Delev, Relev}}
-    // not tested
+  // not tested
 REGEX: DeadlyDragonsHardPISE( DV)?\.esp
   TAG: {{BASH: Delev, Relev}}
-    // not tested
+  // not tested
 REGEX: DeadlyDragonsSpawn.*\.esp
 IFNOT FILE("DeadlyDiversifiedDragonsPatch.esp") MOD: DragonsDiversified.esp
 DeadlyDiversifiedDragonsPatch.esp
@@ -8644,7 +8649,7 @@ BEGINGROUP: SkyRe
 /* SkyRe Section */
 SkyRe_Main.esp
   TAG: {{BASH: Relev, Delev}}
-    //TAG: {{BASH: Delev, Names, Relev}}
+  //TAG: {{BASH: Delev, Names, Relev}}
   IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
   IFNOT VAR(Dawnguard) REQ: Dawnguard DLC (SkyRe 0.99.17+)
   IF FILE("ACE Crafting.esp") INC: ACE Crafting.esp
@@ -8675,7 +8680,7 @@ SkyRe_Main.esp
   SAY:   fMagnetismLookingMult=0.0
 SkyRe_Main_NoDawnguard.esp
   TAG: {{BASH: Relev, Delev}}
-    //TAG: {{BASH: Delev, Names, Relev}}
+  //TAG: {{BASH: Delev, Names, Relev}}
   IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
   IF VAR(Dawnguard) INC: Dawnguard DLC
   IF FILE("SkyRe_Main.esp") INC: SkyRe_Main.esp
@@ -9410,8 +9415,10 @@ BBLS_PatioFurniture.esp
   //reference for placements in the above BBLS, SW set- SW's author: http://skyrim.nexusmods.com/articles/907/
 BBLSGeneralStoresbyNatilde.esp
   IF CHECKSUM("BBLSGeneralStoresbyNatilde.esp", 0578E287) DIRTY: 0 ITM, 22 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IFNOT VAR(GS) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without the "http://skyrim.nexusmods.com/mods/18340 General Stores" mod.
-  IFNOT VAR(BBLS) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if this file is active without the "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite" mod.
+  IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/18340 General Stores" mod.
+    IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/18340 General Stores" mod.
+  IFNOT VAR(BBLS) && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite" mod.
+    IFNOT VAR(BBLS) && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite" mod.
 BeardedClam.esp
   IF CHECKSUM("BeardedClam.esp", A8D641D3) DIRTY: 144 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
@@ -10143,7 +10150,7 @@ ElysiumEstate.esp
   IF CHECKSUM("ElysiumEstate.esp", F0182534) DIRTY: 3 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("ElysiumEstate.esp", F0182534) && IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF CHECKSUM("ElysiumEstate.esp", F0182534) && IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-    //author fixed nav 2.0+, so updated nav warning to checksum-dependent on a prior version
+  //author fixed nav 2.0+, so updated nav warning to checksum-dependent on a prior version
 EK_UnusualApplications.esp
 EkkiiBreeze.esp
 enchantersbreezehome.esp
@@ -11345,7 +11352,7 @@ SpouseStoreMod.esp
 SSQ.esp
 Stag'sRest.esp
   IF FILE("Cabin in the woods.esp") INC: Cabin in the woods.esp
-    // Same location
+  // Same location
 Star-NorthernFrostBrewery.esp
   IF VAR(EN) WARN: This file contains 9 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 9 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
@@ -12258,7 +12265,7 @@ armored-horses.esp
 ArmoredThalmorRobes.esp
 armorLegion.esp
   TAG: {{BASH: Delev, Relev}}
-    // not tested
+  // not tested
 Arrows Progressive Damage (BS and CCO).esp
   IF VAR(EN) WARN: Obsolete. Update to 'AT - Progressive Damage (BS and CCO).esp'
     IF VAR(RU) WARN: Устарело. Обновите до 'AT - Progressive Damage (BS and CCO).esp'
@@ -13272,10 +13279,10 @@ lesssnowywinterhold.esp
 Lethal Archery.esp
 Leveled Smithing.esp
   TAG: {{BASH: Delev, Relev}}
-    // not tested
+  // not tested
 levelingmerchantswallets.esp
   TAG: {{BASH: Delev, Relev}}
-    // not tested
+  // not tested
 LFox No Standing Stone Power Cooldown.esp
   IF VAR(EN) WARN: This file was released before the CK (07 Feb. 2012) and is not recommended for use and should be removed.
     IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
@@ -13568,7 +13575,7 @@ NoAutoHealthRegen.esp
 NoAutoSkillBooks.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version.
     IF VAR(RU) WARN: Устарело. Обновите до последней версии.
-    // Not sure about this
+  // Not sure about this
 NoAutoSkillBooks(Normal).esp
 NoAutoSkillBooks(Better).esp
   IF VAR(EN) && IF FILE("NoAutoSkillBooks(Normal).esp") WARN: Use only one (Normal) or (Better) version
@@ -13900,7 +13907,7 @@ REGEX: SkyJubs_Invisible_Helmets_HothTrooper44_Plugin_1_(2|3)\.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, hothtrooper44_ArmorCompilation.esp.
 Skyrim_Dragon Update.esp
   TAG: {{BASH: Delev, Relev}}
-    // tags not tested
+  // tags not tested
   IF VAR(EN) INC: Other Dragon override mods, use only one.
     IF VAR(RU) INC: Другие, изменяющие драконов моды, используйте только один.
 skyrim philter of phantom recipe mod.esp
