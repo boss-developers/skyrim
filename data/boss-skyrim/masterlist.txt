@@ -2045,6 +2045,8 @@ SoS - Civilization.esp
     // Must be removed after fixing of bugs.
 SoundPropagationOverhaul.esp
   IF CHECKSUM("SoundPropagationOverhaul.esp", 3363BA8F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+FootstepsSoundsOverhaul.esp
+	//As per author's instructions to sort after SPO.
 the real fus ro dah.esp
 Thundering Shouts.esp
 zeldaaudio.esp
@@ -8949,7 +8951,7 @@ SkyRe_Plugin_WarchiefArmor_4.esp
 SkyRe_Plugin_Witcher 2 Style Dawnguard Armour.esp
 SkyRe  - Jojjo's Dreadknight Patch.esp
   IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp") && IF VAR(EN) WARN: Use only one Skyre Dreadknight
-    IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp") && IF VAR(RU) WARN: Используйте только один SkyRe Dreadknight
+    IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99}?\.esp") && IF VAR(RU) WARN: Используйте только один SkyRe Dreadknight
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Dread Knight Weapon Set.esp
@@ -20558,7 +20560,7 @@ Skyrim Performance MOD.esp
 Skyrim Performance MOD 5min.esp
   IF VAR(EN) && IF FILE("Skyrim Performance MOD.esp") WARN: Use only one Skyrim performance Mod.esp
     IF VAR(RU) && IF FILE("Skyrim Performance MOD.esp") WARN: Используйте только один Skyrim performance Mod.esp
-REGEX: World_Map_Height_Pitch_Tweak.+\.esp
+REGEX: World_Map_Height_Pitch_Tweak.*\.esp
   IF VERSION("TES5", "1.8.151.0", <) REQ: Skyrim 1.8.151+
   IF VAR(EN) SAY: Use only one World_Map_Height_Pitch_Tweak esp.
     IF VAR(RU) SAY: Используйте только один World_Map_Height_Pitch_Tweak esp.
@@ -20613,7 +20615,6 @@ IF REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
 LLI.esp
   //Lootification dynamic recommended to go above Dual Sheath dynamic
 Dual Sheath Redux Patch.esp
-EveryBody's Different.esp
 Perk Patch.esp
 RBS.esp
 ReProccer.esp
