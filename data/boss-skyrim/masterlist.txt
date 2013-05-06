@@ -2534,6 +2534,9 @@ REGEX: Arrows of Magicka.*\.esp
   IF CHECKSUM("Arrows of Magicka.esp", 449C7BDC) DIRTY: 2 ITM records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF VAR(EN) SAY: Use only one Arrows of Magicka*.esp
     IF VAR(RU) SAY: Используйте только один Arrows of Magicka*.esp
+AsharaMerchants.esp
+  IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
+  SAY: Certain version(s) of this mod require active Dawnguard, Hearthfire and/or Dragonborn. See "http://skyrim.nexusmods.com/mods/28996 author's instructions."
 AThievesTreasure.esp
 Aurora - The Doomstone Package.esp
 Auto Unequip Helmet.esp
@@ -4978,6 +4981,7 @@ AsharaDimonizedDress.esp
 AsharaRomanticOutfit.esp
 AsharaPartyOutfit.esp
 AsharaPrinceOfTheWoods.esp
+AsharaPrinceOfTheWoods DV.esp
 AelididPOTW.esp
 AsharaRadiantRaiment.esp
 AsharaWeddingOutfit.esp
@@ -15375,6 +15379,10 @@ ArcaneFist - Nerf Version.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 Artillery_DFA.esp
+AsharaConjureDurnehviir.esp
+  IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 REGEX: ASX( - |_)Spells\.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
 Avada Kedavra.esp
@@ -17973,6 +17981,10 @@ If someone feels it could be placed better, feel free to move it */
 
 ArnoldPreset.esp
 AsharaSkyrimCharacterPresetsReplacer.esp
+AsharaTemptressPresets.esp
+  IFNOT ACTIVE("TemptressVixen.esp") && IF VAR(EN) ERROR: TemptressVixen.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("TemptressVixen.esp") && IF VAR(RU) ERROR: TemptressVixen.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
 Children of Skyrim - NORD PRESETS 1-10 v1.1.esp
 Children of Skyrim - NORD PRESETS 11-20.esp
 Children of Skyrim - NORD PRESETS.esp
@@ -18470,8 +18482,10 @@ Anruin - Faendal Replacer.esp
 REGEX: aranea1.?\.esp
 Agrenor Replacer.esp
 Arro.esp
+AsharaErinFollower.esp
+  IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
 AsharaFollowerFaces.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
 AshenFollowers.esp
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
