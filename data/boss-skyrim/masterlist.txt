@@ -14707,13 +14707,13 @@ RRRL-ETaC-Villages-Complete-Patch.esp
 MHYH_RentRoomFollower.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   //test placement- a My Home is Your Home optional that looks independent from its "parent"
-
 SkyrimSewers.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF CHECKSUM("SkyrimSewers.esp", 6C30E0BA) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-
 IF FILE("Open Cities Skyrim.esp") MOD: Atlas Map Markers.esp
-// Author recommends loading above Open Cities Skyrim if installed.
+  // Author recommends loading above Open Cities Skyrim if installed.
+Atlas Map Markers OCS.esp
+  //a possible OCS-specific renaming of above file? (no further info available)
 
 // Open Cities Skyrim group needs to be the last one in this section.
 Open Cities Skyrim.esp
@@ -20142,9 +20142,15 @@ arvakskull-marker.esp
 IFNOT FILE("Open Cities Skyrim.esp") MOD: Atlas Map Markers.esp
 Atlas Blackreach.esp
 Atlas Dawnguard.esp
-  IFNOT VAR(Dawnguard) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Dawnguard.esm (Official Bethesda DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Atlas Hearthfire.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
 Atlas Dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+Atlas Compass Tweaks.esp
 Barenziah.esp
 10466_BarenziahQuestM.esp
 BarenziahQuestMarkers.esp
