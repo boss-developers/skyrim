@@ -11654,6 +11654,19 @@ BBLuxurySuiteUndergroundBathhouse.esp
   IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
   //superseded by BBLS/UB merge, below?
+//following two merges must go after all BBLS files, and before all UB/cell files; UB/cell set follows
+ub_bbls_merge.esp
+  IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("ub_bbls_merge.esp", A7948BE9) DIRTY: 11 ITM, 24 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+ub_bbls_merge_classier.esp
+  IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("ub_bbls_merge_classier.esp", 16E811FF) DIRTY: 11 ITM, 24 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ub_invite_any_npc.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
@@ -11667,19 +11680,6 @@ ub_apachii_hair.esp
     IFNOT ACTIVE("ApachiiHairFemales.esm") && IF VAR(RU) ERROR: ApachiiHairFemales.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-//following two merges must go after all BBLS files, and before all UB cell files; cell set follows
-ub_bbls_merge.esp
-  IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IF CHECKSUM("ub_bbls_merge.esp", A7948BE9) DIRTY: 11 ITM, 24 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-ub_bbls_merge_classier.esp
-  IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("BBLuxurySuite.esm") && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IF CHECKSUM("ub_bbls_merge_classier.esp", 16E811FF) DIRTY: 11 ITM, 24 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ub_cell_armory.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
