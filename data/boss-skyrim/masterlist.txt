@@ -15349,6 +15349,12 @@ ToL_Core_by_Brevi.esp
 ToL_SKSE_by_Brevi.esp
   IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
 Brevi_MoonlightTales.esp
+BetterQuestObjectives-MoonlightPatch.esp
+  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Even Better Quest Objectives
+    IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Even Better Quest Objectives
+  IFNOT File("Brevi_MoonlightTales.esp") && IF VAR(EN) ERROR: Brevi_MoonlightTales.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Moonlight Tales
+    IFNOT FILE("Brevi_MoonlightTales.esp") && IF VAR(RU) ERROR: Brevi_MoonlightTales.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Moonlight Tales
+  IF File("BetterQuestObjectives-MoonlightMasteryPatch.esp") INC: BetterQuestObjectives-MoonlightMasteryPatch.esp
 Tales_of_Lycanthropy.esp
 TS_BloodOmNomNom.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -15395,6 +15401,13 @@ WerewolfMastery.esp
   IF VAR(Dawnguard) && IF CHECKSUM("WerewolfMastery.esp", 57E4BC0F) ERROR: Use Dawnguard version.
   IFNOT VAR(Dawnguard) && IF CHECKSUM("WerewolfMastery.esp", 73AC0648) ERROR: Use non-Dawnguard version.
   IF CHECKSUM("WerewolfMastery.esp", 73AC0648) || IF CHECKSUM("WerewolfMastery.esp", 57E4BC0F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+BetterQuestObjectives-MoonlightMasteryPatch.esp
+  SAY: This patch is only usable with the Moonlight Tales compatbile version of Werewolf Mastery.
+  IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Even Better Quest Objectives
+    IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Even Better Quest Objectives
+  IFNOT File("WerewolfMastery.esp") && IF VAR(EN) ERROR: WerewolfMastery.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Werewolf Mastery
+    IFNOT FILE("WerewolfMastery.esp") && IF VAR(RU) ERROR: WerewolfMastery.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Werewolf 
+  IF File("BetterQuestObjectives-MoonlightPatch.esp") INC: BetterQuestObjectives-MoonlightPatch.esp
 WerewolfNigtheyeHowl.esp
   IF VAR(EN) SAY: Use only one WerewolfNighteyeHowl.esp
     IF VAR(RU) SAY: Используйте только один WerewolfNighteyeHowl.esp
