@@ -1992,8 +1992,6 @@ REGEX: DFG's Blade & Dagger Sheathe Sounds.*\.esp
 BWS.esp
 Clanking Armor.esp
   IF CHECKSUM("Clanking Armor.esp", 7055B881) DIRTY: 5 ITMs, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-ClimatesOfTamriel-Sound.esp
-  IF CHECKSUM("ClimatesOfTamriel-Sound.esp", 47AF2A0B) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
 CookingSound.esp
 DFG's Blade & Dagger Sheathe Sounds.esp
 DragonHitSoundFix.esp
@@ -14786,6 +14784,28 @@ TQC-OC.esp
   // Thieves Guild Shortcut - Open Cities compatible. Must be loaded after Open Cities.
 ENDGROUP: City Overhauls
 
+BEGINGROUP: Sounds of Skyrim and Sound Propogation Overhaul
+// Moved into a seperate group because mods that place objects can invardly overwite changes from this mod.
+// Also includes Sound Propogation Overhaul, because the author of Sounds of Skyrim recommends that that be loaded
+// after his mod. 
+
+// Main files
+SoS - The Dungeons.esp
+SoS - The Wilds.esp
+SoS - Civilization.esp
+
+// Sound Propogation Overhaul and Footsteps Sounds Overhaul. 
+// Moved here because of Cliffworm's post regarding load order - http://forums.nexusmods.com/index.php?/topic/724563-sounds-of-skyrim-civilization/page-42#entry7997887
+SoundPropagationOverhaul.esp
+  IF CHECKSUM("SoundPropagationOverhaul.esp", 3363BA8F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+FootstepsSoundsOverhaul.esp
+  //As per author's instructions to sort after SPO.
+  
+ClimatesOfTamriel-Sound.esp
+  IF CHECKSUM("ClimatesOfTamriel-Sound.esp", 47AF2A0B) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
+// moved here per recommendations by Sounds of Skyrim author
+ENDGROUP: Sounds of Skyrim and Sound Propogation Overhaul
+
 BEGINGROUP: Image Space and Lighting Changes
 
 BEGINGROUP: IMGS and LIGH Load Late
@@ -14899,22 +14919,8 @@ SaturationBoost.esp
 ENDGROUP: IMGS and LIGH Load Late
 ENDGROUP: Image Space and Lighting Changes
 
-BEGINGROUP: Sounds of Skyrim and Sound Propogation Overhaul
-// Moved into a seperate group because mods that place objects can invardly overwite changes from this mod.
-// Also includes Sound Propogation Overhaul, because the author of Sounds of Skyrim recommends that that be loaded
-// after his mod. 
-
-// Main files
-SoS - The Dungeons.esp
-SoS - The Wilds.esp
-SoS - Civilization.esp
-
-// Sound Propogation Overhaul and Footsteps Sounds Overhaul. 
-// Moved here because of Cliffworm's post regarding load order - http://forums.nexusmods.com/index.php?/topic/724563-sounds-of-skyrim-civilization/page-42#entry7997887
-SoundPropagationOverhaul.esp
-  IF CHECKSUM("SoundPropagationOverhaul.esp", 3363BA8F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-FootstepsSoundsOverhaul.esp
-  //As per author's instructions to sort after SPO.
+BEGINGROUP: Sounds of Skyrim patches
+// All patches for Sounds of Skyrim, per author's suggestion.
 
 // Patches for The Dungeons
 SoS - The Dungeons-PatchCoTHardcore.esp
@@ -14971,7 +14977,7 @@ SoS - Civilization-PatchSPO.esp
     IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
   IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(EN) ERROR: SoundPropagationOverhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoundPropagationOverhaul
     IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(RU) ERROR: SoundPropagationOverhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoundPropagationOverhaul
-ENDGROUP: Sounds of Skyrim and Sound Propogation Overhaul
+ENDGROUP: Sounds of Skyrim patches
 
 BEGINGROUP: Realism
 
