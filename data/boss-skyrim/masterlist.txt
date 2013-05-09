@@ -3268,6 +3268,11 @@ Grind_stuff.esp
 GrrantusHuntingRework.esp
 grumpykevtempering.esp
 GSTH.esp
+Guard Build (HF) 1.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("Guard Build (HF) 1.esp", 3819FB2E) DIRTY: 26 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Guard Build (HF) 1.esp", 374C0A09) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 guardedborders.esp
 GuardianStonesExpanded.esp
   IF CHECKSUM("GuardianStonesExpanded.esp", BDBF79E7) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -4736,7 +4741,9 @@ skyui.esp
 iHUD.esp
   // Must load after SkyUI
 less_intrusive_hud.esp
-  //reportedly "goes with" iHUD
+LessIntrusiveHUD.esp  
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
 DragonSoulConverter.esp
   IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
   IF VERSION("SKSE", "0.1.6.13", <) REQ: "http://skse.silverlock.org SKSE" 1.6.13+.
