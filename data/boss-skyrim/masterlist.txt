@@ -586,6 +586,9 @@ paradise_halls_core.esm
   IF VERSION("SKSE", "0.1.6.8", <) REQ: "http://skse.silverlock.org SKSE" 1.6.8+.
   IFNOT FILE("paradise_halls_base.esm") REQ: paradise_halls_base.esm
 PerkReset.esm
+Perk-Reset-MCM.esm
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
 REGEX: PersonalizedMusic.*\.esm
 phiNoFF.esm
 pinewoodvillage.esm
@@ -5079,6 +5082,7 @@ REGEX: Berserk Black Swordsman Armor( - No Arm)?\.esp
     IF VAR(RU) SAY: Используйте только один Berserk Black Swordsman Armor
 Berserk Greatsword.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+BetterBeginning.esp
 betterbladesgear.esp
   TAG: {{BASH: Relev}}
 Better Bond of Matrimony.esp
@@ -8757,6 +8761,11 @@ SkyRe_Comp.esp
 PerkReset SkyRe Compatibility Patch.esp
   IF VAR(EN) && IF FILE("PerkReset.esp") WARN: Rename your 'PerkReset.esp' to 'PerkReset.esm'.
     IF VAR(RU) && IF FILE("PerkReset.esp") WARN: Переименуйте ваш 'PerkReset.esp' в 'PerkReset.esm'.
+IF FILE("Perk-Reset-MCM.esm") MOD: SkyRE-Patch.esp
+  IFNOT ACTIVE("Perk-Reset-MCM.esm") && IF VAR(EN) ERROR: Perk-Reset-MCM.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Perk-Reset-MCM.esm") && IF VAR(RU) ERROR: Perk-Reset-MCM.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
 SkyRe_CraftingFix.esp
 SkyRe_EncounterZones.esp
 IFNOT REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
@@ -12957,6 +12966,9 @@ FasterNordHeroWeps.esp
     IF CHECKSUM("FasterNordHeroWeps.esp", 4F2396EA) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 FasterSpeeds.esp
 FastTravelFromIndoors.esp
+REGEX: FemaleMannequins(Argonian|Breton|DarkElf|HighElf|Imperial|Kajiit|Nord|Orc|Redguard|WoodElf)\.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
 Filling Food & Restful Sleep.esp
 FierceLydia.esp
 flags of victory.esp
