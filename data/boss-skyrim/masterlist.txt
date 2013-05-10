@@ -4748,7 +4748,7 @@ skyui.esp
 iHUD.esp
   // Must load after SkyUI
 less_intrusive_hud.esp
-LessIntrusiveHUD.esp  
+LessIntrusiveHUD.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
 DragonSoulConverter.esp
@@ -4782,7 +4782,7 @@ towPov.esp
   IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
   IF VERSION("SKSE", "0.1.6.13", <) REQ: "http://skse.silverlock.org SKSE" 1.6.13+.
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.4+
-  
+
 ENDGROUP: MCM Mods
 
 BEGINGROUP: Items
@@ -14821,20 +14821,20 @@ ENDGROUP: City Overhauls
 BEGINGROUP: Sounds of Skyrim and Sound Propogation Overhaul
 // Moved into a seperate group because mods that place objects can invardly overwite changes from this mod.
 // Also includes Sound Propogation Overhaul, because the author of Sounds of Skyrim recommends that that be loaded
-// after his mod. 
+// after his mod.
 
 // Main files
 SoS - The Dungeons.esp
 SoS - The Wilds.esp
 SoS - Civilization.esp
 
-// Sound Propogation Overhaul and Footsteps Sounds Overhaul. 
+// Sound Propogation Overhaul and Footsteps Sounds Overhaul.
 // Moved here because of Cliffworm's post regarding load order - http://forums.nexusmods.com/index.php?/topic/724563-sounds-of-skyrim-civilization/page-42#entry7997887
 SoundPropagationOverhaul.esp
   IF CHECKSUM("SoundPropagationOverhaul.esp", 3363BA8F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 FootstepsSoundsOverhaul.esp
   //As per author's instructions to sort after SPO.
-  
+
 ClimatesOfTamriel-Sound.esp
   IF CHECKSUM("ClimatesOfTamriel-Sound.esp", 47AF2A0B) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
 // moved here per recommendations by Sounds of Skyrim author
@@ -14975,7 +14975,7 @@ SoS - The Dungeons-PatchSPO.esp
     IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
   IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(EN) ERROR: SoundPropagationOverhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoundPropagationOverhaul
     IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(RU) ERROR: SoundPropagationOverhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoundPropagationOverhaul
-	
+
 // Patches for The Wilds
 REGEX: SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?(SoundsWinterEdition)?\.esp
   IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(EN) ERROR: SoS - The Wilds.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Wilds
@@ -15446,7 +15446,7 @@ BetterQuestObjectives-MoonlightMasteryPatch.esp
   IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Even Better Quest Objectives
     IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Even Better Quest Objectives
   IFNOT File("WerewolfMastery.esp") && IF VAR(EN) ERROR: WerewolfMastery.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Werewolf Mastery
-    IFNOT FILE("WerewolfMastery.esp") && IF VAR(RU) ERROR: WerewolfMastery.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Werewolf 
+    IFNOT FILE("WerewolfMastery.esp") && IF VAR(RU) ERROR: WerewolfMastery.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Werewolf
   IF File("BetterQuestObjectives-MoonlightPatch.esp") INC: BetterQuestObjectives-MoonlightPatch.esp
 WerewolfNigtheyeHowl.esp
   IF VAR(EN) SAY: Use only one WerewolfNighteyeHowl.esp
@@ -17771,6 +17771,7 @@ ShakeIt.esp
 Sit Anywhere.esp
 Skyhawk_eat_drink_animation.esp
 SkyrimSpeedsVanilla.esp
+vImmersiveBeds.esp
 
 ENDGROUP: Pose and Animation Mods
 
