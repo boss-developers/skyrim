@@ -387,6 +387,7 @@ Farkasv2.esm
 FluxMOD_ArtifactEffectPerk.esm
 FM - HaafingarHall.esm
   WARN: UNP Clothing Merchants contains too many clothing mods for BOSS to check individually.  Read the readme for details.  Leaving the other mods installed is not recommended.
+FollowerMagic.esm
 ForbiddenRomance.esm
 
 // esms g
@@ -2705,7 +2706,7 @@ ENDGROUP: Base B
 BEGINGROUP: Base C
 
 REGEX: Calendar - (Deutsch|English|Francais|Italiano|Spanish)\.esp
-  IF FILE("ModernDayCalendarNames.esp") || IF FILE("Modern Day Calendar Names_Learn Names.esp") INC: Modern Day Calendar Names
+  IF FILE("ModernDayCalendarNames.esp") || IF FILE("Modern Day Calendar Names_Learn Names.esp") || IF FILE("ModernDayCalenderNames DV.esp") INC: Modern Day Calendar Names
 Calender.esp
 CalienteVanillaArmorTweaks.esp
 CallingCardFence.esp
@@ -3720,8 +3721,9 @@ MLLY - RESET.esp
 mm_AspectOfTheBeastPotion.esp
 mmbedroll1.esp
 ModernDayCalendarNames.esp
+ModernDayCalenderNames DV.esp
 Modern Day Calendar Names_Learn Names.esp
-  IF FILE("ModernDayCalendarNames.esp") INC: ModernDayCalendarNames esp.
+  IF FILE("ModernDayCalendarNames.esp") || IF FILE("ModernDayCalenderNames DV.esp") INC: ModernDayCalendarNames esp.
 MomoDash.esp
 Mononoke.esp
 Monster Mounts Dawnguard.esp
@@ -4395,6 +4397,7 @@ TravellersOfSkyrim - Mercenaries Vanilla.esp
 TravellersOfSkyrim - Merchants Vanilla.esp
   IF FILE("TravellersOfSkyrim - Light.esp") || IF FILE("TravellersOfSkyrim - Vanilla.esp") INC: TravellersOfSkyrim - Vanilla.esp and / or TravellersOfSkyrim - Light.esp
 travelingargonians.esp
+Treasure Anywhere.esp
 treeplanting.esp
 TribalMightHorse.esp
 trueskyrim.esp
@@ -7754,7 +7757,11 @@ urukhelmet.esp
 urukshield.esp
 URW_Spellward.esp
 URW_Enhanced Crossbows Enhanced.esp
-  IFNOT VAR(Dawnguard) REQ: Dawnguard (Official Bethesada DLC)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+URW_Enhanced Crossbows Enhanced - Revamp Comp.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 URW_Control Rod v1.esp
 REGEX: Useful Dragon Priest Masks- (Heavy|Light|Mage)\.esp
 ENDGROUP: Items U
@@ -14176,6 +14183,7 @@ stop-being-a-creepy-stalker-aerin-1-0-pingy.esp
 stronger alduin.esp
 stronger daedric artifacts.esp
   // TAG: {{BASH: Stats}}
+Stronger Dawnbreaker.esp
 strongermagerewards.esp
 stupidlysimplemining.esp
 Spells Cast Light.esp
@@ -18675,6 +18683,9 @@ Annoying Navi.esp
 REGEX: AnotherFollowerMod_.+\.esp
 Anruin.esp
 Anruin - Faendal Replacer.esp
+AoD - Shelyn.esp
+  IFNOT ACTIVE("FollowerMagic.esm") && IF VAR(EN) ERROR: FollowerMagic.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("FollowerMagic.esm") && IF VAR(RU) ERROR: FollowerMagic.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 REGEX: aranea1.?\.esp
 Agrenor Replacer.esp
 Arro.esp
