@@ -482,6 +482,7 @@ LegendarySouls.esm
 LessTint.esm
 LevelersTower.esm
   IF CHECKSUM("LevelersTower.esm", 7AF4D53A) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("LevelersTower.esm", F22B5BE) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 LianVera-v2.1.esm
 LiFE.esm
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body" or "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
@@ -4694,6 +4695,9 @@ Footprints - Ash.esp
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
 horsefp.esp
 IMAGINATOR - Visual Control for Skyrim.esp
+JSwords_Load_Screens.esp
+  IFNOT ACTIVE("JSwords.esm") && IF VAR(EN) ERROR: JSwords.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("JSwords.esm") && IF VAR(RU) ERROR: JSwords.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 JaySUS Improved Loadscreens.esp
 Ket_3DLoadscreens.esp
 Ket_PictureLoadscreens.esp
@@ -6328,7 +6332,7 @@ ISDBlackSting.esp
 IsilGlamdring.esp
 isilNarsil.esp
   IF FILE("SkyRe_Plugin_isilNarsil.esp") TAG: {{BASH: Deactivate}}
-  IF CHECKSUM("isilNarsil.esp", A43571C0) DIRTY: 17 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("isilNarsil.esp", B976F2E0) || IF CHECKSUM("isilNarsil.esp", A43571C0) DIRTY: 17 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Lorecraft - isilNarsil.esp
 Ivory.esp
 Ivory Armor.esp
@@ -10700,12 +10704,18 @@ LC_CastleInvasion.esp
 LetsGetRich.esp
 LevelersTower.esp
   IF CHECKSUM("LevelersTower.esp", 7AF4D53A) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("LevelersTower.esp", CB15135B) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 LevelersTowerRemod.esp
   IF VAR(EN) && IF FILE("LevelersTower.esp") WARN: Use either LevelersTower.esp or LevelersTowerRemod.esp, not both.
     IF VAR(RU) && IF FILE("LevelersTower.esp") WARN: Используйте любой, или LevelersTower.esp или LevelersTowerRemod.esp, не оба.
   IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
   IF CHECKSUM("LevelersTowerRemod.esp", 5F1FCD8C) DIRTY: 10 ITM, 5 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+LevelersShowroom.esp
+  IF CHECKSUM("LevelersShowroom.esp", AD333CC5) && IFNOT ACTIVE("LevelersTower.esm") && IF VAR(EN) ERROR: LevelersTower.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF CHECKSUM("LevelersShowroom.esp", AD333CC5) && IFNOT ACTIVE("LevelersTower.esm") && IF VAR(RU) ERROR: LevelersTower.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("LevelersShowroom.esp", 9ED58CC5) && IFNOT ACTIVE("LevelersTower.esp") && IF VAR(EN) ERROR: LevelersTower.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF CHECKSUM("LevelersShowroom.esp", 9ED58CC5) && IFNOT ACTIVE("LevelersTower.esp") && IF VAR(RU) ERROR: LevelersTower.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 LFox Moon Sugar Manor.esp
 Liberation Beacon.esp
   IF CHECKSUM("Liberation Beacon.esp", EAC2C978) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -13872,6 +13882,18 @@ Realistic Animal Behaviour.esp
   IF CHECKSUM("Realistic Animal Behaviour.esp", BAAA3FD3) || IF CHECKSUM("Realistic Animal Behaviour.esp", 68D49ED7) || IF CHECKSUM("Realistic Animal Behaviour.esp", D4718D13) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("Realistic Animal Behaviour.esp", BAAA3FD3) || IF CHECKSUM("Realistic Animal Behaviour.esp", 68D49ED7) || IF CHECKSUM("Realistic Animal Behaviour.esp", D4718D13) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
   IF CHECKSUM("Realistic Animal Behaviour.esp", 5CC5DE01) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Realistic_DamageV2.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF VERSION("SKSE", "0.1.6.89", <) REQ: "http://skse.silverlock.org SKSE" 1.6.89+.
+  IF CHECKSUM("Realistic_DamageV2.esp", 907A7547) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+dawnguard_realistic.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("dawnguard_realistic.esp", EADBBB4E) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+plugin_jaysus.esp
+  IFNOT ACTIVE("JSwords.esm") && IF VAR(EN) ERROR: JSwords.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("JSwords.esm") && IF VAR(RU) ERROR: JSwords.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 Realistic werewolf speed.esp
 realisticskoomamodv1.esp
 ReallyGiantGiantsandMammoths.esp
@@ -17227,6 +17249,8 @@ Leveling Destruction Perks.esp
 Leveling Destruction Perks - Only Perks.esp
 Leveling Destruction Perks - No DualCast.esp
 Leveling Destruction Perks - No Regen.esp
+  IF CHECKSUM("Enchanting and Alchemy.esp", 1774BFD2) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  //perks, but author instructs to load above levelingperkslite.esp
 levelingperkslite.esp
   IF VAR(EN) && IF FILE("perksbymatope.esp") WARN: Delete. Already included in perksbymatope.esp
     IF VAR(RU) && IF FILE("perksbymatope.esp") WARN: Удалите. Уже включено в perksbymatope.esp
