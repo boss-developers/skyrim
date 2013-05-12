@@ -96,6 +96,12 @@ IF ACTIVE("Unofficial Hearthfire Patch.esp") SET: UHFP
 IF ACTIVE("Unofficial Dragonborn Patch.esp") SET: UDBP
 IF ACTIVE("Unofficial High Resolution Patch.esp") SET: UHRP
 //
+// Sounds of Skyrim
+IF FILE("SoS - The Dungeons.esp") || IF FILE("SoS - The Wilds.esp") || IF FILE("SoS - Civilization.esp") SET: SoS
+IF ACTIVE("SoS - The Dungeons.esp") SET: SoSDun
+IF ACTIVE("SoS - The Wilds.esp") SET: SoSWilds
+IF ACTIVE("SoS - Civilization.esp") SET: SoSCiv
+//
 // Bashed Patch variable
 // IF REGEX("Bashed Patch.*\.esp") SET: BP
 //
@@ -2007,6 +2013,8 @@ REGEX: DFG's Blade & Dagger Sheathe Sounds.*\.esp
 BWS.esp
 Clanking Armor.esp
   IF CHECKSUM("Clanking Armor.esp", 7055B881) DIRTY: 5 ITMs, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+IFNOT VAR("SoS") MOD: ClimatesOfTamriel-Sound.esp
+  IF CHECKSUM("ClimatesOfTamriel-Sound.esp", 47AF2A0B) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
 CookingSound.esp
 DFG's Blade & Dagger Sheathe Sounds.esp
 DragonHitSoundFix.esp
@@ -4116,7 +4124,7 @@ skeletonkey.esp
 skooma-the-drug.esp
 SkoomaModKidduffah v1.0.esp
 Skuldafn Travel.esp
-skyBirds - Airborne Perching Birds.esp
+IFNOT FILE ("ClimatesOfTamriel-Sound.esp") || IFNOT VAR("SoS") MOD: skyBirds - Airborne Perching Birds.esp
   IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 131BB61C) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Skyforge Smelter.esp
   IF CHECKSUM("Skyforge Smelter.esp", 86B4D1D2) DIRTY: 1 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -14897,9 +14905,14 @@ SoundPropagationOverhaul.esp
 FootstepsSoundsOverhaul.esp
   //As per author's instructions to sort after SPO.
 
-ClimatesOfTamriel-Sound.esp
+IF VAR("SoS") MOD: ClimatesOfTamriel-Sound.esp
   IF CHECKSUM("ClimatesOfTamriel-Sound.esp", 47AF2A0B) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
 // moved here per recommendations by Sounds of Skyrim author
+
+IF FILE ("ClimatesOfTamriel-Sound.esp") && IF VAR("SoS") MOD: skyBirds - Airborne Perching Birds.esp
+  IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 131BB61C) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+// Author recommends loading below ClimatesOfTamriel-Sound if installed. And it 
+
 ENDGROUP: Sounds of Skyrim and Sound Propogation Overhaul
 
 BEGINGROUP: Image Space and Lighting Changes
@@ -15020,67 +15033,67 @@ BEGINGROUP: Sounds of Skyrim patches
 
 // Patches for The Dungeons
 SoS - The Dungeons-PatchCoTHardcore.esp
-  IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
-    IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
+  IFNOT VAR("SoSDun") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
+    IFNOT VAR("SoSDun") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
   IFNOT ACTIVE("ClimatesOfTamriel-Dungeons-Hardcore.esp") && IF VAR(EN) ERROR: ClimatesOfTamriel-Dungeons-Hardcore.esp is not present or is not active. Skyrim will CTD when loading if using this file without ClimatesOfTamriel-Dungeons-Hardcore
     IFNOT ACTIVE("ClimatesOfTamriel-Dungeons-Hardcore.esp") && IF VAR(RU) ERROR: ClimatesOfTamriel-Dungeons-Hardcore.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без ClimatesOfTamriel-Dungeons-Hardcore
 SoS - The Dungeons-PatchRCRN.esp
-  IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
-    IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
+  IFNOT VAR("SoSDun") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
+    IFNOT VAR("SoSDun") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
   REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 REGEX: SoS - The Dungeons-PatchRLO(DungeonLighting)?(Dungeons)?(MajorCityInteriors)?\.esp
-  IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
-    IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
+  IFNOT VAR("SoSDun") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
+    IFNOT VAR("SoSDun") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
   REQ: "http://skyrim.nexusmods.com/mods/30450/ Realisic Lighting Overhaul"
 SoS - The Dungeons-PatchSPO.esp
-  IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
-    IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
+  IFNOT VAR("SoSDun") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
+    IFNOT VAR("SoSDun") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
   IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(EN) ERROR: SoundPropagationOverhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoundPropagationOverhaul
     IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(RU) ERROR: SoundPropagationOverhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoundPropagationOverhaul
 
 // Patches for The Wilds
 SoS - The Wilds-PatchRCRN.esp
-  IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(EN) ERROR: SoS - The Wilds.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Wilds
-    IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(RU) ERROR: SoS - The Wilds.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Wilds
+  IFNOT VAR("SoSWilds") && IF VAR(EN) ERROR: SoS - The Wilds.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Wilds
+    IFNOT VAR("SoSWilds") && IF VAR(RU) ERROR: SoS - The Wilds.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Wilds
   REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 SoS - The Wilds-PatchSPO.esp
-  IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(EN) ERROR: SoS - The Wilds.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Wilds
-    IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(RU) ERROR: SoS - The Wilds.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Wilds
+  IFNOT VAR("SoSWilds") && IF VAR(EN) ERROR: SoS - The Wilds.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Wilds
+    IFNOT VAR("SoSWilds") && IF VAR(RU) ERROR: SoS - The Wilds.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Wilds
   IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(EN) ERROR: SoundPropagationOverhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoundPropagationOverhaul
     IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(RU) ERROR: SoundPropagationOverhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoundPropagationOverhaul
 REGEX: SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?(SoundsWinterEdition)?\.esp
-  IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(EN) ERROR: SoS - The Wilds.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Wilds
-    IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(RU) ERROR: SoS - The Wilds.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Wilds
+  IFNOT VAR("SoSWilds") && IF VAR(EN) ERROR: SoS - The Wilds.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Wilds
+    IFNOT ACTIVEVAR("SoSWilds") && IF VAR(RU) ERROR: SoS - The Wilds.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Wilds
   IF VAR(EN) SAY: Use only one Sounds of Skyrim-CoT patch.
     IF VAR(RU) SAY: Используйте только один Sounds of Skyrim-CoT patch.
   REQ: "http://skyrim.nexusmods.com/mods/17802 Climates of Tamriel"
 
 // Patches for Civilization
 SoS - Civilization-PatchRCRN.esp
-  IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
-    IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
+  IFNOT VAR("SoSCiv") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
+    IFNOT VAR("SoSCiv") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
   REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 SoS - Civilization-PatchSPO.esp
-  IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
-    IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
+  IFNOT VAR("SoSCiv") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
+    IFNOT VAR("SoSCiv") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
   IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(EN) ERROR: SoundPropagationOverhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoundPropagationOverhaul
     IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(RU) ERROR: SoundPropagationOverhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoundPropagationOverhaul
 REGEX: SoS - Civilization -PatchCoT(Sounds)?(WinterEdition)?(SoundsWinterEdition)?\.esp
-  IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
-    IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
+  IFNOT VAR("SoSCiv")) && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
+    IFNOT VAR("SoSCiv") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
   IF VAR(EN) SAY: Use only one Sounds of Skyrim-CoT patch.
     IF VAR(RU) SAY: Используйте только один Sounds of Skyrim-CoT patch.
   REQ: "http://skyrim.nexusmods.com/mods/17802 Climates of Tamriel"
 REGEX: SoS - Civilization-PatchCoT(Sounds)?(WinterEdition)?(SoundsWinterEdition)?\.esp
-  IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
-    IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
+  IFNOT VAR("SoSCiv") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
+    IFNOT VAR("SoSCiv") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
   IF VAR(EN) SAY: Use only one Sounds of Skyrim-CoT patch.
     IF VAR(RU) SAY: Используйте только один Sounds of Skyrim-CoT patch.
   REQ: "http://skyrim.nexusmods.com/mods/17802 Climates of Tamriel"
 // For some reason, some of the CoT patches for this mod are named slightly differntly.
 REGEX: SoS - Civilization-PatchRLO(MinorCities)?(MajorCityInteriors)?\.esp
-  IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
-    IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
+  IFNOT VAR("SoSCiv") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
+    IFNOT VAR("SoSCiv") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
   REQ: "http://skyrim.nexusmods.com/mods/30450/ Realisic Lighting Overhaul"
 ENDGROUP: Sounds of Skyrim patches
 
