@@ -4765,7 +4765,10 @@ BEGINGROUP: MCM Mods
 
 skyui.esp
 iHUD.esp
-  // Must load after SkyUI
+ ^ // Must load after SkyUI
+IMAGINATOR - MCMenu.esp
+  IFNOT ACTIVE("IMAGINATOR - Visual Control for Skyrim.esp") && IF VAR(EN) ERROR: IMAGINATOR - Visual Control for Skyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/13049 IMAGINATOR - Visual Control for Skyrim"
+    IFNOT ACTIVE("IMAGINATOR - Visual Control for Skyrim.esp") && IF VAR(RU) ERROR: IMAGINATOR - Visual Control for Skyrim.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/13049 IMAGINATOR - Visual Control for Skyrim"
 less_intrusive_hud.esp
 LessIntrusiveHUD.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
@@ -8730,8 +8733,6 @@ SkyRe_Main.esp
     IF VAR(RU) && IF VAR(CCO) INC: Complete Crafting Overhaul (дубликаты в меню крафтинга)
   IF VAR(EN) && IF FILE("Crafting300.esp") INC: Crafting300.esp (Perk conflicts  and doubles in crafting)
     IF VAR(RU) && IF FILE("Crafting300.esp") INC: Crafting300.esp (конфликты перков и дубликаты в меню крафтинга)
-  IF VAR(EN) WARN: The SkyRe has many conflicts with other mods.  Please read the readme before playing with mod. This will prevent many problems. Read it "http://skyrim.nexusmods.com/mods/9286 here".
-    IF VAR(RU) WARN: SkyRe имеет много конфликтов с другими модами. Пожалуйста прочтите ридми перед игрой в мод. Это позволит избежать многих проблем. Читайте его "http://skyrim.nexusmods.com/mods/9286 здесь"(Англ.) или "http://u.to/EpZaAg здесь".
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" for full perk functional
     IF VAR(RU) && IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper" для полного функционирования перков.
   IF VAR(EN) && IF FILE("interface\lockpickingmenu.swf") SAY: If lockpicikng is not work then try to delete 'interface\lockpickingmenu.swf'
@@ -13369,6 +13370,7 @@ Killable Children - Quest Protected.esp
 Killable Lootable Children.esp
 Killable Stormcloak.esp
 KillEssential.esp
+KillingTraps.esp
 killkids.esp
 killkidsV2.esp
 Klimmek the Small Time Trader of Ivarstead.esp
@@ -14575,6 +14577,8 @@ FarvynsDivineOctavo.esp
 // tav g
 Green and White Windhelm.esp
 // tav h
+Helgen Reborn.esp
+  IF CHECKSUM("Helgen Reborn.esp", BF003CBE) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HoldStables.esp
 // tav i
 ImpeREAL Empire - Unique Cities - Falkreath.esp
