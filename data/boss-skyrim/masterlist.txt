@@ -3968,10 +3968,8 @@ real mountains.esp
 RealShelter.esp
   IF CHECKSUM("RealShelter.esp", AD1D1564) DIRTY: 220 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("RealShelter.esp", 47B98821) DIRTY: 214 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
-    IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
   IF CHECKSUM("RealShelter.esp", 47B98821) && IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF CHECKSUM("RealShelter.esp", 47B98821) && IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+    IF CHECKSUM("RealShelter.esp", 47B98821) && IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
 realistic clouds.esp
 realistic dragons.esp
   IF CHECKSUM("realistic dragons.esp", 0D5A10E4) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -8301,6 +8299,8 @@ Requiem - Weapon Damage Modifier 2x Vanilla.esp
 Requiem - Weapon Damage Modifier 3x Vanilla.esp
   IF FILE("Requiem - Weapon Damage Modifier 2x Vanilla.esp") && IF VAR(EN) WARN: Use either Requiem - Weapon Damage Modifier 2x Vanilla.esp or Requiem - Weapon Damage Modifier 3x Vanilla.esp, not both.
     IF FILE("Requiem - Weapon Damage Modifier 2x Vanilla.esp") && IF VAR(RU) WARN: Используйте любой или Requiem - Weapon Damage Modifier 2x Vanilla.esp или Requiem - Weapon Damage Modifier 3x Vanilla.esp, не обa.
+REGEX: Requiem -.*\.esp
+  // For all other unrecognized options
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
 Skyrim Hardcore Overhaul.esp
