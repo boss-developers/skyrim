@@ -292,6 +292,7 @@ CLARALUX - More and Brighter Lights.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии
 ClimatesOfTamriel.esm
+  IFNOT FILE("SoS - Civilization-PatchCoT.esp") || IFNOT FILE("SoS - Civilization-PatchCoTWinterEdition.esp") || IFNOT FILE("SoS - Civilization -PatchCoTSounds.esp") || IFNOT FILE("SoS - Civilization -PatchCoTSoundsWinterEdition.esp") WARN: Due to conflicts between Sounds of Skyrim and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
   IF CHECKSUM("ClimatesOfTamriel.esm", C30AB34E) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the "http://skyrim.nexusmods.com/mods/17802/ updated plugin".
   IF CHECKSUM("ClimatesOfTamriel.esm", C110B173) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 CMHalfElf.esm
@@ -2287,6 +2288,12 @@ BEGINGROUP: Textures
 VanillaReducedTextures.esp
  // ^ Placed at top to prevent overwriting smaller texture changes rendering them useless
 VanillaReducedTexturesDG.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+ // ^ Placed at top to prevent overwriting smaller texture changes rendering them useless
+VanillaReducedTexturesDB.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
  // ^ Placed at top to prevent overwriting smaller texture changes rendering them useless
 Andragorn_Replace_Imperial_Sword.esp
 calientevanillaarmor - banditpack curvy.esp
@@ -3968,8 +3975,10 @@ real mountains.esp
 RealShelter.esp
   IF CHECKSUM("RealShelter.esp", AD1D1564) DIRTY: 220 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("RealShelter.esp", 47B98821) DIRTY: 214 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
   IF CHECKSUM("RealShelter.esp", 47B98821) && IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IF CHECKSUM("RealShelter.esp", 47B98821) && IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+    IF CHECKSUM("RealShelter.esp", 47B98821) && IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 realistic clouds.esp
 realistic dragons.esp
   IF CHECKSUM("realistic dragons.esp", 0D5A10E4) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -8302,8 +8311,6 @@ Requiem - Weapon Damage Modifier 2x Vanilla.esp
 Requiem - Weapon Damage Modifier 3x Vanilla.esp
   IF FILE("Requiem - Weapon Damage Modifier 2x Vanilla.esp") && IF VAR(EN) WARN: Use either Requiem - Weapon Damage Modifier 2x Vanilla.esp or Requiem - Weapon Damage Modifier 3x Vanilla.esp, not both.
     IF FILE("Requiem - Weapon Damage Modifier 2x Vanilla.esp") && IF VAR(RU) WARN: Используйте любой или Requiem - Weapon Damage Modifier 2x Vanilla.esp или Requiem - Weapon Damage Modifier 3x Vanilla.esp, не обa.
-REGEX: Requiem -.*\.esp
-  // For all other unrecognized options
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
 Skyrim Hardcore Overhaul.esp
@@ -14132,7 +14139,6 @@ ESP.esp
   IF VAR(EN) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.
     IF VAR(RU) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Может перезаписать расовую информацию. из SkyRe.esp или SkyReNoLighting.esp, но может быть безопасно отключен, после использования расового меню.
 SkyRealism - Grass.esp
-SkyrimMoreSpawns.esp
 Skyrim Creatures Alive.esp
   TAG: {{BASH: Relev, Delev}}
 Skyrim Dark.esp
@@ -14907,9 +14913,11 @@ SoundPropagationOverhaul.esp
 FootstepsSoundsOverhaul.esp
   //As per author's instructions to sort after SPO.
 
+
 IF VAR(SoS) MOD: ClimatesOfTamriel-Sound.esp
   IF CHECKSUM("ClimatesOfTamriel-Sound.esp", 47AF2A0B) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
 // moved here per recommendations by Sounds of Skyrim author
+
 
 IF FILE ("ClimatesOfTamriel-Sound.esp") && IF VAR(SoS) MOD: skyBirds - Airborne Perching Birds.esp
   IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 131BB61C) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -14958,8 +14966,10 @@ Realistic Lighting Overhaul - Dawnguard Interiors.esp
 Realistic Lighting Overhaul - Minor Cities & Town Interiors.esp
 Realistic Lighting Overhaul - Major City Exteriors.esp
 Realistic Lighting Overhaul - Major City Interiors.esp
+  IFNOT FILE("SoS - Civilization-PatchRLOMajorCityInteriors.esp") WARN: Due to conflicts between Sounds of Skyrim and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
   IF CHECKSUM("Realistic Lighting Overhaul - Major City Interiors.esp", 033A5FD6) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp
+  IFNOT FILE("SoS - Civilization-PatchRLOMinorCities.esp") WARN: Due to conflicts between Sounds of Skyrim and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
   IF CHECKSUM("Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp", 53706BFB) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Realistic Lighting Overhaul - 3.5 Dawnguard Weathers.esp
 Realistic Lighting Overhaul - 3.5 Weathers.esp
@@ -15071,32 +15081,22 @@ REGEX: SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?(SoundsWinterEdition)?\.
   REQ: "http://skyrim.nexusmods.com/mods/17802 Climates of Tamriel"
 
 // Patches for Civilization
-SoS - Civilization-PatchRCRN.esp
-  IFNOT FILE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
-    IFNOT FILE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
-  REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 SoS - Civilization-PatchSPO.esp
   IFNOT FILE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
     IFNOT FILE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
   IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(EN) ERROR: SoundPropagationOverhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoundPropagationOverhaul
     IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(RU) ERROR: SoundPropagationOverhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoundPropagationOverhaul
-REGEX: SoS - Civilization -PatchCoT(Sounds)?(WinterEdition)?(SoundsWinterEdition)?\.esp
+REGEX: SoS - Civilization( -|-)PatchCoT(Sounds)?(WinterEdition)?(SoundsWinterEdition)?\.esp
   IFNOT FILE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
     IFNOT FILE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
   IF VAR(EN) SAY: Use only one Sounds of Skyrim-CoT patch.
     IF VAR(RU) SAY: Используйте только один Sounds of Skyrim-CoT patch.
-  REQ: "http://skyrim.nexusmods.com/mods/17802 Climates of Tamriel"
-REGEX: SoS - Civilization-PatchCoT(Sounds)?(WinterEdition)?(SoundsWinterEdition)?\.esp
+SoS - Civilization-PatchRLOMajorCityInteriors.esp
   IFNOT FILE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
     IFNOT FILE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
-  IF VAR(EN) SAY: Use only one Sounds of Skyrim-CoT patch.
-    IF VAR(RU) SAY: Используйте только один Sounds of Skyrim-CoT patch.
-  REQ: "http://skyrim.nexusmods.com/mods/17802 Climates of Tamriel"
-// For some reason, some of the CoT patches for this mod are named slightly differntly.
-REGEX: SoS - Civilization-PatchRLO(MinorCities)?(MajorCityInteriors)?\.esp
+SoS - Civilization-PatchRLOMinorCities.esp
   IFNOT FILE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
     IFNOT FILE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
-  REQ: "http://skyrim.nexusmods.com/mods/30450/ Realisic Lighting Overhaul"
 ENDGROUP: Sounds of Skyrim patches
 
 BEGINGROUP: Realism
@@ -20314,9 +20314,13 @@ rcrnShaders.esp
   IF VAR(EN) SAY: Make sure you have bEnableFileSelection=1 in SkyrimPrefs.ini under [Launcher].
     IF VAR(RU) SAY: Убедитесь, что строка bEnableFileSelection=1 в SkyrimPrefs.ini находитсся в секции [Launcher].
   IF CHECKSUM("rcrnShaders.esp", 209FD1B5) DIRTY: 16 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IFNOT FILE("SoS - Civilization-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
 rcrnPlus.esp
 RCRNvolumetric.esp
   IF CHECKSUM("RCRNvolumetric.esp", 54176F89) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+SoS - Civilization-PatchRCRN.esp
+  IFNOT FILE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
+    IFNOT FILE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
 Volrath - Enhanced Lights and Fixes - RCRN.esp
   REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 Volrath - Enhanced Lights and Fixes - RCRN - Lanterns Of Skyrim.esp
