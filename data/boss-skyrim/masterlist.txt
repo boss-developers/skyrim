@@ -625,6 +625,7 @@ Proudspire Manor Refurbished.esp
     IF CHECKSUM("Proudspire Manor Refurbished.esp", CDE3CA7C) && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
   IF CHECKSUM("Proudspire Manor Refurbished.esp", CDE3CA7C) DIRTY: 3 ITM, 49 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("Proudspire Manor Refurbished.esp", 54BDFAEE) DIRTY: 3 ITM, 51 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Proudspire Manor Refurbished.esp", 9BE95FE3) DIRTY: 3 ITM, 51 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Populated Cities NPCListMaster.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Populated Cities 2.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Populated Cities 2.esp
@@ -1592,10 +1593,6 @@ EveryVampireEyesGrow.esp
 
 ENDGROUP: DLC Fixes
 
-REGEX: Skyrim HD Full - .+\.esp
-  IF VAR(EN) REQ: 4gb or more RAM, for full version.
-    IF VAR(RU) REQ: 4 гигабайта оперативной памяти или более, для полной версии.
-
 BEGINGROUP: NPC face mods
 // TAG: {{BASH: NpcFaces}}
 
@@ -2283,19 +2280,30 @@ ENDGROUP: Music
 BEGINGROUP: Textures
 // Textures that are packedged with a BSA file, while the ESP lists only the TES4 Skyrim header
 //
-// Some Graphics.esp
-//  TES4 (Header only)
+// Generally the bigger packs go near to the top.
+
+//Large Packs, these are placed at the top to prevent overwriting smaller texture changes - rendering them useless.
+Skyrim HD Full - Clutter and Clothes.esp
+Skyrim HD Full - Dungeons.esp
+Skyrim HD Full - Farmhouses.esp
+Skyrim HD Full - Landscape.esp
+Skyrim HD Full - Markarth.esp
+Skyrim HD Full - Reflections.esp
+Skyrim HD Full - Sky.esp
+Skyrim HD Full - Solitude.esp
+Skyrim HD Full - Water.esp
+Skyrim HD Full - Whiterun.esp
+Skyrim HD Full - Windhelm.esp
 
 VanillaReducedTextures.esp
- // ^ Placed at top to prevent overwriting smaller texture changes rendering them useless
 VanillaReducedTexturesDG.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
- // ^ Placed at top to prevent overwriting smaller texture changes rendering them useless
 VanillaReducedTexturesDB.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
- // ^ Placed at top to prevent overwriting smaller texture changes rendering them useless
+// Large Packs
+
 Andragorn_Replace_Imperial_Sword.esp
 calientevanillaarmor - banditpack curvy.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
@@ -3622,7 +3630,7 @@ lockBreaker_EV.esp
 longer woodchopping.esp
 Long Lost Chopping Blocks.esp
 Long lost smelters by Hyralux.esp
-  //IF CHECKSUM("Long lost smelters by Hyralux.esp", F94A11AA) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Long lost smelters by Hyralux.esp", F94A11AA) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Long lost smelters.esp
 Loot_Overhaul_Rebalanced_v.04.esp
   TAG: {{BASH: Delev, Relev}}
@@ -8321,13 +8329,13 @@ Skyrim_New Balance.esp
   TAG: {{BASH: Delev, Relev}}
 TheHelm.esp
 Tropical Skyrim.esp
-  SAY: Other environmental mods may be incompatible. See "http://skyrim.nexusmods.com/mods/33017 Incompatibility notes" for general advice.
+  SAY: Other environmental mods may be incompatible. See the "http://skyrim.nexusmods.com/mods/33017 incompatibility notes" for general advice.
   IF CHECKSUM("Tropical Skyrim.esp", EE3DA029) DIRTY: 1945 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("Tropical Skyrim.esp", 452961DF) DIRTY: 1943 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Tropical Skyrim -- Birds.esp
   IF CHECKSUM("Tropical Skyrim -- Birds.esp", CF25ED24) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Tropical Skyrim -- Less Bloom.esp
-  SAY: Other environmental mods may be incompatible. See "http://skyrim.nexusmods.com/mods/33017 Incompatibility notes" for general advice.
+  SAY: Other environmental mods may be incompatible. See the "http://skyrim.nexusmods.com/mods/33017 incompatibility notes" for general advice.
   IF CHECKSUM("Tropical Skyrim -- Less Bloom.esp", C599B0AB) DIRTY: 1945 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 WoTS - Overhaul Version.esp
   IF CHECKSUM("WoTS - Overhaul Version.esp", 64810379) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -8348,7 +8356,22 @@ YASH.esp
   IFNOT VAR(UDBP) && IF VAR(EN) ERROR: Unofficial Dragonborn Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without the "http://skyrim.nexusmods.com/mods/31083 Unofficial Dragonborn Patch"
     IFNOT VAR(UDBP) && IF VAR(RU) ERROR: Unofficial Dragonborn Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без the "http://skyrim.nexusmods.com/mods/31083 Unofficial Dragonborn Patch"
   SAY: If installing optional files, use either YASH.esp + YASH_AllOptionals.esp OR YASH.esp + one or more of the optional ESPs.
-REGEX: YASH_.+\.esp
+
+YASH_AllOptionals.esp
+YASH_CombatAI.esp
+YASH_DroppableQuestItems.esp
+YASH_FoodsAndDrinks.esp
+YASH_GuardsWithoutHelmets.esp
+YASH_ImprovedClasses.esp
+YASH_ItemsStats.esp
+YASH_OpenEncounterZones.esp
+YASH_Perks.esp
+YASH_PowerfulShouts.esp
+YASH_RenamedSkillBooks.esp
+YASH_SmithingRecipes.esp
+YASH_UncommonPlants.esp
+YASH_UnleveledEnemies.esp
+YASH_UnleveledLoot.esp
 // SUBGROUP: YASH
 ENDGROUP:  General Overhauls
 
