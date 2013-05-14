@@ -292,8 +292,8 @@ CLARALUX - More and Brighter Lights.esm
   IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии
 ClimatesOfTamriel.esm
-  IFNOT FILE("SoS - Civilization-PatchCoT.esp") || IFNOT FILE("SoS - Civilization-PatchCoTWinterEdition.esp") || IFNOT FILE("SoS - Civilization -PatchCoTSounds.esp") || IFNOT FILE("SoS - Civilization -PatchCoTSoundsWinterEdition.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
-  IFNOT FILE("SoS - The Wilds-PatchCoT.esp") || IFNOT FILE("SoS - The Wilds-PatchCoTWinterEdition.esp") || IFNOT FILE("SoS - The Wilds-PatchCoTSounds.esp") || IFNOT FILE("SoS - The Wilds-PatchCoTSoundsWinterEdition.esp") WARN: Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
+  IFNOT FILE("SoS - Civilization-PatchCoT.esp") || IFNOT FILE("SoS - Civilization-PatchCoTWinterEdition.esp") || IFNOT FILE("SoS - Civilization -PatchCoTSounds.esp") || IFNOT FILE("SoS - Civilization -PatchCoTSoundsWinterEdition.esp") && IF FILE("SoS - Civilization.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+  IFNOT FILE("SoS - The Wilds-PatchCoT.esp") || IFNOT FILE("SoS - The Wilds-PatchCoTWinterEdition.esp") || IFNOT FILE("SoS - The Wilds-PatchCoTSounds.esp") || IFNOT FILE("SoS - The Wilds-PatchCoTSoundsWinterEdition.esp") && IF FILE("SoS - The Wilds.esp") WARN: Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
   IF CHECKSUM("ClimatesOfTamriel.esm", C30AB34E) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the "http://skyrim.nexusmods.com/mods/17802/ updated plugin".
   IF CHECKSUM("ClimatesOfTamriel.esm", C110B173) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 CMHalfElf.esm
@@ -15011,25 +15011,25 @@ RLO - Occlusion Culling Performance Patch.esp
 //Updated RLO load order as per http://bit.ly/XIkuj0
 Realistic Lighting Overhaul - Illuminated Spells.esp
 Realistic Lighting Overhaul - Dungeons.esp
-  IFNOT FILE("SoS - The Dungeons-PatchRLODungeons.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
+  IF FILE ("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRLODungeons.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
   IF CHECKSUM("Realistic Lighting Overhaul - Dungeons.esp", 18AD5FEB) DIRTY: 18 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Realistic Lighting Overhaul - Dawnguard.esp
 Realistic Lighting Overhaul - Dawnguard Interiors.esp
 Realistic Lighting Overhaul - Minor Cities & Town Interiors.esp
 Realistic Lighting Overhaul - Major City Exteriors.esp
 Realistic Lighting Overhaul - Major City Interiors.esp
-  IFNOT FILE("SoS - Civilization-PatchRLOMajorCityInteriors.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
-  IFNOT FILE("SoS - The Dungeons-PatchRLOMajorCityInteriors.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
+  IF FILE ("SoS - The Dungeons.esp") &&  IFNOT FILE("SoS - Civilization-PatchRLOMajorCityInteriors.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+  IF FILE ("SoS - Civilization.esp") && IFNOT FILE("SoS - The Dungeons-PatchRLOMajorCityInteriors.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
   IF CHECKSUM("Realistic Lighting Overhaul - Major City Interiors.esp", 033A5FD6) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp
-  IFNOT FILE("SoS - Civilization-PatchRLOMinorCities.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+  IF FILE ("SoS - Civilization.esp") &&  IFNOT FILE("SoS - Civilization-PatchRLOMinorCities.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
   IF CHECKSUM("Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp", 53706BFB) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Realistic Lighting Overhaul - 3.5 Dawnguard Weathers.esp
 Realistic Lighting Overhaul - 3.5 Weathers.esp
 RLO - Adaptive Interiors Vanilla Weathers Patch.esp
 RLO - Major City Exteriors - No Guard Torches.esp
 Realistic Lighting Overhaul - Dungeon Lighting.esp
-  IFNOT FILE("SoS - The Dungeons-PatchRLODungeonLighting.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
+  IF FILE ("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRLODungeonLighting.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
   IF CHECKSUM("Realistic Lighting Overhaul - Dungeon Lighting.esp", CB2AEEAF) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   //optional file with author instructions to place just below main RLO file(s)
 // placed ClimatesOfTamriel per http://skyrim.nexusmods.com/articles/853/
@@ -20379,13 +20379,13 @@ rcrnShaders.esp
   IF VAR(EN) SAY: Make sure you have bEnableFileSelection=1 in SkyrimPrefs.ini under [Launcher].
     IF VAR(RU) SAY: Убедитесь, что строка bEnableFileSelection=1 в SkyrimPrefs.ini находитсся в секции [Launcher].
   IF CHECKSUM("rcrnShaders.esp", 209FD1B5) DIRTY: 16 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IFNOT FILE("SoS - Civilization-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
-  IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
-  IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
+  IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+  IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
+  IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
 rcrnPlus.esp
-  IFNOT FILE("SoS - Civilization-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
-  IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
-  IFNOT FILE("SoS - The Dungeons-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
+  IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+  IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
+  IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
 RCRNvolumetric.esp
   IF CHECKSUM("RCRNvolumetric.esp", 54176F89) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 SoS - The Dungeons-PatchRCRN.esp
