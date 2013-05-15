@@ -3322,9 +3322,15 @@ ENDGROUP: Base G
 BEGINGROUP: Base H
 
 Half-sized Snowberries.esp
+Harvest More Food & Ingredients.esp
+  TAG: {{BASH: Delev}}
 hc5changerace.esp
 housecat.esp
 hdplants+herbs.esp
+hearthfire_buyingots.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("hearthfire_buyingots.esp", BC1E72EF) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Hearthfire Sorting.esp
   IFNOT FILE ("GeneralStores.esm") ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if this file is active without GeneralStores.esm
     IFNOT FILE ("GeneralStores.esm") && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
@@ -3709,6 +3715,7 @@ Marco's Integrated Leveled Lists.esp
 marijuana.esp
   IF CHECKSUM("marijuana.esp", 41A328F2) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Mark Books as Read - DV.esp
+marriagedynamicoutfits.esp
 MasterChest.esp
 MaybeHeartsAndFlesh.esp
 mcCampingLite.esp
@@ -5083,7 +5090,13 @@ BadGremlinsJarHunt.esp
 BadMedicine1.1.esp
 Bandanas of Skyrim.esp
 Bangarang.esp
-baraban-dawnguard-plate.esp
+Baraban-Dawnguard-Plate.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Baraban-Steel-Helms.esp
+Baraban-Steel-Plate.esp
+Baraban-Steel-Plate-Replacer.esp
+Baraban-Heater-Shield.esp
 BarbarianArmor.esp
 BarbarianAxe.esp
 BarbarianFur.esp
