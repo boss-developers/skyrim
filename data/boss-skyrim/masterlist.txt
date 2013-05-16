@@ -172,9 +172,9 @@ ApachiiHairMales.esm
 AzarHair.esm
 FallOut3Hairs.esm
 MoT_First_LoadOrder_File_After_Skyrim.esm
+  IF CHECKSUM("MoT_First_LoadOrder_File_After_Skyrim.esm", 6D3163AD) DIRTY: 22 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
   IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-  IF CHECKSUM("MoT_First_LoadOrder_File_After_Skyrim.esm", 6D3163AD) DIRTY: 11 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
 oblivion hair.esm
 Oblivion hair2.esm
 OblivionHairPackAIO.esm
@@ -198,6 +198,8 @@ Skyrim Project Optimization - No Homes - Full Version.esm
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 
 // esms #
+1NordDungeonAlt.esm
+  IF CHECKSUM("1NordDungeonAlt.esm", 68AD6D32) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 28 Days and a Bit 5.esm
   IF CHECKSUM("28 Days and a Bit 5.esm", AF6984AF) DIRTY: 28 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 3rdEraWeaponsMoS.esm
@@ -536,6 +538,12 @@ More Interactive Items [Dawnguard].ESM
 More Interactive Items [Hearthfire].ESM
 more_Travelers.esm
 Mother_of_Tears_Epics_Eng.esm
+motTome2.esm
+  IFNOT FILE("MoT_First_LoadOrder_File_After_Skyrim.esm") && IF VAR(EN) ERROR: MoT_First_LoadOrder_File_After_Skyrim.esm is not present or is not active. Skyrim will CTD when loading if using this file without Climates Of Tamriel.esm
+    IFNOT FILE("MoT_First_LoadOrder_File_After_Skyrim.esm") && IF VAR(RU) ERROR: MoT_First_LoadOrder_File_After_Skyrim.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Climates Of Tamriel
+  IF CHECKSUM("motTome2.esm", 5A0212CE) DIRTY: 104 ITM, 31 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+  IF VAR(EN) WARN: This file contains 16 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 16 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 MTAutoStorage.esm
   IF CHECKSUM("MTAutoStorage.esm", 7C0F98CA) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 MTOH.esm
@@ -2034,6 +2042,8 @@ LIAT - Sounds.esp
     IF CHECKSUM("LIAT - Sounds.esp", A03F61CD) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 LyPlayerVoice.esp
 maintheme_metalremix.esp
+REGEX: MoT2? - (Misc 1|Scripts 1|Sounds 1|Visual 1|Visual 2|Visual 3|Visual 4)\.esp
+  //these are all TES4 header only
 newheavyarmorsound.esp
 Nordic Natural Sound.esp
 Phenderix's Magic Sounds Improved.esp
@@ -4760,6 +4770,9 @@ towAutoFP.esp
 towConversation.esp
   IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
   IF VERSION("SKSE", "0.1.6.13", <) REQ: "http://skse.silverlock.org SKSE" 1.6.13+.
+Uncle Sheo does Climates of Tamriel.esp
+  IFNOT FILE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without Climates Of Tamriel.esm
+    IFNOT FILE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Climates Of Tamriel
 Uncle Sheo does JaySus.esp
   IFNOT ACTIVE("JSwords.esm") && IF VAR(EN) ERROR: JSwords.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("JSwords.esm") && IF VAR(RU) ERROR: JSwords.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
@@ -4911,6 +4924,7 @@ akavirisharpkatana.esp
   IF CHECKSUM("akavirisharpkatana.esp", B74E58F0) DIRTY: 10 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 AkavirisWeapons.esp
 AK- Iceburgs Spiderman Suit.esp
+AK- Mulitiple Nightingale Armors.esp
 AK- Zelda Hover Boots.esp
 AlchemistSatchel.esp
   IF CHECKSUM("AlchemistSatchel.esp", 2412654C) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -6060,6 +6074,7 @@ GDAttire.esp
 GDWeaponry.esp
 Gearblade.esp
 Gemtastic.esp
+GeneralTulliusUniformity.esp
 Genesis' Rapier.esp
 REGEX: Geralt_RavenArmor_v.*\.esp
 GeraltJacket.esp
@@ -10985,7 +11000,6 @@ morthalslegacy.esp
 Mother_of_Tears_Contracts_Eng.esp
 Mother_of_Tears_Dungeons.esp
 Mother_of_Tears_Epics_Eng.esp
-REGEX: MoT - (Misc 1|Scripts 1|Sounds 1|Visual 1|Visual 2|Visual 3|Visual 4)?\.esp
 MouthoftheWorld.esp
   IF CHECKSUM("MouthoftheWorld.esp", A9EA7BA5) DIRTY: 43 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 mtBalRuhn.esp
@@ -11459,7 +11473,10 @@ ShezriesWinstadHearthfireKitchen.esp
   IF CHECKSUM("ShezriesWinstadHearthfireKitchen.esp", 5425509D) DIRTY: 16 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 ShipHome.esp
 Shrouded Lair.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Shrouded Lair.esp", FD7452DA) DIRTY: 43 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Shrouded Lair.esp", A3A1CE81) DIRTY: 1248 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 SilvercrestTomb.esp
 simplebreezehome.esp
 Simply Improved Breezehome.esp
@@ -21066,8 +21083,12 @@ HM_HotkeyMod.esp
   IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IFNOT VAR(UFO) ERROR: UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.
   IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 MoT_Last_LoadOrder_File.esp
-// Author's "http://skyrim.nexusmods.com/mods/6272 notes" say to place at the end of the load order
+  // Author's "http://skyrim.nexusmods.com/mods/6272 notes" say to place at the end of the load order
+  TAG: {{BASH: Delev, Relev}}
+  IFNOT FILE("MoT_First_LoadOrder_File_After_Skyrim.esm") && IF VAR(EN) ERROR: MoT_First_LoadOrder_File_After_Skyrim.esm is not present or is not active. Skyrim will CTD when loading if using this file without Climates Of Tamriel.esm
+    IFNOT FILE("MoT_First_LoadOrder_File_After_Skyrim.esm") && IF VAR(RU) ERROR: MoT_First_LoadOrder_File_After_Skyrim.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Climates Of Tamriel
   IF CHECKSUM("MoT_Last_LoadOrder_File.esp", 211C2134) DIRTY: 180 ITM, 51 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
+  IF CHECKSUM("MoT_Last_LoadOrder_File.esp", A2C3F4C9) DIRTY: 211 ITM, 56 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit")
   IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 REGEX: PTAlchemyOverhaul_SkillRate_(0|1)_\d{1, 2}\.esp
