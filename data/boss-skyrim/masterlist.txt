@@ -212,6 +212,9 @@ Skyrim Adventurer's Tent.esm
 AemersRefuge.esm
 AIKhajiitCompanions.esm
 Ajen.esm
+AkaviriRace.esm
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 REGEX: alchstone(1pt5x|2x|3x|4x|5x)\.esm
   IF VAR(EN) SAY: Use only one alchstone esm
     IF VAR(RU) SAY: Используйте только один alchstone esm
@@ -656,8 +659,9 @@ Ranger Ridge.esm
   IF CHECKSUM("Ranger Ridge.esm", 98145FB5) DIRTY: 274 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-Realistic Wildlife Loot.esm
+real race heights.esm
 Real Wildlife - IMCN.esm
+Realistic Wildlife Loot.esm
 retreat.esm
 RIP88_Pool_Furniture.esm
 RiverEdge Home.esm
@@ -684,6 +688,7 @@ SG_BlacksmithsCavern.esm
   IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 Shayla.esm
+ShyraeIsturain.esm
 Sirenia.esm
   REQ: "http://skyrim.nexusmods.com/mods/140 Amazing Smooth Females Complete" texture addon.
 Skyrim Dark.esm
@@ -755,6 +760,7 @@ The Dragon King.esm
   IF CHECKSUM("The Dragon King.esm", 283DBD41) DIRTY: 408 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 The Spice of Life.esm
   IF CHECKSUM("The Spice of Life.esm", A75F2F6D) SAY: File not created with CK.
+TondeeRiversong.esm
 TravellersOfSkyrim.esm
 TRO_BasicNeeds.esm
   IF VAR(EN) SAY: Obsolete. Update to latest renamed version, TRO_BasicNeeds.esp
@@ -11502,6 +11508,10 @@ Shrouded Lair.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Shrouded Lair.esp", FD7452DA) DIRTY: 43 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("Shrouded Lair.esp", A3A1CE81) DIRTY: 1248 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+ShyraeIsturain.esp
+  IFNOT ACTIVE("ShyraeIsturain.esm") && IF VAR(EN) ERROR: ShyraeIsturain.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ShyraeIsturain.esm") && IF VAR(RU) ERROR: ShyraeIsturain.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  //location-only esp placement of esm companion
 SilvercrestTomb.esp
 silverfish.esp
   IF CHECKSUM("silverfish.esp", 9E33B059) DIRTY: 103 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -18279,6 +18289,8 @@ Fair Litheria Race.esp
   IF CHECKSUM("Fair Litheria Race.esp", E6D92B43) || IF CHECKSUM("Fair Litheria Race.esp", 1D83DF8D) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF CHECKSUM("Fair Litheria Race.esp", E6D92B43) || IF CHECKSUM("Fair Litheria Race.esp", 1D83DF8D) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Fair Litheria Race.esp", E6D92B43) || IF CHECKSUM("Fair Litheria Race.esp", C0B286E0) || IF CHECKSUM("Fair Litheria Race.esp", 1D83DF8D) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Falmer.esp
+  IF CHECKSUM("Falmer.esp", 9BF101D3) DIRTY: 11 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 FFRace.esp
 FlyableDragonRacesRevamped.esp
   IF CHECKSUM("FlyableDragonRacesRevamped.esp", 183A85A8) DIRTY: 45 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -18892,6 +18904,7 @@ REGEX: Better Followers - Specialized( - Not E)?\.esp
 // -----------------
 
 // companions #
+(TWE) Dandelion NPC.esp
 
 // companions a
 AdditionalNPCFollwerVoices.esp
@@ -19369,6 +19382,7 @@ Korvain.esp
 
 // companions l
 LaciTheOrcMarksman.esp
+Lanaya.esp
 Leena.esp
 Lia.esp
   IFNOT VAR(ApachiiHair) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair.esm".
@@ -19700,16 +19714,14 @@ ThorinArmor.esp
   IF CHECKSUM("ThorinArmor.esp", 3D8583F0) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
 timek_Damius.esp
-<<<<<<< .mine
-timek_Yumi.esp
-=======
 timek_Laluna.esp
 timek_Yumi.esp
   IF CHECKSUM("timek_Yumi.esp", EC1F1979) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("timek_Yumi.esp", EC1F1979) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
->>>>>>> .r6509
 Tina.esp
-(TWE) Dandelion NPC.esp
+TondeeRiversong.esp
+  IFNOT ACTIVE("TondeeRiversong.esm") && IF VAR(EN) ERROR: TondeeRiversong.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("TondeeRiversong.esm") && IF VAR(RU) ERROR: TondeeRiversong.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 Tougher guards v2.esp
 IF CHECKSUM("Tougher guards v2.esp", 48AB780F) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 TulliusHogan.esp
