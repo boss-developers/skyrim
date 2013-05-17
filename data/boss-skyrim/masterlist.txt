@@ -180,6 +180,8 @@ Oblivion hair2.esm
 OblivionHairPackAIO.esm
 Obl-VB hair.esm
 RaceCompatibility.esm
+  IF CHECKSUM("RaceCompatibility.esm", EB1DBB4C) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("RaceCompatibility.esm", EB1DBB4C) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Skyrim Project Optimization.esm
 Skyrim Project Optimization - Full Version.esm
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -1499,10 +1501,10 @@ Arrow and Imperial Armor Fix.esp
 Bethesda_Hi-Res_Optimized.esp
 Correctif - Skyrim.esp
 RaceCompatibilityUSKPOverride.esp
-  IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("RaceCompatibilityUSKPOverride.esp", DC71C73F) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("RaceCompatibilityUSKPOverride.esp", DC71C73F) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 USKP Patcher for RaceCompatibility.esp
 ENDGROUP: Vanilla fixes
 
@@ -18248,8 +18250,8 @@ mjhImprovedRaces.esp
 CherryRace.esp
 ChildRace.esp
 Cimmerian.esp
-  IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Cimmerian.esp", 1DCF01BA) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 CustomRaces.esp
 DaedricElves.esp
@@ -18284,8 +18286,8 @@ dwemerplayablerace.esp
 Epic Elves by zzjay.esp
 EpicElves by zzjay.esp
 Fair Litheria Race.esp
-  IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Fair Litheria Race.esp", E6D92B43) || IF CHECKSUM("Fair Litheria Race.esp", 1D83DF8D) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF CHECKSUM("Fair Litheria Race.esp", E6D92B43) || IF CHECKSUM("Fair Litheria Race.esp", 1D83DF8D) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("Fair Litheria Race.esp", E6D92B43) || IF CHECKSUM("Fair Litheria Race.esp", C0B286E0) || IF CHECKSUM("Fair Litheria Race.esp", 1D83DF8D) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -18307,8 +18309,8 @@ GiantChild.esp
   IF FILE("GiantChild.esm") ERROR: Remove. Replaced by GiantChild.esm
 GreybeardRace.esp
 Half Orc Race.esp
-  IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 HBR_Marshwalker(Argonian)_Standalone.esp
@@ -18316,8 +18318,8 @@ HBR_Marshwalker(Argonian)_Standalone.esp
 HBR_OhmesRaht(Khajiit)_Standalone.esp
   IF CHECKSUM("HBR_OhmesRaht(Khajiit)_Standalone.esp", 6BC5C8FE) DIRTY: 42 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HN66LitheriaRace.esp
-  IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("HN66LitheriaRace.esp", E2F3F924) || IF CHECKSUM("HN66LitheriaRace.esp", 803807F4) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF CHECKSUM("HN66LitheriaRace.esp", E2F3F924) || IF CHECKSUM("HN66LitheriaRace.esp", 803807F4) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("HN66LitheriaRace.esp", E2F3F924) || IF CHECKSUM("HN66LitheriaRace.esp", 803807F4) || IF CHECKSUM("HN66LitheriaRace.esp", 3EC6C2A3) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -18378,8 +18380,8 @@ OculosInferniRace.esp
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 OhmesRaht.esp
-  IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("OhmesRaht.esp", 7969A102) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF CHECKSUM("OhmesRaht.esp", 7969A102) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("OhmesRaht.esp", CB3E2362) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -18411,8 +18413,8 @@ SC_Drow Race.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, DrowRace.esp
 Shadowscale Argonian Race.esp
 SirenRace.esp
-  IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("RaceCompatibility.esm") && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IF CHECKSUM("SirenRace.esp", 166A1F4F) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 SkyTEST-MysticLands.esp
   IF CHECKSUM("SkyTEST-MysticLands.esp", 98D9ED8B) DIRTY: 20 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -19079,7 +19081,8 @@ CMCompanionLevel.esp
   IF VAR(EN) && IF VERSION("TES5", "1.5.26", >) ERROR: Delete. This mod is no longer necessary, since Skyrim Patch v.1.6 has fixed the bug. Companions will now level their skills every time the Player levels up.
     IF VAR(RU) && IF VERSION("TES5", "1.5.26", >) ERROR: Удалите. Этот мод больше не важен. Поскольку патч 1.6+ исправляет баг.  Компаньоны теперь будут повышать свои навыки, каждый раз, при поднятии уровня игрока.
 CMHalfElf.esp
-  IFNOT FILE("RaceCompatibility.esm") REQ: RaceCompatibility.esm
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
   IFNOT FILE("CMHalfElf.esm") REQ: CMHalfElf.esm
 CMNewCompanions.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
@@ -19431,7 +19434,8 @@ Lydia_CombatThief.esp
   IF FILE("Lydia_CombatStandart.esp") INC: Lydia_CombatStandart.esp
 Lydia-Dovas_Angels-TCG.esp
 REGEX: LydiaMo(d|dCBBE)?\.esp
-  IFNOT FILE ("RaceCompatibility.esm") WARN: REQUIRES RaceCompatibility.esm
+  IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Lydia-TCG.esp
 Lydia_edited.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
