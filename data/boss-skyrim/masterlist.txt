@@ -1503,6 +1503,8 @@ Correctif - Skyrim.esp
 RaceCompatibilityUSKPOverride.esp
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+    //RaceComp is explicit master; USKP is implicit
+  IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
   IF CHECKSUM("RaceCompatibilityUSKPOverride.esp", DC71C73F) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF CHECKSUM("RaceCompatibilityUSKPOverride.esp", DC71C73F) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 USKP Patcher for RaceCompatibility.esp
