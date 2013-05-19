@@ -3207,6 +3207,9 @@ REGEX: Faster Bolts (100|25|50|75).*\.esp
     IF VAR(RU) SAY: Используйте только один Faster Bolts esp.
 fastertrolls.esp
 fFastTravelSpeedMult_4.esp
+FCC- Main.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IF CHECKSUM("FCC- Main.esp", D286578) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 FCSkriptures.esp
 FemHousecarl_TavernCloths.esp
 FishingInSkyrim.esp
@@ -4160,6 +4163,9 @@ simple_crafter_breakdown.esp
 TF_SimpleSilverReplacement.esp
 TF_SimpleSilver+SovngardeReplacement.esp
   IF FILE("TF_SimpleSilverReplacement.esp") INC: TF_SimpleSilverReplacement.esp
+SIS.esp
+ TAG: {{BASH: Relev}}
+REGEX: SIS respawn ext (10|20|30|50) days\.esp
 SkBBP - Blacksmithing and Balance.esp
 SkBBP - Loot Drops and Leveled Lists.esp
   TAG: {{BASH: Delev, Relev}}
@@ -10868,6 +10874,18 @@ lighthouse.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfire (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfire (Official Bethesda DLC)
 lighthousefull.esp
+LightsHeljarchenHall.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("LightsHeljarchenHall.esp", 9258B05B) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+LightsLakeviewManor.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("LightsLakeviewManor.esp", CFA64D26) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+LightsWinstadManor.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("LightsWinstadManor.esp", 6669F54D) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 LimbwoodManor.esp
 Little Cottage on a Hill.esp
   IF CHECKSUM("Little Cottage on a Hill.esp", 4C2646CF) DIRTY: 20 ITM, 44 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -19769,6 +19787,7 @@ Superficial Companions - Belrand.esp
 Sura the Lioness of Persia.esp
   IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
   WARN: As of v2.0, there are 12 variations of this esp.  ALL 12 contain unexpected (or out of order) records.  None should be used.
+FCC - SvenWithPerks.esp
 Sydney1.esp
 Sydney2.esp
 Sylgja-Dovas_Angels-TCG.esp
