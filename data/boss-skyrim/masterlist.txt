@@ -2497,6 +2497,12 @@ AK- Boethiah Alternate.esp
 AK- Buyable Paintings and Pictures.esp
 AK- Namira for Good Guys.esp
 AK- Placeable Statics.esp
+  IF CHECKSUM("AK- Placeable Statics.esp", F20CBAFA) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+AK- Placeable Statics - Hearthfire.esp Checksum: 6EC9FF1E
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IFNOT ACTIVE("AK- Placeable Statics.esp") && IF VAR(EN) ERROR: AK- Placeable Statics.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("AK- Placeable Statics.esp") && IF VAR(RU) ERROR: AK- Placeable Statics.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 alchemistshack01.esp
 alchemysatchels.esp
 AlcoholRecipes.esp
@@ -2774,6 +2780,9 @@ ENDGROUP: Base B
 
 BEGINGROUP: Base C
 
+Cabbage In Pot.esp
+  //Adds a cabbage. In a pot. That's seriously it.
+  IF CHECKSUM("Cabbage In Pot.esp", 8491BB6b) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 REGEX: Calendar - (Deutsch|English|Francais|Italiano|Spanish)\.esp
   IF FILE("ModernDayCalendarNames.esp") || IF FILE("Modern Day Calendar Names_Learn Names.esp") || IF FILE("ModernDayCalenderNames DV.esp") INC: Modern Day Calendar Names
 Calender.esp
@@ -3810,6 +3819,7 @@ ModernDayCalenderNames DV.esp
 Modern Day Calendar Names_Learn Names.esp
   IF FILE("ModernDayCalendarNames.esp") || IF FILE("ModernDayCalenderNames DV.esp") INC: ModernDayCalendarNames esp.
 MomoDash.esp
+MoneyBox.esp
 Mononoke.esp
 Monster Mounts Dawnguard.esp
   IF CHECKSUM("Monster Mounts Dawnguard.esp", 261535FB) DIRTY: 2 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -4515,6 +4525,8 @@ UniqueBodies.esp
  // ^ Not sure of this placement, file here: http://skyrim.nexusmods.com/mods/6041
 Unique BOOZE Bottles.esp
 Unique Booze Bottles Alternate Names Version.esp
+UniqueGear.esp
+  IF CHECKSUM("UniqueGear.esp", F1DAC5D6) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Unique Horse Textures.esp
 Unique items.esp
 UPS Camp.esp
@@ -5330,9 +5342,6 @@ ENDGROUP: Items B
 
 BEGINGROUP: Items C
 
-Cabbage In Pot.esp
-  //Adds a cabbage. In a pot. That's seriously it.
-  IF CHECKSUM("Cabbage In Pot.esp", 8491BB6b) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Caius Sword.esp
 Calmdefir.esp
 calyps-animal-ears.esp
@@ -15759,6 +15768,14 @@ VampireKinship.esp
 vampireplay v1.12.esp
 // MUST load before it's optional files
 REGEX: vampireplayn.*\.esp
+Vampire's Underwater suffocation FIX 1.1.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("Vampire's Underwater suffocation FIX 1.1.esp", 72DF351F) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Vampire's Underwater suffocation FIX 1.2.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+Vampire's Underwater suffocation FIX 1.2 NoDawnguard.esp
 Vampires hate the sun.esp
   IF VAR(EN) && IF CHECKSUM("Vampires hate the sun.esp.esp", 820C3864) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
       IF VAR(RU) && IF CHECKSUM("Vampires hate the sun.esp.esp", 820C3864) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
