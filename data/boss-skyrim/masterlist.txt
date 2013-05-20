@@ -2497,8 +2497,10 @@ AK- Boethiah Alternate.esp
 AK- Buyable Paintings and Pictures.esp
 AK- Namira for Good Guys.esp
 AK- Placeable Statics.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IF CHECKSUM("AK- Placeable Statics.esp", F20CBAFA) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-AK- Placeable Statics - Hearthfire.esp Checksum: 6EC9FF1E
+AK- Placeable Statics - Hearthfire.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
   IFNOT ACTIVE("AK- Placeable Statics.esp") && IF VAR(EN) ERROR: AK- Placeable Statics.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
