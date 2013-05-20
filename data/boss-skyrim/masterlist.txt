@@ -2729,7 +2729,7 @@ BirdsHFclean.esp
   IF CHECKSUM("BirdsHFclean.esp", B5314156) DIRTY: 48 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BirdsFlocks_FR_2.3.esp
 Birdsofskyrim.esp
-  IF CHECKSUM("Birdsofskyrim.esp", CF25ED24) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("Birdsofskyrim.esp", CF25ED24) || IF CHECKSUM("Birdsofskyrim.esp", 86981213) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Blade Temple Visitors.esp
 bladesfactionfix.esp
   IF CHECKSUM("bladesfactionfix.esp", B487451D) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -3429,6 +3429,8 @@ HM Marry All.esp
 HM MicroCraft.esp
 HM Nirnroot Regrows.esp
   IF CHECKSUM("HM Nirnroot Regrows.esp", D484CD35) DIRTY: 0 ITM, 205 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+HM.esp
+  //Chinese, no further info; maybe archery skillbook cheat
 HoodlessArchmageWithFixedStats.esp
   IF CHECKSUM("HoodlessArchmageWithFixedStats.esp", 2DFEA856) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("HoodlessArchmageWithFixedStats.esp", 2DFEA856) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
@@ -4198,7 +4200,7 @@ skooma-the-drug.esp
 SkoomaModKidduffah v1.0.esp
 Skuldafn Travel.esp
 IFNOT FILE ("ClimatesOfTamriel-Sound.esp") || IFNOT VAR(SoS) MOD: skyBirds - Airborne Perching Birds.esp
-  IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 131BB61C) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 131BB61C) || IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 18DBC60E) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Skyforge Smelter.esp
   IF CHECKSUM("Skyforge Smelter.esp", 86B4D1D2) DIRTY: 1 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Skyforge_Plus.esp
@@ -9803,6 +9805,10 @@ BlackwoodCompanyHall.esp
   IF CHECKSUM("BlackwoodCompanyHall.esp", BFBCB393) || IF CHECKSUM("BlackwoodCompanyHall.esp", 9E17E71E) || IF CHECKSUM("BlackwoodCompanyHall.esp", 0970AA3E) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("BlackwoodCompanyHall.esp", BFBCB393) || IF CHECKSUM("BlackwoodCompanyHall.esp", 9E17E71E) || IF CHECKSUM("BlackwoodCompanyHall.esp", 0970AA3E) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
 Blades ReBorn.esp
+Bloodgore---NoMoreHostileVolkiharVamps.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("Bloodgore---NoMoreHostileVolkiharVamps.esp", A82E9C8A) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Bluecreek Estate.esp
 BookwurmRetreat.esp
 Boozeus.esp
@@ -12584,6 +12590,8 @@ AethEbonyCrownReplacer.esp
   IF VAR(EN) && IF FILE("AethEbonyCircletReplacer.esp") ERROR: Use either AethEbonyCircletReplacer.esp or AethEbonyCrownReplacer.esp, not both.
     IF VAR(RU) && IF FILE("AethEbonyCircletReplacer.esp") ERROR: Используйте любой, или AethEbonyCircletReplacer.esp или AethEbonyCrownReplacer.esp, не оба.
 REGEX: AIRangeIncrease(_NoAggro)?\.esp
+AlchemyPlus.esp
+  TAG: {{BASH: Relev}}
 alcoholiceffect.esp
 all roads.esp
 AltarsRestoreMagicka.esp
@@ -13352,6 +13360,7 @@ BEGINGROUP: Overrides H
 
 H&C for VGR.esp
 HandyMan.esp
+HardCore Fus Roh Dah.esp
 HardcoreSkyrim.esp
 REGEX: Harder Trading - Sell Cap (4x|6x|10x)\.esp
   IF VAR(EN) SAY: This mod is obviously not compatible with mods that change sell fBarterSellmax (sell cap).
@@ -15139,8 +15148,8 @@ IF VAR(SoS) MOD: ClimatesOfTamriel-Sound.esp
 
 
 IF FILE ("ClimatesOfTamriel-Sound.esp") && IF VAR(SoS) MOD: skyBirds - Airborne Perching Birds.esp
-  IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 131BB61C) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-// Author recommends loading below ClimatesOfTamriel-Sound if installed. Which should be loaded after SoS if installed. Slightly complicated...
+  IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 131BB61C) || IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 18DBC60E) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+ // Author recommends loading below ClimatesOfTamriel-Sound if installed. Which should be loaded after SoS if installed. Slightly complicated...
 
 ENDGROUP: Sounds of Skyrim and Sound Propogation Overhaul
 
@@ -18220,6 +18229,7 @@ LovelyHairstylesLITE.esp
 MacKom_LoreStylesHairSet.esp
 mmkhajiithair11.esp
 MMhair.esp
+MoreEyebrows.esp
 MTOH.esp
 N_43 Hair Pack.esp
 NoMoreVanillaHair.esp
@@ -18546,6 +18556,9 @@ TheStygian.esp
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 TemptressVixen.esp
 Tigre Race.esp
+Vampire Race  - Allow Creation.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 VampireRace.esp
   IF CHECKSUM("VampireRace.esp", 9A3DCEB3) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Witch Elf Race.esp
