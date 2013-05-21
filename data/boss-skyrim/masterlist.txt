@@ -13487,6 +13487,9 @@ Immersive Weapons.esp
   IF CHECKSUM("Immersive Weapons.esp", 2EAE1F9D) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 imperialpower.esp
 Improved Archery and Bows.esp
+Improved Arvak.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 ImprovedArchMageRobes.esp
 Improved blessing.esp
   IF CHECKSUM("Improved blessing.esp", BF08EFFE) && IF VAR(EN) WARN: This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records. It should be removed.
@@ -14559,6 +14562,7 @@ BEGINGROUP: Overrides U
 ultimateodahviing.esp
   IF VAR(EN) INC: other mods that alter Odahviing.
     IF VAR(RU) INC: С другими модами, меняющими дракона по имени Одавинг.
+UltrapowerFusRoDah.esp
 UluEgoEnchantments.esp
   IF CHECKSUM("UluEgoEnchantments.esp", 584FD189) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Unarmored_LightArmor.esp
@@ -19743,6 +19747,11 @@ Pretty Followers.esp
 Ral-Kur1.1.1.esp
   IF CHECKSUM("Ral-Kur1.1.1.esp", 3EB078AF) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Ral-Kur1.1.1.esp", 3EB078AF) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+Rayya Housecarl Makeover GRW.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 RC_Cara_v1.esp
 ria1.esp
 Rowena Frostmoor.esp
@@ -20342,6 +20351,7 @@ RAS - Riverwood CharGen.esp
 Silver Hand Start.esp
   IF CHECKSUM("Silver Hand Start.esp", 33A16D73) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 SkBBP - Start on Level Zero.esp
+SkBBP - Start Skills at Level 0.esp
 IF FILE("Alternate Start - Live Another Life.esp") MOD: Starting Spell Choice.esp
 REGEX: Start As (Agronian|Breton|Dark Elf|High Elf|Imperial|Khajiit|Nord|Orc|Reguard|Ashen|Epic Elf|Wood Elf|Lunari|Temptress)( Female)?\.esp
 Starting Spell Choice - Life Another Life Patch.esp
@@ -20570,6 +20580,10 @@ EEO patch.esp
     IFNOT ACTIVE("ethereal_elven_overhaul.esp") && IF VAR(RU) ERROR: ethereal_elven_overhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без ethereal_elven_overhaul.esp
   // Skyre compatibility patch
 Vampire Skin Color Fix.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("Vampire Skin Color Fix.esp", AA1A560) && IFNOT ACTIVE("SkyRe_Races.esp") && IF VAR(EN) ERROR: SkyRe_Races.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF CHECKSUM("Vampire Skin Color Fix.esp", AA1A560) && IFNOT ACTIVE("SkyRe_Races.esp") && IF VAR(RU) ERROR: SkyRe_Races.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   //reordered as per thread 29; post117
 ENDGROUP: Race Overrides
 
