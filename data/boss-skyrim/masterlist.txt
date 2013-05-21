@@ -4153,6 +4153,15 @@ Real Wildlife.esp
 REGEX: SIRWPat?ch\.esp
   TAG: {{BASH: Delev, Relev}}
   // not tested
+RealisticLootList.esp
+  TAG: {{BASH: Delev, Relev}}
+  IF CHECKSUM("RealisticLootList.esp", F0FD39EB) || IF CHECKSUM("RealisticLootList.esp", 5D7C8CA2) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("RealisticLootList.esp", F0FD39EB) || IF CHECKSUM("RealisticLootList.esp", 5D7C8CA2) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("RealisticLootList.esp", F0FD39EB) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IF CHECKSUM("RealisticLootList.esp", F0FD39EB) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IF CHECKSUM("RealisticLootList.esp", 5D7C8CA2) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("RealisticLootList.esp", 6375823B) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("RealisticLootList.esp", F0FD39EB) DIRTY: 20 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 recipeammoarrows.esp
 recipeingots.esp
 RecyclingMod.esp
@@ -4271,6 +4280,10 @@ SkBBP - Blacksmithing and Balance.esp
 SkBBP - Loot Drops and Leveled Lists.esp
   TAG: {{BASH: Delev, Relev}}
 skeletonkey.esp
+Skinripper Materials Chest.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("Skinripper Materials Chest.esp", 2841861C) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 skooma-the-drug.esp
 SkoomaModKidduffah v1.0.esp
 Skuldafn Travel.esp
@@ -6821,6 +6834,7 @@ BEGINGROUP: Items M
 M_Ice.esp
 M_Longclaw.esp
 M_Needle.esp
+MageBooks.esp
 IFNOT CHECKSUM("Magecraft.esp", 72943ADE) MOD: Magecraft.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -18692,6 +18706,9 @@ Improved Eyes Skyrim - Models.esp
 Kawaii Face Presets.esp
   IF CHECKSUM("Kawaii Face Presets.esp", 2774F3D6) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("Kawaii Face Presets.esp", 2774F3D6) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+Kawaii Face Presets2.esp
+  REQ: "http://skyrim.nexusmods.com/mods/12951 Enhanced Character Edit"
+  IF VERSION("SKSE", "0.1.6.9", <) REQ: "http://skse.silverlock.org SKSE" 1.6.9+.
 KhaleesiFacePreset.esp
   IF CHECKSUM("KhaleesiFacePreset.esp", 42C16D17) WARN: This file is broken and will not work.
 Male Presets 2-3.esp
