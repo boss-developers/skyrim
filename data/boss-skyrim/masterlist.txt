@@ -1791,8 +1791,8 @@ Fixed Pureblood Vampires.esp
 Follower_Addon_1_1_.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT VAR(ApachiiHairF) ERROR: ApachiiHairFemales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemales.esm".
-  IFNOT VAR(ApachiiHairM) ERROR: ApachiiHairMales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairMales.esm".
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 Follower_Addon_V2_.esp
   IF FILE("Follower_Addon_1_1_.esp") INC: Follower_Addon_1_1_.esp
 FraliaGrayMane.esp
@@ -1893,8 +1893,10 @@ NPC_Hair_Rep_Necro.esp
 NPC_Overhaul_1_1_.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT VAR(ApachiiHairF) ERROR: ApachiiHairFemales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair.esm".
-  IFNOT VAR(ApachiiHairM) ERROR: ApachiiHairMales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair.esm".
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(ApachiiHairM) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairM) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 NPC_Overhaul_V2_.esp
   IF FILE("NPC_Overhaul_1_1_.esp") INC: NPC_Overhaul_1_1_.esp
 REGEX: (N|ThievesguildN)PCOverha.+byHaroda.+\.esp
@@ -1938,13 +1940,15 @@ IFNOT VAR(UFO) MOD: SupermodelSkyrim.esp
   // moved back to npc faces because it's npc faces overhaul (too many conflicts)
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 IFNOT VAR(UFO) MOD: SupermodelDawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 Sven.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
@@ -2721,7 +2725,8 @@ Behemoth Dragon.esp
 Belleza DiBella - PNJ Overhaul.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm"
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IFNOT FILE("Cazy Hairs-by zzjay.esp") REQ: "http://skyrim.nexusmods.com/mods/19623 Cazy Hairs-by zzjay.esp"
   IFNOT FILE("Fh hairs-by zzjay.esp") REQ: Fh hairs-by zzjay.esp
 Better Alchemy Loot.esp
@@ -9692,8 +9697,8 @@ BBLS_PatioFurniture.esp
     IFNOT VAR(BBLS) && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT ACTIVE("ApachiiHairFemales.esm") && IF VAR(EN) ERROR: ApachiiHairFemales.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("ApachiiHairFemales.esm") && IF VAR(RU) ERROR: ApachiiHairFemales.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IFNOT ACTIVE("SummerWear.esm") && IF VAR(EN) ERROR: SummerWear.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SummerWear.esm") && IF VAR(RU) ERROR: SummerWear.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IF CHECKSUM("BBLS_PatioFurniture.esp", 90C691) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -12063,8 +12068,8 @@ ub_npc_rework.esp
 ub_apachii_hair.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT ACTIVE("ApachiiHairFemales.esm") && IF VAR(EN) ERROR: ApachiiHairFemales.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("ApachiiHairFemales.esm") && IF VAR(RU) ERROR: ApachiiHairFemales.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 ub_cell_armory.esp
@@ -18291,7 +18296,8 @@ Brows.esp
 CazyMale.esp
 IFNOT FILE("Dibella's Beauty - NPC Overhaul.esp") MOD: Cazy Hairs-by zzjay.esp
 ElinRace_ApachiiHairFemales.esp
-  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 FallOut3Hairs.esp
 Fh hairs-by zzjay.esp
 ForswornHAIR.esp
@@ -19059,13 +19065,15 @@ IF VAR(UFO) MOD: SupermodelSkyrim.esp
   // loaded after UFO only if UFO is installed. This is a compromise.
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 IF VAR(UFO) MOD: SupermodelDawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairFemales"
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 IF VAR(UFO) MOD: My home is your home.esp
   IF CHECKSUM("My home is your home.esp", C36587B3) || IF CHECKSUM("My home is your home.esp", DDC76932) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   // Bethsoft thrd20#119
@@ -19279,8 +19287,8 @@ CarlottaValentia.esp
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IF CHECKSUM("CarlottaValentia.esp", 99430670) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 CGKarena.esp
-  IF CHECKSUM("CGKarena.esp", 4973DA86) && IFNOT VAR(ApachiiHairF) ERROR: ApachiiHairFemales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemales.esm".
-  IF CHECKSUM("CGKarena.esp", F4FA7C33) && IFNOT VAR(ApachiiHairF) ERROR: ApachiiHairFemales.esm is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemales.esm".
+  IF CHECKSUM("CGKarena.esp", 4973DA86) && IFNOT VAR(ApachiiHairF) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemales.esm".
+  IF CHECKSUM("CGKarena.esp", F4FA7C33) && IFNOT VAR(ApachiiHairF) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if this file is active without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemales.esm".
   //not all versions need the hair esm
 Chadeaux.esp
 ChantelleV2.esp
@@ -19399,7 +19407,8 @@ Esmeralda.esp
 Etain the Shewolf.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemale"
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 ExtraBlades.esp
 
 // companions f
@@ -19699,7 +19708,8 @@ Lyla.esp
 
 // companions m
 Maerwen Briaerthorne.esp
-  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemale"
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   REQ: "http://skyrim.nexusmods.com/mods/195 Human eyes for Elves"
   WARN: There are 12 variations of this esp.  ALL 12 contain unexpected (or out of order) records.  None should be used.
 MaleCompanions.esp
@@ -19711,7 +19721,8 @@ Marcurio_Tair.esp
 Marque.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT VAR(ApachiiHairM) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairMale"
+  IFNOT VAR(ApachiiHairM) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairM) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 marriageable_araneaienith.esp
 Martina.esp
 MartinFollower.esp
@@ -19729,9 +19740,11 @@ MC-Synbios.esp
   IFNOT FILE("FlansEyesForSkrim.esp") REQ: "http://skyrim.nexusmods.com/mods/14539 Flans Eyes for Skyrim"
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT VAR(ApachiiHairM) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair & ApachiiSkyHairMale"
+  IFNOT VAR(ApachiiHairM) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairM) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 MarcurioGB.esp
-  IFNOT VAR(ApachiiHairM) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairMale"
+  IFNOT VAR(ApachiiHairM) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairM) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 TheMeekoMod.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -19779,8 +19792,8 @@ morefollowers.esp
 MoreNpcProject.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT ACTIVE("ApachiiHairMales.esm") && IF VAR(EN) ERROR: ApachiiHairMales.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("ApachiiHairMales.esm") && IF VAR(RU) ERROR: ApachiiHairMales.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(ApachiiHairM) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairM) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IFNOT ACTIVE("CazyMale.esm") && IF VAR(EN) ERROR: CazyMale.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("CazyMale.esm") && IF VAR(RU) ERROR: CazyMale.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(EN) ERROR: Omegared99-Compilation.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -19789,8 +19802,8 @@ MoreNpcProject.esp
 morewhiterunnpcs.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IFNOT ACTIVE("ApachiiHairMales.esm") && IF VAR(EN) ERROR: ApachiiHairMales.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("ApachiiHairMales.esm") && IF VAR(RU) ERROR: ApachiiHairMales.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT VAR(ApachiiHairM) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairM) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(EN) ERROR: Omegared99-Compilation.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(RU) ERROR: Omegared99-Compilation.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IF CHECKSUM("morewhiterunnpcs.esp", F58E1B8E) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -19983,7 +19996,8 @@ Sydney2.esp
 Sylgja-Dovas_Angels-TCG.esp
 Sylgja-TCG.esp
 Sylvia.esp
-  IFNOT VAR(ApachiiHairF) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHairFemale"
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 
 // companions t
 Thaiden.esp
@@ -20068,7 +20082,8 @@ Vorstag.esp
   IF VAR(EN) SAY: Obsolete. Update to "http://skyrim.nexusmods.com/mods/20729 latest version."
     IF VAR(RU) SAY: Устарело. Обновите до "http://skyrim.nexusmods.com/mods/20729 последней версии."
 Uthgerd.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 katia.esp
 scar.esp
 Sexier Housecarls.esp
@@ -20091,10 +20106,12 @@ Sylgja.esp
 SylgjaUpgraded.esp
 SylgiaCompleteNopickaxe.esp
 Taarie.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IF CHECKSUM("Taarie.esp", 4D5BBFDC) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Talah.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 Theron.esp
 TS_FallenAngels.esp
 Vilkas_v1.esp
@@ -20284,7 +20301,8 @@ OndolemarReplacer.esp
 PetSabrecatJango.esp
 Pets.esp
 Pixie Windcaller.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 Sabretooth.esp
 Sabretoothmod_1_02.esp
 Selathir.esp
@@ -20322,7 +20340,8 @@ Taleya.esp
 The Lady Of Akatosh.esp
 Tuath.esp
 TTS - Lydia.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IFNOT FILE("TheEyesOfBeauty.esp") REQ: "http://skyrim.nexusmods.com/mods/13722 The Eyes of Beauty".
 Ultimate Witcher Experience - Followers.esp
 Ultimate Witcher Experience - Follower Geralt.esp
@@ -20337,7 +20356,8 @@ VizerinChronicles.esp
   IFNOT FILE("FallOut3Hairs.esm") REQ: "http://skyrim.nexusmods.com/mods/17993 Hair packs of Fallout 3".
   IFNOT FILE("AdditionalNPCFollwerVoices.esp") REQ: "http://skyrim.nexusmods.com/mods/16266 Additional Vanilla NPC Follower Voice Types".
 Viszerinfollower.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 voidcraft_housecarls.esp
 WealtheowValentine.esp
 wisplicker.esp
@@ -20361,7 +20381,8 @@ Khaliza of Gilane.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
 LylvieveSisters.esp
-  IFNOT VAR(ApachiiHair) REQ: "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair"
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 NoNakedComments.esp
 ulushenie naparnikov.esp
 Victoria.esp
@@ -20383,8 +20404,8 @@ AmazingFollowerTweaks-Dialogues.esp
 AmazingFollowerTweaks-SandboxNearer.esp
 Guardian HeadQuarters.esp
   IF CHECKSUM("Guardian HeadQuarters.esp", 5BA9ACE4) DIRTY: 36 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
-    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/10168 ApachiiSkyHair".
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
   IFNOT FILE("AmazingFollowerTweaks.esp") REQ: AmazingFollowerTweaks.esp
   // Must load after AmazingFollowerTweaks.esp
 zzz_Jenassa_MAKEOVER_by83Willow.esp
