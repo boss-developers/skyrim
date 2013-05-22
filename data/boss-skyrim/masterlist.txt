@@ -18163,24 +18163,77 @@ Skype - Two-Handed.esp
   IF CHECKSUM("Skype - Two-Handed.esp", 4820339A) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Skyrim Perk Enhancements.esp
   IF CHECKSUM("Skyrim Perk Enhancements.esp", 0F2B16BE) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  //aka SPERG
 Skyrim Perk Enhancements (optional).esp
   SAY: Obsolete? Not included in latest download.
-SkyrimForBattlePerk.esp
-SmithingTree.esp
-  TAG: {{BASH: Delev}}
-SmithingTreeDG.esp
-  TAG: {{BASH: Delev}}
-  IF FILE("SmithingTree.esp") && IF VAR(EN) WARN: Use either SmithingTree.esp or SmithingTreeDG.esp, not both.
-    IF FILE("SmithingTree.esp") && IF VAR(RU) WARN: Используйте любой или SmithingTree.esp или SmithingTreeDG.esp, не обa.
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 SPERG Vampire Fix.esp
   // part of Skyrim Perk Enhancements
   SAY: Obsolete? Not included in latest download.
 SPERG Dawnguard Patch.esp
-  // part of Skyrim Perk Enhancements
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+SPERG Dragonborn Patch.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IF CHECKSUM("SPERG Dragonborn Patch.esp", 5F78B5AA) && IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(EN) ERROR: Skyrim Perk Enhancements.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF CHECKSUM("SPERG Dragonborn Patch.esp", 5F78B5AA) && IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(RU) ERROR: Skyrim Perk Enhancements.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+SPERG Immersive Armors.esp
+  IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+SPERG Trade Barter.esp
+  IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(EN) ERROR: Skyrim Perk Enhancements.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(RU) ERROR: Skyrim Perk Enhancements.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("TradeBarter.esp") && IF VAR(EN) ERROR: TradeBarter.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("TradeBarter.esp") && IF VAR(RU) ERROR: TradeBarter.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+SPERG Weapons and Armor Vanilla.esp
+  IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(EN) ERROR: Skyrim Perk Enhancements.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(RU) ERROR: Skyrim Perk Enhancements.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(EN) ERROR: Weapons & Armor_Fixes.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(RU) ERROR: Weapons & Armor_Fixes.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+SPERG Weapons and Armor DG.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(EN) ERROR: Skyrim Perk Enhancements.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(RU) ERROR: Skyrim Perk Enhancements.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(EN) ERROR: Weapons & Armor_Fixes.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(RU) ERROR: Weapons & Armor_Fixes.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+//set allowing modular control of SPERG follows:
+Override Alchemy.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Alteration.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Archery.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Block.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Conjuration.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Destruction.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Enchanting.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override HeavyArmor.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Illusion.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override LightArmor.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Lockpicking.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override OneHanded.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Pickpocket.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Restoration.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Smithing.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Sneak.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override Speech.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+Override TwoHanded.esp
+  SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
 IF ACTIVE("Skyrim Perk Enhancements.esp") MOD: REGEX: PTAlchemyOverhaul_SkillRate_\d_\d\d\?.esp
   IF VAR(EN) SAY: Use only one PTAlchemyOverhaul_SkillRate esp
     IF VAR(RU) SAY: Используйте только один PTAlchemyOverhaul_SkillRate esp
@@ -18193,7 +18246,16 @@ IF ACTIVE("Skyrim Perk Enhancements.esp") MOD: CookingExpanded - PTAlchFood_BS.e
 IF ACTIVE("Skyrim Perk Enhancements.esp") MOD: CookingExpanded - PTFood_ONLY.esp
   IFNOT ACTIVE("CookingExpanded.esp") ERROR: CookingExpanded.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IFNOT ACTIVE("PTFoodOverhaul_ONLY.esp") ERROR: PTFoodOverhaul_ONLY.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+SkyrimForBattlePerk.esp
 SleepWell.esp
+SmithingTree.esp
+  TAG: {{BASH: Delev}}
+SmithingTreeDG.esp
+  TAG: {{BASH: Delev}}
+  IF FILE("SmithingTree.esp") && IF VAR(EN) WARN: Use either SmithingTree.esp or SmithingTreeDG.esp, not both.
+    IF FILE("SmithingTree.esp") && IF VAR(RU) WARN: Используйте любой или SmithingTree.esp или SmithingTreeDG.esp, не обa.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
 Soulmaster 10.esp
 SpeechTree.esp
 IFNOT FILE("SkyRe_Main.esp") MOD: StavesofSkyrim.esp
