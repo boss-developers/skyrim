@@ -4908,6 +4908,9 @@ Player Size Adjuster.esp
 RealTime.esp
 SkyRealism - Skills and Statistics.esp
 Skyrim Better Performance.esp
+SkyTweak.esp
+  IF VERSION("SKSE", "0.1.6.9", <) REQ: "http://skse.silverlock.org SKSE" 1.6.9+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.4+
 Stop followers unsheathing.esp
 //Skyrim Timed AutoSave Helper:
 REGEX: TimedAutoSave(\d\d)?\.esp
@@ -7950,6 +7953,7 @@ UnenchantedNightingaleArmour.esp
 UnenchantedNightingaleSetMod.esp
 UnenchRobeSepHoodThalmor.esp
 UnderC.esp
+Unique Dragon Priest Masks.esp 
 REGEX: UniqueLeveledItemsUpgrade(1dot3)?\.esp
   IF VAR(EN) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Obsolete. Update to latest version.
     IF VAR(RU) && IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") WARN: Устарело. Обновите до последней версии.
@@ -9484,6 +9488,10 @@ adventcalendar.esp
   IF CHECKSUM("adventcalendar.esp", 3A7D34AF) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("adventcalendar.esp", 871D9583) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   // two versions, same name
+AesirArmor.esp
+  IF CHECKSUM("AesirArmor.esp", CAA6B7F3) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 afewrandomnpcs.esp
   IF CHECKSUM("afewrandomnpcs.esp", AEF1C6E3) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 AlchemistsHiddenValley.esp
@@ -11276,6 +11284,19 @@ ENDGROUP: Quests N
 BEGINGROUP: Quests O
 
 obedientulfric.esp
+OBIS.esp
+  TAG: {{BASH: Delev, Relev}}
+  IF CHECKSUM("OBIS.esp", B366BF1B) DIRTY: 39 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("OBIS.esp", EDD0FBE8) DIRTY: 44 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+OBISDB.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IFNOT ACTIVE("OBIS.esp") && IF VAR(EN) ERROR: OBIS.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("OBIS.esp") && IF VAR(RU) ERROR: OBIS.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+Bandit Patrols.esp
+  IFNOT ACTIVE("OBIS.esp") && IF VAR(EN) ERROR: OBIS.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("OBIS.esp") && IF VAR(RU) ERROR: OBIS.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF CHECKSUM("Bandit Patrols.esp", EDD0FBE8) DIRTY: 19 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 okaazah_update.esp
 okaazah_dawnguard.esp
 Orlong's Hearth vdot9.esp
