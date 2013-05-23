@@ -4832,6 +4832,13 @@ REGEX: more_Travelers(_light)?\.esp
   IF VAR(EN) SAY: Use only one more_Travelers*.esp
     IF VAR(RU) SAY: Используйте только один more_Travelers*.esp
 MoreUP.esp
+ORM Convenient Alsvid.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IFNOT ACTIVE("Convenient Horses.esp") && IF VAR(EN) ERROR: Convenient Horses.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/14950 Convenient Horses"
+    IFNOT ACTIVE("Convenient Horses.esp") && IF VAR(RU) ERROR:Convenient Horses.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/14950 Convenient Horses"
+  IFNOT ACTIVE("ORM-Arvak.esp") && IF VAR(EN) ERROR: ORM-Arvak.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24019 Dawnguard Rewritten - Arvak"
+    IFNOT ACTIVE("ORM-Arvak.esp") && IF VAR(RU) ERROR: ORM-Arvak.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24019 Dawnguard Rewritten - Arvak"
 repopulatedskyrim.esp
 REGEX: SIM.?- NPC.?Additions(HOSTILE|WEREWOLVES)?\.esp
 SIM - NPCSUBMITTED.esp
@@ -15261,7 +15268,6 @@ ENDGROUP: Landscaping
 
 BEGINGROUP: City Overhauls
 
-Unique Region Names.esp
 Unique Region Names - Dragonborn.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
@@ -19252,6 +19258,11 @@ XFLHorses.esp
 XFLTweaks.esp
   IFNOT FILE("XFLMain.esm") REQ: XFLMain.esm
 XFLMindControl.esp
+BetterQuestObjectives-XFLPatch.esp
+  IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/32695 Even Better Quest Objectives"
+    IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/32695 Even Better Quest Objectives"
+  IFNOT ACTIVE("XFLDialogue.esp") && IF VAR(EN) ERROR: XFLDialogue.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/12933/ XFLDialog"
+    IFNOT ACTIVE("XFLDialogue.esp") && IF VAR(RU) ERROR: XFLDialogue.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/12933/ XFLDialog"
 ENDGROUP: Extensible Follower Framework
 
 BEGINGROUP: Ultimate Follower Overhaul
@@ -19278,6 +19289,10 @@ UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
 TravellersOfSkyrim - UFO Compatibility Patch.esp
+  IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
+BetterQuestObjectives-UFOPatch.esp
+  IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/32695 Even Better Quest Objectives"
+    IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/32695 Even Better Quest Objectives"
   IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
 ENDGROUP: Ultimate Follower Overhaul
 
@@ -20630,6 +20645,10 @@ AmazingFollowerTweaks.esp
       IF CHECKSUM("AmazingFollowerTweaks.esp", 1482CEEC) SAY: German version
 AmazingFollowerTweaks-Dialogues.esp
 AmazingFollowerTweaks-SandboxNearer.esp
+BetterQuestObjectives-AFTPatch.esp
+  IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/32695 Even Better Quest Objectives"
+    IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/32695 Even Better Quest Objectives"
+  IFNOT FILE("AmazingFollowerTweaks.esp") REQ: AmazingFollowerTweaks.esp
 Guardian HeadQuarters.esp
   IF CHECKSUM("Guardian HeadQuarters.esp", 5BA9ACE4) DIRTY: 36 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -21711,6 +21730,8 @@ Skyrim Performance MOD.esp
 Skyrim Performance MOD 5min.esp
   IF VAR(EN) && IF FILE("Skyrim Performance MOD.esp") WARN: Use only one Skyrim performance Mod.esp
     IF VAR(RU) && IF FILE("Skyrim Performance MOD.esp") WARN: Используйте только один Skyrim performance Mod.esp
+Unique Region Names.esp
+// Due to the way v5 works, the mod needs to load after just about any other worldspace-altering mod. - William
 REGEX: World_Map_Height_Pitch_Tweak.+\.esp
   IF VERSION("TES5", "1.8.151.0", <) REQ: Skyrim 1.8.151+
   IF VAR(EN) SAY: Use only one World_Map_Height_Pitch_Tweak esp.
