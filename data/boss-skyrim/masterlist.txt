@@ -10623,6 +10623,18 @@ Forrest's Diary.esp
 Forsworn Campaign.esp
   IF CHECKSUM("Forsworn Campaign.esp", 435B7DF0) DIRTY: 24 ITM, 21 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Fort Ironcrag.esp
+FortBuffscale.esp
+  IF CHECKSUM("FortBuffscale.esp", 35168FD9) || IF CHECKSUM("FortBuffscale.esp", 8EDB06C9) || IF CHECKSUM("FortBuffscale.esp", E8B27322) || IF CHECKSUM("FortBuffscale.esp", 74868200) || IF CHECKSUM("FortBuffscale.esp", 7BFBCD8F) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("FortBuffscale.esp", 35168FD9) || IF CHECKSUM("FortBuffscale.esp", 8EDB06C9) || IF CHECKSUM("FortBuffscale.esp", E8B27322) || IF CHECKSUM("FortBuffscale.esp", 74868200) || IF CHECKSUM("FortBuffscale.esp", 7BFBCD8F) IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("FortBuffscale.esp", 35168FD9) || IF CHECKSUM("FortBuffscale.esp", E8B27322) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IF CHECKSUM("FortBuffscale.esp", 35168FD9) || IF CHECKSUM("FortBuffscale.esp", E8B27322) && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+  IF CHECKSUM("FortBuffscale.esp", 35168FD9) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IF CHECKSUM("FortBuffscale.esp", 35168FD9) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IF CHECKSUM("FortBuffscale.esp", 1FBBACF2) DIRTY: 23 ITM, 45 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("FortBuffscale.esp", 74868200) || IF CHECKSUM("FortBuffscale.esp", 7BFBCD8F) DIRTY: 297 ITM, 45 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("FortBuffscale.esp", E8B27322) DIRTY: 280 ITM, 53 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("FortBuffscale.esp", 8EDB06C9) DIRTY: 299 ITM, 53 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("FortBuffscale.esp", 8EDB06C9) DIRTY: 281 ITM, 38 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 FortDawnguardEnhanced.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -13464,6 +13476,8 @@ GM-CookingEnhanced06b.esp
 GM-Smelting.esp
 GM-Tanning.esp
 Gradual Encumbrance from Carry Weight.esp
+Grand Dragons.esp
+  IF CHECKSUM("Grand Dragons.esp", BE573683) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Grass and Grass.esp
 greener aspenforest.esp
 grimsever2h.esp
@@ -20724,14 +20738,18 @@ Feminine Female Argonian Vampires [Dawnguard].esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 Feminine Female Orcs.esp
 Feminine Orc Animation by D.esp
-REGEX: Height Adjusted Skyrim.*\.esp
+REGEX: Height Adjusted Skyrim(.+)?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-REGEX: Height Adjusted Races.*\.esp
+REGEX: Height Adjusted Races( .+)?\.esp
   IF VAR(EN) SAY: Use only one Height Adjusted Races*.esp
     IF VAR(RU) SAY: Используйте только один Height Adjusted Races*.esp
+  IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+  IF CHECKSUM("Height Adjusted Races - Dragonborn.esp", D04A1C6D) || IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IF CHECKSUM("Height Adjusted Races - Dragonborn.esp", D04A1C6D) || IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
 REGEX: True Giants( v\d)?\.esp
-  IF REGEX("Height Adjusted Races with True Giants.*\.esp") INC: Height Adjusted Races with True Giants
+  IF REGEX("Height Adjusted Races(.+)True Giants(.+)?\.esp") INC: Height Adjusted Races with True Giants
 EnhancedCharacterEdit.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.9", <) REQ: "http://skse.silverlock.org SKSE" 1.6.9+
