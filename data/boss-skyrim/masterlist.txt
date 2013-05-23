@@ -1643,6 +1643,8 @@ EveryVampireEyesGrow.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
   IF VAR(EN) SAY: This mod will not be compatible with any mods that alter humanoid(imperial, breton, nord, redguard) race. Also, not compatible with mods that have Babette's facegendata(0001D4B7.NIF).
     IF VAR(RU) SAY: Этот мод может быть не совместим с любыми модами меняющих рассы гуманоидов(имперец, бретонец, норд, редгард). Также не совместим с модами, меняющими внешние данные Бабетты(Babette's facegendata(0001D4B7.NIF)).
+Weapons & Armor Fixes_Remade.esp
+  // new version - does not include Smithing Perks Overhaul anymore. Author recommends loading after the unofficial patches.
 
 ENDGROUP: DLC Fixes
 
@@ -6488,6 +6490,14 @@ imp_guard_helm.esp
 imp_helm.esp
   IF CHECKSUM("imp_helm.esp", B5CC3F9D) DIRTY:  3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 REGEX: imp_helm_(dae|dawn|dw|eb|imp|night|st)\.esp
+WeaponsArmorFixes_ClosefacedHelmets_Patch.esp
+  IFNOT FILE("imp_helm.esp") && IF VAR(EN) ERROR: imp_helm.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets
+    IFNOT FILE("imp_helm.esp") && IF VAR(RU) ERROR: imp_helm.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets
+  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093/ Weapon and Armor Fixes Remade"
+WeaponsArmorFixes_ClosefacedHelmetsDG_Patch.esp
+  IFNOT FILE("imp_helm_dawn.esp") && IF VAR(EN) ERROR: imp_helm_dawn.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets - Dawnguard
+    IFNOT FILE("imp_helm_dawn.esp") && IF VAR(RU) ERROR: imp_helm_dawn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets - Dawnguard
+  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093/ Weapon and Armor Fixes Remade"
 ImperialArmor.esp
 imperialdragonarmor.esp
 Imperial Dragon Armor.esp
@@ -13489,6 +13499,9 @@ GuardDialogue.esp
 GuardDialogue50.esp
 Guard Dialogue Overhaul.esp
 Guard Dialogue Overhaul Lite.esp
+WeaponsArmorFixes_GuardDialogueOverhaul_Patch.esp
+  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093/ Weapon and Armor Fixes Remade"
+  IFNOT FILE("Guard Dialogue Overhaul.esp") REQ: "http://skyrim.nexusmods.com/mods/23390/ Guard Dialouge Overhaul"
 GuardianStonesOverhaul-Candrian.esp
 Guards armor replacement.esp
   TAG: {{BASH: Delev}}
@@ -14862,6 +14875,23 @@ BEGINGROUP: Overrides Late
 
 aMidianborn_Skyforge_Weapons.esp
 // Moved to Overrides Late to fix an issues with the new weapon textures not appearing with Guard Dialog Overhaul installed - William
+WeaponsArmorFixes_ambSkyforge_Patch.esp
+  IFNOT FILE("aMidianborn_Skyforge_Weapons.esp") && IF VAR(EN) ERROR: aMidianborn_Skyforge_Weapons.esp is not present or is not active. Skyrim will CTD when loading if using this file without aMidianborn_Skyforge_Weapons
+    IFNOT FILE("aMidianborn_Skyforge_Weapons.esp") && IF VAR(RU) ERROR: aMidianborn_Skyforge_Weapons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без aMidianborn_Skyforge_Weapons
+  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093/? Weapon and Armor Fixes Remade"
+REGEX: WeaponsArmorFixes_MultiMod_(DLC)?(Vanilla)?Patch\.esp
+  IFNOT FILE("aMidianborn_Skyforge_Weapons.esp") && IF VAR(EN) ERROR: aMidianborn_Skyforge_Weapons.esp is not present or is not active. Skyrim will CTD when loading if using this file without aMidianborn_Skyforge_Weapons
+    IFNOT FILE("aMidianborn_Skyforge_Weapons.esp") && IF VAR(RU) ERROR: aMidianborn_Skyforge_Weapons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без aMidianborn_Skyforge_Weapons
+  IFNOT FILE("imp_helm.esp") && IF VAR(EN) ERROR: imp_helm.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets
+    IFNOT FILE("imp_helm.esp") && IF VAR(RU) ERROR: imp_helm.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets
+  IFNOT FILE("imp_helm_imp.esp") && IF VAR(EN) ERROR: imp_helm_imp.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets - Imperial
+    IFNOT FILE("imp_helm_imp.esp") && IF VAR(RU) ERROR: imp_helm_imp.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets - Imperial
+  IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT FILE("imp_helm_dawn.esp") && IF VAR(EN) ERROR: imp_helm_dawn.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets - Dawnguard
+    IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT FILE("imp_helm_dawn.esp") && IF VAR(RU) ERROR: imp_helm_dawn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets - Dawnguard
+  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093/ Weapon and Armor Fixes Remade"
+  IFNOT FILE("Guard Dialogue Overhaul.esp") REQ: "http://skyrim.nexusmods.com/mods/23390/ Guard Dialouge Overhaul"
 LMBalancingDV.esp
 LMBalancingDawnguardDV.esp
 IF FILE("LMBalancingDawnguardDV.esp") MOD:improvedrealistic.esp
