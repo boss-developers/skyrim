@@ -3187,6 +3187,9 @@ Dragons in the Wild.esp
   TAG: {{BASH: Delev}}
 dremorabook.esp
 Drink JuiceMod.esp
+DrinkingGivesYourBottles.esp
+  IF FILE("Skyrealism - Feast and Famine.esp") INC: Skyrealism - Feast and Famine.esp
+  IF REGEX("Headbomb's Better Sorting - Food.+\.esp") INC: Headbomb's Better Sorting - Food *.esp
 drop dg elderscrolls.esp
 dropfixes.esp
 DSM - Dawnguard Style Arrows.esp
@@ -4440,6 +4443,9 @@ smithingsupplies.esp
 SmithingTomes.esp
 solitude smelter.esp
 solssecretstash.esp
+Sorcerer Renamer.esp
+  IF VERSION("SKSE", "0.1.6.9", <) REQ: "http://skse.silverlock.org SKSE" 1.6.9+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.4+
 SortiertesInventar.esp
 Soul Eater The Enchantment Removing Chest.esp
   IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+
@@ -12408,6 +12414,8 @@ windhelm_thane.esp
 WindhelmFletcher.esp
   IF CHECKSUM("WindhelmFletcher.esp", 1DB7B3D6) DIRTY: 12 ITM, 6 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 WindhelmMilitaryEnhancement.esp
+Windmill_Shelter.esp
+  IF CHECKSUM("Windmill_Shelter.esp", F1D65BD) DIRTY: 32 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Winterhold_Improvements.esp
   IF CHECKSUM("Winterhold_Improvements.esp", 4CB27B45) DIRTY: 18 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Winterhold Fully Restored.esp
@@ -15405,6 +15413,13 @@ ClimatesOfTamriel-Interiors-Warm.esp
 REGEX: ClimatesOfTamriel-(Vanilla)?Nights-(Lvl|Level)-[12345678]\.esp
 ClimatesOfTamriel-WinterEdition.esp
   IF CHECKSUM("ClimatesOfTamriel-WinterEdition.esp", 74DF3C5) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
+Unique Region Names - Dragonborn COT Patch.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IFNOT ACTIVE("ClimatesOfTamriel-Dragonborn-Patch.esp") && IF VAR(EN) ERROR: ClimatesOfTamriel-Dragonborn-Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ClimatesOfTamriel-Dragonborn-Patch.esp") && IF VAR(RU) ERROR: ClimatesOfTamriel-Dragonborn-Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
 URN+CoT Patch.esp
 //following: Skyrim Visuals series reported to be compatible if run post-RL and/or post-CoT
 SV - The Indoors.esp
