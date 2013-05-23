@@ -6399,15 +6399,14 @@ Holynegociator.esp
   IF CHECKSUM("Holynegociator.esp", D5E4880B) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 HonestAbe.esp
 IFNOT VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
-  TAG: {{BASH: Delev, Relev}}
   IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 1B01C914) || IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 983EFB9E) WARN: This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches. It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.
   IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 1B01C914) || IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 983EFB9E) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 53E0D03D) || IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 96B29C9D) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", F95218FD) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IFNOT ACTIVE("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: SPIKE.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Deactivate}} and remove [Relev]
-  // not tested
+  IFNOT ACTIVE("SPIKE.esm") && IF VAR(EN) ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SPIKE.esm") && IF VAR(RU) ERROR: SPIKE.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Delev, Deactivate}}
+    ELSE TAG: {{BASH: Delev, Relev}}
 IFNOT VAR(BFNIAP) MOD: Lorecraft - Immersive Armors.esp
 IFNOT VAR(BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
@@ -8215,14 +8214,14 @@ Lorecraft - Bandolier.esp
   IF VAR(EN) && IFNOT FILE("Dr_Bandolier.esp") WARN: Keep 'Dr_Bandolier.esp' aswell!
     IF VAR(RU) && IFNOT FILE("Dr_Bandolier.esp") WARN: 'Dr_Bandolier.esp' также необходим для работы!
 IF VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
-  TAG: {{BASH: Delev, Relev}}
   IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 1B01C914) || IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 983EFB9E) WARN: This is the Skyjubs Invisible Helmets version of hothtrooper44_ArmorCompilation.esp and may not produce the effects desired in conjuntion with other hothtrooper patches.  It is not compatible with any other Skyjubs Invisible Helmets esps other than the Dawnguard and Dragonborn plugins.
   IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 1B01C914) || IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 983EFB9E) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 53E0D03D) || IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", 96B29C9D) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", F95218FD) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  IFNOT ACTIVE ("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE ("SPIKE.esm") && IF FILE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: SPIKE.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
-  IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Deactivate}} and remove [Relev]
+  IFNOT ACTIVE ("SPIKE.esm") && IF VAR(EN) ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE ("SPIKE.esm") && IF VAR(RU) ERROR: SPIKE.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без.
+  IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Delev, Deactivate}}
+    ELSE TAG: {{BASH: Delev, Relev}}
 IF VAR(BFNIAP) MOD: Lorecraft - Immersive Armors.esp
 IF VAR(BFNIAP) MOD: SkyRe_Plugin_ImmersiveArmor_2.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
