@@ -5314,6 +5314,7 @@ REGEX: Berserk Black Swordsman Armor( - No Arm)?\.esp
     IF VAR(RU) SAY: Используйте только один Berserk Black Swordsman Armor
 Berserk Greatsword.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+BerserkerSword.esp
 BetterBeginning.esp
 betterbladesgear.esp
   TAG: {{BASH: Relev}}
@@ -5874,6 +5875,7 @@ REGEX: Dovahkiin Mercenary Armor and Weapons (CBBE|UNP)?\.esp
 Dovahkiin Mercenary Armored Horse.esp
 Dovahkiin's_Great_Sword.esp
 dovahkiin'scrown.esp
+DovahWeaponsPack.esp
 DPArmor.esp
 DPArmor_AIO.esp
 DraconicArmor.esp
@@ -6303,6 +6305,9 @@ GOT Knight Armor 2.esp
 GoT_Sigils.esp
 GravHammer.esp
 gravityhammer.esp
+GrayManerifle.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
 grayseraticheavyarmor.esp
 greatbow.esp
 Greate Templar Sword.esp
@@ -6655,6 +6660,7 @@ Kaw's Cat Disguise.esp
 KCEAssaultRifles.esp
 KCEBattleClaws.esp
 KCEDeathBell.esp
+KCEFlameBikini.esp
 KCEIvoryHunter.esp
 KCEScytheOfDeath.esp
 LadyKdCirclets.esp
@@ -6802,6 +6808,8 @@ lilithsdecapitator1h_allinone.esp
 lilithsdisemboweler.esp
 lilithsdoombringer.esp
 lilithsobliterator1_0.esp
+lilithsobliterator3_0.esp
+  IF CHECKSUM("lilithsobliterator3_0.esp", 747ED3F4) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 lilithsrazor1_1.esp
 lilithsrazor_s.esp
 lilithsreaver.esp
@@ -7258,6 +7266,8 @@ Osare KneeSocks.esp
 Osare Maid Outfit.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 Osare OnePiece.esp
+Osare Panty.esp
+Osare Part Armor.esp
 Osare SchoolUniform.esp
 Osare Swimsuit.esp
 Osare Underwear.esp
@@ -7731,6 +7741,7 @@ Stormcloaks_and_Guards_Armors.esp
 StormcloakArmorVariety.esp
   // tag not tested
   TAG: {{BASH: Relev}}
+stormcloakrobes.esp
 stoutheartarmor.esp
   IF CHECKSUM("stoutheartarmor.esp", 7E65336D) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
     IF CHECKSUM("stoutheartarmor.esp", 7E65336D) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -7873,6 +7884,7 @@ THCraftableVampireArmory.esp
 TheAvengersHawkeyeArrowWepMod.esp
 The Bard's Honour.esp
 The Bow of the Drow.esp
+The Death Mask.esp
 The Siegebreaker Greatsword.esp
 TheCallOfTheNorth.esp
   TAG: {{BASH: Delev, Relev}}
@@ -7914,8 +7926,10 @@ TK-world.esp
 TMasks-JudgmentDay.esp
   REQ: Meshes and textures from "http://skyrim.nexusmods.com/mods/20077 Tribunal Maskes by Zairaam", esp usage optional.
 TMRLollipop.esp
+Toad's Tera.esp
 tobuscusweapons.esp
 REGEX: tom349fistweapon(s|sFR)?\.esp
+TomahawkACIIIWepMod.esp
 Tona_airy.esp
 Tonas Oblivion Scarves.esp
 ToolCraft.esp
@@ -11308,6 +11322,10 @@ Niires Honeyside.esp
   IFNOT FILE("Niire's Honeyside(esm).esm") REQ: Niire's Honeyside(esm).esm
 Niires Proudspire.esp
   IFNOT FILE("Niire's Proudspire(esm).esm") REQ: Niire's Proudspire(esm).esm
+Nirn Falls Manor.esp
+  IF CHECKSUM("Nirn Falls Manor.esp", F6D72530) DIRTY: 55 ITM, 31 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) WARN: This file contains 17 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 17 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
 NirnFallsManor.esp
 Quest_NoMercy.esp
 NoBleakFalls.esp
