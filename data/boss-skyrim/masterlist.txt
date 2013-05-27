@@ -2728,6 +2728,7 @@ Barrels and Crates.esp
   TAG: {{BASH: Relev}}
 Batch Crafting Recipes.esp
 Prometheus_BeastSkeletons.esp
+  IF CHECKSUM("Prometheus_BeastSkeletons.esp", 42EE9442) WARN: This plugin may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip. Please wait until the author issues a updated version of the mod without any TES5Snip edits.
 Beauties of Skyrim.esp
   IF CHECKSUM("Beauties of Skyrim.esp", 38F04200) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Behemoth Dragon.esp
@@ -4881,6 +4882,9 @@ DEAsprint&jump.esp
 Dragon Soul Relinquishment.esp
   IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
 DragonWarrior-Effects.esp
+Duke Patricks - Savvy Save.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IF CHECKSUM("Duke Patricks - Savvy Save.esp", 4DC4EF35) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 DynamicNaming.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
 Dynavision.esp
@@ -4995,6 +4999,10 @@ kuerteeDisableLightsFarFromActors MCM.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3+
+manny_Status.esp
+  IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+  IF VERSION("SKSE", "0.1.6.9", <) REQ: "http://skse.silverlock.org SKSE" 1.6.9+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.1+
 SaveHotKeyMCM.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.4", <) REQ: "http://skse.silverlock.org SKSE" 1.6.4+.
@@ -5434,6 +5442,7 @@ BR_Orcish_Armor_1_1.esp
 Brand-Shei's Strongbox.esp
 BretonLongbow.esp
 Bromsweapons.esp
+Brigandage.esp
 Bronze Arrows -Standalone-.esp
   TAG: {{BASH: Delev}}
 brutal armor.esp
@@ -5488,6 +5497,11 @@ Child Armor.esp
 ChildrenClothesClassed.esp
   SAY: Requires {"http://skyrim.nexusmods.com/mods/19826" Elaborate Textiles)
 chinaDressRavana.esp
+ChitinGoggles.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
+  IF VAR(EN) && IF FILE("WetandCold - Ashes.esp") ERROR: Delete. Already included in WetandCold - Ashes.esp.
+    IF VAR(RU) && IF FILE("WetandCold - Ashes.esp") ERROR: Удалите. Уже включено в WetandCold - Ashes.esp.
 Chiulin.esp
 Chrysamere.esp
   IF CHECKSUM("Chrysamere.esp", 741C7C7C) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -6134,6 +6148,11 @@ BEGINGROUP: Items F
 
 FA Hide Armor.esp
 FaalSizaan.esp
+FaceMasksOfSkyrim.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
+  IF VAR(EN) && IF FILE("WetandCold - Ashes.esp") ERROR: Delete. Already included in WetandCold - Ashes.esp.
+    IF VAR(RU) && IF FILE("WetandCold - Ashes.esp") ERROR: Удалите. Уже включено в WetandCold - Ashes.esp.
 FactionClothes.esp
 FalchionSword.esp
   IF CHECKSUM("FalchionSword.esp", CF7AD7C4) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -6545,6 +6564,7 @@ Insanity's Empire Longswords.esp
 Insanity's Goldbrand.esp
 Insanity's Kahvozein Fang.esp
 Insanity's Ice Blade of the Monarch.esp
+Insanity's Iron Bow.esp
 Insanity's Pale Blade.esp
 Insanity's Shields.esp
 Insanity's Silver Bow.esp
@@ -6691,11 +6711,13 @@ KobChainmailRobe.esp
 KO Katana.esp
 kokutou yoru.esp
 KTAAncientShroudedArmor.esp
+KTABladeOfWoe.esp
 Kubikiri Ax Edition.esp
 KURESE Gloria conversion.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
   IF VAR(EN) && IF FILE("DIMclothes1.esp") WARN: Redundant. Included in "DIMONIZED UNP clothing resources".
     IF VAR(RU) && IF FILE("DIMclothes1.esp") WARN: Избыточно. Уже включено в "DIMONIZED UNP clothing resources".
+KWTelescope.esp
 ENDGROUP: Items K
 
 BEGINGROUP: Items L
@@ -6902,6 +6924,7 @@ Magicka Sabers.esp
 Magicka Sabers expanded.esp
   IF CHECKSUM("Magicka Sabers expanded.esp", 0F9D0688) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Magicka Sabers Plasma.esp
+MageBackpack_byTumbajamba.esp
 mage champion.esp
 mage robe hoods.esp
 magnus v3.0.esp
@@ -7277,6 +7300,10 @@ ENDGROUP: Items O
 
 BEGINGROUP: Items P
 
+Painkiller's_Hrothmund's_Axe.esp
+  IF CHECKSUM("Painkiller's_Hrothmund's_Axe.esp", 0781B36E) DIRTY: 0 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
 Paladin.esp
 PaladinArmor.esp
 Pauldrons.esp
@@ -7615,6 +7642,10 @@ SilverOfTheDragonblood_1h&2h.esp
 SilverswordOfTheDragonblood2H.esp
 Silvershield Of The Dragonblood.esp
 SilvistEbonyMail.esp
+SkaalHeavyArmor.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
+  SAY: Contains wild edit. Remove DLC2SkaalAmulet from the ESP using TES5Edit.
 Skeleton bikini.esp
 Skeleton Key Recipe.esp
   IF CHECKSUM("Skeleton Key Recipe.esp", 9FB9A9AC) && IF VAR(EN) WARN: This file was released before the CK (07 Feb. 2012) and is not recommended for use. It should be removed.
@@ -7973,6 +8004,7 @@ TW2Geral'sBlueStripeArmor.esp
 TW2GeraltslightJacket.esp
 TwisterBow.esp
 Twohanded Dawnbreaker.esp
+TwoRapiers.esp
 typemoonWeapon.esp
 Tyrael Armor.esp
 TyraelArmor_KoRe.esp
@@ -12965,14 +12997,15 @@ BetterQuestObjectives-ESFCompanionsPatch.esp
 BetterQuestObjectives-PaarDilemmaPatch.esp
   IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
     IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-  IFNOT FILE("The Paarthurnax Dilemma.esp") && IF VAR(EN) ERROR: The Paarthurnax Dilemma.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
-    IFNOT FILE("The Paarthurnax Dilemma.esp") && IF VAR(RU) ERROR: The Paarthurnax Dilemma.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+  IFNOT FILE("The Paarthurnax Dilemma.esp") && IF VAR(EN) ERROR: The Paarthurnax Dilemma.esp is not present or is not active. Skyrim will CTD when loading if this file is active without The Paarthurnax Dilemma
+    IFNOT FILE("The Paarthurnax Dilemma.esp") && IF VAR(RU) ERROR: The Paarthurnax Dilemma.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без The Paarthurnax Dilemma
 BetterQuestObjectives-RequiemPatch.esp
   IFNOT FILE("Requiem.esp") && IF VAR(EN) ERROR: Requiem.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Requiem
-    IFNOT FILE("Requiem.esp") && IF VAR(RU) ERROR: Requiem.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+    IFNOT FILE("Requiem.esp") && IF VAR(RU) ERROR: Requiem.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Requiem
 BetterQuestObjectives-SkyRePatch.esp
   IFNOT FILE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if this file is active without SkyRe_Main
-    IFNOT FILE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+    IFNOT FILE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SkyRe
+BetterQuestObjectives-DBForevertoMisc.esp
 IF REGEX("(Headbomb's )?Better Sorting.*\.esp") MOD: CreeperFollower.esp
 Headbomb's Better Sorting - Ammo.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Ammo.esp", 58924631) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -15753,6 +15786,11 @@ IFNOT FILE("3DNPC.esp") MOD: Disease Descriptions_RND Compatibile.esp
 IFNOT FILE("3DNPC.esp") MOD: RND_UniqueBoozeBottles-Patch.esp
   IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(EN) SAY: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
     IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(RU) SAY: Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.
+IFNOT FILE("3DNPC.esp") MOD: KnapsackEnhanced.esp
+  IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(EN) ERROR: Chesko_Frostfall.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/11163 Frostfall"
+    IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(RU) ERROR: Chesko_Frostfall.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/11163 Frostfall"
+  IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/26228/ Realistic Needs and Diseases"
+    IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/26228/ Realistic Needs and Diseases"
 Realistic Weapon Weights.esp
   //  TAG: {{BASH: Stats}}
 Realistic Running Speed.esp
@@ -15842,6 +15880,10 @@ REGEX: StaminaCarryWeight_\d{2}\.esp
 REGEX: staminaregen\d{2,3}\.esp
 StealthImmFixv1.esp
 THS - Base Module.esp
+Transportato - Ships.esp
+  IF CHECKSUM("Transportato - Ships.esp", 998CF48F) DIRTY: 137 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Transportato - Trains.esp
+  IF CHECKSUM("Transportato - Trains.esp", 16C54FE7) DIRTY: 17 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 TRO_BasicNeeds.esp
 SIBNPatch.esp
   IFNOT FILE("TRO_BasicNeeds.esp") REQ: TRO_BasicNeeds.esp
@@ -17026,6 +17068,7 @@ SummonsUnderControl.esp
 Mighty Magick - Alteration.esp
   IF CHECKSUM("Mighty Magick - Alteration.esp", 89544A70) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Mighty Magick - Alteration Extras.esp
+Mighty Magick - Artifacts.esp
 Mighty Magick - Conjuration.esp
   IF CHECKSUM("Mighty Magick - Conjuration.esp", 4F8E6366) || IF CHECKSUM("Mighty Magick - Conjuration.esp", 305961D4) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   // ^ 305961D4 Improved Soultrap compatibility patch
@@ -17044,6 +17087,7 @@ Mighty Magick - Restoration.esp
 Mighty Magick - Restoration Extras.esp
   IF CHECKSUM("Mighty Magick - Restoration Extras.esp", 880BE3E0) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Mighty Magick - Scaling.esp
+Mighty Magick - Voice.esp
 REGEX: MMO(Alteration|Conjuration|Destruction|Illusion|Restoration)Changes\.esp
 ForgottenMastery.esp
   // must load after Mighty Magic
@@ -17384,6 +17428,8 @@ REGEX: Added_Killmoves_All_Weapon.+\.esp
  // REGEX: Added_Killmoves_All_Weapons([+-])?(Last_Enemy_Limit_Removed)?([+-])?(Player_cannot_be_killmoved)?([+-])?(DWDecap-removed)?\.esp
 REGEX: Added_Slow_Motion_.+\.esp
 Added_SneakDecap_Only.esp
+AttackCancel.esp
+AttackCancel_Hardcore.esp
 BalancedCombat.esp
   IF CHECKSUM("BalancedCombat.esp", 8952CB95) DIRTY: 51 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 BalancedCombat2.5.esp
@@ -18682,6 +18728,9 @@ BEGINGROUP: Warpaints
 
 15warpaints.esp
 additionalwarpaints.esp
+BHWarPaints.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
+  IFNOT FILE("RaceMenu.esp") REQ: RaceMenu.esp
 ButterflyFemaleWarpaint_2_1.esp
 Daedric Letters Warpaints.esp
 DragonWarpaint.esp
@@ -19073,6 +19122,11 @@ IF FILE("3DNPC.esp") MOD: RND_Dragonborn-Patch.esp
 IF FILE("3DNPC.esp") MOD: RND_UniqueBoozeBottles-Patch.esp
   IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(EN) SAY: The Unique BOOZE Bottles plugin file can be deactivated from your load order with this patch active - but remember to keep the meshes and textures installed.
     IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(RU) SAY: Плагин Unique BOOZE Bottles может быть деактивирован когда этот патч активен, но не забудьте оставить установленными модели и текстуры из Unique BOOZE Bottles.
+IF FILE("3DNPC.esp") MOD: KnapsackEnhanced.esp
+  IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(EN) ERROR: Chesko_Frostfall.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/11163 Frostfall"
+    IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(RU) ERROR: Chesko_Frostfall.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/11163 Frostfall"
+  IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/26228/ Realistic Needs and Diseases"
+    IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/26228/ Realistic Needs and Diseases"
 RRRE-3DNPCv2-Patch.esp
 
 // pre ufo a
@@ -20207,6 +20261,9 @@ SkyNPCReimagined.esp
 Skyrim - The three divine brothers.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+SlavePackRiekling.esp
+  IF CHECKSUM("SlavePackRiekling.esp", 9657019E) WARN: This plugin may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip. Please wait until the author issues a updated version of the mod without any TES5Snip edits.
+  IF CHECKSUM("SlavePackRiekling.esp", 9657019E) DIRTY: 174 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 sneAnya.esp
 sneHaekwon.esp
 sneIsobel.esp
