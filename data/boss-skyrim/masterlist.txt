@@ -8483,6 +8483,9 @@ HarvestOverhaulDawnguardDragonborn.esp
 HarvestOverhaulCreatures.esp
 HarvestOverhaulCreaturesDawnguard.esp
   IFNOT FILE("HarvestOverhaulCreatures.esp") INC: HarvestOverhaulCreatures.esp
+HarvestOverhaulCreaturesDawnguardDragonborn.esp
+  IFNOT FILE("HarvestOverhaulCreatures.esp") INC: HarvestOverhaulCreatures.esp
+  IFNOT FILE("HarvestOverhaulCreaturesDawnguard.esp") INC: HarvestOverhaulCreaturesDawnguard
 HarvestOverhaulCreaturesDawnguardHearthfire.esp
 HarvestOverhaulCreaturesDawnguardHearthfireDragonborn.esp
 // Harvest Overhaul Compatibility patches located after mods patched Skyre_main.esp and IMCN - Overrides.esp as author suggests
@@ -9135,6 +9138,9 @@ SkyRe_Enemies.esp
   IF VAR(EN) WARN: Obsolete. Update to latest version of SkyRe and use SkyRe_EnemyScaling.esp instead
     IF VAR(RU) WARN: Устарело обновите до последней версии SkyRe и используйте SkyRe_EnemyScaling.esp вместо этого.
   TAG: {{BASH: Relev}}
+SkyRe_HarvestOverhaulDawnguardDragonbornPatch.esp
+  IFNOT ACTIVE("HarvestOverhaulDawnguardDragonborn.esp") && IF VAR(EN) ERROR: HarvestOverhaulDawnguardDragonborn.esp is not present or is not active. Skyrim will CTD when loading if using this file without HarvestOverhaulDawnguardDragonborn.
+    IFNOT ACTIVE("HarvestOverhaulDawnguardDragonborn.esp") && IF VAR(RU) ERROR: HarvestOverhaulDawnguardDragonborn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без HarvestOverhaulDawnguardDragonborn.
 SkyRe_Lighting.esp
   IF VAR(EN) SAY: Only for non ENB users
     IF VAR(RU) SAY: Только для не ENB пользователей.
