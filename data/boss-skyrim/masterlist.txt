@@ -7898,7 +7898,7 @@ TG.esp
 TGBowsDrawFaster.esp
   // Adds gloves, doesn't alter bows.
 REGEX: TH3WICK3D1-.+\.esp
-  // REGEX because only items from this autor
+  // REGEX because only items from this author
 ThaidensTreasure.esp
 Thalmor Armour Set.esp
   IF CHECKSUM("Thalmor Armour Set.esp", 7AC3742B) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -21825,6 +21825,12 @@ NPCsUseAmmo_IWPatch.esp
   IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(EN) ERROR: Immersive Weapons.esp is not present or is not active. Skyrim will CTD when loading if using this file without Immersive Weapons.esp
     IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(RU) ERROR: Immersive Weapons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Immersive Weapons.esp
 RND_RWLReduced-Patch.esp
+SoundPropagationOverhaul DSAMG Patch.esp
+  // SPO is not actually listed as a master in the .esp. The ITM below is
+  // from after marking SPO as a master in TES5Edit.
+  IF CHECKSUM("SoundPropagationOverhaul DSAMG Patch.esp", 32DA1D52) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(EN) ERROR: SoundPropagationOverhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoundPropagationOverhaul
+    IFNOT ACTIVE("SoundPropagationOverhaul.esp") && IF VAR(RU) ERROR: SoundPropagationOverhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoundPropagationOverhaul
 SPTConsistentOlderPeopleEEOPatch.esp
   IFNOT ACTIVE("ethereal_elven_overhaul.esp") && IF VAR(EN) ERROR: ethereal_elven_overhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("ethereal_elven_overhaul.esp") && IF VAR(RU) ERROR: ethereal_elven_overhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
