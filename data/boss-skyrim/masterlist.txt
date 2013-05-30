@@ -15371,10 +15371,6 @@ ENDGROUP: Landscaping
 
 BEGINGROUP: City Overhauls
 
-Unique Region Names - Dragonborn.esp
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-  IF CHECKSUM("Unique Region Names - Dragonborn.esp", 0E71DBFD) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 Beautiful Cities.esp
   IF CHECKSUM("Beautiful Cities.esp", B70CEB49) DIRTY: 0 ITM, 22 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 civilwarcleanup.esp
@@ -15579,14 +15575,7 @@ ClimatesOfTamriel-WinterEdition.esp
   IF CHECKSUM("ClimatesOfTamriel-WinterEdition.esp", 74DF3C5) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
 ELFXEnhancer.esp
 // ^ Loaded after CoT as it is more specialized.
-Unique Region Names - Dragonborn COT Patch.esp
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-  IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-  IFNOT ACTIVE("ClimatesOfTamriel-Dragonborn-Patch.esp") && IF VAR(EN) ERROR: ClimatesOfTamriel-Dragonborn-Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("ClimatesOfTamriel-Dragonborn-Patch.esp") && IF VAR(RU) ERROR: ClimatesOfTamriel-Dragonborn-Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-URN+CoT Patch.esp
+
 //following: Skyrim Visuals series reported to be compatible if run post-RL and/or post-CoT
 SV - The Indoors.esp
   IF CHECKSUM("SV - The Indoors.esp", 51B712E6) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -21915,8 +21904,23 @@ Skyrim Performance MOD.esp
 Skyrim Performance MOD 5min.esp
   IF VAR(EN) && IF FILE("Skyrim Performance MOD.esp") WARN: Use only one Skyrim performance Mod.esp
     IF VAR(RU) && IF FILE("Skyrim Performance MOD.esp") WARN: Используйте только один Skyrim performance Mod.esp
+
+// Due to the way v5 works, Unique Region Names needs to load after just about any other worldspace-altering mod. - William
+// And the URN compatibility patches should likely be loaded after URN. :) - Freso
 Unique Region Names.esp
-// Due to the way v5 works, the mod needs to load after just about any other worldspace-altering mod. - William
+Unique Region Names - Dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IF CHECKSUM("Unique Region Names - Dragonborn.esp", 0E71DBFD) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+Unique Region Names - Dragonborn COT Patch.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+  IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+  IFNOT ACTIVE("ClimatesOfTamriel-Dragonborn-Patch.esp") && IF VAR(EN) ERROR: ClimatesOfTamriel-Dragonborn-Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ClimatesOfTamriel-Dragonborn-Patch.esp") && IF VAR(RU) ERROR: ClimatesOfTamriel-Dragonborn-Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+URN+CoT Patch.esp
+
 REGEX: World_Map_Height_Pitch_Tweak.+\.esp
   IF VERSION("TES5", "1.8.151.0", <) REQ: Skyrim 1.8.151+
   IF VAR(EN) SAY: Use only one World_Map_Height_Pitch_Tweak esp.
