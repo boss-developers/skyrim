@@ -15,16 +15,19 @@ Note: Standardized messages allow users to receive a consistent message for each
 //
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+		IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 //
 // -Hearthfire Dependency-
 //
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
+		IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
 //
 // -Dragonborn Dependency-
 //
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
+		IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
 //
 // --Other Dependency Messages--
 //
@@ -32,34 +35,40 @@ Note: Standardized messages allow users to receive a consistent message for each
 //
   IFNOT ACTIVE("plugin") && IF VAR(EN) ERROR: <Plugin name> is not present or is not active. Skyrim will CTD when loading if using this file without <Plugin name without extension>
     IFNOT ACTIVE("plugin") && IF VAR(RU) ERROR: <Plugin name> отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без <Plugin name without extension>
+		IFNOT ACTIVE("plugin") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin <Plugin name without extension>
 // second variant
   IFNOT ACTIVE("plugin") && IF VAR(EN) ERROR: <Plugin name> is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("plugin") && IF VAR(RU) ERROR: <Plugin name> отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-	
+		IFNOT ACTIVE("plugin") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+
 // Remember to fill in the appropriate details. If a link to the plugin's download page is on hand make the "<Plugin name without extension>" a link.
 //
 // -MCM Compatibility-
   IFNOT VAR(SkyUI) && IF VAR(EN) WARN: SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.
     IFNOT VAR(SkyUI) && IF VAR(RU) WARN: SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.
+		IFNOT VAR(SkyUI) && IF VAR(ES) WARN: SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.
 // ================================================================
 //
 // --Dirty Messages--
 //
 // -ITM and UDR-
 //
-  IF CHECKSUM("plugin", Checksum) DIRTY: <x> ITM, <y> UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("plugin", Checksum) && IF VAR(EN) DIRTY: <x> ITM, <y> UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+	IF CHECKSUM("plugin", Checksum) && IF VAR(ES) DIRTY: <x> ITM, <y> UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 // Remember to fill in the appropriate details (If there are 0 ITM or UDR, please insert a 0)
 //
 // -Deleted Navmesh- (no-checksum reporting)
 //
   IF VAR(EN) WARN: This file contains <x> deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит <x> удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+		IF VAR(ES) WARN: Este archivo contiene <x> entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
 // Remember to fill in the appropriate number.
 //
 // -Out of order records (likely pre-Creation Kit)
 //
   IF CHECKSUM("plugin", Checksum) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("plugin", Checksum) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+		IF CHECKSUM("plugin", Checksum) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de lugar y debería ser removido.
 // Remember to fill in the appropriate details.
 //
 //
@@ -69,6 +78,7 @@ Note: Standardized messages allow users to receive a consistent message for each
 //
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+		IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 // IF a download link to the latest version is on hand, make the last two words a link.
 //
 // ================================================================
@@ -76,6 +86,7 @@ Note: Standardized messages allow users to receive a consistent message for each
 //
   IF VAR(EN) SAY: Use only one <Plugin name>.
     IF VAR(RU) SAY: Используйте только один <Plugin name>.
+		IF VAR(ES) SAY: Utilizar solo un <Plugin name>.
 // Append this message for REGEX lines that esxpress different versions of one file.
 // Remember to fill in the appropriate details.
 //
@@ -84,6 +95,7 @@ Note: Standardized messages allow users to receive a consistent message for each
 //
   IF VAR(EN) && IF FILE("<Plugin name>") ERROR: Delete. Already included in <Plugin name>.
     IF VAR(RU) && IF FILE("<Plugin name>") ERROR: Удалите. Уже включено в <Plugin name>.
+		IF VAR(ES) && IF FILE("<Plugin name>") ERROR: Borrar. Esta incluido en <Plugin name>.
 // Append this message for mods that already included in other mod.
 // You can use VAR(<VARIABLE>) for mods that name already exist in variable setup section of masterlist(Dawnguard, Dragondorn, Hearthfire DLCs etc).
 // Remember to fill in the appropriate details.
