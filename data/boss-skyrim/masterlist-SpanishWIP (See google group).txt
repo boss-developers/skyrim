@@ -24085,13 +24085,14 @@ better_water.esp
 ClearWater.esp
 Hot Volcanic Water.esp
   IF VAR(EN) || IF VAR(RU) && IF CHECKSUM("Hot Volcanic Water.esp", CB9A32B4) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF VAR(ES) && IF CHECKSUM("plugin.esp", Checksum) DIRTY: <x> ITM, <y> UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+    IF VAR(ES) && IF CHECKSUM("Hot Volcanic Water.esp", CB9A32B4) DIRTY: 6 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 ImmersiveWater3.esp
 medium water.esp
 Purewaters.esp
 IF FILE("Purewaters.esp") MOD: realrainextended.esp
-  IF VAR(EN) SAY: Use only one realrain.esp
-    IF VAR(RU) SAY: Используйте только один realrain.esp
+  IF VAR(EN) SAY: Use only one realrain esp
+    IF VAR(RU) SAY: Используйте только один realrain esp
+      IF VAR(ES) SAY: Utilizar solo un realrain esp
 PurewatersDG.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -24104,8 +24105,10 @@ RND_PureWaters-Patch.esp
 RealisticWaterTextures.esp
   IF VAR(EN) && IF FILE("WATER.esp") WARN: DELETE. Use WATER.esp instead
     IF VAR(RU) && IF FILE("WATER.esp") WARN: Удалите. Используйте WATER.esp вместо этого.
-  IF VAR(EN) && IFNOT FILE("WATER.esp") SAY: Old. Use "http://skyrim.nexusmods.com/mods/13268 WATER" mod instead.
+      IF VAR(ES) && IF FILE("WATER.esp") WARN: Borrar. Utilizar WATER.esp en lugar.
+  IF VAR(EN) && IFNOT FILE("WATER.esp") WARN: Old. Use "http://skyrim.nexusmods.com/mods/13268 WATER" mod instead.
     IF VAR(RU) && IFNOT FILE("WATER.esp") WARN: Устарело. Используйте вместо этого мод "http://skyrim.nexusmods.com/mods/13268 WATER".
+      IF VAR(ES) && IF FILE("WATER.esp") WARN: Obsoleto. Utilizar "http://skyrim.nexusmods.com/mods/13268 WATER" en lugar.
 /* Not sure if this is obsolete its from Realistic Water Textures and Terrain */
 RWTT - Get Wet.esp
   IF VAR(EN) SAY: Originally for Realistic Water Textures and Terrain, may be obsolete.
@@ -24113,7 +24116,7 @@ RWTT - Get Wet.esp
 WATER.esp
 WATER Plants.esp
   IF VAR(EN) || IF VAR(RU) && IF CHECKSUM("WATER Plants.esp", 8B011980) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF VAR(ES) && IF CHECKSUM("plugin.esp", Checksum) DIRTY: <x> ITM, <y> UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+    IF VAR(ES) && IF CHECKSUM("WATER Plants.esp", 8B011980) DIRTY: 1 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 WATER DB.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
@@ -24124,7 +24127,7 @@ WATER DB Waves.esp
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IF FILE("WATER DB.esp") && IF VAR(EN) WARN: Use only one WATER DB esp.
     IF FILE("WATER DB.esp") && IF VAR(RU) WARN: Используйте только один WATER DB esp.
-      IF VAR(ES) && IF FILE("plugin") WARN: Utilizar solo un <plugin set>.
+      IF FILE("WATER DB.esp") && IF VAR(ES)WARN: Utilizar solo un WATER DB esp.
 WATER - Get Wet.esp
 /* I Think Water F.X. and Water FX - Get Wet are obsolete. */
 Water F.X.esp
@@ -24136,14 +24139,16 @@ waves.esp
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IF VAR(EN) || IF VAR(RU) && IF CHECKSUM("Waves.esp", 80C9D6A) DIRTY: 189 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF VAR(ES) && IF CHECKSUM("plugin.esp", Checksum) DIRTY: <x> ITM, <y> UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+    IF VAR(ES) && IF CHECKSUM("Waves.esp", 80C9D6A) DIRTY: 189 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
   IF CHECKSUM("Waves.esp", 80C9D6A) WARN: This plugin may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip. Please wait until the author issues a updated version of the mod without any TES5Snip edits.
 kerplunk.esp
-  IF VAR(EN) && IF FILE("WATER.esp") WARN: Delete. Already included in WATER.esp
-    IF VAR(RU) && IF FILE("WATER.esp") WARN: Удалите входит в WATER.esp
+  IF VAR(EN) && IF FILE("WATER.esp") ERROR: Delete. Already included in WATER.esp
+    IF VAR(RU) && IF FILE("WATER.esp") ERROR: Удалите входит в WATER.esp
+      IF VAR(ES) && IF FILE("WATER.esp") ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp
 waterfxgetwet.esp
   IF VAR(EN) && IF FILE("WATER - Get Wet.esp") SAY: Use either waterfxgetwet.esp or WATER - Get Wet.esp
     IF VAR(RU) && IF FILE("WATER - Get Wet.esp") SAY: Используйте любой из waterfxgetwet.esp или WATER - Get Wet.esp
+      IF VAR(ES) && IF FILE("WATER - Get Wet.esp") WARN: Utilizar waterfxgetwet.esp o WATER - Get Wet.esp
 Blacksmithforge water fix.esp
 Blacksmithforge water fix Vanilla.esp
 Blacksmithforge water fix DG.esp
@@ -24157,6 +24162,7 @@ Blacksmithforge water fix DB.esp
 GreenWaterFixForPureWaters.esp
   IF VAR(EN) SAY: Obsolete upgrade to new version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 RND_Water-Patch.esp
 GreenWaterFixForWATER.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -24165,6 +24171,7 @@ GreenWaterFixForWATER.esp
 532_GreenWaterFix.esp
   IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, GreenWaterFix.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, GreenWaterFix.esp
+	  IF VAR(ES) SAY: Obsoleto. Actualiza a la nueva versión, GreenWaterFix.esp
 GreenWaterFix.esp
   IF CHECKSUM("GreenWaterFix.esp", 7F378D8E) SAY: Upgrade to version 1.1 (For Vanilla water ONLY)
 GreenWaterFix_Compatible.esp
