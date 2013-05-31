@@ -15444,6 +15444,9 @@ IF FILE("Open Cities Skyrim.esp") MOD: Atlas Map Markers.esp
   // Author recommends loading above Open Cities Skyrim if installed.
 Atlas Map Markers OCS.esp
   //a possible OCS-specific renaming of above file? (no further info available)
+IF FILE("Open Cities Skyrim.esp") MOD: Unique Region Names.esp
+IF FILE("Open Cities Skyrim.esp") MOD: URN+CoT Patch.esp
+// Workaround if OCS is installed to avoid breaking it. As per google group discussion. - William
 
 // Open Cities Skyrim group needs to be the last one in this section.
 Open Cities Skyrim.esp
@@ -21923,8 +21926,8 @@ Skyrim Performance MOD 5min.esp
 
 // Due to the way v5 works, Unique Region Names needs to load after just about any other worldspace-altering mod.
 // Do not move URN compatibility patches here untill there is a reason for them to be moved here. And that reason isn't "move them along with the other URN ESP because they have to" - William
-Unique Region Names.esp
-URN+CoT Patch.esp // Not needed anyway for v5.
+IFNOT FILE("Open Cities Skyrim.esp") MOD: Unique Region Names.esp
+IFNOT FILE("Open Cities Skyrim.esp") MOD: URN+CoT Patch.esp // Not needed anyway for v5.
 
 REGEX: World_Map_Height_Pitch_Tweak.+\.esp
   IF VERSION("TES5", "1.8.151.0", <) REQ: Skyrim 1.8.151+
