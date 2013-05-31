@@ -23947,6 +23947,7 @@ NoCellRespawn.esp
 NoClearedCellRespawn.esp
   IF VAR(EN) && IF FILE("NoCellRespawn.esp") ERROR: Use either NoCellRespawn.esp or NoClearedCellRespawn.esp, not both.
     IF VAR(RU) && IF FILE("NoCellRespawn.esp") ERROR: Используйте любой, или NoCellRespawn.esp или NoClearedCellRespawn.esp, не оба.
+      IF VAR(ES) && IF FILE("NoCellRespawn.esp") ERROR: Utilizar solo un NoCellRespawn esp.
 REGEX: Respawn\w{3,5}Days{0,1}\.esp
   IF VAR(EN) && IF VAR(BP) SAY: Use Bashed Patch tweak instead.
     IF VAR(RU) && IF VAR(BP) SAY: Используйте вместо этого настройку башед патча.
@@ -23966,6 +23967,7 @@ REGEX: Skyrim \d{1,2} Day Vendor Respawn\.esp
 SlowRespawn_NoClearedCellRespawn.esp
   IF FILE("NoCellRespawn.esp") || IF FILE("NoClearedCellRespawn.esp") && IF VAR(EN) ERROR: Use only one NoCellRespawn *.esp
     IF FILE("NoCellRespawn.esp") || IF FILE("NoClearedCellRespawn.esp") && IF VAR(RU) ERROR: Используйте только один NoCellRespawn *.esp
+      IF FILE("NoCellRespawn.esp") || IF FILE("NoClearedCellRespawn.esp") && IF VAR(ES) ERROR: Utilizar solo un NoCellRespawn esp.
 Solnishko.esp
 REGEX: Dynamic.?Timescale\.esp
 longerdays_v1.esp
@@ -24001,11 +24003,12 @@ BEGINGROUP: Shader Replacers
 REGEX: RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp
   IF VAR(EN) INC: Original FXAA Post Process Injector and Realistic Lighting Without Post-Processing
     IF VAR(RU) INC: Оригинальный FXAA Post Process Injector и Realistic Lighting Without Post-Processing
+      IF VAR(ES) INC: FXAA Post Process Injector original y Realistic Lighting Without Post-Processing
 rcrnShaders.esp
   IF VAR(EN) SAY: Make sure you have bEnableFileSelection=1 in SkyrimPrefs.ini under [Launcher].
     IF VAR(RU) SAY: Убедитесь, что строка bEnableFileSelection=1 в SkyrimPrefs.ini находитсся в секции [Launcher].
   IF VAR(EN) || IF VAR(RU) && IF CHECKSUM("rcrnShaders.esp", 209FD1B5) DIRTY: 16 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF VAR(ES) && IF CHECKSUM("plugin.esp", Checksum) DIRTY: <x> ITM, <y> UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+    IF VAR(ES) && IF CHECKSUM("rcrnShaders.esp", 209FD1B5) DIRTY: 16 ITM, 3 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
   IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
   IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
   IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
@@ -24015,18 +24018,21 @@ rcrnPlus.esp
   IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
 RCRNvolumetric.esp
   IF VAR(EN) || IF VAR(RU) && IF CHECKSUM("RCRNvolumetric.esp", 54176F89) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF VAR(ES) && IF CHECKSUM("plugin.esp", Checksum) DIRTY: <x> ITM, <y> UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+    IF VAR(ES) && IF CHECKSUM("RCRNvolumetric.esp", 54176F89) DIRTY: 2 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 SoS - The Dungeons-PatchRCRN.esp
-  IFNOT FILE("SoS - The Dungeons.esp") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
-    IFNOT FILE("SoS - The Dungeons.esp") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
+  IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
+    IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
+      IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(ES) ERROR: SoS - The Dungeons.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT FILE("rcrnShaders.esp") || IFNOT FILE ("rcrnPlus.esp")  REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 SoS - The Wilds-PatchRCRN.esp
-  IFNOT FILE("SoS - The Wilds.esp") && IF VAR(EN) ERROR: SoS - The Wilds.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Wilds
-    IFNOT FILE("SoS - The Wilds.esp") && IF VAR(RU) ERROR: SoS - The Wilds.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Wilds
+  IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(EN) ERROR: SoS - The Wilds.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Wilds
+    IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(RU) ERROR: SoS - The Wilds.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Wilds
+      IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(ES) ERROR: SoS - The Wilds.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT FILE("rcrnShaders.esp") || IFNOT FILE ("rcrnPlus.esp") REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 SoS - Civilization-PatchRCRN.esp
-  IFNOT FILE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
-    IFNOT FILE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
+  IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
+    IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
+      IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(ES) ERROR: SoS - Civilization.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT FILE("rcrnShaders.esp") || IFNOT FILE ("rcrnPlus.esp") REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 Volrath - Enhanced Lights and Fixes - RCRN.esp
   REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
@@ -24040,10 +24046,10 @@ REGEX: Volrath - Dragonreach - Brazier fix( - 1\.1)\.esp
     IF VAR(RU) && IFNOT FILE("rcrnShaders.esp") && IFNOT REGEX("RCRN (Classic|Legacy|Pure) - Hybrid Shaders\.esp") ERROR: Если используется версия 1.1, тогда требуется мод "http://skyrim.nexusmods.com/mods/1875 RCRN", иначе ваша игра может вылетать.
 Alternate Visuals for Spell Effects.esp
   IF VAR(EN) || IF VAR(RU) && IF CHECKSUM("Alternate Visuals for Spell Effects.esp", 42DF8DDF) DIRTY: 29 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF VAR(ES) && IF CHECKSUM("plugin.esp", Checksum) DIRTY: <x> ITM, <y> UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+    IF VAR(ES) && IF CHECKSUM("Alternate Visuals for Spell Effects.esp", 42DF8DDF) DIRTY: 29 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 Replacer Visuals for Spell Effects.esp
   IF VAR(EN) || IF VAR(RU) && IF CHECKSUM("Replacer Visuals for Spell Effects.esp", 98CC7458) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF VAR(ES) && IF CHECKSUM("plugin.esp", Checksum) DIRTY: <x> ITM, <y> UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+    IF VAR(ES) && IF CHECKSUM("Replacer Visuals for Spell Effects.esp", 98CC7458) DIRTY: 8 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 LESS -Replacer Visuals for Spell Effects.esp
 Animated Weapon Enchants.esp
 Animated Weapon Enchants - Vanilla Sounds.esp
@@ -24057,19 +24063,21 @@ Clean  Invisibility Effects plus Eyes Fix - Chameleon Version.esp
 DawnguardRuneWeaponsFXSReplacer.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 Different Invisibility Effects plus Eyes Fix.esp
 Different Invisibility Effects plus Eyes Fix - Chameleon Version.esp
 REGEX: DTHSpellMageArmorEffectReplacer.+\.esp
   IF VAR(EN) SAY: Use only one DTHSpellMageArmorEffectReplacer*.esp
     IF VAR(RU) SAY: Используйте только один DTHSpellMageArmorEffectReplacer*.esp
+      IF VAR(ES) SAY: Utilizar solo un DTHSpellMageArmorEffectReplacer*.esp
 Enchantments Upgraded.esp
 Enchantments Upgraded SkyRe Patch.esp
   IFNOT ACTIVE("Enchantments Upgraded.esp") && IF VAR(EN) ERROR: Enchantments Upgraded.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Enchantments Upgraded.esp") && IF VAR(RU) ERROR: Enchantments Upgraded.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Enchantments Upgraded.esp") && IF VAR(ES) ERROR: Enchantments Upgraded.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(ES) ERROR: SkyRe_Main.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 getSnowy.esp
 Glowtastic.esp
 ImpWeapEnchFX.esp
