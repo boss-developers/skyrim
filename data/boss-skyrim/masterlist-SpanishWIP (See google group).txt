@@ -382,6 +382,7 @@ ClimatesOfTamriel.esm
 CMHalfElf.esm
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+      IFNOT VAR(RaceComp) && IF VAR(ES) ERROR: RaceCompatibility.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él. "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 CMNewCompanions.esm
 CK's Companions.esm
 // must load after CMNewCompanions.esm
@@ -426,26 +427,31 @@ DR01aBabiesMaker.esm
 DragonsReach_Hideout.esm
 DrowCompanions.esm
 DSpSoB.esm
-  IF VAR(EN) WARN: Obsolete. Remove. Not for game play. Not in latest version 07
-    IF VAR(RU) WARN: Устарело. Удалите. Исключено из версий 07+
+  IF VAR(EN) WARN: Obsolete. Remove. Not for game play. Not in latest version 07.
+    IF VAR(RU) WARN: Устарело. Удалите. Исключено из версий 07+.
+	  IF VAR(ES) WARN: Obsoleto. Remover. Utilizar la última version 07.
 Dual Wield for Followers.esm
 
 // esms e
 EACalypso.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, EACalypsoE_1_2.esm or EACalypsoNE_1_2.esm
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, EACalypsoE_1_2.esm or EACalypsoNE_1_2.esm
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, EACalypsoE_1_2.esm or EACalypsoNE_1_2.esm.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, EACalypsoE_1_2.esm or EACalypsoNE_1_2.esm.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, EACalypsoE_1_2.esm o EACalypsoNE_1_2.esm.
 REGEX: EACalypso(E_1_2|NE_1_2)\.esm
 EACinthowenSkyhairWNE.esm
 REGEX: EAGlawee.+\.esm
 REGEX: EagleEyePerk(_defStamina|_half_stamina)?\.esm
-  IF VAR(EN) SAY: Use only one EagleEyePerk esm
-    IF VAR(RU) SAY: Используйте только один EagleEyePerk esm
-  IF VAR(EN) && IF FILE("PerkUP-Archery.esp") WARN: Delete. Already included in 'PerkUP-Archery.esp'
-    IF VAR(RU) && IF FILE("PerkUP-Archery.esp") WARN: Удалите. Уже включено в 'PerkUP-Archery.esp'
+  IF VAR(EN) SAY: Use only one EagleEyePerk esm.
+    IF VAR(RU) SAY: Используйте только один EagleEyePerk esm.
+	  IF VAR(ES) SAY: Utilizar solo un EagleEyePerk esm.
+  IF VAR(EN) && IF FILE("PerkUP-Archery.esp") WARN: Delete. Already included in 'PerkUP-Archery.esp'.
+    IF VAR(RU) && IF FILE("PerkUP-Archery.esp") WARN: Удалите. Уже включено в 'PerkUP-Archery.esp'.
+	  IF VAR(ES) && IF FILE("PerkUP-Archery.esp") WARN: Borrar. Esta incluido en 'PerkUP-Archery.esp'.
 EAIthilwhenE_1_1.esm
 EASamhair.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, EASamhairE_1_1.esm
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, EASamhairE_1_1.esm
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, EASamhairE_1_1.esm.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, EASamhairE_1_1.esm.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, EASamhairE_1_1.esm.
 EASamhairE_1_1.esm
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -471,8 +477,9 @@ Enchanting Scrolls.esm
 ETaC - Resources.esm
 Evil Lair of Hydra.esm
 REGEX: Expanded Towns.*\.esm
-  IF VAR(EN) SAY: Obsolete - update to current version renamed to Expanded Towns and Cities
-    IF VAR(RU) SAY: Устарело, обновите до последней версии Expanded Towns and Cities
+  IF VAR(EN) SAY: Obsolete - update to current version renamed to Expanded Towns and Cities.
+    IF VAR(RU) SAY: Устарело, обновите до последней версии Expanded Towns and Cities.
+	  IF VAR(ES) SAY: Obsolete - Actualizar a la versión renombrada Expanded Towns and Cities.
 ExplorerDungeonPack.esm
   IF CHECKSUM("ExplorerDungeonPack.esm", F28E0E3C) && IF VAR(EN) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ExplorerDungeonPack.esm", F28E0E3C) && IF VAR(RU) DIRTY: 9 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -507,9 +514,9 @@ GeneralDisplays.esm
     IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(GS) && IF VAR(ES) ERROR: GeneralStores.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 GeneralDisplays - DG.esm
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
   IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(GS) && IF VAR(ES) ERROR: GeneralStores.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
@@ -517,9 +524,9 @@ GeneralDisplays - DG.esm
     IFNOT ACTIVE("GeneralDisplays.esm") && IF VAR(RU) ERROR: GeneralDisplays.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("GeneralDisplays.esm") && IF VAR(ES) ERROR: GeneralDisplays.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 GeneralDisplays - DB.esm
-  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-	  IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC).
+	  IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
   IFNOT VAR(GS) && IF VAR(EN) ERROR: GeneralStores.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(GS) && IF VAR(RU) ERROR: GeneralStores.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(GS) && IF VAR(ES) ERROR: GeneralStores.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
@@ -541,8 +548,9 @@ GuardedHouse.esm
   IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
-  IF ACTIVE("GuardedHouseImperial.esm") || IF ACTIVE("GuardedHouseStormcloak.esm") && IF VAR(EN) ERROR: Use only one GuardedHouse*.esm
-    IF ACTIVE("GuardedHouseImperial.esm") || IF ACTIVE("GuardedHouseStormcloak.esm") && IF VAR(RU) ERROR: Используйте только один GuardedHouse*.esm
+  IF ACTIVE("GuardedHouseImperial.esm") || IF ACTIVE("GuardedHouseStormcloak.esm") && IF VAR(EN) ERROR: Use only one GuardedHouse*.esm.
+    IF ACTIVE("GuardedHouseImperial.esm") || IF ACTIVE("GuardedHouseStormcloak.esm") && IF VAR(RU) ERROR: Используйте только один GuardedHouse*.esm.
+	  IF ACTIVE("GuardedHouseImperial.esm") || IF ACTIVE("GuardedHouseStormcloak.esm") && IF VAR(ES) ERROR: Utilizar solo un GuardedHouse*.esm
 GuardedHouseImperial.esm
   TAG: {{BASH: Relev}}
   IF CHECKSUM("GuardedHouseImperial.esm", 9C84FF3B) && IF VAR(EN) DIRTY: 469 ITM, 60 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -551,8 +559,9 @@ GuardedHouseImperial.esm
   IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
-  IF ACTIVE("GuardedHouse.esm") || IF ACTIVE("GuardedHouseStormcloak.esm") && IF VAR(EN) ERROR: Use only one GuardedHouse*.esm
-    IF ACTIVE("GuardedHouse.esm") || IF ACTIVE("GuardedHouseStormcloak.esm") && IF VAR(RU) ERROR: Используйте только один GuardedHouse*.esm
+  IF ACTIVE("GuardedHouse.esm") || IF ACTIVE("GuardedHouseStormcloak.esm") && IF VAR(EN) ERROR: Use only one GuardedHouse*.esm.
+    IF ACTIVE("GuardedHouse.esm") || IF ACTIVE("GuardedHouseStormcloak.esm") && IF VAR(RU) ERROR: Используйте только один GuardedHouse*.esm.
+	  IF ACTIVE("GuardedHouse.esm") || IF ACTIVE("GuardedHouseStormcloak.esm") && IF VAR(ES) ERROR: Utilizar solo un GuardedHouse*.esm.
 GuardedHouseStormcloak.esm
   TAG: {{BASH: Relev}}
   IF CHECKSUM("GuardedHouseStormcloak.esm", B25108F0) && IF VAR(EN) DIRTY: 469 ITM, 58 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -561,8 +570,9 @@ GuardedHouseStormcloak.esm
   IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
-  IF ACTIVE("GuardedHouseImperial.esm") || IF ACTIVE("GuardedHouse.esm") && IF VAR(EN) ERROR: Use only one GuardedHouse*.esm
-    IF ACTIVE("GuardedHouseImperial.esm") || IF ACTIVE("GuardedHouse.esm") && IF VAR(RU) ERROR: Используйте только один GuardedHouse*.esm
+  IF ACTIVE("GuardedHouseImperial.esm") || IF ACTIVE("GuardedHouse.esm") && IF VAR(EN) ERROR: Use only one GuardedHouse*.esm.
+    IF ACTIVE("GuardedHouseImperial.esm") || IF ACTIVE("GuardedHouse.esm") && IF VAR(RU) ERROR: Используйте только один GuardedHouse*.esm.
+	  IF ACTIVE("GuardedHouseImperial.esm") || IF ACTIVE("GuardedHouse.esm") && IF VAR(ES) ERROR: Use only one GuardedHouse*.esm.
 
 // esms h
 HBE.esm
@@ -570,7 +580,7 @@ HelmetToggleMasterFile.esm
 hideout.esm
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("hideout.esm", F1703639) WARN: Original file was released before the CK (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch").
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("hideout.esm", F1703639) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
-	  IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("hideout.esm", F1703639) WARN: El archivo original fue lanzado antes del Creation Kir (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
+	  IF VAR(ES) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("hideout.esm", F1703639) WARN: El archivo original fue lanzado antes del Creation Kir (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch").
 highfive.esm
 HjakhtraevarrTomb.esm
   IF CHECKSUM("HjakhtraevarrTomb.esm", B10B9F8F) && IF VAR(EN) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -593,8 +603,9 @@ Immersive Patrols.esm
 Immersive Patrols x2.esm
 ImprovedCicero.esm
 Imp's More Complex Needs.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version (0.31+), Imp's More Complex Needs.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии (0.31+), Imp's More Complex Needs.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version (0.31+), Imp's More Complex Needs.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии (0.31+), Imp's More Complex Needs.esp.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la nueva vesión (0.31+), renombrado a Imp's More Complex Needs.esp.
   IF CHECKSUM("Imp's More Complex Needs.esm", EB90AF33) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Imp's More Complex Needs.esm", EB90AF33) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Imp's More Complex Needs.esm", EB90AF33) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -611,6 +622,7 @@ jkotf4oneofthelastdwarven.esm
 JSwords.esm
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("JSwords.esm", EBC73FCE) WARN: Original file was released before the CK (07 Feb. 2012). A fixed and cleaned version can be obtained "http://skyrim.nexusmods.com/mods/26230 here".
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("JSwords.esm", EBC73FCE) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
+	  IF VAR(ES) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("JSwords.esm", EBC73FCE) WARN: El archivo original fue lanzado antes del Creation Kir (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch").
 JSwordsDV.esm
 
 // esms k
@@ -628,8 +640,9 @@ Kyia.esm
 Lady Body.esm
 Lanterns Of Skyrim - All In One - Main.esm
   IF VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC) SAY: Use the Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm to have changes made to Dawnguard.
-  IFNOT VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 042A3DE0) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC) or use the non-Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm
-    IFNOT VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 042A3DE0) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC) or use the non-Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm
+  IFNOT VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 042A3DE0) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC) or use the non-Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm.
+    IFNOT VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 042A3DE0) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC) or use the non-Dawnguard version of Lanterns Of Skyrim - All In One - Main.esm.
+	  IFNOT VAR(Dawnguard) && IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 042A3DE0) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda) ola versión de Lanterns Of Skyrim - All In One - Main.esm que no requiere Dawnguard.
   IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC) || IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 1E83E045) && IF VAR(EN) DIRTY: 24 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC) || IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 1E83E045) && IF VAR(RU) DIRTY: 24 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
 	  IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", DA6791AC) || IF CHECKSUM("Lanterns Of Skyrim - All In One - Main.esm", 1E83E045) && IF VAR(ES) DIRTY: 24 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
@@ -654,23 +667,27 @@ LiFE.esm
 Lighting.esm
   // this is a companion mod
 Liliath.esm
-  IF VAR(EN) && IF FILE("Pretty Followers.esm") WARN: Delete. Already included in 'Pretty Followers.esm'
-    IF VAR(RU) && IF FILE("Pretty Followers.esm") WARN: Удалите. Уже включено в 'Pretty Followers.esm'
+  IF VAR(EN) && IF FILE("Pretty Followers.esm") WARN: Delete. Already included in 'Pretty Followers.esm'.
+    IF VAR(RU) && IF FILE("Pretty Followers.esm") WARN: Удалите. Уже включено в 'Pretty Followers.esm'.
+	  IF VAR(ES) && IF FILE("Pretty Followers.esm") WARN: Borrar. Esta incluido en 'Pretty Followers.esm'.
 lilyelf.esm
-  IF VAR(EN) && IF FILE("Pretty Followers.esm") WARN: Delete. Already included in 'Pretty Followers.esm'
-    IF VAR(RU) && IF FILE("Pretty Followers.esm") WARN: Удалите. Уже включено в 'Pretty Followers.esm'
+  IF VAR(EN) && IF FILE("Pretty Followers.esm") WARN: Delete. Already included in 'Pretty Followers.esm'.
+    IF VAR(RU) && IF FILE("Pretty Followers.esm") WARN: Удалите. Уже включено в 'Pretty Followers.esm'.
+	  IF VAR(ES) && IF FILE("Pretty Followers.esm") WARN: Borrar. Esta incluido en 'Pretty Followers.esm'.
 Lootification.esm
 LorecraftESM.esm
 LunariRace.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, LunariRace.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, LunariRace.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, LunariRace.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, LunariRace.esp.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, LunariRace.esp.
 Lycanthropy_Audio_by_Brevi.esm
 Lycanthropy_Music.esm
 
 // esms m
 MagicDuel.esm
 MagicDuelReborn.esm
-  IF VAR(EN) && IF FILE("MagicDuel.esm") WARN: Incompatible with MagicDuel.esm. Use one or the other
+  IF VAR(EN) ||IF VAR(RU) && IF FILE("MagicDuel.esm") WARN: Incompatible with MagicDuel.esm. Use one or the other.
+    IF VAR(ES) && IF FILE("MagicDuel.esm") WARN: Incompatible con MagicDuel.esm. Utilizar uno o el otro.
 Malise - A Companion By Joseph Anthony.esm
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -692,6 +709,7 @@ MjanasLabyrinth.esm
 Monli.esm
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+	  IFNOT VAR(RaceComp) && IF VAR(ES) ERROR: RaceCompatibility.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
   IF CHECKSUM("Monli.esm", 94B31A2C) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Monli.esm", 94B31A2C) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Monli.esm", 94B31A2C) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -706,8 +724,9 @@ More Interactive Items [Hearthfire].ESM
 more_Travelers.esm
 Mother_of_Tears_Epics_Eng.esm
 motTome2.esm
-  IFNOT FILE("MoT_First_LoadOrder_File_After_Skyrim.esm") && IF VAR(EN) ERROR: MoT_First_LoadOrder_File_After_Skyrim.esm is not present or is not active. Skyrim will CTD when loading if using this file without Climates Of Tamriel.esm
-    IFNOT FILE("MoT_First_LoadOrder_File_After_Skyrim.esm") && IF VAR(RU) ERROR: MoT_First_LoadOrder_File_After_Skyrim.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Climates Of Tamriel
+  IFNOT FILE("MoT_First_LoadOrder_File_After_Skyrim.esm") && IF VAR(EN) ERROR: MoT_First_LoadOrder_File_After_Skyrim.esm is not present or is not active. Skyrim will CTD when loading if using this file without Climates Of Tamriel.esm.
+    IFNOT FILE("MoT_First_LoadOrder_File_After_Skyrim.esm") && IF VAR(RU) ERROR: MoT_First_LoadOrder_File_After_Skyrim.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Climates Of Tamriel.esm.
+	  IFNOT FILE("MoT_First_LoadOrder_File_After_Skyrim.esm") && IF VAR(ES) ERROR: MoT_First_LoadOrder_File_After_Skyrim.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("motTome2.esm", 5A0212CE) && IF VAR(EN) DIRTY: 104 ITM, 31 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("motTome2.esm", 5A0212CE) && IF VAR(RU) DIRTY: 104 ITM, 31 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("motTome2.esm", 5A0212CE) && IF VAR(ES) DIRTY: 104 ITM, 31 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -721,9 +740,11 @@ MTAutoStorage.esm
 MTOH.esm
   IF VAR(EN) SAY: Hair standalone mod for other mods which edit NPCs. If this one is used, MTOH.esp should be disabled.
     IF VAR(RU) SAY: Автономный мод причесок, меняющий NPC. Если он использован, то MTOH.esp должен быть отключен.
+	  IF VAR(ES) SAY: Si utilizas este mod, MTOH.esp debe ser desactivado.
 Murder01.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, HjakhtraevarrTomb.esm
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, HjakhtraevarrTomb.esm
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, HjakhtraevarrTomb.esm.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, HjakhtraevarrTomb.esm.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, HjakhtraevarrTomb.esm.
 
 // esms n
 Natural Characters and Companions.esm
@@ -751,15 +772,17 @@ NPCs.esm
 
 // esms o
 REGEX: OblHairs(\d\d)?\.esm
-  IF VAR(EN) SAY: Too many hair packs may cause stability issues; see "http://skyrim.nexusmods.com/mods/18110 author's notes"
-    IF VAR(RU) SAY: Слишком много наборов причесок могут вызвать проблемы со стабильностью. Смотрите "http://skyrim.nexusmods.com/mods/18110 заметки автора"
+  IF VAR(EN) SAY: Too many hair packs may cause stability issues; see "http://skyrim.nexusmods.com/mods/18110 author's notes".
+    IF VAR(RU) SAY: Слишком много наборов причесок могут вызвать проблемы со стабильностью. Смотрите "http://skyrim.nexusmods.com/mods/18110 заметки автора".
+	  IF VAR(EN) SAY: Demasiados mods de peinados pueden causar inestabilidad; ver "http://skyrim.nexusmods.com/mods/18110 notas del autor".
 OblMaleHairs01.esm
 okaazah.esm
 Omegared99-Compilation.esm
 OneiroMoarFollowers.esm
 OrientalRace.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, OrientalRace.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, OrientalRace.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, OrientalRace.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, OrientalRace.esp.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, OrientalRace.esp..
 ORS_MorthalPain.esm
   IF CHECKSUM("ORS_MorthalPain.esm", 8AC2860F) && IF VAR(EN) DIRTY: 23 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ORS_MorthalPain.esm", 8AC2860F) && IF VAR(RU) DIRTY: 23 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -773,11 +796,12 @@ Overlord Tower.esm
   IF CHECKSUM("Overlord Tower.esm", 067A4293) && IF VAR(EN) DIRTY: 29 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Overlord Tower.esm", 067A4293) && IF VAR(RU) DIRTY: 29 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Overlord Tower.esm", 067A4293) && IF VAR(ES) DIRTY: 29 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-       IF CHECKSUM("Overlord Tower.esm", 25E0E990) && IF VAR(EN) DIRTY: 47 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("Overlord Tower.esm", 25E0E990) && IF VAR(RU) DIRTY: 47 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("Overlord Tower.esm", 25E0E990) && IF VAR(ES) DIRTY: 47 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF VAR(EN) SAY: Use either good or evil version
-    IF VAR(RU) SAY: Используйте либо good либо evil версию
+    IF CHECKSUM("Overlord Tower.esm", 25E0E990) && IF VAR(EN) DIRTY: 47 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+      IF CHECKSUM("Overlord Tower.esm", 25E0E990) && IF VAR(RU) DIRTY: 47 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+        IF CHECKSUM("Overlord Tower.esm", 25E0E990) && IF VAR(ES) DIRTY: 47 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IF VAR(EN) SAY: Use either good or evil version.
+    IF VAR(RU) SAY: Используйте либо good либо evil версию.
+	  IF VAR(ES) SAY: Utilizar la versión buena o la versión malvada.
 REGEX: OverlookTower.*\.esm
 
 // esms p
@@ -793,8 +817,9 @@ Perk-Reset-MCM.esm
 REGEX: PersonalizedMusic.*\.esm
 phiNoFF.esm
 pinewoodvillage.esm
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Pinewood Village.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Pinewood Village.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Pinewood Village.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Pinewood Village.esp.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Pinewood Village.esp.
   IF CHECKSUM("pinewoodvillage.esm", DDA83B3F) && IF VAR(EN) DIRTY: 33 ITM, 25 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("pinewoodvillage.esm", DDA83B3F) && IF VAR(RU) DIRTY: 33 ITM, 25 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("pinewoodvillage.esm", DDA83B3F) && IF VAR(ES) DIRTY: 33 ITM, 25 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -803,8 +828,9 @@ Pixie Windcaller.esm
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Pretty Brelyna.esm
-  IF VAR(EN) && IF FILE("Pretty Followers.esm") WARN: Delete. Already included in 'Pretty Followers.esm'
-    IF VAR(RU) && IF FILE("Pretty Followers.esm") WARN: Удалите. Уже включено в 'Pretty Followers.esm'
+  IF VAR(EN) && IF FILE("Pretty Followers.esm") WARN: Delete. Already included in 'Pretty Followers.esm'.
+    IF VAR(RU) && IF FILE("Pretty Followers.esm") WARN: Удалите. Уже включено в 'Pretty Followers.esm'.
+	  IF VAR(ES) && IF FILE("Pretty Followers.esm") WARN: Borrar. Ya esta incluido en 'Pretty Followers.esm'.
 Pretty Followers.esm
 Prison.esm
   IF CHECKSUM("Prison.esm", FB7C55C8) && IF VAR(EN) DIRTY: 17 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -822,8 +848,9 @@ PrisonUpdate.esm
       IF VAR(ES) WARN: Este archivo contiene 3 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
 Proudspire Manor Refurbished.esm
 Populated Cities NPCListMaster.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Populated Cities 2.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Populated Cities 2.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Populated Cities 2.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Populated Cities 2.esp.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión Populated Cities 2.esp.
 
 // esms q
 
@@ -863,8 +890,9 @@ Sako Proudmane.esm
 Sanctum of the Fallen.esm
 sejhythpeople.esm
 SC_Drow Race.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, DrowRace.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DrowRace.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, DrowRace.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DrowRace.esp.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, DrowRace.esp.
 SkyrimForBattle.esm
 SCoL Main.esm
 SexiS.esm
@@ -927,6 +955,7 @@ SpartanV10.esm
 SpecializedFollowers.esm
   IF VAR(EN) SAY: Obsolete. Update to latest verion.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 SPTDiverseGuardsSkyrimResources.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -942,8 +971,9 @@ Stargate.esm
     IF CHECKSUM("Stargate.esm", 8439B207) && IF VAR(RU) DIRTY: 31 ITM, 5 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Stargate.esm", 8439B207) && IF VAR(ES) DIRTY: 31 ITM, 5 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Succubus.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SuccubusFollower.esp or Succubus Summoning.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SuccubusFollower.esp or Succubus Summoning.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SuccubusFollower.esp or Succubus Summoning.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SuccubusFollower.esp или Succubus Summoning.esp.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, SuccubusFollower.esp o Succubus Summoning.esp.
 SummerAutumn.esm
 SummerWear.esm
   IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
@@ -963,8 +993,9 @@ Tang mo follower.esm
       IF CHECKSUM("Tang mo follower.esm", 0363AF98) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 TERAArmors.esm
 Terramis_DungeonMaster.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Terramis_Dungeon_01.esm
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Terramis_Dungeon_01.esm
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Terramis_Dungeon_01.esm.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Terramis_Dungeon_01.esm.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Terramis_Dungeon_01.esm.
 Terramis_Dungeon_01.esm
   IF CHECKSUM("Terramis_Dungeon_01.esm", 09B9C494) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Terramis_Dungeon_01.esm", 09B9C494) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -974,21 +1005,25 @@ The Dragon King.esm
     IF CHECKSUM("The Dragon King.esm", 283DBD41) && IF VAR(RU) DIRTY: 408 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("The Dragon King.esm", 283DBD41) && IF VAR(ES) DIRTY: 408 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 The Spice of Life.esm
-  IF CHECKSUM("The Spice of Life.esm", A75F2F6D) SAY: File not created with CK.
+  IF VAR(EN) || IF VAR(RU) && IF CHECKSUM("The Spice of Life.esm", A75F2F6D) SAY: File not created with Creation Kit.
+    IF VAR(ES) && IF CHECKSUM("The Spice of Life.esm", A75F2F6D) SAY: Archivo no creado con el Creation Kit.
 TondeeRiversong.esm
 TravellersOfSkyrim.esm
 TRO_BasicNeeds.esm
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, TRO_BasicNeeds.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, TRO_BasicNeeds.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, TRO_BasicNeeds.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, TRO_BasicNeeds.esp.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, TRO_BasicNeeds.esp.
 TurnDownXrace.esm
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
+	  IFNOT VAR(RaceComp) && IF VAR(ES) ERROR: RaceCompatibility.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 Tyth.esm
 
 // esms u
 Ultimate Witcher MOD.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Ultimate Witcher MOD.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Ultimate Witcher MOD.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Ultimate Witcher MOD.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Ultimate Witcher MOD.esp.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Ultimate Witcher MOD.esp.
 Undercity.esm
 UndergroundBathhouse.esm
   IF CHECKSUM("UndergroundBathhouse.esm", 0FD0CF70) && IF VAR(EN) DIRTY: 1 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -1003,6 +1038,7 @@ UndergroundBathhouse_light.esm
       IF CHECKSUM("UndergroundBathhouse_light.esm", F4137AC5) && IF VAR(ES) DIRTY: 1 ITM, 4 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF FILE("UndergroundBathhouse.esm") && IF VAR(EN) WARN: Use either UndergroundBathhouse.esm or UndergroundBathhouse_light.esm, not both.
     IF FILE("UndergroundBathhouse.esm") && IF VAR(RU) WARN: Используйте любой, или UndergroundBathhouse.esm или UndergroundBathhouse_light.esm, не оба.
+	  IF FILE("UndergroundBathhouse.esm") && IF VAR(EN) WARN: Usar UndergroundBathhouse.esm o UndergroundBathhouse_light.esm, no ambos.
 UnicornCave.esm
   IF CHECKSUM("UnicornCave.esm", C5D100F6) && IF VAR(EN) DIRTY: 41 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("UnicornCave.esm", C5D100F6) && IF VAR(RU) DIRTY: 41 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -1040,9 +1076,11 @@ XFLMain.esm
   IF FILE("BDO.esp") INC: BDO.esp
   IF VAR(EN) SAY: For safe mod uninstall see special uninstallation instructions on "http://skyrim.nexusmods.com/mods/12933 mod page".
     IF VAR(RU) SAY: Для безопасного удаления мода смотрите инструкции по удалению на "http://skyrim.nexusmods.com/mods/12933 странице мода" или на "http://modgames.net/load/247-1-0-10650 странице локализации".
+	  IF VAR(EN) SAY: Para desisntalar de manera segura por favor ve la "http://skyrim.nexusmods.com/mods/12933 página del mod".
 ZZZ_Stenvar_Replacer_THAIDEN.esm
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, ZZZ_Stenvar_Replacer_THAIDEN.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ZZZ_Stenvar_Replacer_THAIDEN.esp
+  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, ZZZ_Stenvar_Replacer_THAIDEN.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ZZZ_Stenvar_Replacer_THAIDEN.esp.
+	  IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, ZZZ_Stenvar_Replacer_THAIDEN.esp.
 
 // esms late
 
@@ -1050,6 +1088,7 @@ ZZZ_Stenvar_Replacer_THAIDEN.esm
 Bandit Raid.esp
   IF VAR(EN) SAY: This is actually an esm released as an esp file.
     IF VAR(RU) SAY: На самом деле это esm-файл, выпущенный как esp.
+	  IF VAR(ES) SAY: Archivo esm distrubuido como esp.
 Celestial-Hairstyles.esp
   IF CHECKSUM("Celestial-Hairstyles.esp", 53C845C8) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Celestial-Hairstyles.esp", 53C845C8) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -1069,17 +1108,21 @@ Skyrim Project Optimization - No Homes - Full Version.esp
   IF FILE("Skyrim Project Optimization - No Homes - Full Version.esm") ERROR: Use Skyrim Project Optimization - No Homes - Full Version.esm or Skyrim Project Optimization - No Homes - Full Version.esp, not both.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC).
+	  IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC).
+	  IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 SuccubusFollower.esp
   IF VAR(EN) SAY: This is actually an esm released as an esp file.
     IF VAR(RU) SAY: На самом деле это esm-файл, выпущенный как esp.
+	  IF VAR(ES) SAY: Archivo esm distrubuido como esp.
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Succubus Summoning.esp
   IF VAR(EN) SAY: This is actually an esm released as an esp file.
     IF VAR(RU) SAY: На самом деле это esm-файл, выпущенный как esp.
+	  IF VAR(ES) SAY: Archivo esm distrubuido como esp.
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
