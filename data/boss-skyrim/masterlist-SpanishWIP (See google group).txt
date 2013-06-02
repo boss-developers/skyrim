@@ -252,8 +252,8 @@ AkaviriRace.esm
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 REGEX: alchstone(1pt5x|2x|3x|4x|5x)\.esm
-  IF VAR(EN) SAY: Use only one alchstone esm
-    IF VAR(RU) SAY: Используйте только один alchstone esm
+  IF VAR(EN) SAY: Use only one alchstone esm.
+    IF VAR(RU) SAY: Используйте только один alchstone esm.
       IF VAR(ES) SAY: Utilizar solo un alchstone esm.
 Alexa the Storm-Queen.esm
 Alicia.esm
@@ -330,9 +330,9 @@ BertsBreezehomeRemodel(MiniBreeze).esm
 BlackreachRailroad.ESM
 BlackTowerArmory.esm
 REGEX: Blood \(\w+\)\.ESM
-  IF VAR(EN) SAY: Use only one Blood (*).ESM
-    IF VAR(RU) SAY: Используйте только один Blood (*).ESM
-      IF VAR(ES) SAY: Utilizar solo un Blood (*).ESM
+  IF VAR(EN) SAY: Use only one Blood (*).ESM.
+    IF VAR(RU) SAY: Используйте только один Blood (*).ESM.
+      IF VAR(ES) SAY: Utilizar solo un Blood (*).ESM.
 BoogyManLair.esm
   IF CHECKSUM("BoogyManLair.esm", A1D94BDA) && IF VAR(EN) DIRTY: 42 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BoogyManLair.esm", A1D94BDA) && IF VAR(RU) DIRTY: 42 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -2674,11 +2674,13 @@ ENB Weather - Exterior Fog Plugin.esp
   IF ACTIVE("ClimatesOfTamriel.esm") INC: ClimatesOfTamriel.esm
   IF ACTIVE("Realistic Lighting.esp") INC: Realistic Lighting.esp
 IFNOT FILE("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
-  IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp
-    IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp
+  IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp.
+    IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp.
+      IF VAR(ES) SAY: Utilizar solo un enhanceddynamicweathersystem esp.
 REGEX: enhanceddynamicweathersystem(normal|snowy|rainy|sunny)\.esp
-  IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp
-    IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp
+  IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp.
+    IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp.
+      IF VAR(ES) SAY: Utilizar solo un enhanceddynamicweathersystem esp.
   IF FILE("Realistic Lighting.esp") INC: Realistic Lighting.esp
 ExpandedSnowSystems.esp
   IF CHECKSUM("ExpandedSnowSystems.esp", 03A9B612) && IF VAR(EN) DIRTY: 1301 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -2881,7 +2883,7 @@ CLARALUX - More and Brighter Lights.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 REGEX: CLARALUX - LightAdjuster - (((Vanilla|Increased)( Bright Increased Radius))|(Vanilla Lights|Medium Lights and Radius( w Shadows)?))\.esp
-  IF VAR(EN) SAY: Use only one LightAdjuster.
+  IF VAR(EN) SAY: Use only one LightAdjuster esp.
     IF VAR(RU) SAY: Используйте только один LightAdjuster esp.
       IF VAR(ES) SAY: Utilizar solo un LightAdjuster esp.
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -2916,15 +2918,18 @@ MikeFoxs_CorrectLighting.esp
       IF CHECKSUM("MikeFoxs_CorrectLighting.esp", D2B44EBE) && IF VAR(ES) DIRTY: 0 ITM, 302 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 // Moved Realistic Lighting From Here
 realrain.esp
-  IF VAR(EN) && IF FILE("realrainBWRLWC.esp") SAY: Use only one realrain.esp
-    IF VAR(RU) && IF FILE("realrainBWRLWC.esp") SAY: Используйте только один realrain.esp
+  IF FILE("realrainBWRLWC.esp") && IF VAR(EN) SAY: Use only one realrain.esp.
+    IF FILE("realrainBWRLWC.esp") && IF VAR(RU) SAY: Используйте только один realrain.esp.
+      IF FILE("realrainBWRLWC.esp") && IF VAR(ES) SAY: Utilizar solo un realrain.esp.
 realrainBWRLWC.esp
 realrainCoT.esp
   IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(EN) SAY: Use only one realrain.esp
     IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(RU) SAY: Используйте только один realrain.esp
+      IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(ES) SAY: Utilizar solo un realrain.esp.
 realrainextended.esp
   IF FILE("realrainCoT.esp") || IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(EN) SAY: Use only one realrain.esp
     IF FILE("realrainCoT.esp") || IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(RU) SAY: Используйте только один realrain.esp
+      IF FILE("realrainCoT.esp") || IF FILE("realrainBWRLWC.esp") || IF FILE("realrain.esp") && IF VAR(ES) SAY: Utilizar solo un realrain.esp.
 Rebalance Light.esp
 Rebalance_Light.esp
 13189_Rebalance_Light.esp
@@ -2960,8 +2965,9 @@ dimmed_torches.esp
 enhancedlightingforrealisticlighting.esp
 IF FILE("Realistic Lighting.esp") MOD: enhanceddynamicweathersystem.esp
   // See readme for more info about load order
-  IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp
-    IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp
+  IF VAR(EN) SAY: Use only one enhanceddynamicweathersystem esp.
+    IF VAR(RU) SAY: Используйте только один enhanceddynamicweathersystem esp.
+      IF VAR(ES) SAY: Utilizar solo un enhanceddynamicweathersystem esp.
 real lights in dragonsreach.esp
 Natural Skyrim Rain.esp
   // Bethsoft6.118,128and9.187,193
@@ -2987,8 +2993,9 @@ MintyLightningMod_COT_Patch.esp
 DarkerInteriors.esp
 DOF.esp
 REGEX: KatuLights.*\.esp
-  IF VAR(EN) SAY: Use only one KatuLights*.esp
-    IF VAR(RU) SAY: Используйте только один KatuLights*.esp
+  IF VAR(EN) SAY: Use only one KatuLights*.esp.
+    IF VAR(RU) SAY: Используйте только один KatuLights*.esp.
+      IF VAR(ES) SAY: Utilizar solo un KatuLights*.esp.
 RealLights-Base.esp
 Real Lights - Cities.esp
 /* Darker Dungeons */
@@ -3360,6 +3367,7 @@ ArmorRatingTweak80_1000AR.esp
 REGEX: ArmorRatingTweak_(\d{8}|U)?.+\.esp
   IF VAR(EN) SAY: Use only one ArmorRatingTweak esp.
     IF VAR(RU) SAY: Используйте только один ArmorRatingTweak esp.
+      IF VAR(ES) SAY: Utilizar solo un ArmorRatingTweak esp.
 ArmorSets.esp
   IF VERSION("SKSE", "0.1.5.6", <) REQ: "http://skse.silverlock.org SKSE" 1.5.6+
 ARTOFMAGIC.esp
@@ -3432,8 +3440,9 @@ REGEX: Arrows of Magicka.*\.esp
   IF CHECKSUM("Arrows of Magicka.esp", 449C7BDC) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Arrows of Magicka.esp", 449C7BDC) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Arrows of Magicka.esp", 449C7BDC) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF VAR(EN) SAY: Use only one Arrows of Magicka*.esp
-    IF VAR(RU) SAY: Используйте только один Arrows of Magicka*.esp
+  IF VAR(EN) SAY: Use only one Arrows of Magicka*.esp.
+    IF VAR(RU) SAY: Используйте только один Arrows of Magicka*.esp.
+      IF VAR(ES) SAY: Utilizar solo un Arrows of Magicka*.esp.
 AsharaMerchants.esp
   IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
   SAY: Certain version(s) of this mod require active Dawnguard, Hearthfire and/or Dragonborn. See "http://skyrim.nexusmods.com/mods/28996 author's instructions."
@@ -3479,8 +3488,9 @@ Back off, [Subject Name Here]!.esp
 Back off, [Subject Name Here]! - Dawnguard.esp
 REGEX: (Vidani's )?Bag of Holding\.esp
 REGEX: BagofTrash\w*\.esp
-  IF VAR(EN) SAY: Use only one BagofTrash*.esp
-    IF VAR(RU) SAY: Используйте только один BagofTrash*.esp
+  IF VAR(EN) SAY: Use only one BagofTrash*.esp.
+    IF VAR(RU) SAY: Используйте только один BagofTrash*.esp.
+      IF VAR(ES) SAY: Utilizar solo un BagofTrash*.esp.
 BakingRecipes.esp
 Balanced Crafting Project - Smithing Part.esp
 Balanced Crafting Project - Enchanting Smithing.esp
@@ -3951,8 +3961,9 @@ Dawnguard Crafting Items by Variooska v3.0.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 REGEX: DBCallingCard.+\.esp
-  IF VAR(EN) SAY: Use only one DBCallingCard*.esp
-    IF VAR(RU) SAY: Используйте только один DBCallingCard*.esp
+  IF VAR(EN) SAY: Use only one DBCallingCard*.esp.
+    IF VAR(RU) SAY: Используйте только один DBCallingCard*.esp.
+      IF VAR(ES) SAY: Utilizar solo un DBCallingCard*.esp.
 DawnsPoshPonies.esp
   IF CHECKSUM("DawnsPoshPonies.esp", 33539C8D) && IF VAR(EN) DIRTY: 5 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("DawnsPoshPonies.esp", 33539C8D) && IF VAR(RU) DIRTY: 5 ITM, 3 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -3962,8 +3973,9 @@ DBRWO.esp
 dbtomisc.esp
 Dead Body Collision.esp
 REGEX: Decorator Assistant.+\.esp
-  IF VAR(EN) SAY: Use only one Decorator Assistant*.esp
-    IF VAR(RU) SAY: Используйте только один Decorator Assistant*.esp
+  IF VAR(EN) SAY: Use only one Decorator Assistant*.esp.
+    IF VAR(RU) SAY: Используйте только один Decorator Assistant*.esp.
+      IF VAR(ES) SAY: Utilizar solo un Decorator Assistant*.esp.
 DecorativeTrophies.esp
   TAG: {{BASH: Relev}}
   // not sure about 'Relev' tag, maybe need 'Invent' tag(after it comp. in WB) need to check
@@ -4140,8 +4152,9 @@ Equip more Rings FR (8).esp
 EquivalentExchange.esp
 erweiterte schmiedekunst.esp
 REGEX: Eternal Bunny Pet (Dark Silent)?\.esp
-  IF VAR(EN) SAY: Use only one Eternal Bunny Pet esp
-    IF VAR(RU) SAY: Используйте только один Eternal Bunny Pet esp
+  IF VAR(EN) SAY: Use only one Eternal Bunny Pet esp.
+    IF VAR(RU) SAY: Используйте только один Eternal Bunny Pet esp.
+      IF VAR(ES) SAY: Utilizar solo un Eternal Bunny Pet esp.
 EternalTorch.esp
 EveryoneGetInside.esp
 expanded children.esp
@@ -4199,6 +4212,7 @@ Farquar's Girl Gwendolyn.esp
 REGEX: Faster Bolts (100|25|50|75).*\.esp
   IF VAR(EN) SAY: Use only one Faster Bolts esp.
     IF VAR(RU) SAY: Используйте только один Faster Bolts esp.
+      IF VAR(ES) SAY: Utilizar solo un Faster Bolts esp.
 fastertrolls.esp
 fFastTravelSpeedMult_4.esp
 FCC- Main.esp
@@ -4243,8 +4257,9 @@ Free travel to any holds.esp
 FullyEquippedBlacksmiths.esp
 Furbag.esp
 REGEX: FurnitureLootOverhaul(_3.0)?\.esp
-  IF VAR(EN) SAY: Use only one Furniture Loot Overhaul
-    IF VAR(RU) SAY: Используйте только один Furniture Loot Overhaul esp
+  IF VAR(EN) SAY: Use only one Furniture Loot Overhaul.
+    IF VAR(RU) SAY: Используйте только один Furniture Loot Overhaul esp.
+      IF VAR(ES) SAY: Utilizar solo un Furniture Loot Overhaul esp.
 fx_eye_candy_rings.esp
   IF CHECKSUM("fx_eye_candy_rings.esp", A7494B03) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("fx_eye_candy_rings.esp", A7494B03) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -4328,14 +4343,17 @@ GlassCrownCraftable.esp
 Gleaming Salvage Caravan.esp
 GM-Fletching04.esp
 REGEX: GM-Fletching(Harder|Standard)\.esp
-  IF VAR(EN) SAY: Use only one version of GM-Fletching*.esp
-    IF VAR(RU) SAY: Используйте только один GM-Fletching*.esp
+  IF VAR(EN) SAY: Use only one version of GM-Fletching*.esp.
+    IF VAR(RU) SAY: Используйте только один GM-Fletching*.esp.
+      IF VAR(ES) SAY: Utilizar solo un GM-Fletching*.esp.
 GM-ForgeAdditions.esp
-  IF VAR(EN) && IF VAR(DualGMForgeAdd) SAY: Use only one GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp
-    IF VAR(RU) SAY: Используйте только один GM-ForgeAdditions.esp или GM-ForgeAdditionsLAotB.esp
+  IF VAR(DualGMForgeAdd) && IF VAR(EN) SAY: Use only one GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp.
+    IF VAR(DualGMForgeAdd) && IF VAR(RU) SAY: Используйте только один GM-ForgeAdditions.esp или GM-ForgeAdditionsLAotB.esp.
+      IF VAR(DualGMForgeAdd) && IF VAR(ES) SAY: Utilizar solo un GM-ForgeAdditions.esp o GM-ForgeAdditionsLAotB.esp.
 GM-ForgeAdditionsLevelledOutfits.esp
-  IF VAR(EN) && IF VAR(DualGMLevList) SAY: Use only one GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp
-    IF VAR(RU) SAY: Используйте только один GM-ForgeAdditionsLevelledOutfits.esp или GM-ForgeAdditionsLevelledOutfits.esp
+  IF VAR(DualGMLevList) && IF VAR(EN) SAY: Use only one GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp.
+    IF VAR(DualGMLevList) && SAY: Используйте только один GM-ForgeAdditionsLevelledOutfits.esp или GM-ForgeAdditionsLevelledOutfits.esp.
+      IF VAR(DualGMLevList) && IF VAR(ES) SAY: Utilizar solo un GM-ForgeAdditionsLevelledOutfits.esp or GM-ForgeAdditionsLAotBLevelledOutfits.esp.
 /* will work alongside The Lost Art of the Blacksmith */
 GM-ForgeAdditionsLAotB.esp
   IF VAR(EN) && IF VAR(DualGMForgeAdd) SAY: Use only one GM-ForgeAdditions.esp or GM-ForgeAdditionsLAotB.esp
