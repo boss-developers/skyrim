@@ -445,9 +445,9 @@ REGEX: EagleEyePerk(_defStamina|_half_stamina)?\.esm
   IF VAR(EN) SAY: Use only one EagleEyePerk esm.
     IF VAR(RU) SAY: Используйте только один EagleEyePerk esm.
       IF VAR(ES) SAY: Utilizar solo un EagleEyePerk esm.
-  IF VAR(EN) && IF FILE("PerkUP-Archery.esp") WARN: Delete. Already included in 'PerkUP-Archery.esp'.
-    IF VAR(RU) && IF FILE("PerkUP-Archery.esp") WARN: Удалите. Уже включено в 'PerkUP-Archery.esp'.
-      IF VAR(ES) && IF FILE("PerkUP-Archery.esp") WARN: Borrar. Esta incluido en 'PerkUP-Archery.esp'.
+  IF FILE("PerkUP-Archery.esp") && IF VAR(EN) WARN: Delete. Already included in 'PerkUP-Archery.esp'.
+    IF FILE("PerkUP-Archery.esp") && IF VAR(RU) WARN: Удалите. Уже включено в 'PerkUP-Archery.esp'.
+      IF FILE("PerkUP-Archery.esp") && IF VAR(ES) WARN: Borrar. Esta incluido en 'PerkUP-Archery.esp'.
 EAIthilwhenE_1_1.esm
 EASamhair.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version, EASamhairE_1_1.esm.
@@ -496,9 +496,9 @@ Eyja 1.5.esm
 
 // esms f
 Fantasy Music Overhaul.esm
-  IF VAR(EN) SAY: Obsolete. Update to latest version "http://skyrim.nexusmods.com/mods/28583/ here".
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии "http://skyrim.nexusmods.com/mods/28583/ здесь".
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión "http://skyrim.nexusmods.com/mods/28583/ aquí".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/28583/ here".
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/28583/ здесь".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/28583/ aquí".
 Farkasv2.esm
 FluxMOD_ArtifactEffectPerk.esm
 FM - HaafingarHall.esm
@@ -3091,9 +3091,9 @@ esisenviropack.esp
 Fantasy Music Full Replace.esp
 Fantasy Music Non-Replace.esp
 REGEX: FMO - (Non-Replacer Version|Replacer Version)?\.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version "http://skyrim.nexusmods.com/mods/28583/ here".
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии "http://skyrim.nexusmods.com/mods/28583/ здесь".
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión "http://skyrim.nexusmods.com/mods/28583/ aquí".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/28583/ here".
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/28583/ здесь".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/28583/ aquí".
 Fantasy Music Overhaul.esp
   IF CHECKSUM("fantasy music overhaul.esp", FA0711C6) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("fantasy music overhaul.esp", FA0711C6) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -3406,8 +3406,9 @@ Archmage Crafting - Enchanted Items.esp
 Archmage Crafting - Unenchanted Clothing.esp
 Arrow Smithing.esp
 arrowcrafting.esp
-  IF CHECKSUM("arrowcrafting.esp", 8E307ED0) || IF CHECKSUM("arrowcrafting.esp", D15AE0C5) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("arrowcrafting.esp", 8E307ED0) || IF CHECKSUM("arrowcrafting.esp", D15AE0C5) && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF CHECKSUM("arrowcrafting.esp", 8E307ED0) || IF CHECKSUM("arrowcrafting.esp", D15AE0C5) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF CHECKSUM("arrowcrafting.esp", 8E307ED0) || IF CHECKSUM("arrowcrafting.esp", D15AE0C5) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 REGEX: Arrowsmith\w{0,2}\.esp
   IF VAR(EN) && IF FILE("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Delete. Arrowsmith.esp already included in SkyRe_Main.esp
     IF VAR(RU) && IF FILE("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Удалите. Arrowsmith.esp уже включен в SkyRe_Main.esp
@@ -3614,8 +3615,9 @@ Birdsclean.esp
     IF CHECKSUM("Birdsclean.esp", DCF07465) && IF VAR(RU) DIRTY: 45 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Birdsclean.esp", DCF07465) && IF VAR(ES) DIRTY: 45 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 BirdsHF.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, BirdsHFclean.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, BirdsHFclean.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, BirdsHFclean.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, BirdsHFclean.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, BirdsHFclean.esp.
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
@@ -3871,13 +3873,15 @@ Craft, Temper, Smelt.esp
 CRAFT - Salvage Material.esp
   IF VAR(EN) && IF FILE("Craft, Temper, Smelt.esp") ERROR: Delete. Already included in Craft, Temper, Smelt.esp
     IF VAR(RU) && IF FILE("Craft, Temper, Smelt.esp") ERROR: Удалите. Уже включено в Craft, Temper, Smelt.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
 CRAFT - Forge Equipment.esp
   IF VAR(EN) && IF FILE("Craft, Temper, Smelt.esp") ERROR: Delete. Already included in Craft, Temper, Smelt.esp
     IF VAR(RU) && IF FILE("Craft, Temper, Smelt.esp") ERROR: Удалите. Уже включено в Craft, Temper, Smelt.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
 craftable.esp
 Craftable Light Ancient Nord Armor.esp
 Craftable and Placeable Havok-enabled Bedrolls .esp
@@ -4032,13 +4036,16 @@ Dragonlings 1.0 - A dragon sub-species.esp
 DragonPlateCrownCraftable.esp
 dremora armor looting.esp
 DeadThrall.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, mpn.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, mpn.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, mpn.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, mpn.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, mpn.esp.
 REGEX: Death Cam \(\d{2} Seconds\)\.esp
 death cam duration options.esp
 Diaries of Training.esp
 Disease Descriptions.esp
-  IF CHECKSUM("Disease Descriptions.esp", 708C92F3) SAY: Obsolete. A revised and supported version available "http://skyrim.nexusmods.com/mods/31202 here".
+  IF CHECKSUM("Disease Descriptions.esp", 708C92F3) && IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/31202 here".
+    IF CHECKSUM("Disease Descriptions.esp", 708C92F3) && IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/31202 здесь".
+      IF CHECKSUM("Disease Descriptions.esp", 708C92F3) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/31202 aquí".
 DD_Dawnguard Additions.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -4141,8 +4148,9 @@ enchant4effects.esp
 enchant6effects.esp
 enchant7effects.esp
 Enchanters Merchant.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Enchanters Merchant v1_1.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Enchanters Merchant v1_1.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Enchanters Merchant v1_1.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Enchanters Merchant v1_1.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Enchanters Merchant v1_1.esp.
 Enchanters Merchant v1_1.esp
 EnhancementGems.esp
 enchonehandeddaggerfix.esp
@@ -4154,8 +4162,9 @@ EquipableMap.esp
 EQUIPMENT - Unarmed Spiked Gauntlets.esp
   IF VAR(EN) && IF FILE("Craft, Temper, Smelt.esp") WARN: Delete. Already included in Craft, Temper, Smelt.esp
     IF VAR(RU) && IF FILE("Craft, Temper, Smelt.esp") WARN: Удалите. Уже включено в Craft, Temper, Smelt.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии - "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/22290 Craft, Temper, Smelt".
 Equip more Rings FR (2).esp
 Equip more Rings FR (4).esp
 Equip more Rings FR (8).esp
@@ -4201,8 +4210,9 @@ Extra Encounters - Higher Spawn Rate.esp
     IF CHECKSUM("Extra Encounters - Higher Spawn Rate.esp", D9E80A14) && IF VAR(RU) DIRTY: 46 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Extra Encounters - Higher Spawn Rate.esp", D9E80A14) && IF VAR(ES) DIRTY: 46 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Extra Encounters V1.0.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Extra Encounters.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Extra Encounters.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Extra Encounters.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Extra Encounters.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Extra Encounters.esp.
   IF CHECKSUM("Extra Encounters V1.0.esp", 0F44A605) && IF VAR(EN) DIRTY: 41 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Extra Encounters V1.0.esp", 0F44A605) && IF VAR(RU) DIRTY: 41 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Extra Encounters V1.0.esp", 0F44A605) && IF VAR(ES) DIRTY: 41 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -4375,8 +4385,9 @@ GM-ForgeAdditionsLAotBLevelledOutfits.esp
       IF VAR(DualGMLevList) && IF VAR(ES) SAY: Utilizar solo un GM-ForgeAdditionsLevelledOutfits.esp o GM-ForgeAdditionsLAotBLevelledOutfits.esp.
 GM-FletchingNoFeathers.esp
 Grab Moveable Statics.esp
-  IF VAR(EN) SAY: Obsolete, consider upgrading
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 GrandSoulGemOnly.esp
 greatwyrm.esp
 Grind_stuff.esp
@@ -4620,8 +4631,9 @@ JBS_banking_redux.esp
     IF CHECKSUM("JBS_banking_redux.esp", E8287C9C) && IF VAR(RU) DIRTY: 0 ITM, 1 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("JBS_banking_redux.esp", E8287C9C) && IF VAR(ES) DIRTY: 0 ITM, 1 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 JBS_banking.esp
-  IF VAR(EN) SAY: Obsolete.  Update to latest version.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 JBS_gem_cutting.esp
   IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
 JBS_hunting.esp
@@ -4633,8 +4645,9 @@ jbs_item_breakdown.esp
   IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
   IF FILE("jbs_smithing_real.esp") INC: jbs_smithing_real.esp
 jbs_combined.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, JBS_overhaul.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, JBS_overhaul.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, JBS_overhaul.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, JBS_overhaul.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, JBS_overhaul.esp.
 JBS_overhaul.esp
 JBS_overhaul_thalmor.esp
   IF FILE("JBS_overhaul.esp") INC: JBS_overhaul.esp
@@ -4679,11 +4692,13 @@ knownspells.esp
 Krisan's Children.esp
 ktxcompleteskyforge.esp
 kuerteeHorseCommands.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, kuerteeHorseCommandsVerB2.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, kuerteeHorseCommandsVerB2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, kuerteeHorseCommandsVerB2.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, kuerteeHorseCommandsVerB2.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, kuerteeHorseCommandsVerB2.esp.
 kuerteeHorseCommandsVerB.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, kuerteeHorseCommandsVerB2.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, kuerteeHorseCommandsVerB2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, kuerteeHorseCommandsVerB2.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, kuerteeHorseCommandsVerB2.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, kuerteeHorseCommandsVerB2.esp.
 kuerteeHorseCommandsVerB2.esp
 kuerteeHorseCommandsVerB2 MCM.esp
 kuerteeProfessions.esp
@@ -4777,14 +4792,16 @@ LFox Blacksmiths Have Metals.esp
   TAG: {{BASH: Delev, Relev}}
 LFox Bottle That Blood.esp
 REGEX: LIAT - (AI Packages|Crowded|Less Visitors|Lively Inns and Taverns|More Visitors)?\.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, LIAT - NPCs.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней переименованной версии, LIAT - NPCs.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, LIAT - NPCs.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, LIAT - NPCs.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, LIAT - NPCs.esp.
 LIAT - NPCs.esp
   IF CHECKSUM("LIAT - NPCs.esp", 8EFD5F95) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("LIAT - NPCs.esp", 8EFD5F95) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("LIAT - NPCs.esp", 8EFD5F95) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF CHECKSUM("LIAT - NPCs.esp", 5887EDBA) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("LIAT - NPCs.esp", 5887EDBA) && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF CHECKSUM("LIAT - NPCs.esp", 5887EDBA) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF CHECKSUM("LIAT - NPCs.esp", 5887EDBA) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 librarian - book sorting.esp
 LightRest.esp
 LinenCraft.esp
@@ -4913,23 +4930,29 @@ Mining Extended.esp
 Missing_Carriges.esp
 MissingTotemPuzzlePillars.esp
 MLLY - FEMALE.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_FEMALES.esp".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_FEMALES.esp".
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_FEMALES.esp".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_FEMALES.esp".
 MLLY - FEMALE v1.0.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_FEMALES.esp".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_FEMALES.esp".
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_FEMALES.esp".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_FEMALES.esp".
 MLLY - MAIN v1_0.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
 MLLY - MAIN v4_0.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
 MLLY - MALE.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_MALES.esp".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_MALES.esp".
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_MALES.esp".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/23483 Isharas_MLLY_MALES.esp".
 MLLY - RESET.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/23483 Isharas MLLY Enhanced".
 mm_AspectOfTheBeastPotion.esp
 mmbedroll1.esp
 ModernDayCalendarNames.esp
@@ -5025,8 +5048,9 @@ IFNOT CHECKSUM("NamedSoulGems.esp", A030E3D0) && IFNOT CHECKSUM("NamedSoulGems.e
     IF CHECKSUM("NamedSoulGems.esp", 3B92C13A) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("NamedSoulGems.esp", 3B92C13A) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Names - NPCs.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Names - NPCs - 1_1.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Names - NPCs - 1_1.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Names - NPCs - 1_1.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Names - NPCs - 1_1.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Names - NPCs - 1_1.esp.
 Names - NPCs - 1_1.esp
 Names - enemies - impersonal  completely.esp
   IF CHECKSUM("Names - enemies - impersonal  completely.esp", 13F3D6DA) && IF VAR(EN) DIRTY: 57 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -5131,8 +5155,9 @@ pf_removeenchantingrestrictions.esp
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 phiNoFF.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, phiNoFF.esm
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, phiNoFF.esm
+  IF VAR(EN) SAY: Obsolete. Update to latest version, phiNoFF.esm.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, phiNoFF.esm.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, phiNoFF.esm.
 PilgrimsDelight.esp
 Piratelords Loot Adjustments.esp
   TAG: {{BASH: Delev, Relev}}
@@ -5205,10 +5230,11 @@ Random Housecarls Clothing.esp
 rats.esp
 RaushanSayoran.esp
 REGEX: Radiant and Unique Potions (and )?Poisons.*\.esp
-  IF VAR(EN) && IF FILE("Radiant and Unique Potions and Poisons.esp") SAY: Obsolete. Update to latest version.
-    IF VAR(RU) && IF FILE("Radiant and Unique Potions and Poisons.esp") SAY: Устарело. Обновите до последней версии.
-  IF VAR(EN) && IF FILE("Radiant and Unique Potions Poisons and BOOZE.esp") && IF REGEX("Unique BOOZE Bottles.*\.esp") SAY: Uninstall Unique BOOZE Bottles
-    IF VAR(RU) && IF FILE("Radiant and Unique Potions Poisons and BOOZE.esp") && IF REGEX("Unique BOOZE Bottles.*\.esp") SAY: Деинсталируйте Unique BOOZE Bottles
+  IF FILE("Radiant and Unique Potions and Poisons.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF FILE("Radiant and Unique Potions and Poisons.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF FILE("Radiant and Unique Potions and Poisons.esp") && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
+  IF FILE("Radiant and Unique Potions Poisons and BOOZE.esp") && IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(EN) SAY: Uninstall Unique BOOZE Bottles
+    IF FILE("Radiant and Unique Potions Poisons and BOOZE.esp") && IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(RU) SAY: Деинсталируйте Unique BOOZE Bottles
 real crossbow smithing.esp
 Real Days.esp
 real glaciers.esp
@@ -5310,8 +5336,9 @@ RiftenHQtexture-Part2.esp
 RiftenSmelter.esp
 Riverwood Smelter.esp
 riverwood addons.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version - riverwood flora.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии - riverwood flora.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, riverwood flora.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, riverwood flora.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, riverwood flora.esp.
 riverwood flora.esp
   IF CHECKSUM("riverwood flora.esp", 63725578) && IF VAR(EN) DIRTY: 28 ITM, 31 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("riverwood flora.esp", 63725578) && IF VAR(RU) DIRTY: 28 ITM, 31 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -5349,8 +5376,9 @@ SaderHorses.esp
 SabreFurBag.esp
 sanctuarycleanup.esp
 SaveHotKey.esp
-  IF VAR(SkyUI) && IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, SaveHotKeyMCM.esp
-    IF VAR(SkyUI) && IF VAR(RU) SAY: Устарело. Обновите до последней версии, SaveHotKeyMCM.esp
+  IF VAR(SkyUI) && IF VAR(EN) SAY: Obsolete. Update to latest version, SaveHotKeyMCM.esp.
+    IF VAR(SkyUI) && IF VAR(RU) SAY: Устарело. Обновите до последней версии, SaveHotKeyMCM.esp.
+      IF VAR(SkyUI) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, SaveHotKeyMCM.esp.
 SB - Loot Mod.esp
   TAG: {{BASH: Delev, Relev}}
   // tags not tested
@@ -5442,11 +5470,13 @@ Skyforge Smelter.esp
     IF CHECKSUM("Skyforge Smelter.esp", 86B4D1D2) && IF VAR(RU) DIRTY: 1 ITM, 3 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Skyforge Smelter.esp", 86B4D1D2) && IF VAR(ES) DIRTY: 1 ITM, 3 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Skyforge_Plus.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version 3+.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии 3+.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Skyforge_Plus v2.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version 3+.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии 3+.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Skyforge_Plus v3.esp
 SkyForge +.esp
 SkyHavenLightFix.esp
@@ -5487,8 +5517,9 @@ Skyrim Immersive Creatures - DLC2.esp
 SkyMoMod_lists.esp
   TAG: {{BASH: Delev, Relev}}
   IFNOT VAR(SkyMoMod) REQ: "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod"
-  IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+  IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
   IF REGEX("SkyMoMod Lore.+\.esp") INC: SkyMoMod Lore * v10.esp's
   IF VAR(EN) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: If you're using only the original "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod", this esp is obsolete. If you're using the Lore-Friendly mod, disregard this note.
     IF VAR(RU) && IFNOT FILE("Deleveled Skyrim - SkyMoMod_list.esp") SAY: Если вы используете оригинальный "http://skyrim.nexusmods.com/mods/9694 Skyrim Monster Mod", то этот esp устарел. Если вы используете Lore-Friendly мод, игнорируйте это сообщение.
@@ -5506,8 +5537,9 @@ Skyrim_Monster_Mod_Additions-Collectables.esp
 SkyMoMod Extras Conjuration.esp
 skymo-dawn.esp
   TAG: {{BASH: Delev}}
-  IF VAR(EN) && IF REGEX("SkyMoMod Lore-Friendly .+\.esp") SAY: Obsolete. Update to latest renamed version, SkyMoMod Lore-Friendly * v10.esp
-    IF VAR(RU) && IF REGEX("SkyMoMod Lore-Friendly .+\.esp") SAY: Устарело. Обновите до последней версии, SkyMoMod Lore-Friendly * v10.esp
+  IF REGEX("SkyMoMod Lore-Friendly .+\.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version, SkyMoMod Lore-Friendly * v10.esp.
+    IF REGEX("SkyMoMod Lore-Friendly .+\.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyMoMod Lore-Friendly * v10.esp.
+      IF REGEX("SkyMoMod Lore-Friendly .+\.esp") && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, SkyMoMod Lore-Friendly * v10.esp.
   IF REGEX("SkyMoMod Lore-Friendly .+\.esp") INC: SkyMoMod Lore-Friendly * v10.esp's
 LF-SkyMoMod.esp
   TAG: {{BASH: Delev}}
@@ -5621,15 +5653,17 @@ SpeedPotionsV1.2.esp
 Speed booster.esp
 spellbreaker_material_fix.esp
 REGEX: SPTFemaleGuards(InPlace)?\.esp
-  IF VAR(EN) SAY: Obsolete. Update to SPTDiverseGuards
-    IF VAR(RU) SAY:  Устарело. Обновите до SPTDiverseGuards
+  IF VAR(EN) SAY: Obsolete. Update to latest version, SPTDiverseGuards.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SPTDiverseGuards.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, SPTDiverseGuards.
 SPTDiverseGuardsSkyrim.esp
   TAG: {{BASH: Delev}}
   // not tested
 srmcompanioncart.esp
 StaRe.esp
-  IF VAR(EN) SAY: Obsolete. Update to 'SkyRe_StandingStones.esp'
-    IF VAR(RU) SAY:  Устарело. Обновите до 'SkyRe_StandingStones.esp'
+  IF VAR(EN) SAY: Obsolete. Update to latest version, SkyRe_StandingStones.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe_StandingStones.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, SkyRe_StandingStones.esp.
 StarX Frost Giants.esp
 Fire Giants.esp
 Frost Giants.esp
@@ -5743,8 +5777,9 @@ Transmute Iron First.esp
 transmuteironorefirst.esp
 Traps Make Noise.esp
 TravellersOfSkyrim.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest version.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 TravellersOfSkyrim - Vanilla.esp
 TravellersOfSkyrim - Light.esp
   IF FILE("TravellersOfSkyrim - Vanilla.esp") INC: TravellersOfSkyrim - Vanilla.esp
@@ -5774,8 +5809,9 @@ two_handed_rebalance.esp
     IF CHECKSUM("two_handed_rebalance.esp", 5871D2FC) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("two_handed_rebalance.esp", 5871D2FC) && IF VAR(ES) DIRTY: 5 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Tytanis_v052_SPANISH.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Tytanis.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Tytanis.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Tytanis.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Tytanis.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Tytanis.esp.
 REGEX: Tytanis\w{0,2}(GER)?\.esp
   TAG: {{BASH: Delev, Relev}}
 tytanis horse armo vendor stand alone.esp
@@ -6189,8 +6225,9 @@ Uncle Sheo does JaySuS NO TITLE.esp
   IF VAR(EN) && IF FILE("Uncle Sheo does JaySus.esp") && IF FILE("Uncle Sheo does JaySuS NO TITLE.esp") SAY: Use only one Uncle Sheo does JaySuS esp
     IF VAR(RU) && IF FILE("Uncle Sheo does JaySus.esp") && IF FILE("Uncle Sheo does JaySuS NO TITLE.esp") SAY: Используйте только один Uncle Sheo does JaySuS esp
 VanillaUsesCustom.esp
-  IF VAR(EN) SAY: Obsolete.  Update to latest version.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 vAutosaveManager.esp
 WarriorRest.esp
 war zone fix.esp
@@ -6266,8 +6303,9 @@ BEGINGROUP: Items #
       IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 18 Black Katanas.esp
 18 Black® Katanas HD ML.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, 18 Black Katanas.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, 18 Black Katanas.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, 18 Black Katanas.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, 18 Black Katanas.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, 18 Black Katanas.esp.
 1AlirArmor.esp
 1CuteKnightArmor.esp
 1handedWarhammers.esp
@@ -6461,8 +6499,9 @@ Aries&Tombstone.esp
 Arisverd.esp
 Ariyan.esp
 ArmaeLegionis.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, ArmaLegionis.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ArmaLegionis.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, ArmaLegionis.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ArmaLegionis.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, ArmaLegionis.esp.
 ArmaLegionis.esp
 Armor_Rider.esp
 Armor_Swaps_v1.00.esp
@@ -6475,8 +6514,9 @@ armored nocturnal robes.esp
 ArmorEbonyLight.esp
 ArmoredCircletsQuickFox.esp
 ArmoredAlikrHoods.esp
-  IF VAR(EN) SAY: Obsolete.  Update to the latest renamed version, ArmoredAlikrGarb.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ArmoredAlikrGarb.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, , ArmoredAlikrGarb.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, , ArmoredAlikrGarb.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, , ArmoredAlikrGarb.esp.
 ArmoredAlikrGarb.esp
 armorkits.esp
   TAG: {{BASH: Relev}}
@@ -6505,8 +6545,9 @@ AronsMechaDragons.esp
     IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'
 ArrowsOfLight.esp
 ArrowsOfMight1.1.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, ArrowsOfMight1.2.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ArrowsOfMight1.2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, ArrowsOfMight1.2.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ArrowsOfMight1.2.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, ArrowsOfMight1.2.esp.
 ArrowsOfMight1.2.esp
 Artemis Hunting Gear.esp
 AsharaDimonizedDress.esp
@@ -6614,8 +6655,9 @@ BetterBeginning.esp
 betterbladesgear.esp
   TAG: {{BASH: Relev}}
 Better Bond of Matrimony.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 REGEX: Better Bond of Matrimony .+\.esp
   IF VAR(EN) SAY: Use only one Better Bond of Matrimony esp.
     IF VAR(RU) SAY: Используйте только один Better Bond of Matrimony esp.
@@ -6662,8 +6704,9 @@ Black Lotus.esp
 BlackSacramentArmor.esp
 BlackSacramentDBreplacer.esp
 Black Scaled Armor MOD.esp
-  IF CHECKSUM("Black Scaled Armor MOD.esp", 852855A6) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("Black Scaled Armor MOD.esp", 852855A6) && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF CHECKSUM("Black Scaled Armor MOD.esp", 852855A6) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF CHECKSUM("Black Scaled Armor MOD.esp", 852855A6) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Blacksmith Chest.esp
 Blacksword.esp
 blackswordsman.esp
@@ -6680,8 +6723,9 @@ BlairsAfterGlowFashion.esp
 BleachTotalConversion.esp
 Blessing of God 2.esp
 Blessing of God.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Blessing of God 2.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Blessing of God 2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Blessing of God 2.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Blessing of God 2.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Blessing of God 2.esp.
 blindfold of skyrim.esp
 Blindfolds_of_Skyrim.esp
 bloodscale.esp
@@ -6793,8 +6837,9 @@ Chainmail Hood v2.2.esp
 chainmail.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
 Chainmailhauberks 1.0.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Chainmailhauberks 1.1.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Chainmailhauberks 1.1.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Chainmailhauberks 1.1.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Chainmailhauberks 1.1.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Chainmailhauberks 1.1.esp.
 Chainmailhauberks 1.1.esp
   IF FILE("SkyRe Chainmail Hauberks.esp") TAG: {{BASH: Deactivate}}
 Chakram.esp
@@ -6931,8 +6976,9 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
 cloakplus.esp
 Cloud Buster.esp
 CMHood (Ashlander).esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version - Chainmail Hood v2.2.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии - Chainmail Hood v2.2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Chainmail Hood v2.2.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Chainmail Hood v2.2.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Chainmail Hood v2.2.esp.
 coldharbourgreatsword.esp
 Collar.esp
 Combat Princess.esp
@@ -6952,11 +6998,13 @@ CoolItems1_2.esp
 // As for why - http://pastebin.com/pYuzmfZN
 CoolItems1_2-WIFixed.esp
 CopperPaladinArmorV1.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardPaladinArmorCP.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, DawnguardPaladinArmorCP.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, DawnguardPaladinArmorCP.esp.
 CopperPaladinArmorV2.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardPaladinArmorCP.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, DawnguardPaladinArmorCP.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, DawnguardPaladinArmorCP.esp.
 CMStrongBoxes.esp
 Combat Remastered - 2H to 1H Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -7065,8 +7113,9 @@ Crossbows by Scot.esp
       IF CHECKSUM("Crossbows by Scot.esp", 56839516) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   // two versions, same name
 customnightingale.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, UnenchantedNightingaleSetMod.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, UnenchantedNightingaleSetMod.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, UnenchantedNightingaleSetMod.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, UnenchantedNightingaleSetMod.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, UnenchantedNightingaleSetMod.esp.
 CrystalAxe.esp
 Crystaldagger.esp
 CrystalHammer.esp
@@ -7125,8 +7174,9 @@ Dark Knight.esp
 DarkAssassinArmor.esp
 DarkElvesArmory.esp
 DarkImperial.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Equipment - Armor - Dark Imperial Armor.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Equipment - Armor - Dark Imperial Armor.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Equipment - Armor - Dark Imperial Armor.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Equipment - Armor - Dark Imperial Armor.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Equipment - Armor - Dark Imperial Armor.esp.
 Equipment - Armor - Dark Imperial Armor.esp
 Darklilith.esp
 selobl_DarkLillith.esp
@@ -7138,11 +7188,13 @@ DarkNemesis.esp
   IF FILE("SkyRe Dark Nemesis.esp") && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) TAG: {{BASH: Deactivate}}
 DarkKnight&PaladinWS.esp
 DarkPaladinArmor.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardPaladinArmorCP.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, DawnguardPaladinArmorCP.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, DawnguardPaladinArmorCP.esp.
 DarkPaladinArmorV2.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardPaladinArmorCP.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, DawnguardPaladinArmorCP.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, DawnguardPaladinArmorCP.esp.
 darkseraticheavyarmor.esp
 LFDarksidersWarArmor.esp
 darksiders_pack.esp
@@ -7161,12 +7213,14 @@ Dawnguard Fraktionen Extended.esp
     IF CHECKSUM("Dawnguard Fraktionen Extended.esp", 9C5504FC) && IF VAR(RU) DIRTY: 12 ITM, 5 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Dawnguard Fraktionen Extended.esp", 9C5504FC) && IF VAR(ES) DIRTY: 12 ITM, 5 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 DawnguardHelmetReplacer.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardHelmetReplacer-V1.1.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardHelmetReplacer-V1.1.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, DawnguardHelmetReplacer-V1.1.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardHelmetReplacer-V1.1.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, DawnguardHelmetReplacer-V1.1.esp.
 DawnguardHelmetReplacer-V1.1.esp
 DawnguardPaladinArmor.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardPaladinArmorCP.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, DawnguardPaladinArmorCP.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, DawnguardPaladinArmorCP.esp.
 DawnguardPaladinArmorCP.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -7253,16 +7307,18 @@ DHuntress.esp
 diamondarchery.esp
 diamondsword.esp
 REGEX: diamondweapons.*\.esp
-  IF VAR(EN) && IF REGEX("diamondweapons1\.[02]\.esp") SAY: Obsolete. Update to latest version.
-    IF VAR(RU) && IF REGEX("diamondweapons1\.[02]\.esp") SAY: Устарело. Обновите до последней версии.
+  IF REGEX("diamondweapons1\.[02]\.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF REGEX("diamondweapons1\.[02]\.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF REGEX("diamondweapons1\.[02]\.esp") && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 DI Armor.esp
 DIMclothes1.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 Dishonored Lord Protector Set.esp
 DK_Armor_By_Hothtrooper44.esp
 DLE_en.esp
-  IF CHECKSUM("DLE_en.esp", 3F26B1FA) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("DLE_en.esp", 3F26B1FA) && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF CHECKSUM("DLE_en.esp", 3F26B1FA) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF CHECKSUM("DLE_en.esp", 3F26B1FA) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 DME.esp
 DME_Light.esp
   IF FILE("DME.esp") INC: DME.esp
@@ -7387,8 +7443,9 @@ DreadWeapons_Fifthdreads_Weapon_Pack.esp
 Dreadweave Axes.esp
 DreamBurrowsRegalAssassin.esp
 DreamBurrowSageRetexture.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DreamBurrowsSageOutfit.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, DreamBurrowsSageOutfit.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, DreamBurrowsSageOutfit.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DreamBurrowsSageOutfit.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, DreamBurrowsSageOutfit.esp.
 DreamBurrowsSageOutfit.esp
 dreughhd.esp
   // must load after morrowind armor mod
@@ -7452,17 +7509,21 @@ Dwemer Artificer.esp
     IF CHECKSUM("Dwemer Artificer.esp", 939498B8) && IF VAR(RU) DIRTY: 6 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Dwemer Artificer.esp", 939498B8) && IF VAR(ES) DIRTY: 6 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Dwemer Artificer v0.1.esp
-  IF VAR(EN) && IF FILE("Dwemer Artificer.esp") SAY: Obsolete. Update to latest version.
-    IF VAR(RU) && IF FILE("Dwemer Artificer.esp") SAY: Устарело. Обновите до последней версии.
+  IF FILE("Dwemer Artificer.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF FILE("Dwemer Artificer.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF FILE("Dwemer Artificer.esp") && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Dwemer Artificer v0.2.esp
-  IF VAR(EN) && IF FILE("Dwemer Artificer.esp") SAY: Obsolete. Update to latest version.
-    IF VAR(RU) && IF FILE("Dwemer Artificer.esp") SAY: Устарело. Обновите до последней версии.
+  IF FILE("Dwemer Artificer.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF FILE("Dwemer Artificer.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF FILE("Dwemer Artificer.esp") && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Fun in a Box.esp
-  IF VAR(EN) && IF FILE("Dwemer Artificer.esp") WARN: Obsolete. Update to latest version.  Not included
-    IF VAR(RU) && IF FILE("Dwemer Artificer.esp") WARN: Устарело. Обновите до последней версии.  Not included
+  IF FILE("Dwemer Artificer.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF FILE("Dwemer Artificer.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF FILE("Dwemer Artificer.esp") && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Dwemer Scouter.esp
-  IF VAR(EN) SAY: Obsolete.  Update to latest renamed version, Dwemer Goggles & Scouter.esp
-    IF VAR(RU) SAY: Устарело.  Обновите до последней версии, Dwemer Goggles & Scouter.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Dwemer Goggles & Scouter.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Dwemer Goggles & Scouter.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Dwemer Goggles & Scouter.esp.
 Dwemer Goggles & Scouter.esp
 DwemerAutoBlade.esp
   IF FILE("SkyRe_Plugin_DwemerAutoBlade.esp") TAG: {{BASH: Deactivate}}
@@ -7687,11 +7748,13 @@ FrostbiteBlade.esp
 Frostmourne.esp
   IFNOT CHECKSUM("Frostmourne.esp", 428F46D4) && IFNOT CHECKSUM("Frostmourne.esp", 51F43BA4) && IF VAR(EN) && IF VERSION("TES5", "1.8", >) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
 Frostmourne 1.0.1.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Frostmourne v.1.3 unenchanted version.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, Frostmourne v.1.3 unenchanted version.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Frostmourne v.1.3 unenchanted version.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Frostmourne v.1.3 unenchanted version.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Frostmourne v.1.3 unenchanted version.esp.
 Frostmourne 1.2.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, Frostmourne v.1.3 unenchanted version.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, Frostmourne v.1.3 unenchanted version.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Frostmourne v.1.3 unenchanted version.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Frostmourne v.1.3 unenchanted version.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Frostmourne v.1.3 unenchanted version.esp.
 Frostmourne v.1.3 unenchanted version.esp
 frostmourneblade.esp
 frostmournebladeNoEnchant.esp
@@ -7782,11 +7845,13 @@ REGEX: Gold Ingot \d?.+\.esp
 goldbrand.esp
 Golden_Age_Arc_Sword.esp
 GoldenPaladinArmorV1.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardPaladinArmorCP.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, DawnguardPaladinArmorCP.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, DawnguardPaladinArmorCP.esp.
 GoldenPaladinArmorV2.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, DawnguardPaladinArmorCP.esp
-   IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, DawnguardPaladinArmorCP.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, DawnguardPaladinArmorCP.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, DawnguardPaladinArmorCP.esp.
 GoldRapier01.esp
 GoldSteelDagger.esp
 GoldTeraH17.esp
@@ -7874,8 +7939,9 @@ HellionArrows_v1.2.esp
       IF CHECKSUM("HellionArrows_v1.2.esp", B83DB305) && IF VAR(ES) DIRTY: 5 ITM, 7 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Hell Sword.esp
 REGEX: Henrys Ring of Light( v1-0)?\.esp
-  IF VAR(EN) && IF FILE("Henrys Ring of Light v1-0.esp") SAY: Obsolete. Update to latest version.
-    IF VAR(RU) && IF FILE("Henrys Ring of Light v1-0.esp") SAY: Устарело. Обновите до последней версии.
+  IF FILE("Henrys Ring of Light v1-0.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF FILE("Henrys Ring of Light v1-0.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF FILE("Henrys Ring of Light v1-0.esp") && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Heller Full Armor.esp
 Hana.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Hana.esp", C86C77D9) WARN: Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -7996,8 +8062,9 @@ hunnicarmors.esp
     IF CHECKSUM("hunnicarmors.esp", D968FD8E) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("hunnicarmors.esp", D968FD8E) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 hunterarmor.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, hunterarmorv1.2.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, hunterarmorv1.2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, hunterarmorv1.2.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, hunterarmorv1.2.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, hunterarmorv1.2.esp.
 hunterarmorv1.2.esp
   IF FILE("SkyRe_Plugin_NordicHunterLightArmor_1.2.esp") TAG: {{BASH: Deactivate}}
 hunterarmornofur.esp
@@ -8118,8 +8185,9 @@ InvisRing.esp
 IorvethLightArmor_v_1_3.esp
 Iorveth.esp
 Ironman5000 Weapon Overhaul.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, I5KWeaponOH.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, I5KWeaponOH.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, I5KWeaponOH.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, I5KWeaponOH.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, I5KWeaponOH.esp.
 ironman.esp
   IF CHECKSUM("ironman.esp", 6B68F706) && IF VAR(EN) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ironman.esp", 6B68F706) && IF VAR(RU) DIRTY: 8 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -8168,8 +8236,9 @@ jammersslavegear.esp
 Janka_Captain.esp
 Janka_Lupina.esp
 Jaredschons&D13AdvancedDwarvenBowv2.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest version, Jaredschons&D13AdvDwarvenBowAllIn1.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Jaredschons&D13AdvDwarvenBowAllIn1.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Jaredschons&D13AdvDwarvenBowAllIn1.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Jaredschons&D13AdvDwarvenBowAllIn1.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Jaredschons&D13AdvDwarvenBowAllIn1.esp.
 Jaredschons&D13AdvDwarvenBowAllIn1.esp
 JDRobedArmor.esp
 JetheadArmors.esp
@@ -8182,8 +8251,9 @@ JoOsSkyrimKnightlyArmory.esp
 JoOsSkyrimKnightlyArmoryCheat.esp
 JSScomplete.esp
 JSwords.esp
-  IF VAR(EN) SAY: Obsolete. Update to v13+
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Faster Combat-Jswords.esp
 JSwords_FR_Plugin_V13C.esp
 JSwords_FR_Plugin_V13D.esp
@@ -8202,8 +8272,9 @@ Deleveled Skyrim - JSwordsDistributionBalancePlugin.esp
 AttTJSwords.esp
 Lorecraft - JSwords.esp
 T3nd0sOverhaulJSwordsPlugin.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest 'SkyRe - Skyrim Redone'
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии 'SkyRe - Skyrim Redone'.
+  IF VAR(EN) SAY: Obsolete. Update to latest version, SkyRe - Skyrim Redone.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe - Skyrim Redone.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, SkyRe - Skyrim Redone.
 JulietByNausicaa.esp
 Juquinha-armory.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
@@ -8245,8 +8316,9 @@ khajiitearrings.esp
 khajit-ears.esp
 KhantuArmor.esp
 killerkeo's skimpy pack wip.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, FullBootForKKSA.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, FullBootForKKSA.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, FullBootForKKSA.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, FullBootForKKSA.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, FullBootForKKSA.esp.
 KeosBoot+NecroFix.esp
 KillerKeosNecroSleeveFix.esp
 kimono's witcher silver swords.esp
@@ -8379,8 +8451,9 @@ Lightning's Latex Mask.esp
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 REGEX: lilithscarver(1_0|2_0|2_1)?\.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, lilithscarver3_0.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, lilithscarver3_0.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, lilithscarver3_0.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, lilithscarver3_0.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, lilithscarver3_0.esp.
 lilithscarver3_0.esp
 lilithscleaver.esp
 lilithsdecapitator1_0.esp
@@ -8398,11 +8471,13 @@ lilithsrazor_s.esp
 lilithsreaver.esp
 lilithssickle.esp
 lilithssickle_axe_1.esp
-  IF VAR(EN) SAY: Obsolete.  Update to latest version.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 lilithssickle_2_0.esp
-  IF VAR(EN) SAY: Obsolete.  Update to latest version.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 lilithssickle_2_1.esp
   IF CHECKSUM("lilithssickle_2_1.esp", 78270F6E) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("lilithssickle_2_1.esp", 78270F6E) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -8533,7 +8608,7 @@ SG_Malo_Waffen.esp
 mancika_templarset.esp
   IF CHECKSUM("mancika_templarset.esp", CBAD4542) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. ("http://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_- Cleaning Guide)"
 MapTomes.esp
-  IF CHECKSUM("MapTomes.esp", 13ACEB01) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("MapTomes.esp", 13ACEB01) && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF CHECKSUM("MapTomes.esp", 13ACEB01) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF CHECKSUM("MapTomes.esp", 13ACEB01) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 March Madness Standalone.esp
@@ -8790,13 +8865,13 @@ NightPrincess.esp
 NightsWatchArmor.esp
 NightsWatchArmorLight.esp
 Nine_Divines_Amulet.esp
-  IF VAR(EN) SAY: Obsolete. Upgrade to latest version
-    IF VAR(RU) SAY: Устарело обновите до последней версии.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Nine_Divines_Amulet_1.1.esp
 Nine_Divines_Amulet_nonOP.esp
-  IF VAR(EN) SAY: Obsolete. Upgrade to latest version
-    IF VAR(RU) SAY: Устарело обновите до последней версии.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Nine_Divines_Amulet_nonOP_1.1.esp
   IF FILE("Nine_Divines_Amulet_1.1.esp") INC: Nine_Divines_Amulet_1.1.esp
@@ -8845,8 +8920,9 @@ Northborn Fur Hoods.esp
     IFNOT ACTIVE("Northborn Fur Hoods.esp") && IF VAR(RU) ERROR: Northborn Fur Hoods.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Northman - Credo.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Northman Armours - Credo.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Northman Armours - Credo.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Northman Armours - Credo.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Northman Armours - Credo.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Northman Armours - Credo.esp.
 Northman Armours - Credo.esp
 northrose.esp
 notched.esp
@@ -8878,8 +8954,8 @@ OlafsGear.esp
 OldKnightShield.esp
   TAG: {{BASH: Relev}}
 Omegared99-Compilation.esp
-  IF VAR(EN) SAY: Obsolete. Upgrade to latest version
-    IF VAR(RU) SAY: Устарело обновите до последней версии.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Omegared99-WeaponSets.esp
 Omegared99-LvLList-CompOnly.esp
@@ -9054,9 +9130,9 @@ RagnvaldBookFarengar.esp
     IF FILE("RagnvaldBook.esp") || IF FILE("RagnvaldBookFarengar+Ragnvald.esp") && IF VAR(RU) WARN: Используйте только один RagnvaldBook *.esp
       IF VAR(ES) && IF FILE("plugin") WARN: Utilizar solo un <plugin set>.
 RaestlozArmorReplace.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, RaestlozArmorReplace.esm
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, RaestlozArmorReplace.esm
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, RaestlozArmorReplace.esm
+  IF VAR(EN) SAY: Obsolete. Update to latest version, RaestlozArmorReplace.esm.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, RaestlozArmorReplace.esm.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, RaestlozArmorReplace.esm.
 RaiderHelmet.esp
 raiser sword.esp
 RangerArmor.esp
@@ -9232,9 +9308,9 @@ ScaleArmor.esp
 Scalpel.esp
 ScampsIron.esp
 ScarabSilentArchery.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, ScarabSilentArrows.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ScarabSilentArrows.esp
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, ScarabSilentArrows.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, ScarabSilentArrows.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, ScarabSilentArrows.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, ScarabSilentArrows.esp.
 ScarabSilentArrows.esp
 Scarves! Skyrim Edition!.esp
 REGEX: Scene's (Blood|Fire|Frost) Dragon Armour\.esp
@@ -9310,11 +9386,11 @@ Silencer's Vestments - Cloth.esp
 Silencer's Vestments - Heavy Armor.esp
 Silencer's Vestments - Light Armor.esp
 Silencer's Vestments.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, 1 - Cloth (Heavy Armor, Light Armor, Replacer).
+  IF VAR(EN) SAY: Obsolete. Update to latest version, 1 - Cloth (Heavy Armor, Light Armor, Replacer).
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, 1 - Cloth (Heavy Armor, Light Armor, Replacer).
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, 1 - Cloth (Heavy Armor, Light Armor, Replacer).
 silencers vestments.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, 1 - Cloth (Heavy Armor, Light Armor, Replacer).
+  IF VAR(EN) SAY: Obsolete. Update to latest version, 1 - Cloth (Heavy Armor, Light Armor, Replacer).
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, 1 - Cloth (Heavy Armor, Light Armor, Replacer).
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, 1 - Cloth (Heavy Armor, Light Armor, Replacer).
 SilverArmor.esp
@@ -9488,11 +9564,13 @@ StormcloakArmorVariety.esp
   TAG: {{BASH: Relev}}
 stormcloakrobes.esp
 stoutheartarmor.esp
-  IF CHECKSUM("stoutheartarmor.esp", 7E65336D) && IF VAR(EN) SAY: Obsolete. Update to the latest version.
+  IF CHECKSUM("stoutheartarmor.esp", 7E65336D) && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF CHECKSUM("stoutheartarmor.esp", 7E65336D) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF CHECKSUM("stoutheartarmor.esp", 7E65336D) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Strapless Bikinis.esp
-  SAY: Obsolete, included in Sharlikran's Compatability Patch.
+  IF VAR(EN) SAY: Obsolete. Included in Sharlikran's Compatability Patch.
+    IF VAR(RU) SAY: Устарело. Уже включено в Sharlikran's Compatability Patch.
+      IF VAR(ES) SAY: Obsoleto. Esta incluido en Sharlikran's Compatability Patch.
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
   IF VAR(EN) WARN: This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
@@ -9763,9 +9841,9 @@ Unenchanted Necromancer Amulet.esp
 UnenchantedTGArmors.esp
 UnenchantedRoyalVampireArmor.esp
 UnenchantedNightingaleArmour.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest renamed version, UnenchantedNightingaleSetMod.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, UnenchantedNightingaleSetMod.esp
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, UnenchantedNightingaleSetMod.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, UnenchantedNightingaleSetMod.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, UnenchantedNightingaleSetMod.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, UnenchantedNightingaleSetMod.esp.
 UnenchantedNightingaleSetMod.esp
 UnenchRobeSepHoodThalmor.esp
 UnderC.esp
@@ -9785,9 +9863,9 @@ UNPArmoredBikini.esp
 UNP Jewelry Retextured.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
 UNP Jewelry Variants.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, UNP Jewelry Variants V-2.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, UNP Jewelry Variants V-2.esp
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, UNP Jewelry Variants V-2.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, UNP Jewelry Variants V-2.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, UNP Jewelry Variants V-2.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, UNP Jewelry Variants V-2.esp.
 UNP Jewelry Variants V-2.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
 UNP Leather Clothes.esp
@@ -9837,9 +9915,9 @@ Vampguard.esp
       IF CHECKSUM("Vampguard.esp", FDB0B379) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 vampire armor revisited.esp
 VampireHuntersCoat.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, InquisitorGear.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, InquisitorGear.esp
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, InquisitorGear.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, InquisitorGear.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, InquisitorGear.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, InquisitorGear.esp.
 VampireLeatherArmorSet.esp
 VampireMasterHood.esp
 VampireMasterSet.esp
@@ -9899,9 +9977,9 @@ Warglaive of Azzinoth.esp
 warmagearmor.esp
 Lorecraft - DoODABoOM.esp
 Warrior Cleric Julianos - Credo.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest renamed version, Cleric Armours - Credo.esp
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Cleric Armours - Credo.esp
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Cleric Armours - Credo.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Cleric Armours - Credo.esp.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Cleric Armours - Credo.esp.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Cleric Armours - Credo.esp.
 Warsword.esp
 The Way of the Voice.esp
 WayoftheVoice.esp
@@ -9929,9 +10007,9 @@ WeaponsOf3E - No Leveled Lists.esp
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("WeaponsOf3E - No Leveled Lists.esp", 633752F5) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
       IF VAR(ES) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("WeaponsOf3E - No Leveled Lists.esp", 633752F5) WARN: Contiene entradas fuera de lugar. Un patch de compatibilidad se puede encontrar aquí. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch").
 3rdEraWeaponsMoS.esp
-  IF VAR(EN) SAY: Obsolete. Update to the latest Weapons of the Third Era MoS edition.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la nueva versión de Weapons of the Third Era MoS edition.
+  IF VAR(EN) SAY: Obsolete. Update to latest version, Weapons of the Third Era MoS.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, Weapons of the Third Era MoS.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Weapons of the Third Era MoS.
   TAG: {{BASH: Delev, Relev}}
   // for versions <1.5
   IF VAR(EN) && IF VAR(SkyReM) WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'.
