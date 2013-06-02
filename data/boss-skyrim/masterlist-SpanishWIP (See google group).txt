@@ -7946,7 +7946,9 @@ InquisitorGear.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 Invisible_Helm.esp
-  IF CHECKSUM("Invisible_Helm.esp", 3EE48471) WARN: This file was released before the CK (07 Feb. 2012) and contains unexpected (or out of order) records. It should be removed.
+  IF CHECKSUM("Invisible_Helm.esp", 3EE48471) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Invisible_Helm.esp", 3EE48471) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Invisible_Helm.esp", 3EE48471) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 InvisibleArmorSets.esp
 InvisRing.esp
 IorvethLightArmor_v_1_3.esp
@@ -24166,10 +24168,9 @@ FelixConstantine.esp
   REQ: "http://skyrim.nexusmods.com/mods/3424 Pretty Eyes"
 fenrir-follower.esp
 Fezzik the Giant.esp
-  IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
-    IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
-  IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
-    IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+  IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) || IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) || IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) || IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 FFBosmer.esp
 FFDogs.esp
   IF Checksum ("FFDogs.esp", 907CBDCD) WARN: Broken as per "http://skyrim.nexusmods.com/mods/30297 author's notes"
@@ -24217,7 +24218,9 @@ FollowerSaber.esp
       IF CHECKSUM("FollowerSaber.esp", 515D1F46) && IF VAR(ES) DIRTY: 4 ITM, 0 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Froydis.esp
 REGEX: FTBS_.+\.esp
-  WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 
 // companions g
 GameofThrones-Followers.esp
@@ -24232,6 +24235,7 @@ godess's of skyrim.esp
 Grandies_Companion_by_kill.esp
   IF CHECKSUM("Grandies_Companion_by_kill.esp", F1E5D380) || IF CHECKSUM("Grandies_Companion_by_kill.esp", 03490D91) || IF CHECKSUM("Grandies_Companion_by_kill.esp", B59E33FE) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Grandies_Companion_by_kill.esp", F1E5D380) || IF CHECKSUM("Grandies_Companion_by_kill.esp", 03490D91) || IF CHECKSUM("Grandies_Companion_by_kill.esp", B59E33FE) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Grandies_Companion_by_kill.esp", F1E5D380) || IF CHECKSUM("Grandies_Companion_by_kill.esp", 03490D91) || IF CHECKSUM("Grandies_Companion_by_kill.esp", B59E33FE) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 
 // companions h
 Haeli.esp
@@ -24277,6 +24281,7 @@ HousecarlRiften.esp
 HousecarlRiften Sexy Iona v0.2.esp
   IF CHECKSUM("HousecarlRiften Sexy Iona v0.2.esp", F01CB142) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("HousecarlRiften Sexy Iona v0.2.esp", F01CB142) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("HousecarlRiften Sexy Iona v0.2.esp", F01CB142) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 HousecarlSolitude.esp
   IF VAR(EN) && IF FILE("Sexier Housecarls.esp") WARN: Redundant. Already included in Sexier Housecarls.esp
     IF VAR(RU) && IF FILE("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
@@ -24284,6 +24289,7 @@ HousecarlSolitude A Jordis the Sword-Maiden v0.2.esp
 HousecarlSolitude  A Jordis the Sword-Maiden v0.2.esp
   IF CHECKSUM("HousecarlSolitude  A Jordis the Sword-Maiden v0.2.esp", DAAD5080) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("HousecarlSolitude  A Jordis the Sword-Maiden v0.2.esp", DAAD5080) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("HousecarlSolitude  A Jordis the Sword-Maiden v0.2.esp", DAAD5080) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 HousecarlWhiterun.esp
   IF VAR(EN) && IF FILE("Sexier Housecarls.esp") WARN: Redundant. Already included in Sexier Housecarls.esp
     IF VAR(RU) && IF FILE("Sexier Housecarls.esp") WARN: Уже включено в Sexier Housecarls.esp
@@ -24300,14 +24306,18 @@ HousecarlWhiterun Sexy Lydia v0.5.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
   IF CHECKSUM("HousecarlWhiterun Sexy Lydia v0.5.esp", 7C29388F) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("HousecarlWhiterun Sexy Lydia v0.5.esp", 7C29388F) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("HousecarlWhiterun Sexy Lydia v0.5.esp", 7C29388F) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Hvergelmir's Redesigned Housecarls - HRH.esp
 
 // companions i
 Illdi.esp
-  IF CHECKSUM ("Illdi.esp", B941754D) WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF CHECKSUM ("Illdi.esp", B941754D) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM ("Illdi.esp", B941754D) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM ("Illdi.esp", B941754D) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Illia.esp
   IF CHECKSUM("Illia.esp", A5488487) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Illia.esp", A5488487) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM ("Illdi.esp", B941754D) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
@@ -24317,6 +24327,7 @@ REGEX: illia1.?\.esp
 ImaniSuda.esp
   IF CHECKSUM("ImaniSuda.esp", 4813304B) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("ImaniSuda.esp", 4813304B) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("ImaniSuda.esp", 4813304B) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Immersive Followers.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -24328,6 +24339,7 @@ improved followers.esp
 inathesorceress.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 ingun_vamp.esp
 Inna.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -24360,12 +24372,14 @@ Jezebel.esp
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("Jezebel.esp", 77C303DF) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Jezebel.esp", 77C303DF) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Jezebel.esp", 77C303DF) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Jezebel Simon.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("Jezebel Simon.esp", C75CAB33) || IF CHECKSUM("Jezebel Simon.esp", E8D86949) || IF CHECKSUM("Jezebel Simon.esp", 35728E70) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Jezebel Simon.esp", C75CAB33) || IF CHECKSUM("Jezebel Simon.esp", E8D86949) || IF CHECKSUM("Jezebel Simon.esp", 35728E70) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Jezebel Simon.esp", C75CAB33) || IF CHECKSUM("Jezebel Simon.esp", E8D86949) || IF CHECKSUM("Jezebel Simon.esp", 35728E70) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
   IF FILE("Jezebel.esp") && IF VAR(EN) WARN: Use either Jezebel.esp or Jezebel Simon.esp, not both.
      IF FILE("Jezebel.esp") && IF VAR(RU) WARN: Используйте любой, или Jezebel.esp или Jezebel Simon.esp, не оба.
 jordis1.1a.esp
@@ -24380,7 +24394,9 @@ kaelas.man.slave.esp
 kaelas.man.slave_tiberius.esp
 Kaiden.esp
 REGEX: Kashi(m|m - Ahtar Replacer)?\.esp
-  IF FILE ("Kashim.esp") || IF FILE ("Kashim - Ahtar Replacer.esp") WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF FILE ("Kashim.esp") || IF FILE ("Kashim - Ahtar Replacer.esp") && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF FILE ("Kashim.esp") || IF FILE ("Kashim - Ahtar Replacer.esp") && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF FILE ("Kashim.esp") || IF FILE ("Kashim - Ahtar Replacer.esp") && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 KCustom_ALL_FHC_NDO.esp
 KCustomNPCs.esp
   IF FILE("KCustom_ALL_FHC_NDO.esp") INC: KCustom_ALL_FHC_NDO.esp
@@ -24389,10 +24405,13 @@ KCustomMagesCollege-NDO.esp
 KCustomMoreNPCs.esp
   IF FILE("KCustom_ALL_FHC_NDO.esp") INC: KCustom_ALL_FHC_NDO.esp
 Khagra.esp
-  WARN: There are 2 variations of this esp. Both contain unexpected (or out of order) records.  None should be used.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Khagra - Ghorbash Replacer.esp
   IF CHECKSUM("Khagra - Ghorbash Replacer.esp", A3528322) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Khagra - Ghorbash Replacer.esp", A3528322) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Khagra - Ghorbash Replacer.esp", A3528322) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
   IF FILE("Khagra.esp") INC: Khagra.esp
 KhajiitChildren.esp
   IF CHECKSUM("KhajiitChildren.esp", C56C2CF4) && IF VAR(EN) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -24412,6 +24431,7 @@ Khargra - Ghorbash Replacer.esp
 Kitana.esp
   IF CHECKSUM("Kitana.esp", BCF5969B) || IF CHECKSUM("Kitana.esp", 2077B972) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Kitana.esp", BCF5969B) || IF CHECKSUM("Kitana.esp", 2077B972) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Kitana.esp", BCF5969B) || IF CHECKSUM("Kitana.esp", 2077B972) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 KMM_2a.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -24459,7 +24479,9 @@ LtH_Argonian_Ria.esp
       IF CHECKSUM("LtH_Argonian_Ria.esp", C4D779EA) && IF VAR(ES) DIRTY: 0 ITM, 1 UDR entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Lunariana.esp
 Beauty Lydia.esp
-  WARN: There are 5 variations of this esp.  ALL 5 contain unexpected (or out of order) records.  None should be used.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Enhanced Lydia.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -24468,7 +24490,9 @@ iLoveLydia.esp
   IF VAR(EN) WARN: This mod will conflict with any female body altering mods.
     IF VAR(RU) WARN: Этот мод может конфликтовать с любыми реплейсерами женских тел.
 Lydia.esp
-  WARN: There are 2 variations of this esp.  ALL 2 contain unexpected (or out of order) records.  None should be used.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Lydia_CombatDual.esp
 Lydia_CombatRanger.esp
   IF FILE("Lydia_CombatDual.esp") INC: Lydia_CombatDual.esp
@@ -24508,7 +24532,9 @@ Maerwen Briaerthorne.esp
     IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   REQ: "http://skyrim.nexusmods.com/mods/195 Human eyes for Elves"
-  WARN: There are 12 variations of this esp.  ALL 12 contain unexpected (or out of order) records.  None should be used.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 MaleCompanions.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -24559,6 +24585,7 @@ TheMeekoMod.esp
 Meesei.esp
   IF CHECKSUM("Meesei.esp", 9B5C5318) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Meesei.esp", 9B5C5318) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Meesei.esp", 9B5C5318) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 MHBArganna.esp
   IF FILE("HousecarlBeauties.esp") INC: HousecarlBeauties.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -24637,7 +24664,9 @@ Morella the Cursed.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  WARN: There are 6 variations of this esp.  ALL 6 contain unexpected (or out of order) records.  None should be used.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Morlock.esp
 more_Travelers-light.esp
   IF CHECKSUM("more_Travelers-light.esp", FB560796) && IF VAR(EN) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -24687,11 +24716,13 @@ Onmund by CrimsonFairy.esp
 Human Onmund.esp
   IF CHECKSUM("Human Onmund.esp", 5A191ACA) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Human Onmund.esp", 5A191ACA) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Human Onmund.esp", 5A191ACA) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 
 // companions p
 Pluto.esp
   IF CHECKSUM("Pluto.esp", 93C03B35) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Pluto.esp", 93C03B35) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Pluto.esp", 93C03B35) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Pretty Brelyna.esp
   IF VAR(EN) && IF FILE("Pretty Followers.esp") WARN: Delete. Already included in 'Pretty Followers.esp'
     IF VAR(RU) && IF FILE("Pretty Followers.esp") WARN: Удалите. Уже включено в 'Pretty Followers.esp'
@@ -24703,9 +24734,11 @@ Pretty Followers.esp
 Ral-Kur1.1.1.esp
   IF CHECKSUM("Ral-Kur1.1.1.esp", 3EB078AF) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Ral-Kur1.1.1.esp", 3EB078AF) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Ral-Kur1.1.1.esp", 3EB078AF) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Rayya Housecarl Makeover GRW.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
@@ -24715,7 +24748,9 @@ Rowena Frostmoor.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  WARN: There are 4 variations of this esp.  ALL 4 contain unexpected (or out of order) records.  None should be used.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 
 // companions s
 Saadia-Dovas_Angels-TCG.esp
@@ -24767,7 +24802,9 @@ Serafina & co complete.esp
   IFNOT FILE("hothtrooper44_ArmorCompilation.esp") REQ: "http://skyrim.nexusmods.com/mods/19733 Immersive Armors"
 SexyLydia.esp
 A Sexy Lydia Replacer CBBE B_02.esp
-  IF FILE("A Sexy Lydia Replacer CBBE B_02.esp") WARN: This file contains unexpected (or out of order) records and should be removed.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 ShariaCompanion.esp
 SkyNPCReimagined.esp
 Skyrim - The three divine brothers.esp
@@ -24847,7 +24884,9 @@ Sura the Lioness of Persia.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  WARN: As of v2.0, there are 12 variations of this esp.  ALL 12 contain unexpected (or out of order) records.  None should be used.
+  IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 FCC - SvenWithPerks.esp
 Sydney1.esp
 Sydney2.esp
@@ -24878,6 +24917,7 @@ timek_Laluna.esp
 timek_Yumi.esp
   IF CHECKSUM("timek_Yumi.esp", EC1F1979) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("timek_Yumi.esp", EC1F1979) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("timek_Yumi.esp", EC1F1979) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Tina.esp
 TondeeRiversong.esp
   IFNOT ACTIVE("TondeeRiversong.esm") && IF VAR(EN) ERROR: TondeeRiversong.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -24897,6 +24937,7 @@ UniqueHouseCarls.esp
 Uthgerd Kriegswolfe.esp
   IF CHECKSUM("Uthgerd Kriegswolfe.esp", A83E8A5E) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("pluginUthgerd Kriegswolfe.esp", A83E8A5E) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("pluginUthgerd Kriegswolfe.esp", A83E8A5E) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Uthgerd-TCG.esp
 Uthgerd-Dovas_Angels-TCG.esp
 
@@ -24906,6 +24947,7 @@ Uthgerd-Dovas_Angels-TCG.esp
 WalksInShadows.esp
   IF CHECKSUM("WalksInShadows.esp", E459265B) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("WalksInShadows.esp", E459265B) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("WalksInShadows.esp", E459265B) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Wolf Companion.esp
   IF CHECKSUM("Wolf Companion.esp", B92373C) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Wolf Companion.esp", B92373C) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -24917,6 +24959,7 @@ REGEX: YChildren of the Sky - (Nila|Tia|Yune)?\.esp
 Zeeri.esp
   IF CHECKSUM("Zeeri.esp", DDD4D989) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Zeeri.esp", DDD4D989) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Zeeri.esp", DDD4D989) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 ZZ_DragonAgeCompanions.esp
 zzCompanion.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -24927,6 +24970,7 @@ zzCompanion.esp
 AelaTheHuntress.esp
   IF CHECKSUM("AelaTheHuntress.esp", 826D7A86) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("AelaTheHuntress.esp", 826D7A86) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("AelaTheHuntress.esp", 826D7A86) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
@@ -24947,6 +24991,7 @@ BrelynaMaryonFacelift.esp
 Otrera.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 RiaFacelift.esp
 Vladamir.esp
 Viin.esp
@@ -24971,6 +25016,7 @@ saadia.esp
 Skjor.esp
   IF CHECKSUM("Skjor.esp", C892B655) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Skjor.esp", C892B655) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF CHECKSUM("Skjor.esp", C892B655) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Skjor II.esp
   IFNOT FILE("AdditionalNPCFollwerVoices.esp") REQ: "http://skyrim.nexusmods.com/mods/16266 Additional Vanilla Follower Voice Types"
 SMSkyrim.esp
@@ -25195,6 +25241,7 @@ Selathir.esp
 Selene.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 SGFChastity.esp
 SGFEris.esp
 SGFKodelia.esp
@@ -25272,6 +25319,7 @@ FollowerWander2Serana.esp
 Khaliza of Gilane.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	  IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 LylvieveSisters.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
