@@ -3120,8 +3120,9 @@ Del_ConditionalCombatMusic - Dragon Reserved.esp
 Del_ConditionalCombatMusic.esp
 dragonborn with lute.esp
 REGEX: enhanced soundtrack (\d{1,2})\.esp
-  IF VAR(EN) SAY: Adds music but also contains textures and meshes. Loose files will override them
+  IF VAR(EN) SAY: Adds music but also contains textures and meshes. Loose files will override them.
     IF VAR(RU) SAY: Добавляет музыку, но также включает тесктуры с моделями. Отдельные файлы перезапишут их.
+	  IF VAR(ES) SAY: Añade música pero también contiene meshes y texturas. Loose files los sobrescribirán.
 esisbattlepack.esp
 esiscitypack.esp
 esisenviropack.esp
@@ -3220,6 +3221,7 @@ BeastModels.esp
 REGEX: BorderRegionsDisabled(EV)?\.esp
   IF VAR(EN) SAY: Recommended to change Skyrim.ini bBorderRegionsEnabled=1 to bBorderRegionsEnabled=0 instead.
     IF VAR(RU) SAY: Рекомендуется изменить параметр Skyrim.ini bBorderRegionsEnabled=1 на bBorderRegionsEnabled=0 и удалить этот мод.
+	  IF VAR(ES) SAY: Recomendamos que cambies un valor en Skyrim.ini: bBorderRegionsEnabled=1 a bBorderRegionsEnabled=0.
 BreezehomeShadowStripingFix.esp
 ChangeMaleModels.esp
   IF CHECKSUM("ChangeMaleModels.esp", 34A1E261) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -3236,7 +3238,8 @@ lowerJumpHeight.esp
     IF FILE("jumpHeightOnly.esp") || IF FILE("jumpHeightThird.esp") && IF VAR(RU) WARN: Используйте только один jumpheight esp.
       IF FILE("jumpHeightOnly.esp") || IF FILE("jumpHeightThird.esp") && IF VAR(ES) WARN: Utilizar solo un jumpheight esp.
 Less Fugly Female NPCs.esp
-  IF CHECKSUM("Less Fugly Female NPCs.esp", 93FE07E6) WARN: This mod contains numerous corrupted records generated with TESVSmip. It is strongly advised you remove this from your load order to avoid damage to your saves.
+  IF CHECKSUM("Less Fugly Female NPCs.esp", 93FE07E6) IF VAR(EN) || IF VAR(RU) WARN: This mod contains numerous corrupted records generated with TESVSmip. It is strongly advised you remove this from your load order to avoid damage to your saves.
+    IF CHECKSUM("Less Fugly Female NPCs.esp", 93FE07E6) IF VAR(ES) WARN: Este mod contiene varios meshes corruptos. Es fuertemente recomendado que lo remouevos para evitar daños a tu juego.
 // makes sense to load before mods which alter individual NPC
 RegenRedux.esp
 RegenReduxLite.esp
@@ -3246,16 +3249,18 @@ Weapons and Armor fixes.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
       IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp
-      IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Weapons and Armor fixes.esp", D27D2F2) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained "http://skyrim.nexusmods.com/mods/26230 here".
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Weapons and Armor fixes.esp", D27D2F2) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
+	  IF VAR(ES) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Weapons and Armor fixes.esp", D27D2F2) WARN: Este archivo contiene entradas fuera de lugar. Un patch de compatibilidad puede ser encontrado "http://skyrim.nexusmods.com/mods/26230 aquí".
   // TAG: {{BASH: Stats}}
   IF VAR(EN) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.
     IF VAR(RU) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Для использующих 'WAF+SPO+CCO'. Конфликтов с 'Smithing Perks Overhaul' и 'Complete Crafting Overhaul' не обнаружено.
+	  IF VAR(EN) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Para los que utilizen 'WAF+SPO+CCO'. No tiene conflictos con 'Smithing Perks Overhaul' o 'Complete Crafting Overhaul'.
 Weapons and Armor Fixes-Hacks.esp
 Weapons and Armor fixes - Hacks.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Weapons and Armor fixes - Hacks.esp", 119BC97C) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Weapons and Armor fixes - Hacks.esp", 119BC97C) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
+	  IF VAR(ES) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Weapons and Armor fixes - Hacks.esp", 119BC97C)  WARN: El archivo original fue lanzado antes del Creation Kit (07 Feb. 2012) puedes encontrar un patch de compatibilidad aquí. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch").
   // Vanilla fixes. Must be load here (and also for CCO and SPO), to prevent overrides for new changes from mods in Base group. Too many conflicts with other mods in Base group.
 RPGArmor.esp
 sh_HF_goat_fix.esp
@@ -3326,6 +3331,7 @@ REGEX: (83Willows_)?101BUGs.+\.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) && IF REGEX("(83Willows_)?101BUGs.+\.esm") ERROR: Remove this mod when esm is being used.
     IF VAR(RU) && IF REGEX("(83Willows_)?101BUGs.+\.esm") ERROR: Удалите этот мод когда используется esm-версия.
+	  IF VAR(EN) && IF REGEX("(83Willows_)?101BUGs.+\.esm") ERROR: Remueve este mod si utilizas el esm.
 ENDGROUP: Base #
 
 BEGINGROUP: Base A
