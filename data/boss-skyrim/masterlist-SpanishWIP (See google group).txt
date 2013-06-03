@@ -5150,7 +5150,8 @@ BEGINGROUP: Base O
 REGEX: Oblivion Gates v3.*\.esp
 REGEX: Oblivious Horses.*\.esp
   IF VAR(EN) SAY: Use only one Oblivious Horses esp.
-    IF VAR(RU) SAY: Используйте только один Oblivious Horses esp
+    IF VAR(RU) SAY: Используйте только один Oblivious Horses esp.
+      IF VAR(ES) SAY: Utilizar solo un Oblivious Horses esp.
 Occupy Skyrim.esp
 Omega Death.esp
   IF CHECKSUM("Omega Death.esp", AF7B99C2) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -5310,15 +5311,18 @@ renameddragonclaws.esp
   // TAG: {{BASH: Names}}
 REGEX: Realistic Wildlife Loot V.+\.esp
   TAG: {{BASH: Delev, Relev}}
-  IF VAR(EN) SAY: Use only one Realistic Wildlife Loot V*.esp
-    IF VAR(RU) SAY: Используйте только один Realistic Wildlife Loot V*.esp
+  IF VAR(EN) SAY: Use only one Realistic Wildlife Loot V*.esp.
+    IF VAR(RU) SAY: Используйте только один Realistic Wildlife Loot V*.esp.
+      IF VAR(ES) SAY: Utilizar solo un Realistic Wildlife Loot V*.esp.
 RWL Option - 3x Giant toes.esp
-  IF VAR(EN) SAY: Use only one Realistic Wildlife Loot esp
-    IF VAR(RU) SAY: Используйте только один Realistic Wildlife Loot esp
+  IF VAR(EN) SAY: Use only one Realistic Wildlife Loot esp.
+    IF VAR(RU) SAY: Используйте только один Realistic Wildlife Loot esp.
+      IF VAR(ES) SAY: Utilizar solo un Realistic Wildlife Loot esp.
 REGEX: Realistic Wildlife Loot -( IMCN)?( Realistic| Reduced)\.esp
   TAG: {{BASH: Delev, Relev}}
-  IF VAR(EN) SAY: Use only one Realistic Wildlife Loot - *.esp
-    IF VAR(RU) SAY: Используйте только один Realistic Wildlife Loot - *.esp
+  IF VAR(EN) SAY: Use only one Realistic Wildlife Loot - *.esp.
+    IF VAR(RU) SAY: Используйте только один Realistic Wildlife Loot - *.esp.
+      IF VAR(ES) SAY: Utilizar solo un Realistic Wildlife Loot - *.esp.
   IF CHECKSUM("Realistic Wildlife Loot - Reduced.esp", DE8BF53D) || IF CHECKSUM("Realistic Wildlife Loot - Realistic.esp", 16AFA5F7) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Realistic Wildlife Loot - Reduced.esp", DE8BF53D) || IF CHECKSUM("Realistic Wildlife Loot - Realistic.esp", 16AFA5F7) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Realistic Wildlife Loot - Reduced.esp", DE8BF53D) || IF CHECKSUM("Realistic Wildlife Loot - Realistic.esp", 16AFA5F7) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -5577,6 +5581,7 @@ REGEX: SkyMoMod Lore.+\.esp
   TAG: {{BASH: Delev}}
   IF VAR(EN) SAY: Use only one SkyMoMod Lore esp.
     IF VAR(RU) SAY: Используйте только один SkyMoMod Lore esp.
+      IF VAR(ES) SAY: Utilizar solo un SkyMoMod Lore esp.
   REQ: SkyMoMod v10
   IF FILE("SkyMoMod_lists.esp") INC: SkyMoMod_lists.esp
   IF FILE("SkyMo-Dawn.esp") INC: SkyMo-Dawn.esp
@@ -5631,6 +5636,7 @@ SkyrimGranary.esp
 REGEX: SkyrimImprovedPuddles(.+)?\.esp
   IF VAR(EN) SAY: Use only one SkyrimImprovedPuddles esp.
     IF VAR(RU) SAY: Используйте только один SkyrimImprovedPuddles esp.
+      IF VAR(ES) SAY: Utilizar solo un kyrimImprovedPuddles esp.
   IF FILE("SkyrimImprovedPuddles-Dawnguard.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF FILE("SkyrimImprovedPuddles-Dawnguard.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
       IF FILE("SkyrimImprovedPuddles-Dawnguard.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF.esp") || IF FILE("SkyrimImprovedPuddles-DG-DB.esp") || IF FILE("SkyrimImprovedPuddles-DG-HF-DB.esp") && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
@@ -5732,8 +5738,9 @@ Steel Bolts For All.esp
 SteelFromBars.esp
 stone_overhaul.esp
 REGEX: StormcloakArmorVariety(OPTION\d)?\.esp
-  IF VAR(EN) SAY: Use only one StormcloakArmorVariety esp
-    IF VAR(RU) SAY: Используйте только один StormcloakArmorVariety esp
+  IF VAR(EN) SAY: Use only one StormcloakArmorVariety esp.
+    IF VAR(RU) SAY: Используйте только один StormcloakArmorVariety esp.
+      IF VAR(ES) SAY: Utilizar solo un StormcloakArmorVariety esp.
 Stormcloak BannerWhiterun.esp
 Stormcloak BannerWhiterunPT2.esp
 StrongerHorses.esp
@@ -5810,8 +5817,9 @@ Too Long Since We Had a Good Bandit Raid.esp
 Torchbug Pets.esp
 REGEX: Torch of Everlasting.*\.esp
 REGEX: TorchesForSkyrim(_x1.5|_x2|_x2.5|_x3)?\.esp
-  IF VAR(EN) WARN: Use only one TorchesForSkyrim esp
-    IF VAR(RU) WARN: Используйте только один TorchesForSkyrim esp
+  IF VAR(EN) SAY: Use only one TorchesForSkyrim esp.
+    IF VAR(RU) SAY: Используйте только один TorchesForSkyrim esp.
+      IF VAR(ES) SAY: Utilizar solo un TorchesForSkyrim esp.
   IF CHECKSUM("TorchesForSkyrim.esp", 2DED0382) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("TorchesForSkyrim.esp", 2DED0382) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("TorchesForSkyrim.esp", 2DED0382) && IF VAR(ES) DIRTY: 5 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -5990,8 +5998,9 @@ wildhorses.esp
 wildwerwolfsandmoredragons.esp
 Winterlude's Arrowsmithing Mod.esp
 REGEX: WiS IV - Heroes & Villains( insane| Easy| Hard)?\.esp
-  IF VAR(EN) SAY: Use only one WiS IV - Heroes & villains esp
-    IF VAR(RU) SAY: Используйте только один WiS IV - Heroes & villains esp
+  IF VAR(EN) SAY: Use only one WiS IV - Heroes & villains esp.
+    IF VAR(RU) SAY: Используйте только один WiS IV - Heroes & villains esp.
+      IF VAR(ES) SAY: Utilizar solo un WiS IV - Heroes & villains esp.
 WobumsTheBlackHorse.esp
   // Removes some changes in Races made by Update.esm (not known if intentional).
 Wolfs_Buff_Recipes.esp
@@ -6046,20 +6055,23 @@ Zira's Skyrim Horse Base - Armored.esp
     IF CHECKSUM("Zira's Skyrim Horse Base - Armored.esp", 421DF75A) && IF VAR(RU) DIRTY: 3 ITM, 47 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Zira's Skyrim Horse Base - Armored.esp", 421DF75A) && IF VAR(ES) DIRTY: 3 ITM, 47 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Zira's Skyrim Horse Base - Bareback Riding.esp
-  IF FILE("Zira's Skyrim Horse Base - Armored.esp") && IF VAR(EN) ERROR: Use only one Zira's Skyrim Horse Base esp.
-    IF FILE("Zira's Skyrim Horse Base - Armored.esp") && IF VAR(RU) ERROR: Используйте только один Zira's Skyrim Horse Base esp.
+  IF FILE("Zira's Skyrim Horse Base - Armored.esp") && IF VAR(EN) WARN: Use only one Zira's Skyrim Horse Base esp.
+    IF FILE("Zira's Skyrim Horse Base - Armored.esp") && IF VAR(RU) WARN: Используйте только один Zira's Skyrim Horse Base esp.
+      IF FILE("Zira's Skyrim Horse Base - Armored.esp") && IF VAR(ES) WARN: Utilizar solo un Zira's Skyrim Horse Base esp.
   IF CHECKSUM("Zira's Skyrim Horse Base - Bareback Riding.esp", A2DD658D) && IF VAR(EN) DIRTY: 3 ITM, 47 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Zira's Skyrim Horse Base - Bareback Riding.esp", A2DD658D) && IF VAR(RU) DIRTY: 3 ITM, 47 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Zira's Skyrim Horse Base - Bareback Riding.esp", A2DD658D) && IF VAR(ES) DIRTY: 3 ITM, 47 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Zira's Skyrim Horse Base - No Tack.esp
-  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") && IF VAR(EN) ERROR: Use only one Zira's Skyrim Horse Base esp.
-    IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") && IF VAR(RU) ERROR: Используйте только один Zira's Skyrim Horse Base esp.
+  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") && IF VAR(EN) WARN: Use only one Zira's Skyrim Horse Base esp.
+    IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") && IF VAR(RU) WARN: Используйте только один Zira's Skyrim Horse Base esp.
+      IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") && IF VAR(ES) WARN: Utilizar solo un Zira's Skyrim Horse Base esp.
   IF CHECKSUM("Zira's Skyrim Horse Base - No Tack.esp", F93CD5D0) && IF VAR(EN) DIRTY: 3 ITM, 47 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Zira's Skyrim Horse Base - No Tack.esp", F93CD5D0) && IF VAR(RU) DIRTY: 3 ITM, 47 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Zira's Skyrim Horse Base - No Tack.esp", F93CD5D0) && IF VAR(ES) DIRTY: 3 ITM, 47 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Zira's Skyrim Horse Base.esp
-  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") && IF VAR(EN) ERROR: Use only one Zira's Skyrim Horse Base esp.
-    IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") && IF VAR(RU) ERROR: Используйте только один Zira's Skyrim Horse Base esp.
+  IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") && IF VAR(EN) WARN: Use only one Zira's Skyrim Horse Base esp.
+    IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") && IF VAR(RU) WARN: Используйте только один Zira's Skyrim Horse Base esp.
+      IF FILE("Zira's Skyrim Horse Base - Armored.esp") || IF FILE("Zira's Skyrim Horse Base - Bareback Riding.esp") || IF FILE("Zira's Skyrim Horse Base - No Tack.esp") && IF VAR(ES) WARN: Utilizar solo un Zira's Skyrim Horse Base esp.
   IF CHECKSUM("Zira's Skyrim Horse Base.esp", 86D08FB5) && IF VAR(EN) DIRTY: 3 ITM, 47 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Zira's Skyrim Horse Base.esp", 86D08FB5) && IF VAR(RU) DIRTY: 3 ITM, 47 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Zira's Skyrim Horse Base.esp", 86D08FB5) && IF VAR(ES) DIRTY: 3 ITM, 47 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -6083,8 +6095,9 @@ convenient horses ultimate.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 CrowdedCities.esp
 REGEX: KoS_Outcast(_Lite)?\.esp
-  IF VAR(EN) SAY: Use only one KoS_Outcast*.esp
-    IF VAR(RU) SAY: Используйте только один KoS_Outcast*.esp
+  IF VAR(EN) SAY: Use only one KoS_Outcast*.esp.
+    IF VAR(RU) SAY: Используйте только один KoS_Outcast*.esp.
+      IF VAR(ES) SAY: Utilizar solo unKoS_Outcast*.esp.
 CiviliansWillNotDie.esp
   IF VAR(RU) WARN: Устарело, обновите до версии 0.7 и выше - CWND-Basic.esp
 CiviliansWillNotDieChild.esp
@@ -6133,8 +6146,9 @@ item sorting dg by saige.esp
       IF CHECKSUM("item sorting dg by saige.esp", 637D24F6) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 KoS_Land_at_War.esp
 REGEX: more_Travelers(_light)?\.esp
-  IF VAR(EN) SAY: Use only one more_Travelers*.esp
-    IF VAR(RU) SAY: Используйте только один more_Travelers*.esp
+  IF VAR(EN) SAY: Use only one more_Travelers*.esp.
+    IF VAR(RU) SAY: Используйте только один more_Travelers*.esp.
+      IF VAR(ES) SAY: Utilizar solo un  more_Travelers*.esp.
 MoreUP.esp
 ORM Convenient Alsvid.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -6481,7 +6495,9 @@ Alienzerox_White_Fur_Robe&Hood_FEMALE_ONLY_0-1-01.esp
 Alienzerox_White_Fur_Robe&Hood_LA_FEMALE_ONLY_0-1-02.esp
 AllowAmuletRing.esp
 REGEX: (alldlcsharedchest|sharedplayerchest)?\.esp
-  SAY: Please use only one Shared Chest esp.
+  IF VAR(EN) SAY: Use only one Shared Chest esp.
+    IF VAR(RU) SAY: Используйте только один Shared Chest esp.
+      IF VAR(ES) SAY: Utilizar solo un Shared Chest esp.
 Altair`s Dagger.esp
 Alternate_Armor_Appearances_v1.20.esp
 Althirs Camping Tools English.esp
@@ -6537,8 +6553,9 @@ Aragorns combat tunic.esp
 Arakh.esp
 REGEX: Arcania_armory( \(base\))?\.esp
   TAG: {{BASH: Relev}}
-  IF VAR(EN) && IF FILE("Arcania_armory.esp") && IF FILE("Arcania_armory (base).esp") SAY: Use only one Arcania_armory*.esp
-    IF VAR(RU) && IF FILE("Arcania_armory.esp") && IF FILE("Arcania_armory (base).esp") SAY: Используйте только один Arcania_armory*.esp
+  IF FILE("Arcania_armory.esp") && IF FILE("Arcania_armory (base).esp") && IF VAR(EN) WARN: Use only one Arcania_armory*.esp.
+    IF FILE("Arcania_armory.esp") && IF FILE("Arcania_armory (base).esp") && IF VAR(RU) WARN: Используйте только один Arcania_armory*.esp.
+      IF FILE("Arcania_armory.esp") && IF FILE("Arcania_armory (base).esp") && IF VAR(ES) WARN: Utilizar solo un Arcania_armory*.esp.
 Arcania bows.esp
 ArcaneArchery.esp
   IF CHECKSUM("ArcaneArchery.esp", 3BB808E1) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -6704,8 +6721,9 @@ BelethorGoods.esp
 BellHammer.esp
 BeltGirl2.esp
 REGEX: Berserk Black Swordsman Armor( - No Arm)?\.esp
-  IF VAR(EN) SAY: Use only one version of Berserk Black Swordsman Armor
-    IF VAR(RU) SAY: Используйте только один Berserk Black Swordsman Armor
+  IF VAR(EN) SAY: Use only one Berserk Black Swordsman Armor esp.
+    IF VAR(RU) SAY: Используйте только один Berserk Black Swordsman Armor esp.
+      IF VAR(ES) SAY: Utilizar solo un Berserk Black Swordsman Armor esp.
 Berserk Greatsword.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 BerserkerSword.esp
@@ -6719,6 +6737,7 @@ Better Bond of Matrimony.esp
 REGEX: Better Bond of Matrimony .+\.esp
   IF VAR(EN) SAY: Use only one Better Bond of Matrimony esp.
     IF VAR(RU) SAY: Используйте только один Better Bond of Matrimony esp.
+      IF VAR(ES) SAY: Utilizar solo un Better Bond of Matrimony esp.
 Better Shrouded Armor 1st Person.esp
 BetterArchmagesRobes.esp
 BetterArchmagesRobesMedium2.esp
@@ -6815,7 +6834,10 @@ BootsBlindingSpeed.esp
 boots_of_blinding_speed.esp
 boots of speed.esp
 REGEX: bouncy_bodices.*\.esp
-  IF VAR(EN) SAY: Be sure you have the correct body replacer installed for this esp.  Use only one version.
+  IF VAR(EN) SAY: Use only one bouncy_bodices esp.
+    IF VAR(RU) SAY: Используйте только один bouncy_bodices esp.
+      IF VAR(ES) SAY: Utilizar solo un bouncy_bodices esp.
+  IF VAR(EN) SAY: Be sure you have the correct body replacer installed for this esp.
     IF VAR(RU) SAY: Убедитесь, что для этого esp у вас установлена корректная версия реплейсера тел.
 bouncy_booties.esp
   IF VAR(EN) SAY: Be sure you have the correct bouncy_bodices mod installed for this esp.
@@ -6922,8 +6944,9 @@ CircletOfIllumination.esp
 Cleric Armours - Credo.esp
 ClericCraftable.esp
 Cloaks.esp
-  IF FILE("Cloaks - No Imperial.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) SAY: Use only one cloaks*esp
-    IF FILE("Cloaks - No Imperial.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
+  IF FILE("Cloaks - No Imperial.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) WARN: Use only one cloaks*esp.
+    IF FILE("Cloaks - No Imperial.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) WARN: Используйте только один cloaks*esp.
+      IF FILE("Cloaks - No Imperial.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*esp.
   IF CHECKSUM("Cloaks.esp", 35C871DE) && IF VAR(EN) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Cloaks.esp", 35C871DE) && IF VAR(RU) DIRTY: 4 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Cloaks.esp", 35C871DE) && IF VAR(ES) DIRTY: 4 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -6931,8 +6954,9 @@ Cloaks.esp
     IF CHECKSUM("Cloaks.esp", D8F94C02) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Cloaks.esp", D8F94C02) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Cloaks - No Imperial.esp
-  IF FILE("Cloaks.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) SAY: Use only one cloaks*esp
-    IF FILE("Cloaks.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
+  IF FILE("Cloaks.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) WARN: Use only one cloaks*esp.
+    IF FILE("Cloaks.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) WARN: Используйте только один cloaks*esp.
+      IF FILE("Cloaks.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*esp.
   IF CHECKSUM("Cloaks - No Imperial.esp", D5733582) && IF VAR(EN) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Cloaks - No Imperial.esp", D5733582) && IF VAR(RU) DIRTY: 14 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Cloaks - No Imperial.esp", D5733582) && IF VAR(ES) DIRTY: 14 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -6940,8 +6964,9 @@ Cloaks - No Imperial.esp
     IF CHECKSUM("Cloaks - No Imperial.esp", 1C6298CE) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Cloaks - No Imperial.esp", 1C6298CE) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Cloaks - Player Only.esp
-  IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial.esp") && IF VAR(EN) SAY: Use only one cloaks*esp
-    IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
+  IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial.esp") && IF VAR(EN) WARN: Use only one cloaks*esp.
+    IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial.esp") && IF VAR(RU) WARN: Используйте только один cloaks*esp.
+      IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*esp.
   IF CHECKSUM("Cloaks - Player Only.esp", 317B2066) && IF VAR(EN) DIRTY: 50 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Cloaks - Player Only.esp", 317B2066) && IF VAR(RU) DIRTY: 50 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Cloaks - Player Only.esp", 317B2066) && IF VAR(ES) DIRTY: 50 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -6951,27 +6976,31 @@ Cloaks - Player Only.esp
 Cloaks - PC Only.esp
   //may have been superseded by above name?
 Cloaks - Dawnguard.esp
-  IF FILE("Cloaks - No Imperial - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(EN) SAY: Use only one cloaks*Dawnguard.esp
-    IF FILE("Cloaks - No Imperial - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
+  IF FILE("Cloaks - No Imperial - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(EN) WARN: Use only one cloaks*Dawnguard.esp.
+    IF FILE("Cloaks - No Imperial - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(RU) WARN: Используйте только один cloaks*Dawnguard.esp.
+      IF FILE("Cloaks - No Imperial - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*Dawnguard.esp.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 Cloaks - No Imperial - Dawnguard.esp
-  IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(EN) SAY: Use only one cloaks*Dawnguard.esp
-    IF FILE("Cloaks.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
+  IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(EN) WARN: Use only one cloaks*Dawnguard.esp.
+    IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(RU) WARN: Используйте только один cloaks*Dawnguard.esp.
+      IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - Player Only - Dawnguard.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*Dawnguard.esp.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 Cloaks - Player Only - Dawnguard.esp
-  IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - No Imperial - Dawnguard.esp") && IF VAR(EN) SAY: Use only one cloaks*Dawnguard.esp
-    IF FILE("Cloaks.esp") || IF FILE("Cloaks - No Imperial - Dawnguard.esp") && IF VAR(RU) SAY: Используйте только один cloaks*esp
+  IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - No Imperial - Dawnguard.esp") && IF VAR(EN) WARN: Use only one cloaks*Dawnguard.esp.
+    IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - No Imperial - Dawnguard.esp") && IF VAR(RU) WARN: Используйте только один cloaks*Dawnguard.esp.
+      IF FILE("Cloaks - Dawnguard.esp") || IF FILE("Cloaks - No Imperial - Dawnguard.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*Dawnguard.esp.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 REGEX: Lorecraft - Cloaks(\d{1,3})( No Imperial| PlayerOnly)?\.esp
   TAG: {{BASH: Relev}}
-  IF VAR(EN) SAY: Use only one Lorecraft - Cloaks
-    IF VAR(RU) SAY: Используйте только один Lorecraft - Cloaks
+  IF VAR(EN) SAY: Use only one Lorecraft - Cloaks esp.
+    IF VAR(RU) SAY: Используйте только один Lorecraft - Cloaks esp.
+      IF VAR(ES) SAY: Utilizar solo un Lorecraft - Cloaks esp.
 REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
   TAG: {{BASH: Relev}}
   IF VAR(EN) SAY: Update to new version for Cloaks 09.
@@ -6980,21 +7009,21 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
 1nivWICCloaks.esp
   TAG: {{BASH: Relev}}
   IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(EN) WARN: Use only one WICCloaks esp.
-     IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+    IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
+      IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(ES) WARN: Utilizar solo un WICCloaks esp.
   IF VAR(EN) && IF FILE("Cloaks.esp") && IFNOT FILE("1nivWICSkyCloaksPatch.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
     IF VAR(RU) && IF FILE("Cloaks.esp") && IFNOT FILE("1nivWICSkyCloaksPatch.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
   IF VAR(EN) && IF FILE("Cloaks - No Imperial.esp") && IFNOT FILE("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, get the compatibility patch in the WIC optional files.
     IF VAR(RU) && IF FILE("Cloaks - No Imperial.esp") && IFNOT FILE("1nivWICSkyCloaksPatch-No Imp.esp") INC: Cloaks of skyrim, возьмите патч совместимости из опциональных файлов WIC.
 1nivWICCloaksCRAFT.esp
   IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(EN) WARN: Use only one WICCloaks esp.
-     IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+    IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
+      IF FILE("1nivWICCloaks.esp") || IF FILE("1nivWICCloaksNoGuards.esp") && IF VAR(ES) WARN: Utilizar solo un WICCloaks esp.
 1nivWICCloaksNoGuards.esp
   TAG: {{BASH: Relev}}
   IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaks.esp") && IF VAR(EN) WARN: Use only one WICCloaks esp.
-     IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaks.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+    IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaks.esp") && IF VAR(RU) WARN: Используйте только один WICCloaks esp.
+      IF FILE("1nivWICCloaksCRAFT.esp") || IF FILE("1nivWICCloaks.esp") && IF VAR(ES) WARN: Utilizar solo un WICCloaks esp.
   IF VAR(EN) && IF REGEX("Cloaks( - No Imperial)?\.esp") INC: Cloaks of skyrim (even with compatibility patch). To fix this use another WICCloaks esp or uninstall cloaks of skyrim.
     IF VAR(RU) && IF REGEX("Cloaks( - No Imperial)?\.esp") INC: Cloaks of skyrim (даже с патчем совместимости). Для исправления этого используйте другой WICCloaks esp или удалите cloaks of skyrim.
 1nivWICSkyCloaksPatch.esp
@@ -7003,32 +7032,32 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(ES) ERROR: 1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("1nivWICSkyCloaksPatch.esp", 2A8CAD17) && IF VAR(EN) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("1nivWICSkyCloaksPatch.esp", 2A8CAD17) && IF VAR(RU) DIRTY: 4 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("1nivWICSkyCloaksPatch.esp", 2A8CAD17) && IF VAR(ES) DIRTY: 4 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 1nivWICSkyCloaksPatch-No Imp.esp
   IFNOT ACTIVE("Cloaks - No Imperial.esp") && IF VAR(EN) ERROR: Cloaks - No Imperial.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Cloaks - No Imperial.esp") && IF VAR(RU) ERROR: Cloaks - No Imperial.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Cloaks - No Imperial.esp") && IF VAR(ES) ERROR: Cloaks - No Imperial.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(ES) ERROR: 1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF FILE("1nivWICSkyCloaksPatch.esp") INC: 1nivWICSkyCloaksPatch esp
 1nivWICSkyCloaksPatch-NoGuards.esp
   IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Cloaks.esp") && IF VAR(ES) ERROR: Cloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("1nivWICSkyCloaksPatch-NoGuards.esp") && IF VAR(EN) ERROR: 1nivWICSkyCloaksPatch-NoGuards.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("1nivWICSkyCloaksPatch-NoGuards.esp") && IF VAR(RU) ERROR: 1nivWICSkyCloaksPatch-NoGuards.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("1nivWICSkyCloaksPatch-NoGuards.esp") && IF VAR(ES) ERROR: 1nivWICSkyCloaksPatch-NoGuards.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 1nivWICSkyCloaksPatch-No ImpGuards.esp
   IFNOT ACTIVE("Cloaks - No Imperial.esp") && IF VAR(EN) ERROR: Cloaks - No Imperial.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Cloaks - No Imperial.esp") && IF VAR(RU) ERROR: Cloaks - No Imperial.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Cloaks - No Imperial.esp") && IF VAR(ES) ERROR: Cloaks - No Imperial.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("1nivWICSkyCloaksPatch-NoGuards.esp") && IF VAR(EN) ERROR: 1nivWICSkyCloaksPatch-NoGuards.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("1nivWICSkyCloaksPatch-NoGuards.esp") && IF VAR(RU) ERROR: 1nivWICSkyCloaksPatch-NoGuards.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("1nivWICSkyCloaksPatch-NoGuards.esp") && IF VAR(ES) ERROR: 1nivWICSkyCloaksPatch-NoGuards.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 1nivWICCloaksLorecraft.esp
 1nivWICCloaksCRAFTLorecraft.esp
 cloakplus.esp
@@ -7091,6 +7120,7 @@ Craftable Ebony Mail and Blade.esp
 REGEX: craftable gold coins \d?.+\.esp
   IF VAR(EN) SAY: Use only one craftable gold coins esp.
     IF VAR(RU) SAY: Используйте только один craftable gold coins esp.
+      IF VAR(ES) SAY: Utilizar solo un craftable gold coins esp esp.
 Craftable Greybeard Robes.esp
 Craftable Invisible Helmets.esp
 Craftable Invisible Helmets - DDA.esp
@@ -7778,11 +7808,13 @@ FlameAtronachArmor.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 Flare Arrow Brighter.esp
 Flare Arrow Explosive.esp
-  IF VAR(EN) && IF FILE("Flare Arrow Brighter.esp") ERROR: Use only one Flare Arrow *.esp
-    IF VAR(RU) && IF FILE("Flare Arrow Brighter.esp") ERROR: Используйте только один Flare Arrow *.esp
+  IF FILE("Flare Arrow Brighter.esp") IF VAR(EN) WARN: Use only one Flare Arrow *.esp.
+    IF FILE("Flare Arrow Brighter.esp") IF VAR(RU) WARN: Используйте только один Flare Arrow *.esp.
+      IF FILE("Flare Arrow Brighter.esp") IF VAR(ES) WARN: Utilizar solo un Flare Arrow *.esp.
 Flare Arrow.esp
-  IF FILE("Flare Arrow Brighter.esp") || IF FILE("Flare Arrow Explosive.esp") && IF VAR(EN) ERROR: Use only one Flare Arrow *.esp
-    IF FILE("Flare Arrow Brighter.esp") || IF FILE("Flare Arrow Explosive.esp") && IF VAR(RU) ERROR: Используйте только один Flare Arrow *.esp
+  IF FILE("Flare Arrow Brighter.esp") || IF FILE("Flare Arrow Explosive.esp") && IF VAR(EN) WARN: Use only one Flare Arrow *.esp.
+    IF FILE("Flare Arrow Brighter.esp") || IF FILE("Flare Arrow Explosive.esp") && IF VAR(RU) WARN: Используйте только один Flare Arrow *.esp.
+      IF FILE("Flare Arrow Brighter.esp") || IF FILE("Flare Arrow Explosive.esp") && IF VAR(ES) WARN: Utilizar solo un Flare Arrow *.esp.
 FioraArmor.esp
 Fitness Outfit OE.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
@@ -7904,6 +7936,7 @@ Gods smithing gift.esp
 REGEX: Gold Ingot \d?.+\.esp
   IF VAR(EN) SAY: Use only one Gold Ingot esp.
     IF VAR(RU) SAY: Используйте только один Gold Ingot esp.
+      IF VAR(ES) SAY: Utilizar solo un Gold Ingot esp.
 goldbrand.esp
 Golden_Age_Arc_Sword.esp
 GoldenPaladinArmorV1.esp
@@ -8457,17 +8490,21 @@ LC_AssassinOfShadownArmor.esp
 LeahArmor.esp
 leathercollar1mm.esp
 REGEX: LeatherBackpackBlack.*\.esp
-  IF VAR(EN) SAY: Use only one LeatherBackPack Black esp
-    IF VAR(RU) SAY: Используйте только один LeatherBackPack Black esp
+  IF VAR(EN) SAY: Use only one LeatherBackPack Black esp.
+    IF VAR(RU) SAY: Используйте только один LeatherBackPack Black esp.
+      IF VAR(ES) SAY: Utilizar solo un LeatherBackPack Black esp.
 REGEX: LeatherBackpackBrown.*\.esp
-  IF VAR(EN) SAY: Use only one LeatherBackPack Brown esp
-    IF VAR(RU) SAY: Используйте только один LeatherBackPack Brown esp
+  IF VAR(EN) SAY: Use only one LeatherBackPack Brown esp.
+    IF VAR(RU) SAY: Используйте только один LeatherBackPack Brown esp.
+      IF VAR(ES) SAY: Utilizar solo un LeatherBackPack Brown esp.
 REGEX: LeatherBackpackDarkBrown.*\.esp
-  IF VAR(EN) SAY: Use only one LeatherBackPack DarkBrown esp
-    IF VAR(RU) SAY: Используйте только один LeatherBackPack DarkBrown esp
+  IF VAR(EN) SAY: Use only one LeatherBackPack DarkBrown esp.
+    IF VAR(RU) SAY: Используйте только один LeatherBackPack DarkBrow esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: LeatherBackpack(-|W)?.*\.esp
-  IF VAR(EN) SAY: Use only one LeatherBackPack Original esp
-    IF VAR(RU) SAY: Используйте только один LeatherBackPack Original esp
+  IF VAR(EN) SAY: Use only one LeatherBackPack Original esp.
+    IF VAR(RU) SAY: Используйте только один LeatherBackPack Original esp.
+      IF VAR(ES) SAY: Utilizar solo un LeatherBackPack Original esp.
 LeazerBoundArmor.esp
 Lee Sams und Mu-Ryeongs Waffen.esp
 Leeloo_Monokini.esp
@@ -9030,8 +9067,9 @@ REGEX: (High|Medium|Standard|Uber)-..Percent\.esp
   IF VAR(EN) SAY: Use only one optional leveled list. (High, Medium, Standard or Uber)
     IF VAR(RU) SAY: Используйте только один опциональный файл уровневых списков. (High, Medium, Standard или Uber)
 Omegared99-Compilation-NPC Plugin.esp
-  IF VAR(EN) WARN: File is now obsolete. See optional files to update.
-    IF VAR(RU) WARN: Файл устарел. Смотрите опциональные файлы для обновления.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
   TAG: {{BASH: Relev}}
 Lorecraft - Omegared99-Compilation.esp
 On Dragon Tongue.esp
@@ -9193,8 +9231,8 @@ RagnvaldBookFarengar+Ragnvald.esp
     IF FILE("RagnvaldBook.esp") && IF VAR(RU) WARN: Используйте любой, или RagnvaldBook.esp или RagnvaldBookFarengar+Ragnvald.esp, не обa.
       IF FILE("RagnvaldBook.esp") && IF VAR(ES) WARN: Usar RagnvaldBook.esp o RagnvaldBookFarengar+Ragnvald.esp, no ambos.
 RagnvaldBookFarengar.esp
-  IF FILE("RagnvaldBook.esp") || IF FILE("RagnvaldBookFarengar+Ragnvald.esp") && IF VAR(EN) WARN: Use only one RagnvaldBook *.esp
-    IF FILE("RagnvaldBook.esp") || IF FILE("RagnvaldBookFarengar+Ragnvald.esp") && IF VAR(RU) WARN: Используйте только один RagnvaldBook *.esp
+  IF FILE("RagnvaldBook.esp") || IF FILE("RagnvaldBookFarengar+Ragnvald.esp") && IF VAR(EN) WARN: Use only one RagnvaldBook *.esp.
+    IF FILE("RagnvaldBook.esp") || IF FILE("RagnvaldBookFarengar+Ragnvald.esp") && IF VAR(RU) WARN: Используйте только один RagnvaldBook *.esp.
      IF FILE("RagnvaldBook.esp") || IF FILE("RagnvaldBookFarengar+Ragnvald.esp") && IF VAR(ES) WARN: Utilizar solo un RagnvaldBook *.esp.
 RaestlozArmorReplace.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, RaestlozArmorReplace.esm.
@@ -9265,9 +9303,9 @@ Ring of Hircine - No Disease Werewolf AND Totem Selection.esp
 Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp
   IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") INC: Ring of Hircine - No Disease Werewolf AND Totem Selection.esp
 RoH - No Disease And Selection.esp
-  IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(EN) WARN: Use only one Ring of Hircine - No Disease Werewolf AND Totem Selection esp
-    IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(RU) WARN: Используйте только один Hircine - No Disease Werewolf AND Totem Selection esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+  IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(EN) WARN: Use only one Ring of Hircine - No Disease Werewolf AND Totem Selection esp.
+    IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(RU) WARN: Используйте только один Hircine - No Disease Werewolf AND Totem Selection esp.
+      IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(ES) WARN: Utilizar solo un Ring of Hircine - No Disease Werewolf AND Totem Selection.
 RingofKhajiit.esp
 Ring Of Kitsune.esp
 RingOfKonahrik.esp
@@ -10367,10 +10405,12 @@ REGEX: Smithing Perks Overhaul( - Balanced)?\.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Smithing Perks Overhaul.esp", 92158BE3) && IFNOT CHECKSUM("Smithing Perks Overhaul - Balanced.esp",  80AAE7FF) SAY: Does not contain unexpected (or out of order) records or TESVSnip truncation issues as found in other mods by various authors.  However, a newer esp fixed and cleaned with TES5Edit can be obtained here that may provide added stability. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Smithing Perks Overhaul.esp", 92158BE3) && IFNOT CHECKSUM("Smithing Perks Overhaul - Balanced.esp",  80AAE7FF) SAY: Не содержит неверных записей, как было найдено в других модах от разных авторов, однако новый esp, исправленный и очищенный в Tes5Edit вы можене найти "http://skyrim.nexusmods.com/mods/26230 здесь". Исправленный esp добавит больше стабильности. Если вы уже используете русифицированную-исправленную версию, то вам не о чем беспокоиться.
   IF FILE("PerkUP-Smithing.esp") INC: PerkUP-Smithing.esp
-  IF VAR(EN) && IF FILE("Smithing Perks Overhaul - Balanced.esp") && IF FILE("Smithing Perks Overhaul.esp") WARN: Use only one - Smithing Perks Overhaul.esp or Smithing Perks Overhaul - Balanced.esp
-    IF VAR(RU) && IF FILE("Smithing Perks Overhaul - Balanced.esp") && IF FILE("Smithing Perks Overhaul.esp") SAY: Используйте только один мод - Smithing Perks Overhaul.esp или Smithing Perks Overhaul - Balanced.esp
-  IF VAR(EN) && IF FILE("Complete Crafting Overhaul.esp") SAY: Use 'Smithing Perks Overhaul - Balanced.esp' with Complete Crafting Overhaul mod
-    IF VAR(RU) && IF FILE("Complete Crafting Overhaul.esp") SAY: С модом Complete Crafting Overhaul используйте 'Smithing Perks Overhaul - Balanced.esp'
+  IF FILE("Smithing Perks Overhaul - Balanced.esp") && IF FILE("Smithing Perks Overhaul.esp") && IF VAR(EN) WARN: Use either Smithing Perks Overhaul.esp or Smithing Perks Overhaul - Balanced.esp, not both.
+    IF FILE("Smithing Perks Overhaul - Balanced.esp") && IF FILE("Smithing Perks Overhaul.esp") && IF VAR(RU) WARN: Используйте любой, или Smithing Perks Overhaul.esp или Smithing Perks Overhaul - Balanced.esp, не оба.
+      IF FILE("Smithing Perks Overhaul - Balanced.esp") && IF FILE("Smithing Perks Overhaul.esp") && IF VAR(ES) WARN: Usar Smithing Perks Overhaul.esp o Smithing Perks Overhaul - Balanced.esp, no ambos.
+  IF FILE("Complete Crafting Overhaul.esp") && IF VAR(EN) SAY: Use Smithing Perks Overhaul - Balanced.esp with Complete Crafting Overhaul.
+    IF FILE("Complete Crafting Overhaul.esp") && IF VAR(RU) SAY: С модом Smithing Perks Overhaul - Balanced.esp используйте Complete Crafting Overhaul.
+      IF FILE("Complete Crafting Overhaul.esp") && IF VAR(ES) SAY: Usar Smithing Perks Overhaul - Balanced.esp como Complete Crafting Overhaul.
 Smithing Perks Overhaul - ITA.esp
 Smithing Perks Overhaul - Balanced - ITA.esp
 Smithing Perks Overhaul_Remade.esp
