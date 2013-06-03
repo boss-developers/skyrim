@@ -2555,6 +2555,7 @@ OlfinaGrayMane.esp
 OrientalbeautyMod.esp
   IF VAR(EN) SAY: The OrientalbeautyMod.esp you use depends on which female body replacer (if any) you use.
     IF VAR(RU) SAY: Версия OrientalbeautyMod.esp зависит от реплейсера женского тела, который вы используете, если таковой имеется.
+	  IF VAR(ES) SAY: El OrientalbeautyMod.esp que uses depende de cual sustituto del cuerpo femenino (En su caso) uses.
 
 // face p
 
@@ -2707,7 +2708,8 @@ ExpandedSnowSystems.esp
   IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) && IF VAR(EN) DIRTY: 1460 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) && IF VAR(RU) DIRTY: 1460 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) && IF VAR(ES) DIRTY: 1460 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF CHECKSUM("ExpandedSnowSystems.esp", 03A9B612) || IF CHECKSUM("ExpandedSnowSystems.esp", 72CC3B0C) && IF VAR(Dawnguard) WARN: Dawnguard.esm found. Use the Dawnguard version of ExpandedSnowSystems.esp instead to have mod work as intended.
+  IF CHECKSUM("ExpandedSnowSystems.esp", 03A9B612) || IF CHECKSUM("ExpandedSnowSystems.esp", 72CC3B0C) && IF VAR(Dawnguard) && IF VAR(EN) || IF VAR(RU) WARN: Dawnguard.esm found. Use the Dawnguard version of ExpandedSnowSystems.esp instead to have mod work as intended.
+    IF CHECKSUM("ExpandedSnowSystems.esp", 03A9B612) || IF CHECKSUM("ExpandedSnowSystems.esp", 72CC3B0C) && IF VAR(Dawnguard) && IF VAR(ES) WARN: Dawnguard.esm esta siencdo utilizado. Usa la versión de ExpandedSnowSystems.esp para Dawnguard.
   IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) || IF CHECKSUM("ExpandedSnowSystems.esp", 5B79F47D) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
     IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) || IF CHECKSUM("ExpandedSnowSystems.esp", 5B79F47D) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
       IF CHECKSUM("ExpandedSnowSystems.esp", B5EB3179) || IF CHECKSUM("ExpandedSnowSystems.esp", 5B79F47D) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
@@ -2715,7 +2717,7 @@ ExpandedSnowSystems.esp
 ExpandedSnowSystems-CoT.esp
   IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(ES) ERROR: ClimatesOfTamriel.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Fewer Snowstorms.esp
   IF CHECKSUM("Fewer Snowstorms.esp", 88CB9260) && IF VAR(EN) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Fewer Snowstorms.esp", 88CB9260) && IF VAR(RU) DIRTY: 7 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -2732,13 +2734,14 @@ MoreSnow.esp
 MoreSnowWindy.esp
   IF VAR(EN) && IF FILE("MoreSnow.esp") WARN: Use either MoreSnow.esp or MoreSnowWindy.esp, not both.
     IF VAR(RU) && IF FILE("MoreSnow.esp") WARN: Используйте любой, или MoreSnow.esp или MoreSnowWindy.esp, не оба.
-      IF FILE("MoreSnow.esp") && IF VAR(ES) WARN: Usar MoreSnow.esp o MoreSnowWindy.esp, no ambos.
+      IF VAR(ES) && IF FILE("MoreSnow.esp") WARN: Usar MoreSnow.esp o MoreSnowWindy.esp, no ambos.
   IF CHECKSUM("MoreSnowWindy.esp", B1CC90A4) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("MoreSnowWindy.esp", B1CC90A4) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("MoreSnowWindy.esp", B1CC90A4) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 MoreSnowWindyand150percentLessView.esp
   IF VAR(EN) INC: All lighting mods.
     IF VAR(RU) INC: Все моды, модифицирующие освещение.
+	  IF VAR(EN) INC: Cualquier mod que modifique el clima.
   IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") && IF VAR(EN) WARN: Use only one MoreSnow *.esp.
     IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") && IF VAR(RU) WARN: Используйте только один MoreSnow *.esp.
       IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") && IF VAR(ES) WARN: Utilizar solo un MoreSnow *.esp.
@@ -2748,6 +2751,7 @@ MoreSnowWindyand150percentLessView.esp
 MoreSnowWindyand75percentLessView.esp
   IF VAR(EN) INC: All lighting mods.
     IF VAR(RU) INC: Все моды, модифицирующие освещение.
+	  IF VAR(EN) INC: Cualquier mod que modifique el clima.
   IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") || IF FILE("MoreSnowWindyand150percentLessView.esp") && IF VAR(EN) WARN: Use only one MoreSnow *.esp.
     IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") || IF FILE("MoreSnowWindyand150percentLessView.esp") && IF VAR(RU) WARN: Используйте только один MoreSnow *.esp.
       IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") || IF FILE("MoreSnowWindyand150percentLessView.esp") && IF VAR(ES) WARN: Utilizar solo un MoreSnow *.esp.
@@ -2785,6 +2789,7 @@ Supreme Storms.esp
 PaperMapHeight-RemoveFog.esp
   IF VAR(EN) && IF FILE("WATER.esp") WARN: Removing Fog will affect WATER. Load after WATER if you are experiencing errors.
     IF VAR(RU) && IF FILE("WATER.esp") WARN: Удаление тумана повлияет на мод WATER. Загружайте после WATER если вы замечаете баги.
+	  IF VAR(EN) && IF FILE("WATER.esp") WARN: Remover la niebla afectara WATER. Carga despues de WATER si experiencias problemas.
 VanillaSnowWindyand150percentLessView.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, MoreSnowWindyand150percentLessView.esp.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, MoreSnowWindyand150percentLessView.esp.
@@ -2806,7 +2811,7 @@ REGEX: DFG's Blade & Dagger Sheathe Sounds.*\.esp
   IF CHECKSUM("DFG's Blade & Dagger Sheathe Sounds.esp", 3F16767E) && IF VAR(EN) DIRTY: 11 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("DFG's Blade & Dagger Sheathe Sounds.esp", 3F16767E) && IF VAR(RU) DIRTY: 11 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("DFG's Blade & Dagger Sheathe Sounds.esp", 3F16767E) && IF VAR(ES) DIRTY: 11 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-    IF CHECKSUM("DFG's Blade & Dagger Sheathe Sounds_Dawnguard.esp", 533F47EC) && IF VAR(EN) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF CHECKSUM("DFG's Blade & Dagger Sheathe Sounds_Dawnguard.esp", 533F47EC) && IF VAR(EN) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("DFG's Blade & Dagger Sheathe Sounds_Dawnguard.esp", 533F47EC) && IF VAR(RU) DIRTY: 12 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("DFG's Blade & Dagger Sheathe Sounds_Dawnguard.esp", 533F47EC) && IF VAR(ES) DIRTY: 12 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF ACTIVE("DFG's Blade & Dagger Sheathe Sounds_Dawnguard.esp") && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
