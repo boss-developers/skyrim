@@ -3376,7 +3376,7 @@ AK- Placeable Statics - Hearthfire.esp
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
   IFNOT ACTIVE("AK- Placeable Statics.esp") && IF VAR(EN) ERROR: AK- Placeable Statics.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("AK- Placeable Statics.esp") && IF VAR(RU) ERROR: AK- Placeable Statics.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("AK- Placeable Statics.espp") && IF VAR(ES) ERROR: AK- Placeable Statics.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 alchemistshack01.esp
 alchemysatchels.esp
 AlcoholRecipes.esp
@@ -3441,8 +3441,9 @@ ApachiiHelmetWigs.esp
 Arcticia's LifeCycles.esp
 Armored Skeleton.esp
   TAG: {{BASH: Relev}}
-  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'
-    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'
+  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'.
+    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'.
+	  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(ES) WARN: Borrar. Ya esta incluido en 'Skyrim Immersive Creatures.esp'.
 ENG_All_In_One_v1.2.esp
 NoRestorationExploit.esp
 ANB - ArrowsToPicks.esp
@@ -3457,10 +3458,10 @@ arrowcrafting.esp
     IF CHECKSUM("arrowcrafting.esp", 8E307ED0) || IF CHECKSUM("arrowcrafting.esp", D15AE0C5) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF CHECKSUM("arrowcrafting.esp", 8E307ED0) || IF CHECKSUM("arrowcrafting.esp", D15AE0C5) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 REGEX: Arrowsmith\w{0,2}\.esp
-  IF VAR(EN) && IF FILE("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Delete. Arrowsmith.esp already included in SkyRe_Main.esp
-    IF VAR(RU) && IF FILE("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Удалите. Arrowsmith.esp уже включен в SkyRe_Main.esp
-  IF VAR(EN) && IF FILE("Arrowsmith.esp") && IF VAR(CCO) ERROR: Delete. Arrowsmith.esp already included in Complete Crafting Overhaul.
-    IF VAR(RU) && IF FILE("Arrowsmith.esp") && IF VAR(CCO) ERROR: Удалите. Arrowsmith.esp уже включен в мод Complete Crafting Overhaul.
+  IF VAR(EN) && IF FILE("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Delete. Already included in SkyRe_Main.esp.
+    IF VAR(RU) && IF FILE("Arrowsmith.esp") && IF VAR(SkyReM) ERROR: Удалите. Уже включен в SkyRe_Main.esp.
+  IF VAR(EN) && IF FILE("Arrowsmith.esp") && IF VAR(CCO) ERROR: Delete. Already included in Complete Crafting Overhaul.
+    IF VAR(RU) && IF FILE("Arrowsmith.esp") && IF VAR(CCO) ERROR: Удалите. Уже включен в мод Complete Crafting Overhaul.
 arrowsmith-dawnguard.esp
   IF FILE("Arrowsmith.esp") INC: Arrowsmith.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
