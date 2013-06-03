@@ -9305,7 +9305,7 @@ Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp
 RoH - No Disease And Selection.esp
   IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(EN) WARN: Use only one Ring of Hircine - No Disease Werewolf AND Totem Selection esp.
     IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(RU) WARN: Используйте только один Hircine - No Disease Werewolf AND Totem Selection esp.
-      IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(ES) WARN: Utilizar solo un Ring of Hircine - No Disease Werewolf AND Totem Selection.
+      IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection.esp") || IF FILE("Ring of Hircine - No Disease Werewolf AND Totem Selection [NoEquipeSlot].esp") && IF VAR(ES) WARN: Utilizar solo un Ring of Hircine - No Disease Werewolf AND Totem Selection esp.
 RingofKhajiit.esp
 Ring Of Kitsune.esp
 RingOfKonahrik.esp
@@ -10434,6 +10434,9 @@ REGEX: Complete Crafting Overhaul( - BS version)?\.esp
   IF FILE("Smithing Perks Overhaul.esp") INC: Smithing Perks Overhaul.esp
   IF VAR(EN) && IF FILE("Complete Crafting Overhaul - BS version.esp") && IF FILE("Complete Crafting Overhaul.esp") SAY: Use only one - Complete Crafting Overhaul.esp or Complete Crafting Overhaul - BS version.esp
     IF VAR(RU) && IF FILE("Complete Crafting Overhaul - BS version.esp") && IF FILE("Complete Crafting Overhaul.esp") SAY: Используйте только один мод - Complete Crafting Overhaul.esp или Complete Crafting Overhaul - BS version.esp
+  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
+      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
   IF VAR(EN) && IF REGEX("(Headbomb's )?Better Sorting.*\.esp") && IF FILE("Complete Crafting Overhaul.esp") WARN: Use only BS-version for Better Sorting.
     IF VAR(RU) && IF REGEX("(Headbomb's )?Better Sorting.*\.esp") && IF FILE("Complete Crafting Overhaul.esp") WARN: Для Better Sorting используйте только BS-версию.
   IF VAR(EN) && IF VAR(SkyReM) WARN: Skyre mod is detected. Possible doubles in crafting menu
@@ -10506,6 +10509,7 @@ mm_BeluaSanguinareRevisitedDGCompatibility.esp
 MoM - Mastery of Magicka.esp
   IF VAR(EN) SAY: Use only one MoM esp.
     IF VAR(RU) SAY: Используйте только один MoM esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
   TAG: {{BASH: Delev}}
   IF CHECKSUM("MoM - Mastery of Magicka.esp", ADDF2A6D) && IF VAR(EN) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("MoM - Mastery of Magicka.esp", ADDF2A6D) && IF VAR(RU) DIRTY: 13 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -10513,6 +10517,7 @@ MoM - Mastery of Magicka.esp
 MoM - No Alchemy & Enchanting.esp
   IF VAR(EN) SAY: Use only one MoM esp.
     IF VAR(RU) SAY: Используйте только один MoM esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
   TAG: {{BASH: Delev}}
   IF CHECKSUM("MoM - No Alchemy & Enchanting.esp", 3C26874D) && IF VAR(EN) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("MoM - No Alchemy & Enchanting.esp", 3C26874D) && IF VAR(RU) DIRTY: 13 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -10520,6 +10525,7 @@ MoM - No Alchemy & Enchanting.esp
 MoM - No Alchemy.esp
   IF VAR(EN) SAY: Use only one MoM esp.
     IF VAR(RU) SAY: Используйте только один MoM esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
   TAG: {{BASH: Delev}}
   IF CHECKSUM("MoM - No Alchemy.esp", 658C9F93) && IF VAR(EN) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("MoM - No Alchemy.esp", 658C9F93) && IF VAR(RU) DIRTY: 13 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -10527,6 +10533,7 @@ MoM - No Alchemy.esp
 MoM - No Enchanting.esp
   IF VAR(EN) SAY: Use only one MoM esp.
     IF VAR(RU) SAY: Используйте только один MoM esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
   TAG: {{BASH: Delev}}
   IF CHECKSUM("MoM - No Enchanting.esp", A51AF24C) && IF VAR(EN) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("MoM - No Enchanting.esp", A51AF24C) && IF VAR(RU) DIRTY: 13 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -10808,6 +10815,9 @@ REGEX: WiS IV - (Rainbow mode|Normal mode|Golden Age|Dark Rainbow( II)?|Dark Age
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Use only one esp --- WiS IV - Rainbow mode or Normal mode or Golden Age or Dark Rainbow or Dark Age or Lore Friendly
     IF VAR(RU) SAY: Используйте только одну версию esp --- WiS IV - Rainbow mode или Normal mode или Golden Age или Dark Rainbow или Dark Age или Lore Friendly
+  IF VAR(EN) SAY: Use only one nnn esp.
+    IF VAR(RU) SAY: Используйте только один nnn esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 WiS IV - double hp npc.esp
 WiS IV - Double fall damage.esp
 WiS IV Heroes.esp
@@ -10834,9 +10844,11 @@ ERSO 01 - Vanilla Race Redone v.1.4.esp
 ERSO 01 - Vanilla Races Redone.esp
    IF VAR(EN) SAY: Use only one ERSO 01 file.
      IF VAR(RU) SAY: Используйте только один файл ERSO 01.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 01 - VRR.+\.esp
   IF VAR(EN) SAY: Use only one ERSO 01 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 01.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ERSO 02 - Enhanced Fauna and Monsters for Skyrim v.2.0.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -10844,9 +10856,11 @@ ERSO 02 - Enhanced Fauna and Monsters for Skyrim v.2.0.esp
 ERSO 02 - Enhanced Fauna and Monsters for Skyrim.esp
    IF VAR(EN) SAY: Use only one ERSO 02 file.
      IF VAR(RU) SAY: Используйте только один файл ERSO 02.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ERSO 02 - EFMS very bigger giant mammoths.esp
    IF VAR(EN) SAY: Use only one ERSO 02 file.
      IF VAR(RU) SAY: Используйте только один файл ERSO 02.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ERSO 02.1 - Realistic Animal Loots.esp
 
 ENDGROUP: ERSO Start
@@ -10903,40 +10917,47 @@ REGEX: ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF VAR(EN) SAY: Use only one ERSO 03 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DB\.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IF VAR(EN) SAY: Use only one ERSO 03 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 03 - (Nightmare |Slighty |Super )?Mighty Dragons( Unleveled)?( plus)? DD\.esp
   IFNOT REGEX("DeadlyDragons(Hard|Normal|Hardcore)?( DV)?\.esp") REQ: "http://skyrim.nexusmods.com/mods/3829 Deadly Dragons" (6.3.5)
   IF VAR(EN) SAY: Use only one ERSO 03 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 03.1a - .+\.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF VAR(EN) SAY: Use only one ERSO 03.1a file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.1a.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 03.1b - .+\.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IF VAR(EN) SAY: Use only one ERSO 03.1b file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.1b.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 03.3 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dawnguard Dragons\.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF VAR(EN) SAY: Use only one ERSO 03.3 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.3.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 03.4 - (Nightmare |Slighty Mighty |Super Mighty |Mighty )Dragonborn Dragons\.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IF VAR(EN) SAY: Use only one ERSO 03.4 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.4.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 D.S.I. Dragon Size Increase + MD.esp
 DeadlyDragonsArmory.esp
 DeadlyMonsters.esp
@@ -10957,10 +10978,12 @@ ERSO 03.5 - New Dragon Loots.esp
   TAG: {{BASH: Relev, Delev}}
   IF VAR(EN) SAY: Use only one ERSO 03.5 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.5.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ERSO 03.5 - New Dragon Super Loots.esp
   TAG: {{BASH: Relev, Delev}}
   IF VAR(EN) SAY: Use only one ERSO 03.5 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 03.5.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ERSO 04 - Mighty Dragon Priests v.4.0.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -10980,17 +11003,22 @@ REGEX: ERSO 0\d - Wait More Time( Before Next)? Dragon Encounter (\()?x\d\.\d(\)
 REGEX: ERSO 07 - (Super )?(Slighty )?(Mighty )?(Nightmare )?Dragon Priests\.esp
   IF VAR(EN) SAY: Use only one ERSO 07 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 07.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 08 - RUS-00 Main( plus Dawnguard)?( Dragonborn)?\.esp
   IF VAR(EN) SAY: Use only one ERSO 08 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 08.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 08.1 - ERSO( SUPER)?( EXTREME)? MIRAAK(D)?\.esp
 REGEX: ERSO 08.2 - ERSO( SUPER)?( EXTREME)? HARKON\.esp
 REGEX: ERSO 09 - RUS-Npcs.*\.esp
   IF VAR(EN) SAY: Use only one ERSO 09 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 09.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 09 - Vendor Trainer Quest-giver protected( USKP)?\.esp
   IF VAR(EN) SAY: Use only one ERSO 09 file.
-    IF VAR(RU) SAY: Используйте только один файл ERSO 09.ERSO 09.1 - Essential Children.esp
+    IF VAR(RU) SAY: Используйте только один файл ERSO 09.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
+ERSO 09.1 - Essential Children.esp
 ERSO 09.2 - Radiance.esp
 ERSO 10 - RUS-(SIM)-Travellers and Adventurers.esp
 ERSO 10.02 - Adventurers and Travelers.esp
@@ -10999,73 +11027,91 @@ ERSO 12 - RUS-(SIM)-Werewolves.esp
 ERSO 13 - MD - A Better Level Progression.esp
   IF VAR(EN) SAY: Use only one ERSO 13 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 13
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ERSO 13 - MD - ABLP 50 Hardcore.esp
 // Hardcore version of A Better Level Progression
   IF VAR(EN) SAY: Use only one ERSO 13 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 13
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 13.02 .*\.esp
   // Lower Skill Gain
   IF VAR(EN) SAY: Use only one ERSO 13.02 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 13.02.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 13.03 .*\.esp
   // Higher Skill Cap
   IF VAR(EN) SAY: Use only one ERSO 13.03 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 13.03.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ERSO 14 - Vendors richer and Inns more expensive.esp
 REGEX: ERSO 14.02 .*\.esp
   // Harder barter
   IF VAR(EN) SAY: Use only one ERSO 14.02 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 14.02.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 14.03 .*\.esp
   // Vendor Soul Gems
   IF VAR(EN) SAY: Use only one ERSO 14.03 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 14.03.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 14.04 .*\.esp
   // Vendor Animal Parts
   IF VAR(EN) SAY: Use only one ERSO 14.04 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 14.04.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 14.05 .*\.esp
   // Vendor Minerals
   IF VAR(EN) SAY: Use only one ERSO 14.05 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 14.05.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 14.06 .*\.esp
   // Vendor Enchanted Weapons and Armor
   IF VAR(EN) SAY: Use only one ERSO 14.06 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 14.06.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 14.07 .*\.esp
   // Vendor Less Weapons and Armors
   IF VAR(EN) SAY: Use only one ERSO 14.07 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 14.07.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 14.08 .*\.esp
   // Respawn Vendor Stuff
   IF VAR(EN) SAY: Use only one ERSO 14.08 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 14.08.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 15 .*\.esp
   // Timescale
   IF VAR(EN) SAY: Use only one ERSO 15 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 15.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 16 .*\.esp
   // Realistic Crime Alert Distances
   IF VAR(EN) SAY: Use only one ERSO 16 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 16.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 17 .*\.esp
   // Training cost
   IF VAR(EN) SAY: Use only one ERSO 17 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 17.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ERSO 18 - Legendary Armors and Weapons Enhanced.esp
   IF VAR(EN) SAY: Use only one ERSO 18 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 17.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ERSO 18 - LAWE Hardcore.esp
   IF VAR(EN) SAY: Use only one ERSO 18 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 17.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 19 .*\.esp
   // Respawn
   IF VAR(EN) SAY: Use only one ERSO 19 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 19.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 20 .*\.esp
   // Respawn
   IF VAR(EN) SAY: Use only one ERSO 20 file.
     IF VAR(RU) SAY: Используйте только один файл ERSO 20.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ERSO 21.01 PM Dungeons.esp
 ERSO 21.02 PM Blackreach.esp
 ERSO 21.03 PM Dwemer.esp
@@ -11076,14 +11122,17 @@ ERSO 25 - Enchanting Perks Changes.esp
 REGEX: ERSO 26 .*\.esp
   IF VAR(EN) SAY: Use only one ERSO 26 file.
     IF VAR(RU) SAY: Используйте только один ERSO 26 файл.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 27 .*\.esp
   // Better Archery Stuff
   IF VAR(EN) SAY: Use only one ERSO 20 file.
     IF VAR(RU) SAY: Используйте только один ERSO 27 файл.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ERSO 28 .*\.esp
   // Killmoves
   IF VAR(EN) SAY: Use only one ERSO 20 file.
     IF VAR(RU) SAY: Используйте только один ERSO 28 файл.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ERSO 29 - DPMO.esp
 ERSO 30 - Better Enemy AI.esp
 ENDGROUP: ERSO End
@@ -11441,7 +11490,7 @@ SkyRe_Plugin_Witcher 2 Style Dawnguard Armour.esp
 SkyRe  - Jojjo's Dreadknight Patch.esp
   IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp") && IF VAR(EN) WARN: Use only one Skyre Dreadknight
     IF REGEX("SkyRe_(Plugin_)?DreadKnightWeaponSet(_0.99)?\.esp") && IF VAR(RU) WARN: Используйте только один SkyRe Dreadknight
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF ACTIVE("Dread Knight Weapon Set.esp") && IF VAR(EN) SAY: Remember not to load (or to simply delete) Dread Knight Weapon Set.esp
@@ -12451,7 +12500,7 @@ Breezehome Open Windows.esp
 BreezehomeRenovationFemJP.esp
   IF REGEX("BreezehomeRenovation(Fem|JP|FSW|FSWJP)?\.esp") && IF VAR(EN) WARN: Use only one BreezehomeRenovation*.esp
     IF REGEX("BreezehomeRenovation(Fem|JP|FSW|FSWJP)?\.esp") && IF VAR(RU) WARN: Используйте только один BreezehomeRenovation*.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("BreezehomeRenovationFemJP.esp", 4DF14350) && IF VAR(EN) DIRTY: 0 ITM, 19 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BreezehomeRenovationFemJP.esp", 4DF14350) && IF VAR(RU) DIRTY: 0 ITM, 19 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("BreezehomeRenovationFemJP.esp", 4DF14350) && IF VAR(ES) DIRTY: 0 ITM, 19 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -12461,7 +12510,7 @@ BreezehomeRenovationFemJP.esp
 BreezehomeRenovationFem.esp
   IF REGEX("BreezehomeRenovation(FemJP|JP|FSW|FSWJP)?\.esp") && IF VAR(EN) WARN: Use only one BreezehomeRenovation*.esp
     IF REGEX("BreezehomeRenovation(FemJP|JP|FSW|FSWJP)?\.esp") && IF VAR(RU) WARN: Используйте только один BreezehomeRenovation*.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("BreezehomeRenovationFem.esp", 5C313E5B) && IF VAR(EN) DIRTY: 0 ITM, 19 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BreezehomeRenovationFem.esp", 5C313E5B) && IF VAR(RU) DIRTY: 0 ITM, 19 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("BreezehomeRenovationFem.esp", 5C313E5B) && IF VAR(ES) DIRTY: 0 ITM, 19 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -12471,7 +12520,7 @@ BreezehomeRenovationFem.esp
 BreezehomeRenovationFSWJP.esp
   IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSW)?\.esp") && IF VAR(EN) WARN: Use only one BreezehomeRenovation*.esp
     IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSW)?\.esp") && IF VAR(RU) WARN: Используйте только один BreezehomeRenovation*.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("BreezehomeRenovationFSWJP.esp", 08E58DF5) && IF VAR(EN) DIRTY: 0 ITM, 29 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BreezehomeRenovationFSWJP.esp", 08E58DF5) && IF VAR(RU) DIRTY: 0 ITM, 29 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("BreezehomeRenovationFSWJP.esp", 08E58DF5) && IF VAR(ES) DIRTY: 0 ITM, 29 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -12481,7 +12530,7 @@ BreezehomeRenovationFSWJP.esp
 BreezehomeRenovationFSW.esp
   IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSWJP)?\.esp") && IF VAR(EN) WARN: Use only one BreezehomeRenovation*.esp
     IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSWJP)?\.esp") && IF VAR(RU) WARN: Используйте только один BreezehomeRenovation*.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("BreezehomeRenovationFSW.esp", F94B1083) && IF VAR(EN) DIRTY: 0 ITM, 29 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BreezehomeRenovationFSW.esp", F94B1083) && IF VAR(RU) DIRTY: 0 ITM, 29 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("BreezehomeRenovationFSW.esp", F94B1083) && IF VAR(ES) DIRTY: 0 ITM, 29 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -12491,7 +12540,7 @@ BreezehomeRenovationFSW.esp
 BreezehomeRenovationJP.esp
   IF REGEX("BreezehomeRenovation(Fem|FemJP|FSW|FSWJP)?\.esp") && IF VAR(EN) WARN: Use only one BreezehomeRenovation*.esp
     IF REGEX("BreezehomeRenovation(Fem|FemJP|FSW|FSWJP)?\.esp") && IF VAR(RU) WARN: Используйте только один BreezehomeRenovation*.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("BreezehomeRenovationJP.esp", 1B7A18AF) && IF VAR(EN) DIRTY: 0 ITM, 19 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BreezehomeRenovationJP.esp", 1B7A18AF) && IF VAR(RU) DIRTY: 0 ITM, 19 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("BreezehomeRenovationJP.esp", 1B7A18AF) && IF VAR(ES) DIRTY: 0 ITM, 19 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -12501,7 +12550,7 @@ BreezehomeRenovationJP.esp
 BreezehomeRenovation.esp
   IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSW|FSWJP)\.esp") && IF VAR(EN) WARN: Use only one BreezehomeRenovation*.esp
     IF REGEX("BreezehomeRenovation(Fem|FemJP|JP|FSW|FSWJP)\.esp") && IF VAR(RU) WARN: Используйте только один BreezehomeRenovation*.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("BreezehomeRenovation.esp", E4AF58E1) && IF VAR(EN) DIRTY: 0 ITM, 19 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BreezehomeRenovation.esp", E4AF58E1) && IF VAR(RU) DIRTY: 0 ITM, 19 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("BreezehomeRenovation.esp", E4AF58E1) && IF VAR(ES) DIRTY: 0 ITM, 19 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -12512,7 +12561,7 @@ BreezehomeRenovation(CN).esp
 REGEX: Breezehome Revised.*\.esp
   IF VAR(EN) WARN: Use only one variant of Breezehome Revised*.esp
     IF VAR(RU) WARN: Используйте только один Breezehome Revised*.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 Breezehomeshelves01.esp
 Breezehomeshelves02.esp
 BreezehomeEnchantingTable.esp
@@ -12533,6 +12582,9 @@ Briar'sEndInstantQuest.esp
   IF FILE("Fleetford.esp") INC: Fleetford.esp
   IF FILE("Briar'sEndCourierQuest.esp") && IF VAR(EN) ERROR: Use only one Briar'sEnd esp.
     IF FILE("Briar'sEndCourierQuest.esp") && IF VAR(RU) ERROR: Используйте только один Briar'sEnd esp.
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
   IF CHECKSUM("Briar'sEndInstantQuest.esp", 3BEEDC33) && IF VAR(EN) DIRTY: 48 ITM, 10 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Briar'sEndInstantQuest.esp", 3BEEDC33) && IF VAR(RU) DIRTY: 48 ITM, 10 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Briar'sEndInstantQuest.esp", 3BEEDC33) && IF VAR(ES) DIRTY: 48 ITM, 10 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -12543,6 +12595,9 @@ Briar'sEndNoQuest.esp
   IF FILE("Fleetford.esp") INC: Fleetford.esp
   IF FILE("Briar'sEndCourierQuest.esp") || IF FILE("Briar'sEndInstantQuest.esp") && IF VAR(EN) ERROR: Use only one Briar'sEnd esp.
     IF FILE("Briar'sEndCourierQuest.esp") || IF FILE("Briar'sEndInstantQuest.esp") && IF VAR(RU) ERROR: Используйте только один Briar'sEnd esp.
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
   IF CHECKSUM("Briar'sEndNoQuest.esp", DC577DA1) && IF VAR(EN) DIRTY: 50 ITM, 10 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Briar'sEndNoQuest.esp", DC577DA1) && IF VAR(RU) DIRTY: 50 ITM, 10 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Briar'sEndNoQuest.esp", DC577DA1) && IF VAR(ES) DIRTY: 50 ITM, 10 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -13030,7 +13085,7 @@ DovahkiinSpeech - HigherReqNerfed.esp
   IF CHECKSUM("DovahkiinSpeech - HigherReqNerfed.esp", 4B15F923) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
   IF FILE("DovahkiinSpeech - HigherReq.esp") && IF VAR(EN) WARN: Use only one DovahkiinSpeech esp.
     IF FILE("DovahkiinSpeech - HigherReq.esp") && IF VAR(RU) WARN: Используйте только один DovahkiinSpeech esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 DovahkiinSpeech - MidNoPerkReq.esp
   IF CHECKSUM("DovahkiinSpeech - MidNoPerkReq.esp", 6179F01D) && IF VAR(EN) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("DovahkiinSpeech - MidNoPerkReq.esp", 6179F01D) && IF VAR(RU) DIRTY: 8 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -13038,7 +13093,7 @@ DovahkiinSpeech - MidNoPerkReq.esp
   IF CHECKSUM("DovahkiinSpeech - MidNoPerkReq.esp", 6179F01D) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
   IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") && IF VAR(EN) WARN: Use only one DovahkiinSpeech esp.
     IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") && IF VAR(RU) WARN: Используйте только один DovahkiinSpeech esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 DovahkiinSpeech - MidReq.esp
   IF CHECKSUM("DovahkiinSpeech - MidReq.esp", FFFCDA31) && IF VAR(EN) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("DovahkiinSpeech - MidReq.esp", FFFCDA31) && IF VAR(RU) DIRTY: 8 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -13046,7 +13101,7 @@ DovahkiinSpeech - MidReq.esp
   IF CHECKSUM("DovahkiinSpeech - MidReq.esp", FFFCDA31) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
   IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") && IF VAR(EN) WARN: Use only one DovahkiinSpeech esp.
     IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") && IF VAR(RU) WARN: Используйте только один DovahkiinSpeech esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 DovahkiinSpeech.esp
   IF CHECKSUM("DovahkiinSpeech.esp", 27656479) && IF VAR(EN) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("DovahkiinSpeech.esp", 27656479) && IF VAR(RU) DIRTY: 8 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -13054,7 +13109,7 @@ DovahkiinSpeech.esp
   IF CHECKSUM("DovahkiinSpeech.esp", 27656479) WARN: Contains 4 deleted records (2 Magic effects, 1 Perk, 1 Spell) that will not be corrected by TES5Edit.
   IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") || IF FILE("DovahkiinSpeech - MidReq.esp") && IF VAR(EN) WARN: Use only one DovahkiinSpeech esp.
     IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") || IF FILE("DovahkiinSpeech - MidReq.esp") && IF VAR(RU) WARN: Используйте только один DovahkiinSpeech esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 Dragon.esp
   IF CHECKSUM("Dragon.esp", 779A94C3) && IF VAR(EN) DIRTY: 30 ITM, 21 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Dragon.esp", 779A94C3) && IF VAR(RU) DIRTY: 30 ITM, 21 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -13110,6 +13165,7 @@ DragonsReach_Hideout_Nightingale_alternative.esp
 REGEX: DragonsReach_Hideout_(Plus|Assassin|Nightingale)\.esp
   IF VAR(EN) SAY: Use only one DragonsReach_Hideout_*.esp
     IF VAR(RU) SAY: ИСпользуйте только один DragonsReach_Hideout_*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 dragonstaffofdomination001.esp
   IF CHECKSUM("dragonstaffofdomination001.esp", FD198303) && IF VAR(EN) DIRTY: 10 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("dragonstaffofdomination001.esp", FD198303) && IF VAR(RU) DIRTY: 10 ITM, 4 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -14225,21 +14281,21 @@ MeekoHuskyEssential.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF FILE("MeekoHusky.esp") && IF VAR(EN) WARN: Use only one MeekoHusky *.esp
     IF FILE("MeekoHusky.esp") && IF VAR(RU) WARN: Используйте только один MeekoHusky *.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 MeekoHuskyArmored.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF FILE("MeekoHusky.esp") || IF FILE("MeekoHuskyEssential.esp") && IF VAR(EN) WARN: Use only one MeekoHusky *.esp
     IF FILE("MeekoHusky.esp") || IF FILE("MeekoHuskyEssential.esp") && IF VAR(RU) WARN: Используйте только один MeekoHusky *.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 MeekoHuskyArmoredEssential.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF FILE("MeekoHusky.esp") || IF FILE("MeekoHuskyArmored.esp") || IF FILE("MeekoHuskyEssential.esp") && IF VAR(EN) WARN: Use only one MeekoHusky *.esp
     IF FILE("MeekoHusky.esp") || IF FILE("MeekoHuskyArmored.esp") || IF FILE("MeekoHuskyEssential.esp") && IF VAR(RU) WARN: Используйте только один MeekoHusky *.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 MercenaryGuild.esp
   IF CHECKSUM("MercenaryGuild.esp", 8539027A) && IF VAR(EN) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("MercenaryGuild.esp", 8539027A) && IF VAR(RU) DIRTY: 9 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15553,6 +15609,9 @@ The Secret Room of Breezehome (En).esp
 The Secret Room of Breezehome.esp
   IF VAR(EN) && IF FILE("secretroom-bh-en.esp") SAY: Use only one 'The Secret Room of Breezehome.esp' or 'secretroom-bh-en.esp'
     IF VAR(RU) && IF FILE("secretroom-bh-en.esp") SAY: Используйте только один мод 'The Secret Room of Breezehome.esp' или 'secretroom-bh-en.esp'
+  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
+      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
 theShrines.esp
 thesnakepit.esp
 the tree of vjaas.esp
@@ -15927,36 +15986,42 @@ Vault of the Dovahkiin 1.1 - Assassin.esp
       IF CHECKSUM("Vault of the Dovahkiin 1.1 - Assassin.esp", 44965600) && IF VAR(ES) DIRTY: 0 ITM, 4 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF VAR(EN) SAY: Use only one Vault of the Dovahkiin esp.
     IF VAR(RU) SAY: Используйте только один Vault of the Dovahkiin esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Vault of the Dovahkiin 1.1 - Imperial.esp
   IF CHECKSUM("Vault of the Dovahkiin 1.1 - Imperial.esp", 94246301) && IF VAR(EN) DIRTY: 0 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Vault of the Dovahkiin 1.1 - Imperial.esp", 94246301) && IF VAR(RU) DIRTY: 0 ITM, 4 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Vault of the Dovahkiin 1.1 - Imperial.esp", 94246301) && IF VAR(ES) DIRTY: 0 ITM, 4 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF VAR(EN) SAY: Use only one Vault of the Dovahkiin esp.
     IF VAR(RU) SAY: Используйте только один Vault of the Dovahkiin esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Vault of the Dovahkiin 1.1 - Mage.esp
   IF CHECKSUM("Vault of the Dovahkiin 1.1 - Mage.esp", 864F774A) && IF VAR(EN) DIRTY: 0 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Vault of the Dovahkiin 1.1 - Mage.esp", 864F774A) && IF VAR(RU) DIRTY: 0 ITM, 4 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Vault of the Dovahkiin 1.1 - Mage.esp", 864F774A) && IF VAR(ES) DIRTY: 0 ITM, 4 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF VAR(EN) SAY: Use only one Vault of the Dovahkiin esp.
     IF VAR(RU) SAY: Используйте только один Vault of the Dovahkiin esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Vault of the Dovahkiin 1.1 - Stormcloak.esp
   IF CHECKSUM("Vault of the Dovahkiin 1.1 - Stormcloak.esp", 32B3E560) && IF VAR(EN) DIRTY: 0 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Vault of the Dovahkiin 1.1 - Stormcloak.esp", 32B3E560) && IF VAR(RU) DIRTY: 0 ITM, 4 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Vault of the Dovahkiin 1.1 - Stormcloak.esp", 32B3E560) && IF VAR(ES) DIRTY: 0 ITM, 4 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF VAR(EN) SAY: Use only one Vault of the Dovahkiin esp.
     IF VAR(RU) SAY: Используйте только один Vault of the Dovahkiin esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Vault of the Dovahkiin 1.1 - Thief.esp
   IF CHECKSUM("Vault of the Dovahkiin 1.1 - Thief.esp", F48C29C4) && IF VAR(EN) DIRTY: 0 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Vault of the Dovahkiin 1.1 - Thief.esp", F48C29C4) && IF VAR(RU) DIRTY: 0 ITM, 4 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Vault of the Dovahkiin 1.1 - Thief.esp", F48C29C4) && IF VAR(ES) DIRTY: 0 ITM, 4 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF VAR(EN) SAY: Use only one Vault of the Dovahkiin esp.
     IF VAR(RU) SAY: Используйте только один Vault of the Dovahkiin esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Vault of the Dovahkiin 1.1 - Warrior.esp
   IF CHECKSUM("Vault of the Dovahkiin 1.1 - Warrior.esp", 7F8B0754) && IF VAR(EN) DIRTY: 0 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Vault of the Dovahkiin 1.1 - Warrior.esp", 7F8B0754) && IF VAR(RU) DIRTY: 0 ITM, 4 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Vault of the Dovahkiin 1.1 - Warrior.esp", 7F8B0754) && IF VAR(ES) DIRTY: 0 ITM, 4 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF VAR(EN) SAY: Use only one Vault of the Dovahkiin esp.
     IF VAR(RU) SAY: Используйте только один Vault of the Dovahkiin esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 VeiledKeep.esp
   IF CHECKSUM("VeiledKeep.esp", 4D96FDC8) && IF VAR(EN) DIRTY: 8 ITM, 55 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("VeiledKeep.esp", 4D96FDC8) && IF VAR(RU) DIRTY: 8 ITM, 55 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -16280,9 +16345,11 @@ Domino_ReducedWeight_All.esp
 REGEX: Dragon Drop - B.*\.esp
   IF VAR(EN) SAY: Use only one 'Bone' esp
     IF VAR(RU) SAY: Используйте только один 'Bone' esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: Dragon Drop - S.*\.esp
   IF VAR(EN) SAY: Use only one 'Scales' esp
     IF VAR(RU) SAY: Используйте только один 'Scales' esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: DragonboneWeightRedux\(x\d\d?\)\.esp
 REGEX: DragonboneWeightReduction.+\.esp
 GM-HMSPotions3SecsWeighted.esp
@@ -16368,12 +16435,12 @@ REGEX: Weightless.{1,23}\.esp
 REGEX: WeightedArrows(Heavy|Light|Medium)?\.esp
   IF VAR(EN) WARN: Use only one WeightedArrows *.esp
     IF VAR(RU) WARN: Используйте только один WeightedArrows *.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF VAR(Dawnguard) SAY: Use Dawnguard version to include weighted crossbow bolts.
 REGEX: WeightedArrowsDLC1(Heavy|Light|Medium)?\.esp
   IF VAR(EN) WARN: Use only one WeightedArrows *.esp
     IF VAR(RU) WARN: Используйте только один WeightedArrows *.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
@@ -16402,6 +16469,7 @@ Imperial Soldiers Orcs&Dark Elfs v 1.4 .esp
 REGEX: Imperial Soldiers v 1.5( DE&O)?( Essential)?\.esp
   IF VAR(EN) SAY: Use only one Imperial Soldiers*.esp
     IF VAR(RU) SAY: Используйте только один Imperial Soldiers*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 dlc_armor_crafting.esp
   IF VERSION("TES5", "1.7.7", <) REQ: Skyrim 1.7.7.0.6+
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -16480,6 +16548,7 @@ WSBP - OriMale.esp
 REGEX: zzALittleSexyApparelReplacer.*\.esp
   IF VAR(EN) SAY: Use only one zzALittleSexyApparelReplacer esp
     IF VAR(RU) SAY: Используйте только один zzALittleSexyApparelReplacer esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ENDGROUP: Overrides Early
 
 BEGINGROUP: Overrides #
@@ -16487,15 +16556,19 @@ BEGINGROUP: Overrides #
 REGEX: .?.?.?.? magickaregen\.esp
   IF VAR(EN) SAY: Use only one _X magickaregen.esp or _X slowermagickaregen.esp
     IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 3x slower magickaregen.esp
   IF VAR(EN) SAY: Use only one _X magickaregen.esp or _X slowermagickaregen.esp
     IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 30x slowermagickaregen.esp
   IF VAR(EN) SAY: Use only one _X magickaregen.esp or _X slowermagickaregen.esp
     IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: .?.?.?.? staminaregen\.esp
   IF VAR(EN) SAY: Use only one _X magickaregen.esp or _X slowermagickaregen.esp
     IF VAR(RU) SAY: Используйте только один _X magickaregen.esp или _X slowermagickaregen.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 00 friedlichere wilde tiere.esp
 0nk Better Gauldur and Saarthal Amulet Copy.esp
 24HourBlessings.esp
@@ -16574,6 +16647,7 @@ Argonian resist poison.esp
 REGEX: ArmorCap90.*\.esp
   IF VAR(EN) SAY: Use only one ArmorCap esp
     IF VAR(RU) SAY: Используйте только один ArmorCap esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Armored Skyrim.esp
 armored-horses.esp
 ArmoredThalmorRobes.esp
@@ -16600,7 +16674,7 @@ Arvak, Shadowmere's Body - DB Saddle.esp
 Arvak, Shadowmere's Body - No Saddle.esp
   IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") && IF VAR(EN) WARN: Use only one Arvak esp.
     IF FILE("Arvak, Shadowmere's Body - DB Saddle.esp") && IF VAR(RU) WARN: Используйте только один Arvak esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 Arvak_Fire.esp
   IF CHECKSUM("Arvak_Fire.esp", 8B83FC98) DIRTY: 3 ITM, 0 UDR records.  Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -16612,7 +16686,7 @@ Arvak_Frost.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF FILE("Arvak_Fire.esp") && IF VAR(EN) WARN: Use either Arvak_Fire.esp or Arvak_Frost.esp, not both.
-     IF FILE("Arvak_Fire.esp") && IF VAR(RU) WARN: Используйте любой, или Arvak_Fire.esp или Arvak_Frost.esp, не оба.
+    IF FILE("Arvak_Fire.esp") && IF VAR(RU) WARN: Используйте любой, или Arvak_Fire.esp или Arvak_Frost.esp, не оба.
       IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
 Arvak_Storm.esp
   IF CHECKSUM("Arvak_Storm.esp", A3FADF0F) DIRTY: 3 ITM, 0 UDR records.  Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -16621,7 +16695,7 @@ Arvak_Storm.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF FILE("Arvak_Fire.esp") || IF FILE("Arvak_Frost.esp") && IF VAR(EN) WARN: Use only one Arvak_*.esp
     IF FILE("Arvak_Fire.esp") || IF FILE("Arvak_Frost.esp") && IF VAR(RU) WARN: Используйте только один Arvak_*.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 ATTTemplate.esp
 augmentedspells.esp
 AutoAim.esp
@@ -16727,6 +16801,7 @@ BetterGhostbladeV1.esp
 BetterGhostbladeV1glass.esp
   IF FILE("BetterGhostbladeV1.esp") && IF VAR(EN) ERROR: Use only one BetterGhostbladeV1 esp.
     IF FILE("BetterGhostbladeV1.esp") && IF VAR(RU) ERROR: Используйте только один BetterGhostbladeV1 esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 Better House Carls.esp
 Better Honeyside.esp
 BetterItemSorting.esp
@@ -16792,21 +16867,21 @@ Headbomb's Better Sorting - Food (Normal Weight).esp
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Food (Normal Weight).esp", B3DBF94F) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
   IF FILE("Headbomb's Better Sorting - Food (Light Weight).esp") && IF VAR(EN) WARN: Use only one Headbomb's Better Sorting - Food esp
     IF FILE("Headbomb's Better Sorting - Food (Light Weight).esp") && IF VAR(RU) WARN: Используйте только один Headbomb's Better Sorting - Food esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("Headbomb's Better Sorting - Food (Normal Weight).esp", B3DBF94F) SAY: Sharlikran's update of this file. Do not clean the file further with TES5Edit.
 Headbomb's Better Sorting - Food (Reduced Weight).esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Food (Reduced Weight).esp", FC6492D6) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Food (Reduced Weight).esp", FC6492D6) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
   IF FILE("Headbomb's Better Sorting - Food (Normal Weight).esp") || IF FILE("Headbomb's Better Sorting - Food (Light Weight).esp") && IF VAR(EN) WARN: Use only one Headbomb's Better Sorting - Food esp
     IF FILE("Headbomb's Better Sorting - Food (Normal Weight).esp") || IF FILE("Headbomb's Better Sorting - Food (Light Weight).esp") && IF VAR(RU) WARN: Используйте только один Headbomb's Better Sorting - Food esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("Headbomb's Better Sorting - Food (Reduced Weight).esp", FC6492D6) SAY: Sharlikran's update of this file. Do not clean the file further with TES5Edit.
 Headbomb's Better Sorting - Food (Weightless).esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Food (Weightless).esp", D6118DD) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Food (Weightless).esp", D6118DD) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
   IF FILE("Headbomb's Better Sorting - Food (Reduced Weight).esp") || IF FILE("Headbomb's Better Sorting - Food (Normal Weight).esp") || IF FILE("Headbomb's Better Sorting - Food (Light Weight).esp") && IF VAR(EN) WARN: Use only one Headbomb's Better Sorting - Food esp
     IF FILE("Headbomb's Better Sorting - Food (Reduced Weight).esp") || IF FILE("Headbomb's Better Sorting - Food (Normal Weight).esp") || IF FILE("Headbomb's Better Sorting - Food (Light Weight).esp") && IF VAR(RU) WARN: Используйте только один Headbomb's Better Sorting - Food esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("Headbomb's Better Sorting - Food (Weightless).esp", D6118DD) SAY: Sharlikran's update of this file. Do not clean the file further with TES5Edit.
 Headbomb's Better Sorting - Ingredients.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Ingredients.esp", E3C63F1F) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -16825,21 +16900,21 @@ Headbomb's Better Sorting - Potions (Light Weight).esp
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Potions (Light Weight).esp", B55194E2) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
   IF FILE("Headbomb's Better Sorting - Potions (Half Weight).esp") && IF VAR(EN) WARN: Use only one Headbomb's Better Sorting - Potions esp
     IF FILE("Headbomb's Better Sorting - Potions (Half Weight).esp") && IF VAR(RU) WARN: Используйте только один Headbomb's Better Sorting - Potions esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("Headbomb's Better Sorting - Potions (Light Weight).esp", B55194E2) SAY: Sharlikran's update of this file. Do not clean the file further with TES5Edit.
 Headbomb's Better Sorting - Potions (Normal Weight).esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Potions (Normal Weight).esp", 26CFE603) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Potions (Normal Weight).esp", 26CFE603) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
   IF FILE("Headbomb's Better Sorting - Potions (Light Weight).esp") || IF FILE("Headbomb's Better Sorting - Potions (Half Weight).esp") && IF VAR(EN) WARN: Use only one Headbomb's Better Sorting - Potions esp
     IF FILE("Headbomb's Better Sorting - Potions (Light Weight).esp") || IF FILE("Headbomb's Better Sorting - Potions (Half Weight).esp") && IF VAR(RU) WARN: Используйте только один Headbomb's Better Sorting - Potions esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("Headbomb's Better Sorting - Potions (Normal Weight).esp", 26CFE603) SAY: Sharlikran's update of this file. Do not clean the file further with TES5Edit.
 Headbomb's Better Sorting - Potions (Weightless).esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Potions (Weightless).esp", 4D304DE6) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Potions (Weightless).esp", 4D304DE6) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
   IF FILE("Headbomb's Better Sorting - Potions (Normal Weight).esp") || IF FILE("Headbomb's Better Sorting - Potions (Light Weight).esp") || IF FILE("Headbomb's Better Sorting - Potions (Half Weight).esp") && IF VAR(EN) WARN: Use only one Headbomb's Better Sorting - Potions esp
     IF FILE("Headbomb's Better Sorting - Potions (Normal Weight).esp") || IF FILE("Headbomb's Better Sorting - Potions (Light Weight).esp") || IF FILE("Headbomb's Better Sorting - Potions (Half Weight).esp") && IF VAR(RU) WARN: Используйте только один Headbomb's Better Sorting - Potions esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("Headbomb's Better Sorting - Potions (Weightless).esp", 4D304DE6) SAY: Sharlikran's update of this file. Do not clean the file further with TES5Edit.
 Headbomb's Better Sorting - Soul Gems (PseudoVanilla).esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Soul Gems (PseudoVanilla).esp", F828AB1B) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -16850,7 +16925,7 @@ Headbomb's Better Sorting - Soul Gems (Ranked).esp
     IF VAR(RU) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Soul Gems (Ranked).esp", A5408056) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
   IF FILE("Headbomb's Better Sorting - Soul Gems (PseudoVanilla).esp") && IF VAR(EN) WARN: Use only one Headbomb's Better Sorting - Soul Gems esp
     IF FILE("Headbomb's Better Sorting - Soul Gems (PseudoVanilla).esp") && IF VAR(RU) WARN: Используйте только один Headbomb's Better Sorting - Soul Gems esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("Headbomb's Better Sorting - Soul Gems (Ranked).esp", A5408056) SAY: Sharlikran's update of this file. Do not clean the file further with TES5Edit.
 Headbomb's Better Sorting - Spells.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Headbomb's Better Sorting - Spells.esp", 83D7CCD) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -16916,6 +16991,9 @@ BetterStaffofCorruptionMED.esp
 BetterStaffofMagnus.esp
 BetterStaffofMagnusMedium.esp
   IF FILE("BetterStaffofMagnus.esp") INC: Use only one BetterStafofMagnus esp.
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 BetterSwimming.esp
 ME_BetterWards.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, betterwards.esp.
@@ -16929,6 +17007,9 @@ Bigger dragons.esp
 biggerbears.esp
 REGEX: Binocular Vision (Game Settings 135|Game Settings 150|For NPCs While Sneaking)?\.esp
   SAY: Use only one Binocular Vision esp.
+  IF VAR(EN) SAY: Use only one nnn esp.
+    IF VAR(RU) SAY: Используйте только один nnn esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
   IF CHECKSUM("Binocular Vision Game Settings 135.esp", 9C56E282) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Binocular Vision Game Settings 135.esp", 9C56E282) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Binocular Vision Game Settings 135.esp", 9C56E282) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -16944,10 +17025,22 @@ BorderRegionsDisabledEV.esp
 BORGAKH1a.esp
 Both Imp and SC-No respawn.esp
   IF FILE("Fullcamprespawn.esp") INC: Fullcamprespawn.esp (Use only one Killable Leaders main file)
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
   IF FILE("Both Imp and SC-With Respawn.esp") INC: Both Imp and SC-With Respawn.esp (Use only one Killable Leaders main file)
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 Both Imp and SC-With Respawn.esp
   IF FILE("Both Imp and SC-No respawn.esp") INC: Both Imp and SC-No respawn.esp (Use only one Killable Leaders main file)
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
   IF FILE("Fullcamprespawn.esp") INC: Fullcamprespawn.esp (Use only one Killable Leaders main file)
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 BoundWpnScaleWithConj.esp
 REGEX: bow x\d\d?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, sneaky bow x*.esp.
@@ -17087,12 +17180,21 @@ dangerous animals.esp
       IF CHECKSUM("dangerous animals.esp", D2E559A6) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 dangerous animals - german.esp
   IF FILE("dangerous animals.esp") INC: dangerous animals.esp, use only one dangerous animals esp.
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
   IF CHECKSUM("dangerous animals - german.esp", EE98A386) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("dangerous animals - german.esp", EE98A386) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("dangerous animals - german.esp", EE98A386) && IF VAR(ES) DIRTY: 5 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 dangerous animals - light.esp
   IF FILE("dangerous animals.esp") INC: dangerous animals.esp, use only one dangerous animals esp.
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
   IF FILE("dangerous animals - german.esp") INC: dangerous animals - german.esp, use only one dangerous animals esp.
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
   IF CHECKSUM("dangerous animals - light.esp", 1386FA38) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("dangerous animals - light.esp", 1386FA38) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("dangerous animals - light.esp", 1386FA38) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -17118,14 +17220,14 @@ Dawnbreaker Enhanced.esp
 REGEX: DawnguardDawnbreaker_(FireEd|FireED_ST)?\.esp
   IF VAR(EN) WARN: Use only one DawnguardDawnbreaker esp
     IF VAR(RU) WARN: Используйте только один DawnguardDawnbreaker esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 REGEX: DawnguardDawnbreaker_(SunEd|SunFireED|HolyFireEd)?\.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF VAR(EN) WARN: Use only one DawnguardDawnbreaker esp
     IF VAR(RU) WARN: Используйте только один DawnguardDawnbreaker esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 Dawnbreaker_PeacefulExplosion.esp
 db-nightshade-replacer.esp
 DB_XVCAetaClothingFix.esp
@@ -17202,12 +17304,15 @@ Drelas_Cottage.esp
 REGEX: Dual Casting - Cost - .+\.esp
   IF VAR(EN) SAY: Use only one Dual Casting - Cost esp.
     IF VAR(RU) SAY: Используйте только один Dual Casting - Cost esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: Dual Casting - Effectiveness - .+\.esp
   IF VAR(EN) SAY: Use only one Dual Casting - Effectiveness esp.
     IF VAR(RU) SAY: Используйте только один Dual Casting - Effectiveness esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: Dual Casting - Time - .+\.esp
   IF VAR(EN) SAY: Use only one Dual Casting - Time esp.
     IF VAR(RU) SAY: Используйте только один Dual Casting - Time esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 DwarvenResistanceRevised.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -17342,6 +17447,7 @@ FasterDeer.esp
 REGEX: fasterdragonbonearrows.+\.esp
   IF VAR(EN) SAY: Use only one fasterdragonbonearrows*.esp
     IF VAR(RU) SAY: Используйте только один fasterdragonbonearrows*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: FasterHorses_Sprint_x.+\.esp
 FasterNordHeroWeps.esp
   IF CHECKSUM("FasterNordHeroWeps.esp", 4F2396EA) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -17355,6 +17461,7 @@ REGEX: FemaleMannequins(Argonian|Breton|DarkElf|HighElf|Imperial|Kajiit|Nord|Orc
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
   IF VAR(EN) SAY: Use only one FemaleMannequins esp
     IF VAR(RU) SAY: Используйте только один FemaleMannequins esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Filling Food & Restful Sleep.esp
 FierceLydia.esp
 flags of victory.esp
@@ -17417,7 +17524,13 @@ FSS-No pause between lines.esp
 FSS-Slight pause between lines.esp
 Fullcamprespawn.esp
   IF FILE("Both Imp and SC-No respawn.esp") INC: Both Imp and SC-No respawn.esp (Use only one Killable Leaders main file)
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
   IF FILE("Both Imp and SC-With Respawn.esp") INC: Both Imp and SC-With Respawn.esp (Use only one Killable Leaders main file)
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 ENDGROUP: Overrides F
 
 BEGINGROUP: Overrides G
@@ -17432,6 +17545,7 @@ GhorbashReRanger.esp
 REGEX: Ghostly Shadowmere.*\.esp
   IF VAR(EN) SAY: Use only one Ghostly Shadowmere*.esp
     IF VAR(RU) SAY: Используйте только один Ghostly Shadowmere*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 giant_giants_and_mammoths.esp
 REGEX: Giant Mammoths( 50size)?([ ]+\dk HP)?\.esp
 GiantClub.esp
@@ -17539,6 +17653,7 @@ Hemet2CircletReplacer.esp
 REGEX: Hellspawn Shadowmere.*\.esp
   IF VAR(EN) SAY: Use only one Hellspawn Shadowmere esp
     IF VAR(RU) SAY: Используйте только один Hellspawn Shadowmere esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Helmets - Khajiit Ears Hair.esp
 helmless_warrior.esp
 Helms and Circlets.esp
@@ -17718,22 +17833,26 @@ Isharas_MLLY_MALES.esp
   IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") INC: Isharas_MLLY_FEMALES_SKSE.esp
 Isharas_MLLY_MALES_SKSE.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
-   IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") && IF VAR(EN) WARN: Use only one Isharas_MLLY_* esp.
-     IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") && IF VAR(RU) WARN: Используйте только один Isharas_MLLY_* esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+  IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") && IF VAR(EN) WARN: Use only one Isharas_MLLY_* esp.
+    IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") && IF VAR(RU) WARN: Используйте только один Isharas_MLLY_* esp.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 Isharas_MLLY_RESET.esp
-   IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") || IF FILE("Isharas_MLLY_MALES_SKSE.esp") && IF VAR(EN) WARN: Use only one Isharas_MLLY_* esp.
-     IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") || IF FILE("Isharas_MLLY_MALES_SKSE.esp") && IF VAR(RU) WARN: Используйте только один Isharas_MLLY_* esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+  IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") || IF FILE("Isharas_MLLY_MALES_SKSE.esp") && IF VAR(EN) WARN: Use only one Isharas_MLLY_* esp.
+    IF FILE("Isharas_MLLY_FEMALES.esp") || IF FILE("Isharas_MLLY_FEMALES_SKSE.esp") || IF FILE("Isharas_MLLY_MALES.esp") || IF FILE("Isharas_MLLY_MALES_SKSE.esp") && IF VAR(RU) WARN: Используйте только один Isharas_MLLY_* esp.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 Item Prices.esp
 Item Prices V2.esp
-  IF VAR(EN) SAY: Use only one Item Prices esp.
-    IF VAR(RU) SAY: Используйте только один Item Prices esp.
   IF FILE("Item Prices.esp") && IF VAR(EN) ERROR: Use only one Item Prices *.esp
     IF FILE("Item Prices.esp") && IF VAR(RU) ERROR: Используйте только один Item Prices *.esp
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 Item Prices V3.esp
   IF FILE("Item Prices.esp") || IF FILE("Item Prices V2.esp") && IF VAR(EN) ERROR: Use only one Item Prices *.esp
     IF FILE("Item Prices.esp") || IF FILE("Item Prices V2.esp") && IF VAR(RU) ERROR: Используйте только один Item Prices *.esp
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 ENDGROUP: Overrides I
 
 BEGINGROUP: Overrides J
@@ -17818,6 +17937,7 @@ Legendary Gauldur Amulet.esp
 REGEX: LegionArmorVariety(OPTIONAL\d)?\.esp
   IF VAR(EN) SAY: Use only one LegionArmorVariety esp
     IF VAR(RU) SAY: Используйте только один LegionArmorVariety esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 LegionRequisition.esp
 Lenhador.esp
 REGEX: LessDragon.+\.esp
@@ -17833,6 +17953,7 @@ kuerteeTekuromotosLessPredictableRespawn MCM.esp
 REGEX: Less Talkative NPCs Release.+\.esp
   IF VAR(EN) SAY: Use only one Less Talkative NPCs Release esp
     IF VAR(RU) SAY: Используйте только один Less Talkative NPCs Release esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: LessTraining_\d\.esp
 lesssnowywinterhold.esp
 Lethal Archery.esp
@@ -17905,6 +18026,7 @@ LZA Incremental Difficulty.esp
 REGEX: LZA Incremental Difficulty_.*\.esp
   IF VAR(EN) SAY: Use only one 'LZA Incremental Difficulty_*.esp'
     IF VAR(RU) SAY: Используйте только один 'LZA Incremental Difficulty_*.esp'
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ENDGROUP: Overrides L
 
 BEGINGROUP: Overrides M
@@ -17975,6 +18097,7 @@ MasterEnchanter.esp
 REGEX: EnchantPowerX.*\.esp
   IF VAR(EN) SAY: Use only one EnchantPowerX*.esp
     IF VAR(RU) SAY: Используйте только один EnchantPowerX*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 MasterTrainers100.esp
 Matching_Armor_Set_Fixed_-_No_Helmets_Required.esp
 REGEX: MatsoImmersive(Rain|Sun)\.esp
@@ -18192,6 +18315,9 @@ NoAutoSkillBooks(Normal).esp
 NoAutoSkillBooks(Better).esp
   IF VAR(EN) && IF FILE("NoAutoSkillBooks(Normal).esp") WARN: Use only one (Normal) or (Better) version
     IF VAR(RU) && IF FILE("NoAutoSkillBooks(Normal).esp") WARN: Используйте только одну (Normal) или (Better) версию.
+  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
+      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
 noBlurDOF.esp
 noblur.esp
 nocollegetour.esp
@@ -18423,6 +18549,7 @@ ReallyGiantGiantsandMammoths.esp
 REGEX: RealNightEye(Red|Green|Colorless|Blue|Yellow)?\.esp
   IF VAR(EN) SAY: Use only one RealNightEye*.esp
     IF VAR(RU) SAY: Используйте только один RealNightEye*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 RebalancedWeapons.esp
   IF CHECKSUM("RebalancedWeapons.esp", 941FFB02) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("RebalancedWeapons.esp", 941FFB02) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -18630,6 +18757,7 @@ Sickly Diseases.esp
 REGEX: Sinister Shadowmere.*\.esp
   IF VAR(EN) SAY: Use only one Sinister Shadowmere*.esp
     IF VAR(RU) SAY: Используйте только один Sinister Shadowmere*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Simple Spell Scaling.esp
 skoomaeffect.esp
 /* Contains BOOK, QUST */
@@ -18801,7 +18929,7 @@ STFU - guards.esp
 Stickier_Arrows V2.esp
   IF VAR(EN) && IF File("-Stickier_Arrows- Fix.esp") WARN: Use only one Stickier Arrows esp.
     IF VAR(RU) && IF File("-Stickier_Arrows- Fix.esp") WARN: Используйте только один Stickier Arrows esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 stop-being-a-creepy-stalker-aerin-1-0-pingy.esp
 stronger alduin.esp
 stronger daedric artifacts.esp
@@ -18853,6 +18981,7 @@ REGEX: The Skyrim conflict( Light| Medium| Hard)?( DE&O)?( Essential)?.*\.esp
   // TAG: {{BASH: Invent, Names}}
   IF VAR(EN) SAY: Use only one The Skyrim conflict *.esp
     IF VAR(RU) SAY: Используйте только один The Skyrim conflict *.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 TheChoiceIsYours.esp
   IF CHECKSUM("TheChoiceIsYours.esp", 6CF96C54) && IF VAR(EN) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("TheChoiceIsYours.esp", 6CF96C54) && IF VAR(RU) DIRTY: 8 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -18999,7 +19128,8 @@ vanillaarcheryimproved.esp
     IF VAR(RU) && IF VAR(Dawnguard) && IFNOT FILE("vanillaarcheryimproveddawnguard.esp") ERROR: Используйте вместо этого vanillaarcheryimproveddawnguard.esp
 vanillaarcheryimproveddawnguard.esp
    IF FILE("vanillaarcheryimproved.esp") && IF VAR(EN) SAY: Use only one vanillaarcheryimproved esp.
-     IF FILE("vanillaarcheryimproved.esp") && IF VAR(RU) SAY: Используйте только один vanillaarcheryimproved esp.
+    IF FILE("vanillaarcheryimproved.esp") && IF VAR(RU) SAY: Используйте только один vanillaarcheryimproved esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 VanillaMonsterLootV1_5.esp
   TAG: {{BASH: Relev}}
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -19068,6 +19198,7 @@ WerewolvesOccurringNaturally.esp
   TAG: {{BASH: Delev}}
   IF FILE("WerewolvesInvadingNaturally.esp") && IF VAR(EN) ERROR: Use only one Werewolves * Naturally.esp
     IF FILE("WerewolvesInvadingNaturally.esp") && IF VAR(RU) ERROR: Используйте только один Werewolves * Naturally.esp
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 whiterun guard.esp
 wieldablelantern.esp
 wieldablelanternlanternreplacer.esp
@@ -19414,7 +19545,8 @@ Riverwood Enhanced - Detailed Cities.esp
     IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene <x> entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
   IF FILE("Riverwood Enhanced.esp") && IF VAR(EN) ERROR: Use only one Riverwood Enhanced *.esp
-     IF FILE("Riverwood Enhanced.esp") && IF VAR(RU) ERROR: Используйте только один Riverwood Enhanced *.esp
+    IF FILE("Riverwood Enhanced.esp") && IF VAR(RU) ERROR: Используйте только один Riverwood Enhanced *.esp
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 Riverwood Enhanced - NO NPC.esp
   IF CHECKSUM("Riverwood Enhanced - NO NPC.esp", 73840440) && IF VAR(EN) DIRTY: 28 ITM, 31 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Riverwood Enhanced - NO NPC.esp", 73840440) && IF VAR(RU) DIRTY: 28 ITM, 31 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -19424,6 +19556,7 @@ Riverwood Enhanced - NO NPC.esp
       IF VAR(ES) WARN: Este archivo contiene <x> entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
   IF FILE("Riverwood Enhanced.esp") || IF FILE("Riverwood Enhanced - Detailed Cities.esp") && IF VAR(EN) ERROR: Use only one Riverwood Enhanced *.esp
     IF FILE("Riverwood Enhanced.esp") || IF FILE("Riverwood Enhanced - Detailed Cities.esp") && IF VAR(RU) ERROR: Используйте только один Riverwood Enhanced *.esp
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 riverwood gates.esp
 Riverwood R9D.esp
 RiverwoodEnhancedPlugin.esp
@@ -19531,6 +19664,7 @@ BetterSkyrimWorld-RabanMod.esp
 REGEX: CampingKitNorthernRanger( - Without Amberwood| - Tent Not For Sale)?\.esp
   IF VAR(EN) SAY: Use only one CampingKitNorthernRanger
     IF VAR(RU) SAY: Используйте только один CampingKitNorthernRanger
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
   // ^Moved below expanded towns and villages to prevent land tears
 REGEX: CityForest.*\.esp
   IF FILE("CityForestv2.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -19576,6 +19710,7 @@ icefloes.esp
 REGEX: Immersive Gras.*\.esp
   IF VAR(EN) SAY: Use only one Immersive Grass esp.
     IF VAR(RU) SAY: Используйте только один Immersive Grass esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 LakeExpanded01.esp
   IF CHECKSUM("LakeExpanded01.esp", 43AEF0BF) || IF CHECKSUM("LakeExpanded01.esp", 843EB3FC) && IF VAR(Hearthfire) INC: Hearthfires (Official Bethesda DLC).  Use Hearthfires version.
   IF CHECKSUM("LakeExpanded01.esp", 43AEF0BF) && IF VAR(EN) DIRTY: 39 ITM, 39 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -19989,6 +20124,7 @@ REGEX: SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp
     IFNOT FILE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Climates Of Tamriel
   IF VAR(EN) SAY: Use only one Sounds of Skyrim - The Wilds and CoT patch.
     IF VAR(RU) SAY: Используйте только один Sounds of Skyrim-CoT patch.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 
 // Patches for Civilization
 SoS - Civilization-PatchSPO.esp
@@ -20013,6 +20149,7 @@ REGEX: SoS - Civilization( -|-)PatchCoT(Sounds)?(WinterEdition)?\.esp
     IFNOT FILE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Climates Of Tamriel
   IF VAR(EN) SAY: Use only one Sounds of Skyrim - Civilization and CoT patch.
     IF VAR(RU) SAY: Используйте только один Sounds of Skyrim-CoT patch.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ENDGROUP: Sounds of Skyrim patches
 
 BEGINGROUP: Realism
@@ -20560,6 +20697,7 @@ BetterQuestObjectives-MoonlightMasteryPatch.esp
 WerewolfNigtheyeHowl.esp
   IF VAR(EN) SAY: Use only one WerewolfNighteyeHowl.esp
     IF VAR(RU) SAY: Используйте только один WerewolfNighteyeHowl.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 WerewolfPerksExpanded_1.6.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -20617,6 +20755,7 @@ REGEX: DawnguardDelayedStart(20|30|40|50|999)\.esp
   IF FILE("DG-NoAttacks.esp") INC: DG-NoAttacks.esp
   IF VAR(EN) SAY: Use only one DawnguardDelayedStart esp
     IF VAR(RU) SAY: Используйте только один DawnguardDelayedStart esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 DG-NoAttacks.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -20712,7 +20851,7 @@ ArcaneFist - Expert to Master.esp
 ArcaneFist - Nerf Version NS.esp
   IF FILE("ArcaneFist - Expert to Master NS.esp") || IF FILE("ArcaneFist - Expert to Master.esp") && IF VAR(EN) WARN: Use only one ArcaneFist *.esp
     IF FILE("ArcaneFist - Expert to Master NS.esp") || IF FILE("ArcaneFist - Expert to Master.esp") && IF VAR(RU) WARN: Используйте только один ArcaneFist *.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("ArcaneFist - Nerf Version NS.esp", FFC9195D) && IF VAR(EN) DIRTY: 11 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ArcaneFist - Nerf Version NS.esp", FFC9195D) && IF VAR(RU) DIRTY: 11 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("ArcaneFist - Nerf Version NS.esp", FFC9195D) && IF VAR(ES) DIRTY: 11 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -20722,7 +20861,7 @@ ArcaneFist - Nerf Version NS.esp
 ArcaneFist - Nerf Version.esp
   IF FILE("ArcaneFist - Nef Version NS.esp") || IF FILE("ArcaneFist - Expert to Master NS.esp") || IF FILE("ArcaneFist - Expert to Master.esp") && IF VAR(EN) WARN: Use only one ArcaneFist *.esp
     IF FILE("ArcaneFist - Nef Version NS.esp") || IF FILE("ArcaneFist - Expert to Master NS.esp") || IF FILE("ArcaneFist - Expert to Master.esp") && IF VAR(RU) WARN: Используйте только один ArcaneFist *.esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
   IF CHECKSUM("ArcaneFist - Nerf Version.esp", 07B8EF9C) && IF VAR(EN) DIRTY: 15 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ArcaneFist - Nerf Version.esp", 07B8EF9C) && IF VAR(RU) DIRTY: 15 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("ArcaneFist - Nerf Version.esp", 07B8EF9C) && IF VAR(ES) DIRTY: 15 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -20874,6 +21013,7 @@ Customizable weights.esp
 REGEX: CW - 0(.\d)? weight potions\.esp
   IF VAR(EN) SAY: Use only one Customizable weight potions esp
     IF VAR(RU) SAY: Используйте только один Customizable weight potions esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 
 // spells d
 Darkness.esp
@@ -21120,6 +21260,9 @@ MaximumDrive.esp
 MECR_NightEye_DetectLife_Overhaul.esp
 Medium Voidmagic.esp
   IF FILE("Light Voidmagic.esp") INC: Light Voidmagic.esp, use only one Voidmagic esp.
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 REGEX: Milestone Memoirs -.+\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -21197,12 +21340,15 @@ NightingaleGallusSummon.esp
 REGEX: NEO Optional - Brighter Default \(x\d\)?\.esp
   IF VAR(EN) SAY: Use only one NEO Optional - *.esp
     IF VAR(RU) SAY: Используйте только один мод NEO Optional - *.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: NEO Optional - (Radial Blur)?( \+ )?(Tint \d)?\.esp
   IF VAR(EN) SAY: Use only one NEO Optional - *.esp
     IF VAR(RU) SAY: Используйте только один мод NEO Optional - *.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: NEO Optional - (Longer|Persistent|Prolonged) (Potions|Scroll|Spell)\.esp
    IF VAR(EN) SAY: Use only one NEO Optional - *.esp
     IF VAR(RU) SAY: Используйте только один мод NEO Optional - *.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 
 // spells o
 OblivionMankarSummon.esp
@@ -21233,6 +21379,7 @@ REGEX: Phenderix's Magic Evolved( -)?( No Perks| Cheat)?\.esp
 REGEX: Phenderix's Magic Evolved -( Cleaned)?( - No Perks)?\.esp
   IF VAR(EN) SAY: Use only one Phenderix's Magic Evolved esp
     IF VAR(RU) SAY: Используйте только один Phenderix's Magic Evolved esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Phenderix's Ultimate Magic System.esp
   IF CHECKSUM("Phenderix's Ultimate Magic System.esp", 87ACA9AE) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Phenderix's Ultimate Magic System.esp", 87ACA9AE) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -21436,6 +21583,9 @@ togglevampiresight.esp
 Total Voidmagic.esp
   IF FILE("Medium Voidmagic.esp") INC: Medium Voidmagic.esp, use only one Voidmagic esp.
   IF FILE("Light Voidmagic.esp") INC: Light Voidmagic.esp, use only one Voidmagic esp.
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 TotalConjuration.esp
   TAG: {{BASH: Relev}}
   IF CHECKSUM("TotalConjuration.esp", FB678137) && IF VAR(EN) DIRTY: 35 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -21940,7 +22090,7 @@ SkyrimBalancedMagicSystem-Light.esp
 REGEX: Skyrim Improved Magic System( - No Race Spell Removal)?\.esp
   IF VAR(EN) && IF FILE("Skyrim Improved Magic System.esp") && IF FILE("Skyrim Improved Magic System - No Race Spell Removal.esp") WARN: Use only one Skyrim Improved Magic System esp
     IF VAR(RU) && IF FILE("Skyrim Improved Magic System.esp") && IF FILE("Skyrim Improved Magic System - No Race Spell Removal.esp") WARN: Используйте только один Skyrim Improved Magic System esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 Smaller Spell Light Radius.esp
 SFFSpells.esp
 Spell Brilliance.esp
@@ -21982,6 +22132,7 @@ Voice_of_the_Sky.esp
 REGEX: WiS IV - AI & Spells for NPC( - No Knockdown)?\.esp
   IF VAR(EN) SAY: Use only one WiS IV - AI & Spells for NPC esp
     IF VAR(RU) SAY: Используйте только один WiS IV - AI & Spells for NPC esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 
 // sp late w
 
@@ -22039,29 +22190,29 @@ poison diseaseSpells.esp
     IF CHECKSUM("poison diseaseSpells.esp", 7E5C597D) && IF VAR(RU) DIRTY: 14 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("poison diseaseSpells.esp", 7E5C597D) && IF VAR(ES) DIRTY: 14 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 PTAlchemyFoodOverhaul.esp
-  IF VAR(EN) WARN: Use only one PT Alchemy / Food Overhaul esp
-    IF VAR(RU) WARN: Используйте только один PT Alchemy / Food Overhaul esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+  IF VAR(EN) SAY: Use only one PT Alchemy / Food Overhaul esp
+    IF VAR(RU) SAY: Используйте только один PT Alchemy / Food Overhaul esp
+      IF VAR(ES) SAY: Utilizar solo un <plugin set>.
   IFNOT REGEX("PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp") REQ: PTAlchemyOverhaul_SkillRate_*.esp
 PTAlchemyFoodOverhaul_BetterSorting.esp
-  IF VAR(EN) WARN: Use only one PT Alchemy / Food Overhaul esp
-    IF VAR(RU) WARN: Используйте только один PT Alchemy / Food Overhaul esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+  IF VAR(EN) SAY: Use only one PT Alchemy / Food Overhaul esp
+    IF VAR(RU) SAY: Используйте только один PT Alchemy / Food Overhaul esp
+      IF VAR(ES) SAY: Utilizar solo un <plugin set>.
   IFNOT REGEX("PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp") REQ: PTAlchemyOverhaul_SkillRate_*.esp
 PTAlchemyOverhaul_ONLY.esp
-  IF VAR(EN) WARN: Use only one PT Alchemy / Food Overhaul esp
-    IF VAR(RU) WARN: Используйте только один PT Alchemy / Food Overhaul esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+  IF VAR(EN) SAY: Use only one PT Alchemy / Food Overhaul esp
+    IF VAR(RU) SAY: Используйте только один PT Alchemy / Food Overhaul esp
+      IF VAR(ES) SAY: Utilizar solo un <plugin set>.
   IFNOT REGEX("PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp") REQ: PTAlchemyOverhaul_SkillRate_*.esp
 PTAlchemyOverhaul_ONLY_BetterSorting.esp
-  IF VAR(EN) WARN: Use only one PT Alchemy / Food Overhaul esp
-    IF VAR(RU) WARN: Используйте только один PT Alchemy / Food Overhaul esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+  IF VAR(EN) SAY: Use only one PT Alchemy / Food Overhaul esp
+    IF VAR(RU) SAY: Используйте только один PT Alchemy / Food Overhaul esp
+      IF VAR(ES) SAY: Utilizar solo un <plugin set>.
   IFNOT REGEX("PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp") REQ: PTAlchemyOverhaul_SkillRate_*.esp
 PTFoodOverhaul_ONLY.esp
-  IF VAR(EN) WARN: Use only one PT Alchemy / Food Overhaul esp
-    IF VAR(RU) WARN: Используйте только один PT Alchemy / Food Overhaul esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+  IF VAR(EN) SAY: Use only one PT Alchemy / Food Overhaul esp
+    IF VAR(RU) SAY: Используйте только один PT Alchemy / Food Overhaul esp
+      IF VAR(ES) SAY: Utilizar solo un <plugin set>.
 selbs_alchemybalance.esp
 SkyrimPowerfulPotions.esp
 skoomacooking.esp
@@ -22181,6 +22332,7 @@ Realistic crime report radius.esp
 REGEX: Realistic crime report radius( zero)?\.esp
   IF VAR(EN) SAY: Use only one Realistic crime report radius esp
     IF VAR(RU) SAY: Используйте только один Realistic crime report radius esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 shenkthieveryoverhaul.esp
 ReneersCrimeOverhaul.esp
 RoguePro.esp
@@ -22256,6 +22408,9 @@ Combat Remastered - 2H to 1H Heavy Armory.esp
 CombatMorale.esp
 CombatMoraleNoLootBag.esp
   IF FILE("CombatMorale.esp") INC: CombatMorale.esp, use only one CombatMorale esp.
+  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
+      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
 Command Dragon.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
@@ -22288,6 +22443,7 @@ dodge.esp
 REGEX: Dual Wield Parrying.*\.esp
   IF VAR(EN) SAY: Use only one Dual Wield Parrying*.esp
     IF VAR(RU) SAY: Используйте только один Dual Wield Parrying*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
   IF FILE("Dual Wield Parrying_ScriptDragon.esp") && IFNOT VAR(SCDR) REQ: "http://alexander.sannybuilder.com/?altname=skyrim_script_dragon ScriptDragon")
   IF VAR(EN) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) REQ: Dawnguard version. Remove and install 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
     IF VAR(RU) && IF FILE("Dual Wield Parrying_RandomAttacks.esp") && IF VAR(Dawnguard) REQ: Версия для Dawnguard. Удалите это и установите 'Dual Wield Parrying_RandomAttacks_Dawnguard.esp'.
@@ -22373,15 +22529,19 @@ NewKillMovesKnight.esp
 REGEX: killmoverandom-(\d{1,3})(-)?(P)?(-)?(L)?\.esp
   IF VAR(EN) SAY: Use only one killmoverandom-*.esp
     IF VAR(RU) SAY: Используйте только один killmoverandom-*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: No_3rd_Person_killcam(-)?(3rd_Person_only)?(-)?(Above-Behind|leftsideclose|rightsideclose)?\.esp
   IF VAR(EN) SAY: Use only one No_3rd_Person_killcam*.esp
     IF VAR(RU) SAY: Используйте только один No_3rd_Person_killcam*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: Added_Slow_Motion_to_1stPerson(_with_1st_Person_Only)?(-slower_version)?\.esp
   IF VAR(EN) SAY: Use only one Added_Slow_Motion_to_1stPerson*.esp
     IF VAR(RU) SAY:Используйте только один Added_Slow_Motion_to_1stPerson*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: decap_chance_(\d{1,3})\.esp
   IF VAR(EN) SAY: Use only one decap_chance_*.esp
     IF VAR(RU) SAY: Используйте только один decap_chance_*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 KillmoveSetRanger.esp
 AdvancedKillMoves.esp
   IF VAR(EN) && IFNOT VAR(Dawnguard) && IF VERSION("TES5", "1.5.24", >) && IFNOT CHECKSUM("AdvancedKillMoves.esp", 257F870C) REQ: "http//skyrim.nexusmods.com/mods/21226 AdvancedKillMoves_English_Only_2-0b_fixed"
@@ -22465,24 +22625,31 @@ ACE BYOG.esp
 REGEX: ACE BYOG Carry Weight ([Dd]+\d{1,3})\.esp
   IF VAR(EN) SAY: Use only one ACE BYOG Carry Weight plugin
     IF VAR(RU) SAY: Используйте только один ACE BYOG Carry Weight*esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ACE BYOG - Attack Range ([du]+\d{1,3})\.esp
   IF VAR(EN) SAY: Use only one ACE BYOG Attack Range plugin
     IF VAR(RU) SAY: Используйте только один ACE BYOG Attack Range*esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ACE BYOG - Enemy lvl ([du]+\d{1,3})\.esp
   IF VAR(EN) SAY: Use only one ACE BYOG Enemy lvl plugin
     IF VAR(RU) SAY: Используйте только один ACE BYOG Enemy lvl*esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ACE BYOG - Jump Height (u\d{1,3})\.esp
   IF VAR(EN) SAY: Use only one ACE BYOG Jump Height plugin
     IF VAR(RU) SAY: Используйте только один ACE BYOG Jump Height*esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ACE BYOG - Max Damage Resist (\d{1,3})\.esp
   IF VAR(EN) SAY: Use only one ACE BYOG Max Damage Resist plugin
     IF VAR(RU) SAY: Используйте только один ACE BYOG Max Damage Resist*esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ACE BYOG - Starting Skills (\d{1,3})\.esp
   IF VAR(EN) SAY: Use only one ACE BYOG Starting Skills plugin
     IF VAR(RU) SAY: Используйте только один ACE BYOG Starting Skills*esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 REGEX: ACE BYOG NPC Archers Miss-Rate ([du]+\d{1,3})\.esp
   IF VAR(EN) SAY: Use only one ACE BYOG NPC Archers Miss-Rate plugin
     IF VAR(RU) SAY: Используйте только один ACE BYOG NPC Archers Miss-Rate*esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 ArcheryExtended200.esp
   IF CHECKSUM("ArcheryExtended200.esp", BF90CF33) && IF VAR(EN) WARN: This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use. It should be removed.
 BlockExtended200.esp
@@ -22542,6 +22709,7 @@ CCO - Dynamic Skill Progression.esp
 REGEX: New Leveled Encounter Levels - (SUPER |VERY )?HARD\.esp
   IF VAR(EN) SAY: Use only one 'New Leveled Encounter Levels*.esp'
     IF VAR(RU) SAY: Используйте только один New Leveled Encounter Levels*.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 No Beggining Magic.esp
 No Skill Limit.esp
 Noredundantperks.esp
@@ -22582,6 +22750,9 @@ LB_MuchAdoSnowElves_ACE_Patch_Long.esp
   IFNOT FILE("ACE Archery.esp") REQ: ACE Archery.esp
   IFNOT FILE("LB_MuchAdoSnowElves.esm") REQ: LB_MuchAdoSnowElves.esm
   IF FILE("LB_MuchAdoSnowElves_ACE_Patch_Light.esp") INC: LB_MuchAdoSnowElves_ACE_Patch_Light.esp (Use only one ACE Patch)
+  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
+      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
 Actually A Deadly Verbal Debate.esp
 alan_extended archery perk tree.esp
 alan_guide for the perfect blacksmith.esp
@@ -22617,6 +22788,7 @@ Conjuration Perks Overhaul Beta 0.1.esp
 REGEX: Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp
   IF VAR(EN) SAY: Use only one Deadly Torches - *.esp
     IF VAR(RU) SAY: Используйте только один Deadly Torches - *.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Destruction Scaling.esp
 Dual Flurry for all.esp
 vDynamicDifficulty.esp
@@ -22724,6 +22896,9 @@ MorePP.esp
 MorePerksPerLevel.esp
 REGEX: MR_(FasterDualcasting|MagickaRevisited|PowerfulDualcasting)\.esp
   SAY: Use only one MR_*.esp file
+  IF VAR(EN) SAY: Use only one nnn esp.
+    IF VAR(RU) SAY: Используйте только один nnn esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 // skills n
 no more ability perk tree.esp
 non-linear perk trees.esp
@@ -22751,6 +22926,7 @@ proper_archery.esp
 IFNOT ACTIVE("Skyrim Perk Enhancements.esp") MOD: REGEX: PTAlchemyOverhaul_SkillRate_\d_\d\d?\.esp
   IF VAR(EN) SAY: Use only one PTAlchemyOverhaul_SkillRate esp
     IF VAR(RU) SAY: Используйте только один PTAlchemyOverhaul_SkillRate esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 IFNOT ACTIVE("Skyrim Perk Enhancements.esp") MOD: CookingExpanded - PTAlchFood.esp
   IFNOT ACTIVE("CookingExpanded.esp") ERROR: CookingExpanded.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IFNOT ACTIVE("PTAlchemyFoodOverhaul.esp") ERROR: PTAlchemyFoodOverhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -22834,6 +23010,7 @@ BlueStarPerkAdventure.esp
 REGEX: WiS IV - leveld World X\d+\.esp
   IF VAR(EN) SAY: Use only one WiS IV - leveld World esp
     IF VAR(RU) SAY: Используйте только один WiS IV - leveld World esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 // skills xyz
 
 //[Issue SkyRe] These plugins have SkyRe as a master and most likely need relocating to fit it's not load position.
@@ -23042,21 +23219,11 @@ LockpickTree.esp
 MoM - Only Mastery Perks.esp
   IF VAR(EN) SAY: Use only one MoM esp.
     IF VAR(RU) SAY: Используйте только один MoM esp.
-More Useful Soul Siphon10.esp
-More Usefull Soul Siphon25.esp
-  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
-More Usefull Soul Siphon50.esp
-  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
-  IF FILE("More Usefull Soul Siphon25.esp") INC: More Usefull Soul Siphon25.esp, use only one More Useful Soul Siphon esp.
-More Usefull Soul Siphon75.esp
-  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
-  IF FILE("More Usefull Soul Siphon25.esp") INC: More Usefull Soul Siphon25.esp, use only one More Useful Soul Siphon esp.
-  IF FILE("More Usefull Soul Siphon50.esp") INC: More Usefull Soul Siphon50.esp, use only one More Useful Soul Siphon esp.
-More Usefull Soul Siphon100.esp
-  IF FILE("More Useful Soul Siphon10.esp") INC: More Useful Soul Siphon10.esp, use only one More Useful Soul Siphon esp.
-  IF FILE("More Usefull Soul Siphon25.esp") INC: More Usefull Soul Siphon25.esp, use only one More Useful Soul Siphon esp.
-  IF FILE("More Usefull Soul Siphon50.esp") INC: More Usefull Soul Siphon50.esp, use only one More Useful Soul Siphon esp.
-  IF FILE("More Usefull Soul Siphon75.esp") INC: More Usefull Soul Siphon75.esp, use only one More Useful Soul Siphon esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
+REGEX: More Useful(l)? Soul Siphon(10|25|50|75|100)\.esp
+  IF VAR(EN) SAY: Use only one nnn esp.
+    IF VAR(RU) SAY: Используйте только один nnn esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 MoreWerewolfPerks.esp
   IF CHECKSUM("MoreWerewolfPerks.esp", DECFC212) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("MoreWerewolfPerks.esp", DECFC212) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -23220,6 +23387,7 @@ Shars Perks - DW Savagery.esp
 REGEX: Shars Signs - The Lover (5%|10%|30%|50%)?\.esp
   IF VAR(EN) SAY: Use only one Shars Signs - The Lover *.esp
     IF VAR(RU) SAY: Используйте только один Shars Signs - The Lover *.esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 Skype.esp
   IF CHECKSUM("Skype.esp", C09ABBA9) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Skype.esp", C09ABBA9) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -23400,6 +23568,7 @@ Override TwoHanded.esp
 IF ACTIVE("Skyrim Perk Enhancements.esp") MOD: REGEX: PTAlchemyOverhaul_SkillRate_\d_\d\d\?.esp
   IF VAR(EN) SAY: Use only one PTAlchemyOverhaul_SkillRate esp
     IF VAR(RU) SAY: Используйте только один PTAlchemyOverhaul_SkillRate esp
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 IF ACTIVE("Skyrim Perk Enhancements.esp") MOD: CookingExpanded - PTAlchFood.esp
   IFNOT ACTIVE("CookingExpanded.esp") ERROR: CookingExpanded.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IFNOT ACTIVE("PTAlchemyFoodOverhaul.esp") ERROR: PTAlchemyFoodOverhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -25072,7 +25241,7 @@ REGEX: SimplyFaendal(NoArmor|Specialized)?\.esp
 REGEX: UniqueFaendal(Specialized)?\.esp
   IF VAR(EN) WARN: Use only one UniqueFaendal esp
     IF VAR(RU) WARN: Используйте только один UniqueFaendal esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 FaseleTheCompanion.esp
   IF CHECKSUM("FaseleTheCompanion.esp", F3D542DB) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("FaseleTheCompanion.esp", F3D542DB) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -25444,7 +25613,7 @@ Lydia_edited_without_scars.esp
 REGEX: UniqueLydia(Armor|SF|SFArmor|ArmorNoCloak|NoOutfit|SFArmorNoCloak|SFNoOutfit)?\.esp
   IF VAR(EN) WARN: Use only one UniqueLydia esp.
     IF VAR(RU) WARN: Используйте только один UniqueLydia esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
@@ -25782,7 +25951,7 @@ SpectralHordeSpell.esp
 REGEX: SprigganFollower(_lvl\d)?\d?\.esp
   IF VAR(EN) WARN: Use only one SprigganFollower esp.
     IF VAR(RU) WARN: Используйте только один SprigganFollower esp.
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
   IF FILE("SprigganFollower.esp") && IF CHECKSUM("SprigganFollower.esp", 1179651) DIRTY: 2 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF FILE("SprigganFollower_lvl1.esp") && IF CHECKSUM("SprigganFollower_lvl1.esp", 3E675448) DIRTY: 2 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF FILE("SprigganFollower_lvl25.esp") && IF CHECKSUM("SprigganFollower_lvl25.esp", 22F1546B) DIRTY: 2 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -26013,9 +26182,9 @@ REGEX: Better Followers - [SBNP].*\.esp
     IF VAR(RU) && IF VAR(UFO) WARN: Удалите скрипт C01QuestScript.pex, из папки data/scripts, если он существует.
   IF VAR(EN) && IF REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Better Followers - Armor Pack I & II, download it on BF page.
     IF VAR(RU) && IF REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Better Followers - Armor Pack I & II, вы можете их загрузить на странице Better Followers.
-  IF VAR(EN) SAY: Use only one Better Followers - *.esp
-    IF VAR(RU) SAY: Используйте только один Better Followers - *.esp
-      IF VAR(ES) SAY: Utilizar solo un Better Followers - *.esp
+  IF VAR(EN) SAY: Use only one Better Followers - *.esp.
+    IF VAR(RU) SAY: Используйте только один Better Followers - *.esp.
+      IF VAR(ES) SAY: Utilizar solo un Better Followers - *.esp.
 REGEX: Better Follower(s -)? Dialogue-?(All|Dog|Reorder|Thane)?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, Better Followers and Big Dialogue Overhaul.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Better Followers и Big Dialogue Overhaul.
@@ -26168,7 +26337,7 @@ REGEX: move.?it(LWT)?\.esp
     IF VAR(RU) && IF FILE("Better Follower Improvements.esp") && IF REGEX("Better Followers - [SBNP].*\.esp") INC: Better Followers. Better Followers уже имеет похожий функционал. Используйте только, если вы хотите настройки из moveit - fBumpReactionSmallWaitTimer to 2 (0.3 в BF) и fBumpReactionSmallDelayTime to 1(Vanilla) (0.3 в BF). Другие настройки такие же как и в BF.
   IF VAR(EN) && IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") WARN: Use only one move it esp
     IF VAR(RU) && IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") WARN: Используйте только один move it esp
-     IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Utilizar solo un <plugin set>.
 MrKrabs.esp
 MrSlackPants-DeadlyTraps.esp
 MujuroStormbringer.esp
@@ -26337,6 +26506,9 @@ mjhKhajiitSpeakDLC - Dragonborn.esp
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
 REGEX: mjhKhajiitSpeakExtra - (Ohmes-Raht|Dagi-Raht)?\.esp
   SAY: Use only one Khajiit Speak Extra plugin.
+  IF VAR(EN) SAY: Use only one nnn esp.
+    IF VAR(RU) SAY: Используйте только один nnn esp.
+      IF VAR(ES) SAY: Utilizar solo un nnn esp.
 mjhKhajiitSpeakMod - Convenient Horses.esp
   IFNOT ACTIVE("Convenient Horses.esp") && IF VAR(EN) ERROR: Convenient Horses.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Convenient Horses.esp") && IF VAR(RU) ERROR: Convenient Horses.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Even Better Quest Objectives
@@ -26417,9 +26589,9 @@ newlife.esp
 No Starting Spells.esp
 Quick Start - Skip the Opening Sequence.esp
 REGEX: QuickStart3_.+\.esp
-  IF VAR(EN) SAY: Use only one QuickStart3_*.esp
-    IF VAR(RU) SAY: Используйте только один QuickStart3_*.esp
-      IF VAR(ES) SAY: Utilizar solo un QuickStart3_*.esp
+  IF VAR(EN) SAY: Use only one QuickStart3_*.esp.
+    IF VAR(RU) SAY: Используйте только один QuickStart3_*.esp.
+      IF VAR(ES) SAY: Utilizar solo un QuickStart3_*.esp.
 Random Alternate Start.esp
   IF FILE("Alternate Start - Live Another Life.esp") INC: Alternate Start - Live Another Life.esp
 RAS - Riverwood CharGen.esp
@@ -26463,14 +26635,23 @@ REGEX: AROP- Altmer.+\.esp
   IF VAR(EN) && IF FILE("AROP- Altmer Edition.esp") && IF FILE("AROP- Altmer Edition - NW.esp") WARN: Use only one: AROP- Altmer Edition.esp or AROP- Altmer Edition - NW.esp
     IF VAR(RU) && IF FILE("AROP- Altmer Edition.esp") && IF FILE("AROP- Altmer Edition - NW.esp") WARN: Используйте только один мод: AROP- Altmer Edition.esp или AROP- Altmer Edition - NW.esp
       IF VAR(ES) && FILE("AROP- Altmer Edition.esp") && IF FILE("AROP- Altmer Edition - NW.esp") WARN: Utilizar solo un: AROP- Altmer Edition.esp o AROP- Altmer Edition - NW.esp
+  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
+      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
 REGEX: AROP- Argonian.+\.esp
   IF VAR(EN) && IF FILE("AROP- Argonian Edition.esp") && IF FILE("AROP- Argonian Edition - Poison.esp") WARN: Use only one: AROP- Argonian Edition.esp or AROP- Argonian Edition - Poison.esp
     IF VAR(RU) && IF FILE("AROP- Argonian Edition.esp") && IF FILE("AROP- Argonian Edition - Poison.esp") WARN: Используйте только один мод: AROP- Argonian Edition.esp или AROP- Argonian Edition - Poison.esp
       IF VAR(ES) && FILE("AROP- Argonian Edition.esp") && IF FILE("AROP- Argonian Edition - Poison.esp") WARN: Utilizar solo un: AROP- Argonian Edition.esp o AROP- Argonian Edition - Poison.esp
+  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
+      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
 REGEX: AROP- Redguard.+\.esp
   IF VAR(EN) && IF FILE("AROP- Redguard Edition.esp") && IF FILE("AROP- Redguard Edition - SS.esp") WARN: Use only one: AROP- Redguard Edition.esp or AROP- Redguard Edition - SS.esp
     IF VAR(RU) && IF FILE("AROP- Redguard Edition.esp") && IF FILE("AROP- Redguard Edition - SS.esp") WARN: Используйте только один мод: AROP- Redguard Edition.esp или AROP- Redguard Edition - SS.esp
       IF VAR(ES) && FILE("AROP- Redguard Edition.esp") && IF FILE("AROP- Redguard Edition - SS.esp") WARN: Utilizar solo un: AROP- Redguard Edition.esp o AROP- Redguard Edition - SS.esp
+  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
+      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
   // I suspect that AROP is a replacement to the Better Racials- below...
 AutoCastRacials.esp
 AutoCastPowers.esp
@@ -26487,6 +26668,9 @@ REGEX: Better Racials- .+\.esp
   IF VAR(EN) && IF FILE("Better Racials- Altmer Edition.esp") && IF FILE("Better Racials- Altmer Edition - NW.esp") WARN: Use only one Better Racials- Altmer Edition.esp or Better Racials- Altmer Edition - NW.esp
     IF VAR(RU) && IF FILE("Better Racials- Altmer Edition.esp") && IF FILE("Better Racials- Altmer Edition - NW.esp") WARN: Используйте только один Better Racials- Altmer Edition.esp или Better Racials- Altmer Edition - NW.esp
       IF VAR(ES) && FILE("Better Racials- Altmer Edition.esp") && IF FILE("Better Racials- Altmer Edition - NW.esp") WARN: Utilizar solo un: Better Racials- Altmer Edition.esp o Better Racials- Altmer Edition - NW.esp
+  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
+      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
 Better races V1,1.esp
 CCO - Diverse Races And Genders.esp
 ChangeMyNordVoice.esp
@@ -26510,9 +26694,9 @@ REGEX: Height Adjusted Skyrim(.+)?\.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 REGEX: Height Adjusted Races( .+)?\.esp
-  IF VAR(EN) SAY: Use only one Height Adjusted Races*.esp
-    IF VAR(RU) SAY: Используйте только один Height Adjusted Races*.esp
-      IF VAR(ES) SAY: Utilizar solo un Height Adjusted Races*.esp
+  IF VAR(EN) SAY: Use only one Height Adjusted Races*.esp.
+    IF VAR(RU) SAY: Используйте только один Height Adjusted Races*.esp.
+      IF VAR(ES) SAY: Utilizar solo un Height Adjusted Races*.esp.
   IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
       IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
@@ -26540,9 +26724,9 @@ IF VAR(ExtSlider) MOD: Vampire Eyes Fix.esp
   // Info from forums. Loaded after Extended Slider Colors.esp if installed else fix is not work. Need test.
 REGEX: VanillaRaces( - Prepatched - English)?\.esp
 Expanded Eye Color Selection.esp
-  IF VAR(EN) SAY: Use only one Extended Colors - *.esp
-    IF VAR(RU) SAY: Используйте только один Extended Colors - *.esp
-      IF VAR(ES) SAY: Utilizar solo un Extended Colors - *.esp
+  IF VAR(EN) SAY: Use only one Extended Colors - *.esp.
+    IF VAR(RU) SAY: Используйте только один Extended Colors - *.esp.
+      IF VAR(ES) SAY: Utilizar solo un Extended Colors - *.esp.
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
@@ -26671,9 +26855,9 @@ real race heights.esp
       IF CHECKSUM("real race heights.esp", C83962EB) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 REGEX: CBBELE.*\.esp
 REGEX: Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp
-  IF VAR(EN) WARN: Use only one Serana-ish esp.
-    IF VAR(RU) WARN: Используйте только один Serana-ish esp.
-      IF VAR(ES) WARN: Utilizar solo un Serana-ish esp.
+  IF VAR(EN) SAY: Use only one Serana-ish esp.
+    IF VAR(RU) SAY: Используйте только один Serana-ish esp.
+      IF VAR(ES) SAY: Utilizar solo un Serana-ish esp.
 SVPaleVampires.esp
   IF REGEX("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp") && IF VAR(EN) INC: Serana-ish*.esp
     IF REGEX("Serana-ishVampires(EyesOnly|FaceOnly|HarkonEyes)?\.esp") && IF VAR(RU) INC: Serana-ish*.esp
@@ -26791,9 +26975,9 @@ bloodcoins.esp
 REGEX: blood coins .+\.esp
 WiS III blood coins.esp
 REGEX: WiS IV( -)? Blood Coins( slow| normal| Insane)?\.esp
-  IF VAR(EN) SAY: Use only one Blood Coins esp
-    IF VAR(RU) SAY: Используйте только один Blood Coins esp
-      IF VAR(ES) SAY: Utilizar solo un Blood Coins esp
+  IF VAR(EN) SAY: Use only one Blood Coins esp.
+    IF VAR(RU) SAY: Используйте только один Blood Coins esp.
+      IF VAR(ES) SAY: Utilizar solo un Blood Coins esp.
 ChickenNestFix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp
@@ -26804,9 +26988,9 @@ fastervendorrespawn.esp
 FastRespMerchants.esp
 followerssovngarde_respawn_version_1_0.esp
 REGEX: MD - WMTBNDE .+\.esp
-  IF VAR(EN) SAY: Use only one WMTBNDE esp
-    IF VAR(RU) SAY: Используйте только один WMTBNDE esp
-      IF VAR(ES) SAY: Utilizar solo un WMTBNDE esp
+  IF VAR(EN) SAY: Use only one WMTBNDE esp.
+    IF VAR(RU) SAY: Используйте только один WMTBNDE esp.
+      IF VAR(ES) SAY: Utilizar solo un WMTBNDE esp.
 NO_RESPAWN.esp
 NoCellRespawn.esp
 NoClearedCellRespawn.esp
@@ -26836,6 +27020,9 @@ SlowRespawn_NoClearedCellRespawn.esp
   IF FILE("NoCellRespawn.esp") || IF FILE("NoClearedCellRespawn.esp") && IF VAR(EN) ERROR: Use only one NoCellRespawn *.esp
     IF FILE("NoCellRespawn.esp") || IF FILE("NoClearedCellRespawn.esp") && IF VAR(RU) ERROR: Используйте только один NoCellRespawn *.esp
       IF FILE("NoCellRespawn.esp") || IF FILE("NoClearedCellRespawn.esp") && IF VAR(ES) ERROR: Utilizar solo un NoCellRespawn esp.
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
 Solnishko.esp
 REGEX: Dynamic.?Timescale\.esp
 longerdays_v1.esp
@@ -26939,9 +27126,9 @@ DawnguardRuneWeaponsFXSReplacer.esp
 Different Invisibility Effects plus Eyes Fix.esp
 Different Invisibility Effects plus Eyes Fix - Chameleon Version.esp
 REGEX: DTHSpellMageArmorEffectReplacer.+\.esp
-  IF VAR(EN) SAY: Use only one DTHSpellMageArmorEffectReplacer*.esp
-    IF VAR(RU) SAY: Используйте только один DTHSpellMageArmorEffectReplacer*.esp
-      IF VAR(ES) SAY: Utilizar solo un DTHSpellMageArmorEffectReplacer*.esp
+  IF VAR(EN) SAY: Use only one DTHSpellMageArmorEffectReplacer*.esp.
+    IF VAR(RU) SAY: Используйте только один DTHSpellMageArmorEffectReplacer*.esp.
+      IF VAR(ES) SAY: Utilizar solo un DTHSpellMageArmorEffectReplacer*.esp.
 Enchantments Upgraded.esp
 Enchantments Upgraded SkyRe Patch.esp
   IFNOT ACTIVE("Enchantments Upgraded.esp") && IF VAR(EN) ERROR: Enchantments Upgraded.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -26971,9 +27158,9 @@ ImmersiveWater3.esp
 medium water.esp
 Purewaters.esp
 IF FILE("Purewaters.esp") MOD: realrainextended.esp
-  IF VAR(EN) SAY: Use only one realrain esp
-    IF VAR(RU) SAY: Используйте только один realrain esp
-      IF VAR(ES) SAY: Utilizar solo un realrain esp
+  IF VAR(EN) SAY: Use only one realrain esp.
+    IF VAR(RU) SAY: Используйте только один realrain esp.
+      IF VAR(ES) SAY: Utilizar solo un realrain esp.
 PurewatersDG.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -27009,7 +27196,7 @@ WATER DB Waves.esp
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IF FILE("WATER DB.esp") && IF VAR(EN) WARN: Use only one WATER DB esp.
     IF FILE("WATER DB.esp") && IF VAR(RU) WARN: Используйте только один WATER DB esp.
-      IF FILE("WATER DB.esp") && IF VAR(ES)WARN: Utilizar solo un WATER DB esp.
+      IF FILE("WATER DB.esp") && IF VAR(ES) WARN: Utilizar solo un WATER DB esp.
 WATER - Get Wet.esp
 /* I Think Water F.X. and Water FX - Get Wet are obsolete. */
 Water F.X.esp
@@ -27092,9 +27279,9 @@ BarenziahQuestMarkers.esp
     IF VAR(RU) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp
       IF VAR(ES) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Borrar. Esta incluido en BarenziahQuestMarkers_Droppable.esp
 REGEX: BBLS_MM .+\.esp
-   IF VAR(EN) SAY: Use only one BBLS_MM *.esp
-     IF VAR(RU) SAY: Используйте только один BBLS_MM *.esp
-      IF VAR(ES) SAY: Utilizar solo un BBLS_MM *.esp
+   IF VAR(EN) SAY: Use only one BBLS_MM *.esp.
+     IF VAR(RU) SAY: Используйте только один BBLS_MM *.esp.
+      IF VAR(ES) SAY: Utilizar solo un BBLS_MM *.esp.
 BetterMapMarkerPlacements.esp
 camp_map_markers.esp
 cartographers map markers.esp
@@ -27254,58 +27441,58 @@ smakit_house_markers.esp
     IF CHECKSUM("smakit_house_markers.esp", CDB6A10B) && IF VAR(RU) DIRTY: 11 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("smakit_house_markers.esp", CDB6A10B) && IF VAR(ES) DIRTY: 11 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 smakit_house_markers_french.esp
-  IF FILE("smakit_house_markers.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp
-    IF FILE("smakit_house_markers.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp
-      IF FILE("smakit_house_markers.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp
+  IF FILE("smakit_house_markers.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp.
+    IF FILE("smakit_house_markers.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp.
+      IF FILE("smakit_house_markers.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp.
   IF CHECKSUM("smakit_house_markers_french.esp", DBEE7CC8) && IF VAR(EN) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("smakit_house_markers_french.esp", DBEE7CC8) && IF VAR(RU) DIRTY: 9 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("smakit_house_markers_french.esp", DBEE7CC8) && IF VAR(ES) DIRTY: 9 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 smakit_house_markers_german.esp
-  IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp
-    IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp
-      IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp
+  IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp.
+    IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp.
+      IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp.
   IF CHECKSUM("smakit_house_markers_german.esp", 2B4220E5) && IF VAR(EN) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("smakit_house_markers_german.esp", 2B4220E5) && IF VAR(RU) DIRTY: 13 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("smakit_house_markers_german.esp", 2B4220E5) && IF VAR(ES) DIRTY: 13 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 smakit_house_markers_italian.esp
-  IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp
-    IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp
-      IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp
+  IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp.
+    IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp.
+      IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp.
   IF CHECKSUM("smakit_house_markers_italian.esp", FFD1B168) && IF VAR(EN) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("smakit_house_markers_italian.esp", FFD1B168) && IF VAR(RU) DIRTY: 9 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("smakit_house_markers_italian.esp", FFD1B168) && IF VAR(ES) DIRTY: 9 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 smakit_house_markers_plus.esp
-  IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp
-    IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp
-      IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp
+  IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp.
+    IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp.
+      IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp.
   IF CHECKSUM("smakit_house_markers_plus.esp", 6FDBD6B9) && IF VAR(EN) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("smakit_house_markers_plus.esp", 6FDBD6B9) && IF VAR(RU) DIRTY: 12 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("smakit_house_markers_plus.esp", 6FDBD6B9) && IF VAR(ES) DIRTY: 12 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 smakit_house_markers_plus_russian.esp
-  IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp
-    IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp
-      IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp
+  IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp.
+    IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp.
+      IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp.
   IF CHECKSUM("smakit_house_markers_plus_russian.esp", 34BBD145) && IF VAR(EN) DIRTY: 11 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("smakit_house_markers_plus_russian.esp", 34BBD145) && IF VAR(RU) DIRTY: 11 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("smakit_house_markers_plus_russian.esp", 34BBD145) && IF VAR(ES) DIRTY: 11 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 smakit_house_markers_polish.esp
-  IF FILE("smakit_house_markers_plus_russian.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp
-    IF FILE("smakit_house_markers_plus_russian.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp
-      IF FILE("smakit_house_markers_plus_russian.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp
+  IF FILE("smakit_house_markers_plus_russian.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp.
+    IF FILE("smakit_house_markers_plus_russian.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp.
+      IF FILE("smakit_house_markers_plus_russian.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp.
   IF CHECKSUM("smakit_house_markers_polish.esp", 4BD3A2A0) && IF VAR(EN) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("smakit_house_markers_polish.esp", 4BD3A2A0) && IF VAR(RU) DIRTY: 9 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("smakit_house_markers_polish.esp", 4BD3A2A0) && IF VAR(ES) DIRTY: 9 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 smakit_house_markers_russian.esp
-  IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp
-    IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp
-      IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp
+  IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp.
+    IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp.
+      IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp.
   IF CHECKSUM("smakit_house_markers_russian.esp", 3077B684) && IF VAR(EN) DIRTY: 7 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("smakit_house_markers_russian.esp", 3077B684) && IF VAR(RU) DIRTY: 7 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("smakit_house_markers_russian.esp", 3077B684) && IF VAR(ES) DIRTY: 7 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 smakit_house_markers_spanish.esp
-  IF FILE("smakit_house_markers_russian.esp") || IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp
-    IF FILE("smakit_house_markers_russian.esp") || IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp
-      IF FILE("smakit_house_markers_russian.esp") || IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp
+  IF FILE("smakit_house_markers_russian.esp") || IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(EN) WARN: Use only one smakit_house_markers esp.
+    IF FILE("smakit_house_markers_russian.esp") || IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(RU) WARN: Используйте только один smakit_house_markers esp.
+      IF FILE("smakit_house_markers_russian.esp") || IF FILE("smakit_house_markers_polish.esp") || IF FILE("smakit_house_markers_plus.esp") || IF FILE("smakit_house_markers_italian.esp") || IF FILE("smakit_house_markers_german.esp") || IF FILE("smakit_house_markers.esp") || IF FILE("smakit_house_markers_french.esp") && IF VAR(ES) WARN: Utilizar solo un smakit_house_markers esp.
   IF CHECKSUM("smakit_house_markers_spanish.esp", CD86D7B9) && IF VAR(EN) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("smakit_house_markers_spanish.esp", CD86D7B9) && IF VAR(RU) DIRTY: 9 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("smakit_house_markers_spanish.esp", CD86D7B9) && IF VAR(ES) DIRTY: 9 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -27675,13 +27862,13 @@ SPTConsistentOlderPeopleEEOPatch.esp
       IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(ES) ERROR: SPTConsistentOlderPeople.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SSS Deadly Dragons Patch A.esp
 SSS Deadly Dragons Patch B.esp
-  IF FILE("SSS Deadly Dragons Patch A.esp") && IFNOT FILE("SSS Deadly Dragons Patch C.esp") && IF VAR(EN) WARN: Use only one of the SSS Deadly Dragons Patches.
-    IF FILE("SSS Deadly Dragons Patch A.esp") && IFNOT FILE("SSS Deadly Dragons Patch C.esp") && IF VAR(RU) WARN: Используйте только один патч SSS Deadly Dragons.
-      IF FILE("SSS Deadly Dragons Patch A.esp") && IFNOT FILE("SSS Deadly Dragons Patch C.esp") && IF VAR(ES) WARN: Utilizar solo un SSS Deadly Dragons.
+  IF FILE("SSS Deadly Dragons Patch A.esp") && IFNOT FILE("SSS Deadly Dragons Patch C.esp") && IF VAR(EN) WARN: Use only one SSS Deadly Dragons Patch esp.
+    IF FILE("SSS Deadly Dragons Patch A.esp") && IFNOT FILE("SSS Deadly Dragons Patch C.esp") && IF VAR(RU) WARN: Используйте только один патч SSS Deadly Dragons Patch esp.
+      IF FILE("SSS Deadly Dragons Patch A.esp") && IFNOT FILE("SSS Deadly Dragons Patch C.esp") && IF VAR(ES) WARN: Utilizar solo un SSS Deadly Dragons Patch esp.
 SSS Deadly Dragons Patch C.esp
-  IF FILE("SSS Deadly Dragons Patch A.esp") || IF FILE("SSS Deadly Dragons Patch B.esp") && IF VAR(EN) WARN: Use only one of the SSS Deadly Dragons Patches.
-    IF FILE("SSS Deadly Dragons Patch A.esp") || IF FILE("SSS Deadly Dragons Patch B.esp") && IF VAR(RU) WARN: Используйте только один патч SSS Deadly Dragons.
-      IF FILE("SSS Deadly Dragons Patch A.esp") || IF FILE("SSS Deadly Dragons Patch B.esp") && IF VAR(ES) WARN: Utilizar solo un SSS Deadly Dragons.
+  IF FILE("SSS Deadly Dragons Patch A.esp") || IF FILE("SSS Deadly Dragons Patch B.esp") && IF VAR(EN) WARN: Use only one SSS Deadly Dragons Patch esp.
+    IF FILE("SSS Deadly Dragons Patch A.esp") || IF FILE("SSS Deadly Dragons Patch B.esp") && IF VAR(RU) WARN: Используйте только один патч SSS Deadly Dragons Patch esp.
+      IF FILE("SSS Deadly Dragons Patch A.esp") || IF FILE("SSS Deadly Dragons Patch B.esp") && IF VAR(ES) WARN: Utilizar solo un SSS Deadly Dragons Patch esp.
 SSS Immersive Armors Add-on.esp
 TD&UV Patch .esp
 The Asteria - Dwemer Airship(GS).esp
@@ -27707,27 +27894,27 @@ PC Exclusive Animation Path - Elder Race.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
 BalancedModeCore.esp
 // set to load last as per author's instructions
-  IF VAR(EN) SAY: Use only one BalancedModeCore .esp
-    IF VAR(RU) SAY: Используйте только один BalancedModeCore .esp
-      IF VAR(ES) SAY: Utilizar solo un BalancedModeCore .esp
+  IF VAR(EN) SAY: Use only one BalancedModeCore esp.
+    IF VAR(RU) SAY: Используйте только один BalancedModeCore esp.
+      IF VAR(ES) SAY: Utilizar solo un BalancedModeCore esp.
 BalancedModeCoreDG.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF VAR(EN) SAY: Use only one BalancedModeCore .esp
-    IF VAR(RU) SAY: Используйте только один BalancedModeCore .esp
-      IF VAR(ES) SAY: Utilizar solo un BalancedModeCore .esp
+  IF VAR(EN) SAY: Use only one BalancedModeCore esp.
+    IF VAR(RU) SAY: Используйте только один BalancedModeCore esp.
+      IF VAR(ES) SAY: Utilizar solo un BalancedModeCore esp.
 BalancedModeRaceLimit.esp
 BalancedModeSkillSlow.esp
 BalancedModeDifficulty.esp
 BalancedModeNoResp.esp
-  IF VAR(EN) SAY: Use only one BalancedModeNoResp esp
-    IF VAR(RU) SAY: Используйте только один BalancedModeNoResp esp
-      IF VAR(ES) SAY: Utilizar solo un BalancedModeNoResp esp
+  IF VAR(EN) SAY: Use only one BalancedModeNoResp esp.
+    IF VAR(RU) SAY: Используйте только один BalancedModeNoResp esp.
+      IF VAR(ES) SAY: Utilizar solo un BalancedModeNoResp esp.
 BalancedModeNoRespClear.esp
-  IF VAR(EN) SAY: Use only one BalancedModeNoResp esp
-    IF VAR(RU) SAY: Используйте только один BalancedModeNoResp esp
-      IF VAR(ES) SAY: Utilizar solo un BalancedModeNoResp esp
+  IF VAR(EN) SAY: Use only one BalancedModeNoResp esp.
+    IF VAR(RU) SAY: Используйте только один BalancedModeNoResp esp.
+      IF VAR(ES) SAY: Utilizar solo un BalancedModeNoResp esp.
   IF CHECKSUM("BalancedModeNoRespClear.esp", 1A4D3A64) && IF VAR(EN) DIRTY: 2 ITM, 45 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BalancedModeNoRespClear.esp", 1A4D3A64) && IF VAR(RU) DIRTY: 2 ITM, 45 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("BalancedModeNoRespClear.esp", 1A4D3A64) && IF VAR(ES) DIRTY: 2 ITM, 45 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -27758,18 +27945,18 @@ MoT_Last_LoadOrder_File.esp
       IF VAR(ES) WARN: Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
 REGEX: PTAlchemyOverhaul_SkillRate_(0|1)_\d{1, 2}\.esp
 // PTAlchemyOverhaul_SkillRate_x_xx must load after anything that changes leveling rate of skill
-  IF VAR(EN) SAY: Use only one PTAlchemyOverhaul_SkillRate esp
-    IF VAR(RU) SAY: Используйте только один PTAlchemyOverhaul_SkillRate esp
-      IF VAR(ES) SAY: Utilizar solo un PTAlchemyOverhaul_SkillRate esp
+  IF VAR(EN) SAY: Use only one PTAlchemyOverhaul_SkillRate esp.
+    IF VAR(RU) SAY: Используйте только один PTAlchemyOverhaul_SkillRate esp.
+      IF VAR(ES) SAY: Utilizar solo un PTAlchemyOverhaul_SkillRate esp.
 SKSE Hotkeys.esp
   IF VERSION("SKSE", "0.1.5.11", <) REQ: "http://skse.silverlock.org SKSE" 1.5.11+
 IF FILE("SKSE Hotkeys.esp") MOD: WetandCold.esp
 IF FILE("SKSE Hotkeys.esp") MOD: WetandCold - Ashes.esp
 Skyrim Performance MOD.esp
 Skyrim Performance MOD 5min.esp
-  IF VAR(EN) && IF FILE("Skyrim Performance MOD.esp") WARN: Use only one Skyrim performance Mod.esp
-    IF VAR(RU) && IF FILE("Skyrim Performance MOD.esp") WARN: Используйте только один Skyrim performance Mod.esp
-      IF VAR(ES) && IF FILE("Skyrim Performance MOD.esp") WARN: Utilizar solo un Skyrim performance Mod.esp
+  IF VAR(EN) && IF FILE("Skyrim Performance MOD.esp") WARN: Use only one Skyrim performance Mod esp.
+    IF VAR(RU) && IF FILE("Skyrim Performance MOD.esp") WARN: Используйте только один Skyrim performance Mod esp.
+      IF VAR(ES) && IF FILE("Skyrim Performance MOD.esp") WARN: Utilizar solo un Skyrim performance Mod esp.
 
 // Due to the way v5 works, Unique Region Names needs to load after just about any other worldspace-altering mod.
 // Do not move URN Dragonborn (or other modules) here unless there is a reason for them to be moved here. And that reason isn't "move them along with the other URN ESP because they have to" - William
@@ -27784,17 +27971,17 @@ REGEX: World_Map_Height_Pitch_Tweak.+\.esp
 Warburg's 3D Paper World Map - Texture 1.esp
   IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
 Warburg's 3D Paper World Map - Texture 2.esp
-  IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") && IF VAR(EN) WARN: Use only one Warburg 's 3D Paper World Map - Texture *.esp
-    IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") && IF VAR(RU) WARN: Используйте только один Warburg's 3D Paper World Map - Texture *.esp
-      IF VAR(ES) && IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") WARN: Utilizar solo un Warburg's 3D Paper World Map - Texture *.esp
+  IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") && IF VAR(EN) WARN: Use only one Warburg 's 3D Paper World Map - Texture *.esp.
+    IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") && IF VAR(RU) WARN: Используйте только один Warburg's 3D Paper World Map - Texture *.esp.
+      IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") && IF VAR(ES) WARN: Utilizar solo un Warburg's 3D Paper World Map - Texture *.esp.
   IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
   IF CHECKSUM("Warburg's 3D Paper World Map - Texture 2.esp", AAFE91D6) && IF VAR(EN) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Warburg's 3D Paper World Map - Texture 2.esp", AAFE91D6) && IF VAR(RU) DIRTY: 9 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Warburg's 3D Paper World Map - Texture 2.esp", AAFE91D6) && IF VAR(ES) DIRTY: 9 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Warburg's 3D Paper World Map - Texture 3.esp
-  IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(EN) WARN: Use only one Warburg's 3D Paper World Map - Texture *.esp
-    IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(RU) WARN: Используйте только один Warburg's 3D Paper World Map - Texture *.esp
-      IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(ES) WARN: Utilizar solo un Warburg's 3D Paper World Map - Texture *.esp
+  IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(EN) WARN: Use only one Warburg's 3D Paper World Map - Texture *.esp.
+    IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(RU) WARN: Используйте только один Warburg's 3D Paper World Map - Texture *.esp.
+      IF FILE("Warburg's 3D Paper World Map - Texture 1.esp") || IF FILE("Warburg's 3D Paper World Map - Texture 2.esp") && IF VAR(ES) WARN: Utilizar solo un Warburg's 3D Paper World Map - Texture *.esp.
   IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
   IF CHECKSUM("Warburg's 3D Paper World Map - Texture 3.esp", AAFE91D6) && IF VAR(EN) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Warburg's 3D Paper World Map - Texture 3.esp", AAFE91D6) && IF VAR(RU) DIRTY: 9 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
