@@ -86,9 +86,9 @@ Note: Standardized messages allow users to receive a consistent message for each
 //
 // -Delete. Already included-
 //
-  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("file that includes it") && IF VAR(EN) WARN: Delete. Already included in 'file that includes it'.
-    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("file that includes it") && IF VAR(RU) WARN: Удалите. Уже включено в 'file that includes it'.
-	  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("file that includes it") && IF VAR(ES) WARN: Borrar. Ya esta incluido en 'file that includes it'.
+  IF ACTIVE("plugin") && IF VAR(EN) WARN: Delete. Already included in <plugin>.
+    IF ACTIVE("plugin") && IF VAR(RU) WARN: Удалите. Уже включено в <plugin>.
+	  IF ACTIVE("plugin") && IF VAR(ES) WARN: Borrar. Ya esta incluido en <plugin>.
 // Remember to fill in the appropriate details.
 //
 // ================================================================
@@ -103,9 +103,9 @@ Note: Standardized messages allow users to receive a consistent message for each
 // ================================================================
 // --Included in other mod--
 //
-  IF VAR(EN) && IF FILE("<Plugin name>") ERROR: Delete. Already included in <Plugin name>.
-    IF VAR(RU) && IF FILE("<Plugin name>") ERROR: Удалите. Уже включено в <Plugin name>.
-      IF VAR(ES) && IF FILE("<Plugin name>") ERROR: Borrar. Esta incluido en <Plugin name>.
+  IF VAR(EN) && IF FILE("plugin") ERROR: Delete. Already included in <Plugin name>.
+    IF VAR(RU) && IF FILE("plugin") ERROR: Удалите. Уже включено в <Plugin name>.
+      IF VAR(ES) && IF FILE("plugin") ERROR: Borrar. Esta incluido en <Plugin name>.
 // Append this message for mods that already included in other mod.
 // You can use VAR(<VARIABLE>) for mods that name already exist in variable setup section of masterlist(Dawnguard, Dragondorn, Hearthfire DLCs etc).
 // Remember to fill in the appropriate details.
