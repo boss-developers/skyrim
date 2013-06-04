@@ -18214,11 +18214,9 @@ No Annoying Skeleton Sound.esp
 No Axe or Pickaxe required.esp
 No Crime gold.esp
 No Falling Damage.esp
-  IF VAR(EN) && IF FILE("Less Falling Damage.esp") ERROR: Use 'Less Falling Damage.esp' or 'No Falling Damage.esp', not both.
-    IF VAR(RU) && IF FILE("Less Falling Damage.esp") ERROR: Используйте 'Less Falling Damage.esp' или 'No Falling Damage.esp', не оба.
-  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
-    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+  IF FILE("Less Falling Damage.esp") && IF VAR(EN) WARN: Use either Less Falling Damage.esp or No Falling Damage.esp, not both.
+    IF FILE("Less Falling Damage.esp") && IF VAR(RU) WARN: Используйте любой, или Less Falling Damage.esp или No Falling Damage.esp, не оба.
+      IF FILE("Less Falling Damage.esp") && IF VAR(ES) WARN: Usar Less Falling Damage.esp o No Falling Damage.esp, no ambos.
 No Fast Traveling.esp
 No Fast Travel.esp
 No Helmets Required.esp
@@ -18475,10 +18473,9 @@ BEGINGROUP: Overrides R
 radialblur.esp
 Ralof & Hadvar Imp Mod.esp
 RangerNightingale.esp
-  IF FILE("BowAssassin.esp") ERROR: Use BowAssassin.esp or RangerNightingale.esp, not both.
-  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
-    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+  IF FILE("BowAssassin.esp") && IF VAR(EN) WARN: Use either BowAssassin.esp or RangerNightingale.esp, not both.
+    IF FILE("BowAssassin.esp") IF VAR(RU) WARN: Используйте любой, или BowAssassin.esp или RangerNightingale.esp, не оба.
+      IF FILE("BowAssassin.esp") IF VAR(ES) WARN: Usar BowAssassin.esp o RangerNightingale.esp, no ambos.
 Raptor Talon Argonians.esp
 ReadIt.esp
 Real 1st Person View alpha 03c.esp
@@ -18605,7 +18602,7 @@ Serana Vampire Lord Bloodcursed After Cure Early.esp
 Serana Vampire Lord Bloodcursed After Cure.esp
   IF FILE("Serana Vampire Lord Bloodcursed After Cure Early.esp") && IF VAR(EN) WARN: Use either Serana Vampire Lord Bloodcursed After Cure Early.esp or Serana Vampire Lord Bloodcursed After Cure.esp, not both.
     IF FILE("Serana Vampire Lord Bloodcursed After Cure Early.esp") && IF VAR(RU) WARN: Используйте любой, или Serana Vampire Lord Bloodcursed After Cure Early.esp или Serana Vampire Lord Bloodcursed After Cure.esp, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("Serana Vampire Lord Bloodcursed After Cure Early.esp") && IF VAR(ES) WARN: Usar Serana Vampire Lord Bloodcursed After Cure Early.esp o Serana Vampire Lord Bloodcursed After Cure.esp, no ambos.
 serananozombie.esp
 SETT.esp
 SFBMasterPlus.esp
@@ -19083,7 +19080,7 @@ valkiirs_tastier_food.esp
 valkiirs_tastier_food_hearthfire.esp
   IF FILE("valkiirs_tastier_food.esp") && IF VAR(EN) WARN: Use either valkiirs_tastier_food.esp or valkiirs_tastier_food_hearthfire.esp, not both.
     IF FILE("valkiirs_tastier_food.esp") && IF VAR(RU) WARN: Используйте любой, или valkiirs_tastier_food.esp или valkiirs_tastier_food_hearthfire.esp, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("valkiirs_tastier_food.esp") && IF VAR(ES) WARN: Usar valkiirs_tastier_food.esp o valkiirs_tastier_food_hearthfire.esp, no ambos.
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
@@ -19718,7 +19715,7 @@ MoreForestsLODckm - Copy.esp
     IF VAR(RU) WARN: Этот файл содержит x удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
   IF FILE("MoreForests.esp") && IF VAR(EN) WARN: Use either MoreForests.esp or MoreForestsLODckm - Copy.esp, not both.
     IF FILE("MoreForests.esp") && IF VAR(RU) WARN: Используйте любой или MoreForests.esp или MoreForestsLODckm - Copy.esp, не обa.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("MoreForests.esp") && IF VAR(ES) WARN: Usar MoreForests.esp o MoreForestsLODckm - Copy.esp, no ambos.
 MoreForestsNV.esp
   IF CHECKSUM("MoreForestsNV.esp", 564D264F) && IF VAR(EN) DIRTY: 313 ITM, 175 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("MoreForestsNV.esp", 564D264F) && IF VAR(RU) DIRTY: 313 ITM, 175 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -20164,43 +20161,42 @@ Field Alchemy.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 FirstAid.esp
 Imp's More Complex Needs.esp
-imp's more complex needs.esp
   IF CHECKSUM("imp's more complex needs.esp", DAADC533) && IF VAR(EN) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("imp's more complex needs.esp", DAADC533) && IF VAR(RU) DIRTY: 10 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("imp's more complex needs.esp", DAADC533) && IF VAR(ES) DIRTY: 10 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF CHECKSUM("imp's more complex needs.esp", DAADC533) || IF CHECKSUM("imp's more complex needs.esp", 59466F1E) SAY: It is recommended that you unsubscribe from and delete this mod, then install the "http://skyrim.nexusmods.com/mods/10639 SkyrimNexus version" for more compatibility with other mods.
-  IF VAR(EN) && IF FILE("Imp's More Complex Needs.esm") WARN: Use either Nexus (imp's more complex needs.esm) or Steam Workshop (imp's more complex needs.esp) version, not both.
-    IF VAR(RU) && IF FILE("Imp's More Complex Needs.esm") WARN: Используйте любую Nexus (imp's more complex needs.esm) или Steam Workshop (imp's more complex needs.esp) версию, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+  IF FILE("Imp's More Complex Needs.esm") && IF VAR(EN) WARN: Use either imp's more complex needs.esm or imp's more complex needs.esp, not both.
+    IF FILE("Imp's More Complex Needs.esm") && IF VAR(RU) WARN: Используйте любую imp's more complex needs.esm или imp's more complex needs.esp версию, не оба.
+      IF FILE("Imp's More Complex Needs.esm") && IF VAR(ES) WARN: Usar imp's more complex needs.esm o imp's more complex needs.esp, no ambos.
 IMCN - Dawnguard.esp
-  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(EN) ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
     IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 IMCN - Hearthfire.esp
-  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(EN) ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
     IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
 IMCN - Dragonborn.esp
-  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(EN) ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
     IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
 BabettesFeast - IMCN.esp
-  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(EN) ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
     IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
 CookingExpanded - IMCN.esp
-  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(EN) ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
     IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
 IMCN - Drinking Fountains of Skyrim.esp
-  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(EN) ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
     IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
 IMCN - Requiem Patch.esp
-  IFNOT ACTIVE("Imp's More Complex Needs.esp") ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
+  IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(EN) ERROR: Imp's More Complex Needs.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
     IFNOT ACTIVE("Imp's More Complex Needs.esp") && IF VAR(RU) ERROR: Imp's More Complex Needs.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/10639 Imp's More Complex Needs"
   IFNOT ACTIVE("Requiem.esp") && IF VAR(EN) ERROR: Requiem.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/19281 Requiem"
     IFNOT ACTIVE("Requiem.esp") && IF VAR(RU) ERROR: Requiem.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/19281 Requiem"
@@ -20816,7 +20812,7 @@ ArcaneFist - Expert to Master NS.esp
 ArcaneFist - Expert to Master.esp
   IF FILE("ArcaneFist - Expert to Master NS.esp") && IF VAR(EN) WARN: Use either ArcaneFist - Expert to Master NS.esp or ArcaneFist - Expert to Master.esp, not both.
     IF FILE("ArcaneFist - Expert to Master NS.esp") && IF VAR(RU) WARN: Используйте любой или ArcaneFist - Expert to Master NS.esp или ArcaneFist - Expert to Master.esp, не обa.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("ArcaneFist - Expert to Master NS.esp") && IF VAR(ES) WARN: Usar ArcaneFist - Expert to Master NS.esp o ArcaneFist - Expert to Master.esp, no ambos.
   IF CHECKSUM("ArcaneFist - Expert to Master.esp", 0E4723F8) && IF VAR(EN) DIRTY: 17 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ArcaneFist - Expert to Master.esp", 0E4723F8) && IF VAR(RU) DIRTY: 17 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("ArcaneFist - Expert to Master.esp", 0E4723F8) && IF VAR(ES) DIRTY: 17 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -21683,10 +21679,9 @@ Excalibur _firebreath_IMBA ver.esp
   IF CHECKSUM("Excalibur _firebreath_IMBA ver.esp", C513B76D) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Excalibur _firebreath_IMBA ver.esp", C513B76D) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF IF CHECKSUM("Excalibur _firebreath_IMBA ver.esp", C513B76D) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
-  IF FILE("Excalibur _powerfirebreath.esp") WARN: Use Excalibur _powerfirebreath.esp or Excalibur _firebreath_IMBA ver.esp, not both.
-  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
-    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+  IF FILE("Excalibur _powerfirebreath.esp") && IF VAR(EN) WARN: Use either Excalibur _powerfirebreath.esp or Excalibur _firebreath_IMBA ver.esp, not both.
+    IF FILE("Excalibur _powerfirebreath.esp") && IF VAR(RU) WARN: Используйте любой, или Excalibur _powerfirebreath.esp или Excalibur _firebreath_IMBA ver.esp, не оба.
+      IF FILE("Excalibur _powerfirebreath.esp") && IF VAR(ES) WARN: Usar Excalibur _powerfirebreath.esp o Excalibur _firebreath_IMBA ver.esp, no ambos.
 
 // shouts f
 fastershouts.esp
@@ -21773,7 +21768,7 @@ Shout-tastic_no CD.esp
       IF CHECKSUM("Shout-tastic_no CD.esp", 8453F97A) && IF VAR(ES) DIRTY: 11 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF FILE("Shout-tastic.esp") && IF VAR(EN) WARN: Use either Shout-tastic.esp or Shout-tastic_no CD.esp, not both.
     IF FILE("Shout-tastic.esp") && IF VAR(RU) WARN: Используйте любой, или Shout-tastic.esp или Shout-tastic_no CD.esp, не обa.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("Shout-tastic.esp") && IF VAR(ES) WARN: Usar Shout-tastic.esp o Shout-tastic_no CD.esp, no ambos.
 ShoutCD-V103-LessOP.esp
 ShoutCD.esp
   IF VAR(Dawnguard) && IFNOT FILE("ShoutCD.esp") REQ: TrueDragonblood-DawnguardV001.esp
@@ -21841,7 +21836,7 @@ Clear Skies Fix - CoT version.esp
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF FILE("Clear Skies Fix.esp") && IF VAR(EN) WARN: Use either Clear Skies Fix.esp or Clear Skies Fix - CoT version.esp, not both.
     IF FILE("Clear Skies Fix.esp") && IF VAR(RU) WARN: Используйте любой, или Clear Skies Fix.esp или Clear Skies Fix - CoT version.esp, не обa.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("Clear Skies Fix.esp") && IF VAR(ES) WARN: Usar Clear Skies Fix.esp o Clear Skies Fix - CoT version.esp, no ambos.
 Combat Remastered - Magic.esp
 crache - tri night eye.esp
 
@@ -21989,11 +21984,9 @@ More Accessible Magicka.esp
   IF CHECKSUM("More Accessible Magicka.esp", 01230B90) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("More Accessible Magicka.esp", 01230B90) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("More Accessible Magicka.esp", 01230B90) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF VAR(EN) && IF FILE("More Accessible Magicka no buyable masters.esp") ERROR: Use either More Accessible Magicka no buyable masters.esp or More Accessible Magicka.esp, not both.
-    IF VAR(RU) && IF FILE("More Accessible Magicka no buyable masters.esp") ERROR: Используйте любой, или More Accessible Magicka no buyable masters.esp или More Accessible Magicka.esp, не оба.
-  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
-    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+  IF FILE("More Accessible Magicka no buyable masters.esp") && IF VAR(EN) WARN: Use either More Accessible Magicka no buyable masters.esp or More Accessible Magicka.esp, not both.
+    IF FILE("More Accessible Magicka no buyable masters.esp") && IF VAR(RU) WARN: Используйте любой, или More Accessible Magicka no buyable masters.esp или More Accessible Magicka.esp, не оба.
+      IF FILE("More Accessible Magicka no buyable masters.esp") && IF VAR(ES) WARN: Usar More Accessible Magicka no buyable masters.esp o More Accessible Magicka.esp, no ambos.
 MorePowerfulNecromancy.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, mpn.esp.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, mpn.esp.
@@ -22356,11 +22349,9 @@ BalancedCombat2.5.esp
   IF CHECKSUM("BalancedCombat2.5.esp", 523E7956) && IF VAR(EN) DIRTY: 60 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BalancedCombat2.5.esp", 523E7956) && IF VAR(RU) DIRTY: 60 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("BalancedCombat2.5.esp", 523E7956) && IF VAR(ES) DIRTY: 60 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF FILE("BalancedCombat.esp") && IF VAR(EN) ERROR: Use either BalancedCombat.esp or BalancedCombat2.5.esp, not both.
-     IF FILE("BalancedCombat.esp") && IF VAR(RU) ERROR: Используйте любой, или BalancedCombat.esp или BalancedCombat2.5.esp, не оба.
-  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
-    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+  IF FILE("BalancedCombat.esp") && IF VAR(EN) WARN: Use either BalancedCombat.esp or BalancedCombat2.5.esp, not both.
+    IF FILE("BalancedCombat.esp") && IF VAR(RU) WARN: Используйте любой, или BalancedCombat.esp или BalancedCombat2.5.esp, не оба.
+      IF FILE("BalancedCombat.esp") && IF VAR(ES) WARN: Usar BalancedCombat.esp o BalancedCombat2.5.esp, no ambos.
 Chimera.esp
 combat.esp
 combat fists.esp
@@ -22538,7 +22529,7 @@ The Dance of Death - Dawnguard Edition.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF FILE("The Dance of Death.esp") && IF VAR(EN) WARN: Use either The Dance of Death.esp or The Dance of Death - Dawnguard Edition.esp, not both.
     IF FILE("The Dance of Death.esp") && IF VAR(RU) WARN: Используйте любой или The Dance of Death.esp или The Dance of Death - Dawnguard Edition.esp, не обa.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("The Dance of Death.esp") && IF VAR(ES) WARN: Usar The Dance of Death.esp o The Dance of Death - Dawnguard Edition.esp, no ambos.
 The Dance of Death - Ultimate Edition.esp
   IF CHECKSUM("The Dance of Death - Ultimate Edition.esp", 21A635C6) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("The Dance of Death - Ultimate Edition.esp", 21A635C6) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -23577,11 +23568,11 @@ Stealth Skills Rebalanced_PICKPOCKET.esp
   TAG: {{BASH: Delev}}
   IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(EN) WARN: Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_PICKPOCKET.esp, not both.
     IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(RU) WARN: Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_PICKPOCKET.esp, не обa.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(ES) WARN: Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_PICKPOCKET.esp, no ambos.
 Stealth Skills Rebalanced_SNEAK.esp
   IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(EN) WARN: Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_SNEAK.esp, not both.
     IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(RU) WARN: Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_SNEAK.esp, не обa.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(ES) WARN: Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_SNEAK.esp, no ambos.
 Summoning.esp
   IF VAR(EN) WARN: This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.
     IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
@@ -23789,12 +23780,12 @@ KidsColouredEyesV2.esp
 KidsColouredEyesNoHF.esp
   IF FILE("KidsColouredEyesV2.esp") && IF VAR(EN) WARN: Use either KidsColouredEyesV2.esp or KidsColouredEyesNoHF.esp, not both.
     IF FILE("KidsColouredEyesV2.esp") && IF VAR(RU) WARN: Используйте любой или KidsColouredEyesV2.esp или KidsColouredEyesNoHF.esp, не обa.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("KidsColouredEyesV2.esp") && IF VAR(ES) WARN: Usar KidsColouredEyesV2.esp o KidsColouredEyesNoHF.esp, no ambos.
 LovelyHairstyles.esp
 LovelyHairstylesLITE.esp
   IF FILE("LovelyHairstyles.esp") && IF VAR(EN) WARN: Use either LovelyHairstyles.esp or LovelyHairstylesLITE.esp, not both.
-     IF FILE("LovelyHairstyles.esp") && IF VAR(RU) WARN: Используйте любой, или LovelyHairstyles.esp или LovelyHairstylesLITE.esp, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+    IF FILE("LovelyHairstyles.esp") && IF VAR(RU) WARN: Используйте любой, или LovelyHairstyles.esp или LovelyHairstylesLITE.esp, не оба.
+      IF FILE("LovelyHairstyles.esp") && IF VAR(ES) WARN: Usar LovelyHairstyles.esp o LovelyHairstylesLITE.esp, no ambos.
 MacKom_LoreStylesHairSet.esp
 mmkhajiithair11.esp
 MMhair.esp
@@ -24142,9 +24133,9 @@ NPR 4.0 w Unarmed Compatibility by Budcat.esp
       IF CHECKSUM("NPR 4.0 w Unarmed Compatibility by Budcat.esp", F1CAA272) && IF VAR(ES) DIRTY: 51 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF VAR(EN) && IF FILE("New Playable Races by Budcat v4.0.esp") ERROR: Use either New Playable Races by Budcat v4.0.esp or NPR 4.0 w Unarmed Compatibility by Budcat.esp, not both.
     IF VAR(RU) && IF FILE("New Playable Races by Budcat v4.0.esp") ERROR: Используйте любой, или New Playable Races by Budcat v4.0.esp или NPR 4.0 w Unarmed Compatibility by Budcat.esp, не оба.
-  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
-    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+  IF FILE("New Playable Races by Budcat v4.0.esp") && IF VAR(EN) WARN: Use either New Playable Races by Budcat v4.0.esp or NPR 4.0 w Unarmed Compatibility by Budcat.esp, not both.
+    IF FILE("New Playable Races by Budcat v4.0.esp") && IF VAR(RU) WARN: Используйте любой, или New Playable Races by Budcat v4.0.esp или NPR 4.0 w Unarmed Compatibility by Budcat.esp, не оба.
+      IF FILE("New Playable Races by Budcat v4.0.esp") && IF VAR(ES) WARN: Usar New Playable Races by Budcat v4.0.esp o NPR 4.0 w Unarmed Compatibility by Budcat.esp, no ambos.
 NewRaces.esp
 Nidia Race LB.esp
 OculosInferniRace.esp
@@ -24493,10 +24484,9 @@ EASamhairNE_1_1.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IF FILE("EASamhairE_1_1.esp") WARN: Use EASamhairE_1_1.esp or EASamhairNE_1_1.esp, not both.
-  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
-    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+  IF FILE("EASamhairE_1_1.esp") && IF VAR(EN) WARN: Use either EASamhairE_1_1.esp or EASamhairNE_1_1.esp, not both.
+    IF FILE("EASamhairE_1_1.esp") && IF VAR(RU) WARN: Используйте любой, или EASamhairE_1_1.esp или EASamhairNE_1_1.esp, не оба.
+      IF FILE("EASamhairE_1_1.esp") && IF VAR(ES) WARN: Usar EASamhairE_1_1.esp o EASamhairNE_1_1.esp, no ambos.
 EnhancedCompanionGuildNoCosmetic.esp
 Eileen.esp
 IF FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMCompViljaSkyrim.esp
@@ -25149,7 +25139,7 @@ Draquel_nonessential.esp
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF FILE("Draquel.esp") && IF VAR(EN) WARN: Use either Draquel.esp or Draquel_nonessential.esp, not both.
     IF FILE("Draquel.esp") && IF VAR(RU) WARN: Используйте любой или Draquel.esp или Draquel_nonessential.esp, не обa.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("Draquel.esp") && IF VAR(ES) WARN: Usar Draquel.esp o Draquel_nonessential.esp, no ambos.
 Dryad Saria.esp
   IF CHECKSUM("Dryad Saria.esp", 3141F2BA) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Dryad Saria.esp", 3141F2BA) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -25436,7 +25426,7 @@ Jezebel Simon.esp
       IF CHECKSUM("Jezebel Simon.esp", C75CAB33) || IF CHECKSUM("Jezebel Simon.esp", E8D86949) || IF CHECKSUM("Jezebel Simon.esp", 35728E70) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
   IF FILE("Jezebel.esp") && IF VAR(EN) WARN: Use either Jezebel.esp or Jezebel Simon.esp, not both.
     IF FILE("Jezebel.esp") && IF VAR(RU) WARN: Используйте любой, или Jezebel.esp или Jezebel Simon.esp, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("Jezebel.esp") && IF VAR(ES) WARN: Usar Jezebel.esp o Jezebel Simon.esp, no ambos.
 jordis1.1a.esp
 jordis1d.esp
 Jordis-Dovas_Angels-TCG.esp
@@ -25828,7 +25818,7 @@ JNPC_Serana.esp
 JNPC_SeranaB.esp
   IF FILE("JNPC_Serana.esp") && IF VAR(EN) WARN: Use either JNPC_Serana.esp or JNPC_SeranaB.esp, not both.
     IF FILE("JNPC_Serana.esp") && IF VAR(RU) WARN: Используйте любой, или JNPC_Serana.esp или JNPC_SeranaB.esp, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+      IF FILE("JNPC_Serana.esp") && IF VAR(ES) WARN: Usar JNPC_Serana.esp o JNPC_SeranaB.esp, no ambos.
 JNPC_Serana_alt.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -26167,26 +26157,23 @@ Better NPC - Marriage Pack.esp
   IF VAR(EN) && IFNOT REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty version of Better Followers, named BP or BNP or SBP or SBNP
     IF VAR(RU) && IFNOT REGEX("Better Followers - (BP|BNP|SBP|SBNP)\.esp") REQ: Beauty-версия Better Followers, имеющая окончание BP или BNP или SBP или SBNP
 AskFollowerSkills.esp
-  IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Already included in BDO.esp
+  IF VAR(EN) && IF FILE("BDO.esp") WARN: Delete. Already included in BDO.esp.
     IF VAR(RU) && IF FILE("BDO.esp") WARN: Удалите. Уже входит в BDO.esp.
 BDO.esp
 // Big Dialog Overhaul
 REGEX: Compilation.*\.esp
   // Beans Badass Women Compilation
-  IF FILE("CompilationV1.esp") && IF FILE("Compilationv1-clean.esp") && IF VAR(EN) SAY: Use only CompilationV1.esp or Compilationv1-clean.esp, not both.
-    IF FILE("CompilationV1.esp") && IF FILE("Compilationv1-clean.esp") && IF VAR(RU) && SAY: Используйте или только  CompilationV1.esp или Compilationv1-clean.esp, не оба.
-      IF FILE("CompilationV1.esp") && IF VAR(ES) SAY: Utilizar solo un CompilationV1.esp o Compilationv1-clean.esp.
-  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
-    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
-      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+  IF FILE("CompilationV1.esp") && IF VAR(EN) WARN: Use either CompilationV1.esp or Compilationv1-clean.esp, not both.
+    IF FILE("CompilationV1.esp") && IF VAR(RU) WARN: Используйте любой, или CompilationV1.esp или Compilationv1-clean.esp, не оба.
+      IF FILE("CompilationV1.esp") && IF VAR(ES) WARN: Usar CompilationV1.esp o Compilationv1-clean.esp, no ambos.
 REGEX: pack\d\.esp
   // Beans Badass Women Compilation
-  IF VAR(EN) && IF FILE("CompilationV1.esp") ERROR: Remove this file.  CompilationV1.esp already contains these changes.
-    IF VAR(RU) && IF FILE("CompilationV1.esp") ERROR: Удалите.  CompilationV1.esp уже включает эти изменения.
+  IF VAR(EN) && IF FILE("CompilationV1.esp") WARN: Delete. Already included in CompilationV1.esp.
+    IF VAR(RU) && IF FILE("CompilationV1.esp") WARN: Удалите. Уже входит в CompilationV1.esp.
 REGEX: pack\d-clean\.esp
   // Beans Badass Women Compilation
-  IF VAR(EN) && IF FILE("Compilationv1-clean.esp") ERROR: Remove this file. Compilationv1-clean.esp already contains these changes.
-    IF VAR(RU) && IF FILE("Compilationv1-clean.esp") ERROR: Удалите. Compilationv1-clean.esp уже включает эти изменения.
+  IF VAR(EN) && IF FILE("Compilationv1-clean.esp") WARN: Delete. Already included in Compilationv1-clean.esp.
+    IF VAR(RU) && IF FILE("Compilationv1-clean.esp") WARN: Удалите. Уже входит в Compilationv1-clean.esp.
   IF VAR(EN) && IF FILE("pack1-clean.esp") && IF FILE("pack1.esp") SAY: Use only pack1.esp or Pack1-clean.esp, not both.
     IF VAR(RU) && IF FILE("pack1-clean.esp") && IF FILE("pack1.esp") SAY: Используйте или pack1.esp или Pack1-clean.esp, не оба.
   IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
