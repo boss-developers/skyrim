@@ -3654,12 +3654,16 @@ REGEX: BellyachesNewDragonSpecies_?(Tougher)?(Factionless)?(Dragons)?\.esp
 Bible.esp
 biggermammoths.esp
 Birds.esp
-  IF VAR(Hearthfire) INC: Heartfires DLC.  Remove this and install BirdsHF.esp
+  IF VAR(Hearthfire) && IF VAR(EN) INC: Hearthfires.esm. Use either BirdsHF.esp or BirdsHFclean.esp.
+    IF VAR(Hearthfire) && IF VAR(RU) INC: Hearthfires.esm. Используйте любой, или BirdsHF.esp или BirdsHFclean.esp.
+      IF VAR(Hearthfire) && IF VAR(ES) INC: Hearthfires.esm. Usar BirdsHF.esp o BirdsHFclean.esp.
   IF CHECKSUM("Birds.esp", 200672C3) && IF VAR(EN) DIRTY: 376 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Birds.esp", 200672C3) && IF VAR(RU) DIRTY: 376 ITM, 2 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Birds.esp", 200672C3) && IF VAR(ES) DIRTY: 376 ITM, 2 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Birdsclean.esp
-  IF VAR(Hearthfire) INC: Heartfires DLC.  Remove this and install BirdsHF.esp or BirdsHFclean.esp
+  IF VAR(Hearthfire) && IF VAR(EN) INC: Hearthfires.esm. Use either BirdsHF.esp or BirdsHFclean.esp.
+    IF VAR(Hearthfire) && IF VAR(RU) INC: Hearthfires.esm. Используйте любой, или BirdsHF.esp или BirdsHFclean.esp.
+      IF VAR(Hearthfire) && IF VAR(ES) INC: Hearthfires.esm. Usar BirdsHF.esp o BirdsHFclean.esp.
   IF FILE("Birds.esp") && IF VAR(EN) WARN: Use either Birds.esp or Birdsclean.esp, not both.
     IF FILE("Birds.esp") && IF VAR(RU) WARN: Используйте любой или Birds.esp или Birdsclean.esp, не обa.
       IF FILE("Birds.esp") && IF VAR(ES) WARN: Usar Birds.esp o Birdsclean.esp, no ambos.
@@ -11286,7 +11290,7 @@ SkyRe_Plugin_Perks_ Broadsword.esp
 SkyRe_StandingStones.esp
   IF VAR(EN) && IF FILE("StaRe.esp") SAY: Remember not to load (or to simply delete) StaRe.esp
     IF VAR(RU) && IF FILE("StaRe.esp") SAY: Не забудьте отключить или удалить StaRe.esp
-  IF FILE("Drakian race.esp") INC: Drakian race
+  IF FILE("Drakian race.esp") INC: Drakian race.esp
   IF FILE("Signs and Guardians.esp") INC: Signs and Guardians.esp
 SkyRe_Survivalism.esp
   IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without SkyRe_Main.esp
@@ -15925,7 +15929,9 @@ underbreeze.esp
 Undercity.esp
 Understone Keep RepairV1_1.esp
 unicorncave.esp
-  IF FILE("UnicornCave.esm") INC: UnicornCave.esm, use one or the other, do not use both.
+  IF FILE("UnicornCave.esm") && IF VAR(EN) WARN: Use either UnicornCave.esm or unicorncave.esp, not both.
+    IF FILE("UnicornCave.esm") && IF VAR(RU) WARN: Используйте любой, или UnicornCave.esm или unicorncave.esp, не оба.
+      IF FILE("UnicornCave.esm") && IF VAR(ES) WARN: Usar UnicornCave.esm o unicorncave.esp, no ambos.
   IF CHECKSUM("unicorncave.esp", 40169648) && IF VAR(EN) DIRTY: 37 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("unicorncave.esp", 40169648) && IF VAR(RU) DIRTY: 37 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("unicorncave.esp", 40169648) && IF VAR(ES) DIRTY: 37 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -16511,8 +16517,7 @@ IFNOT VAR(SkyReM) MOD: Morrowloot.esp
     IF CHECKSUM("Morrowloot.esp", 7C6EA81C) && IF VAR(RU) DIRTY: 7 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Morrowloot.esp", 7C6EA81C) && IF VAR(ES) DIRTY: 7 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Morrowloot_nwah.esp
-  IF VAR(EN) && IF FILE("Morrowloot.esp") ERROR: Do not use with original Morrowloot mod.
-    IF VAR(RU) && IF FILE("Morrowloot.esp") ERROR: Не используйте с оригинальным модом Morrowloot.
+  IF FILE("Morrowloot.esp") INC: Morrowloot.esp
   IF VAR(SkyReM) INC: SkyRe_Main.esp
 xFenWSOWAFW3E.esp
   TAG: {{BASH: Delev, Relev}}
