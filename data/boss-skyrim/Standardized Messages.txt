@@ -4,7 +4,10 @@ You may wish to use masterlist syntax highlighting for Notepadd++ to view this f
 Translations are also provided where possible. Please try to include these whenever you use corresponding messages.
 Remember to include the spacing in front of messages.
 
-Note: Standardized messages allow users to receive a consistent message for each case. Standardization also allows users and committers to identify messages quickly and easily.
+Note: Standardized messages offer the following beenfits: 
+1) Users receive a consistent message for each case. 
+2) Users and committers can identify messages quickly and easily.
+3) Committers can more easily translate existing messages through REGEX-based find/replace operations in Notepad++.
  */
 //
 // ================================================================
@@ -96,9 +99,21 @@ Note: Standardized messages allow users to receive a consistent message for each
   IF VAR(EN) SAY: Use only one <Plugin name>.
     IF VAR(RU) SAY: Используйте только один <Plugin name>.
       IF VAR(ES) SAY: Utilizar solo un <Plugin name>.
-// Append this message for REGEX lines that esxpress different versions of one file.
-// Remember to fill in the appropriate details.
+// Append this message for REGEX lines that express different versions of one file, especially for more than two versions.
+// <Plugin name> is a generalized term for the version set. Remember to fill in the appropriate details.
 //
+  IF FILE("xxx") && IF VAR(EN) WARN: Use either xxx or yyy, not both.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте любой, или xxx или yyy, не оба.
+      IF FILE("xxx") && IF VAR(ES) WARN: Usar xxx o yyy, no ambos.
+//If there are two versions, and the other one is currently also installed. 
+// xxx and yyy are specific names of the two versions. Remember to fill in the appropriate details.
+
+  IF FILE("xxx") && IF VAR(EN) WARN: Use only one nnn esp.
+    IF FILE("xxx") && IF VAR(RU) WARN: Используйте только один nnn esp.
+      IF FILE("xxx") && IF VAR(ES) WARN: Utilizar solo un nnn esp.
+//If there are more than two versions, and one of the others is currently also installed. 
+// nnn is a generalized term for the version set. Remember to fill in the appropriate details.
+
 // ================================================================
 // --Included in other mod--
 //
