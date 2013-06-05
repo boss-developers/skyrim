@@ -6474,7 +6474,7 @@ towPov.esp
 ENDGROUP: MCM Mods
 
 BEGINGROUP: Items
-  // Armor, Weapons, Clothes and recipes for them craft
+  // Armor, Weapons, Clothes and recipes to craft them
   // VITAL for overhaul mod users: Wrye Bash tag all armor replacers {{BASH: Graphics}}(After it will work for Skyrim) to keep their new look.
   // Some items will need to go after overhaul or location altering mods to appear.
 
@@ -6550,8 +6550,9 @@ AetheriumSwords.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Delete. Already included in AetheriumSwordsnArmor.esp
-    IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp
+  IF VAR(EN) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Delete. Already included in AetheriumSwordsnArmor.esp.
+    IF VAR(RU) && IF FILE("AetheriumSwordsnArmor.esp") ERROR: Удалите. Уже включено в AetheriumSwordsnArmor.esp.
+	  IF VAR(ES) && IF FILE("AetheriumSwordsnArmor.esp.") ERROR: Borrar. Esta incluido en AetheriumSwordsnArmor.esp.
 AetheriumSwordsnArmor.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -6724,14 +6725,16 @@ AronsHybrid.esp
   IF CHECKSUM("AronsHybrid.esp", 267783D2) && IF VAR(EN) DIRTY: 14 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("AronsHybrid.esp", 267783D2) && IF VAR(RU) DIRTY: 14 ITM, 1 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("AronsHybrid.esp", 267783D2) && IF VAR(ES) DIRTY: 14 ITM, 1 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'
-    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'
+  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) ERROR: Delete. Already included in 'Skyrim Immersive Creatures.esp'.
+    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) ERROR: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'.
+	  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(ES) ERROR: Borrar. Esta incluido en 'Skyrim Immersive Creatures.esp'.
 AronsMechaDragons.esp
   IF CHECKSUM("AronsMechaDragons.esp", 77A605C4) && IF VAR(EN) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("AronsMechaDragons.esp", 77A605C4) && IF VAR(RU) DIRTY: 10 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("AronsMechaDragons.esp", 77A605C4) && IF VAR(ES) DIRTY: 10 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'
-    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'
+  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) ERROR: Delete. Already included in 'Skyrim Immersive Creatures.esp'.
+    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) ERROR: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'.
+	  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(ES) ERROR: Borrar. Esta incluido en 'Skyrim Immersive Creatures.esp'.
 ArrowsOfLight.esp
 ArrowsOfMight1.1.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, ArrowsOfMight1.2.esp.
