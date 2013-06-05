@@ -4586,6 +4586,7 @@ High Level Enemies - Dawnguard.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF VAR(EN) && IFNOT ACTIVE("High Level Enemies.esp") WARN: High Level Enemies.esp must be active for this file to work properly.
     IF VAR(RU) && IFNOT ACTIVE("High Level Enemies.esp") WARN: High Level Enemies.esp должен быть активирован, для корректной работы.
+	  IF VAR(ES) && IFNOT ACTIVE("High Level Enemies.esp") WARN: High Level Enemies.esp debe estar activado para que este mod funcione correctamente.
 High Level Enemies - Dragonborn.esp
   TAG: {{BASH: Relev}}
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
@@ -4758,8 +4759,9 @@ JBS_gem_cutting.esp
 JBS_hunting.esp
 jbs_item_breakdown_rev.esp
   IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
-  IF VAR(EN) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp use More Realistic Recipes [revised] instead
-    IF VAR(RU) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp используйте вместо этого мод  More Realistic Recipes [revised]
+  IF VAR(EN) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp use More Realistic Recipes [revised] instead.
+    IF VAR(RU) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp используйте вместо этого мод  More Realistic Recipes [revised].
+	  IF VAR(ES) && IF FILE("jbs_smithing_overhaul.esp") INC: jbs_smithing_overhaul.esp utilizar More Realistic Recipes [revised] en vez.
 jbs_item_breakdown.esp
   IF FILE("JBS_overhaul.esp") || IF FILE("JBS_overhaul_thalmor.esp") INC: JBS_overhaul * .esp
   IF FILE("jbs_smithing_real.esp") INC: jbs_smithing_real.esp
@@ -4842,6 +4844,7 @@ REGEX: Lanterns Of Skyrim - All In One - (Vivida ENB)?(The Goddess ENB)?(RLO)?(C
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VAR(EN) SAY: Use only one Lanterns Of Skyrim - All In One esp.
     IF VAR(RU) SAY: Используйте только один Lanterns Of Skyrim - All In One esp.
+	  IF VAR(ES) SAY: Utilizar solo un Lanterns Of Skyrim - All In One esp.
 Lanterns Of Skyrim - All In One.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -4877,12 +4880,15 @@ leazeropenlock.esp
 IF VAR(LB) MOD: RingsOnTheLeftHand.esp
   // load here for correct display of arm when 'Lady body.esp' is installed
 Lady Body.esp
-  IF VAR(EN) && IF VERSION("TES5", "1.7.7", <) && IFNOT VAR(Dawnguard) WARN: For Lady Body 1.5 and highter is requires Skyrim 1.7.7 and DLC Dawnguard.
+  IF VAR(EN) && IF VERSION("TES5", "1.7.7", <) && IFNOT VAR(Dawnguard) WARN: For Lady Body 1.5 and highter Skyrim 1.7.7 and DLC Dawnguard are required.
     IF VAR(RU) && IF VERSION("TES5", "1.7.7", <) && IFNOT VAR(Dawnguard) WARN: Для Lady Body 1.5 и выше требуются Skyrim 1.7.7 и DLC Dawnguard.
-  IF VAR(EN) && IF VERSION("TES5", "1.8.151.0.7", <) && IFNOT VAR(Dawnguard) && IFNOT VAR(Dragonborn) WARN: For version 2.1 and highter is requires Skyrim 1.8.151.0.7 and DLC Dawnguard and DLC Dragonborn
-    IF VAR(RU) && IF VERSION("TES5", "1.8.151.0.7", <) && IFNOT VAR(Dawnguard) && IFNOT VAR(Dragonborn) WARN: Для версии 2.1 и выше требуется Skyrim 1.8.151.0.7 и DLC Dawnguard и DLC Dragonborn
-  IF VAR(EN) SAY: This mod makes unplayable khajiit and argonian races. Don't install this mod if you want to play for argonian or khajiit.
+	  IF VAR(ES) && IF VERSION("TES5", "1.7.7", <) && IFNOT VAR(Dawnguard) WARN: Si utilizas Lady Body 1.7 o posterior Skyrim 1.7.7 y Dawnguard DLC son requeridos.
+  IF VAR(EN) && IF VERSION("TES5", "1.8.151.0.7", <) && IFNOT VAR(Dawnguard) && IFNOT VAR(Dragonborn) WARN: For version Lady Body 2.1 and highter Skyrim 1.8.151.0.7, DLC Dawnguard and DLC Dragonborn are required.
+    IF VAR(RU) && IF VERSION("TES5", "1.8.151.0.7", <) && IFNOT VAR(Dawnguard) && IFNOT VAR(Dragonborn) WARN: Для версии 2.1 и выше требуется Skyrim 1.8.151.0.7, DLC Dawnguard и DLC Dragonborn.
+	  IF VAR(ES) && IF VERSION("TES5", "1.8.151.0.7", <) && IFNOT VAR(Dawnguard) && IFNOT VAR(Dragonborn) WARN: Si utilizas Lady Body 2.1 o posterior Skyrim 1.8.151.0.7, DLC Dawnguard and DLC Dragonborn son requeridos.
+  IF VAR(EN) SAY: This mod makes Khajiit and Argonian races unplayable. Don't install this mod if you want to play for Argonian or Khajiit.
     IF VAR(RU) SAY: С данным модом женский вариант аргониан и хаджитов становятся недоступны игрокам в виде игровых рас! Не ставьте этот мод, если играете/хотите играть зверорасами.
+	  IF VAR(ES) SAY: Este mod hace que las razas Khajiit and Argonian races no sean accesibles al jugador. No lo utilizaes si planeas ser un Argonian o Khajit.
 LegendarySmithingUpgrades.esp
 Legendary Smithing Upgrades.esp
 Legionettes.esp
@@ -4900,12 +4906,14 @@ CraftUniqueArtifactWEAP.esp
 LFHM expert.esp
 LFox Alchemists Have Poisons.esp
   TAG: {{BASH: Delev, Relev}}
-  IF VAR(EN) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Delete. Already included in LFox Alchemists Have Potions and Poisons.esp
-    IF VAR(RU) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Удалите. Уже включено в LFox Alchemists Have Potions and Poisons.esp
+  IF VAR(EN) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Delete. Already included in LFox Alchemists Have Potions and Poisons.esp.
+    IF VAR(RU) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Удалите. Уже включено в LFox Alchemists Have Potions and Poisons.esp.
+	  IF VAR(ES) && IF FILE("LFox Alchemists Have Potions and Poisons") ERROR: Borrar. Esta incluido en LFox Alchemists Have Potions and Poisons.esp.
 LFox Alchemists Have Potions.esp
   TAG: {{BASH: Delev, Relev}}
-  IF VAR(EN) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Delete. Already included in LFox Alchemists Have Potions and Poisons.esp
-    IF VAR(RU) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Удалите. Уже включено в LFox Alchemists Have Potions and Poisons.esp
+  IF VAR(EN) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Delete. Already included in LFox Alchemists Have Potions and Poisons.esp.
+    IF VAR(RU) && IF FILE("LFox Alchemists Have Potions and Poisons.esp") ERROR: Удалите. Уже включено в LFox Alchemists Have Potions and Poisons.esp.
+	  IF VAR(ES) && IF FILE("LFox Alchemists Have Potions and Poisons") ERROR: Borrar. Esta incluido en LFox Alchemists Have Potions and Poisons.esp.
 LFox Alchemists Have Potions and Poisons.esp
   TAG: {{BASH: Delev, Relev}}
 LFox Blacksmiths Have Metals.esp
