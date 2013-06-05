@@ -476,7 +476,9 @@ ElisHotSprings.esm
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 ElinRace.esm
 ElinRaceTaint.esm
-  IFNOT FILE("ElinRace.esm") ERROR: Requires ElinRace.esm
+  IFNOT ACTIVE("ElinRace.esm") && IF VAR(EN) ERROR: ElinRace.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ElinRace.esm") && IF VAR(RU) ERROR: ElinRace.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("ElinRace.esm") && IF VAR(ES) ERROR: ElinRace.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Enchanting Scrolls.esm
   IF CHECKSUM("Enchanting Scrolls.esm", 8C4258BC) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Enchanting Scrolls.esm", 8C4258BC) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -695,8 +697,9 @@ Lycanthropy_Music.esm
 // esms m
 MagicDuel.esm
 MagicDuelReborn.esm
-  IF VAR(EN) ||IF VAR(RU) && IF FILE("MagicDuel.esm") WARN: Incompatible with MagicDuel.esm. Use one or the other.
-    IF VAR(ES) && IF FILE("MagicDuel.esm") WARN: Incompatible con MagicDuel.esm. Utilizar uno o el otro.
+  IF FILE("MagicDuel.esm") && IF VAR(EN) WARN: Use either MagicDuel.esm or MagicDuelReborn.esm, not both.
+    IF FILE("MagicDuel.esm") && IF VAR(RU) WARN: Используйте любой, или MagicDuel.esm или MagicDuelReborn.esm, не оба.
+      IF FILE("MagicDuel.esm") && IF VAR(ES) WARN: Usar MagicDuel.esm o MagicDuelReborn.esm, no ambos.
 Malise - A Companion By Joseph Anthony.esm
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -2537,7 +2540,7 @@ NPC_Overhaul_1_1_.esp
       IFNOT VAR(ApachiiHairF) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT VAR(ApachiiHairM) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHairM) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT VAR(ApachiiHairM) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 NPC_Overhaul_V2_.esp
   IF FILE("NPC_Overhaul_1_1_.esp") INC: NPC_Overhaul_1_1_.esp
 REGEX: (N|ThievesguildN)PCOverha.+byHaroda.+\.esp
@@ -3631,7 +3634,7 @@ bbLagerDGPatch.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IFNOT ACTIVE("bbLager.esp") && IF VAR(EN) ERROR: bbLager.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("bbLager.esp") && IF VAR(RU) ERROR: bbLager.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("bbLager.esp") && IF VAR(ES) ERROR: bbLager.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 bbLagerLight.esp
   IF CHECKSUM("bbLagerLight.esp", 7AEA5A0A) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("bbLagerLight.esp", 7AEA5A0A) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -3639,10 +3642,10 @@ bbLagerLight.esp
 bbLagerLightExtPatch.esp
   IFNOT ACTIVE("bbLager.esp") && IF VAR(EN) ERROR: bbLager.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("bbLager.esp") && IF VAR(RU) ERROR: bbLager.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("bbLager.esp") && IF VAR(ES) ERROR: bbLager.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("bbLagerLight.esp") && IF VAR(EN) ERROR: bbLagerLight.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("bbLagerLight.esp") && IF VAR(RU) ERROR: bbLagerLight.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("bbLagerLight.esp") && IF VAR(ES) ERROR: bbLagerLight.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 REGEX: BellyachesNewDragonSpecies_?(Tougher)?(Factionless)?(Dragons)?\.esp
   IF CHECKSUM("BellyachesNewDragonSpecies_FactionlessDragons.esp", AA96F38F) && IF VAR(EN) DIRTY: 118 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BellyachesNewDragonSpecies_FactionlessDragons.esp", AA96F38F) && IF VAR(RU) DIRTY: 118 ITM, 3 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -3817,21 +3820,21 @@ Change Follower Outfits Redux.esp
 Change Follower Outfits Redux -- Dawnguard.esp
   IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(EN) ERROR: Change Follower Outfits Redux.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(RU) ERROR: Change Follower Outfits Redux.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(ES) ERROR: Change Follower Outfits Redux.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 Change Follower Outfits Redux -- Hearthfire.esp
   IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(EN) ERROR: Change Follower Outfits Redux.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(RU) ERROR: Change Follower Outfits Redux.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(ES) ERROR: Change Follower Outfits Redux.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
 Change Follower Outfits Redux -- Dragonborn.esp
   IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(EN) ERROR: Change Follower Outfits Redux.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(RU) ERROR: Change Follower Outfits Redux.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(ES) ERROR: Change Follower Outfits Redux.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
@@ -3840,7 +3843,7 @@ Change Follower Outfits Redux -- USKP 1.2 Farkas Compatability.esp
     IFNOT VAR(USKP) && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
   IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(EN) ERROR: Change Follower Outfits Redux.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(RU) ERROR: Change Follower Outfits Redux.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Change Follower Outfits Redux.esp") && IF VAR(ES) ERROR: Change Follower Outfits Redux.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Change Spouse Outfits.esp
 Chau.esp
 cheatguide.esp
@@ -4919,7 +4922,7 @@ LoversComfort.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
   IFNOT ACTIVE("SexiS.esm") && IF VAR(EN) ERROR: SexiS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SexiS.esm") && IF VAR(RU) ERROR: SexiS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("SexiS.esm") && IF VAR(ES) ERROR: SexiS.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 lt_better_horses.esp
   If VAR(EN) ERROR: Do not use. Mod is abandoned and known to cause permanent save corruption.
   //Added warning as per G.C. Issue 304
@@ -4962,7 +4965,7 @@ Mannequins.esp
 manny Lantern Caretakers.esp
   IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(EN) ERROR: Lanterns Of Skyrim - All In One - Main.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(RU) ERROR: Lanterns Of Skyrim - All In One - Main.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(ES) ERROR: Lanterns Of Skyrim - All In One - Main.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 REGEX: MicroBikin.+\.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
@@ -5489,7 +5492,7 @@ SexiSWorkingGirl.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
   IFNOT ACTIVE("SexiS.esm") && IF VAR(EN) ERROR: SexiS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SexiS.esm") && IF VAR(RU) ERROR: SexiS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("SexiS.esm") && IF VAR(ES) ERROR: SexiS.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 sextoys-calyps-2.esp
 Sexy Crafting Merchants.esp
 shadow_slayer_3x.esp
@@ -5878,7 +5881,7 @@ TravellersOfSkyrim - Dragonborn Addon.esp
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IFNOT ACTIVE("TravellersOfSkyrim.esm") && IF VAR(EN) ERROR: TravellersOfSkyrim.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("TravellersOfSkyrim.esm") && IF VAR(RU) ERROR: TravellersOfSkyrim.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("TravellersOfSkyrim.esm") && IF VAR(ES) ERROR: TravellersOfSkyrim.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 TravellersOfSkyrim - Alchemists Vanilla.esp
   IF FILE("TravellersOfSkyrim - Light.esp") || IF FILE("TravellersOfSkyrim - Vanilla.esp") INC: TravellersOfSkyrim - Vanilla.esp and / or TravellersOfSkyrim - Light.esp
 TravellersOfSkyrim - Apothecaries Vanilla.esp
@@ -6183,9 +6186,11 @@ ORM Convenient Alsvid.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IFNOT ACTIVE("Convenient Horses.esp") && IF VAR(EN) ERROR: Convenient Horses.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/14950 Convenient Horses"
-    IFNOT ACTIVE("Convenient Horses.esp") && IF VAR(RU) ERROR:Convenient Horses.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/14950 Convenient Horses"
+    IFNOT ACTIVE("Convenient Horses.esp") && IF VAR(RU) ERROR: Convenient Horses.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/14950 Convenient Horses"
+      IFNOT ACTIVE("Convenient Horses.esp") && IF VAR(ES) ERROR: Convenient Horses.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/14950 Convenient Horses"
   IFNOT ACTIVE("ORM-Arvak.esp") && IF VAR(EN) ERROR: ORM-Arvak.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24019 Dawnguard Rewritten - Arvak"
     IFNOT ACTIVE("ORM-Arvak.esp") && IF VAR(RU) ERROR: ORM-Arvak.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24019 Dawnguard Rewritten - Arvak"
+      IFNOT ACTIVE("ORM-Arvak.esp") && IF VAR(ES) ERROR: ORM-Arvak.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/24019 Dawnguard Rewritten - Arvak"
 repopulatedskyrim.esp
 REGEX: SIM.?- NPC.?Additions(HOSTILE|WEREWOLVES)?\.esp
 SIM - NPCSUBMITTED.esp
@@ -6258,7 +6263,7 @@ IMAGINATOR - Visual Control for Skyrim.esp
 JSwords_Load_Screens.esp
   IFNOT ACTIVE("JSwords.esm") && IF VAR(EN) ERROR: JSwords.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("JSwords.esm") && IF VAR(RU) ERROR: JSwords.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("JSwords.esm") && IF VAR(ES) ERROR: JSwords.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 JaySUS Improved Loadscreens.esp
 Ket_3DLoadscreens.esp
 Ket_PictureLoadscreens.esp
@@ -6316,11 +6321,11 @@ Uncle Sheo does Climates of Tamriel.esp
 Uncle Sheo does JaySus.esp
   IFNOT ACTIVE("JSwords.esm") && IF VAR(EN) ERROR: JSwords.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("JSwords.esm") && IF VAR(RU) ERROR: JSwords.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("JSwords.esm") && IF VAR(ES) ERROR: JSwords.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Uncle Sheo does JaySuS NO TITLE.esp
   IFNOT ACTIVE("JSwords.esm") && IF VAR(EN) ERROR: JSwords.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("JSwords.esm") && IF VAR(RU) ERROR: JSwords.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("JSwords.esm") && IF VAR(ES) ERROR: JSwords.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF FILE("Uncle Sheo does JaySus.esp") && IF VAR(EN) WARN: Use either Uncle Sheo does JaySus.esp or Uncle Sheo does JaySuS NO TITLE.esp, not both.
     IF FILE("Uncle Sheo does JaySus.esp") && IF VAR(RU) WARN: Используйте любой, или Uncle Sheo does JaySus.esp или Uncle Sheo does JaySuS NO TITLE.esp, не оба.
       IF FILE("Uncle Sheo does JaySus.esp") && IF VAR(ES) WARN: Usar Uncle Sheo does JaySus.esp o Uncle Sheo does JaySuS NO TITLE.esp, no ambos.
@@ -7057,7 +7062,7 @@ REGEX: Lorecraft - Cloaks( No Imperial| Player Only)?\.esp
 1nivWICSkyCloaksPatch.esp
   IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Cloaks.esp") && IF VAR(ES) ERROR: Cloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(ES) ERROR: 1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
@@ -8113,7 +8118,7 @@ HmmWhatToWearMerged.esp
   TAG: {{BASH: Delev, Relev}}
   IFNOT ACTIVE("HmmWhatToWear.esm") && IF VAR(EN) ERROR: HmmWhatToWear.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("HmmWhatToWear.esm") && IF VAR(RU) ERROR: HmmWhatToWear.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("HmmWhatToWear.esm") && IF VAR(ES) ERROR: HmmWhatToWear.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 HM Soul Gem Shifter.esp
 holdbounties.esp
 holy armor.esp
@@ -8135,7 +8140,7 @@ IFNOT VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
       IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", F95218FD) && IF VAR(ES) DIRTY: 7 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IFNOT ACTIVE("SPIKE.esm") && IF VAR(EN) ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SPIKE.esm") && IF VAR(RU) ERROR: SPIKE.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("SPIKE.esm") && IF VAR(ES) ERROR: SPIKE.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Delev, Deactivate}}
     ELSE TAG: {{BASH: Delev, Relev}}
 IFNOT VAR(BFNIAP) MOD: Lorecraft - Immersive Armors.esp
@@ -9042,13 +9047,13 @@ Northborn Fur Hoods.esp
 1nivWICSkyCloaksNorthPatch.esp
   IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Cloaks.esp") && IF VAR(ES) ERROR: Cloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(ES) ERROR: 1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("Northborn Fur Hoods.esp") && IF VAR(EN) ERROR: Northborn Fur Hoods.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Northborn Fur Hoods.esp") && IF VAR(RU) ERROR: Northborn Fur Hoods.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("Northborn Fur Hoods.esp") && IF VAR(ES) ERROR: Northborn Fur Hoods.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Northman - Credo.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, Northman Armours - Credo.esp.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Northman Armours - Credo.esp.
@@ -10278,7 +10283,7 @@ IF VAR(BFNIAP) MOD: hothtrooper44_ArmorCompilation.esp
       IF CHECKSUM("hothtrooper44_ArmorCompilation.esp", F95218FD) && IF VAR(ES) DIRTY: 7 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IFNOT ACTIVE ("SPIKE.esm") && IF VAR(EN) ERROR: SPIKE.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE ("SPIKE.esm") && IF VAR(RU) ERROR: SPIKE.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT ACTIVE("SPIKE.esm") && IF VAR(ES) ERROR: SPIKE.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF REGEX("SkyRe_Plugin_ImmersiveArmor.+\.esp") TAG: {{BASH: Delev, Deactivate}}
     ELSE TAG: {{BASH: Delev, Relev}}
 IF VAR(BFNIAP) MOD: Lorecraft - Immersive Armors.esp
@@ -11259,6 +11264,7 @@ PerkReset SkyRe Compatibility Patch.esp
 IF FILE("Perk-Reset-MCM.esm") MOD: SkyRE-Patch.esp
   IFNOT ACTIVE("Perk-Reset-MCM.esm") && IF VAR(EN) ERROR: Perk-Reset-MCM.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Perk-Reset-MCM.esm") && IF VAR(RU) ERROR: Perk-Reset-MCM.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Perk-Reset-MCM.esm") && IF VAR(ES) ERROR: Perk-Reset-MCM.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
@@ -11283,6 +11289,7 @@ SkyRe_Perk_Tomes.esp
 SkyRe_Plugin_Perks_ Broadsword.esp
   IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(ES) ERROR: SkyRe_Main.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -12120,6 +12127,7 @@ BBLSSummerWear.esp
 SummerWearUBH.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("SummerWearUBH.esp", 22D2AC81) && IF VAR(EN) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("SummerWearUBH.esp", 22D2AC81) && IF VAR(RU) DIRTY: 6 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -12136,6 +12144,7 @@ BBLS_PatioFurniture.esp
       IFNOT VAR(ApachiiHairF) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("SummerWear.esm") && IF VAR(EN) ERROR: SummerWear.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SummerWear.esm") && IF VAR(RU) ERROR: SummerWear.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SummerWear.esm") && IF VAR(ES) ERROR: SummerWear.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("BBLS_PatioFurniture.esp", 90C691) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BBLS_PatioFurniture.esp", 90C691) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -12180,6 +12189,7 @@ BertsBreezeCellar(esp.V2.0).esp
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
   IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(EN) ERROR: BertsBreezeCellar.v.1.0(esm).esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(RU) ERROR: BertsBreezeCellar.v.1.0(esm).esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(ES) ERROR: BertsBreezeCellar.v.1.0(esm).esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("BertsBreezeCellar(esp.V2.0).esp", 3EDC9220) && IF VAR(EN) DIRTY: 5 ITM, 66 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BertsBreezeCellar(esp.V2.0).esp", 3EDC9220) && IF VAR(RU) DIRTY: 5 ITM, 66 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -12190,6 +12200,7 @@ BertsBreezeCellar(esp.V2.0).esp
 BertsBreezeCellar(esp.V3.0).esp
   IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(EN) ERROR: BertsBreezeCellar.v.1.0(esm).esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(RU) ERROR: BertsBreezeCellar.v.1.0(esm).esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(ES) ERROR: BertsBreezeCellar.v.1.0(esm).esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("BertsBreezeCellar(esp.V3.0).esp", 8975B037) && IF VAR(EN) DIRTY: 10 ITM, 195 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BertsBreezeCellar(esp.V3.0).esp", 8975B037) && IF VAR(RU) DIRTY: 10 ITM, 195 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -12203,6 +12214,7 @@ BertsBreezehomeCellar(Claude).esp
 BertsBreezehomeCellar(Grotto).esp
   IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(EN) ERROR: BertsBreezeCellar.v.1.0(esm).esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(RU) ERROR: BertsBreezeCellar.v.1.0(esm).esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(ES) ERROR: BertsBreezeCellar.v.1.0(esm).esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("BertsBreezehomeCellar(Grotto).esp", 88DC7D3B) && IF VAR(EN) DIRTY: 16 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BertsBreezehomeCellar(Grotto).esp", 88DC7D3B) && IF VAR(RU) DIRTY: 16 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -12213,6 +12225,7 @@ BertsBreezehomeCellar(Grotto).esp
 BertsBreezeCellar(Polish).esp
   IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(EN) ERROR: BertsBreezeCellar.v.1.0(esm).esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(RU) ERROR: BertsBreezeCellar.v.1.0(esm).esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("BertsBreezeCellar.v.1.0(esm).esm") && IF VAR(ES) ERROR: BertsBreezeCellar.v.1.0(esm).esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 BertsBreezehomeGreenhouse.V.1.0.esp
 BertsBreezehomeGreenhouse.V.2.0.esp
@@ -12258,6 +12271,7 @@ BertsBreezehomeGardenConnecter(RemodelESP).esp
 0001BertsBreezehomeRemodel.V.2(esp.2.0).esp
   IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(EN) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(RU) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(ES) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("0001BertsBreezehomeRemodel.V.2(esp.2.0).esp", 5AEE2D89) && IF VAR(EN) DIRTY: 13 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("0001BertsBreezehomeRemodel.V.2(esp.2.0).esp", 5AEE2D89) && IF VAR(RU) DIRTY: 13 ITM, 1 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -12268,6 +12282,7 @@ BertsBreezehomeGardenConnecter(RemodelESP).esp
 0001BertsBreezehomeRemodel.V.2(Grotto).esp
   IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(EN) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(RU) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(ES) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("0001BertsBreezehomeRemodel.V.2(Grotto).esp", B7E0E7AB) && IF VAR(EN) DIRTY: 23 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("0001BertsBreezehomeRemodel.V.2(Grotto).esp", B7E0E7AB) && IF VAR(RU) DIRTY: 23 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -12278,6 +12293,7 @@ BertsBreezehomeGardenConnecter(RemodelESP).esp
 0001BertsBreezehomeRemodel.V.2(LydiaAddon.V.1).esp
   IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(EN) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(RU) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(ES) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("0001BertsBreezehomeRemodel.V.2(LydiaAddon.V.1).esp", BC3E8547) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("0001BertsBreezehomeRemodel.V.2(LydiaAddon.V.1).esp", BC3E8547) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -12288,6 +12304,7 @@ BertsBreezehomeGardenConnecter(RemodelESP).esp
 0001BertsBreezehomeRemodel.V.2(Spouse).esp
   IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(EN) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(RU) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("0001BertsBreezehomeRemodel.V.2(esm).esm") && IF VAR(ES) ERROR: 0001BertsBreezehomeRemodel.V.2(esm).esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF VAR(EN) WARN: This file contains 1 deleted NavMesh record that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
@@ -13423,20 +13440,24 @@ float_your_boat.esp
 FM - HHall Exterior.esp
   IFNOT ACTIVE("FM - HaafingarHall.esm") && IF VAR(EN) ERROR: FM - HaafingarHall.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("FM - HaafingarHall.esm") && IF VAR(RU) ERROR: FM - HaafingarHall.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("FM - HaafingarHall.esm") && IF VAR(ES) ERROR: FM - HaafingarHall.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 FM - UNP Merchants.esp
   IF VAR(EN) WARN: UNP Clothing Merchants contains too many clothing mods for BOSS to check individually.  Read the readme for details.  Leaving the other mods installed is not recommended.
     IF VAR(RU) WARN: UNP Clothing Merchants включает слишком много модов на одежду, чтобы проверять каждый из них в BOSS.  Для больших подробностей читайте документацию.  Оставлять другие моды установленными не рекомендуется.
   IFNOT ACTIVE("FM - HaafingarHall.esm") && IF VAR(EN) ERROR: FM - HaafingarHall.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("FM - HaafingarHall.esm") && IF VAR(RU) ERROR: FM - HaafingarHall.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("FM - HaafingarHall.esm") && IF VAR(ES) ERROR: FM - HaafingarHall.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 FM - UNP Merchants LvLists.esp
   TAG: {{BASH: Relev}}
   IFNOT ACTIVE("FM - HaafingarHall.esm") && IF VAR(EN) ERROR: FM - HaafingarHall.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("FM - HaafingarHall.esm") && IF VAR(RU) ERROR: FM - HaafingarHall.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("FM - HaafingarHall.esm") && IF VAR(ES) ERROR: FM - HaafingarHall.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("FM - UNP Merchants.esp") && IF VAR(EN) ERROR: FM - UNP Merchants.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("FM - UNP Merchants.esp") && IF VAR(RU) ERROR: FM - UNP Merchants.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("FM - UNP Merchants.esp") && IF VAR(ES) ERROR: FM - UNP Merchants.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 FM - Heljarchen Library.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
@@ -14089,9 +14110,11 @@ LevelersTowerRemod.esp
 LevelersShowroom.esp
   IF CHECKSUM("LevelersShowroom.esp", AD333CC5) && IFNOT ACTIVE("LevelersTower.esm") && IF VAR(EN) ERROR: LevelersTower.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IF CHECKSUM("LevelersShowroom.esp", AD333CC5) && IFNOT ACTIVE("LevelersTower.esm") && IF VAR(RU) ERROR: LevelersTower.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("LevelersTower.esm") && IF VAR(ES) ERROR: LevelersTower.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("LevelersShowroom.esp", 9ED58CC5) && IFNOT ACTIVE("LevelersTower.esp") && IF VAR(EN) ERROR: LevelersTower.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IF CHECKSUM("LevelersShowroom.esp", 9ED58CC5) && IFNOT ACTIVE("LevelersTower.esp") && IF VAR(RU) ERROR: LevelersTower.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("LevelersTower.esp") && IF VAR(ES) ERROR: LevelersTower.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 LFox Moon Sugar Manor.esp
 Liberation Beacon.esp
@@ -14552,10 +14575,12 @@ OBISDB.esp
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IFNOT ACTIVE("OBIS.esp") && IF VAR(EN) ERROR: OBIS.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("OBIS.esp") && IF VAR(RU) ERROR: OBIS.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("OBIS.esp") && IF VAR(ES) ERROR: OBIS.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Bandit Patrols.esp
   IFNOT ACTIVE("OBIS.esp") && IF VAR(EN) ERROR: OBIS.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("OBIS.esp") && IF VAR(RU) ERROR: OBIS.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("OBIS.esp") && IF VAR(ES) ERROR: OBIS.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("Bandit Patrols.esp", EDD0FBE8) && IF VAR(EN) DIRTY: 19 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Bandit Patrols.esp", EDD0FBE8) && IF VAR(RU) DIRTY: 19 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -14576,6 +14601,7 @@ Overhauled Throne RoomsNoFastTravel.esp
 Overlook Tower - MAINv1.9b.esp
   IFNOT ACTIVE("Overlook Tower - BASEv1.esm") && IF VAR(EN) ERROR: Overlook Tower - BASEv1.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Overlook Tower - BASEv1.esm") && IF VAR(RU) ERROR: Overlook Tower - BASEv1.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Overlook Tower - BASEv1.esm") && IF VAR(ES) ERROR: Overlook Tower - BASEv1.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("Overlook Tower - MAINv1.9b.esp", ED33F2B1) && IF VAR(EN) DIRTY: 159 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Overlook Tower - MAINv1.9b.esp", ED33F2B1) && IF VAR(RU) DIRTY: 159 ITM, 3 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -14617,9 +14643,11 @@ Portal.esp
 PrisonUpdate.esp
   IFNOT ACTIVE("Prison.esm") && IF VAR(EN) ERROR: Prison.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Prison.esm") && IF VAR(RU) ERROR: Prison.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Prison.esm") && IF VAR(ES) ERROR: Prison.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("PrisonUpdate.esm") && IF VAR(EN) ERROR: PrisonUpdate.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("PrisonUpdate.esm") && IF VAR(RU) ERROR: PrisonUpdate.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("PrisonUpdate.esm") && IF VAR(ES) ERROR: PrisonUpdate.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("PrisonUpdate.esp", 5251D917) && IF VAR(EN) DIRTY: 14 ITM, 11 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("PrisonUpdate.esp", 5251D917) && IF VAR(RU) DIRTY: 14 ITM, 11 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -14631,6 +14659,7 @@ PrisonAddon1.esp
 PrisonAddon2.esp
   IFNOT ACTIVE("Prison.esm") && IF VAR(EN) ERROR: Prison.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Prison.esm") && IF VAR(RU) ERROR: Prison.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Prison.esm") && IF VAR(ES) ERROR: Prison.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("PrisonAddon2.esp", 6D8B17B3) && IF VAR(EN) DIRTY: 15 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("PrisonAddon2.esp", 6D8B17B3) && IF VAR(RU) DIRTY: 15 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -14641,6 +14670,7 @@ PrisonAddon2.esp
 PrisonAddon3.esp
   IFNOT ACTIVE("Prison.esm") && IF VAR(EN) ERROR: Prison.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Prison.esm") && IF VAR(RU) ERROR: Prison.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Prison.esm") && IF VAR(ES) ERROR: Prison.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("PrisonAddon3.esp", A393C5EF) && IF VAR(EN) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("PrisonAddon3.esp", A393C5EF) && IF VAR(RU) DIRTY: 0 ITM, 1 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -14651,6 +14681,7 @@ PrisonAddon4.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IFNOT ACTIVE("Prison.esm") && IF VAR(EN) ERROR: Prison.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Prison.esm") && IF VAR(RU) ERROR: Prison.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Prison.esm") && IF VAR(ES) ERROR: Prison.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("PrisonAddon4.esp", 79767606) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("PrisonAddon4.esp", 79767606) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -14658,6 +14689,7 @@ PrisonAddon4.esp
 PrisonAddon5.esp
   IFNOT ACTIVE("Prison.esm") && IF VAR(EN) ERROR: Prison.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Prison.esm") && IF VAR(RU) ERROR: Prison.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Prison.esm") && IF VAR(ES) ERROR: Prison.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Proudspire.esp
 Proudspire Crafting.esp
@@ -14750,6 +14782,7 @@ Ranger Cabins.esp
 Ranger Ridge.esp
   IFNOT ACTIVE("Ranger Ridge.esm") && IF VAR(EN) ERROR: Ranger Ridge.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Ranger Ridge.esm") && IF VAR(RU) ERROR: Ranger Ridge.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Ranger Ridge.esm") && IF VAR(ES) ERROR: Ranger Ridge.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("Ranger Ridge.esp", CBB7B1F7) && IF VAR(EN) DIRTY: 120 ITM, 25 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Ranger Ridge.esp", CBB7B1F7) && IF VAR(RU) DIRTY: 120 ITM, 25 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15045,6 +15078,7 @@ sec_friendsforever.esp
 SejhPlayerHouses2.esp
   IFNOT ACTIVE("sejhythpeople.esm") && IF VAR(EN) ERROR: sejhythpeople.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("sejhythpeople.esm") && IF VAR(RU) ERROR: sejhythpeople.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("sejhythpeople.esm") && IF VAR(ES) ERROR: sejhythpeople.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("SejhPlayerHouses2.esp", 4C6A97FB) && IF VAR(EN) DIRTY: 19 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("SejhPlayerHouses2.esp", 4C6A97FB) && IF VAR(RU) DIRTY: 19 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15157,6 +15191,7 @@ Shrouded Lair.esp
 ShyraeIsturain.esp
   IFNOT ACTIVE("ShyraeIsturain.esm") && IF VAR(EN) ERROR: ShyraeIsturain.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("ShyraeIsturain.esm") && IF VAR(RU) ERROR: ShyraeIsturain.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("ShyraeIsturain.esm") && IF VAR(ES) ERROR: ShyraeIsturain.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   //location-only esp placement of esm companion
 SilvercrestTomb.esp
@@ -15780,6 +15815,7 @@ ub_bbls_merge.esp
       IFNOT VAR(BBLS) && IF VAR(ES) ERROR: BBLuxurySuite.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("ub_bbls_merge.esp", A7948BE9) && IF VAR(EN) DIRTY: 11 ITM, 24 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ub_bbls_merge.esp", A7948BE9) && IF VAR(RU) DIRTY: 11 ITM, 24 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15790,6 +15826,7 @@ ub_bbls_merge_classier.esp
       IFNOT VAR(BBLS) && IF VAR(ES) ERROR: BBLuxurySuite.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("ub_bbls_merge_classier.esp", 16E811FF) && IF VAR(EN) DIRTY: 11 ITM, 24 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ub_bbls_merge_classier.esp", 16E811FF) && IF VAR(RU) DIRTY: 11 ITM, 24 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15797,10 +15834,12 @@ ub_bbls_merge_classier.esp
 ub_invite_any_npc.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 ub_npc_rework.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 ub_apachii_hair.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -15811,10 +15850,12 @@ ub_apachii_hair.esp
       IFNOT VAR(ApachiiHairF) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 ub_cell_armory.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("ub_cell_armory.esp", 1BED9CAE) && IF VAR(EN) DIRTY: 1 ITM, 137 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ub_cell_armory.esp", 1BED9CAE) && IF VAR(RU) DIRTY: 1 ITM, 137 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15822,6 +15863,7 @@ ub_cell_armory.esp
 ub_cell_bedroom.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("ub_cell_bedroom.esp", 859CFAB7) && IF VAR(EN) DIRTY: 0 ITM, 1078 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ub_cell_bedroom.esp", 859CFAB7) && IF VAR(RU) DIRTY: 0 ITM, 1078 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15829,6 +15871,7 @@ ub_cell_bedroom.esp
 ub_cell_cavern.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("ub_cell_cavern.esp", D7E59575) && IF VAR(EN) DIRTY: 3 ITM, 417 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ub_cell_cavern.esp", D7E59575) && IF VAR(RU) DIRTY: 3 ITM, 417 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15836,6 +15879,7 @@ ub_cell_cavern.esp
 ub_cell_darkarea.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("ub_cell_darkarea.esp", 75150381) && IF VAR(EN) DIRTY: 0 ITM, 419 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ub_cell_darkarea.esp", 75150381) && IF VAR(RU) DIRTY: 0 ITM, 419 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15843,6 +15887,7 @@ ub_cell_darkarea.esp
 ub_cell_dislayroom.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("ub_cell_dislayroom.esp", 5F76A5B5) && IF VAR(EN) DIRTY: 3 ITM, 273 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ub_cell_dislayroom.esp", 5F76A5B5) && IF VAR(RU) DIRTY: 3 ITM, 273 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15850,6 +15895,7 @@ ub_cell_dislayroom.esp
 ub_cell_kitchen.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("ub_cell_kitchen.esp", 62B40383) && IF VAR(EN) DIRTY: 0 ITM, 111 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ub_cell_kitchen.esp", 62B40383) && IF VAR(RU) DIRTY: 0 ITM, 111 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15857,6 +15903,7 @@ ub_cell_kitchen.esp
 ub_cell_maintenance_room.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("ub_cell_maintenance_room.esp", F1E13A88) && IF VAR(EN) DIRTY: 3 ITM, 329 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ub_cell_maintenance_room.esp", F1E13A88) && IF VAR(RU) DIRTY: 3 ITM, 329 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15864,6 +15911,7 @@ ub_cell_maintenance_room.esp
 ub_cell_teleportroom.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("ub_cell_teleportroom.esp", B593474E) && IF VAR(EN) DIRTY: 3 ITM, 170 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ub_cell_teleportroom.esp", B593474E) && IF VAR(RU) DIRTY: 3 ITM, 170 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15871,6 +15919,7 @@ ub_cell_teleportroom.esp
 ub_disable_teleportroom.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("ub_disable_teleportroom.esp", 14BFDF11) && IF VAR(EN) DIRTY: 4 ITM, 170 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ub_disable_teleportroom.esp", 14BFDF11) && IF VAR(RU) DIRTY: 4 ITM, 170 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -15878,6 +15927,7 @@ ub_disable_teleportroom.esp
 ub_tapestry.esp
   IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(EN) ERROR: UndergroundBathhouse.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(RU) ERROR: UndergroundBathhouse.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("UndergroundBathhouse.esm") && IF VAR(ES) ERROR: UndergroundBathhouse.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 UDO.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -16834,6 +16884,7 @@ BetterQuestObjectives.esp
   IF CHECKSUM("BetterQuestObjectives.esp", BCD35920) && IF VAR(EN) WARN: This file is out of date. Please obtain the new version "http://skyrim.nexusmods.com/mods/32695 here".
   IFNOT VAR(USKP) && IF VAR(EN) ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(USKP) && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(ES) ERROR: Unofficial Skyrim Patch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 BetterQuestObjectives-Dawnguard.esp
    IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -17261,9 +17312,11 @@ DiversePriests.esp
 DiversePriests_BringOutYourDeadPatch.esp
   IFNOT ACTIVE("DiversePriests.esp") && IF VAR(EN) ERROR: DiversePriests.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("DiversePriests.esp") && IF VAR(RU) ERROR: DiversePriests.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("DiversePriests.esp") && IF VAR(ES) ERROR: DiversePriests.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("Bring Out Your Dead.esp") && IF VAR(EN) ERROR: Bring Out Your Dead.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Bring Out Your Dead.esp") && IF VAR(RU) ERROR: Bring Out Your Dead.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Bring Out Your Dead.esp") && IF VAR(ES) ERROR: Bring Out Your Dead.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 MOD: Dödligalegatus.esp
   // Removing the MOD: tag from this seems to cause crashes.
@@ -17620,6 +17673,7 @@ Helmeted Skeletons.esp
 HelmetToggleVanillaHelmets.esp
   IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(ES) ERROR: HelmetToggleMasterFile.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("HelmetToggleVanillaHelmets.esp", BE970EE7) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("HelmetToggleVanillaHelmets.esp", BE970EE7) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -17627,9 +17681,11 @@ HelmetToggleVanillaHelmets.esp
 REGEX: Helmet Toggle - Imp_.+ Patch\.esp
   IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(ES) ERROR: HelmetToggleMasterFile.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("HelmetToggleVanillaHelmets.esp") && IF VAR(EN) ERROR: HelmetToggleVanillaHelmets.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("HelmetToggleVanillaHelmets.esp") && IF VAR(RU) ERROR: HelmetToggleVanillaHelmets.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("HelmetToggleVanillaHelmets.esp") && IF VAR(ES) ERROR: HelmetToggleVanillaHelmets.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 REGEX: HelmetTogg.+(Dawnguard)+\.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -17637,6 +17693,7 @@ REGEX: HelmetTogg.+(Dawnguard)+\.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(ES) ERROR: HelmetToggleMasterFile.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Hemet2CircletReplacer.esp
 REGEX: Hellspawn Shadowmere.*\.esp
@@ -18236,6 +18293,7 @@ No Permanent Essentials Redux.esp
       IF CHECKSUM("No Permanent Essentials Redux.esp", D68322C4) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IFNOT VAR(USKP) && IF VAR(EN) ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(USKP) && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(ES) ERROR: Unofficial Skyrim Patch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF VAR(Dawnguard) && IFNOT FILE("No Permanent Essentials Redux -- Dawnguard.esp") REQ: No Permanent Essentials Redux -- Dawnguard.esp for proper operation with Dawnguard.
 No Permanent Essentials Redux -- Dawnguard.esp
@@ -18247,19 +18305,24 @@ No Permanent Essentials Redux -- Dawnguard.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IFNOT VAR(USKP) && IF VAR(EN) ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(USKP) && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(ES) ERROR: Unofficial Skyrim Patch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT VAR(UDGP) && IF VAR(EN) ERROR: Unofficial Dawnguard Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(UDGP) && IF VAR(RU) ERROR: Unofficial Dawnguard Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Unofficial Dawnguard Patch.esp") && IF VAR(ES) ERROR: Unofficial Dawnguard Patch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 No Permanent Essentials Redux -- Bring Out Your Dead Compatibility.esp
   IFNOT VAR(USKP) && IF VAR(EN) ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(USKP) && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(ES) ERROR: Unofficial Skyrim Patch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("Bring Out Your Dead.esp") && IF VAR(EN) ERROR: Bring Out Your Dead.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Bring Out Your Dead.esp") && IF VAR(RU) ERROR: Bring Out Your Dead.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Bring Out Your Dead.esp") && IF VAR(ES) ERROR: Bring Out Your Dead.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("No Permanent Essentials Redux.esp") && IF VAR(EN) ERROR: No Permanent Essentials Redux.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("No Permanent Essentials Redux.esp") && IF VAR(RU) ERROR: No Permanent Essentials Redux.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("No Permanent Essentials Redux.esp") && IF VAR(ES) ERROR: No Permanent Essentials Redux.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 No Perk Prereqs.esp
   IF VAR(EN) && IF REGEX("PerkUP.+\.esp") WARN: Delete. Already included in 'PerkUP esps'
@@ -18520,6 +18583,7 @@ dawnguard_realistic.esp
 plugin_jaysus.esp
   IFNOT ACTIVE("JSwords.esm") && IF VAR(EN) ERROR: JSwords.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("JSwords.esm") && IF VAR(RU) ERROR: JSwords.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("JSwords.esm") && IF VAR(ES) ERROR: JSwords.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Realistic werewolf speed.esp
 realisticskoomamodv1.esp
@@ -19440,6 +19504,7 @@ ImpeREAL Empire - Unique Cities - Falkreath.esp
 Lanterns of Skyrim - All In One - Dawnstar Expanded Patch.esp
   IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(EN) ERROR: Lanterns Of Skyrim - All In One - Main.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(RU) ERROR: Lanterns Of Skyrim - All In One - Main.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(ES) ERROR: Lanterns Of Skyrim - All In One - Main.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT FILE("RIC_Dawnstar.esp") REQ: RIC_Dawnstar.esp
   IF CHECKSUM("Lanterns of Skyrim - All In One - Dawnstar Expanded Patch.esp", 336F1CE9) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -19448,9 +19513,11 @@ Lanterns of Skyrim - All In One - Dawnstar Expanded Patch.esp
 Lanterns of Skyrim - All In One - Winterhold Destruction Ruins.esp
   IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(EN) ERROR: Lanterns Of Skyrim - All In One - Main.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(RU) ERROR: Lanterns Of Skyrim - All In One - Main.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Lanterns Of Skyrim - All In One - Main.esm") && IF VAR(ES) ERROR: Lanterns Of Skyrim - All In One - Main.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("WinterholdDestruction.esm") && IF VAR(EN) ERROR: WinterholdDestruction.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("WinterholdDestruction.esm") && IF VAR(RU) ERROR: WinterholdDestruction.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("WinterholdDestruction.esm") && IF VAR(ES) ERROR: WinterholdDestruction.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("Lanterns of Skyrim - All In One - Winterhold Destruction Ruins.esp", 22902F71) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Lanterns of Skyrim - All In One - Winterhold Destruction Ruins.esp", 22902F71) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -20021,8 +20088,10 @@ Unique Region Names - Dragonborn COT Patch.esp
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(ES) ERROR: ClimatesOfTamriel.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("ClimatesOfTamriel-Dragonborn-Patch.esp") && IF VAR(EN) ERROR: ClimatesOfTamriel-Dragonborn-Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("ClimatesOfTamriel-Dragonborn-Patch.esp") && IF VAR(RU) ERROR: ClimatesOfTamriel-Dragonborn-Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("ClimatesOfTamriel-Dragonborn-Patch.esp") && IF VAR(ES) ERROR: ClimatesOfTamriel-Dragonborn-Patch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 
 //following: Skyrim Visuals series reported to be compatible if run post-RL and/or post-CoT
 SV - The Indoors.esp
@@ -20319,6 +20388,7 @@ SkyRealism - Mass and Materials - Dawnguard.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(ES) ERROR: SkyRealism - Mass and Materials.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SkyRealism - Mass and Materials - Hearthfires.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC)
@@ -20326,6 +20396,7 @@ SkyRealism - Mass and Materials - Hearthfires.esp
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(ES) ERROR: SkyRealism - Mass and Materials.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SkyRealism - Mass and Materials - ExpandedJewelryCrafting.esp
   IFNOT ACTIVE ("SkyRealism - Mass and Materials.esp") ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -20333,58 +20404,74 @@ SkyRealism - Mass and Materials - ExpandedJewelryCrafting.esp
 SkyRealism - Mass and Materials - 1nivWICCloaks.esp
   IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(EN) ERROR: 1nivWICCloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(RU) ERROR: 1nivWICCloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("1nivWICCloaks.esp") && IF VAR(ES) ERROR: 1nivWICCloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(ES) ERROR: SkyRealism - Mass and Materials.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SkyRealism - Mass and Materials - Cloaks.esp
   IFNOT ACTIVE("Cloaks.esp") && IF VAR(EN) ERROR: Cloaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Cloaks.esp") && IF VAR(RU) ERROR: Cloaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Cloaks.esp") && IF VAR(ES) ERROR: Cloaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(ES) ERROR: SkyRealism - Mass and Materials.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SkyRealism - Mass and Materials - MorrowindArmor.esp
   IFNOT ACTIVE("MorrowindArmor.esp") && IF VAR(EN) ERROR: MorrowindArmor.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("MorrowindArmor.esp") && IF VAR(RU) ERROR: MorrowindArmor.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("MorrowindArmor.esp") && IF VAR(ES) ERROR: MorrowindArmor.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(ES) ERROR: SkyRealism - Mass and Materials.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SkyRealism - Mass and Materials - PrvtI_HeavyArmory.esp
   IFNOT ACTIVE("PrvtI_HeavyArmory.esp") && IF VAR(EN) ERROR: PrvtI_HeavyArmory.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("PrvtI_HeavyArmory.esp") && IF VAR(RU) ERROR: PrvtI_HeavyArmory.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("PrvtI_HeavyArmory.esp") && IF VAR(ES) ERROR: PrvtI_HeavyArmory.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(ES) ERROR: SkyRealism - Mass and Materials.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SkyRealism - Mass and Materials - WVExpansion.esp
   IFNOT ACTIVE("WVExpansion.esp") && IF VAR(EN) ERROR: WVExpansion.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("WVExpansion.esp") && IF VAR(RU) ERROR: WVExpansion.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("WVExpansion.esp") && IF VAR(ES) ERROR: WVExpansion.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(ES) ERROR: SkyRealism - Mass and Materials.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SkyRealism - Mass and Materials - Dr_Bandolier.esp
   IFNOT ACTIVE("Dr_Bandolier.esp") && IF VAR(EN) ERROR: Dr_Bandolier.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Dr_Bandolier.esp") && IF VAR(RU) ERROR: Dr_Bandolier.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Dr_Bandolier.esp") && IF VAR(ES) ERROR: Dr_Bandolier.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(ES) ERROR: SkyRealism - Mass and Materials.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SkyRealism - Mass and Materials - MoarJewels.esp
   IFNOT ACTIVE("MoarJewels.esp") && IF VAR(EN) ERROR: MoarJewels.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("MoarJewels.esp") && IF VAR(RU) ERROR: MoarJewels.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("MoarJewels.esp") && IF VAR(ES) ERROR: MoarJewels.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(ES) ERROR: SkyRealism - Mass and Materials.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SkyRealism - Mass and Materials - tailoring.esp
   IFNOT ACTIVE("tailoring.esp") && IF VAR(EN) ERROR: tailoring.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("tailoring.esp") && IF VAR(RU) ERROR: tailoring.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("tailoring.esp") && IF VAR(ES) ERROR: tailoring.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(EN) ERROR: SkyRealism - Mass and Materials.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(RU) ERROR: SkyRealism - Mass and Materials.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism - Mass and Materials.esp") && IF VAR(ES) ERROR: SkyRealism - Mass and Materials.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SkyRealism - Portable Crafting Kits.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
@@ -23165,6 +23252,7 @@ Improved Lower Level Smithing.esp
 Inner Strength.esp
   IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(ES) ERROR: SkyRe_Main.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 
 // perks j
@@ -23456,6 +23544,7 @@ SPERG Dragonborn Patch.esp
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
   IF CHECKSUM("SPERG Dragonborn Patch.esp", 5F78B5AA) && IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(EN) ERROR: Skyrim Perk Enhancements.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IF CHECKSUM("SPERG Dragonborn Patch.esp", 5F78B5AA) && IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(RU) ERROR: Skyrim Perk Enhancements.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(ES) ERROR: Skyrim Perk Enhancements.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SPERG Dragonborn Smithing Patch.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
@@ -23466,20 +23555,25 @@ SPERG_3_GELO_Compatibility.esp
 SPERG Immersive Armors.esp
   IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(EN) ERROR: hothtrooper44_ArmorCompilation.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(RU) ERROR: hothtrooper44_ArmorCompilation.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("hothtrooper44_ArmorCompilation.esp") && IF VAR(ES) ERROR: hothtrooper44_ArmorCompilation.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SPERG Trade Barter.esp
   IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(EN) ERROR: Skyrim Perk Enhancements.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(RU) ERROR: Skyrim Perk Enhancements.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(ES) ERROR: Skyrim Perk Enhancements.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("TradeBarter.esp") && IF VAR(EN) ERROR: TradeBarter.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("TradeBarter.esp") && IF VAR(RU) ERROR: TradeBarter.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("TradeBarter.esp") && IF VAR(ES) ERROR: TradeBarter.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SPERG Weapons and Armor Vanilla.esp
   IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(EN) ERROR: Skyrim Perk Enhancements.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(RU) ERROR: Skyrim Perk Enhancements.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(ES) ERROR: Skyrim Perk Enhancements.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(EN) ERROR: Weapons & Armor_Fixes.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(RU) ERROR: Weapons & Armor_Fixes.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(ES) ERROR: Weapons & Armor_Fixes.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SPERG Weapons and Armor DG.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -23487,9 +23581,11 @@ SPERG Weapons and Armor DG.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(EN) ERROR: Skyrim Perk Enhancements.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(RU) ERROR: Skyrim Perk Enhancements.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(ES) ERROR: Skyrim Perk Enhancements.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(EN) ERROR: Weapons & Armor_Fixes.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(RU) ERROR: Weapons & Armor_Fixes.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(ES) ERROR: Weapons & Armor_Fixes.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 //set allowing modular control of SPERG follows:
 Override Alchemy.esp
@@ -23711,12 +23807,14 @@ SexiSCupid.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
   IFNOT ACTIVE("SexiS.esm") && IF VAR(EN) ERROR: SexiS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SexiS.esm") && IF VAR(RU) ERROR: SexiS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SexiS.esm") && IF VAR(ES) ERROR: SexiS.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 SexiSDefeated.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
   IFNOT ACTIVE("SexiS.esm") && IF VAR(EN) ERROR: SexiS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SexiS.esm") && IF VAR(RU) ERROR: SexiS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SexiS.esm") && IF VAR(ES) ERROR: SexiS.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Shake it!.esp
 ShakeIt.esp
@@ -24175,6 +24273,7 @@ CuteDesigns.esp
       IFNOT VAR(RaceComp) && IF VAR(ES) ERROR: RaceCompatibility.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
   IFNOT ACTIVE("OrientalRace.esp") && IF VAR(EN) ERROR: OrientalRace.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("OrientalRace.esp") && IF VAR(RU) ERROR: OrientalRace.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("OrientalRace.esp") && IF VAR(ES) ERROR: OrientalRace.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("CuteDesigns.esp", FF625067) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF CHECKSUM("CuteDesigns.esp", FF625067) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
@@ -24269,6 +24368,7 @@ AsharaSkyrimCharacterPresetsReplacer.esp
 AsharaTemptressPresets.esp
   IFNOT ACTIVE("TemptressVixen.esp") && IF VAR(EN) ERROR: TemptressVixen.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("TemptressVixen.esp") && IF VAR(RU) ERROR: TemptressVixen.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("TemptressVixen.esp") && IF VAR(ES) ERROR: TemptressVixen.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
 Children of Skyrim - NORD PRESETS 1-10 v1.1.esp
@@ -24902,6 +25002,7 @@ Anruin - Faendal Replacer.esp
 AoD - Shelyn.esp
   IFNOT ACTIVE("FollowerMagic.esm") && IF VAR(EN) ERROR: FollowerMagic.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("FollowerMagic.esm") && IF VAR(RU) ERROR: FollowerMagic.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("FollowerMagic.esm") && IF VAR(ES) ERROR: FollowerMagic.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 REGEX: aranea1.?\.esp
 Agrenor Replacer.esp
@@ -25695,9 +25796,11 @@ MoreNpcProject.esp
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("CazyMale.esm") && IF VAR(EN) ERROR: CazyMale.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("CazyMale.esm") && IF VAR(RU) ERROR: CazyMale.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("CazyMale.esm") && IF VAR(ES) ERROR: CazyMale.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(EN) ERROR: Omegared99-Compilation.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(RU) ERROR: Omegared99-Compilation.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(ES) ERROR: Omegared99-Compilation.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("MoreNpcProject.esp", 1399BDBE) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("MoreNpcProject.esp", 1399BDBE) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -25711,6 +25814,7 @@ morewhiterunnpcs.esp
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(EN) ERROR: Omegared99-Compilation.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(RU) ERROR: Omegared99-Compilation.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Omegared99-Compilation.esm") && IF VAR(ES) ERROR: Omegared99-Compilation.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF CHECKSUM("morewhiterunnpcs.esp", F58E1B8E) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("morewhiterunnpcs.esp", F58E1B8E) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -25981,6 +26085,7 @@ Tina.esp
 TondeeRiversong.esp
   IFNOT ACTIVE("TondeeRiversong.esm") && IF VAR(EN) ERROR: TondeeRiversong.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("TondeeRiversong.esm") && IF VAR(RU) ERROR: TondeeRiversong.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("TondeeRiversong.esm") && IF VAR(ES) ERROR: TondeeRiversong.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
       IFNOT ACTIVE("plugin.esp") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Tougher guards v2.esp  IF CHECKSUM("Tougher guards v2.esp", 48AB780F) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Tougher guards v2.esp", 48AB780F) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
