@@ -6280,15 +6280,16 @@ Auto Unequip Ammo.esp
     IF CHECKSUM("Auto Unequip Ammo.esp", 9E033B7) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IF CHECKSUM("Auto Unequip Ammo.esp", 9E033B7) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 Auto Unequip Arrows.esp
-  IF VAR(EN) && IF FILE("Auto Unequip Ammo.esp") WARN: Delete. Already included in "http://skyrim.nexusmods.com/mods/10753 Auto Unequip Ammo".
-    IF VAR(RU) && IF FILE("Auto Unequip Ammo.esp") WARN: Удалите. Уже включено в "http://skyrim.nexusmods.com/mods/10753 Auto Unequip Ammo".
+  IF VAR(EN) && IF FILE("Auto Unequip Ammo.esp") ERROR: Delete. Already included in "http://skyrim.nexusmods.com/mods/10753 Auto Unequip Ammo".
+    IF VAR(RU) && IF FILE("Auto Unequip Ammo.esp") ERROR: Удалите. Уже включено в "http://skyrim.nexusmods.com/mods/10753 Auto Unequip Ammo".
+	  IF VAR(ES) && IF FILE("Auto Unequip Ammo.esp") ERROR: Borrar. Esta incluido en "http://skyrim.nexusmods.com/mods/10753 Auto Unequip Ammo".
 AutoHarvest.esp
 AutoLoot.esp
 KaceAutoloot.esp
 rt_Animal - Processing.esp
-  IF FILE("rt_AutoHarvest.esp") && IF VAR(EN) WARN: Use either rt_AutoHarvest.esp or rt_Animal - Processing.esp, not both.
-    IF FILE("rt_AutoHarvest.esp") && IF VAR(RU) WARN: Используйте любой, или rt_AutoHarvest.esp или rt_Animal - Processing.esp, не оба.
-      IF FILE("rt_AutoHarvest.esp") && IF VAR(ES) WARN: Usar rt_AutoHarvest.esp o rt_Animal - Processing.esp, no ambos.
+  IF FILE("rt_AutoHarvest.esp") && IF VAR(EN) ERROR: Use either rt_AutoHarvest.esp or rt_Animal - Processing.esp, not both.
+    IF FILE("rt_AutoHarvest.esp") && IF VAR(RU) ERROR: Используйте любой, или rt_AutoHarvest.esp или rt_Animal - Processing.esp, не оба.
+      IF FILE("rt_AutoHarvest.esp") && IF VAR(ES) ERROR: Usar rt_AutoHarvest.esp o rt_Animal - Processing.esp, no ambos.
 rt_AutoHarvest.esp
   IFNOT CHECKSUM("rt_AutoHarvest.esp", BBDBA57A) && IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IF CHECKSUM("rt_AutoHarvest.esp", CC380C07) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -6296,8 +6297,9 @@ rt_AutoHarvest.esp
       IF CHECKSUM("rt_AutoHarvest.esp", CC380C07) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 AutomaticItemStorage.esp
 CAS.esp
-  IF VAR(EN) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Only use the save features of either "CAS" or "kuertee's auto-save and time"
-    IF VAR(RU) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Используйте функцию сохранения только  из одного мода: из "CAS" или "kuertee's auto-save and time"
+  IF VAR(EN) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Only use the save features of either "CAS" or "kuertee's auto-save and time".
+    IF VAR(RU) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Используйте функцию сохранения только  из одного мода: из "CAS" или "kuertee's auto-save and time".
+	  IF VAR(ES) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Utilizar únicamente las funciones de guardar de "CAS" o "kuertee's auto-save and time".
 Character Creation Overhaul.esp
 Chesko_LoreBasedLoadingScreens.esp
 ContainerMagic.esp
@@ -6310,6 +6312,7 @@ DEAsprint&jump.esp
   IF VERSION("SKSE", "0.1.5.9", <) REQ: "http://skse.silverlock.org SKSE" 1.5.9+
   IF VAR(EN) SAY: Won't work if sprint/jump key is remapped to mouse button.
     IF VAR(RU) SAY: Может не работать, если кнопка бега\прыжка переназначена на кнопку мыши.
+	  IF VAR(ES) SAY: No funcionara si utilizas un boton del mouse para brincar o correr.
 Dragon Soul Relinquishment.esp
   IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
 DragonWarrior-Effects.esp
@@ -6321,11 +6324,13 @@ Duke Patricks - Savvy Save.esp
 DynamicNaming.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
 Dynavision.esp
-  IF VAR(EN) WARN: DYNAVISION will work with most ENB configuations, however if you are using ENB, remember to turn OFF the ENB DOF feature in your graphics options
+  IF VAR(EN) WARN: DYNAVISION will work with most ENB configuations, however if you are using ENB, remember to turn OFF the ENB DOF feature in your graphics options.
     IF VAR(RU) WARN: DYNAVISION будет работать с большинством ENB конфигураций, однако, если вы используете  ENB, не забудьте выключить опцию ENB DOF , в настройках графики.
+	  IF VAR(ES) WARN: DYNAVISION funcionara con la mayoría de los ENBs er, si estas utilizando un ENB, recuerda apagar el DOF de tu ENB.
 DYNAVISION Dynamic Depth of Field.esp
   IF VAR(EN) SAY: Make sure you have not switched DoF off in your ini file. If you don't see any effect, open you Skyrimprefs.ini and look for 'bDoDepthOfField'. Make sure it is set to 1.
     IF VAR(RU) SAY: Убедитесь, что вы не выключили DoF в вашем ini-файле. Если вы не видите эффекта, откройте ваш Skyrimprefs.ini и найдите строку 'bDoDepthOfField'. Убедитесь, что она имеет значение 1.
+	  IF VAR(EN) SAY: Asegurate de no haber apagado el DoF en tu ini. Si no ves el efecto abre Skyrimprefs.ini y asegurate de que 'bDoDepthOfField' sea igual a 1.
 Footprints.esp
 Footprints - Ash.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
@@ -6369,8 +6374,9 @@ RaceMenu.esp
 RaceMenuPlugin.esp
   SAY: RaceMenuPlugin is optional and provides support to alter Height, Breast, Glute and Biceps. If you experience issues with it, disable RaceMenuPlugin.esp and inform the author.
 REGEX: SkyRealism - Simple Save System.+\.esp
-  IF VAR(EN) SAY: Only use one SkyRealism - Simple Save System*.esp
-    IF VAR(RU) SAY: Используйте только один SkyRealism - Simple Save System*.esp
+  IF VAR(EN) SAY: Only use one SkyRealism - Simple Save System*.esp.
+    IF VAR(RU) SAY: Используйте только один SkyRealism - Simple Save System*.esp.
+	  IF VAR(ES) SAY: Utilizar solo un SkyRealism - Simple Save System*.esp.
 ORS_MM.esp
 Player Size Adjuster.esp
   IF VERSION("SKSE", "0.1.6.9", <) REQ: "http://skse.silverlock.org SKSE" 1.6.9+
@@ -6389,8 +6395,9 @@ towConversation.esp
   IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
   IF VERSION("SKSE", "0.1.6.13", <) REQ: "http://skse.silverlock.org SKSE" 1.6.13+.
 Uncle Sheo does Climates of Tamriel.esp
-  IFNOT FILE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without Climates Of Tamriel.esm
-    IFNOT FILE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Climates Of Tamriel
+  IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(EN) ERROR: ClimatesOfTamriel.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(RU) ERROR: ClimatesOfTamriel.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+	  IFNOT ACTIVE("ClimatesOfTamriel.esm") && IF VAR(ES) ERROR: ClimatesOfTamriel.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Uncle Sheo does JaySus.esp
   IFNOT ACTIVE("JSwords.esm") && IF VAR(EN) ERROR: JSwords.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("JSwords.esm") && IF VAR(RU) ERROR: JSwords.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -6421,8 +6428,9 @@ skyui.esp
 iHUD.esp
  ^ // Must load after SkyUI
 IMAGINATOR - MCMenu.esp
-  IFNOT ACTIVE("IMAGINATOR - Visual Control for Skyrim.esp") && IF VAR(EN) ERROR: IMAGINATOR - Visual Control for Skyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/13049 IMAGINATOR - Visual Control for Skyrim"
-    IFNOT ACTIVE("IMAGINATOR - Visual Control for Skyrim.esp") && IF VAR(RU) ERROR: IMAGINATOR - Visual Control for Skyrim.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/13049 IMAGINATOR - Visual Control for Skyrim"
+  IFNOT ACTIVE("IMAGINATOR - Visual Control for Skyrim.esp") && IF VAR(EN) ERROR: IMAGINATOR - Visual Control for Skyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/13049 IMAGINATOR - Visual Control for Skyrim".
+    IFNOT ACTIVE("IMAGINATOR - Visual Control for Skyrim.esp") && IF VAR(RU) ERROR: IMAGINATOR - Visual Control for Skyrim.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/13049 IMAGINATOR - Visual Control for Skyrim".
+	  IFNOT ACTIVE("IMAGINATOR - Visual Control for Skyrim.esp") && IF VAR(ES) ERROR: IMAGINATOR - Visual Control for Skyrim.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él"http://skyrim.nexusmods.com/mods/13049 IMAGINATOR - Visual Control for Skyrim".
 less_intrusive_hud.esp
 LessIntrusiveHUD.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
