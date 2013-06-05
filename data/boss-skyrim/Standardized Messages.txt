@@ -131,10 +131,18 @@ Replace with:
 // ================================================================
 // --Included in other mod--
 //
-  IF VAR(EN) && IF FILE("plugin") ERROR: Delete. Already included in <Plugin name>.
-    IF VAR(RU) && IF FILE("plugin") ERROR: Удалите. Уже включено в <Plugin name>.
-      IF VAR(ES) && IF FILE("plugin") ERROR: Borrar. Esta incluido en <Plugin name>.
-// Append this message for mods that already included in other mod.
-// You can use VAR(<VARIABLE>) for mods that name already exist in variable setup section of masterlist(Dawnguard, Dragondorn, Hearthfire DLCs etc).
+  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp.
+    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
+      IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
+//For USKP redundancy. Stronger ERROR would be appropriate here, since USKP will tend to be overarching in the load order.
+
+  IF FILE("plugin") && IF VAR(EN) WARN: Delete. Already included in <Plugin name>.
+    IF FILE("plugin") && IF VAR(RU) WARN: Удалите. Уже включено в <Plugin name>.
+      IF FILE("plugin") && IF VAR(ES) WARN: Borrar. Esta incluido en <Plugin name>.
+//For other types of inclusions. Softer WARN would be appropriate here, since depending on situation it may be down to user choice in the load order.
+//Note: Placement of VAR(LANG) next to translated statement makes regex-based translation easier.
+
+// Append one of above messages for mod that are functionally already included in another installed mod.
+// You can use VAR for mods that are already so defined (Dawnguard, Dragonborn, Hearthfire etc).
 // Remember to fill in the appropriate details.
 //
