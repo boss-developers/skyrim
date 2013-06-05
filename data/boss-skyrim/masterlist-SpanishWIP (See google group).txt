@@ -3444,9 +3444,9 @@ ApachiiHelmetWigs.esp
 Arcticia's LifeCycles.esp
 Armored Skeleton.esp
   TAG: {{BASH: Relev}}
-  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in 'Skyrim Immersive Creatures.esp'.
-    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в 'Skyrim Immersive Creatures.esp'.
-	  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(ES) WARN: Borrar. Ya esta incluido en 'Skyrim Immersive Creatures.esp'.
+  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(EN) WARN: Delete. Already included in Skyrim Immersive Creatures.esp.
+    IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(RU) WARN: Удалите. Уже включено в Skyrim Immersive Creatures.esp.
+	  IF ACTIVE("Skyrim Immersive Creatures.esp") || IF ACTIVE("Skyrim Immersive Creatures.esm") && IF VAR(ES) WARN: Borrar. Ya esta incluido en Skyrim Immersive Creatures.esp.
 ENG_All_In_One_v1.2.esp
 NoRestorationExploit.esp
 ANB - ArrowsToPicks.esp
@@ -10157,9 +10157,9 @@ WeaponsOf3E - No Leveled Lists.esp
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, Weapons of the Third Era MoS.
   TAG: {{BASH: Delev, Relev}}
   // for versions <1.5
-  IF VAR(EN) && IF VAR(SkyReM) WARN: Delete. WeaponsOf3E included in 'SkyRe_Main.esp'.
-    IF VAR(RU) && IF VAR(SkyReM) WARN: Удалите. WeaponsOf3E уже включен в 'SkyRe_Main.esp'.
-      IF VAR(ES) && IF VAR(SkyReM) WARN: Borrar. WeaponsOf3E se encuentra en 'SkyRe_Main.esp'
+  IF VAR(EN) && IF VAR(SkyReM) WARN: Delete. WeaponsOf3E included in SkyRe_Main.esp.
+    IF VAR(RU) && IF VAR(SkyReM) WARN: Удалите. WeaponsOf3E уже включен в SkyRe_Main.esp.
+      IF VAR(ES) && IF VAR(SkyReM) WARN: Borrar. WeaponsOf3E se encuentra en SkyRe_Main.esp
   IF REGEX("WeaponsOf3E(-alpha|-beta|_Replacer)?\.esp") INC: WeaponsOf3E*.esp
 3rdEraWeapMoS-replacer.esp
 3rdEraWeapMoS-lvlList.esp
@@ -26329,6 +26329,7 @@ Spousetocustomhome.esp
 StopBumpingIntoMe.esp
   IF VAR(EN) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp or moveitLWT.esp
     IF VAR(RU) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp или moveitLWT.esp
+      IF VAR(ES) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp o moveitLWT.esp
 Tauriel Original Standalone_v1_0.esp
 Tauriel original de Standalone_v1_0.esp
   IF FILE("Tauriel Original Standalone_v1_0.esp") INC: Tauriel Original Standalone_v1_0.esp
@@ -26409,7 +26410,9 @@ Followers Stop Fighting Each Other.esp
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Followers Stop Fighting Each Other 2.0.esp
 Seguidores DEJAR de pelear Entre Other.esp
-  IF FILE("Followers Stop Fighting Each Other 2.0.esp") ERROR: Translation of Followers Stop Fighting Each Other 2.0.esp
+  IF FILE("Followers Stop Fighting Each Other 2.0.esp") && IF VAR(EN) WARN: Use either Followers Stop Fighting Each Other 2.0.esp or Seguidores DEJAR de pelear Entre Other.esp, not both.
+    IF FILE("Followers Stop Fighting Each Other 2.0.esp") && IF VAR(RU) WARN: Используйте любой, или Followers Stop Fighting Each Other 2.0.esp или Seguidores DEJAR de pelear Entre Other.esp, не оба.
+      IF FILE("Followers Stop Fighting Each Other 2.0.esp") && IF VAR(ES) WARN: Usar Followers Stop Fighting Each Other 2.0.esp o Seguidores DEJAR de pelear Entre Other.esp, no ambos.
 ZZZ_Stenvar_Replacer_THAIDEN.esp
 AmazingFollowerTweaks.esp
   IF CHECKSUM("AmazingFollowerTweaks.esp", 32F45BB8) && IF VAR(EN) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -27879,7 +27882,6 @@ MoT_Last_LoadOrder_File.esp
   IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859sTES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
-      IF VAR(ES) WARN: Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
 REGEX: PTAlchemyOverhaul_SkillRate_(0|1)_\d{1, 2}\.esp
 // PTAlchemyOverhaul_SkillRate_x_xx must load after anything that changes leveling rate of skill
   IF VAR(EN) SAY: Use only one PTAlchemyOverhaul_SkillRate esp.
