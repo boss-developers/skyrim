@@ -58,7 +58,7 @@ Note: Standardized messages offer the following beenfits:
       IF CHECKSUM("plugin", Checksum) && IF VAR(ES) DIRTY: <x> ITM, <y> UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 // Remember to fill in the appropriate details (If there are 0 ITM or UDR, please insert a 0)
 
-//This is an efficient way to get all three translated DITRY messages. You can record a macro for step 3 if you use it often:
+//This is an efficient way to get all three translated DIRTY messages. You can record a macro for step 3 if you use it often:
 
 1) Paste in this placeholder:
   IF CHECKSUM("plugin", Checksum) DIRTY: <x> ITM, <y> UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -66,7 +66,7 @@ Note: Standardized messages offer the following beenfits:
 3) Highlight placeholder and do the following Replace operation, with "in selection" and "regular expression" both checked:
 
 Find what:
-\s\s(IF\sCHECKSUM\(.+\)\s)(DIRTY:\s)(\d{1,5}\sITM,\s\d{1,5}\sUDR\s)(records.\sNeeds\s"http://skyrim.nexusmods.com/mods/25859\sTES5Edit"\scleaning\.\sA\scleaning\sguide\sis\savailable\s"http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit\shere"\.)
+\s\s(IF\sCHECKSUM\(.+\w{8}\)\s)(DIRTY:\s)(\d{1,5}\sITM,\s\d{1,5}\sUDR\s)(records.\sNeeds\s"http://skyrim.nexusmods.com/mods/25859\sTES5Edit"\scleaning\.\sA\scleaning\sguide\sis\savailable\s"http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit\shere"\.)
 
 Replace with:
   \1&& IF VAR\(EN\) \2\3\4\n    \1&& IF VAR\(RU\) \2\3записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".\n      \1&& IF VAR\(ES\) \2\3entradas. Necesita se limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
