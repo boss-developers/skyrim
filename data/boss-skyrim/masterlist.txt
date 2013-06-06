@@ -9298,8 +9298,9 @@ Prometheus_ConanOutfits.esp
 PrvtIChrysamere.esp
 PrvtI_HeavyArmory.esp
   TAG: {{BASH: Relev}}
-  IF VAR(SkyReM) INC: SkyRe_Main.esp
-  // included
+  IF VAR(SkyReM) && IF VAR(EN) WARN: Delete. Already included in SkyRe_Main.esp.
+    IF VAR(SkyReM) && IF VAR(RU) WARN: Удалите. Уже включено в SkyRe_Main.esp.
+      IF VAR(SkyReM) && IF VAR(ES) WARN: Borrar. Esta incluido en SkyRe_Main.esp.
 PrvtI_HeavyArmory_DG_Addon.esp
   TAG: {{BASH: Delev, Relev}}
 prvti_heavyarmory_dawnguard.esp
@@ -9593,8 +9594,9 @@ ShreddedTrissHat.esp
   IF VAR(EN) && IF FILE("DBShreddedTriss.esp") WARN: Delete. Already included in 'DBShreddedTriss.esp'
     IF VAR(RU) && IF FILE("DBShreddedTriss.esp") WARN: Удалите. Уже включено в 'DBShreddedTriss.esp'
 ShShortswords.esp
-  IF VAR(EN) && IF VAR(SkyReM) WARN: Delete. Already included in 'SkyRe_Main.esp'
-    IF VAR(RU) && IF VAR(SkyReM) WARN: Удалите. Уже входит в SkyRe_Main.esp
+  IF VAR(SkyReM) && IF VAR(EN) WARN: Delete. Already included in SkyRe_Main.esp.
+    IF VAR(SkyReM) && IF VAR(RU) WARN: Удалите. Уже включено в SkyRe_Main.esp.
+      IF VAR(SkyReM) && IF VAR(ES) WARN: Borrar. Esta incluido en SkyRe_Main.esp.
   TAG: {{BASH: Delev, Relev}}
 Siege Bow & Backpacks.esp
 siegebreaker.esp
@@ -11260,6 +11262,8 @@ Monster Wars - Venator Daemonous.esp
 ENDGROUP: Monster Wars
 
 BEGINGROUP: SkyRe
+IF VAR(SkyReM) MOD: Reanimate FX.esp
+//As the author suggested
 
 /* SkyRe Section */
 SkyRe_Main.esp
@@ -26822,7 +26826,7 @@ Race Tweaks.esp
 RaceRevamp.esp
 Races and Doomstones.esp
 Races Reviewed by Theme.esp
-reanimate fx.esp
+IFNOT VAR(SkyReM) MOD: Reanimate FX.esp
 ReducedCarryWeight - 150.esp
 Khajiit Awesome.esp
 Khajiit Racial Tweek.esp
