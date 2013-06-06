@@ -8891,6 +8891,7 @@ Mondschwert von General Lee Sam.esp
 MongolArmor.esp
   IF VAR(EN) && IF CHECKSUM("MongolArmor.esp", 7A153783) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) && IF CHECKSUM("MongolArmor.esp", 7A153783) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+      IF VAR(ES) && IF CHECKSUM("MongolArmor.esp", 7A153783) WARN: This file contains unexpected (or out of order) records and should be removed.
   IF CHECKSUM("MongolArmor.esp", 7A153783) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("MongolArmor.esp", 7A153783) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("MongolArmor.esp", 7A153783) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
@@ -24206,8 +24207,10 @@ NewSuccubusRace.esp
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
       IFNOT VAR(RaceComp) && IF VAR(ES) ERROR: RaceCompatibility.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
-  IF VAR(EN) && IF CHECKSUM("NewSuccubusRace.esp", F3C4E9C8) DIRTY: 94 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-  WARN: Mod contains undeleted French data that might cause conflicts. If this becomes a problem, please contact the author and urge them to clean their mod.
+  IF CHECKSUM("NewSuccubusRace.esp", F3C4E9C8) DIRTY: 94 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+  IF VAR(EN) WARN: Mod contains undeleted French data that might cause conflicts. If this becomes a problem, please contact the author and urge them to clean their mod.
+    IF VAR(RU) WARN: Модсодержит восстановленные данные на французском, что может вызывать конфликты. Если это становится проблемой, свяжитесь с автором модаи убедите его почистить его мод.
+      IF VAR(ES) WARN: Mod contains undeleted French data that might cause conflicts. If this becomes a problem, please contact the author and urge them to clean their mod.
 Nidia Race.esp
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
