@@ -112,9 +112,9 @@ IF REGEX("SoS - (The Dungeons|The Wilds|Civilization)?\.esp") SET: SoS
       IF VAR(ES) && IF VERSION("BOSS", "2.1.1.0", <) GLOBAL WARN: Tu versión de BOSS es obsoleto Puedes descargar la nueva versión (v2.1.1) aquí: "http://code.google.com/p/better-oblivion-sorting-software/downloads/list Google Code BOSS page."
 
 // BOSS Thread
-  IF VAR(EN) GLOBAL SAY: "http://forums.bethsoft.com/topic/1457307-relz-boss-for-skyrim/ Latest BOSS thread"
-    IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1457307-relz-boss-for-skyrim/ здесь"(Eng).
-      IF VAR(ES) GLOBAL SAY: "http://forums.bethsoft.com/topic/1457307-relz-boss-for-skyrim/ Forum de BOSS"
+  IF VAR(EN) GLOBAL SAY: "http://forums.bethsoft.com/topic/1462361-relz-boss-for-skyrim// Latest BOSS thread"
+    IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1462361-relz-boss-for-skyrim// здесь"(Eng).
+      IF VAR(ES) GLOBAL SAY: "http://forums.bethsoft.com/topic/1462361-relz-boss-for-skyrim// Forum de BOSS"
 
 // Recruitment
   IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions. As of 26 April 2013 we are at over 5500+ plugins to add to the Masterlist dating as far back as September 2012. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM Aellis ("http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks Forums" or "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus Mods").
@@ -7870,8 +7870,6 @@ FaceMasksOfSkyrim.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
-  IF VAR(EN) && IF FILE("WetandCold - Ashes.esp") ERROR: Delete. Already included in WetandCold - Ashes.esp.
-    IF VAR(RU) && IF FILE("WetandCold - Ashes.esp") ERROR: Удалите. Уже включено в WetandCold - Ashes.esp.
 FactionClothes.esp
 FalchionSword.esp
   IF CHECKSUM("FalchionSword.esp", CF7AD7C4) && IF VAR(EN) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -26666,6 +26664,22 @@ xced.esp
   IFNOT FILE("XCE.esp") REQ: XCE.esp (XCE - Xenius Character Enhancement)
 [MPX]RaceHeights.esp
 [mpx] npc gender race heights v2.esp
+REGEX: Height Adjusted Skyrim(.+)?\.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
+REGEX: Height Adjusted Races( .+)?\.esp
+  IF VAR(EN) SAY: Use only one Height Adjusted Races*.esp.
+    IF VAR(RU) SAY: Используйте только один Height Adjusted Races*.esp.
+      IF VAR(ES) SAY: Utilizar solo un Height Adjusted Races*.esp.
+  IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
+      IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
+  IF CHECKSUM("Height Adjusted Races - Dragonborn.esp", D04A1C6D) || IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IF CHECKSUM("Height Adjusted Races - Dragonborn.esp", D04A1C6D) || IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+      IF CHECKSUM("Height Adjusted Races - Dragonborn.esp", D04A1C6D) || IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
+REGEX: True Giants( v\d)?\.esp
+  IF REGEX("Height Adjusted Races(.+)True Giants(.+)?\.esp") INC: Height Adjusted Races with True Giants
 AllWarPaintRaces.esp
 argonianraptor.esp
 REGEX: AROP- (Breton?|Bosmer?|Dunmer?|Khajit?|Nord?|Orsimer?|Imperial?).+\.esp
@@ -26715,22 +26729,6 @@ Feminine Female Argonian Vampires [Dawnguard].esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 Feminine Female Orcs.esp
 Feminine Orc Animation by D.esp
-REGEX: Height Adjusted Skyrim(.+)?\.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
-REGEX: Height Adjusted Races( .+)?\.esp
-  IF VAR(EN) SAY: Use only one Height Adjusted Races*.esp.
-    IF VAR(RU) SAY: Используйте только один Height Adjusted Races*.esp.
-      IF VAR(ES) SAY: Utilizar solo un Height Adjusted Races*.esp.
-  IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
-      IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) || IF CHECKSUM("Height Adjusted Races - Dawnguard.esp", ED813AB7) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-  IF CHECKSUM("Height Adjusted Races - Dragonborn.esp", D04A1C6D) || IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
-    IF CHECKSUM("Height Adjusted Races - Dragonborn.esp", D04A1C6D) || IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
-      IF CHECKSUM("Height Adjusted Races - Dragonborn.esp", D04A1C6D) || IF CHECKSUM("Height Adjusted Races with True Giants - Smaller Giant Edition.esp", 47461DD0) || IF CHECKSUM("Height Adjusted Races with True Giants.esp", EEDA8145) && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
-REGEX: True Giants( v\d)?\.esp
-  IF REGEX("Height Adjusted Races(.+)True Giants(.+)?\.esp") INC: Height Adjusted Races with True Giants
 EnhancedCharacterEdit.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.9", <) REQ: "http://skse.silverlock.org SKSE" 1.6.9+
