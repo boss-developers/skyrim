@@ -27018,10 +27018,15 @@ Vr - Guard Comment Tweak.esp
 Vrx Guards Equipment Comment Tweaks.esp
 You Are Over-encumbered.esp
 TTYM - Think to Yourself Messages.esp
+TTYM - Frostfall Module.esp
+  IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(EN) ERROR: Chesko_Frostfall.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(RU) ERROR: Chesko_Frostfall.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(ES) ERROR: Chesko_Frostfall.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 // TTYM or other mods in this section may require some re-ordering. TTYM should
 // be after mods changing the text of messages, but before mods such as
 // sOverEncumbered.esp that remove/suppress texts. Perhaps a new grouping of
 // this section would be in order?
+// I'll get around to looking into reworking this section eventually. - Freso
 sOverEncumbered.esp
 ENDGROUP: Message suppression/changing overrides
 
