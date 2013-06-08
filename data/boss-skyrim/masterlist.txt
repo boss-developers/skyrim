@@ -26986,48 +26986,72 @@ BEGINGROUP: Message suppression/changing overrides
 //
 // Best loaded late to override possible message additions from other mods.
 
+/*
+  Per discussion in the Google Group, I've started sorted the mods in this
+  group into three categories: "Message override overhauls",
+  "Single message overrides", and "Message suppressors". I don't know most of
+  the mods and some of those I've tried to look up, I have not been able to
+  locate. Please do help out and sort the "Unsorted group" into one of the
+  three 'sorted' ones. (DeleteWhenCooked)
+  - Freso
+*/
+
+// Unsorted
 attkremover.esp
 changed syntaxes.esp
 Chesko_LevelUp.esp
   IF VERSION("SKSE", "0.1.6.1", <) REQ: "http://skse.silverlock.org SKSE" 1.6.1+.
   IF VERSION("TES5", "1.7.7.0", <) REQ: Skyrim 1.7.7+
-DisableNoFastTravelMessage.esp
-DragonWordsDisplayed.esp
-First Person Messages.esp
-  IF CHECKSUM("First Person Messages.esp", 9A11B0C4) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("First Person Messages.esp", 9A11B0C4) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("First Person Messages.esp", 9A11B0C4) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-MenuShoutsInDragonsLanguage.esp
-  IF VAR(Dawnguard) && IFNOT CHECKSUM("MenuShoutsInDragonsLanguage.esp", E06D6E46) ERROR: Use Dawnguard version.
 no_annoying_messages.esp
 NoMoreMessages.esp
+noSkillMessage.esp
+RacialBonusesOnCharacterCreation.esp
+
+// Candidates for moving to another group (DeleteWhenCooked)
+
+// These look like they are altering NPC dialogue and not MESG's per se:
 nomorestupiddog.esp
 NoSkillComments.esp
-noSkillMessage.esp
-NymSkyrimGrammarHammer.esp
-  IF CHECKSUM("NymSkyrimGrammarHammer.esp", 90A68AA7) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("NymSkyrimGrammarHammer.esp", 90A68AA7) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("NymSkyrimGrammarHammer.esp", 90A68AA7) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-quxxy - improved, sortable books.esp
-RacialBonusesOnCharacterCreation.esp
 ShutUpGuards.esp
 Vr - Guard Comment Tweak.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Vrx Guards Equipment Comment Tweaks.esp
-You Are Over-encumbered.esp
+
+// Otherwise possibly belonging to another group:
+DragonWordsDisplayed.esp
+MenuShoutsInDragonsLanguage.esp
+  IF VAR(Dawnguard) && IFNOT CHECKSUM("MenuShoutsInDragonsLanguage.esp", E06D6E46) ERROR: Use Dawnguard version.
+quxxy - improved, sortable books.esp
+  // Couldn't find this one, but sounds like a book naming override? -Freso
+
+// Back to actual group entries (DeleteWhenCooked)
+
+// Message override overhauls
+NymSkyrimGrammarHammer.esp
+  IF CHECKSUM("NymSkyrimGrammarHammer.esp", 90A68AA7) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("NymSkyrimGrammarHammer.esp", 90A68AA7) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("NymSkyrimGrammarHammer.esp", 90A68AA7) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  // Placing this first, as it overrides stuff other than MESG's, allowing
+  // users to use both this and the First Person Messages/TTYM. -Freso
+First Person Messages.esp
+  IF CHECKSUM("First Person Messages.esp", 9A11B0C4) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("First Person Messages.esp", 9A11B0C4) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("First Person Messages.esp", 9A11B0C4) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 TTYM - Think to Yourself Messages.esp
 TTYM - Frostfall Module.esp
   IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(EN) ERROR: Chesko_Frostfall.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(RU) ERROR: Chesko_Frostfall.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(ES) ERROR: Chesko_Frostfall.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-// TTYM or other mods in this section may require some re-ordering. TTYM should
-// be after mods changing the text of messages, but before mods such as
-// sOverEncumbered.esp that remove/suppress texts. Perhaps a new grouping of
-// this section would be in order?
-// I'll get around to looking into reworking this section eventually. - Freso
+
+// Single message overrides
+You Are Over-encumbered.esp
+
+// Message suppressors
+DisableNoFastTravelMessage.esp
 sOverEncumbered.esp
+
 ENDGROUP: Message suppression/changing overrides
 
 BEGINGROUP: Respawn & day length overrides
