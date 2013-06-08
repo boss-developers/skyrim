@@ -1191,7 +1191,7 @@ REGEX: NPCEssential - .+\.esp
   // Global set flag Essential for NPCs. Loaded before vanilla fixes and USKP
   IF VAR(EN) SAY: Need to load before all mods that change NPCs. This mod is sets Essential flag for NPCs but with other vanilla stats.
     IF VAR(RU) SAY: Нужно загружать перед любыми модами, меняющими npc. Этот мод устанавливает флаг бессмертия для NPC, но оставляет другие характеристики, как в чистом Скайрим.
-	  IF VAR(EN) SAY: Necesita ser cargado antes de cualquier mod que modifique NPCs. Este mod cambia el statatus de los NPCs a esencial.
+	  IF VAR(ES) SAY: Necesita ser cargado antes de cualquier mod que modifique NPCs. Este mod cambia el statatus de los NPCs a esencial.
 ENDGROUP: Earliest mods
 
 BEGINGROUP: Vanilla fixes
@@ -1339,7 +1339,7 @@ breezehomeshadowfix.esp
 Breezehome-hf-CTD-fix.esp
   IF VAR(EN) SAY: Obsolete. Delete.
     IF VAR(RU) SAY: Устарел. Удалите.
-	  IF VAR(EN) SAY: Obsoleto. Borrar.
+	  IF VAR(ES) SAY: Obsoleto. Borrar.
 Brynjolf Dialogue Fix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp.
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
@@ -2750,7 +2750,7 @@ MoreSnowWindy.esp
 MoreSnowWindyand150percentLessView.esp
   IF VAR(EN) INC: All lighting mods.
     IF VAR(RU) INC: Все моды, модифицирующие освещение.
-	  IF VAR(EN) INC: Cualquier mod que modifique el clima.
+	  IF VAR(ES) INC: Cualquier mod que modifique el clima.
   IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") && IF VAR(EN) WARN: Use only one MoreSnow *.esp.
     IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") && IF VAR(RU) WARN: Используйте только один MoreSnow *.esp.
       IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") && IF VAR(ES) WARN: Utilizar solo un MoreSnow *.esp.
@@ -2760,7 +2760,7 @@ MoreSnowWindyand150percentLessView.esp
 MoreSnowWindyand75percentLessView.esp
   IF VAR(EN) INC: All lighting mods.
     IF VAR(RU) INC: Все моды, модифицирующие освещение.
-	  IF VAR(EN) INC: Cualquier mod que modifique el clima.
+	  IF VAR(ES) INC: Cualquier mod que modifique el clima.
   IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") || IF FILE("MoreSnowWindyand150percentLessView.esp") && IF VAR(EN) WARN: Use only one MoreSnow *.esp.
     IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") || IF FILE("MoreSnowWindyand150percentLessView.esp") && IF VAR(RU) WARN: Используйте только один MoreSnow *.esp.
       IF FILE("MoreSnow.esp") || IF FILE("MoreSnowWindy.esp") || IF FILE("MoreSnowWindyand150percentLessView.esp") && IF VAR(ES) WARN: Utilizar solo un MoreSnow *.esp.
@@ -2798,7 +2798,7 @@ Supreme Storms.esp
 PaperMapHeight-RemoveFog.esp
   IF VAR(EN) && IF FILE("WATER.esp") WARN: Removing Fog will affect WATER. Load after WATER if you are experiencing errors.
     IF VAR(RU) && IF FILE("WATER.esp") WARN: Удаление тумана повлияет на мод WATER. Загружайте после WATER если вы замечаете баги.
-	  IF VAR(EN) && IF FILE("WATER.esp") WARN: Remover la niebla afectara WATER. Carga despues de WATER si experiencias problemas.
+	  IF VAR(ES) && IF FILE("WATER.esp") WARN: Remover la niebla afectara WATER. Carga despues de WATER si experiencias problemas.
 VanillaSnowWindyand150percentLessView.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, MoreSnowWindyand150percentLessView.esp.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, MoreSnowWindyand150percentLessView.esp.
@@ -3265,7 +3265,7 @@ Weapons and Armor fixes.esp
   // TAG: {{BASH: Stats}}
   IF VAR(EN) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: For 'WAF+SPO+CCO' users. No conflicts with 'Smithing Perks Overhaul' and 'Complete Crafting Overhaul'.
     IF VAR(RU) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Для использующих 'WAF+SPO+CCO'. Конфликтов с 'Smithing Perks Overhaul' и 'Complete Crafting Overhaul' не обнаружено.
-	  IF VAR(EN) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Para los que utilizen 'WAF+SPO+CCO'. No tiene conflictos con 'Smithing Perks Overhaul' o 'Complete Crafting Overhaul'.
+	  IF VAR(ES) && IF REGEX("Smithing Perks Overhaul( - Balanced)?\.esp") && IF VAR(CCO) SAY: Para los que utilizen 'WAF+SPO+CCO'. No tiene conflictos con 'Smithing Perks Overhaul' o 'Complete Crafting Overhaul'.
 Weapons and Armor Fixes-Hacks.esp
 Weapons and Armor fixes - Hacks.esp
   IF VAR(EN) && IF VERSION("TES5", "1.8", >) && IFNOT CHECKSUM("Weapons and Armor fixes - Hacks.esp", 119BC97C) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -5725,7 +5725,7 @@ Skyrim Scaling Stopper - Misc Edits.esp
   TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) WARN: If using version 3+, Skyrim Monster Mod is required.
     IF VAR(RU) WARN: Для версий 3 или выше требуется Skyrim Monster Mod.
-	  IF VAR(EN) WARN: Skyrim Monster Mod es requerido si utilizas la versión 3+.
+	  IF VAR(ES) WARN: Skyrim Monster Mod es requerido si utilizas la versión 3+.
 Skyrim Scaling Stopper - Vanilla Dragon Scaling Patch.esp
   TAG: {{BASH: Delev, Relev}}
 SkyrimGranary.esp
@@ -6326,7 +6326,7 @@ Dynavision.esp
 DYNAVISION Dynamic Depth of Field.esp
   IF VAR(EN) SAY: Make sure you have not switched DoF off in your ini file. If you don't see any effect, open you Skyrimprefs.ini and look for 'bDoDepthOfField'. Make sure it is set to 1.
     IF VAR(RU) SAY: Убедитесь, что вы не выключили DoF в вашем ini-файле. Если вы не видите эффекта, откройте ваш Skyrimprefs.ini и найдите строку 'bDoDepthOfField'. Убедитесь, что она имеет значение 1.
-	  IF VAR(EN) SAY: Asegurate de no haber apagado el DoF en tu ini. Si no ves el efecto abre Skyrimprefs.ini y asegurate de que 'bDoDepthOfField' sea igual a 1.
+	  IF VAR(ES) SAY: Asegurate de no haber apagado el DoF en tu ini. Si no ves el efecto abre Skyrimprefs.ini y asegurate de que 'bDoDepthOfField' sea igual a 1.
 Footprints.esp
 Footprints - Ash.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
