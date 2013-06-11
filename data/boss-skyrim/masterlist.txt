@@ -18862,6 +18862,7 @@ Skyrim_Dragon Update.esp
   // tags not tested
   IF VAR(EN) INC: Other Dragon override mods, use only one.
     IF VAR(RU) INC: Другие, изменяющие драконов моды, используйте только один.
+      IF VAR(RU) INC: Other Dragon override mods, use only one.
 skyrim philter of phantom recipe mod.esp
   TAG: {{BASH: Delev}}
 REGEX: secunda Size x\d\.\d\.esp
@@ -18944,7 +18945,7 @@ Signs and Guardians.esp
 ESP.esp
   IF VAR(EN) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.
     IF VAR(RU) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Может перезаписать расовую информацию. из SkyRe.esp или SkyReNoLighting.esp, но может быть безопасно отключен, после использования расового меню.
-SkyRealism - Grass.esp
+      IF VAR(ES) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.
 Skyrim Creatures Alive.esp
   TAG: {{BASH: Relev, Delev}}
 SkyrimMoreSpawns.esp
@@ -18960,7 +18961,9 @@ SkyTEST-RealisticAnimals&Predators.esp
   IF CHECKSUM("SkyTEST-RealisticAnimals&Predators.esp", 2E582D9B) && IF VAR(EN) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("SkyTEST-RealisticAnimals&Predators.esp", 2E582D9B) && IF VAR(RU) DIRTY: 12 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("SkyTEST-RealisticAnimals&Predators.esp", 2E582D9B) && IF VAR(ES) DIRTY: 12 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF VAR(Hearthfire) WARN: This mod places animal spawn points at some of the same locations of the Hearthfire homes. You may want to disable this mod while you're building the homes and then enable it again afterwards to avoid your homes under construction being invisible.
+  IF VAR(EN) && IF VAR(Hearthfire) && IF ACTIVE("SkyTEST-RealisticAnimals&Predators.esp") WARN: This mod places animal spawn points at some of the same locations of the Hearthfire homes. You may want to disable this mod while you're building the homes and then enable it again afterwards to avoid your homes under construction being invisible.
+    IF VAR(RU) && IF VAR(Hearthfire) && IF ACTIVE("SkyTEST-RealisticAnimals&Predators.esp") WARN: Этот мод помещает точки появления животных на локациях расположения домов Hearthfire. Возможно понадобится отключить этот мод пока вы строите дома и включить уже после постройки, для предотвращения того, что строящиеся дома будут невидимыми.
+      IF VAR(ES) && IF VAR(Hearthfire) && IF ACTIVE("SkyTEST-RealisticAnimals&Predators.esp") WARN: This mod places animal spawn points at some of the same locations of the Hearthfire homes. You may want to disable this mod while you're building the homes and then enable it again afterwards to avoid your homes under construction being invisible.
 SkyTEST-RealisticAnimals&Predators-Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -18988,7 +18991,9 @@ dD-Dawnguard-EBT Patch.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 dd - enhanced blood main dg.esp
-  SAY: V. 2.5 for Dawnguard is discontinued. Update to a "http://skyrim.nexusmods.com/mods/60 newer version."
+  IF VAR(EN) SAY: V. 2.5 for Dawnguard is discontinued. Update to a "http://skyrim.nexusmods.com/mods/60 newer version."
+    IF VAR(RU) SAY: Разработка версии 2.5 для Dawnguard прекращена. Обновите до "http://skyrim.nexusmods.com/mods/60 последней версии."
+      IF VAR(ES) SAY: V. 2.5 for Dawnguard is discontinued. Actualizar a la "http://skyrim.nexusmods.com/mods/60 última versión."
 dD-Dragonborn-Dawnguard-EBT Patch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -19021,8 +19026,9 @@ dD-Larger Splatter Size.esp
 dD-Reduced Wound Size.esp
 slowerstaminadrain.esp
 REGEX: sneaky bow x\d\d?\.esp
-  IF VAR(EN) && IF FILE("PerkUP-Archery.esp") WARN: Delete. Already included in 'PerkUP-Archery.esp'
-    IF VAR(RU) && IF FILE("PerkUP-Archery.esp") WARN: Удалите. Уже включено в 'PerkUP-Archery.esp'
+  IF FILE("PerkUP-Archery.esp") && IF VAR(EN) WARN: Delete. Already included in 'PerkUP-Archery.esp'.
+    IF FILE("PerkUP-Archery.esp") && IF VAR(RU) WARN: Удалите. Уже включено в 'PerkUP-Archery.esp'.
+      IF FILE("PerkUP-Archery.esp") && IF VAR(ES) WARN: Borrar. Esta incluido en 'PerkUP-Archery.esp'.
 Speed Revised.esp
 spiders_to_draugr_and_skeevers.esp
 Spriggans are  on your side.esp
