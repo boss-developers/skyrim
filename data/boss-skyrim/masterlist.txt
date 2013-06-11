@@ -247,7 +247,7 @@ Skyrim Project Optimization - No Homes - Full Version.esm
 3rdEraWeaponsMoS.esm
 REGEX: (83Willows_)?101BUGs.+\.esm
   TAG: {{BASH: Delev, Relev}}
-  // http://skyrim.nexusmods.com/mods/20166/  Changing esp to esm.
+  // http://skyrim.nexusmods.com/mods/20166  Changing esp to esm.
 
 // esms a
 Skyrim Adventurer's Tent.esm
@@ -381,9 +381,13 @@ CLARALUX - More and Brighter Lights.esm
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 ClimatesOfTamriel.esm
-  IF FILE("SoS - Civilization.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
-  IF FILE("SoS - The Wilds.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") WARN: Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
-  IF CHECKSUM("ClimatesOfTamriel.esm", C30AB34E) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the "http://skyrim.nexusmods.com/mods/17802/ updated plugin".
+  IF FILE("SoS - Civilization.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(EN) WARN: Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+      IF FILE("SoS - Civilization.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный "http://skyrim.nexusmods.com/mods/20193 здесь."
+        IF FILE("SoS - Civilization.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(ES) WARN: Due to conflicts between Sounds of Skyrim - Civilization and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+  IF FILE("SoS - The Wilds.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(EN) WARN: Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
+      IF FILE("SoS - The Wilds.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm рекомендуется использовать соответствующий патч совместимости, расположенный "http://skyrim.nexusmods.com/mods/10886 здесь."
+        IF FILE("SoS - The Wilds.esp") && IFNOT REGEX("SoS - The Wilds-PatchCoT(Sounds)?(WinterEdition)?\.esp") && IF VAR(ES) WARN: Due to conflicts between Sounds of Skyrim - The Wilds and ClimatesOfTamriel.esm it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
+  IF CHECKSUM("ClimatesOfTamriel.esm", C30AB34E) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  Please use the "http://skyrim.nexusmods.com/mods/17802 updated plugin".
   IF CHECKSUM("ClimatesOfTamriel.esm", C110B173) && IF VAR(EN) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ClimatesOfTamriel.esm", C110B173) && IF VAR(RU) DIRTY: 4 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("ClimatesOfTamriel.esm", C110B173) && IF VAR(ES) DIRTY: 4 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -507,9 +511,9 @@ Eyja 1.5.esm
 
 // esms f
 Fantasy Music Overhaul.esm
-  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/28583/ here".
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/28583/ здесь".
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/28583/ aquí".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/28583 here".
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/28583 здесь".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/28583 aquí".
 Farkasv2.esm
 FluxMOD_ArtifactEffectPerk.esm
 FM - HaafingarHall.esm
@@ -1940,9 +1944,9 @@ vampirelorddrainlifefix.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC).
       IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC).
-  IF VAR(EN) && IF VAR(UDGP) ERROR: Delete. Already included in "http://skyrim.nexusmods.com/mods/23491/ Unofficial Dawnguard Patch".
-    IF VAR(RU) && IF VAR(UDGP) ERROR: Удалите. Уже включено в "http://skyrim.nexusmods.com/mods/23491/ Unofficial Dawnguard Patch".
-      IF VAR(ES) && IF VAR(UDGP) ERROR: Borrar. Ya esta incluido en "http://skyrim.nexusmods.com/mods/23491/ Unofficial Dawnguard Patch".
+  IF VAR(EN) && IF VAR(UDGP) ERROR: Delete. Already included in "http://skyrim.nexusmods.com/mods/23491 Unofficial Dawnguard Patch".
+    IF VAR(RU) && IF VAR(UDGP) ERROR: Удалите. Уже включено в "http://skyrim.nexusmods.com/mods/23491 Unofficial Dawnguard Patch".
+      IF VAR(ES) && IF VAR(UDGP) ERROR: Borrar. Ya esta incluido en "http://skyrim.nexusmods.com/mods/23491 Unofficial Dawnguard Patch".
 Vampire Orcs Welcome in Strongholds.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp.
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
@@ -3140,9 +3144,9 @@ esisenviropack.esp
 Fantasy Music Full Replace.esp
 Fantasy Music Non-Replace.esp
 REGEX: FMO - (Non-Replacer Version|Replacer Version)?\.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/28583/ here".
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/28583/ здесь".
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/28583/ aquí".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/28583 here".
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/28583 здесь".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/28583 aquí".
 Fantasy Music Overhaul.esp
   IF CHECKSUM("fantasy music overhaul.esp", FA0711C6) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("fantasy music overhaul.esp", FA0711C6) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -7054,9 +7058,9 @@ CircletOfIllumination.esp
 Cleric Armours - Credo.esp
 ClericCraftable.esp
 Cloaks.esp
-  IF FILE("Cloaks - No Imperial.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) WARN: Use only one cloaks*esp.
-    IF FILE("Cloaks - No Imperial.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) WARN: Используйте только один cloaks*esp.
-      IF FILE("Cloaks - No Imperial.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*esp.
+  IF FILE("Cloaks - No Imperial.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) WARN: Use only one cloaks*esp.
+    IF FILE("Cloaks - No Imperial.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) WARN: Используйте только один cloaks*esp.
+      IF FILE("Cloaks - No Imperial.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*esp.
   IF CHECKSUM("Cloaks.esp", 35C871DE) && IF VAR(EN) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Cloaks.esp", 35C871DE) && IF VAR(RU) DIRTY: 4 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Cloaks.esp", 35C871DE) && IF VAR(ES) DIRTY: 4 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -7064,9 +7068,9 @@ Cloaks.esp
     IF CHECKSUM("Cloaks.esp", D8F94C02) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Cloaks.esp", D8F94C02) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Cloaks - No Imperial.esp
-  IF FILE("Cloaks.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) WARN: Use only one cloaks*esp.
-    IF FILE("Cloaks.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) WARN: Используйте только один cloaks*esp.
-      IF FILE("Cloaks.esp")  || IF FILE("Cloaks - Player Only.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*esp.
+  IF FILE("Cloaks.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(EN) WARN: Use only one cloaks*esp.
+    IF FILE("Cloaks.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(RU) WARN: Используйте только один cloaks*esp.
+      IF FILE("Cloaks.esp") || IF FILE("Cloaks - Player Only.esp") && IF VAR(ES) WARN: Utilizar solo un cloaks*esp.
   IF CHECKSUM("Cloaks - No Imperial.esp", D5733582) && IF VAR(EN) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Cloaks - No Imperial.esp", D5733582) && IF VAR(RU) DIRTY: 14 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Cloaks - No Imperial.esp", D5733582) && IF VAR(ES) DIRTY: 14 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -8327,11 +8331,11 @@ REGEX: imp_helm_(dae|dawn|dw|eb|imp|night|st)\.esp
 WeaponsArmorFixes_ClosefacedHelmets_Patch.esp
   IFNOT FILE("imp_helm.esp") && IF VAR(EN) ERROR: imp_helm.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets
     IFNOT FILE("imp_helm.esp") && IF VAR(RU) ERROR: imp_helm.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets
-  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093/ Weapon and Armor Fixes Remade"
+  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093 Weapon and Armor Fixes Remade"
 WeaponsArmorFixes_ClosefacedHelmetsDG_Patch.esp
   IFNOT FILE("imp_helm_dawn.esp") && IF VAR(EN) ERROR: imp_helm_dawn.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets - Dawnguard
     IFNOT FILE("imp_helm_dawn.esp") && IF VAR(RU) ERROR: imp_helm_dawn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets - Dawnguard
-  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093/ Weapon and Armor Fixes Remade"
+  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093 Weapon and Armor Fixes Remade"
 ImperialArmor.esp
 imperialdragonarmor.esp
 Imperial Dragon Armor.esp
@@ -10083,7 +10087,7 @@ UnenchantedNightingaleArmour.esp
 UnenchantedNightingaleSetMod.esp
 UnenchRobeSepHoodThalmor.esp
 UnderC.esp
-Unique Dragon Priest Masks.esp 
+Unique Dragon Priest Masks.esp
 REGEX: UniqueLeveledItemsUpgrade(1dot3)?\.esp
   IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -11677,8 +11681,8 @@ SkyRe Dark Nemesis.esp
 SkyRe Divine Aegis.esp
   IF VAR(EN) SAY: Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
-  IF VAR(EN) && IF ACTIVE("Divine Aegis.esp")  && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Remember not to load (or to simply delete) DarkNemesis.esp
-    IF VAR(RU) && IF ACTIVE("Divine Aegis.esp")  && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Не забудьте отключить или удалить DarkNemesis.esp
+  IF VAR(EN) && IF ACTIVE("Divine Aegis.esp") && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Remember not to load (or to simply delete) DarkNemesis.esp
+    IF VAR(RU) && IF ACTIVE("Divine Aegis.esp") && IFNOT CHECKSUM("DarkNemesis.esp", CE5E555B) SAY: Не забудьте отключить или удалить DarkNemesis.esp
 SkyRe Equipment of Eternal Shine.esp
   IF CHECKSUM("SkyRe Equipment of Eternal Shine.esp", C47F2C45) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("SkyRe Equipment of Eternal Shine.esp", C47F2C45) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
@@ -17720,8 +17724,8 @@ GuardDialogue50.esp
 Guard Dialogue Overhaul.esp
 Guard Dialogue Overhaul Lite.esp
 WeaponsArmorFixes_GuardDialogueOverhaul_Patch.esp
-  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093/ Weapon and Armor Fixes Remade"
-  IFNOT FILE("Guard Dialogue Overhaul.esp") REQ: "http://skyrim.nexusmods.com/mods/23390/ Guard Dialouge Overhaul"
+  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093 Weapon and Armor Fixes Remade"
+  IFNOT FILE("Guard Dialogue Overhaul.esp") REQ: "http://skyrim.nexusmods.com/mods/23390 Guard Dialouge Overhaul"
 GuardianStonesOverhaul-Candrian.esp
 Guards armor replacement.esp
   TAG: {{BASH: Delev}}
@@ -18281,9 +18285,9 @@ moon_earthwmars_masser.esp
 more ai processing.esp
 MoreArrows.esp
 More Diverse Enchanting Options.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/25802/ Way of the Spellblade".
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/25802/ Way of the Spellblade".
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/25802/ Way of the Spellblade".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/25802 Way of the Spellblade".
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/25802 Way of the Spellblade".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/25802 Way of the Spellblade".
 more dragons.esp
 /* v2.9.1 only one esp */
 More Dynamic Shadows.esp
@@ -18800,14 +18804,14 @@ REGEX: SkyJubs_Invisible_Helmets_English_Main_1_(2|3|3v|4|4v)\.esp
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, SkyJubs_Invisible_Helmets_Eng_Main.esp.
 SkyJubs_Invisible_Helmets_Eng_Main.esp
 REGEX: SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
 SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
   IF REGEX("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp
 SkyJubs_Invisible_Helmets_Eng_Main_OnlyHelmets.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
   IF REGEX("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp
 SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -18833,29 +18837,29 @@ SkyJubs_Invisible_Helmets_German_Main_1_2.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp.
 SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
 REGEX: SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp") INC: SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp") INC: SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp
 SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp") INC: SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp") INC: SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp
   IF REGEX("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp
   IF REGEX("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp
 SkyJubs_Invisible_Helmets_Ger_Main_OnlyHelmets.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Eng_Main.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main.esp
   IF REGEX("SkyJubs_Invisible_Helmets_Eng_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Eng_ModKit_*.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp") INC: SkyJubs_Invisible_Helmets_Ger_MainAll_Headdress.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp") INC: SkyJubs_Invisible_Helmets_Eng_Main_OnlyFullHelmets.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Ger_Main_AllHeaddress.esp") INC: SkyJubs_Invisible_Helmets_Ger_MainAll_Headdress.esp
   IF REGEX("SkyJubs_Invisible_Helmets_Ger_ModKit_.+\.esp") INC: SkyJubs_Invisible_Helmets_Ger_ModKit_*.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp") INC: SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp") INC: SkyJubs_Invisible_Helmets_Ger_Main_OnlyFullHelmets.esp
 SkyJubs_Invisible_Helmets_Ger_Plugin_Dawnguard.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp") INC: SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp") INC: SkyJubs_Invisible_Helmets_Eng_Plugin_Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 SkyJubs_Invisible_Helmets_Ger_Plugin_Dragonborn.esp
-  IF FILE ("SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp") INC: SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp
+  IF FILE("SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp") INC: SkyJubs_Invisible_Helmets_Eng_Plugin_Dragonborn.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
@@ -19432,8 +19436,8 @@ REGEX: WeaponsArmorFixes_MultiMod_(DLC)?(Vanilla)?Patch\.esp
       IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT FILE("imp_helm_dawn.esp") && IF VAR(EN) ERROR: imp_helm_dawn.esp is not present or is not active. Skyrim will CTD when loading if using this file without Improved Closefaced Helmets - Dawnguard
     IF FILE("WeaponsArmorFixes_MultiMod_DLCPatch.esp") && IFNOT FILE("imp_helm_dawn.esp") && IF VAR(RU) ERROR: imp_helm_dawn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Improved Closefaced Helmets - Dawnguard
-  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093/ Weapon and Armor Fixes Remade"
-  IFNOT FILE("Guard Dialogue Overhaul.esp") REQ: "http://skyrim.nexusmods.com/mods/23390/ Guard Dialouge Overhaul"
+  IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093 Weapon and Armor Fixes Remade"
+  IFNOT FILE("Guard Dialogue Overhaul.esp") REQ: "http://skyrim.nexusmods.com/mods/23390 Guard Dialouge Overhaul"
 LMBalancingDV.esp
 LMBalancingDawnguardDV.esp
 IF FILE("LMBalancingDawnguardDV.esp") MOD:improvedrealistic.esp
@@ -19503,12 +19507,12 @@ Skyrim unleashed Xtra_npc.esp
     IF CHECKSUM("Skyrim unleashed Xtra_npc.esp", 05AAA1D2) && IF VAR(RU) DIRTY: 69 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Skyrim unleashed Xtra_npc.esp", 05AAA1D2) && IF VAR(ES) DIRTY: 69 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF FILE("Skyrim unleashed_npc.esp") INC: Skyrim unleashed_npc.esp
-Skyrim unleashed Xtra_crafting.esp  
+Skyrim unleashed Xtra_crafting.esp
   TAG: {{BASH: Delev, Relev}}
   IF FILE("Skyrim unleashed_crafting.esp") INC: Skyrim unleashed_crafting.esp
 Skyrim unleashed Xtra_enchantments.esp
   IF FILE("Skyrim unleashed_enchantments.esp") INC: Skyrim unleashed_enchantments.esp
-  
+
 ENDGROUP: Overrides Late
 ENDGROUP: Overrides
 
@@ -20094,7 +20098,7 @@ IF VAR(SoS) MOD: ClimatesOfTamriel-Sound.esp
 // moved here per recommendations by Sounds of Skyrim author
 
 
-IF FILE ("ClimatesOfTamriel-Sound.esp") && IF VAR(SoS) MOD: skyBirds - Airborne Perching Birds.esp
+IF FILE("ClimatesOfTamriel-Sound.esp") && IF VAR(SoS) MOD: skyBirds - Airborne Perching Birds.esp
   IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 131BB61C) || IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 18DBC60E) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 131BB61C) || IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 18DBC60E) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 131BB61C) || IF CHECKSUM("skyBirds - Airborne Perching Birds.esp", 18DBC60E) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -20141,7 +20145,7 @@ RLO - Occlusion Culling Performance Patch.esp
 //Updated RLO load order as per http://bit.ly/XIkuj0
 Realistic Lighting Overhaul - Illuminated Spells.esp
 Realistic Lighting Overhaul - Dungeons.esp
-  IF FILE ("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRLODungeons.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
+  IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRLODungeons.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeons.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601 here".
   IF CHECKSUM("Realistic Lighting Overhaul - Dungeons.esp", 18AD5FEB) && IF VAR(EN) DIRTY: 18 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Realistic Lighting Overhaul - Dungeons.esp", 18AD5FEB) && IF VAR(RU) DIRTY: 18 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Realistic Lighting Overhaul - Dungeons.esp", 18AD5FEB) && IF VAR(ES) DIRTY: 18 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -20150,13 +20154,17 @@ Realistic Lighting Overhaul - Dawnguard Interiors.esp
 Realistic Lighting Overhaul - Minor Cities & Town Interiors.esp
 Realistic Lighting Overhaul - Major City Exteriors.esp
 Realistic Lighting Overhaul - Major City Interiors.esp
-  IF FILE ("SoS - The Dungeons.esp") &&  IFNOT FILE("SoS - Civilization-PatchRLOMajorCityInteriors.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
-  IF FILE ("SoS - Civilization.esp") && IFNOT FILE("SoS - The Dungeons-PatchRLOMajorCityInteriors.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
+  IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - Civilization-PatchRLOMajorCityInteriors.esp") && IF VAR(EN) WARN: Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+      IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - Civilization-PatchRLOMajorCityInteriors.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный "http://skyrim.nexusmods.com/mods/20193 здесь."
+        IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - Civilization-PatchRLOMajorCityInteriors.esp") && IF VAR(ES) WARN: Due to conflicts between Sounds of Skyrim - Civilization and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+  IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - The Dungeons-PatchRLOMajorCityInteriors.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Major City Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601 here".
   IF CHECKSUM("Realistic Lighting Overhaul - Major City Interiors.esp", 033A5FD6) && IF VAR(EN) DIRTY: 9 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Realistic Lighting Overhaul - Major City Interiors.esp", 033A5FD6) && IF VAR(RU) DIRTY: 9 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Realistic Lighting Overhaul - Major City Interiors.esp", 033A5FD6) && IF VAR(ES) DIRTY: 9 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp
-  IF FILE ("SoS - Civilization.esp") &&  IFNOT FILE("SoS - Civilization-PatchRLOMinorCities.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+Realistic Lighting Overhaul - Minor Cities and Town Interiors.espasdf
+  IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRLOMinorCities.esp") && IF VAR(EN) WARN: Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+      IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRLOMinorCities.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp рекомендуется использовать соответствующий патч совместимости, расположенный "http://skyrim.nexusmods.com/mods/20193 здесь."
+        IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRLOMinorCities.esp") && IF VAR(ES) WARN: Due to conflicts between Sounds of Skyrim - Civilizaiton and Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
   IF CHECKSUM("Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp", 53706BFB) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp", 53706BFB) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Realistic Lighting Overhaul - Minor Cities and Town Interiors.esp", 53706BFB) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -20169,7 +20177,7 @@ Realistic Lighting Overhaul - Weathers.esp
 RLO - Adaptive Interiors Vanilla Weathers Patch.esp
 RLO - Major City Exteriors - No Guard Torches.esp
 Realistic Lighting Overhaul - Dungeon Lighting.esp
-  IF FILE ("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRLODungeonLighting.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
+  IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRLODungeonLighting.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and Realistic Lighting Overhaul - Dungeon Lighting.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601 here".
   IF CHECKSUM("Realistic Lighting Overhaul - Dungeon Lighting.esp", CB2AEEAF) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Realistic Lighting Overhaul - Dungeon Lighting.esp", CB2AEEAF) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Realistic Lighting Overhaul - Dungeon Lighting.esp", CB2AEEAF) && IF VAR(ES) DIRTY: 5 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -20190,7 +20198,7 @@ ClimatesOfTamriel-Dragonborn-Patch.esp
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
 ClimatesOfTamriel-Dungeons-Hardcore.esp
-  IFNOT FILE("SoS - The Dungeons-PatchCoTHardcore.esp") WARN: Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
+  IFNOT FILE("SoS - The Dungeons-PatchCoTHardcore.esp") WARN: Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601 here".
   IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
   IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -20484,8 +20492,8 @@ IFNOT FILE("3DNPC.esp") MOD: RND_UniqueBoozeBottles-Patch.esp
 IFNOT FILE("3DNPC.esp") MOD: KnapsackEnhanced.esp
   IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(EN) ERROR: Chesko_Frostfall.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/11163 Frostfall"
     IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(RU) ERROR: Chesko_Frostfall.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/11163 Frostfall"
-  IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/26228/ Realistic Needs and Diseases"
-    IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/26228/ Realistic Needs and Diseases"
+  IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/26228 Realistic Needs and Diseases"
+    IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/26228 Realistic Needs and Diseases"
 Realistic Weapon Weights.esp
   //  TAG: {{BASH: Stats}}
 Realistic Running Speed.esp
@@ -21193,9 +21201,9 @@ REGEX: CW - 0(.\d)? weight potions\.esp
 
 // spells d
 Darkness.esp
-  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/21164/ Dark Powers".
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/21164/ Dark Powers".
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/21164/ Dark Powers".
+  IF VAR(EN) SAY: Obsolete. Update to latest version, "http://skyrim.nexusmods.com/mods/21164 Dark Powers".
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии, "http://skyrim.nexusmods.com/mods/21164 Dark Powers".
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/21164 Dark Powers".
 DarkBrotherhoodAstrid.esp
   IF FILE("LegendarySouls.esp") && IF VAR(EN) ERROR: Delete. Already included in LegendarySouls.esp.
     IF FILE("LegendarySouls.esp") && IF VAR(RU) ERROR: Удалите. Включено в LegendarySouls.esp.
@@ -21756,7 +21764,7 @@ ToggleSpells - MagicEffects.esp
 ToggleSpells - Spells.esp
 togglevampiresight.esp
 Total Voidmagic.esp
-  IF FILE("Light Voidmagic.esp") || IF FILE("Medium Voidmagic.esp")  && IF VAR(EN) WARN: Use only one Voidmagic esp.
+  IF FILE("Light Voidmagic.esp") || IF FILE("Medium Voidmagic.esp") && IF VAR(EN) WARN: Use only one Voidmagic esp.
     IF FILE("Light Voidmagic.esp") || IF FILE("Medium Voidmagic.esp") && IF VAR(RU) WARN: Используйте только один Voidmagic esp.
       IF FILE("Light Voidmagic.esp") || IF FILE("Medium Voidmagic.esp") && IF VAR(ES) WARN: Utilizar solo un Voidmagic esp.
 TotalConjuration.esp
@@ -23592,7 +23600,7 @@ Skype - Conjuration.esp
   IF CHECKSUM("Skype - Conjuration.esp", B99B291E) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Skype - Conjuration.esp", B99B291E) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Skype - Conjuration.esp", B99B291E) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-Skype - Enchanting (Enchanting).esp 
+Skype - Enchanting (Enchanting).esp
   IF CHECKSUM("Skype - Enchanting (Enchanting).esp", E64A0FB0) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Skype - Enchanting (Enchanting).esp", E64A0FB0) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Skype - Enchanting (Enchanting).esp", E64A0FB0) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -24008,8 +24016,8 @@ NoMoreVanillaHair.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  REQ: "http://skyrim.nexusmods.com/mods/19623/ Crazy hairs and demoness hairs conversion by zzjay"
-  REQ: "http://skyrim.nexusmods.com/mods/3809/ Hair Pack"
+  REQ: "http://skyrim.nexusmods.com/mods/19623 Crazy hairs and demoness hairs conversion by zzjay"
+  REQ: "http://skyrim.nexusmods.com/mods/3809 Hair Pack"
   REQ: "http://skyrim.nexusmods.com/mods/18110 Hair packs of TES IV Oblivion"
   REQ: "http://skyrim.nexusmods.com/mods/17993 Hair packs of Fallout3"
   REQ: "http://skyrim.nexusmods.com/mods/18220 Hair packs of Fallout3 Patch"
@@ -24635,8 +24643,8 @@ IF FILE("3DNPC.esp") MOD: RND_UniqueBoozeBottles-Patch.esp
 IF FILE("3DNPC.esp") MOD: KnapsackEnhanced.esp
   IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(EN) ERROR: Chesko_Frostfall.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/11163 Frostfall"
     IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(RU) ERROR: Chesko_Frostfall.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/11163 Frostfall"
-  IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/26228/ Realistic Needs and Diseases"
-    IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/26228/ Realistic Needs and Diseases"
+  IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/26228 Realistic Needs and Diseases"
+    IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/26228 Realistic Needs and Diseases"
 RRRE-3DNPCv2-Patch.esp
 
 // pre ufo a
@@ -24902,8 +24910,8 @@ XFLMindControl.esp
 BetterQuestObjectives-XFLPatch.esp
   IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/32695 Even Better Quest Objectives"
     IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/32695 Even Better Quest Objectives"
-  IFNOT ACTIVE("XFLDialogue.esp") && IF VAR(EN) ERROR: XFLDialogue.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/12933/ XFLDialog"
-    IFNOT ACTIVE("XFLDialogue.esp") && IF VAR(RU) ERROR: XFLDialogue.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/12933/ XFLDialog"
+  IFNOT ACTIVE("XFLDialogue.esp") && IF VAR(EN) ERROR: XFLDialogue.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/12933 XFLDialog"
+    IFNOT ACTIVE("XFLDialogue.esp") && IF VAR(RU) ERROR: XFLDialogue.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/12933 XFLDialog"
 ENDGROUP: Extensible Follower Framework
 
 BEGINGROUP: Ultimate Follower Overhaul
@@ -25653,9 +25661,9 @@ kaelas.man.slave.esp
 kaelas.man.slave_tiberius.esp
 Kaiden.esp
 REGEX: Kashi(m|m - Ahtar Replacer)?\.esp
-  IF FILE ("Kashim.esp") || IF FILE ("Kashim - Ahtar Replacer.esp") && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
-    IF FILE ("Kashim.esp") || IF FILE ("Kashim - Ahtar Replacer.esp") && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
-      IF FILE ("Kashim.esp") || IF FILE ("Kashim - Ahtar Replacer.esp") && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
+  IF FILE("Kashim.esp") || IF FILE("Kashim - Ahtar Replacer.esp") && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF FILE("Kashim.esp") || IF FILE("Kashim - Ahtar Replacer.esp") && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+      IF FILE("Kashim.esp") || IF FILE("Kashim - Ahtar Replacer.esp") && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 KCustom_ALL_FHC_NDO.esp
 KCustomNPCs.esp
   IF FILE("KCustom_ALL_FHC_NDO.esp") INC: KCustom_ALL_FHC_NDO.esp
@@ -25909,7 +25917,7 @@ MoreNpcProject.esp
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT VAR(ApachiiHairM) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHairM) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT VAR(ApachiiHairM)  && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+      IFNOT VAR(ApachiiHairM) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("CazyMale.esm") && IF VAR(EN) ERROR: CazyMale.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("CazyMale.esm") && IF VAR(RU) ERROR: CazyMale.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("CazyMale.esm") && IF VAR(ES) ERROR: CazyMale.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
@@ -26400,9 +26408,9 @@ REGEX: pack\d-clean\.esp
   // Beans Badass Women Compilation
   IF VAR(EN) && IF FILE("Compilationv1-clean.esp") WARN: Delete. Already included in Compilationv1-clean.esp.
     IF VAR(RU) && IF FILE("Compilationv1-clean.esp") WARN: Удалите. Уже входит в Compilationv1-clean.esp.
-  IF FILE("pack1-clean.esp") && IF FILE("pack1.esp")  && IF VAR(EN) WARN: Use either pack1.esp or Pack1-clean.esp, not both.
-    IF FILE("pack1-clean.esp") && IF FILE("pack1.esp")  && IF VAR(RU) WARN: Используйте любой, или pack1.esp или Pack1-clean.esp, не оба.
-      IF FILE("pack1-clean.esp") && IF FILE("pack1.esp")  && IF VAR(ES) WARN: Usar pack1.esp o Pack1-clean.esp, no ambos.
+  IF FILE("pack1-clean.esp") && IF FILE("pack1.esp") && IF VAR(EN) WARN: Use either pack1.esp or Pack1-clean.esp, not both.
+    IF FILE("pack1-clean.esp") && IF FILE("pack1.esp") && IF VAR(RU) WARN: Используйте любой, или pack1.esp или Pack1-clean.esp, не оба.
+      IF FILE("pack1-clean.esp") && IF FILE("pack1.esp") && IF VAR(ES) WARN: Usar pack1.esp o Pack1-clean.esp, no ambos.
   IF FILE("pack2-clean.esp") && IF FILE("pack2.esp") && IF VAR(EN) WARN: Use either pack2.esp or Pack2-clean.esp, not both.
     IF FILE("pack2-clean.esp") && IF FILE("pack2.esp") && IF VAR(RU) WARN: Используйте любой, или pack2.esp или Pack2-clean.esp, не оба.
       IF FILE("pack2-clean.esp") && IF FILE("pack2.esp") && IF VAR(ES) WARN: Usar pack2.esp o Pack2-clean.esp, no ambos.
@@ -27057,11 +27065,12 @@ ElderOutfit.esp
   //recommended to load after consistent older people
 ethereal_elven_overhaul.esp
   IF FILE("XCES.esp") INC: XCES.esp
-  IF VAR(EN) && IF FILE("SkyRe_Races.esp") && IFNOT CHECKSUM("ethereal_elven_overhaul.esp", 38515FFF) INC: SkyRe Races.  A compatibility patch is available "http://skyrim.nexusmods.com/mods/29185 here".
+  IF FILE("SkyRe_Races.esp") && IFNOT CHECKSUM("ethereal_elven_overhaul.esp", 38515FFF) && IF VAR(EN) INC: SkyRe Races.  A compatibility patch is available "http://skyrim.nexusmods.com/mods/29185 here".
+    IF FILE("SkyRe_Races.esp") && IFNOT CHECKSUM("ethereal_elven_overhaul.esp", 38515FFF) && IF VAR(RU) INC: SkyRe Races.  Патч совместимости доступен "http://skyrim.nexusmods.com/mods/29185 здесь".
+      IF FILE("SkyRe_Races.esp") && IFNOT CHECKSUM("ethereal_elven_overhaul.esp", 38515FFF) && IF VAR(ES) INC: SkyRe Races.  A compatibility patch is available "http://skyrim.nexusmods.com/mods/29185 here".
   IF CHECKSUM("ethereal_elven_overhaul.esp", 1841112C) && IF VAR(EN) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ethereal_elven_overhaul.esp", 1841112C) && IF VAR(RU) DIRTY: 6 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("ethereal_elven_overhaul.esp", 1841112C) && IF VAR(ES) DIRTY: 6 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-//    IF VAR(RU) && IF FILE("SkyRe_Races.esp") SAY: Убедитесь, что используете совместимую версию, которую можно скачать "http://skyrim.nexusmods.com/mods/24273/ отсюда".
 EEO patch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -27249,13 +27258,21 @@ rcrnShaders.esp
   IF CHECKSUM("rcrnShaders.esp", 209FD1B5) && IF VAR(EN) DIRTY: 16 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("rcrnShaders.esp", 209FD1B5) && IF VAR(RU) DIRTY: 16 ITM, 3 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("rcrnShaders.esp", 209FD1B5) && IF VAR(ES) DIRTY: 16 ITM, 3 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
-  IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
-  IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
+  IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") && IF VAR(EN) WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+      IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - Civilization and rcrnShaders.esp рекомендуется использовать соответствующий патч совместимости, расположенный "http://skyrim.nexusmods.com/mods/20193 здесь."
+        IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") && IF VAR(ES) WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+  IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") && IF VAR(EN) WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
+      IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - The Wilds and rcrnShaders.esp рекомендуется использовать соответствующий патч совместимости, расположенный "http://skyrim.nexusmods.com/mods/10886 здесь."
+        IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") && IF VAR(ES) WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
+  IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601 here".
 rcrnPlus.esp
-  IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
-  IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
-  IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601/ here".
+  IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") && IF VAR(EN) WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+      IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - Civilization and rcrnPlus.esp рекомендуется использовать соответствующий патч совместимости, расположенный "http://skyrim.nexusmods.com/mods/20193 здесь."
+        IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") && IF VAR(ES) WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
+  IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") && IF VAR(EN) WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
+      IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - The Wilds and rcrnPlus.esp рекомендуется использовать соответствующий патч совместимости, расположенный "http://skyrim.nexusmods.com/mods/10886 здесь."
+        IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") && IF VAR(ES) WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
+  IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601 here".
 RCRNvolumetric.esp
   IF CHECKSUM("RCRNvolumetric.esp", 54176F89) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("RCRNvolumetric.esp", 54176F89) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -27264,17 +27281,17 @@ SoS - The Dungeons-PatchRCRN.esp
   IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
     IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
       IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(ES) ERROR: SoS - The Dungeons.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IFNOT FILE("rcrnShaders.esp") || IFNOT FILE ("rcrnPlus.esp")  REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
+  IFNOT FILE("rcrnShaders.esp") || IFNOT FILE("rcrnPlus.esp")  REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 SoS - The Wilds-PatchRCRN.esp
   IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(EN) ERROR: SoS - The Wilds.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Wilds
     IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(RU) ERROR: SoS - The Wilds.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Wilds
       IFNOT ACTIVE("SoS - The Wilds.esp") && IF VAR(ES) ERROR: SoS - The Wilds.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IFNOT FILE("rcrnShaders.esp") || IFNOT FILE ("rcrnPlus.esp") REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
+  IFNOT FILE("rcrnShaders.esp") || IFNOT FILE("rcrnPlus.esp") REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 SoS - Civilization-PatchRCRN.esp
   IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - Civilization
     IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
       IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(ES) ERROR: SoS - Civilization.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IFNOT FILE("rcrnShaders.esp") || IFNOT FILE ("rcrnPlus.esp") REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
+  IFNOT FILE("rcrnShaders.esp") || IFNOT FILE("rcrnPlus.esp") REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 Volrath - Enhanced Lights and Fixes - RCRN.esp
   REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 Volrath - Enhanced Lights and Fixes - RCRN - Lanterns Of Skyrim.esp
@@ -27683,7 +27700,9 @@ Stones of Barenziah - FR- Les Pierres de Barenziah - Rangeables + Marqueur de Qu
 tox Dragon Map Markers.esp
 REGEX: Unmarked Places - .+\.esp
 PaperMapHeightEnhanced.esp
-  SAY: PaperMapHeightEnhanced.esp incompatible with mods that change the map.swf
+  IF VAR(EN) SAY: Incompatible with mods that change the map.swf
+    IF VAR(RU) SAY: Несовместим с модами, которые меняют файл map.swf
+      IF VAR(EN) SAY: Incompatible with mods that change the map.swf
 Warburg's 3D Paper World Map v2.2.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, Warburg's 3D Paper World Map - Texture *.esp.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, Warburg's 3D Paper World Map - Texture *.esp.
@@ -27695,6 +27714,7 @@ Warburg's 3D Paper World Map.esp
 WorldMapInFull3D.esp
   IF VAR(EN) SAY: If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)
     IF VAR(RU) SAY: Если вы используете другие моды. изменяющие карты, такие как Quality World Map with roads, измените параметр uLockedTerrainLOD на 32 для их отображения (только внутри помещений)
+      IF VAR(ES) SAY: If you are using other map mods, e.g. Quality World Map with roads, change uLockedTerrainLOD to 32 to display them (only indoors)
 ENDGROUP: Map marker Tweaks
 
 BEGINGROUP: Load Late
@@ -27870,7 +27890,8 @@ REGEX: Compatibility Patch - (PHT & WIC|PHT WIC)\.esp
   //end of PHL, PHT patch set
 Cooking Expanded - RND Support.esp
 DeadlyCombat_PISE_Patch.esp
-  IFNOT FILE("DeadlyCombat.esp") || IFNOT FILE("PISE.esp") REQ: DeadlyCombat.esp and PISE.esp
+  IFNOT FILE("DeadlyCombat.esp") REQ: DeadlyCombat.esp
+  IFNOT FILE("PISE.esp") REQ: PISE.esp
 SPTConsistentOlderPeopleCompatability.esp
   IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(EN) ERROR: SPTConsistentOlderPeople.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(RU) ERROR: SPTConsistentOlderPeople.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -28107,7 +28128,9 @@ HM_HotkeyMod.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+
   IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IF VAR(UFO) WARN: UFO detected.  Use the UFO version to have the mod work as intended.
+    IFNOT VAR(UFO) && IF VAR(RU) SAY: При отсутствии UFO используйте обычную НЕ UFO-версию этого мода.
   IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) || IF CHECKSUM("HM_HotkeyMod.esp", CF00AFFD) && IFNOT VAR(UFO) ERROR: UFO not detected.  Use the non-UFO version or Skyrim will CTD on loading if using this mod.
+    IF VAR(UFO) && IF VAR(RU) SAY: При наличии UFO используйте UFO-версию этого мода.
   IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
       IF CHECKSUM("HM_HotkeyMod.esp", 374C564C) || IF CHECKSUM("HM_HotkeyMod.esp", 676790BF) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR  entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
@@ -28207,6 +28230,7 @@ IF REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
   // must load after asis patch and deactivated before patch creation. (T3nd0's note from Bethesda SkyRe thread)
   IF VAR(EN) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Deactivate 'SkyRe_EnemyAI.esp' before creation of ASIS patch and activate only after creation of ASIS patch.
     IF VAR(RU) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Отключите 'SkyRe_EnemyAI.esp' перед созданием ASIS-патча и активируйте только после создания.
+      IF VAR(ES) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Deactivate 'SkyRe_EnemyAI.esp' before creation of ASIS patch and activate only after creation of ASIS patch.
 LLI.esp
   //Lootification dynamic recommended to go above Dual Sheath dynamic
 Dual Sheath Redux Patch.esp
