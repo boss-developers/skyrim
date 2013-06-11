@@ -25940,6 +25940,9 @@ My_Little_kitty.esp
 My_Little_kitty_k.esp
   IF FILE("My_Little_kitty.esp") INC: My_Little_kitty.esp
 My_Little_kitty_non_replaced.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
   IF FILE("My_Little_kitty.esp") INC: My_Little_kitty.esp
   IF FILE("My_Little_kitty_k.esp") INC: My_Little_kitty_k.esp
 
