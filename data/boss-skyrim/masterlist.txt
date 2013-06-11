@@ -4942,7 +4942,16 @@ SIUBPatch.esp
 Book Covers Skyrim.esp
   //suggested to place this below unlimited bookshelves; although, why is UNlimit in L instead of U?
 Book Covers Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
 Book Covers Hearthfire.esp
+  IFNOT ACTIVE("Book Covers Skyrim.esp") && IF VAR(EN) ERROR: Book Covers Skyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Book Covers Skyrim.esp") && IF VAR(RU) ERROR: Book Covers Skyrim.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Book Covers Skyrim.esp") && IF VAR(ES) ERROR: Book Covers Skyrim.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
 lorecorrectvolendrung.esp
 Lorecraft - Cooking.esp
 Lorecraft - Crafting Complete.esp
