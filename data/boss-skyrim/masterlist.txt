@@ -25666,6 +25666,15 @@ Jezebel Simon.esp
   IF FILE("Jezebel.esp") && IF VAR(EN) WARN: Use either Jezebel.esp or Jezebel Simon.esp, not both.
     IF FILE("Jezebel.esp") && IF VAR(RU) WARN: Используйте любой, или Jezebel.esp или Jezebel Simon.esp, не оба.
       IF FILE("Jezebel.esp") && IF VAR(ES) WARN: Usar Jezebel.esp o Jezebel Simon.esp, no ambos.
+Jhaz.esp
+  IF VERSION("TES5", "1.8", <) REQ: Skyrim 1.8+
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  // TES5Edit 3.0.30: 8 ITM, 0 UDR, 0 deleted NavMeshes (CRC: 208E7086)
+  IF CHECKSUM("Jhaz.esp", 208E7086) && IF VAR(EN) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("Jhaz.esp", 208E7086) && IF VAR(RU) DIRTY: 8 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("Jhaz.esp", 208E7086) && IF VAR(ES) DIRTY: 8 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 jordis1.1a.esp
 jordis1d.esp
 Jordis-Dovas_Angels-TCG.esp
