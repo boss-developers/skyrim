@@ -3467,6 +3467,7 @@ Archery-Overhaul.esp
 ArcheryOverhaulFletcherArrowsOnly.esp
 Archmage Crafting - Enchanted Items.esp
 Archmage Crafting - Unenchanted Clothing.esp
+ArodAlchemyAnalyzer.esp
 Arrow Smithing.esp
 arrowcrafting.esp
   IF CHECKSUM("arrowcrafting.esp", 8E307ED0) || IF CHECKSUM("arrowcrafting.esp", D15AE0C5) && IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -9214,6 +9215,7 @@ One handed Crossbow.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 openfacehelmetsstandalone.esp
+OpulentMageUSKPReplacerPatch.esp
 Orc Cresent Shield.esp
   TAG: {{BASH: Relev}}
 Orcish Sabre.esp
@@ -20167,7 +20169,11 @@ REGEX: RL - .*\.esp
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 EnhancedLightsandFX.esp
   // moved as suggested in bsg thread 28 post 105
-REGEX: ELFX - (Moonpath|NoBreezehome|NoTaverns)\.esp
+REGEX: ELFX - (Moonpath|NoBreezehome|NoTaverns|Exteriors)\.esp
+ELFX - Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
 CinematicFireFX.esp
 RLO - Dungeons for ELnFX.esp
 RLO - Illuminated Spells for ELnFX.esp
