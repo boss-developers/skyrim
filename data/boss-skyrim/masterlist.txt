@@ -20698,12 +20698,13 @@ SkyRealism - Mass and Materials - tailoring.esp
 SkyRealism - Portable Crafting Kits.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 SkyrimHeartRate.esp
-  // TES5Edit reports 3 ITM records. However, these are intentionally included
-  // with their vanilla values to override other mods that would fiddle with
-  // this, according to the mod author. See this post:
-  // http://forums.nexusmods.com/index.php?/topic/973527-skyrim-heart-rate/page-19#entry8304358
-  // - Freso
-  IF FILE("TTYM - Think to Yourself Messages.esp") SAY: A patch for Skyrim Heart Rate is available for people using Think to Yourself Messages. It is available "http://skyrim.nexusmods.com/mods/36182 at the Skyrim Nexus".
+  IF VAR(EN) DIRTY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
+    IF VAR(RU) DIRTY: Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.
+      IF VAR(ES) DIRTY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
+    // Info from r7239
+  IF VAR(EN) && IF FILE("TTYM - Think to Yourself Messages.esp") SAY: A patch for Skyrim Heart Rate is available for people using Think to Yourself Messages. It is available "http://skyrim.nexusmods.com/mods/36182 at the Skyrim Nexus".
+    IF VAR(RU) && IF FILE("TTYM - Think to Yourself Messages.esp") SAY: Патч для Skyrim Heart Rate доступен для людей, использующих сообщения из мода Think to Yourself. Доступен на "http://skyrim.nexusmods.com/mods/36182 Skyrim Nexus".
+      IF VAR(ES) && IF FILE("TTYM - Think to Yourself Messages.esp") SAY: A patch for Skyrim Heart Rate is available for people using Think to Yourself Messages. It is available "http://skyrim.nexusmods.com/mods/36182 at the Skyrim Nexus".
 SkyrimSpeeds.esp
 Longer springting v2.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, Sprint*.esp.
