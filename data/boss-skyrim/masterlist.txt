@@ -20698,9 +20698,11 @@ SkyRealism - Mass and Materials - tailoring.esp
 SkyRealism - Portable Crafting Kits.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 SkyrimHeartRate.esp
-  IF CHECKSUM("SkyrimHeartRate.esp", 87C1C5A0) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("SkyrimHeartRate.esp", 87C1C5A0) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("SkyrimHeartRate.esp", 87C1C5A0) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  // TES5Edit reports 3 ITM records. However, these are intentionally included
+  // with their vanilla values to override other mods that would fiddle with
+  // this, according to the mod author. See this post:
+  // http://forums.nexusmods.com/index.php?/topic/973527-skyrim-heart-rate/page-19#entry8304358
+  // - Freso
   IF FILE("TTYM - Think to Yourself Messages.esp") SAY: A patch for Skyrim Heart Rate is available for people using Think to Yourself Messages. It is available "http://skyrim.nexusmods.com/mods/36182 at the Skyrim Nexus".
 SkyrimSpeeds.esp
 Longer springting v2.esp
