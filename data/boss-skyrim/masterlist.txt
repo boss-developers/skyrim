@@ -11858,6 +11858,12 @@ Tribunal for Skyre.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 ExplosiveBoltsVisualized-SkyRe.esp
   IF ACTIVE("ExplosiveBoltsVisualized.esp") ERROR: Deactivate ExplosiveBoltsVisualized.esp. This ESP is completly standalone.
+  IFNOT VAR(SkyReM) && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(SkyReM) && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(SkyReM) && IF VAR(ES) ERROR: SkyRe_Main.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
 IF VAR(SkyReM) MOD: UniqueWeaponsRedone.esp
 IF VAR(SkyReM) MOD: Unique Uniques.esp
 // William - InsanitySorrow recommends that UU loads after SkyRe if installed.
