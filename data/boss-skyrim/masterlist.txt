@@ -28237,7 +28237,11 @@ NPCsUseAmmo_IWPatch.esp
   IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(EN) ERROR: Immersive Weapons.esp is not present or is not active. Skyrim will CTD when loading if using this file without Immersive Weapons.esp
     IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(RU) ERROR: Immersive Weapons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Immersive Weapons.esp
       IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(ES) ERROR: Immersive Weapons.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+REGEX: qotsafans BringOutYourDead*.\.esp
+REGEX: qotsafans EEO.*\.esp
 RND_RWLReduced-Patch.esp
+REGEX: Pre ReProccer.* \.esp // Qotsafan's pre Reproccer patches
+SkyRe-DB Patch.esp
 SoundPropagationOverhaul DSAMG Patch.esp
   // SPO is not actually listed as a master in the .esp. The ITM below is
   // from after marking SPO as a master in TES5Edit.
@@ -28409,6 +28413,7 @@ BEGINGROUP: Dynamic Plugins
 
 Automatic Variants.esp
 ASIS-Dependency.esp
+REGEX: PreASISPatch(EEO)?\.esp
 ASIS.esp
 /*
   IF VAR(EN) && IF VAR(SkyReM) WARN: Unmark Automatic Perks and Automatic Spells flags in ASIS patch options. Or you will have bugs and CTDs in game when using SkyRe and ASIS.
@@ -28422,6 +28427,7 @@ IF REGEX("ASIS(-Dependency)?\.esp") MOD: SkyRe_EnemyAI.esp
   IF VAR(EN) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Deactivate 'SkyRe_EnemyAI.esp' before creation of ASIS patch and activate only after creation of ASIS patch.
     IF VAR(RU) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Отключите 'SkyRe_EnemyAI.esp' перед созданием ASIS-патча и активируйте только после создания.
       IF VAR(ES) && IF ACTIVE("SkyRe_EnemyAI.esp") && IF REGEX("ASIS(-Dependency)?\.esp") SAY: Deactivate 'SkyRe_EnemyAI.esp' before creation of ASIS patch and activate only after creation of ASIS patch.
+PostASISPatch.esp
 LLI.esp
   //Lootification dynamic recommended to go above Dual Sheath dynamic
 Dual Sheath Redux Patch.esp
@@ -28437,7 +28443,17 @@ ReProccerDragonborn.esp
 ReProccer-SkyforgeShields.esp
 WIC ReProccer Patch.esp
 Miscellaneous ReProccer Patch.esp
-
+// Begin qotsafan's compatbility patches:
+REGEX: qotsafans SkyRe Destruction Tree Tweak Patch.*\.esp
+qotsafans Miscellaneous ReProccer Patch.esp
+REGEX: qotsafans Miscellaneous ReProccer + Destruction Tweak.*\.esp
+REGEX: qotsafans LeveledLists.*\.esp
+REGEX: qotsafans Ars Metallica (HO )?Patch\.esp
+qotsafans AOM ReProccer Patch.esp
+qotsafans Dwarven Autorifle ReProccer Patch.esp
+qotsafans Dwarven Rifle ReProccer Patch.esp
+qotsafans IA6 Invisible Helmets Patch.esp
+// End qotsafan's compatbility patches
 WTF.esp
   IF VAR(EN) SAY: May need "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. Several test generations of this SkyProc Patch included ITMs. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF VAR(RU) SAY: Может понадобиться очистка в "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Некоторые сгенерированные тестовые записи этого SkyProc патча являются ITM записями. Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
