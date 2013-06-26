@@ -21000,7 +21000,7 @@ WerewolfMastery.esp
     IF CHECKSUM("WerewolfMastery.esp", 73AC0648) || IF CHECKSUM("WerewolfMastery.esp", 57E4BC0F) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("WerewolfMastery.esp", 73AC0648) || IF CHECKSUM("WerewolfMastery.esp", 57E4BC0F) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 BetterQuestObjectives-MoonlightMasteryPatch.esp
-  SAY: This patch is only usable with the Moonlight Tales compatbile version of Werewolf Mastery.
+  SAY: This patch is only usable with the Moonlight Tales compatible version of Werewolf Mastery.
   IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Even Better Quest Objectives
     IFNOT FILE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Even Better Quest Objectives
   IFNOT File("WerewolfMastery.esp") && IF VAR(EN) ERROR: WerewolfMastery.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Werewolf Mastery
@@ -22614,6 +22614,13 @@ BEGINGROUP: Thievery, Sneaking and Crime
 // Overrides overhauls.
 
 Better Stealth AI for Followers.esp
+BetterQuestObjectives-BetterStealthAIPatch.esp
+  IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(ES) ERROR: BetterQuestObjectives.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT ACTIVE("Better Stealth AI for Followers.esp") && IF VAR(EN) ERROR: Better Stealth AI for Followers.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Better Stealth AI for Followers.esp") && IF VAR(RU) ERROR: Better Stealth AI for Followers.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Better Stealth AI for Followers.esp") && IF VAR(ES) ERROR: Better Stealth AI for Followers.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Thievery.esp
 crimes!.esp
 crime pays lite.esp
