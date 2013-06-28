@@ -27368,7 +27368,15 @@ Vrx Guards Equipment Comment Tweaks.esp
 // Otherwise possibly belonging to another group:
 DragonWordsDisplayed.esp
 MenuShoutsInDragonsLanguage.esp
-  IF VAR(Dawnguard) && IFNOT CHECKSUM("MenuShoutsInDragonsLanguage.esp", E06D6E46) ERROR: Use Dawnguard version.
+  /* Version 0.2.0 3-in-1 edition (2AC21E2A) */
+  IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+  /* Other version (but which?) */
+  ELSE IF VAR(Dawnguard) && IFNOT CHECKSUM("MenuShoutsInDragonsLanguage.esp", E06D6E46) ERROR: Use Dawnguard version.
 quxxy - improved, sortable books.esp
   // Couldn't find this one, but sounds like a book naming override? -Freso
 
