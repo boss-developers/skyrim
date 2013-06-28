@@ -6436,7 +6436,15 @@ vAutosaveManager.esp
 WarriorRest.esp
 war zone fix.esp
 IFNOT FILE("SKSE Hotkeys.esp") MOD: WetandCold.esp
+  IF VERSION("TES5", "1.9.29.0.8", <) REQ: Skyrim 1.9.29.0.8+
 IFNOT FILE("SKSE Hotkeys.esp") MOD: WetandCold - Ashes.esp
+  IF VERSION("TES5", "1.9.29.0.8", <) REQ: Skyrim 1.9.29.0.8+
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+  IFNOT ACTIVE("WetandCold.esp") && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/27563 WetandCold.esp" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("WetandCold.esp") && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/27563 WetandCold.esp" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("WetandCold.esp") && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/27563 WetandCold.esp" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 ENDGROUP: Load Order Independent Mods
 
 BEGINGROUP: MCM Mods
