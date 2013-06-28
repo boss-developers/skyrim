@@ -11422,6 +11422,16 @@ SkyRe_Main_NoDawnguard.esp
   SAY:   f3PArrowTiltUpAngle=0.64
   SAY:   fMagnetismStrafeHeadingMult=0.0
   SAY:   fMagnetismLookingMult=0.0
+SkyRe_Main_Fix.esp
+  IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(ES) ERROR: SkyRe_Main.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 SkyRe_Combat.esp
   IFNOT VAR(SkyReM) REQ: SkyRe_Main.esp
 SkyRe_Combat_Tweak.esp
@@ -11472,6 +11482,8 @@ SkyRe_StandingStones.esp
     IF VAR(RU) && IF FILE("StaRe.esp") SAY: Не забудьте отключить или удалить StaRe.esp
   IF FILE("Drakian race.esp") INC: Drakian race.esp
   IF FILE("Signs and Guardians.esp") INC: Signs and Guardians.esp
+SkyRe_StandingStones_Fix.esp
+  IFNOT ACTIVE("SkyRe_Races.esp") SAY: This mod is meant to be used with the Races module of SkyRe. The game should generally work fine without it, but the effect from the Lady Standing Stone may not behave as expected.
 SkyRe_Survivalism.esp
   IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(EN) ERROR: SkyRe_Main.esp is not present or is not active. Skyrim will CTD when loading if using this file without SkyRe_Main.esp
     IFNOT ACTIVE("SkyRe_Main.esp") && IF VAR(RU) ERROR: SkyRe_Main.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SkyRe_Main.esp
@@ -27292,6 +27304,8 @@ SkyRe_Races.esp
   IF FILE("ArmedttTeeth.esm") INC: ArmedttTeeth.esm
   IF FILE("[MPX]RaceHeights.esp") INC: [MPX]RaceHeights.esp
   IF FILE("[mpx] npc gender race heights v2.esp") INC: [mpx] npc gender race heights v2.esp
+SkyRe_Races_Fix.esp
+  IFNOT ACTIVE("SkyRe_Races.esp") SAY: This mod is meant to be used with the Races module of SkyRe. The game should work fine without it, but the Khajiit "Claws" effect will have a wrong description.
 IF FILE("SkyRe_Races.esp") REGEX: Silent khajiit night-eye improved( 2)?\.esp
   // Must be loaded after SkyRe_Races.esp(if installed) to work correctly
 Third Era Attributes for Skyrim - Races.esp
