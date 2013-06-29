@@ -2026,13 +2026,16 @@ Unofficial Skyrim Patch.esp
     IF VAR(RU) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Рекомендуется использовать "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch", в дополнение к Dawnguard. Это необходимо для корректной работы с Dawnguard. Русская версия "http://u.to/D5ZaAg здесь".
       IF VAR(ES) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: Se recomienda que utilizes "http://www.darkcreations.org/forums/files/file/352-unofficial-dawnguard-patch/ Unofficial Dawnguard Patch" además de Dawnguard. Se necesita para el correcto funcionamiento de Dawnguard.
 USKP_addon.esp
-  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp.
-    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
-      IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
+  IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(EN) ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(ES) ERROR: Unofficial Skyrim Patch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IF CHECKSUM("USKP_addon.esp", F99D79A5) && IF VAR(EN) DIRTY: 0 ITM, 7 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("USKP_addon.esp", F99D79A5) && IF VAR(RU) DIRTY: 0 ITM, 7 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("USKP_addon.esp", F99D79A5) && IF VAR(ES) DIRTY: 0 ITM, 7 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 USKP_addon ENG.esp
-  IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp.
-    IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
-      IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
+  IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(EN) ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(ES) ERROR: Unofficial Skyrim Patch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF FILE("USKP_addon.esp") INC: USKP_addon.esp
 
 // fixes that must load after USKP
