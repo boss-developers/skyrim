@@ -22283,6 +22283,10 @@ EmpoweredMagic_Dawnguard.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 IFNOT REGEX("Acquisitive Soul Gems( FR)?\.esp") MOD: Enhanced Soul Trap.esp
   IF CHECKSUM("Enhanced Soul Trap.esp", C5F82F49) SAY: Use the Acquisitive Soul Gems non-compatible version.
+  /* Version 1.2, "With Acquisitive Soul Gems" edition */
+  IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(EN) ERROR: Acquisitive Soul Gems.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(RU) ERROR: Acquisitive Soul Gems.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(ES) ERROR: Acquisitive Soul Gems.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 EmpoweredMagic_Dragonborn.esp
   IFNOT FILE("EmpoweredMagic.esp") REQ: EmpoweredMagic.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
@@ -23439,8 +23443,13 @@ Sneak Tools Vanilla Masks.esp
 IF REGEX("EmpoweredMagic.+\.esp") || IF VAR(SkyRe) REGEX: Acquisitive Soul Gems( FR)?\.esp
   // must loaded after EmpoweredMagic.esp and SkyRe only if installed. See post: http://forums.bethsoft.com/topic/1402404-rel-boss-for-skyrim/page__view__findpost__p__21428373
 IF REGEX("Acquisitive Soul Gems( FR)?\.esp") MOD: Enhanced Soul Trap.esp
-  IF CHECKSUM("Enhanced Soul Trap.esp", B4803235) SAY: Use the Acquisitive Soul Gems compatible version.
   // Place directly below Acquisitive Soul Gems.esp as per author's discussion thread: http://skyrim.nexusmods.com/mods/30087
+  /* CRC: DF45FD75 is 1.2, "Without Acquisitive Soul Gems" edition */
+  IF CHECKSUM("Enhanced Soul Trap.esp", B4803235) || IF CHECKSUM("Enhanced Soul Trap.esp", DF45FD75) SAY: Use the Acquisitive Soul Gems compatible version.
+  /* Version 1.2, "With Acquisitive Soul Gems" edition */
+  IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(EN) ERROR: Acquisitive Soul Gems.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(RU) ERROR: Acquisitive Soul Gems.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IF CHECKSUM("Enhanced Soul Trap.esp", 264C4B77) && IFNOT ACTIVE("Acquisitive Soul Gems.esp") && IF VAR(ES) ERROR: Acquisitive Soul Gems.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 IF REGEX("Acquisitive Soul Gems( FR)?\.esp") REGEX: Soul Gems Differ.*\.esp
 IF REGEX("Acquisitive Soul Gems( FR)?\.esp") MOD: Soul Gems Glow When Full.esp
 IF VAR(SkyReM) MOD: Artifact Disenchanting.esp
