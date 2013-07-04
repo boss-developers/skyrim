@@ -49,12 +49,19 @@ Note: Standardized messages offer the following benefits:
 //
   IF VERSION("TES5", "<version>", <) REQ: Skyrim <version>+
 
-// Remember to fill in the appropriate details. If a link to the plugin's download page is on hand make the "<Plugin name without extension>" a link.
+// Remember to fill in the appropriate details.
 //
 // -MCM Compatibility-
   IFNOT VAR(SkyUI) && IF VAR(EN) WARN: SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.
     IFNOT VAR(SkyUI) && IF VAR(RU) WARN: SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.
       IFNOT VAR(SkyUI) && IF VAR(ES) WARN: SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.
+
+// -SKSE Requirement-
+//
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+//
+//
+//
 // ================================================================
 //
 // --Dirty Messages--

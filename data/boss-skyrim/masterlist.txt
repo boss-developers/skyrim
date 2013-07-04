@@ -413,6 +413,21 @@ DArchon.esm
 DarkerNights.esm
 DarkerInteriors.esm
 DarkerInteriorsAdd.esm
+DA_Skyship.esm
+  IF VAR(Dragonborn) && IFNOT FILE("DA_Skyship_Dragonborn.esp") WARN: If you are running Dragonborn you should use the Dragonborn compatibility patch included in the installer.
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IF VAR(EN) WARN: This file contains 3 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 3 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+      IF VAR(ES) WARN: Este archivo contiene 3 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
+  IF CHECKSUM("DA_Skyship.esm", FD184636) && IF VAR(EN) DIRTY: 119 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("DA_Skyship.esm", FD184636) && IF VAR(RU) DIRTY: 119 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("DA_Skyship.esm", FD184636) && IF VAR(ES) DIRTY: 119 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+  IF CHECKSUM("DA_Skyship.esm", 51F4B5CE) && IF VAR(EN) DIRTY: 119 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("DA_Skyship.esm", 51F4B5CE) && IF VAR(RU) DIRTY: 119 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("DA_Skyship.esm", 51F4B5CE) && IF VAR(ES) DIRTY: 119 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+  IF CHECKSUM("DA_Skyship.esm", 63CDB5F1) && IF VAR(EN) DIRTY: 119 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("DA_Skyship.esm", 63CDB5F1) && IF VAR(RU) DIRTY: 119 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("DA_Skyship.esm", 63CDB5F1) && IF VAR(ES) DIRTY: 119 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 DBShreddedTriss.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version, DBShreddedTriss.esp.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, DBShreddedTriss.esp.
@@ -2337,6 +2352,7 @@ Bryling.esp
 
 // face c
 Carlotta.esp
+CharGen Morphs.esp
 Children of Skyrim - TOWN GUARDS.esp
 ColourEyesNoDGHF.esp
   IF CHECKSUM("ColourEyesNoDGHF.esp", 3B2F32FC) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -4111,6 +4127,13 @@ d_b Whetstone.esp
 DamageEnchantBonus.esp
 DamageEnchantBonus20.esp
 DamageEnchantBonus20v2.esp
+DA_Skyship_Dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+  IF VAR(EN) WARN: This file contains 1 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+      IF VAR(ES) WARN: Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
 dawnguard craftable armor and weapons.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -5638,6 +5661,10 @@ See Your Neighbor.esp
 SephDragonAuras.esp
 ser house market fix.esp
 SevenFightsAldudagga.esp
+SeverinManorImprovements.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 SexiSWorkingGirl.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
@@ -17566,6 +17593,24 @@ Connys Improved Hearthfire.esp
       IF CHECKSUM("Connys Improved Hearthfire.esp", D5979764) && IF VAR(ES) DIRTY: 2 ITM, 121 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Consistent Conjuration.esp
   // TAG: {{BASH: Names}}
+CorrectGenderAnimations.esp
+  IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(EN) ERROR: Unofficial Skyrim Patch.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(ES) ERROR: Unofficial Skyrim Patch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+CorrectGenderAnimations-DG.esp
+  IFNOT ACTIVE("CorrectGenderAnimations.esp") && IF VAR(EN) ERROR: CorrectGenderAnimations.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("CorrectGenderAnimations.esp") && IF VAR(RU) ERROR: CorrectGenderAnimations.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("CorrectGenderAnimations.esp") && IF VAR(ES) ERROR: CorrectGenderAnimations.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+CorrectGenderAnimations-DB.esp
+  IFNOT ACTIVE("CorrectGenderAnimations.esp") && IF VAR(EN) ERROR: CorrectGenderAnimations.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("CorrectGenderAnimations.esp") && IF VAR(RU) ERROR: CorrectGenderAnimations.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("CorrectGenderAnimations.esp") && IF VAR(ES) ERROR: CorrectGenderAnimations.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 craftable blades armor.esp
 craftablestaffs.esp
   IF CHECKSUM("craftablestaffs.esp", F1F054A2) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -17766,6 +17811,7 @@ EK_LimitedItems.esp
 Eld-emptyUrnsRicherDraugrChests.esp
 Eld-rareCostlyLockpicks.esp
 REGEX: ElementalRunesImpact.*\.esp
+ElfBodyFix.esp
 ElkHide.esp
 ElkHide - Basic.esp
   IF FILE("ElkHide.esp") INC: ElkHide.esp
@@ -20009,6 +20055,10 @@ PrimbyTown.esp
 Princess Riverwood Cottage.esp
 // tav q
 // tav r
+RavenRockExpanded.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 Riverwood Enhanced.esp
   IF CHECKSUM("Riverwood Enhanced.esp", 63725578) && IF VAR(EN) DIRTY: 28 ITM, 31 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Riverwood Enhanced.esp", 63725578) && IF VAR(RU) DIRTY: 28 ITM, 31 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
