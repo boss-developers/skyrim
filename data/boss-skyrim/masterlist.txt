@@ -265,6 +265,8 @@ REGEX: alchstone(1pt5x|2x|3x|4x|5x)\.esm
 Alexa the Storm-Queen.esm
 Alicia.esm
 All Housecarls Are Hunks.esm
+All Star Animations.esm
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
 Ambience Music Overhaul.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version, AMO.esm.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, AMO.esm.
@@ -734,9 +736,12 @@ MiniLovers Idles.esm
 MiniLoversSound.esm
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
 MjanasLabyrinth.esm
-  IF CHECKSUM("MjanasLabyrinth.esm", C475BC22) && IF VAR(EN) DIRTY: 31 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("MjanasLabyrinth.esm", C475BC22) && IF VAR(RU) DIRTY: 31 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("MjanasLabyrinth.esm", C475BC22) && IF VAR(ES) DIRTY: 31 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
+  IF CHECKSUM("MjanasLabyrinth.esm", C475BC22) && IF VAR(EN) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("MjanasLabyrinth.esm", C475BC22) && IF VAR(RU) DIRTY: 32 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("MjanasLabyrinth.esm", C475BC22) && IF VAR(ES) DIRTY: 32 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Monli.esm
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
@@ -4392,6 +4397,10 @@ FCC- Main.esp
     IF CHECKSUM("FCC- Main.esp", D286578) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("FCC- Main.esp", D286578) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 FCSkriptures.esp
+fgc.esp
+  IF CHECKSUM("fgc.esp", 06C5F435) && IF VAR(EN) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("fgc.esp", 06C5F435) && IF VAR(RU) DIRTY: 10 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("fgc.esp", 06C5F435) && IF VAR(ES) DIRTY: 10 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 FemHousecarl_TavernCloths.esp
 FishingInSkyrim.esp
 Fixed Followers.esp
@@ -5347,6 +5356,7 @@ PerkReset.esp
   IF VAR(EN) WARN: Rename this file to PerkReset.esm.
     IF VAR(RU) WARN: Переименуйте этот файл в PerkReset.esm.
       IF VAR(ES) WARN: Renombra este archivo a PerkReset.esm.
+pf_deadlytraps.esp
 pf_identified_skill_books.esp
 pf_removeenchantingrestrictions.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -7615,12 +7625,13 @@ DLE_en.esp
   IF CHECKSUM("DLE_en.esp", 3F26B1FA) && IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF CHECKSUM("DLE_en.esp", 3F26B1FA) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF CHECKSUM("DLE_en.esp", 3F26B1FA) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
-DME.esp
-DME_Light.esp
-  IF FILE("DME.esp") INC: DME.esp
+dmc 4 mod.esp
 DMC_3&4.esp
 DMC4 Trish.esp
 DMC Weapons.esp
+DME.esp
+DME_Light.esp
+  IF FILE("DME.esp") INC: DME.esp
 dogintoblackhusky.esp
 Doom Heavy Set.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
@@ -8898,6 +8909,10 @@ Magicka Sabers Plasma.esp
 MageBackpack_byTumbajamba.esp
 mage champion.esp
 mage robe hoods.esp
+magna carta armor.esp
+  IF CHECKSUM("magna carta armor.esp", 7C8F5058) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("magna carta armor.esp", 7C8F5058) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("magna carta armor.esp", 7C8F5058) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 magnus v3.0.esp
 Maid Armor.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -12678,6 +12693,7 @@ Bloodgore---NoMoreHostileVolkiharVamps.esp
     IF CHECKSUM("Bloodgore---NoMoreHostileVolkiharVamps.esp", A82E9C8A) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Bloodgore---NoMoreHostileVolkiharVamps.esp", A82E9C8A) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Bluecreek Estate.esp
+bome-divorce.esp
 BookwurmRetreat.esp
 Boozeus.esp
 Borderlands.esp
@@ -13407,6 +13423,10 @@ DovahkiinSpeech.esp
   IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") || IF FILE("DovahkiinSpeech - MidReq.esp") && IF VAR(EN) WARN: Use only one DovahkiinSpeech esp.
     IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") || IF FILE("DovahkiinSpeech - MidReq.esp") && IF VAR(RU) WARN: Используйте только один DovahkiinSpeech esp.
       IF FILE("DovahkiinSpeech - HigherReq.esp") || IF FILE("DovahkiinSpeech - HigherReqNerfed.esp") || IF FILE("DovahkiinSpeech - MidNoPerkReq.esp") || IF FILE("DovahkiinSpeech - MidReq.esp") && IF VAR(ES) WARN: Utilizar solo un DovahkiinSpeech esp.
+dragocave.esp
+  IF CHECKSUM("dragocave.esp", C1EF9B4E) && IF VAR(EN) DIRTY: 24 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("dragocave.esp", C1EF9B4E) && IF VAR(RU) DIRTY: 24 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("dragocave.esp", C1EF9B4E) && IF VAR(ES) DIRTY: 24 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Dragon.esp
   IF CHECKSUM("Dragon.esp", 779A94C3) && IF VAR(EN) DIRTY: 30 ITM, 21 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Dragon.esp", 779A94C3) && IF VAR(RU) DIRTY: 30 ITM, 21 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -14646,6 +14666,22 @@ MercenaryGuild.esp
       IF CHECKSUM("MercenaryGuild.esp", 9801AAA0) && IF VAR(ES) DIRTY: 6 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 merryfair_bridge.esp
 MjanasLabyrinthUpdater.esp
+  IFNOT ACTIVE("MjanasLabyrinth.esm") && IF VAR(EN) ERROR: MjanasLabyrinth.esm is not present or is not active. Skyrim will CTD when loading if using this file without MjanasLabyrinth
+    IFNOT ACTIVE("MjanasLabyrinth.esm") && IF VAR(RU) ERROR: MjanasLabyrinth.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без MjanasLabyrinth
+      IFNOT ACTIVE("MjanasLabyrinth.esm") && IF VAR(ES) ERROR: MjanasLabyrinth.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (MjanasLabyrinth
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: MjanasLabyrinth.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
+MjanasPlayground.esp
+  IF CHECKSUM("MjanasPlayground.esp", 34DAFCDD) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("MjanasPlayground.esp", 34DAFCDD) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("MjanasPlayground.esp", 34DAFCDD) && IF VAR(ES) DIRTY: 5 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IFNOT ACTIVE("MjanasLabyrinth.esm") && IF VAR(EN) ERROR: MjanasLabyrinth.esm is not present or is not active. Skyrim will CTD when loading if using this file without MjanasLabyrinth
+    IFNOT ACTIVE("MjanasLabyrinth.esm") && IF VAR(RU) ERROR: MjanasLabyrinth.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без MjanasLabyrinth
+      IFNOT ACTIVE("MjanasLabyrinth.esm") && IF VAR(ES) ERROR: MjanasLabyrinth.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (MjanasLabyrinth
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 Milan's PAck.esp
 MilanDungeonPack2.esp
 Millview.esp
@@ -16442,6 +16478,7 @@ voidcraft_breezehome.esp
       IF CHECKSUM("voidcraft_breezehome.esp", F8EC984C) && IF VAR(ES) DIRTY: 0 ITM, 190 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 VoiceMasterHouse.esp
 voidLetsGetNaked.esp
+Volkihar Chapel Restoration.esp
 Vortai.esp
 ENDGROUP: Quests V
 
@@ -17398,6 +17435,7 @@ Both Imp and SC-With Respawn.esp
   IF FILE("Both Imp and SC-No respawn.esp") || IF FILE("Fullcamprespawn.esp") && IF VAR(EN) WARN: Use only one Killable Leaders esp.
     IF FILE("Both Imp and SC-No respawn.esp") || IF FILE("Fullcamprespawn.esp") && IF VAR(RU) WARN: Используйте только один Killable Leaders esp.
       IF FILE("Both Imp and SC-No respawn.esp") || IF FILE("Fullcamprespawn.esp") && IF VAR(ES) WARN: Utilizar solo un Killable Leaders esp.
+boundscaling.esp
 BoundWpnScaleWithConj.esp
 Bounty Gold.esp
 REGEX: bow x\d\d?\.esp
@@ -17650,6 +17688,7 @@ dragonbitetaildamage +.esp
 DragonsEnhanced.esp
 DragonflyNoFlee.esp
 dragonplate_rebalanced.esp
+drop barenziah gems.esp
 droppablebarenziah.esp
   IF VAR(EN) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Delete. Already included in BarenziahQuestMarkers_Droppable.esp
     IF VAR(RU) && IF FILE("BarenziahQuestMarkers_Droppable.esp") WARN: Удалите. Уже включено в BarenziahQuestMarkers_Droppable.esp
@@ -18549,6 +18588,7 @@ Morozik75_Better_Cooking_Rus.esp
 Morrowind-Colored Soul Gems.esp
 morrowind_skooma.esp
 Morrowindized Artifacts.esp
+most dragons!.esp
 mso- morahir's staff overhaul.esp
   IF CHECKSUM("mso- morahir's staff overhaul.esp", D31D84E2) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("mso- morahir's staff overhaul.esp", D31D84E2) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -18966,6 +19006,7 @@ SB Bartering Mod.esp
 ScalingElementalRunes.esp
 ScarabFollowerTweaks.esp
 scaredchildren.esp
+scentofwolf.esp
 Sell_Stolen.esp
 Serana No Hood.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -22252,6 +22293,7 @@ True Dovahkiin Fire and Frost Breath Normal Cooldown Time.esp
 True Dovahkiin Breath.esp
 TrueDragonblood-DawnguardV001.esp
   IF FILE("ShoutCD.esp") INC: ShoutCD.esp
+tweak to the disarm shout making it stronger.esp
 
 // shouts u
 UndressShout.esp
@@ -23164,6 +23206,7 @@ Crimson Tide - Blood.esp
     IF CHECKSUM("Crimson Tide - Blood.esp", DB6C1082) && IF VAR(RU) DIRTY: 14 ITM, 41 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Crimson Tide - Blood.esp", DB6C1082) && IF VAR(ES) DIRTY: 14 ITM, 41 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 /* Crimson Tide has been repoted to cause issues if loaded after ACE Melee */
+
 // skills a
 ACE Archery Dawnguard Patch.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, ACE Archery.esp.
@@ -23217,8 +23260,10 @@ REGEX: AB?T -( Increased)? Progressive Damage( \(BS and CCO\)| \(with Nord Hero 
 REGEX: AB?T - Recover ([-\+]?\d{1,3}%)( Less| More)? Arrows( and Bolts)?\.esp
 /* All AT plugins must load after *all* ACE modules */
 ABT - Bolts Renamed for BS and CCO.esp
+
 // skills b
 Balanced Armor Effects.esp
+
 // skills c
 cao_PerkRanks.esp
   IF VAR(EN) && IFNOT CHECKSUM("cao_PerkRanks.esp", B2A7936F) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -23228,6 +23273,7 @@ Character_Generation.esp
   IF VERSION("SKSE", "0.1.5.10", <) REQ: "http://skse.silverlock.org SKSE" 1.5.10+.
 Combat Perks Overhaul.esp
 Conjuration Perks Overhaul Beta 0.1.esp
+
 // skills d
 REGEX: Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp
   IF VAR(EN) SAY: Use only one Deadly Torches - *.esp.
@@ -23236,6 +23282,7 @@ REGEX: Deadly Torches - (Non-)?Everlasting with (Low|High) Damage\.esp
 Destruction Scaling.esp
 Dual Flurry for all.esp
 vDynamicDifficulty.esp
+
 // skills e
 EagleEye3x.esp
 Eld-betterLockpickPerks.esp
@@ -23247,15 +23294,18 @@ EpicGlory-SkillsStartAtZeroByMadmole.esp
   IF VAR(EpicGloryInst) INC: EpicGloryByMadmole.esp
 EpicGloryStatsStartAt50ByMadmole.esp
   IF VAR(EpicGloryInst) INC: EpicGloryByMadmole.esp
+  
 // skills f
 fasteralchemylevelling.esp
 REGEX: FasterCombatMagickaRegen(100|50|66|75)?\.esp
 FeelMagic.esp
 flexibleperktrees.esp
+
 // skills g
 GDTES5 Lockpick Perk Tree Reconfigure.esp
 GluRUS_magicscaling.esp
 GrandMaster.esp
+
 // skills h
 HeavyArmorPerks - Helmetless.esp
   IF CHECKSUM("HeavyArmorPerks - Helmetless.esp", 3A11FDB9) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -23277,6 +23327,7 @@ Hunter's Perks.esp
   IF CHECKSUM("Hunter's Perks.esp", D861AD0B) && IF VAR(EN) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Hunter's Perks.esp", D861AD0B) && IF VAR(RU) DIRTY: 4 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Hunter's Perks.esp", D861AD0B) && IF VAR(ES) DIRTY: 4 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+	  
 // skills i
 Illusion Perks Overhaul.esp
 iMO-Perks.esp
@@ -23285,12 +23336,15 @@ Improved Casting Enhanced.esp
 REGEX: Improved Destruction Perks.*\.esp
 Improved Expert Spells.esp
 REGEX: Improved Master Spells.*\.esp
+
 // skills j
 JokeMOD-SilentRunning.esp
 REGEX: Jules(PerkRankAssign|RankPerks)?\.esp
+
 // skills k
 kuerteeSkillBasedDamageMultipliers.esp
   IF VERSION("SKSE", "0.1.5.4", <) REQ: "http://skse.silverlock.org SKSE" 1.5.4+
+  
 // skills l
 lcr.esp
 leveling_2x_slower1_5.esp
@@ -23307,6 +23361,7 @@ levelingperkslite.esp
   IF VAR(EN) && IF FILE("perksbymatope.esp") WARN: Delete. Already included in perksbymatope.esp
     IF VAR(RU) && IF FILE("perksbymatope.esp") WARN: Удалите. Уже включено в perksbymatope.esp
 levelrates_halved.esp
+
 // skills m
 REGEX: MageArmor(Easy)?\.esp
 magicscaling.esp
@@ -23342,10 +23397,14 @@ REGEX: MR_(FasterDualcasting|MagickaRevisited|PowerfulDualcasting)\.esp
   IF VAR(EN) SAY: Use only one MR_*.esp.
     IF VAR(RU) SAY: Используйте только один MR_*.esp.
       IF VAR(ES) SAY: Utilizar solo un MR_*.esp.
+MXlevelupallperks.esp
+
 // skills n
 no more ability perk tree.esp
 non-linear perk trees.esp
+
 // skills o
+
 // skills p
 REGEX: pace_\w_\d{2,4}_\d{1,2}.*\.esp
 Path of Shadows - Sneak Settings.esp
@@ -23379,7 +23438,9 @@ IFNOT ACTIVE("Skyrim Perk Enhancements.esp") MOD: CookingExpanded - PTAlchFood_B
 IFNOT ACTIVE("Skyrim Perk Enhancements.esp") MOD: CookingExpanded - PTFood_ONLY.esp
   IFNOT ACTIVE("CookingExpanded.esp") ERROR: CookingExpanded.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IFNOT ACTIVE("PTFoodOverhaul_ONLY.esp") ERROR: PTFoodOverhaul_ONLY.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+  
 // skills q
+
 // skills r
 RacialSkillBoost.esp
 Racial Traits Improved.esp
@@ -23394,6 +23455,7 @@ RPGArmor.esp
     IF CHECKSUM("RPGArmor.esp", 586A477C) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("RPGArmor.esp", 586A477C) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 ruestungstalente_ohne_helm.esp
+
 // skills s
 SB - Level Scaling Mod.esp
 SB Skills and Leveling.esp
@@ -23420,6 +23482,7 @@ SlowerLevelingSmithing.esp
 REGEX: SlowerSkills_v.+\.esp
 SmithingMasteryPerks.esp
   IF FILE("PerkUP-Smithing.esp") INC: PerkUP-Smithing.esp
+  
 // skills t
 Target Training System - TTS.esp
   IF CHECKSUM("Target Training System - TTS.esp", 59F6E5C8) && IF VAR(EN) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -23435,6 +23498,7 @@ TrueYield.esp
 Steel an Iron perk.esp
 Twili's Unarmed perk.esp
 Twili's Unarmored perk.esp
+
 // skills u
 REGEX: Uncapped Perks - [CM].+\.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
@@ -23448,15 +23512,18 @@ REGEX: Uncapped Perks - .+\.esp
   IF REGEX("PerkUP-.*\.esp") INC: PerkUP
 BlueStarPerkAdventure.esp
   IFNOT VAR(SKCU) REQ: "http://skyrim.nexusmods.com/mods/1175 Skyrim -Community- Uncapper"
+  
 // skills v
+
 // skills w
 REGEX: WiS IV - leveld World X\d+\.esp
   IF VAR(EN) SAY: Use only one WiS IV - leveld World esp.
     IF VAR(RU) SAY: Используйте только один WiS IV - leveld World esp.
       IF VAR(ES) SAY: Utilizar solo un WiS IV - leveld World esp.
+	  
 // skills xyz
 
-//[Issue SkyRe] These plugins have SkyRe as a master and most likely need relocating to fit it's not load position.
+// [Issue SkyRe] These plugins have SkyRe as a master and most likely need relocating to fit it's not load position.
 SynergyBonuses.esp
 xpMedium.esp
 XPModNormal.esp
@@ -23632,6 +23699,7 @@ DwemerBombs.esp
   IF FILE("DwemerBombsNoPerkTree.esp") INC: DwemerBombsNoPerkTree.esp
 
 // perks e
+ExtraEffect_v1.5.esp
 
 // perks f
 
