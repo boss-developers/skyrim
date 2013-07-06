@@ -85,6 +85,7 @@ IF FILE("SkyMoMod.esm") SET: SkyMoMod
 IF REGEX("SkyRe_.+\.esp") SET: SkyRe
 IF FILE("SkyRe_Main.esp") || IF FILE("SkyRe_Main_NoDawnguard.esp") SET: SkyReM
 IF ACTIVE("SkyUI.esp") SET: SkyUI
+IF ACTIVE("TheEyesOfBeauty.esp") SET: EOB
 IF FILE("tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe") SET: FNIS
 IF FILE("UFO - Ultimate Follower Overhaul.esp") SET: UFO
 IF FILE("Update.esm") SET: Update
@@ -12071,6 +12072,10 @@ a_dragons_respect.esp
   IF CHECKSUM("a_dragons_respect.esp", 0F39A808) && IF VAR(EN) DIRTY: 16 ITM, 4 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("a_dragons_respect.esp", 0F39A808) && IF VAR(RU) DIRTY: 16 ITM, 4 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("a_dragons_respect.esp", 0F39A808) && IF VAR(ES) DIRTY: 16 ITM, 4 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+AdragoniusTower.esp
+  IF CHECKSUM("AdragoniusTower.esp", EE105604) && IF VAR(EN) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("AdragoniusTower.esp", EE105604) && IF VAR(RU) DIRTY: 10 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("AdragoniusTower.esp", EE105604) && IF VAR(ES) DIRTY: 10 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 adventcalendar.esp
   IF CHECKSUM("adventcalendar.esp", 3A7D34AF) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("adventcalendar.esp", 3A7D34AF) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -25434,6 +25439,10 @@ ENDGROUP: Companions Load Early
 
 BEGINGROUP: Questgiver NPCs
 awnuldthebold.esp
+FCKaraThePathfinder.esp
+  IF CHECKSUM("FCKaraThePathfinder.esp", 69A4FB16) && IF VAR(EN) DIRTY: 7 ITM, 10 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("FCKaraThePathfinder.esp", 69A4FB16) && IF VAR(RU) DIRTY: 7 ITM, 10 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("FCKaraThePathfinder.esp", 69A4FB16) && IF VAR(ES) DIRTY: 7 ITM, 10 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 GoTSkyrimConversion.esp
 // not sure where to put 'Conversions' this seemed most likely based on description (no readme).
   SAY: This is a Conversion.  Most other mods will be incompatible.
@@ -25669,6 +25678,16 @@ AoD - Shelyn.esp
       IFNOT ACTIVE("FollowerMagic.esm") && IF VAR(ES) ERROR: FollowerMagic.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 REGEX: aranea1.?\.esp
 Agrenor Replacer.esp
+DA01Aranea.esp
+  IFNOT VAR(EOB) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/13722 TheEyesOfBeauty.esp" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(EOB) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/13722 TheEyesOfBeauty.esp" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(EOB) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/13722 TheEyesOfBeauty.esp" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IF CHECKSUM("DA01Aranea.esp", AE596700) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("DA01Aranea.esp", AE596700) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+      IF CHECKSUM("DA01Aranea.esp", AE596700) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Arro.esp
 AsharaErinFollower.esp
   IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
@@ -26565,6 +26584,16 @@ NinaGale.esp
 Nirana.esp
 njada1a.esp
 njada1b.esp
+NjadaStonearm.esp
+  IFNOT VAR(EOB) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/13722 TheEyesOfBeauty.esp" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(EOB) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/13722 TheEyesOfBeauty.esp" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(EOB) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/13722 TheEyesOfBeauty.esp" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IF CHECKSUM("NjadaStonearm.esp", FC82DA23) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("NjadaStonearm.esp", FC82DA23) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+      IF CHECKSUM("NjadaStonearm.esp", FC82DA23) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 nu_female_followers.esp
 
 // companions o
@@ -26835,6 +26864,13 @@ Uthgerd Kriegswolfe.esp
       IF CHECKSUM("pluginUthgerd Kriegswolfe.esp", A83E8A5E) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Uthgerd-TCG.esp
 Uthgerd-Dovas_Angels-TCG.esp
+Uthgerd von Wölfe.esp
+  IF CHECKSUM("Uthgerd von Wölfe.esp", 016D9774) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("pluginUthgerd von Wölfe.esp", 016D9774) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+      IF CHECKSUM("pluginUthgerd von Wölfe.esp", 016D9774) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 
 // companions v
 
