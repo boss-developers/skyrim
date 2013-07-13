@@ -1885,6 +1885,7 @@ sapphire_speak_fix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp.
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
       IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
+Severin Manor Music.esp
 REGEX: Shadow.?Striping.?Fix\.esp
 Shrine of Azura LOD Fix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp.
@@ -6562,6 +6563,8 @@ DragonSoulConverter.esp
   IF VERSION("SKSE", "0.1.6.13", <) REQ: "http://skse.silverlock.org SKSE" 1.6.13+.
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.4+
 Fine-Tuned Challenge.esp
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
+Grimy Utilities Interface.esp
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
 kuerteeAutoFirstThirdPersonView MCM.esp
   IFNOT ACTIVE("kuerteeAutoFirstThirdPersonView.esp") ERROR: kuerteeAutoFirstThirdPersonView.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -15501,6 +15504,9 @@ Sharks.esp
   IF CHECKSUM("Sharks.esp", 87A8619C) && IF VAR(EN) DIRTY: 91 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Sharks.esp", 87A8619C) && IF VAR(RU) DIRTY: 91 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Sharks.esp", 87A8619C) && IF VAR(ES) DIRTY: 91 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+ShezrieUTFalkreath.esp
+ShezrieUTNightgateInn.esp
+ShezrieUTWinterhold.esp
 SkoomaShip.esp
 Scout Addon for ATIC.esp
 SeabreezeEstate.esp
@@ -21424,6 +21430,10 @@ REGEX: DawnguardDelayedStart(20|30|40|50|999)\.esp
   IF VAR(EN) SAY: Use only one DawnguardDelayedStart esp.
     IF VAR(RU) SAY: Используйте только один DawnguardDelayedStart esp.
       IF VAR(ES) SAY: Utilizar solo un nnn esp.
+Random Vampire Attacks in Towns Disabled.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 DG-NoAttacks.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -22923,6 +22933,7 @@ IFNOT VAR(SkyReM) MOD: Artifact Disenchanting - Dragonborn.esp
 Backstab Enchantment new.esp
 Balanced Crafting Project - Enchanting Part.esp
 Balanced Enchanting v2.esp
+Better Cloth Enchanting.esp
 bootsofnimblespeed.esp
 BowsElementalFury.esp
 Dark Brotherhood Enchantment.esp
@@ -25527,6 +25538,11 @@ UFO - Heartfire AddOn.esp
   IF CHECKSUM("UFO - Heartfire AddOn.esp", 047AA94A) && IF VAR(EN) DIRTY: 29 ITM, 18 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("UFO - Heartfire AddOn.esp", 047AA94A) && IF VAR(RU) DIRTY: 29 ITM, 18 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("UFO - Heartfire AddOn.esp", 047AA94A) && IF VAR(ES) DIRTY: 29 ITM, 18 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+UFO - Dragonborn AddOn - Unofficial.esp
+  IFNOT VAR(UFO) REQ: "http://skyrim.nexusmods.com/mods/14037 UFO - Ultimate Follower Overhaul.esp"
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 UFO - AllwaysDrawWeapons.esp
 SIUFO.esp
 SIUFOPatch.esp
