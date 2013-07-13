@@ -3622,6 +3622,8 @@ BEGINGROUP: Base B
 
 BabettesFeast.esp
 Babettes Feast v1_2.esp
+Babettes Feast Balanced.esp
+// ^ Fixed version
 BabettesFeastBalanced.esp
   IF VAR(EN) && IFNOT CHECKSUM("BabettesFeastBalanced.esp", 163783) WARN: Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IFNOT CHECKSUM("BabettesFeastBalanced.esp", 163783) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
@@ -10970,6 +10972,44 @@ REGEX: Requiem -.*\.esp
   // For all other unrecognized options
 soma's archery overhaul (sao).esp
 ProjectFrenzy.esp
+SkyRealism.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+SkyRealism - BabettesFeastBalanced.esp
+  IFNOT ACTIVE("SkyRealism.esp") && IF VAR(EN) ERROR: SkyRealism.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SkyRealism.esp") && IF VAR(RU) ERROR: SkyRealism.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism.esp") && IF VAR(ES) ERROR: SkyRealism.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT ACTIVE("BabettesFeastBalanced.esp") && IF VAR(EN) ERROR: BabettesFeastBalanced.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("BabettesFeastBalanced.esp") && IF VAR(RU) ERROR: BabettesFeastBalanced.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("BabettesFeastBalanced.esp") && IF VAR(ES) ERROR: BabettesFeastBalanced.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+SkyRealism - CookingExpanded.esp
+  IFNOT ACTIVE("SkyRealism.esp") && IF VAR(EN) ERROR: SkyRealism.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SkyRealism.esp") && IF VAR(RU) ERROR: SkyRealism.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism.esp") && IF VAR(ES) ERROR: SkyRealism.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT ACTIVE("CookingExpanded.esp") && IF VAR(EN) ERROR: CookingExpanded.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("CookingExpanded.esp") && IF VAR(RU) ERROR: CookingExpanded.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("CookingExpanded.esp") && IF VAR(ES) ERROR: CookingExpanded.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+SkyRealism - Dr_Bandolier.esp
+  IFNOT ACTIVE("SkyRealism.esp") && IF VAR(EN) ERROR: SkyRealism.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SkyRealism.esp") && IF VAR(RU) ERROR: SkyRealism.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism.esp") && IF VAR(ES) ERROR: SkyRealism.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT ACTIVE("Dr_Bandolier.esp") && IF VAR(EN) ERROR: Dr_Bandolier.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Dr_Bandolier.esp") && IF VAR(RU) ERROR: Dr_Bandolier.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Dr_Bandolier.esp") && IF VAR(ES) ERROR: Dr_Bandolier.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+SkyRealism - WVExpansion.esp
+  IFNOT ACTIVE("SkyRealism.esp") && IF VAR(EN) ERROR: SkyRealism.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SkyRealism.esp") && IF VAR(RU) ERROR: SkyRealism.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SkyRealism.esp") && IF VAR(ES) ERROR: SkyRealism.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT ACTIVE("WVExpansion.esp") && IF VAR(EN) ERROR: WVExpansion.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("WVExpansion.esp") && IF VAR(RU) ERROR: WVExpansion.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("WVExpansion.esp") && IF VAR(ES) ERROR: WVExpansion.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Skyrim Hardcore Overhaul.esp
   TAG: {{BASH: Delev}}
   IF CHECKSUM("Skyrim Hardcore Overhaul.esp", DAE7CFE2) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -20833,9 +20873,6 @@ kuerteeBattleFatigueAndInjuries MCM.esp
   IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
 REGEX: AdvancedFoodandRestENG( lazy)?\.esp
 Better Hunting.esp
-REGEX: dD.?- Realistic Ragdoll Force.*\.esp
-  IF VAR(EN) SAY: Ragdolls will conflict with other mods that change the skeleton.nif. Check "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers" for compatibly with other skeleton.nif.
-    IF VAR(RU) SAY: Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers", для поддержки других версий skeleton.nif.
 Diseased.esp
 drink eat sleep.esp
 /* Steam network version is an esp and BSA */
@@ -27553,6 +27590,13 @@ CharacterMakingExtender.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.9", <) REQ: "http://skse.silverlock.org SKSE" 1.6.9+
 ClassicClasses.esp
+DeadlyMutilation.esp
+  IFNOT VAR(SkyUI) && IF VAR(EN) WARN: SkyUI.esp is not present or is not active. You will be unable to use the SkyUI MCM.
+    IFNOT VAR(SkyUI) && IF VAR(RU) WARN: SkyUI.esp отсутствует или не активен. Вы не сможете использовать SkyUI MCM.
+      IFNOT VAR(SkyUI) && IF VAR(ES) WARN: SKYUI.esp no se encuentra presente o activado. No podrás utilizar SkyUI MCM.
+REGEX: dD.?- Realistic Ragdoll Force.*\.esp
+  IF VAR(EN) SAY: Ragdolls will conflict with other mods that change the skeleton.nif. Check "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers" for compatibly with other skeleton.nif.
+    IF VAR(RU) SAY: Конфликтует с другими модами, меняющими файл skeleton.nif. Смотрите страницу "http://skyrim.nexusmods.com/mods/16712  Custom Skeleton Replacers", для поддержки других версий skeleton.nif.
 driveableboat.esp
   // Changes a lot of race records
   IF CHECKSUM("driveableboat.esp", 920C6E44) && IF VAR(EN) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
