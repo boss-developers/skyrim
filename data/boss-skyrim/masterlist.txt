@@ -141,9 +141,9 @@ IF REGEX("Bashed Patch.*\.esp") SET: BP
       IF REGEX("ASIS(-Dependency)?\.esp") || IF REGEX("Automatic (Spells|Variations|Variants)\.esp") && IF VAR(ES) GLOBAL SAY: Tienes un plugin dinamicamente creado. Por favor, consulta las notas de autor para obtener más información sobre cómo determinar el mejor orden.
 
 // Fores New Idles in Skyrim
-  IF VAR(EN) && IF VAR(FNIS) SAY: It appears you have "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
-    IF VAR(RU) && IF VAR(FNIS) SAY: У вас установлен "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim". Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.
-      IF VAR(ES) && IF VAR(FNIS) SAY: Parece que "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.
+  IF VAR(EN) && IF VAR(FNIS) GLOBAL SAY: It appears you have "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" installed. Remember to run GenerateFNISforUsers.exe every time you have installed or de-installed FNIS, or an FNIS based mod.
+    IF VAR(RU) && IF VAR(FNIS) GLOBAL SAY: У вас установлен "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim". Не забудьте запускать GenerateFNISforUsers.exe каждый раз, когда вы установите или удалите FNIS, или любой мод, основанный на FNIS.
+      IF VAR(ES) && IF VAR(FNIS) GLOBAL SAY: Parece que "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" está instalado. Recuerda correr GenerateFNISforUsers.exe cada vez que instales o desinstales FNIS o un mod basado en FNIS.
 
 BEGINGROUP: Official ESMs
 
@@ -14762,8 +14762,8 @@ MeekoHuskyEssential.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
   IF FILE("MeekoHusky.esp") && IF VAR(EN) WARN: Use only one MeekoHusky *.esp.
-    IF FILE("MeekoHusky *.esp") && IF VAR(RU) WARN: Используйте только один MeekoHusky *.esp.
-      IF FILE("MeekoHusky *.esp") && IF VAR(ES) WARN: Utilizar solo un MeekoHusky *.esp.
+    IF REGEX("MeekoHusky .+\.esp") && IF VAR(RU) WARN: Используйте только один MeekoHusky *.esp.
+      IF REGEX("MeekoHusky .+\.esp") && IF VAR(ES) WARN: Utilizar solo un MeekoHusky *.esp.
 MeekoHuskyArmored.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -16887,8 +16887,8 @@ A&P weight change only..esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, A&P weight change only.esp.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, A&P weight change only.esp.
 A&P weight change only.esp
-  IF VAR(EN) && IF VAR(SkyreM) WARN: Author states SkyRe will overlap this mod, rendering it useless.
-    IF VAR(RU) && IF VAR(SkyreM) WARN: Автор утверждает, что SkyRe будет перезаписывать этот мод, делая его бесполезным.
+  IF VAR(EN) && IF VAR(SkyReM) WARN: Author states SkyRe will overlap this mod, rendering it useless.
+    IF VAR(RU) && IF VAR(SkyReM) WARN: Автор утверждает, что SkyRe будет перезаписывать этот мод, делая его бесполезным.
 Book_Weight_Correct.esp
 Cuir Cohérent.esp
 dbassassin.esp
@@ -27906,7 +27906,7 @@ MenuShoutsInDragonsLanguage.esp
     IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
       IF CHECKSUM("MenuShoutsInDragonsLanguage.esp", 2AC21E2A) && IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
   /* Other version (but which?) */
-  ELSE IF VAR(Dawnguard) && IFNOT CHECKSUM("MenuShoutsInDragonsLanguage.esp", E06D6E46) ERROR: Use Dawnguard version.
+  IF VAR(Dawnguard) && IFNOT CHECKSUM("MenuShoutsInDragonsLanguage.esp", E06D6E46) ERROR: Use Dawnguard version.
 SIDT - Skyrim.esp
   IF FILE("SIDT - Complete.esp") && IF VAR(EN) WARN: Delete. Already included in SIDT - Complete.esp.
     IF FILE("SIDT - Complete.esp") && IF VAR(RU) WARN: Удалите. Уже включено в SIDT - Complete.esp.
