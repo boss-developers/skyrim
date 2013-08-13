@@ -20666,10 +20666,13 @@ REGEX: RL - .*\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
-IFNOT FILE("rcrnShaders.esp") MOD: EnhancedLightsandFX.esp
+IFNOT FILE("rcrnShaders.esp") && IFNOT FILE("rcrnPlus.esp") MOD: EnhancedLightsandFX.esp
   // moved as suggested in bsg thread 28 post 105
-IFNOT FILE("rcrnShaders.esp") MOD: REGEX: ELFX - (Moonpath|NoBreezehome|NoTaverns|Exteriors)\.esp
-IFNOT FILE("rcrnShaders.esp") MOD: ELFX - Dawnguard.esp
+IFNOT FILE("rcrnShaders.esp") && IFNOT FILE("rcrnPlus.esp") MOD: ELFX - Exteriors.esp
+IFNOT FILE("rcrnShaders.esp") && IFNOT FILE("rcrnPlus.esp") MOD: ELFX - Moonpath.esp
+IFNOT FILE("rcrnShaders.esp") && IFNOT FILE("rcrnPlus.esp") MOD: ELFX - NoBreezehome.esp
+IFNOT FILE("rcrnShaders.esp") && IFNOT FILE("rcrnPlus.esp") MOD: ELFX - NoTaverns.esp
+IFNOT FILE("rcrnShaders.esp") && IFNOT FILE("rcrnPlus.esp") MOD: ELFX - Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
@@ -20769,7 +20772,7 @@ ClimatesOfTamriel-Interiors-Warm.esp
 REGEX: ClimatesOfTamriel-(Vanilla)?Nights-(Lvl|Level)-[12345678]\.esp
 ClimatesOfTamriel-WinterEdition.esp
   IF CHECKSUM("ClimatesOfTamriel-WinterEdition.esp", 74DF3C5) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
-ELFXEnhancer.esp
+IFNOT FILE("rcrnShaders.esp") && IFNOT FILE("rcrnPlus.esp") MOD: ELFXEnhancer.esp
 // ^ Loaded after CoT as it is more specialized.
 Unique Region Names - Dragonborn COT Patch.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
@@ -20887,14 +20890,14 @@ REGEX: SoS - Civilization( -|-)PatchCoT(Sounds)?(WinterEdition)?\.esp
       IF VAR(ES) SAY: Utilizar solo un Sounds of Skyrim - Civilization and CoT patch.
 
 // Unofficial ELFX patches
-SoS - The Dungeons-PatchELFX.esp
+IFNOT FILE("rcrnShaders.esp") && IFNOT FILE("rcrnPlus.esp") MOD: SoS - The Dungeons-PatchELFX.esp
   IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(ES) ERROR: SoS - The Dungeons.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT ACTIVE("ELFXEnhancer.esp") && IF VAR(EN) ERROR: ELFXEnhancer.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("ELFXEnhancer.esp") && IF VAR(RU) ERROR: ELFXEnhancer.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("ELFXEnhancer.esp") && IF VAR(ES) ERROR: ELFXEnhancer.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-SoS - Civilization-PatchELFX.esp
+IFNOT FILE("rcrnShaders.esp") && IFNOT FILE("rcrnPlus.esp") MOD: SoS - Civilization-PatchELFX.esp
   IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(ES) ERROR: SoS - Civilization.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
@@ -28119,14 +28122,19 @@ RCRNvolumetric.esp
   IF CHECKSUM("RCRNvolumetric.esp", 54176F89) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("RCRNvolumetric.esp", 54176F89) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("RCRNvolumetric.esp", 54176F89) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-IF FILE("rcrnShaders.esp") MOD: EnhancedLightsandFX.esp
+IF FILE("rcrnShaders.esp") || IF FILE("rcrnPlus.esp") MOD: EnhancedLightsandFX.esp
   // moved as suggested in bsg thread 28 post 105
   // 13.08.13 must load after RCRN for normal work rcnr+elfx (forums info)
-IF FILE("rcrnShaders.esp") REGEX: ELFX - (Moonpath|NoBreezehome|NoTaverns|Exteriors)\.esp
-IF FILE("rcrnShaders.esp") MOD: ELFX - Dawnguard.esp
+IF FILE("rcrnShaders.esp") || IF FILE("rcrnPlus.esp") MOD: ELFX - Exteriors.esp
+IF FILE("rcrnShaders.esp") || IF FILE("rcrnPlus.esp") MOD: ELFX - Moonpath.esp
+IF FILE("rcrnShaders.esp") || IF FILE("rcrnPlus.esp") MOD: ELFX - NoBreezehome.esp
+IF FILE("rcrnShaders.esp") || IF FILE("rcrnPlus.esp") MOD: ELFX - NoTaverns.esp
+IF FILE("rcrnShaders.esp") || IF FILE("rcrnPlus.esp") MOD: ELFX - Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+IF FILE("rcrnShaders.esp") || IF FILE("rcrnPlus.esp") MOD: ELFXEnhancer.esp
+// has to load after EnhancedLightsandFX.esp always because it is a master
 SoS - The Dungeons-PatchRCRN.esp
   IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without SoS - The Dungeons
     IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - The Dungeons
@@ -28142,6 +28150,20 @@ SoS - Civilization-PatchRCRN.esp
     IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без SoS - Civilization
       IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(ES) ERROR: SoS - Civilization.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IFNOT FILE("rcrnShaders.esp") || IFNOT FILE("rcrnPlus.esp") REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
+IF FILE("rcrnShaders.esp") || IF FILE("rcrnPlus.esp") MOD: SoS - The Dungeons-PatchELFX.esp
+  IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(EN) ERROR: SoS - The Dungeons.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(RU) ERROR: SoS - The Dungeons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SoS - The Dungeons.esp") && IF VAR(ES) ERROR: SoS - The Dungeons.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT ACTIVE("ELFXEnhancer.esp") && IF VAR(EN) ERROR: ELFXEnhancer.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ELFXEnhancer.esp") && IF VAR(RU) ERROR: ELFXEnhancer.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("ELFXEnhancer.esp") && IF VAR(ES) ERROR: ELFXEnhancer.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+IF FILE("rcrnShaders.esp") || IF FILE("rcrnPlus.esp") MOD: SoS - Civilization-PatchELFX.esp
+  IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(EN) ERROR: SoS - Civilization.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(RU) ERROR: SoS - Civilization.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SoS - Civilization.esp") && IF VAR(ES) ERROR: SoS - Civilization.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT ACTIVE("ELFXEnhancer.esp") && IF VAR(EN) ERROR: ELFXEnhancer.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("ELFXEnhancer.esp") && IF VAR(RU) ERROR: ELFXEnhancer.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("ELFXEnhancer.esp") && IF VAR(ES) ERROR: ELFXEnhancer.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Volrath - Enhanced Lights and Fixes - RCRN.esp
   REQ: "http://skyrim.nexusmods.com/mods/1875 RCRN"
 Volrath - Enhanced Lights and Fixes - RCRN - Lanterns Of Skyrim.esp
