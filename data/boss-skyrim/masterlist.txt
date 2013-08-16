@@ -19641,6 +19641,19 @@ REGEX: TheWitcher2-Ultimate Replace Mod.+\.esp
 Thief Encounter Fix.esp
 Thieves Guild Requirements.esp
 throatofthemilkdrinker.esp
+TimingIsEverything.esp
+  IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
+  IF VERSION("SKSE", "0.1.6.13", <) REQ: "http://skse.silverlock.org SKSE" 1.6.13+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.4+
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 Topless Ragged Trousers.esp
 torches for realistic lighting.esp
 REGEX: torches for RL \(.+\)\.esp
