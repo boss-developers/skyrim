@@ -5911,6 +5911,8 @@ SmithBornRecipes.esp
 SmithBornTree.esp
 smithing&clothings_variety_mod.esp
 Smithing Basic.esp
+IF FILE("Smithing Coinage.esp") MOD: Invent.esp
+  // here to reduce conflict between Invent.esp and Smithing Coinage.esp
 Smithing Coinage.esp
 Smithing Cooking.esp
 Smithing Extended.esp
@@ -19267,6 +19269,7 @@ SkaalKidAetaCoat.esp
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
 skooma.esp
 Skooma Incorporated.esp
+SkyFalls - Distant Waterfall Overhaul.esp
 SkyHide Fur, Hide & Leather Only - Optional.esp
 SkyHide Heavy Armor Helms Only.esp
 SkyHide Light Armor Helms Only.esp
@@ -21974,7 +21977,7 @@ REGEX: Horse Whisper( - NO CALLING| - NO TRACKING)?\.esp
 horsecomehere.esp
 
 // spells i
-Invent.esp
+IFNOT FILE("Smithing Coinage.esp") MOD: Invent.esp
 Invisibility.esp
 Isharas_Glimpse_of_Elsweyr.esp
   IFNOT FILE("SKSE") SAY: Note that to allow containers to have categories like the player inventory you need "http://skse.silverlock.org/ SKSE". See the "Tip" section on the mods "http://skyrim.nexusmods.com/mods/25362 description page".
