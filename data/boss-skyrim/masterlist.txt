@@ -5099,15 +5099,6 @@ Book Covers Hearthfire.esp
   IF FILE("Book Covers Skyrim.esp") && IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IF VAR(EN) WARN: Delete. Already included in Book Covers Skyrim.esp.
     IF FILE("Book Covers Skyrim.esp") && IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IF VAR(RU) WARN: Удалите. Уже включено в Book Covers Skyrim.esp.
       IF FILE("Book Covers Skyrim.esp") && IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IF VAR(ES) WARN: Borrar. Esta incluido en Book Covers Skyrim.esp.
-  //following ASM patches for book covers have similar dependencies to above, so left out for brevity -LD
-Book Covers Compatibility Skyrim ASM.esp
-Book Covers Skyrim ASM.esp
-Book Covers Compatibility Dawnguard ASM.esp
-Book Covers Dawnguard ASM.esp
-Book Covers Compatibility Hearfire ASM.esp
-Book Covers Hearfire ASM.esp
-Book Covers Compatibility Merged ASM.esp
-Book Covers Merged ASM.esp
 Lorecraft - Cooking.esp
 Lorecraft - Crafting Complete.esp
 Lorecraft - dawnguard.esp
@@ -10831,10 +10822,6 @@ REGEX: ASM-DB(-LightWeight|-RealWeight)?\.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
-ASM-FS.esp
-  IFNOT ACTIVE("Falskaar.esm") && IF VAR(EN) ERROR: Falskaar.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("Falskaar.esm") && IF VAR(RU) ERROR: Falskaar.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("Falskaar.esm") && IF VAR(ES) ERROR: Falskaar.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   // the following ASM modulars have differing DLC master dependencies among somw- omitted from BOSS alerts and left for users to figure out -LD
 ASM-Ammunition.esp
 ASM-Books.esp
@@ -10849,6 +10836,37 @@ ASM-Soul Gems.esp
 ASM-Soul Gems-Alternative.esp
 ASM-Spells.esp
 ASM-Spells-LightWeight.esp
+ASM-FS.esp
+  IFNOT ACTIVE("Falskaar.esm") && IF VAR(EN) ERROR: Falskaar.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Falskaar.esm") && IF VAR(RU) ERROR: Falskaar.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Falskaar.esm") && IF VAR(ES) ERROR: Falskaar.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  //following ASM patches for book covers have similar dependencies to BC, so left out for brevity -LD
+Book Covers Compatibility Skyrim ASM.esp
+Book Covers Skyrim ASM.esp
+Book Covers Compatibility Dawnguard ASM.esp
+Book Covers Dawnguard ASM.esp
+Book Covers Compatibility Hearfire ASM.esp
+Book Covers Hearfire ASM.esp
+Book Covers Compatibility Merged ASM.esp
+Book Covers Merged ASM.esp
+Immersive Weapons_ASM.esp
+  IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(EN) ERROR: Immersive Weapons.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(RU) ERROR: Immersive Weapons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(ES) ERROR: Immersive Weapons.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+Weapons and Armor Fixes_Remade_ASM.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+Weapons and Armor_TrueOrcish-DaedricWeapons_ASM.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 REGEX: Better Sorting by eclips3 - Ingredients .+\.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -25596,6 +25614,26 @@ IF FILE("3DNPC.esp") MOD: KnapsackEnhanced.esp
     IFNOT ACTIVE("Chesko_Frostfall.esp") && IF VAR(RU) ERROR: Chesko_Frostfall.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/11163 Frostfall"
   IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/26228 Realistic Needs and Diseases"
     IF CHECKSUM("KnapsackEnhanced.esp", CD3D515C) && IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/26228 Realistic Needs and Diseases"
+RND_ASM.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+  IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(ES) ERROR: RealisticNeedsandDiseases.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+RND_ASM-RealWeight.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+  IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(ES) ERROR: RealisticNeedsandDiseases.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 RRRE-3DNPCv2-Patch.esp
 Smithing AlchBowl RND patch.esp
 Smithing Cooking RND patch.esp
