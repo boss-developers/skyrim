@@ -2929,6 +2929,7 @@ DragonHitSoundFix.esp
 DragonHitSoundFix - RAS.esp
 DragonShout.esp
 DragonShoutVoice.esp
+ElinRaceVoice - ElinVoice.esp
 IceBreaker's Improved Reverb.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, IceBreaker's Improved Reverb-v0.02-Cleaned.esp.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, IceBreaker's Improved Reverb-v0.02-Cleaned.esp.
@@ -4199,6 +4200,7 @@ Daedric chain.esp
 DaedricCrownCraftable.esp
 Deeper Snow.esp
 Deeper Snow with Wind and less View.esp
+degradation.esp
 Deleveled Skyrim - Items.esp
   TAG: {{BASH: Delev, Relev}}
 Deleveled Skyrim - Enemies.esp
@@ -5097,9 +5099,17 @@ Book Covers Hearthfire.esp
 lorecorrectvolendrung.esp
 Lorecraft - Cooking.esp
 Lorecraft - Crafting Complete.esp
+Lorecraft - dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  IFNOT ACTIVE("LorecraftESM.esm") && IF VAR(EN) ERROR: LorecraftESM.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("LorecraftESM.esm") && IF VAR(RU) ERROR: LorecraftESM.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("LorecraftESM.esm") && IF VAR(ES) ERROR: LorecraftESM.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 LORECRAFT - Heavy Armory.esp
 Lorecraft - MCraft.esp
 Lorecraft - Vanilla.esp
+Lorecraft - Vanilla BS Tutorial Fix.esp
 Lorecraft - Traps.esp
 Lorecraft - Perks.esp
 LORECRAFT - Staves of Skyrim.esp
@@ -8563,6 +8573,13 @@ Immersive Weapons.esp
   IF CHECKSUM("Immersive Weapons.esp", 2EAE1F9D) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Immersive Weapons.esp", 2EAE1F9D) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Immersive Weapons.esp", 2EAE1F9D) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+Lorecraft - Immersive Weapons.esp
+  IFNOT ACTIVE("LorecraftESM.esm") && IF VAR(EN) ERROR: LorecraftESM.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("LorecraftESM.esm") && IF VAR(RU) ERROR: LorecraftESM.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("LorecraftESM.esm") && IF VAR(ES) ERROR: LorecraftESM.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(EN) ERROR: Immersive Weapons.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(RU) ERROR: Immersive Weapons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(ES) ERROR: Immersive Weapons.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 imp_guard_helm.esp
 imp_helm.esp
   IF CHECKSUM("imp_helm.esp", B5CC3F9D) DIRTY:  3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -14240,6 +14257,7 @@ Courtyard Hjerim.esp
   IF VAR(EN) WARN: This file contains 2 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 2 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 2 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859sTES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
+honeyside3.esp
 HoneysideTNF.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
@@ -15158,6 +15176,8 @@ Bandit Patrols.esp
   IF CHECKSUM("Bandit Patrols.esp", EDD0FBE8) && IF VAR(EN) DIRTY: 19 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Bandit Patrols.esp", EDD0FBE8) && IF VAR(RU) DIRTY: 19 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Bandit Patrols.esp", EDD0FBE8) && IF VAR(ES) DIRTY: 19 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+OBIS Bandit Patrols.esp
+  // different name for above plugin? unsure
 okaazah_update.esp
 okaazah_dawnguard.esp
 Orlong's Hearth vdot9.esp
@@ -22089,6 +22109,7 @@ HitStop.esp
   IF CHECKSUM("HitStop.esp", F45AAC6E) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("HitStop.esp", F45AAC6E) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("HitStop.esp", F45AAC6E) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+HOH.esp
 REGEX: Horse Whisper( - NO CALLING| - NO TRACKING)?\.esp
 horsecomehere.esp
 
@@ -28291,6 +28312,7 @@ rcrnShaders.esp
       IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - The Wilds and rcrnShaders.esp рекомендуется использовать соответствующий патч совместимости, расположенный "http://skyrim.nexusmods.com/mods/10886 здесь."
         IF FILE("SoS - The Wilds.esp") && IFNOT FILE("SoS - The Wilds-PatchRCRN.esp") && IF VAR(ES) WARN: Due to conflicts between Sounds of Skyrim - The Wilds and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/10886 here".
   IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchRCRN.esp") WARN: Due to conflicts between Sounds of Skyrim - Dungeons and rcrnShaders.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601 here".
+RCRN Revamped patch.esp
 rcrnPlus.esp
   IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") && IF VAR(EN) WARN: Due to conflicts between Sounds of Skyrim - Civilization and rcrnPlus.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/20193 here".
       IF FILE("SoS - Civilization.esp") && IFNOT FILE("SoS - Civilization-PatchRCRN.esp") && IF VAR(RU) WARN: В соответствии с конфликтами между Sounds of Skyrim - Civilization and rcrnPlus.esp рекомендуется использовать соответствующий патч совместимости, расположенный "http://skyrim.nexusmods.com/mods/20193 здесь."
