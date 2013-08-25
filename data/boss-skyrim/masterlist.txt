@@ -5099,6 +5099,15 @@ Book Covers Hearthfire.esp
   IF FILE("Book Covers Skyrim.esp") && IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IF VAR(EN) WARN: Delete. Already included in Book Covers Skyrim.esp.
     IF FILE("Book Covers Skyrim.esp") && IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IF VAR(RU) WARN: Удалите. Уже включено в Book Covers Skyrim.esp.
       IF FILE("Book Covers Skyrim.esp") && IF CHECKSUM("Book Covers Skyrim.esp", B8DA5EF5) && IF VAR(ES) WARN: Borrar. Esta incluido en Book Covers Skyrim.esp.
+  //following ASM patches for book covers have similar dependencies to above, so left out for brevity -LD
+Book Covers Compatibility Skyrim ASM.esp
+Book Covers Skyrim ASM.esp
+Book Covers Compatibility Dawnguard ASM.esp
+Book Covers Dawnguard ASM.esp
+Book Covers Compatibility Hearfire ASM.esp
+Book Covers Hearfire ASM.esp
+Book Covers Compatibility Merged ASM.esp
+Book Covers Merged ASM.esp
 Lorecraft - Cooking.esp
 Lorecraft - Crafting Complete.esp
 Lorecraft - dawnguard.esp
@@ -10810,7 +10819,7 @@ REGEX: Another Sorting(-LightWeight|-RealWeight)?\.esp
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 REGEX: ASM-Vanilla(-LightWeight|-RealWeight)?\.esp
-REGEX: ASM-DG(-LightWeight|-RealWeight)?\.esp Checksum: D11D8B08
+REGEX: ASM-DG(-LightWeight|-RealWeight)?\.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
@@ -10822,6 +10831,10 @@ REGEX: ASM-DB(-LightWeight|-RealWeight)?\.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+ASM-FS.esp
+  IFNOT ACTIVE("Falskaar.esm") && IF VAR(EN) ERROR: Falskaar.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Falskaar.esm") && IF VAR(RU) ERROR: Falskaar.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Falskaar.esm") && IF VAR(ES) ERROR: Falskaar.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   // the following ASM modulars have differing DLC master dependencies among somw- omitted from BOSS alerts and left for users to figure out -LD
 ASM-Ammunition.esp
 ASM-Books.esp
@@ -17035,6 +17048,10 @@ Wyrmstooth.esp
   IF CHECKSUM("Wyrmstooth.esp", 54F43CEF) && IF VAR(EN) DIRTY: 6259 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Wyrmstooth.esp", 54F43CEF) && IF VAR(RU) DIRTY: 6259 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Wyrmstooth.esp", 54F43CEF) && IF VAR(ES) DIRTY: 6259 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+ASM-WT.esp
+  IFNOT ACTIVE("Wyrmstooth.esp") && IF VAR(EN) ERROR: Wyrmstooth.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Wyrmstooth.esp") && IF VAR(RU) ERROR: Wyrmstooth.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Wyrmstooth.esp") && IF VAR(ES) ERROR: Wyrmstooth.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 WyvernCliff.esp
   IF CHECKSUM("WyvernCliff.esp", E7D2EC3E) && IF VAR(EN) DIRTY: 32 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("WyvernCliff.esp", E7D2EC3E) && IF VAR(RU) DIRTY: 32 ITM, 3 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -17723,6 +17740,7 @@ Weightless Soulgems and Fragments - Better Sorting (PseudoVanilla).esp
 Weightless Soulgems and Fragments - Better Sorting (Ranked).esp
 Weightless Ores, Ingots, Firewood and Coal - Better Sorting.esp
 Better Skill and Quest Books Names - BS.esp
+Better Skill and Quest Books Names_ASM.esp
 BetterQuestObjectives-BSaQBPatch.esp
   IFNOT FILE("Better Skill and Quest Books Names.esp") || IFNOT FILE("Better Skill and Quest Books Names - BS.esp") REQ: "http://skyrim.nexusmods.com/mods/10125 Better Skill and Quest Books Names"
 BetterQuestObjectives-BSaQB-BSPatch.esp
@@ -21823,6 +21841,18 @@ Apocalypse - The Spell Package.esp
   IF CHECKSUM("Apocalypse - The Spell Package.esp", C8244604) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Apocalypse - The Spell Package.esp", C8244604) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Apocalypse - The Spell Package.esp", C8244604) && IF VAR(ES) DIRTY: 5 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+Apocalypse - ASM.esp
+  IFNOT ACTIVE("Apocalypse - The Spell Package.esp") && IF VAR(EN) ERROR: Apocalypse - The Spell Package.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Apocalypse - The Spell Package.esp") && IF VAR(RU) ERROR: Apocalypse - The Spell Package.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Apocalypse - The Spell Package.esp") && IF VAR(ES) ERROR: Apocalypse - The Spell Package.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+Apocalypse - ASM_DG.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+  //DB is the actual master for this compat patch, not DG despite name
+  IFNOT ACTIVE("Apocalypse - The Spell Package.esp") && IF VAR(EN) ERROR: Apocalypse - The Spell Package.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("Apocalypse - The Spell Package.esp") && IF VAR(RU) ERROR: Apocalypse - The Spell Package.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("Apocalypse - The Spell Package.esp") && IF VAR(ES) ERROR: Apocalypse - The Spell Package.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 archmageSpellcrafting.esp
 ArrowSpell.esp
 EOS - Apocalypse Spells Compatibility.esp
@@ -22927,6 +22957,16 @@ EmpoweredMagic_Dragonborn.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
+EmpoveredMagic_ASM.esp
+  IFNOT ACTIVE("EmpoweredMagic.esp") && IF VAR(EN) ERROR: EmpoweredMagic.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("EmpoweredMagic.esp") && IF VAR(RU) ERROR: EmpoweredMagic.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("EmpoweredMagic.esp") && IF VAR(ES) ERROR: EmpoweredMagic.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT ACTIVE("EmpoweredMagic_Dawnguard.esp") && IF VAR(EN) ERROR: EmpoweredMagic_Dawnguard.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("EmpoweredMagic_Dawnguard.esp") && IF VAR(RU) ERROR: EmpoweredMagic_Dawnguard.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("EmpoweredMagic_Dawnguard.esp") && IF VAR(ES) ERROR: EmpoweredMagic_Dawnguard.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT ACTIVE("EmpoweredMagic_Dragonborn.esp") && IF VAR(EN) ERROR: EmpoweredMagic_Dragonborn.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("EmpoweredMagic_Dragonborn.esp") && IF VAR(RU) ERROR: EmpoweredMagic_Dragonborn.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("EmpoweredMagic_Dragonborn.esp") && IF VAR(ES) ERROR: EmpoweredMagic_Dragonborn.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Even Smaller Spell Light Radius.esp
 
 // sp late f
