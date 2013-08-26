@@ -3044,6 +3044,10 @@ ImmersiveContentVeryLateLightPatch.esp
   IF FILE("ImmersiveContentLateLightPatch.esp") && IF VAR(EN) WARN: Use either ImmersiveContentLateLightPatch.esp or ImmersiveContentLateLightPatch.esp, not both.
     IF FILE("ImmersiveContentLateLightPatch.esp") && IF VAR(RU) WARN: Используйте любой, или ImmersiveContentLateLightPatch.esp или ImmersiveContentLateLightPatch.esp, не оба.
       IF FILE("ImmersiveContentLateLightPatch.esp") && IF VAR(ES) WARN: Usar ImmersiveContentLateLightPatch.esp o ImmersiveContentLateLightPatch.esp, no ambos.
+ImmersiveContentEXTLightDawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
 kuerteeDisableLightsFarFromActors.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+.
