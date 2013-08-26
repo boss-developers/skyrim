@@ -2936,6 +2936,7 @@ IceBreaker's Improved Reverb.esp
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, IceBreaker's Improved Reverb-v0.02-Cleaned.esp.
 IceBreaker's Improved Reverb-v0.02-Cleaned.esp
 IHSS.esp
+IHSS-75.esp
 Immersive Sounds - Magic.esp
 immersive thunder.esp
 REGEX: Improved Combat Sounds v2\.\d\.esp
@@ -3472,6 +3473,8 @@ AjenHorseFIX.esp
 AK- Achievements Unlocked.esp
 AK- Boethiah Alternate.esp
 AK- Buyable Paintings and Pictures.esp
+AK- Clothe Dead NPCs.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 AK- Mines and Mills.esp
 AK- Mines and Mills - Hearthfire.esp
   IFNOT FILE("AK- Mines and Mills.esp") REQ: AK- Mines and Mills.esp
@@ -13641,6 +13644,7 @@ DisintegratingAxe.esp
     IF CHECKSUM("DisintegratingAxe.esp", 70970745) && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF CHECKSUM("DisintegratingAxe.esp", 70970745) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 Divine Intervention.esp
+divineintervention.esp
 dnihome.esp
 DoggyDoors.esp
   IF CHECKSUM("DoggyDoors.esp", 6868B566) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -18492,6 +18496,13 @@ REGEX: Hellspawn Shadowmere.*\.esp
     IF VAR(RU) SAY: Используйте только один Hellspawn Shadowmere esp.
       IF VAR(ES) SAY: Utilizar solo un Hellspawn Shadowmere esp.
 Helmets - Khajiit Ears Hair.esp
+helmetwithcirclet.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 helmless_warrior.esp
 Helms and Circlets.esp
   IF CHECKSUM("Helms and Circlets.esp", 36521312) && IF VAR(EN) DIRTY: 11 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -20934,7 +20945,10 @@ SoundPropagationOverhaul.esp
       IF CHECKSUM("SoundPropagationOverhaul.esp", 3363BA8F) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 FootstepsSoundsOverhaul.esp
   //As per author's instructions to sort after SPO.
-
+IHSS-FSO.esp
+  IFNOT ACTIVE("FootstepsSoundsOverhaul.esp") && IF VAR(EN) ERROR: FootstepsSoundsOverhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("FootstepsSoundsOverhaul.esp") && IF VAR(RU) ERROR: FootstepsSoundsOverhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("FootstepsSoundsOverhaul.esp") && IF VAR(ES) ERROR: FootstepsSoundsOverhaul.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 
 IF VAR(SoS) MOD: ClimatesOfTamriel-Sound.esp
   IF CHECKSUM("ClimatesOfTamriel-Sound.esp", 47AF2A0B) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
@@ -22318,6 +22332,8 @@ LucienLaChanceSummon.esp
       IF FILE("LegendarySouls.esp") && IF VAR(ES) SAY: Obsoleto. Esta incluido en "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
 
 // spells m
+MAD Magical Mining.esp
+MAD Magical Mining - No Lvl List.esp
 MAD Torchlight.esp
 MagesArnielSummon.esp
   IF FILE("LegendarySouls.esp") && IF VAR(EN) ERROR: Delete. Already included in LegendarySouls.esp.
