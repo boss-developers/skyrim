@@ -4773,6 +4773,14 @@ Necessary Markers_german.esp
 hqsnow.esp
 humanblood.esp
 humans drop human parts.esp
+Hunterborn.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
+  //likely load order independent 
+Hunterborn_Dawnguard-Patch.esp
+Hunterborn_Frostfall-Patch.esp
+Hunterborn_RND-Patch.esp
+  //not sure if OK here, or if should go in the (two) RND spots, or under compat patches -LD
 HuntersDiscipline.esp
 huntershack.esp
 HunterTraps.esp
@@ -6687,6 +6695,9 @@ manny_Status.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.9", <) REQ: "http://skse.silverlock.org SKSE" 1.6.9+.
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.1+
+MinimalHUD.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" 3.4+
 SaveHotKeyMCM.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.4", <) REQ: "http://skse.silverlock.org SKSE" 1.6.4+.
@@ -18109,7 +18120,6 @@ Daedric Light Armor - Rebalanced.esp
   IF CHECKSUM("Daedric Light Armor - Rebalanced.esp", BA0A6590) && IF VAR(EN) WARN: This file was released before the Creation Kit (07 Feb. 2012) and it contains unexpected (or out of order) records. It should be removed.
     IF CHECKSUM("Daedric Light Armor - Rebalanced.esp", BA0A6590) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("Daedric Light Armor - Rebalanced.esp", BA0A6590) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
-DaedricPunishmentForSweetrolls.esp
 DaedricWOP.esp
 dangerous animals.esp
   IF CHECKSUM("dangerous animals.esp", D2E559A6) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -18534,6 +18544,8 @@ GuardDialogue.esp
 GuardDialogue50.esp
 Guard Dialogue Overhaul.esp
 Guard Dialogue Overhaul Lite.esp
+DaedricPunishmentForSweetrolls.esp
+  //moved down from overrides d given reported (eg thread 35/83) GDO conflict -LD
 WeaponsArmorFixes_GuardDialogueOverhaul_Patch.esp
   IFNOT FILE("Weapons & Armor Fixes_Remade.esp") REQ: "http://skyrim.nexusmods.com/mods/34093 Weapon and Armor Fixes Remade"
   IFNOT FILE("Guard Dialogue Overhaul.esp") REQ: "http://skyrim.nexusmods.com/mods/23390 Guard Dialouge Overhaul"
@@ -21646,6 +21658,20 @@ IFNOT FILE("3DNPC.esp") MOD: NerniesCityandVillage_TRO_BasicNeeds_Patch.esp
 CookingExpanded - TRO_BN.esp
 SkBBP - Lore-Friendly Stats and Encumbrance.esp
 REGEX: vinis_food_and_rest.*\.esp
+ZF Primary Needs.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" 
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
+ZF TrapsDiseasesPoison.esp
 /* Imps More Complex Needs - Vampirism to load after other vampire feeding mods */
 IMCN - Overrides.esp
 IMCN FeedPatch.esp
@@ -27425,6 +27451,7 @@ Rowena Frostmoor.esp
 
 // companions s
 Saadia-Dovas_Angels-TCG.esp
+Sackman_Follower.esp
 Sako Proudmane.esp
 Salit.esp
 SaraliFollower.esp
@@ -29778,6 +29805,8 @@ WTF.esp
   IF VAR(EN) SAY: May need "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. Several test generations of this SkyProc Patch included ITMs. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF VAR(RU) SAY: Может понадобиться очистка в "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Некоторые сгенерированные тестовые записи этого SkyProc патча являются ITM записями. Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF VAR(ES) SAY: May need "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. Several test generations of this SkyProc Patch included ITMs. Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+ZF Primary Needs Patcher.esp
+  //a Skyproc patcher, not sure of placement, move as necessary -LD
 SUM.esp
 BEGINGROUP: Patches for Dynamic Plugins
 // Patches for dynamic plugins - moved here because SUM offers patch merging functionality. - William
