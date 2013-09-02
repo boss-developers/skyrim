@@ -625,6 +625,7 @@ GuardedHouseStormcloak.esm
 
 // esms h
 HBE.esm
+hdtHighHeel.esm
 HelmetToggleMasterFile.esm
 hideout.esm
   IF VAR(EN) && IFNOT CHECKSUM("hideout.esm", F1703639) WARN: Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch").
@@ -8365,6 +8366,7 @@ hardenedfalmer-cnhp.esp
 Hartherz1.2.esp
 HartherzEnglish.esp
 Hawke Armor.esp
+haytham kenway apparel.esp
 HBetterBows.esp
   IF FILE("SkyRe_Plugin_BetterBows_1.4.1.esp") || IF FILE("SkyRe_Plugin_BetterBows.esp") TAG: {{BASH: Deactivate}}
 headtaker.esp
@@ -11411,6 +11413,7 @@ ERSO 02 - Enhanced Fauna and Monsters for Skyrim.esp
    IF VAR(EN) SAY: Use only one ERSO 02 esp.
      IF VAR(RU) SAY: Используйте только один ERSO 02 esp.
       IF VAR(ES) SAY: Utilizar solo un ERSO 02 esp.
+ERSO 02 - EFMS vanilla heights.esp
 ERSO 02 - EFMS very bigger giant mammoths.esp
    IF VAR(EN) SAY: Use only one ERSO 02 esp.
      IF VAR(RU) SAY: Используйте только один ERSO 02 esp.
@@ -11546,6 +11549,7 @@ ERSO 04 - Mighty Dragon Priests v.4.0.esp
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 ERSO 04 - Mighty Odahviing.esp
 ERSO 04.2 - Mighty Durnehviir.esp
+ERSO 04.3 - StopDragons.esp
 ERSO 05 - Dovah Holy Book v.4.0.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -11564,7 +11568,7 @@ REGEX: ERSO 08 - RUS-00 Main( plus Dawnguard)?( Dragonborn)?\.esp
   IF VAR(EN) SAY: Use only one ERSO 08 esp.
     IF VAR(RU) SAY: Используйте только один ERSO 08 esp.
       IF VAR(ES) SAY: Utilizar solo un ERSO 08 esp.
-REGEX: ERSO 08.1 - ERSO( SUPER)?( EXTREME)? MIRAAK(D)?\.esp
+REGEX: ERSO 08.1 - ERSO( SUPER)?( EXTREME)? MIRAAK(C|D)?\.esp
 REGEX: ERSO 08.2 - ERSO( SUPER)?( EXTREME)? HARKON\.esp
 REGEX: ERSO 09 - RUS-Npcs.*\.esp
   IF VAR(EN) SAY: Use only one ERSO 09 esp.
@@ -11578,6 +11582,11 @@ ERSO 09.1 - Essential Children.esp
 ERSO 09.2 - Radiance.esp
 ERSO 10 - RUS-(SIM)-Travellers and Adventurers.esp
 ERSO 10.02 - Adventurers and Travelers.esp
+ERSO 10.03 - Immersive Battles.esp
+ERSO 10.03 - Immersive Battles wW.esp
+ERSO 10.04 - Immersive Brigands.esp
+ERSO 10.05 - Immersive Patrols.esp
+ERSO 10.06 - Immersive Werewolves.esp
 ERSO 11 - RUS-(SIM)-Assassins and Thieves.esp
 ERSO 12 - RUS-(SIM)-Werewolves.esp
 ERSO 13 - MD - A Better Level Progression.esp
@@ -11673,6 +11682,9 @@ ERSO 21.01 PM Dungeons.esp
 ERSO 21.02 PM Blackreach.esp
 ERSO 21.03 PM Dwemer.esp
 ERSO 22 - Better Necromancy Spells.esp
+  IF FILE("Lord of the Dead.esp") && IF VAR(EN) WARN: Use either ERSO 22 - Better Necromancy Spells.esp or Lord of the Dead.esp, not both.
+    IF FILE("Lord of the Dead.esp") && IF VAR(RU) WARN: Используйте любой, или ERSO 22 - Better Necromancy Spells.esp или Lord of the Dead.esp, не оба.
+      IF FILE("Lord of the Dead.esp") && IF VAR(ES) WARN: Usar ERSO 22 - Better Necromancy Spells.esp o Lord of the Dead.esp, no ambos.
 ERSO 23 - Lockpicking Perks Changes.esp
 ERSO 24 - Pickpocket Perks Changes.esp
 ERSO 25 - Enchanting Perks Changes.esp
@@ -11692,6 +11704,24 @@ REGEX: ERSO 28 .*\.esp
       IF VAR(ES) SAY: Utilizar solo un ERSO 28 esp.
 ERSO 29 - DPMO.esp
 ERSO 30 - Better Enemy AI.esp
+ERSO 30 - Better Enemy AI redux.esp
+  IF VAR(EN) SAY: Use only one ERSO 30 esp.
+    IF VAR(RU) SAY: Используйте только один ERSO 30 esp.
+      IF VAR(ES) SAY: Utilizar solo un ERSO 30 esp.
+ERSO 30 - Better Enemy AI Dawnguard.esp
+ERSO 30 - Better Enemy AI Dawnguard&Dragonborn.esp
+ERSO 30 - Better Enemy AI Dawnguard&Dragonborn Redux.esp
+  IF VAR(EN) SAY: Use only one ERSO 30 esp.
+    IF VAR(RU) SAY: Используйте только один ERSO 30 esp.
+      IF VAR(ES) SAY: Utilizar solo un ERSO 30 esp.
+ERSO 30.1 - Better Expert Level.esp
+ERSO 31 - Unlimited Followers.esp
+ERSO 32 - Enhanced Dragon AI.esp
+ERSO 32 - Lord of the Dead.esp
+ERSO 32 - Lord of the Dead for SKYRE.esp
+ERSO 32 - Lord of the Dead for SKYRE&UNDEAD FX.esp
+ERSO 32 - Lord of the Dead for UNDEAD FX users.esp
+ 
 ENDGROUP: ERSO End
 
 BEGINGROUP: Overhauls Load Late
@@ -18277,12 +18307,6 @@ BEGINGROUP: Overrides F
 
 FA Guard Helmet.esp
 faceonlydragonmask.esp
-Faendal-by-Axeface.esp
-  IFNOT FILE("XCE.esp") REQ: "http://skyrim.nexusmods.com/mods/2356 XCE - Xenius Character Enhancement"
-  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IFNOT FILE("Improved Freckles Skyrim.esp") REQ: "http://skyrim.nexusmods.com/mods/16147 Improved Freckles Skyrim"
 FalmerHuntCrab.esp
 FalskaarDawnguard.esp
 FantomUbistv.esp
@@ -21994,6 +22018,7 @@ AsharaConjureDurnehviir.esp
 REGEX: ASX( - |_)Spells\.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
 Avada Kedavra.esp
+aXeUnburdened.esp
 
 // spells b
 Balanced_Magic.esp
@@ -24765,6 +24790,10 @@ Override Speech.esp
   SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
 Override TwoHanded.esp
   SAY: This mod's ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+ERSO 32 - Lord of the Dead for SPERG.esp
+  IF VAR(EN) SAY: Use only one ERSO 32 esp.
+    IF VAR(RU) SAY: Используйте только один ERSO 32 esp.
+      IF VAR(ES) SAY: Utilizar solo un ERSO 32 esp.
 IF ACTIVE("Skyrim Perk Enhancements.esp") MOD: REGEX: PTAlchemyOverhaul_SkillRate_\d_\d\d\?.esp
   IF VAR(EN) SAY: Use only one PTAlchemyOverhaul_SkillRate esp.
     IF VAR(RU) SAY: Используйте только один PTAlchemyOverhaul_SkillRate esp.
@@ -25837,7 +25866,6 @@ Inigo.esp
   IF CHECKSUM("Inigo.esp", B9FC7507) && IF VAR(EN) DIRTY: 10 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Inigo.esp", B9FC7507) && IF VAR(RU) DIRTY: 10 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Inigo.esp", B9FC7507) && IF VAR(ES) DIRTY: 10 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
-  // author has been informed/is working on dirt plus wild edits in debut 1.0
 
 // pre ufo j
 Ja´dirr + Kharjo Makeover.esp
@@ -28345,6 +28373,8 @@ EEO patch.esp
     IFNOT ACTIVE("ethereal_elven_overhaul.esp") && IF VAR(RU) ERROR: ethereal_elven_overhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без ethereal_elven_overhaul.esp
       IFNOT ACTIVE("ethereal_elven_overhaul.esp") && IF VAR(ES) ERROR: ethereal_elven_overhaul.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   // Skyre compatibility patch
+Faendal-by-Axeface.esp
+  //author instructions to load post EEO (thread 34/175)
 Vampire Skin Color Fix.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dawnguard (Official Bethesda DLC)
