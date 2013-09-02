@@ -8747,13 +8747,9 @@ JSwords_FR_Plugin_V13C.esp
 JSwords_FR_Plugin_V13D.esp
 JSwordsDistributionBalancePlugin.esp
   TAG: {{BASH: Delev, Relev}}
-  IF VAR(EN) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Delete. Already included in SkyRe_Plugin_JaySuSSwords_1.3D.esp.
-    IF VAR(RU) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Удалите. Уже включено в SkyRe_Plugin_JaySuSSwords_1.3D.esp.
-  IF VAR(EN) && IF FILE("Skyrim unleashed Xtra_items.esp") ERROR: Delete. Already included in Skyrim unleashed Xtra_items.esp.
-    IF VAR(RU) && IF FILE("Skyrim unleashed Xtra_items.esp") ERROR: Удалите. Уже включено в Skyrim unleashed Xtra_items.esp.
+/* Removed message, "IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Delete. Already included in SkyRe_Plugin_JaySuSSwords_1.3D.esp." because that file is no longer supported because of the SkyProc patcher. */
 JSwordsDistribution_Lieux.esp
-  IF VAR(EN) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Delete. Already included in SkyRe_Plugin_JaySuSSwords_1.3D.esp.
-    IF VAR(RU) && IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Удалите. Уже включено в SkyRe_Plugin_JaySuSSwords_1.3D.esp.
+/* Removed message, "IF FILE("SkyRe_Plugin_JaySuSSwords_1.3D.esp") ERROR: Delete. Already included in SkyRe_Plugin_JaySuSSwords_1.3D.esp." because that file is no longer supported because of the SkyProc patcher. */
 Deleveled Skyrim - JSwords.esp
   TAG: {{BASH: Delev, Relev}}
 Deleveled Skyrim - JSwordsDistributionBalancePlugin.esp
@@ -11999,13 +11995,14 @@ SkyRe_Plugin_isilNarsil.esp
     IF VAR(RU) SAY: Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_JaySuSSwords_1.3D.esp
   TAG: {{BASH: Delev}}
-  IF VAR(EN) SAY: Obsolete. Update to latest version, SkyRe_Plugin_JaySuSSwords.esp.
-    IF VAR(RU) SAY: Устарело. Обновите до последней версии, SkyRe_Plugin_JaySuSSwords.esp.
-      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, SkyRe_Plugin_JaySuSSwords.esp.
+  IF CHECKSUM("SkyRe_Plugin_JaySuSSwords_1.3D.esp", 33879A9F) ERROR: The order of the master files are listed as: Skyrim.esm, JSwords.esm, Update.esm which conflicts with the order in the masterlist.  There are also 4 unresolved keywords and, Skyrim won't properly track to them because SkyRe_Main.esp is not a master.  Correcting this in the CK is not recomended because there will be too many errors to resolve.  Delete this file it should not be used.
+/* Removed the message, "SAY: Obsolete. Update to latest version, SkyRe_Plugin_JaySuSSwords.esp." because it's not by T3nd0 */
+  WARN: T3nd0 stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.
   IF VAR(EN) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_JaySuSSwords.esp
   TAG: {{BASH: Delev}}
+  WARN: T3nd0 has informed the BOSS team that he does not remember making the file so it's probably not his.  However, he stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.
   IF VAR(EN) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF CHECKSUM("SkyRe_Plugin_JaySuSSwords.esp", 33879A9F) && IF VAR(EN) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
