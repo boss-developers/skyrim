@@ -11571,6 +11571,7 @@ REGEX: ERSO 08 - RUS-00 Main( plus Dawnguard)?( Dragonborn)?\.esp
       IF VAR(ES) SAY: Utilizar solo un ERSO 08 esp.
 REGEX: ERSO 08.1 - ERSO( SUPER)?( EXTREME)? MIRAAK(C|D)?\.esp
 REGEX: ERSO 08.2 - ERSO( SUPER)?( EXTREME)? HARKON\.esp
+ERSO 08.99 - Lord of the Dead for ERSO 09.esp
 REGEX: ERSO 09 - RUS-Npcs.*\.esp
   IF VAR(EN) SAY: Use only one ERSO 09 esp.
     IF VAR(RU) SAY: Используйте только один ERSO 09 esp.
@@ -11719,9 +11720,7 @@ ERSO 30.1 - Better Expert Level.esp
 ERSO 31 - Unlimited Followers.esp
 ERSO 32 - Enhanced Dragon AI.esp
 ERSO 32 - Lord of the Dead.esp
-ERSO 32 - Lord of the Dead for SKYRE.esp
-ERSO 32 - Lord of the Dead for SKYRE&UNDEAD FX.esp
-ERSO 32 - Lord of the Dead for UNDEAD FX users.esp
+  TAG: {{BASH: Delev, Relev}}
  
 ENDGROUP: ERSO End
 
@@ -11828,6 +11827,8 @@ SkyRe_Main_Fix.esp
 SkyRe_Combat.esp
   IFNOT VAR(SkyReM) REQ: SkyRe_Main.esp
 SkyRe_Combat_Tweak.esp
+ERSO 32 - Lord of the Dead for SKYRE.esp
+  TAG: {{BASH: Delev, Relev}}
 Lorecraft - SkyRe.esp
 SkyRe_Comp.esp
   IF VAR(EN) && IFNOT FILE("PerkReset SkyRe Compatibility Patch.esp") SAY: Recommend to use "http://skyrim.nexusmods.com/mods/22070 PerkReset SkyRe Compatibility Patch.esp" instead.
@@ -18517,6 +18518,7 @@ Grand Dragons.esp
 Grass and Grass.esp
 Grass_On_Steroids_SFO.esp
 GrassOnSteroids_NaturalEdition_SFO.esp
+GrassOnSteroids_NaturalEdition_Vanilla.esp
 greener aspenforest.esp
 grimsever2h.esp
 GSRDivorce.esp
@@ -19829,7 +19831,7 @@ ESP.esp
     IF VAR(RU) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Может перезаписать расовую информацию. из SkyRe.esp или SkyReNoLighting.esp, но может быть безопасно отключен, после использования расового меню.
       IF VAR(ES) && IF FILE("SkyRe.esp") && IF FILE("SkyReNoLighting.esp") SAY: Will overwrite racial information changes from SkyRe.esp or SkyReNoLighting.esp, but can be safely deactivated after using the race menu.
 Skyrim Creatures Alive.esp
-  TAG: {{BASH: Relev, Delev}}
+  TAG: {{BASH: Delev, Relev}}
 SkyrimMoreSpawns.esp
 Skyrim Dark.esp
   // TAG: {{BASH: Names, Invent}}
@@ -20143,11 +20145,11 @@ Unique_shield_converter_lite.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
 Unique_shield_converter_noDG.esp
 Unlevelled World.esp
-  TAG: {{BASH: Relev, Delev}}
+  TAG: {{BASH: Delev, Relev}}
 Unlevelled World - War in Skyrim II Patch.esp
-  TAG: {{BASH: Relev, Delev}}
+  TAG: {{BASH: Delev, Relev}}
 Skyrim Creatures Alive.esp
-  TAG: {{BASH: Relev, Delev}}
+  TAG: {{BASH: Delev, Relev}}
 UnderstandingShadowmarksV1.1.esp
 Unique.esp
   IF FILE("Unique.esm") INC: Unique.esm
@@ -24916,6 +24918,7 @@ Override TwoHanded.esp
     IF VAR(RU) SAY: Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.
       IF VAR(ES) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
 ERSO 32 - Lord of the Dead for SPERG.esp
+  TAG: {{BASH: Delev, Relev}}
   IF VAR(EN) SAY: Use only one ERSO 32 esp.
     IF VAR(RU) SAY: Используйте только один ERSO 32 esp.
       IF VAR(ES) SAY: Utilizar solo un ERSO 32 esp.
@@ -28382,6 +28385,11 @@ RaceRevamp.esp
 Races and Doomstones.esp
 Races Reviewed by Theme.esp
 IFNOT VAR(SkyReM) MOD: Reanimate FX.esp
+ERSO 32 - Lord of the Dead for Undead FX.esp
+ERSO 32 - Lord of the Dead for UNDEAD FX users.esp
+ERSO 32 - Lord of the Dead for SPERG&UNDEAD FX.esp
+ERSO 32 - Lord of the Dead for SKYRE&NECROMANCY - UNDEAD FX.esp
+ERSO 32 - Lord of the Dead for SKYRE&UNDEAD FX.esp
 ReducedCarryWeight - 150.esp
 Khajiit Awesome.esp
 Khajiit Racial Tweek.esp
