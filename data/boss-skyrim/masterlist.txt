@@ -3647,6 +3647,10 @@ ARTOFMAGIC.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
+AshRocks.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 AsharaMerchants.esp
   IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
   SAY: Certain version(s) of this mod require active Dawnguard, Hearthfire and/or Dragonborn. See "http://skyrim.nexusmods.com/mods/28996 author's instructions."
@@ -5327,6 +5331,11 @@ MVAIvarstead.esp
 MVARorikstead.esp
 Morozik75_Better_Skillbook_Rus.esp
 Moss Rocks.esp
+Moss Rocks_DB.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+  IFNOT FILE("Moss Rocks.esp") REQ: "http://http://skyrim.nexusmods.com/mods/31856 Moss Rocks"
 masser_and_secunda_from_morr.esp
 mxdemonicarmoredhorse.esp
   IF CHECKSUM("mxdemonicarmoredhorse.esp", DBE462C2) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
