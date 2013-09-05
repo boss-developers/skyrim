@@ -1022,6 +1022,7 @@ SpecializedFollowers.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
+SPERG.esm
 SPTDiverseGuardsSkyrimResources.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -24892,17 +24893,23 @@ Skype - Two-Handed.esp
   IF CHECKSUM("Skype - Two-Handed.esp", 4820339A) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Skype - Two-Handed.esp", 4820339A) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Skype - Two-Handed.esp", 4820339A) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+Sniper.esp
 Skyrim Perk Enhancements.esp
   IF CHECKSUM("Skyrim Perk Enhancements.esp", 0F2B16BE) && IF VAR(EN) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Skyrim Perk Enhancements.esp", 0F2B16BE) && IF VAR(RU) DIRTY: 32 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Skyrim Perk Enhancements.esp", 0F2B16BE) && IF VAR(ES) DIRTY: 32 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  //aka SPERG
+  //aka SPERG, 3.1.1 and lower
 Skyrim Perk Enhancements (optional).esp
-  SAY: Obsolete? Not included in latest download.
-Sniper.esp
-SPERG Vampire Fix.esp
-  // part of Skyrim Perk Enhancements
-  SAY: Obsolete? Not included in latest download.
+SPERG.esp
+  //part of 4.0+ set with esm, as are SPERG-DG.esp and SPERG-DB.esp
+SPERG-DG.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
+SPERG-DB.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
 SPERG Dawnguard Patch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -24931,6 +24938,7 @@ SPERG Trade Barter.esp
   IFNOT ACTIVE("TradeBarter.esp") && IF VAR(EN) ERROR: TradeBarter.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("TradeBarter.esp") && IF VAR(RU) ERROR: TradeBarter.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("TradeBarter.esp") && IF VAR(ES) ERROR: TradeBarter.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+SPERG Vampire Fix.esp
 SPERG Weapons and Armor Vanilla.esp
   IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(EN) ERROR: Skyrim Perk Enhancements.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Skyrim Perk Enhancements.esp") && IF VAR(RU) ERROR: Skyrim Perk Enhancements.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -24948,6 +24956,12 @@ SPERG Weapons and Armor DG.esp
   IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(EN) ERROR: Weapons & Armor_Fixes.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(RU) ERROR: Weapons & Armor_Fixes.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("Weapons & Armor_Fixes.esp") && IF VAR(ES) ERROR: Weapons & Armor_Fixes.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+SPERG Weapons and Armor DB.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
+SPERG Weapons and Armor Complete.esp
+SPERG Weapon Styles.esp
 //set allowing modular control of SPERG follows:
 Override Alchemy.esp
   IF VAR(EN) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
