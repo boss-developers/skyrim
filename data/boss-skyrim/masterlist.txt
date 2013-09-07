@@ -4713,7 +4713,13 @@ HearthFireStores(GS).esp
 Hecatic.esp
 helganstartinggear.esp
 hellayracedesc.esp
-here there be monsters.esp
+Here There Be Monsters.esp
+  IF CHECKSUM("Here There Be Monsters.esp", 97885C9B) && IF VAR(EN) DIRTY: 95 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("Here There Be Monsters.esp", 97885C9B) && IF VAR(RU) DIRTY: 95 ITM, 3 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("Here There Be Monsters.esp", 97885C9B) && IF VAR(ES) DIRTY: 95 ITM, 3 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+  IF VAR(EN) WARN: This file contains 11 deleted NavMesh records that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 11 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+      IF VAR(ES) WARN: Este archivo contiene 11 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859 TES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
 hq_skyrimmap.esp
 HjerimChests.esp
 High Level Enemies.esp
@@ -7971,6 +7977,7 @@ hdmorrowindglass.esp
 stalhrimhd.esp
   // must load after morrowind armor mod
 Drizzt1.esp
+DrSKnapsacks.esp
 ds_sword.esp
 DS_to_Dragonbone_Helmet.esp
 Divine Aegis.esp
@@ -10072,6 +10079,7 @@ smeltingmod.esp
 smithingclavicusmask.esp
 Smithmaster Ring.esp
 SnakeBattleaxe.esp
+SniSiDaedric.esp
 SnowLeopardForsworn.esp
 SnowyNightingale.esp
   IF VAR(EN) && IFNOT CHECKSUM("SnowyNightingale.esp", 83B46ABF) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -14672,8 +14680,6 @@ HuntForTheWayStones.esp
 Hunting in Skyrim.esp
 Hunting in Skyrim - No Perks.esp
   IF FILE("Hunting in Skyrim.esp") INC: Hunting in Skyrim
-  //older comment, while in City Overhauls: Hunting in skyrim must load before open cities.
-  //update 4/2013: HiS set appeared misplaced down at top of City Overhauls in any case. It's more like a Q&L mod. Trial re-placement here. -LD
 HvilaHome.esp
   IF CHECKSUM("HvilaHome.esp", 81E6081F) && IF VAR(EN) DIRTY: 7 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("HvilaHome.esp", 81E6081F) && IF VAR(RU) DIRTY: 7 ITM, 1 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -18500,7 +18506,6 @@ ENDGROUP: Overrides E
 
 BEGINGROUP: Overrides F
 
-FA Guard Helmet.esp
 faceonlydragonmask.esp
 FalmerHuntCrab.esp
 FalskaarDawnguard.esp
@@ -19491,9 +19496,11 @@ onfire.esp
 OpenFaceGuardHelmets.esp
 OpenFaceGuardHelmetsFR.esp
   IF FILE("OpenFaceGuardHelmets.esp") INC: OpenFaceGuardHelmets.esp.
-IFNOT FILE("SkyRe_Main.esp") MOD: OpenFaceHelmets.esp
+IFNOT VAR(SkyReM) MOD: OpenFaceHelmets.esp
   IF VAR(EN) && IFNOT CHECKSUM("OpenFaceHelmets.esp", D695AB86) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IFNOT CHECKSUM("OpenFaceHelmets.esp", D695AB86) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
+IFNOT VAR(SkyReM) FA Guard Helmet.esp
+  //moved down from override f to be compatible with the broader, co-used OpenFaceHelmets.esp
 openfacehelmetsreplacer.esp
 OpenFaceHelmetsDwarven.esp
 orc-female-idle-fix.esp
@@ -24556,6 +24563,8 @@ IF VAR(SkyReM) MOD: DragonFire - Improved Dragon Shouts Compatibility.esp
 IF VAR(SkyReM) MOD: OpenFaceHelmets.esp
   IF VAR(EN) && IFNOT CHECKSUM("OpenFaceHelmets.esp", D695AB86) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
     IF VAR(RU) && IFNOT CHECKSUM("OpenFaceHelmets.esp", D695AB86) WARN: Этот файл может содержать неверные записи и работать некорректно с версиями Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
+IF VAR(SkyReM) FA Guard Helmet.esp
+  //moved down from override f to be compatible with the broader, co-used OpenFaceHelmets.esp
 IF VAR(SkyReM) MOD: RealPermanentBlessings.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
