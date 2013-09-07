@@ -5678,6 +5678,7 @@ REGEX: RevampedChestLoo(t|tDG|tDGHF|tDGHFDR|tLite)?\.esp
 REGEX: revealeffect(s|s-vanilla)?\.esp
 RevisedHorsesFeeding.esp
 ribeable-broom.esp
+RingOfDragonborn.esp
 RiftenHQtexture-Part1.esp
 RiftenHQtexture-Part2.esp
 RiftenSmelter.esp
@@ -22420,6 +22421,10 @@ DismissSpell.esp
   IFNOT FILE("LegendarySouls.esp") && IF VAR(EN) SAY: Obsolete. Included in "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
     IFNOT FILE("LegendarySouls.esp") && IF VAR(RU) SAY: Устарело. Включено в "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
       IF FILE("LegendarySouls.esp") && IF VAR(ES) SAY: Obsoleto. Esta incluido en "http://skyrim.nexusmods.com/mods/23387 Legendary Souls".
+divine_intervention.esp
+  IF CHECKSUM("divine_intervention.esp", 747CA144) && IF VAR(EN) DIRTY: 42 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("divine_intervention.esp", 747CA144) && IF VAR(RU) DIRTY: 42 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("divine_intervention.esp", 747CA144) && IF VAR(ES) DIRTY: 42 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 Dovah Crab.esp
 dovahkiin_bound_weapons.esp
 dovahkiin_levitate_spell.esp
@@ -28094,8 +28099,6 @@ REGEX: move.?it(LWT)?\.esp
   IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") && IF VAR(EN) WARN: Use only one move it esp.
     IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") && IF VAR(RU) WARN: Используйте только один nnn esp.
       IF REGEX("move.?it\.esp") && IF FILE("moveitLWT.esp") && IF VAR(ES) WARN: Utilizar solo un move it esp.
-UFOtweak.esp
-  //reported moveit compatibility patch
 MrKrabs.esp
 MrSlackPants-DeadlyTraps.esp
 MujuroStormbringer.esp
@@ -28230,6 +28233,10 @@ AmazingFollowerTweaks.esp
       IF CHECKSUM("AmazingFollowerTweaks.esp", 1482CEEC) SAY: German version
 AmazingFollowerTweaks-Dialogues.esp
 AmazingFollowerTweaks-SandboxNearer.esp
+FollowerLivePackage-AFT.esp
+AFT_ManagedFollowerBoost.esp
+AFT_NoDances.esp
+AFT_NoFriendlySpellDamage.esp
 BetterQuestObjectives-AFTPatch.esp
   IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(EN) ERROR: BetterQuestObjectives.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/32695 Even Better Quest Objectives"
     IFNOT ACTIVE("BetterQuestObjectives.esp") && IF VAR(RU) ERROR: BetterQuestObjectives.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/32695 Even Better Quest Objectives"
@@ -29616,7 +29623,6 @@ GeneralStores(CCS-HF).esp
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
 //There is a whole other chunk of similar-named Helmet Toggles higher up in list; this is just the intermod compatibility patches
-// " IS IN PREP" removed but what was it originally for?  A typo?
 REGEX: Helmet ?Toggle - (Omegared99|Deadly Dragons Arm|Divine Aeg|hothtrooper44|Jacko0s|Knight of Th|Listeners|Lore Friendly|LPotD|Nights Watch|Schwertleite|Seratic|Silver Dragon|SkyRe_|Weapons of the Third).+ Patch\.esp
   IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(EN) ERROR: HelmetToggleMasterFile.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("HelmetToggleMasterFile.esm") && IF VAR(RU) ERROR: HelmetToggleMasterFile.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -29726,6 +29732,15 @@ REGEX: (3rdEraWeaponsMoS|Armonizer|crafting300|Dragonborn|Immersive Armors|Ivory
   IF FILE("WVExpansion Lootification.esp") && IFNOT ACTIVE("WVExpansion.esp") && IF VAR(EN) ERROR: WVExpansion.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IF FILE("WVExpansion Lootification.esp") && IFNOT ACTIVE("WVExpansion.esp") && IF VAR(RU) ERROR: WVExpansion.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IF FILE("WVExpansion Lootification.esp") && IFNOT ACTIVE("WVExpansion.esp") && IF VAR(ES) ERROR: WVExpansion.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+//Move it Dammit compat patches for follower systems:
+AFTtweak.esp
+  IFNOT ACTIVE("AmazingFollowerTweaks.esp") && IF VAR(EN) ERROR: AmazingFollowerTweaks.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("AmazingFollowerTweaks.esp") && IF VAR(RU) ERROR: AmazingFollowerTweaks.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("AmazingFollowerTweaks.esp") && IF VAR(ES) ERROR: AmazingFollowerTweaks.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+UFOtweak.esp
+  IFNOT VAR(UFO) && IF VAR(EN) ERROR: UFO is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(UFO) && IF VAR(RU) ERROR: UFO отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(UFO) && IF VAR(ES) ERROR: UFO no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 NPCsUseAmmo_IWPatch.esp
   IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(EN) ERROR: Immersive Weapons.esp is not present or is not active. Skyrim will CTD when loading if using this file without Immersive Weapons.esp
     IFNOT ACTIVE("Immersive Weapons.esp") && IF VAR(RU) ERROR: Immersive Weapons.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Immersive Weapons.esp
