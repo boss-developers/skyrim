@@ -10477,10 +10477,16 @@ UnenchantedNightingaleSetMod.esp
 UnenchRobeSepHoodThalmor.esp
 UnderC.esp
 Unique Dragon Priest Masks.esp
-REGEX: UniqueLeveledItemsUpgrade(1dot3)?\.esp
-  IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") && IF VAR(EN) SAY: Obsolete. Update to latest version.
-    IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") && IF VAR(RU) SAY: Устарело. Обновите до последней версии.
-      IF REGEX("UniqueLeveledItemsUpgrade\ddot\d\.esp") && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
+REGEX: UniqueLeveledItemsUpgrade(1dot)?\d?\.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version("http://skyrim.nexusmods.com/mods/7590/ Nexus", "http://steamcommunity.com/sharedfiles/filedetails/?id=136468860 Steam", "http://steamcommunity.com/sharedfiles/filedetails/?id=136471864 Steam-DB").
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии("http://skyrim.nexusmods.com/mods/7590/ Nexus", "http://steamcommunity.com/sharedfiles/filedetails/?id=136468860 Steam", "http://steamcommunity.com/sharedfiles/filedetails/?id=136471864 Steam-DB").
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión("http://skyrim.nexusmods.com/mods/7590/ Nexus", "http://steamcommunity.com/sharedfiles/filedetails/?id=136468860 Steam", "http://steamcommunity.com/sharedfiles/filedetails/?id=136471864 Steam-DB").
+  //above mod set renamed:
+D13LeveledItemsUpgrade.esp
+D13LeveledItemsUpgradeD.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 IFNOT VAR(SkyReM) MOD: UniqueWeaponsRedone.esp
 IFNOT VAR(SkyReM) MOD: Unique Uniques.esp
 UniqueBows.esp
