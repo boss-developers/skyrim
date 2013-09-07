@@ -5178,9 +5178,16 @@ LoversComfort.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" 3.4+
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
-  IFNOT ACTIVE("SexiS.esm") && IF VAR(EN) ERROR: SexiS.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("SexiS.esm") && IF VAR(RU) ERROR: SexiS.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("SexiS.esm") && IF VAR(ES) ERROR: SexiS.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT ACTIVE("SexLab.esm") && IF VAR(EN) ERROR: SexLab.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SexLab.esm") && IF VAR(RU) ERROR: SexLab.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SexLab.esm") && IF VAR(ES) ERROR: SexLab.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+LoversHook.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" 3.4+
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
+  IFNOT ACTIVE("SexLab.esm") && IF VAR(EN) ERROR: SexLab.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SexLab.esm") && IF VAR(RU) ERROR: SexLab.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SexLab.esm") && IF VAR(ES) ERROR: SexLab.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 lt_better_horses.esp
   IF VAR(EN) || IF VAR(RU) ERROR: Do not use. Mod is abandoned and known to cause permanent save corruption.
     IF VAR(ES) ERROR: No utilizar. Este mod ha sido abandonado y puede dañar tu juego.
@@ -6693,11 +6700,12 @@ ENDGROUP: Load Order Independent Mods
 
 BEGINGROUP: MCM Mods
 
-//Note that this group is for "menu only" (or similar) mods, if a mod supports MCM then it should still be placed based on it's content.
+//Note that this group is for "menu only" (or similar) mods, if a mod supports MCM then it should still be placed based on its content.
 
 skyui.esp
   IF VERSION("SKSE", "0.1.6.16", <) REQ: "http://skse.silverlock.org SKSE" 1.6.16+.
 iHUD.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
  ^ // Must load after SkyUI
 IMAGINATOR - MCMenu.esp
   IFNOT ACTIVE("IMAGINATOR - Visual Control for Skyrim.esp") && IF VAR(EN) ERROR: IMAGINATOR - Visual Control for Skyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/13049 IMAGINATOR - Visual Control for Skyrim".
@@ -6706,6 +6714,8 @@ IMAGINATOR - MCMenu.esp
 less_intrusive_hud.esp
 LessIntrusiveHUD.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
+BlitzConsoleCommandsMCM.esp
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
 Customizable Camera.esp
   IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
@@ -9136,6 +9146,7 @@ LSB_BattleHammersV6.esp
   TAG: {{BASH: Delev}}
 LSBRuneWeapons.esp
 LubaSkyWings.esp
+Luddemann.esp
 Luna's Favor.esp
 LustmordVampireArmor.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -14742,6 +14753,26 @@ ImmersiveCitiesProjectPart2.esp
   IF FILE("ICP Whiterun Exterior.esp") && IF VAR(EN) WARN: Use either ICP Whiterun Exterior.esp or ImmersiveCitiesProjectPart2.esp, not both.
     IF FILE("ICP Whiterun Exterior.esp") && IF VAR(RU) WARN: Используйте любой, или ICP Whiterun Exterior.esp или ImmersiveCitiesProjectPart2.esp, не оба.
       IF FILE("ICP Whiterun Exterior.esp") && IF VAR(ES) WARN: Usar ICP Whiterun Exterior.esp o ImmersiveCitiesProjectPart2.esp, no ambos.
+//immersive settlements series:
+Immersive Settlements.esp
+Immersive Darkwater crossing.esp
+Immersive Dawnstar.esp
+Immersive Dragon Bridge.esp
+Immersive Falkreath.esp
+Immersive Ivarstead.esp
+Immersive Karthwasten.esp
+Immersive Kynesgrove.esp
+Immersive Morthal.esp
+Immersive Orc Strongholds.esp
+Immersive Riverwood.esp
+Immersive Rorikstead.esp
+Immersive Shors stone.esp
+Immersive Solstheim.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+Immersive Stonehills.esp
+Immersive Whiterun.esp
 Imperial Rangers Corps.esp
   IF CHECKSUM("Imperial Rangers Corps.esp", EA73566B) && IF VAR(EN) DIRTY: 42 ITM, 55 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Imperial Rangers Corps.esp", EA73566B) && IF VAR(RU) DIRTY: 42 ITM, 55 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -19033,7 +19064,13 @@ Killable Children - Quest Important Protected.esp
     IF CHECKSUM("Killable Children - Quest Important Protected.esp", 4231901C) && IF VAR(RU) DIRTY: 11 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Killable Children - Quest Important Protected.esp", 4231901C) && IF VAR(ES) DIRTY: 11 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Killable Children - Quest Protected.esp
+Killable Children No Race Menu.esp
+killable_children_race_fix.esp
 Killable Lootable Children.esp
+Killable Lootable Children for Hearthfires.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
 Killable Stormcloak.esp
 KillEssential.esp
 KillingTraps.esp
@@ -21102,10 +21139,8 @@ Tundra to forest.esp
   IF CHECKSUM("Tundra to forest.esp", 12D6056D) && IF VAR(EN) DIRTY: 20 ITM, 11 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Tundra to forest.esp", 12D6056D) && IF VAR(RU) DIRTY: 20 ITM, 11 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Tundra to forest.esp", 12D6056D) && IF VAR(ES) DIRTY: 20 ITM, 11 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-Yamato Transform and Summon.esp
-  IF CHECKSUM("Yamato Transform and Summon.esp", D7668232) && IF VAR(EN) DIRTY: 12 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("Yamato Transform and Summon.esp", D7668232) && IF VAR(RU) DIRTY: 12 ITM, 2 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("Yamato Transform and Summon.esp", D7668232) && IF VAR(ES) DIRTY: 12 ITM, 2 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+Weathered Road Signs.esp
+  //test placement here since touches tons of locations; not sure if it should go in/below city overhauls too -LD
 ENDGROUP: Landscaping
 
 BEGINGROUP: City Overhauls
@@ -21388,9 +21423,9 @@ ClimatesOfTamriel-Dragonborn-Patch.esp
 ClimatesOfTamriel-Dungeons-Hardcore.esp
   IF FILE("SoS - The Dungeons.esp") && IFNOT FILE("SoS - The Dungeons-PatchCoTHardcore.esp") WARN: Due to conflicts between Sounds of Skyrim - The Dungeons and ClimatesOfTamriel-Dungeons-Hardcore.esp it is recommended you use the appropriate compatibility patch found "http://skyrim.nexusmods.com/mods/8601 here".
   IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
-  IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) || IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 67CA961C) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) || IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 67CA961C) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 4EEA922F) || IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hardcore.esp", 67CA961C) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   INC: Realistic Lighting Overhaul
 ClimatesOfTamriel-Dungeons-Hazardous.esp
   IF CHECKSUM("ClimatesOfTamriel-Dungeons-Hazardous.esp", CBE304CE) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
@@ -24250,6 +24285,13 @@ ACE Archery.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 ACE Archery Dragonborn.esp
 Lorecraft - Ace Archery.esp
+  //two of SSR set need to be place higher for compat, along with running the ssr-ace compat patch found in compat section:
+IF FILE("ACE Armor.esp") MOD: Stealth Skills Rebalanced_COMPLETE.esp
+  TAG: {{BASH: Delev}}
+IF FILE("ACE Armor.esp") MOD: Stealth Skills Rebalanced_SNEAK.esp
+  IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(EN) WARN: Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_SNEAK.esp, not both.
+    IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(RU) WARN: Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_SNEAK.esp, не обa.
+      IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(ES) WARN: Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_SNEAK.esp, no ambos.
 ACE Armor.esp
 ACE Enchanting.esp
 ACE Magic.esp
@@ -25026,6 +25068,24 @@ Skype - Two-Handed.esp
     IF CHECKSUM("Skype - Two-Handed.esp", 4820339A) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Skype - Two-Handed.esp", 4820339A) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Sniper.esp
+ //moved main SSR chunk slightly out of alpha order for better compat with (older versions?) of SPERG:
+IFNOT FILE("ACE Armor.esp") MOD: Stealth Skills Rebalanced_COMPLETE.esp
+  TAG: {{BASH: Delev}}
+Stealth Skills Rebalanced_LOCKPICKING.esp
+  TAG: {{BASH: Delev}}
+  IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(EN) WARN: Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_LOCKPICKING.esp, not both.
+    IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(RU) WARN: Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_LOCKPICKING.esp, не обa.
+      IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(ES) WARN: Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_LOCKPICKING.esp, no ambos.
+Stealth Skills Rebalanced_PICKPOCKET.esp
+  TAG: {{BASH: Delev}}
+  IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(EN) WARN: Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_PICKPOCKET.esp, not both.
+    IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(RU) WARN: Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_PICKPOCKET.esp, не обa.
+      IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(ES) WARN: Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_PICKPOCKET.esp, no ambos.
+IFNOT FILE("ACE Armor.esp") MOD: Stealth Skills Rebalanced_SNEAK.esp
+  IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(EN) WARN: Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_SNEAK.esp, not both.
+    IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(RU) WARN: Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_SNEAK.esp, не обa.
+      IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(ES) WARN: Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_SNEAK.esp, no ambos.
+SSR_AlertGuards.esp
 Skyrim Perk Enhancements.esp
   IF CHECKSUM("Skyrim Perk Enhancements.esp", 0F2B16BE) && IF VAR(EN) DIRTY: 32 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Skyrim Perk Enhancements.esp", 0F2B16BE) && IF VAR(RU) DIRTY: 32 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -25206,23 +25266,6 @@ IFNOT FILE("SkyRe_Main.esp") MOD: StavesofSkyrim.esp
   IF CHECKSUM("StavesofSkyrim.esp", 5924D476) && IF VAR(EN) DIRTY: 3 ITM, 5 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("StavesofSkyrim.esp", 5924D476) && IF VAR(RU) DIRTY: 3 ITM, 5 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("StavesofSkyrim.esp", 5924D476) && IF VAR(ES) DIRTY: 3 ITM, 5 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-Stealth Skills Rebalanced_COMPLETE.esp
-  TAG: {{BASH: Delev}}
-Stealth Skills Rebalanced_LOCKPICKING.esp
-  TAG: {{BASH: Delev}}
-  IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(EN) WARN: Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_LOCKPICKING.esp, not both.
-    IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(RU) WARN: Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_LOCKPICKING.esp, не обa.
-      IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(ES) WARN: Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_LOCKPICKING.esp, no ambos.
-Stealth Skills Rebalanced_PICKPOCKET.esp
-  TAG: {{BASH: Delev}}
-  IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(EN) WARN: Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_PICKPOCKET.esp, not both.
-    IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(RU) WARN: Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_PICKPOCKET.esp, не обa.
-      IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(ES) WARN: Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_PICKPOCKET.esp, no ambos.
-Stealth Skills Rebalanced_SNEAK.esp
-  IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(EN) WARN: Use either Stealth Skills Rebalanced_COMPLETE.esp or Stealth Skills Rebalanced_SNEAK.esp, not both.
-    IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(RU) WARN: Используйте любой или Stealth Skills Rebalanced_COMPLETE.esp или Stealth Skills Rebalanced_SNEAK.esp, не обa.
-      IF FILE("Stealth Skills Rebalanced_COMPLETE.esp") && IF VAR(ES) WARN: Usar Stealth Skills Rebalanced_COMPLETE.esp o Stealth Skills Rebalanced_SNEAK.esp, no ambos.
-SSR_AlertGuards.esp
 Summoning.esp
   IF VAR(EN) WARN: This file was released before the Creation Kit (07 Feb. 2012) and is not recommended for use and should be removed.
     IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
@@ -25570,6 +25613,7 @@ BHWarPaints.esp
 BS-TheHag_Overlays.esp
 ButterflyFemaleWarpaint_2_1.esp
 Daedric Letters Warpaints.esp
+DiethardtWarpaint.esp
 DragonWarpaint.esp
 krimson'swarpaints.esp
 ksArgonianWarPaint.esp
@@ -25933,6 +25977,11 @@ XRCO.esp
     IFNOT VAR(RaceComp) && IF VAR(RU) ERROR: RaceCompatibility.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
       IFNOT VAR(RaceComp) && IF VAR(ES) ERROR: RaceCompatibility.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
 Yaksha.esp
+Yamato Transform and Summon.esp
+  IF CHECKSUM("Yamato Transform and Summon.esp", D7668232) && IF VAR(EN) DIRTY: 12 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("Yamato Transform and Summon.esp", D7668232) && IF VAR(RU) DIRTY: 12 ITM, 2 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("Yamato Transform and Summon.esp", D7668232) && IF VAR(ES) DIRTY: 12 ITM, 2 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  //adds new races plus other stuff; not sure why yamato was in landscaping- something it doesn't touch. So test-moved here -LD
 ZazimelDrow.esp
 ENDGROUP: Race additions
 
@@ -29865,6 +29914,8 @@ SPTConsistentOlderPeopleEEOPatch.esp
   IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(EN) ERROR: SPTConsistentOlderPeople.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(RU) ERROR: SPTConsistentOlderPeople.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(ES) ERROR: SPTConsistentOlderPeople.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+SSR_ACEArmor_Patch.esp
+SSR-Sneak_SPERG_Patch.esp
 SSS Deadly Dragons Patch A.esp
 SSS Deadly Dragons Patch B.esp
   IF FILE("SSS Deadly Dragons Patch A.esp") && IFNOT FILE("SSS Deadly Dragons Patch C.esp") && IF VAR(EN) WARN: Use only one SSS Deadly Dragons Patch esp.
