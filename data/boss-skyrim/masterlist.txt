@@ -6690,7 +6690,9 @@ RaceMenu.esp
   /* Version 2.0.0 */
   IF VERSION("SKSE", "0.1.6.15", <) && IF CHECKSUM("RaceMenu.esp", 2765B7D0) REQ: "http://skse.silverlock.org SKSE" 1.6.15+
 RaceMenuPlugin.esp
-  SAY: RaceMenuPlugin is optional and provides support to alter Height, Breast, Glute and Biceps. If you experience issues with it, disable RaceMenuPlugin.esp and inform the author.
+  IF VAR(EN) SAY: RaceMenuPlugin is optional and provides support to alter Height, Breast, Glute and Biceps. If you experience issues with it, disable RaceMenuPlugin.esp and inform the author.
+    IF VAR(RU) SAY: RaceMenuPlugin опционален и предоставляет поддержку альтернативного роста, груди, ягодиц и бицепсов. Если у вас возникают проблемы с этим, отключите RaceMenuPlugin.esp и проинформируйте автора.
+      IF VAR(ES) SAY: RaceMenuPlugin is optional and provides support to alter Height, Breast, Glute and Biceps. If you experience issues with it, disable RaceMenuPlugin.esp and inform the author.
 RaceMenuMimic.esp
 RaceMenuOverlays.esp
 REGEX: SkyRealism - Simple Save System.+\.esp
