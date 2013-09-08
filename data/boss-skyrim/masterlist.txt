@@ -3094,20 +3094,25 @@ RemoveAmbientInteriorFog.esp
   IF VAR(EN) && IF FILE("Realistic Lighting.esp") WARN: Removing the interior Fog will affect Realistic Lighting. Load before RL if you are experiencing errors.
     IF VAR(RU) && IF FILE("Realistic Lighting.esp") WARN: Удаление тумана внутри помещений повлияет на Realistic Lighting. Загружайте перед RL если вы замечаете баги.
       IF VAR(ES) && IF FILE("Realistic Lighting.esp") WARN: Remover la niebla de interiores puede afectar Realistic Lighting. Cargar antes de RL si tienes problemas.
+Remove Interior Fog V2 - Dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+Remove Interior Fog V2 - Hearthfire.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
+Remove Interior Fog V2 - Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 Remove Interior Fog V2 - Skyrim.esp
   IF FILE("RemoveAmbientInteriorFog.esp") && IF VAR(EN) WARN: Use either RemoveAmbientInteriorFog.esp or Remove Interior Fog V2 *.esp, not both.
     IF FILE("RemoveAmbientInteriorFog.esp") && IF VAR(RU) WARN: Используйте любой или RemoveAmbientInteriorFog.esp или Remove Interior Fog V2 *.esp, не обa.
       IF FILE("RemoveAmbientInteriorFog.esp") && IF VAR(ES) WARN: Usar RemoveAmbientInteriorFog.esp o Remove Interior Fog V2 *.esp, no ambos.
   IF VAR(Dawnguard) SAY: Use Remove Interior Fog V2 - Dawnguard.esp in addition to include Dawnguard locations.
   IF VAR(Hearthfire) SAY: Use Remove Interior Fog V2 - Hearthfire.esp in addition to include Hearthfires locations.
-Remove Interior Fog V2 - Dawnguard.esp
-  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
-    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
-      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
-Remove Interior Fog V2 - Hearthfire.esp
-  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
-    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
-      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
+  //ordered individual V2 modules as DB, HF, DG, SK per author's guidelines
 Remove Interior Fog V2 - Full Version.esp
   IF REGEX("Remove Interior Fog V2 - (Skyrim|Dawnguard|Hearthfire)?\.esp") ERROR: Do not use the modular versions of Remove Interior Fog V2 with the Full version.
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -23242,6 +23247,7 @@ CanleLightToggle1NC.esp
 dawnguard shouts.esp
 DBZmultidestructodisc.esp
 Detect Spell and Shout Updated.esp
+Dragon Aspect Redone.esp
 Dragon Shout 5 sec cooldown.esp
 DragonbornAscendant.esp
 DragonbornAscendantDawnguardExpansion.esp
@@ -27058,6 +27064,7 @@ REGEX: EAGlawee.+\.esp
 REGEX: EAShany.+\.esp
 EerieElves.esp
 EeveeFox.esp
+Eisa Blackthorn.esp
 EkkiiBreezeBasementAFMLydia.esp
 ElisaBrea.esp
 ElizaValentine.esp
