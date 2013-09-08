@@ -114,12 +114,12 @@ IF REGEX("Bashed Patch.*\.esp") SET: BP
 
 // BOSS Thread
   IF VAR(EN) GLOBAL SAY: "http://forums.bethsoft.com/topic/1472899-relz-boss-for-skyrim/ Latest BOSS thread"
-    IF VAR(RU) GLOBAL SAY: Последняя ветка форума BOSS на Bethsoft "http://forums.bethsoft.com/topic/1472899-relz-boss-for-skyrim/ здесь"(Eng).
+    IF VAR(RU) GLOBAL SAY: "http://forums.bethsoft.com/topic/1472899-relz-boss-for-skyrim/ Обсуждение BOSS"(Eng).
       IF VAR(ES) GLOBAL SAY: "http://forums.bethsoft.com/topic/1472899-relz-boss-for-skyrim/ Forum de BOSS"
 
 // Recruitment
   IF VAR(EN) GLOBAL SAY: The BOSS team has been overwhelmed with the popularity of submissions of unrecognised plugins from the BOSS Log and the number of outstanding unique submissions. As of 9/7/2013 we are at over 8400+ plugins to add to the Masterlist. If you are interested in helping to get these plugins added to BOSS's masterlist, please PM Aellis ("http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks Forums" or "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus Mods").
-    IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количеством предоставленных отчетов с неизвестными плагинами. На 07;9;2013 года их уже свыше 8400. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с Aellis, через личные сообщения, на форумах ("http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus Mods"). Требуется хотя бы базовое знание английского.
+    IF VAR(RU) GLOBAL SAY: Команда BOSS перегружена популярностью отправки неизвестных плагинов из лога BOSS и количеством предоставленных отчетов с неизвестными плагинами. На 07.09.2013 года их уже свыше 8400. Если вам интересно помочь с добавлением этих плагинов в мастерлист BOSS, пожалуйста свяжитесь с Aellis, через личные сообщения, на форумах ("http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks" или "http://forums.nexusmods.com/index.php?showuser=65745 Nexus Mods"). Требуется хотя бы базовое знание английского.
       IF VAR(ES) GLOBAL SAY: El equipo de BOSS ha sido abrumado por la cantidad de presentaciones de plugins no reconocidos. A partir del 07/9/2013 nos encontramos con más de 8400+ plugins para agregar. Si estás interesado/a en ayudar a añadir estos plugins a BOSS, por favor mándale un mensaje a Aellis ("http://forums.bethsoft.com/user/364024-aellis/ Bethesda Softworks Forums" or "http://forums.nexusmods.com/index.php?showuser=65745/ Nexus Mods").
 
 // SKSE & SKCU
@@ -539,7 +539,9 @@ Fantasy Music Overhaul.esm
 Farkasv2.esm
 FluxMOD_ArtifactEffectPerk.esm
 FM - HaafingarHall.esm
-  WARN: UNP Clothing Merchants contains too many clothing mods for BOSS to check individually.  Read the readme for details.  Leaving the other mods installed is not recommended.
+  IF VAR(EN) WARN: UNP Clothing Merchants contains too many clothing mods for BOSS to check individually.  Read the readme for details.  Leaving the other mods installed is not recommended.
+    IF VAR(RU) WARN: UNP Clothing Merchants contains too many clothing mods for BOSS to check individually.  Read the readme for details.  Leaving the other mods installed is not recommended.
+      IF VAR(ES) WARN: UNP Clothing Merchants включает слишком много модов на одежду, чтобы BOSS проверил их индивидуально.  Читайте документацию для подробностей.  Оставлять другие моды установленными не рекомендуется.
 FollowerMagic.esm
 ForbiddenRomance.esm
 
@@ -5352,7 +5354,9 @@ MoreHeartsAndFlesh.esp
   // Possibly requires tags.
 MoreLanterns.esp
 MoreVillageAnimals.esp
-  SAY: Obselete. Upgrade to latest version.
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 MVABasic.esp
 MVAIvarstead.esp
 MVARorikstead.esp
@@ -7370,7 +7374,7 @@ Chakram.esp
 ChickenStaff.esp
 Child Armor.esp
 ChildrenClothesClassed.esp
-  SAY: Requires {"http://skyrim.nexusmods.com/mods/19826" Elaborate Textiles)
+  REQ: {"http://skyrim.nexusmods.com/mods/19826" Elaborate Textiles)
 chinaDressRavana.esp
 ChitinGoggles.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
@@ -11227,7 +11231,9 @@ LegionOverhaulV25.esp
 megadragons.esp
 Requiem.esp
   TAG: {{BASH: Delev, Relev}}
-  SAY: Requiem makes a LOT of changes. You may want to consider creating and using a Userlist based on your particular mod loadout.
+  IF VAR(EN) SAY: Requiem makes a LOT of changes. You may want to consider creating and using a Userlist based on your particular mod loadout.
+    IF VAR(RU) SAY: Requiem вносит в игру большое количество изменений. Возможно вам потребуется использование создание пользовательских правил для вашего конкретного набора модов или использование других средств, для дополнительной корректировки порядка загрузки установленных модов.
+      IF VAR(ES) SAY: Requiem makes a LOT of changes. You may want to consider creating and using a Userlist based on your particular mod loadout.
   IF CHECKSUM("Requiem.esp", E7945687) || IF CHECKSUM("Requiem.esp", 2E4F346A) && IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IF CHECKSUM("Requiem.esp", E7945687) || IF CHECKSUM("Requiem.esp", 2E4F346A) && IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IF CHECKSUM("Requiem.esp", E7945687) || IF CHECKSUM("Requiem.esp", 2E4F346A) && IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
@@ -12136,12 +12142,16 @@ SkyRe_Plugin_JaySuSSwords_1.3D.esp
   TAG: {{BASH: Delev}}
   IF CHECKSUM("SkyRe_Plugin_JaySuSSwords_1.3D.esp", 33879A9F) ERROR: The order of the master files are listed as: Skyrim.esm, JSwords.esm, Update.esm which conflicts with the order in the masterlist.  There are also 4 unresolved keywords and, Skyrim won't properly track to them because SkyRe_Main.esp is not a master.  Correcting this in the CK is not recomended because there will be too many errors to resolve.  Delete this file it should not be used.
 /* Removed the message, "SAY: Obsolete. Update to latest version, SkyRe_Plugin_JaySuSSwords.esp." because it's not by T3nd0 */
-  WARN: T3nd0 stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.
+  IF VAR(EN) WARN: T3nd0 stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.
+    IF VAR(RU) WARN: T3nd0 прекратил предоставлять отдельные патчи, с тех пор, как он создал SkyProc патчер, для динамического создания патчей. Удалите этот файл и используйте его патчер, как и задумывал патчер. Патчер некорректно работает с русскими модами.
+      IF VAR(ES) WARN: T3nd0 stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.
   IF VAR(EN) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
 SkyRe_Plugin_JaySuSSwords.esp
   TAG: {{BASH: Delev}}
-  WARN: T3nd0 has informed the BOSS team that he does not remember making the file so it's probably not his.  However, he stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.
+  IF VAR(EN) WARN: T3nd0 has informed the BOSS team that he does not remember making the file so it's probably not his.  However, he stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.
+    IF VAR(RU) WARN: T3nd0 сообщил команде BOSS, что он не помнит, что создавал этот патч, так что это вероятно не его.  Однако, T3nd0 прекратил предоставлять отдельные патчи, с тех пор, как он создал SkyProc патчер, для динамического создания патчей. Удалите этот файл и используйте его патчер, как и задумывал патчер. Патчер некорректно работает с русскими модами.
+      IF VAR(ES) WARN: T3nd0 has informed the BOSS team that he does not remember making the file so it's probably not his.  However, he stopped providing individual patches since he created a SkyProc patcher to dynamically do the patching.  Uninstall this file and use the mod itself with the patcher as the author intended to begin with.
   IF VAR(EN) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: The mod JaySus Swords is not installed! Remember to install the original mod before activating a patch or skyrim will crash when it can't find the supporting files.
     IF VAR(RU) && IFNOT REGEX("JSwords(DV)?\.esm") ERROR: Мод JaySus Swords не установлен! Не забудьте установить оригинальный мод, перед активацией этого патча! Если игра не сможет найти файлы оригинального мода, то это вызовет баги и вылеты игры.
   IF CHECKSUM("SkyRe_Plugin_JaySuSSwords.esp", 33879A9F) && IF VAR(EN) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -17707,7 +17717,9 @@ AlchemyPlus.esp
   TAG: {{BASH: Relev}}
 alcoholiceffect.esp
 all roads.esp
-  ERROR: This plugin was uploaded to Steam Workshop as Realistic Map + Roads! and banned. When comparing the contents of the BSA file, the files were binary equals to A Quality World Map - With Roads. It's reported that the plugin (ESP file) and the BSA file are binary equals. This mod should be uninstalled. You can download the original mod "http://skyrim.nexusmods.com/mods/4929 Here".
+  IF VAR(EN) ERROR: This plugin was uploaded to Steam Workshop as Realistic Map + Roads! and banned. When comparing the contents of the BSA file, the files were binary equals to A Quality World Map - With Roads. It's reported that the plugin (ESP file) and the BSA file are binary equals. This mod should be uninstalled. You can download the original mod "http://skyrim.nexusmods.com/mods/4929 Here".
+    IF VAR(RU) ERROR: Этот плагин был загружен на Steam Workshop как Realistic Map + Roads! и после забанен. При сравнении содержимого BSA файла, его содержимое было эквивалентно моду A Quality World Map - With Roads. Это то говорит о том, что плагин (ESP файл) и BSA файл полностью одинаковые. Рекомендуется удалить этот мод. Вы можете загрузить оригинальный мод "http://skyrim.nexusmods.com/mods/4929 здесь".
+      IF VAR(ES) ERROR: This plugin was uploaded to Steam Workshop as Realistic Map + Roads! and banned. When comparing the contents of the BSA file, the files were binary equals to A Quality World Map - With Roads. It's reported that the plugin (ESP file) and the BSA file are binary equals. This mod should be uninstalled. You can download the original mod "http://skyrim.nexusmods.com/mods/4929 Here".
 AltarsRestoreMagicka.esp
 AlteredSteedStone.esp
 AlternateBreezehomePurchase.esp
@@ -18066,7 +18078,9 @@ Better Skill and Quest Books Names_ASM.esp
 BetterQuestObjectives-BSaQBPatch.esp
   IFNOT FILE("Better Skill and Quest Books Names.esp") || IFNOT FILE("Better Skill and Quest Books Names - BS.esp") REQ: "http://skyrim.nexusmods.com/mods/10125 Better Skill and Quest Books Names"
 BetterQuestObjectives-BSaQB-BSPatch.esp
-  ERROR: This file is obselte. Please use the universal patch on the Even Better Quest Objectives page.
+  IF VAR(EN) ERROR: This file is obselte. Please use the universal patch on the Even Better Quest Objectives page. ("http://skyrim.nexusmods.com/mods/32695 Nexus")
+    IF VAR(RU) ERROR: Устарело. Пожалуйста используйте универсальный патч со страницы Even Better Quest Objectives. ("http://skyrim.nexusmods.com/mods/32695 Nexus")
+      IF VAR(ES) ERROR: This file is obselte. Please use the universal patch on the Even Better Quest Objectives page. ("http://skyrim.nexusmods.com/mods/32695 Nexus")
   IFNOT FILE("Better Skill and Quest Books Names - BS.esp") ERROR: Better Skill and Quest Books Names - BS.esp is not present or is not active. Skyrim will CTD when loading if this file is active without Better Skill and Quest Books Names - BS
  // Must load after better sorting.
 REGEX: BetterSkillBooks.*\.esp
@@ -20514,7 +20528,9 @@ WiS IV - Double Arrow Damage.esp
   TAG: {{BASH: Stats}}
 wizDynamicThings.esp
 WoodChoppingExtended.esp
-  WARN: This file contains 00000000 FormID errors and errors with two REFR records and should be removed.
+  IF VAR(EN) WARN: This file contains 00000000 FormID errors and errors with two REFR records and should be removed.
+    IF VAR(RU) WARN: Этот файл содержит ошибки 00000000 FormID, ошибки с двумя записями REFR и должен быть удален. 
+      IF VAR(ES) WARN: This file contains 00000000 FormID errors and errors with two REFR records and should be removed.
 workhorse.esp
   IF CHECKSUM("workhorse.esp", ABFB4C56) && IF VAR(EN) DIRTY: 5 ITM, 7 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("workhorse.esp", ABFB4C56) && IF VAR(RU) DIRTY: 5 ITM, 7 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -22435,7 +22451,9 @@ Chameleon.esp
 chargemagicka.esp
 CMPowerSpells.esp
 cobra's slave spell.esp
-  SAY: This mod requires you to enter a cosole command to add enough Magicka to cast the spell - player.modav magicka 999999999 or player.setav magicka 999999999
+  IF VAR(EN) SAY: This mod requires you to enter a console command to add enough Magicka to cast the spell - player.modav magicka 999999999 or player.setav magicka 999999999
+    IF VAR(RU) SAY: Этот мод требует от вас введения в консоли команды для добавления достаточного количества магии для произнесения заклинания - player.modav magicka 999999999 или player.setav magicka 999999999
+      IF VAR(ES) SAY: This mod requires you to enter a cosole command to add enough Magicka to cast the spell - player.modav magicka 999999999 or player.setav magicka 999999999
 ColettesRevenge.esp
   IF VERSION("TES5", "1.4.27", <) REQ: Skyrim 1.4.27+
 CommandHorse.esp
@@ -23562,7 +23580,9 @@ MorePowerfulNecromancy.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, mpn.esp.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, mpn.esp.
 More Visible Soul Trap Effect.esp
-  SAY: This mod has been reported to have problems. Recommend removing and replacing with "http://skyrim.nexusmods.com/mods/30087 Enhanced Projectile Soul Trap"
+  IF VAR(EN) SAY: This mod has been reported to have problems. Recommend removing and replacing with "http://skyrim.nexusmods.com/mods/30087 Enhanced Projectile Soul Trap"
+    IF VAR(RU) SAY: Была получена информация о проблемах с этим модом. Рекомендуется удалить и заменить на "http://skyrim.nexusmods.com/mods/30087 Enhanced Projectile Soul Trap"
+      IF VAR(ES) SAY: This mod has been reported to have problems. Recommend removing and replacing with "http://skyrim.nexusmods.com/mods/30087 Enhanced Projectile Soul Trap"
 mpn.esp
 MagicUnderControl_MPNcompatible.esp
 
@@ -24040,7 +24060,9 @@ DukePatricks - CombatTweaks.esp
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, "http://skyrim.nexusmods.com/mods/3646 Duke Patricks - Heavy Weapons Combat".
 Path of Shadows - Combat.esp
 Duke Patricks - Heavy Weapons Combat.esp
-  SAY: This mod's remaining ITM record(s) are intentional for its function. Do not clean with TES5Edit. The author has done so.
+  IF VAR(EN) DIRTY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
+    IF VAR(RU) DIRTY: Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.
+      IF VAR(ES) DIRTY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 decap50.esp
 decap 50.esp
@@ -24717,9 +24739,13 @@ assassin pack.esp
 
 // perks b
 balanceddestruction.esp
-  SAY: Update to latest renamed version, balanceddestructionv4.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la ultima version.
 balanceddestructionv2.esp
-  SAY: Update to latest renamed version, balanceddestructionv4.esp
+  IF VAR(EN) SAY: Obsolete. Update to latest version.
+    IF VAR(RU) SAY: Устарело. Обновите до последней версии.
+      IF VAR(ES) SAY: Obsoleto. Actualizar a la ultima version.
 IFNOT FILE("DeadlySpellImpacts.esp") MOD: balanceddestructionv4.esp
 bassem's better deadly aim perk ^a01.esp
 BeastWithin.esp
@@ -26458,7 +26484,9 @@ FCKaraThePathfinder.esp
       IF CHECKSUM("FCKaraThePathfinder.esp", 69A4FB16) && IF VAR(ES) DIRTY: 7 ITM, 10 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 GoTSkyrimConversion.esp
 // not sure where to put 'Conversions' this seemed most likely based on description (no readme).
-  SAY: This is a Conversion.  Most other mods will be incompatible.
+  IF VAR(EN) SAY: This is a Conversion.  Most other mods will be incompatible.
+    IF VAR(RU) SAY: Это конверсия.  Большинство других модов могут быть несовместимы.
+      IF VAR(ES) SAY: This is a Conversion.  Most other mods will be incompatible.
   IF CHECKSUM("GoTSkyrimConversion.esp", 022C9E07) && IF VAR(EN) DIRTY: 97 ITM, 32 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("GoTSkyrimConversion.esp", 022C9E07) && IF VAR(RU) DIRTY: 97 ITM, 32 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("GoTSkyrimConversion.esp", 022C9E07) && IF VAR(ES) DIRTY: 97 ITM, 32 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -26873,7 +26901,9 @@ CompanionsAriseFinal.esp
   IF CHECKSUM("CompanionsAriseFinal.esp", 49701951) && IF VAR(EN) DIRTY: 17 ITM, 16 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("CompanionsAriseFinal.esp", 49701951) && IF VAR(RU) DIRTY: 17 ITM, 16 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("CompanionsAriseFinal.esp", 49701951) && IF VAR(ES) DIRTY: 17 ITM, 16 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  SAY: This mod will most likely conflict with other Companions altering mods.
+  IF VAR(EN) SAY: This mod will most likely conflict with other Companions altering mods.
+    IF VAR(RU) SAY: Этот мод скорее всего конфликтует с другими модами на изменение компаньонов
+      IF VAR(ES) SAY: This mod will most likely conflict with other Companions altering mods.
 Companionsguildrevamp.esp
 CMBeautifulCompanions.esp
 CMBoethiahSacrifice.esp
@@ -26889,11 +26919,15 @@ CMNewCompanions.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 Companion Followers.esp
 Companion_Crea.esp
-  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body" or "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
-  SAY: Be sure you have the correct esp for the body type installed.
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body" | "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
+  IF VAR(EN) SAY: Be sure you have the correct esp for the body type installed.
+    IF VAR(RU) SAY: Убедитесь, что вы используете правильный esp, для соответствующего типа тела
+      IF VAR(ES) SAY: Be sure you have the correct esp for the body type installed.
 Companion_Lese.esp
-  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body" or "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
-  SAY: Be sure you have the correct esp for the body type installed.
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body" | "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body"
+  IF VAR(EN) SAY: Be sure you have the correct esp for the body type installed.
+    IF VAR(RU) SAY: Убедитесь, что вы используете правильный esp, для соответствующего типа тела
+      IF VAR(ES) SAY: Be sure you have the correct esp for the body type installed.
 Companion_Shavir.esp
 CompanionValfar.esp
 conancompanion.esp
@@ -29976,7 +30010,9 @@ BalancedModeNoRespClear.esp
       IF CHECKSUM("BalancedModeNoRespClear.esp", 1A4D3A64) && IF VAR(ES) DIRTY: 2 ITM, 45 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 DeazurainLoadout.esp
 FastTravelAlle.esp
-  WARN: See "http://skyrim.nexusmods.com/mods/27321 mod page comments" for error reports.
+  IF VAR(EN) WARN: See "http://skyrim.nexusmods.com/mods/27321 mod page comments" for error reports.
+    IF VAR(RU) WARN: Смотрите "http://skyrim.nexusmods.com/mods/27321 комментарии на странице мода" для сообщения об ошибках.
+      IF VAR(ES) WARN: See "http://skyrim.nexusmods.com/mods/27321 mod page comments" for error reports.
   // touches a ton of worldspace; current version also severely flawed in ways our standard messages can't fully evoke. :P
 PLAYER WO.esp
 HM_HotkeyMod.esp
