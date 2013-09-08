@@ -4587,6 +4587,24 @@ BEGINGROUP: Base G
 
 GBob_More_Minor_Vendors.esp
 GDAmulets.esp
+GELO_Vanilla_Base_File.esp
+GELO_Dawnguard_Base_File.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+GELO_Dragonborn_Base_File.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
+GELO_Vanilla_Guaranteed_Boss_Loot.esp
+GELO_Dawnguard_Guaranteed_Boss_Loot.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+GELO_Dragonborn_Guaranteed_Boss_Loot.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 gemstoneconversion.esp
 GenebrisTreasureChests.esp
   TAG: {{BASH: Delev, Relev}}
@@ -29802,11 +29820,12 @@ BEGINGROUP: Compatibility Patches
 // Compatibility Patches which must load after a certain mod go here
 // Only if no conflicts are made in between
 //
-REGEX: Agony's Sorting Frenzy - .+\.esp
+ACE Melee-GELO Compatibility.esp
 AFT_iNPCFix.esp
   IFNOT ACTIVE("3DNPC.esp") && IF VAR(EN) ERROR: 3DNPC.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("3DNPC.esp") && IF VAR(RU) ERROR: 3DNPC.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("3DNPC.esp") && IF VAR(ES) ERROR: 3DNPC.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+REGEX: Agony's Sorting Frenzy - .+\.esp
 bbLager101BugsHRPatch.esp
   IFNOT ACTIVE("bbLager.esp") && IF VAR(EN) ERROR: bbLager.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("bbLager.esp") && IF VAR(RU) ERROR: bbLager.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -30310,6 +30329,7 @@ LLI.esp
   //Lootification dynamic recommended to go above Dual Sheath dynamic
 Dual Sheath Redux Patch.esp
 EveryBody's Different.esp
+GELO_Patcher_Build.esp
 Perk Patch.esp
 RBS.esp
 REGEX: Pre ReProccer.*\.esp
@@ -30320,7 +30340,6 @@ WTF.esp
     IF VAR(RU) SAY: Может понадобиться очистка в "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Некоторые сгенерированные тестовые записи этого SkyProc патча являются ITM записями. Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF VAR(ES) SAY: May need "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. Several test generations of this SkyProc Patch included ITMs. Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 ZF Primary Needs Patcher.esp
-  //a Skyproc patcher, not sure of placement, move as necessary -LD
 SUM.esp
 BEGINGROUP: Patches for Dynamic Plugins
 // Patches for dynamic plugins - moved here because SUM offers patch merging functionality. - William
