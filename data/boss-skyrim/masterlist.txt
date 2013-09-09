@@ -2654,18 +2654,6 @@ NPC_Hair_Rep_Necro.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-NPC_Overhaul_1_1_.esp
-  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT VAR(ApachiiHairF) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-  IFNOT VAR(ApachiiHairM) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT VAR(ApachiiHairM) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT VAR(ApachiiHairM) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
-NPC_Overhaul_V2_.esp
-  IF FILE("NPC_Overhaul_1_1_.esp") INC: NPC_Overhaul_1_1_.esp
 REGEX: (N|ThievesguildN)PCOverha.+byHaroda.+\.esp
   //Warning applies across the ""http://skyrim.nexusmods.com/mods/15116 entire large esp set" pre-4/2013; some but not all are dirty as well. Checksum-specific dirty reports not playing well with the regex'ed output, so leave as only this.
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -3266,6 +3254,7 @@ AMO - Special.esp
 AMOvanilla - Combat.esp
 AMOvanilla - Special.esp
 Blazing Sun Music.esp
+danjdrmusic.esp
 REGEX: Dawn_addon_part(\d)\.esp
 Del_ConditionalCombatMusic - Dragon Reserved.esp
 Del_ConditionalCombatMusic.esp
@@ -4281,6 +4270,8 @@ DFB - Dawnguard - More Crossbow Locations.esp
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 DFB - Random Encounters.esp
 Diadem15.esp
+DineWithFollowers.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 DishonoredEquipment.esp
 Diverse Faction Weapons.esp
 DivinePunishmentForArrowsToTheKnee.esp
@@ -5307,6 +5298,7 @@ marijuana.esp
       IF CHECKSUM("marijuana.esp", 41A328F2) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Mark Books as Read - DV.esp
 marriagedynamicoutfits.esp
+masser_and_secunda_from_morr.esp
 MasterChest.esp
 MaybeHeartsAndFlesh.esp
 mcCampingLite.esp
@@ -5351,14 +5343,8 @@ Montures Monstres.esp
       IF CHECKSUM("Montures Monstres.esp", ADBF7D3B) && IF VAR(ES) DIRTY: 5 ITM, 2 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Moonpath_TP.esp
 Moose&Carrie.esp
-MoreHunting.esp
-MoreWar.esp
-MoreNPCs.esp
-More_Saddles.esp
-moresmelters.esp
-MORIAmine.esp
-Morrowind Soul Gems.esp
-moulin.esp
+More Alien Skyrim.esp
+more carriages.esp
 More Craftables.esp
   TAG: {{BASH: Relev}}
 IFNOT CHECKSUM("Crafting300.esp", FFCC056A) && IFNOT CHECKSUM("Crafting300.esp", 50142D0D) MOD: More Craftables - Crafting 300 compatibility.esp
@@ -5368,11 +5354,13 @@ More Craftables - Dwemer Certified compatibility.esp
   IFNOT FILE("Dwemer Certified.esp") REQ: "http://skyrim.nexusmods.com/mods/10442 Dwemer Certified"
   IFNOT FILE("More Craftables.esp") REQ: "http://skyrim.nexusmods.com/mods/799 More Craftables"
 Convertible Azura's Star.esp
-more carriages.esp
-More_Hides.esp
-  IF CHECKSUM("More_Hides.esp ", C1457E3C) || IF CHECKSUM("More_Hides.esp ", D0B6794D) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("More_Hides.esp ", C1457E3C) || IF CHECKSUM("More_Hides.esp ", D0B6794D) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("More_Hides.esp ", C1457E3C) || IF CHECKSUM("More_Hides.esp ", D0B6794D) && IF VAR(ES) DIRTY: 5 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+More Escape Passages.esp
+  IF CHECKSUM("More Escape Passages.esp", 5E1C828F) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("More Escape Passages.esp", 5E1C828F) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("More Escape Passages.esp", 5E1C828F) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IF VAR(EN) WARN: This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
+    IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
+      IF VAR(ES) WARN: Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859sTES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
 More Interactive Items.esp
 more locked containers.esp
 more npcs in the wild.esp
@@ -5388,34 +5376,38 @@ more plants dawnguard.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 More Prey animals.esp
+More_Hides.esp
+  IF CHECKSUM("More_Hides.esp ", C1457E3C) || IF CHECKSUM("More_Hides.esp ", D0B6794D) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("More_Hides.esp ", C1457E3C) || IF CHECKSUM("More_Hides.esp ", D0B6794D) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("More_Hides.esp ", C1457E3C) || IF CHECKSUM("More_Hides.esp ", D0B6794D) && IF VAR(ES) DIRTY: 5 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+More_Saddles.esp
 moredragonloot.esp
-More Escape Passages.esp
-  IF CHECKSUM("More Escape Passages.esp", 5E1C828F) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("More Escape Passages.esp", 5E1C828F) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("More Escape Passages.esp", 5E1C828F) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF VAR(EN) WARN: This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
-    IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
-      IF VAR(ES) WARN: Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859sTES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
 MoreFood.esp
 MoreGrass.esp
 MoreHeartsAndFlesh.esp
   // Possibly requires tags.
+MoreHunting.esp
 MoreLanterns.esp
+MoreNPCs.esp
+moresmelters.esp
 MoreVillageAnimals.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
-MVABasic.esp
-MVAIvarstead.esp
-MVARorikstead.esp
+MoreWar.esp
+MORIAmine.esp
 Morozik75_Better_Skillbook_Rus.esp
+Morrowind Soul Gems.esp
 Moss Rocks.esp
 Moss Rocks_DB.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
   IFNOT FILE("Moss Rocks.esp") REQ: "http://http://skyrim.nexusmods.com/mods/31856 Moss Rocks"
-masser_and_secunda_from_morr.esp
+moulin.esp
+MVABasic.esp
+MVAIvarstead.esp
+MVARorikstead.esp
 mxdemonicarmoredhorse.esp
   IF CHECKSUM("mxdemonicarmoredhorse.esp", DBE462C2) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("mxdemonicarmoredhorse.esp", DBE462C2) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -6634,6 +6626,9 @@ CAS.esp
       IF VAR(ES) && IF FILE("kuerteeAutoSaveAndTime.esp") WARN: Utilizar únicamente las funciones de guardar de "CAS" o "kuertee's auto-save and time".
 Character Creation Overhaul.esp
 Chesko_LoreBasedLoadingScreens.esp
+Compass Marker Range 4000-8000.esp
+Compass Marker Range 4000-12000.esp
+Compass Marker Range 5000-10000.esp
 ContainerMagic.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
   IF CHECKSUM("ContainerMagic.esp", CBF09128) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -6791,6 +6786,9 @@ Fine-Tuned Challenge.esp
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
 Grimy Utilities Interface.esp
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
+hmkLockOn.esp
+  IF VERSION("SKSE", "0.1.6.3", <) REQ: "http://skse.silverlock.org SKSE" 1.6.3+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.4+
 kuerteeAutoFirstThirdPersonView MCM.esp
   IFNOT ACTIVE("kuerteeAutoFirstThirdPersonView.esp") ERROR: kuerteeAutoFirstThirdPersonView.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
@@ -6817,6 +6815,9 @@ SaveHotKeyMCM.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
   IF VERSION("SKSE", "0.1.6.4", <) REQ: "http://skse.silverlock.org SKSE" 1.6.4+.
   IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3+
+SkyrimConfigMenu.esp
+  IF VERSION("SKSE", "0.1.6.6", <) REQ: "http://skse.silverlock.org SKSE" 1.6.6+.
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI" v3.1+
 SkyrimSpellCleaner.esp
   IF VERSION("TES5", "1.9.32", <) REQ: Skyrim 1.9.32+
   IF VERSION("SKSE", "0.1.6.13", <) REQ: "http://skse.silverlock.org SKSE" 1.6.13+.
@@ -9648,6 +9649,7 @@ OlafsGear.esp
 OldKnightShield.esp
   TAG: {{BASH: Relev}}
 OMageCommonRobes.esp
+OMageCommonRobesV2.esp
 OMageReplacerPack.esp
 Omegared99-Compilation.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -14119,6 +14121,13 @@ driftshadetreetops.esp
   IF VAR(EN) WARN: This file contains 1 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859sTES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
+Druidessentials.esp
+  IF CHECKSUM("Druidessentials.esp", 7E71D818) && IF VAR(EN) DIRTY: 17 ITM, 35 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("Druidessentials.esp", 7E71D818) && IF VAR(RU) DIRTY: 17 ITM, 35 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("Druidessentials.esp", 7E71D818) && IF VAR(ES) DIRTY: 17 ITM, 35 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+  IF CHECKSUM("Druidessentials.esp", 7C29EAC5) && IF VAR(EN) DIRTY: 17 ITM, 36 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("Druidessentials.esp", 7C29EAC5) && IF VAR(RU) DIRTY: 17 ITM, 36 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("Druidessentials.esp", 7C29EAC5) && IF VAR(ES) DIRTY: 17 ITM, 36 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
 DSAMG - Greybeard Fix.esp
 Dungeons 4.esp
   IF CHECKSUM("Dungeons 4.esp", 44D055E4) && IF VAR(EN) DIRTY: 2 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -17499,6 +17508,7 @@ WoTS - Non-Overhaul Version.esp
     IF CHECKSUM("WoTS - Non-Overhaul Version.esp", DF5C6BEF) && IF VAR(RU) DIRTY: 8 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("WoTS - Non-Overhaul Version.esp", DF5C6BEF) && IF VAR(ES) DIRTY: 8 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF FILE("WoTS - Overhaul Version.esp") INC: WoTS - Overhaul Version.esp
+Wrath Of Nature.esp
 WRenchanter_tilted.esp
 Wyrmstooth.esp
   IF CHECKSUM("Wyrmstooth.esp", 54F43CEF) && IF VAR(EN) DIRTY: 6259 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -17991,8 +18001,6 @@ better artifacts.esp
     IF CHECKSUM("better artifacts.esp", 52BAB796) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("better artifacts.esp", 52BAB796) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Better Auriels Bow.esp
-betterarvak.esp
-betterbhmagic.esp
 Better Blacksmithing.esp
   IF CHECKSUM("Better Blacksmithing.esp", 3C4E4135) && IF VAR(EN) DIRTY: 29 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Better Blacksmithing.esp", 3C4E4135) && IF VAR(RU) DIRTY: 29 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -18002,11 +18010,6 @@ mod1.esp
   IF VAR(EN) && IF FILE("Better Bone Armor.esp") SAY: Use either Better Bone Armor.esp or mod1.esp
     IF VAR(RU) && IF FILE("Better Bone Armor.esp") SAY: Используйте или Better Bone Armor.esp или mod1.esp
 Better Bound Weapons.esp
-BetterBreathHolding.esp
-BetterBreezehomeBeds.esp
-BetterBreezehomeBedsNoble.esp
-  IF FILE("BetterBreezehomeBeds.esp") INC: BetterBreezehomeBeds.esp
-BetterDawnguardRewards.esp
 Better Deadly Bandits.esp
   TAG: {{BASH: Relev}}
 Better Deadly Bandits Weapons Only.esp
@@ -18014,7 +18017,28 @@ Better Deadly Bandits Weapons Only.esp
   IF FILE("Better Deadly Bandits.esp") INC: Better Deadly Bandits.esp
 better dragonbourn.esp
 Better Dragons.esp
+better forsworn.esp
+Better House Carls.esp
+Better Honeyside.esp
+Better Jorrvaskr.esp
+  IF VAR(EN) WARN: This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
+    IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
+      IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
+Better Legion.esp
+better magelight and candlelight.esp
+Better Necromancer's Amulet.esp
+better underwater sight - clear.esp
+better underwater sight - clearer.esp
+Better_Divine_Blessings.esp
 Better_enchanting_tables.esp
+Better_Food_and_Sleep.esp
+betterarvak.esp
+betterbhmagic.esp
+BetterBreathHolding.esp
+BetterBreezehomeBeds.esp
+BetterBreezehomeBedsNoble.esp
+  IF FILE("BetterBreezehomeBeds.esp") INC: BetterBreezehomeBeds.esp
+BetterDawnguardRewards.esp
 BetterEnhancedCrossbows.esp
   IF CHECKSUM("BetterEnhancedCrossbows.esp", 547FA257) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("BetterEnhancedCrossbows.esp", 547FA257) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -18023,8 +18047,6 @@ betterfactionscomplete.esp
   IF CHECKSUM("betterfactionscomplete.esp", 382ADAE8) && IF VAR(EN) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("betterfactionscomplete.esp", 382ADAE8) && IF VAR(RU) DIRTY: 6 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("betterfactionscomplete.esp", 382ADAE8) && IF VAR(ES) DIRTY: 6 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-Better_Food_and_Sleep.esp
-better forsworn.esp
 BetterFurnitureClutter.esp
 bettergaulderamlulet.esp
 better gauldur and saarthal amulet.esp
@@ -18036,18 +18058,7 @@ BetterGhostbladeV1glass.esp
   IF FILE("BetterGhostbladeV1.esp") && IF VAR(EN) WARN: Use only one BetterGhostbladeV1 esp.
     IF FILE("BetterGhostbladeV1.esp") && IF VAR(RU) WARN: Используйте только один BetterGhostbladeV1 esp.
       IF FILE("BetterGhostbladeV1.esp") && IF VAR(ES) WARN: Utilizar solo un BetterGhostbladeV1 esp.
-Better House Carls.esp
-Better Honeyside.esp
 BetterItemSorting.esp
-Better Jorrvaskr.esp
-  IF VAR(EN) WARN: This file was released before the Creation Kit (07 Feb. 2012) and contains unexpected (or out of order) records and should be removed.
-    IF VAR(RU) WARN: Этот файл бы выпущен до выхода Creation Kit (07 фев. 2012) и может содержать неверные записи. Рекомендуется удалить.
-      IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
-Better Legion.esp
-better magelight and candlelight.esp
-Better Necromancer's Amulet.esp
-better underwater sight - clear.esp
-better underwater sight - clearer.esp
 BetterNordHeroWeapons.esp
   IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("BetterNordHeroWeapons.esp", 0B39EBC1) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
@@ -25553,6 +25564,9 @@ DynamicallyIncreasedWalkSpeed.esp
 effeminatenazeem.esp
 ElinRaceIdle.esp
   IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.1+)
+FAMP2.esp
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim" (FNIS 3.2+)
+  //unsure if this should get the same conditional placements as PotionsBETA.esp (FAMP2 is update, major revision, or complementary mod to that?) -LD
 FemaleCityGuardsAndSoldiers.esp
 FemaleCityGuards.esp
 HeartBreaker.esp
@@ -27889,6 +27903,28 @@ NPCAppearancerevamp.esp
   IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(EN) ERROR: ApachiiHair.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(RU) ERROR: ApachiiHair.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("ApachiiHair.esm") && IF VAR(ES) ERROR: ApachiiHair.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+NPC_Overhaul_1_1_.esp
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(ApachiiHairF) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT VAR(ApachiiHairM) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairM) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(ApachiiHairM) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+NPC_Overhaul_1_3_.esp
+  IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT VAR(ApachiiHairF) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairF) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(ApachiiHairF) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairFemales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+  IFNOT VAR(ApachiiHairM) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT VAR(ApachiiHairM) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT VAR(ApachiiHairM) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHairMales.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+NPC_Overhaul_V2_.esp
+  //moved set down from faces n since it touches more than faces -LD
 nu_female_followers.esp
 
 // companions o
@@ -28855,6 +28891,7 @@ EnhancedCharacterEdit.esp
   IF VERSION("SKSE", "0.1.6.9", <) REQ: "http://skse.silverlock.org SKSE" 1.6.9+
 Facelight.esp
 Essential Mod For Essential Players.esp
+Excellent - The Racials Package.esp
 Extended Slider Colors.esp
 REGEX: Extended Colors - (Less Selection|Lite Selection|Selection|Hair Only)?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -30173,6 +30210,7 @@ The Asteria - Dwemer Airship(GS).esp
 towHarvestDLCPatch_DBDG.esp
 TRO_BasicNeeds_WATERPatch.esp
 /* Must load after WATER */
+UDV&DM Patch.esp
 WP - UFO1.2i - Patch.esp
   IFNOT ACTIVE("UFO - Ultimate Follower Overhaul.esp") && IF VAR(EN) ERROR: UFO - Ultimate Follower Overhaul.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("UFO - Ultimate Follower Overhaul.esp") && IF VAR(RU) ERROR: UFO - Ultimate Follower Overhaul.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
