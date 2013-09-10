@@ -2113,7 +2113,6 @@ USKP_addon ENG.esp
     IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(RU) ERROR: Unofficial Skyrim Patch.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("Unofficial Skyrim Patch.esp") && IF VAR(ES) ERROR: Unofficial Skyrim Patch.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
   IF FILE("USKP_addon.esp") INC: USKP_addon.esp
-
 // fixes that must load after USKP
 Arrow and Imperial Armor Fix.esp
 Bethesda_Hi-Res_Optimized.esp
@@ -2298,6 +2297,9 @@ Weapons & Armor Fixes_Remade.esp
   // new version - does not include Smithing Perks Overhaul anymore. Author recommends loading after the unofficial patches.
 Clothing & Clutter Fixes.esp
   // option of WAF remade
+SMPC.esp
+  IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
+  //summer 2013: this is a rename of USKP_addon, now suggested to load after the normal slate of unofficials, not just after USKP -LD
 Weapons & Armor Fixes_Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -4089,6 +4091,10 @@ CookingExpanded - Hearthfire.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
+CookingExpanded - Dragonborn.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 CookingExpanded - EoS.esp
 SkyRealism - Feast and Famine - Hearthfires.esp
 SkyRealism - Feast and Famine - BabettesFeastBalanced.esp
@@ -5921,9 +5927,9 @@ Skyforge_Plus v3.esp
 SkyForge +.esp
 SkyHavenLightFix.esp
 Sky Haven Teleporter 1.2.esp
-  IF CHECKSUM("Sky Haven Teleporter 1.2.esp", 75806A60) && IF VAR(EN) DIRTY: 19 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("Sky Haven Teleporter 1.2.esp", 75806A60) && IF VAR(RU) DIRTY: 19 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("Sky Haven Teleporter 1.2.esp", 75806A60) && IF VAR(ES) DIRTY: 19 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IF CHECKSUM("Sky Haven Teleporter 1.2.esp", 75806A60) && IF VAR(EN) DIRTY: 27 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("Sky Haven Teleporter 1.2.esp", 75806A60) && IF VAR(RU) DIRTY: 27 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("Sky Haven Teleporter 1.2.esp", 75806A60) && IF VAR(ES) DIRTY: 27 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Sky Haven Temple Teleporter (Immersion included).esp
     IF CHECKSUM("Sky Haven Temple Teleporter (Immersion included).esp", 53C55F99) && IF VAR(EN) DIRTY: 37 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
       IF CHECKSUM("Sky Haven Temple Teleporter (Immersion included).esp", 53C55F99) && IF VAR(RU) DIRTY: 37 ITM, 2 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -6053,9 +6059,9 @@ smeltable dwarven scrap metal.esp
 smeltdown_ingots_osr.esp
 smelter in solitude.esp
 Smelter_Riften & Solitude.esp
-  IF CHECKSUM("Smelter_Riften & Solitude.esp", BC2A12BD) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("Smelter_Riften & Solitude.esp", BC2A12BD) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("Smelter_Riften & Solitude.esp", BC2A12BD) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IF CHECKSUM("Smelter_Riften & Solitude.esp", BC2A12BD) && IF VAR(EN) DIRTY: 17 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("Smelter_Riften & Solitude.esp", BC2A12BD) && IF VAR(RU) DIRTY: 17 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("Smelter_Riften & Solitude.esp", BC2A12BD) && IF VAR(ES) DIRTY: 17 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Smelter_Riften.esp
 Smelter_Solitude.esp
 smelterinriverwood.esp
@@ -10245,6 +10251,7 @@ SpellbreakersLOREFRIENDLY.esp
       IF FILE("Spellbreakers.esp") && IF VAR(ES) WARN: Usar Spellbreakers.esp o SpellbreakersLOREFRIENDLY.esp, no ambos.
 spell_loot.esp
 SPOA_shield.esp
+SPOAsilvercrossbow.esp
 SPOAsilverknight.esp
 Spriggan Armor 2.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
@@ -13770,6 +13777,7 @@ colossus.esp
       IF CHECKSUM("colossus.esp", 750D890C) && IF VAR(ES) DIRTY: 30 ITM, 8 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 ColovianGunder.esp
 CornerofTheSkyrim.esp
+CommunityCollege.esp
 Commute.esp
 Convenient Horse Herding.esp
   IF VERSION("SKSE", "0.1.6.5", <) REQ: "http://skse.silverlock.org SKSE" 1.6.5+
@@ -15611,6 +15619,8 @@ NorthKeep.esp
 nowellrocks.esp
 NPC - Shady Fences.esp
 NS_Crescent.esp
+nTr4nc3 - Whiterun Mansion.esp
+
 ENDGROUP: Quests N
 
 BEGINGROUP: Quests O
@@ -17639,6 +17649,7 @@ Lightweight Potions and Poisons.esp
 lightingredients.esp
 lightjewelry.esp
 lockpickweight.esp
+LPWeightlessIngredients.esp
 mini Potion Mod 01.esp
 Misc Items Reweighting.esp
 morerealisticcarrying.esp
@@ -19360,6 +19371,7 @@ lowerlevellegendaryandrevereddragons.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
+LPMoreIngredients.esp
 lt_dragonplate_should_be_better_than_daedric.esp
 Lush Grass.esp
 lush grass and trees.esp
@@ -24192,6 +24204,9 @@ Duel - Combat Realism.esp
   IF CHECKSUM("Duel - Combat Realism.esp", 948C8561) || IF CHECKSUM("Duel - Combat Realism.esp", B2CA229B) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Duel - Combat Realism.esp", 948C8561) || IF CHECKSUM("Duel - Combat Realism.esp", B2CA229B) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Duel - Combat Realism.esp", 948C8561) || IF CHECKSUM("Duel - Combat Realism.esp", B2CA229B) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IF CHECKSUM("Duel - Combat Realism.esp", D0EDCDFA) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("Duel - Combat Realism.esp", D0EDCDFA) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("Duel - Combat Realism.esp", D0EDCDFA) && IF VAR(ES) DIRTY: 5 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF VERSION("TES5", "1.6", <) REQ: Skyrim 1.6+
   // Duel combat realism must load BEFORE Ace Reaistic fighting
 ACE Realistic Fighting.esp
@@ -27000,6 +27015,7 @@ AoD - Shelyn.esp
   IFNOT ACTIVE("FollowerMagic.esm") && IF VAR(EN) ERROR: FollowerMagic.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("FollowerMagic.esm") && IF VAR(RU) ERROR: FollowerMagic.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("FollowerMagic.esm") && IF VAR(ES) ERROR: FollowerMagic.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+aom_barbarianfollower.esp
 REGEX: aranea1.?\.esp
 Agrenor Replacer.esp
 A Simple Marriage Mod.esp
@@ -29518,6 +29534,9 @@ Hot Volcanic Water.esp
 ImmersiveWater3.esp
 medium water.esp
 Purewaters.esp
+  IF CHECKSUM("Purewaters.esp", B395566B) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("Purewaters.esp", B395566B) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("Purewaters.esp", B395566B) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 IF FILE("Purewaters.esp") MOD: realrainextended.esp
   IF VAR(EN) SAY: Use only one realrain esp.
     IF VAR(RU) SAY: Используйте только один realrain esp.
