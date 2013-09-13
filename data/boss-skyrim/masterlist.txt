@@ -5291,6 +5291,10 @@ REGEX: MicroBikin.+\.esp
       IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Mini-Mannequins.esp
 marader.esp
+  IF CHECKSUM("marader.esp", AAC47B36) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+      // CRC AAC47B36 is only for russian version. I have no english esp. Dont forget to add the english crc to russian line also.
+    IF CHECKSUM("marader.esp", AAC47B36) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+      IF CHECKSUM("marader.esp", AAC47B36) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Marco's Integrated Leveled Lists.esp
   TAG: {{BASH: Delev, Relev}}
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -18006,6 +18010,10 @@ ENDGROUP: Overrides A
 BEGINGROUP: Overrides B
 
 Babette.esp
+  IF CHECKSUM("Babette.esp", 32DB97E2) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
+    IF CHECKSUM("Babette.esp", 32DB97E2) || IF CHECKSUM("Babette.esp", C390ED3E) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
+	    // added crc for russian autotranslation
+      IF CHECKSUM("Babette.esp", 32DB97E2) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
   IF CHECKSUM("Babette.esp", 6596E3CF) && IF VAR(EN) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Babette.esp", 6596E3CF) && IF VAR(RU) DIRTY: 8 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Babette.esp", 6596E3CF) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
@@ -20274,7 +20282,6 @@ SkyTEST-HarderCreatures.esp
 dD - Enhanced Blood Main.esp
   // moved after SkyTest for correct work.
   IF VERSION("TES5", "1.9", <) REQ: Skyrim 1.9+
-  asdf
   IF VAR(Dawnguard) && IFNOT VAR(Dragonborn) && IFNOT VAR(SkyMoMod) && IFNOT FILE("dD-Dawnguard-EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Dawnguard Compatibility_Patch".
   IF VAR(Dragonborn) && IFNOT VAR(Dawnguard) && IFNOT VAR(SkyMoMod) && IFNOT FILE("dD-Dragonborn-EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 Dragonborn Compatibility_Patch".
   IF VAR(Dragonborn) && IF VAR(Dawnguard) && IFNOT VAR(SkyMoMod) && IFNOT FILE("dD-Dragonborn-Dawnguard-EBT Patch.esp") REQ: "http://skyrim.nexusmods.com/mods/60 0 Dragonborn-Dawnguard_Compatibility Patch" \ Dawnguard + Dragonborn.
