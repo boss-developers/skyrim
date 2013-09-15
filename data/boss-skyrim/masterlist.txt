@@ -3141,6 +3141,7 @@ Remove Interior Fog V2 - Full Version.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
+Remove Interior Fog V2 - Full Version - NH.esp
 fixedeyeadaptation.esp
 dimmed_torches.esp
 enhancedlightingforrealisticlighting.esp
@@ -3348,7 +3349,9 @@ VanillaReducedTexturesDB.esp
 Andragorn_Replace_Imperial_Sword.esp
 calientevanillaarmor - banditpack curvy.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
-calientesvanillaarmor - banditpack slim.espcbbev3_vanillapack.esp
+calientesvanillaarmor - banditpack slim.esp
+  REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
+cbbev3_vanillapack.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 cbbeslim.esp
 colored constellations.esp
@@ -6640,7 +6643,14 @@ ORM Convenient Alsvid.esp
     IFNOT ACTIVE("ORM-Arvak.esp") && IF VAR(RU) ERROR: ORM-Arvak.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/24019 Dawnguard Rewritten - Arvak"
       IFNOT ACTIVE("ORM-Arvak.esp") && IF VAR(ES) ERROR: ORM-Arvak.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/24019 Dawnguard Rewritten - Arvak"
 repopulatedskyrim.esp
-REGEX: SIM.?- NPC.?Additions(HOSTILE|WEREWOLVES)?\.esp
+REGEX: SIM.?- NPC.?Additions(HOSTILE)?\.esp
+REGEX: SIM.?- NPC.?AdditionsWEREWOLVES\.esp
+  IF CHECKSUM("SIM - NPCAdditionsWEREWOLVES.esp", 28CCA4F1) && IF VAR(EN) DIRTY: 48 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
+    IF CHECKSUM("SIM - NPCAdditionsWEREWOLVES.esp", 28CCA4F1) && IF VAR(RU) DIRTY: 48 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
+      IF CHECKSUM("SIM - NPCAdditionsWEREWOLVES.esp", 28CCA4F1) && IF VAR(ES) DIRTY: 48 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+  //split earlier regex so dirt would report correctly
+Skyrim Immersion Mod - NPCAdditionsHOSTILE.esp
+Skyrim Immersion Mod - NPCAdditionsWEREWOLVES.esp
 SIM - NPCSUBMITTED.esp
 SIM - Treasure Anywhere.esp
 REGEX: .+Waterbugfix\.esp
@@ -12982,6 +12992,13 @@ BBLS-Combined-BoM-HF-OS+DB.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC)
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda)
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
+  IFNOT VAR(BBLS) && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
+    IFNOT VAR(BBLS) && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
+      IFNOT VAR(BBLS) && IF VAR(ES) ERROR: BBLuxurySuite.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
+BBLS-BoM-DB.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Dragonborn (Official Bethesda DLC)
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
@@ -27753,6 +27770,10 @@ REGEX: Kashi(m|m - Ahtar Replacer)?\.esp
   IF FILE("Kashim.esp") || IF FILE("Kashim - Ahtar Replacer.esp") && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF FILE("Kashim.esp") || IF FILE("Kashim - Ahtar Replacer.esp") && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF FILE("Kashim.esp") || IF FILE("Kashim - Ahtar Replacer.esp") && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
+Kate.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
+  IFNOT VAR(SkyUI) REQ: "http://skyrim.nexusmods.com/mods/3863 SkyUI"
+  IFNOT VAR(FNIS) REQ: "http://skyrim.nexusmods.com/mods/11811 Fores New Idles in Skyrim"
 Kawaii followers.esp
 KCustom_ALL_FHC.esp
 KCustom_ALL_FHC_NDO.esp
@@ -30109,6 +30130,8 @@ bbLagerLMBalancingPatch.esp
   IFNOT ACTIVE("LMBalancingDV.esp") && IF VAR(EN) ERROR: LMBalancingDV.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("LMBalancingDV.esp") && IF VAR(RU) ERROR: LMBalancingDV.espp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("LMBalancingDV.esp") && IF VAR(ES) ERROR: LMBalancingDV.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+BBLS-ODPoolNG.esp
+  //BBLS pool vs grass mods
 BVMLandRB_Formlist.esp
   //some vampire mod compat patch, but esp masters not specified in user reports
 CCO - Uninstaller.esp
