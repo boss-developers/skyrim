@@ -315,12 +315,9 @@ Aurora.esm
 basement.esm
 BBLuxurySuite.esm
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
-  IF CHECKSUM("BBLuxurySuite.esm", 523E8FAD) && IF VAR(EN) DIRTY: 5 ITM, 8 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("BBLuxurySuite.esm", 523E8FAD) && IF VAR(RU) DIRTY: 5 ITM, 8 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("BBLuxurySuite.esm", 523E8FAD) && IF VAR(ES) DIRTY: 5 ITM, 8 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-  IF CHECKSUM("BBLuxurySuite.esm", 3C261D2B) && IF VAR(EN) DIRTY: 7 ITM, 8 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("BBLuxurySuite.esm", 3C261D2B) && IF VAR(RU) DIRTY: 7 ITM, 8 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("BBLuxurySuite.esm", 3C261D2B) && IF VAR(ES) DIRTY: 7 ITM, 8 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IF VAR(EN) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
+    IF VAR(RU) SAY: Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.
+      IF VAR(ES) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
 BecomeKingOfRiverHelm.esm
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -7148,6 +7145,8 @@ ArmoredAlikrHoods.esp
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, , ArmoredAlikrGarb.esp.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, , ArmoredAlikrGarb.esp.
 ArmoredAlikrGarb.esp
+ArmoredNocturnal.esp
+  IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
 armorkits.esp
   TAG: {{BASH: Relev}}
 Armor of Justice.esp
@@ -9115,8 +9114,12 @@ LB Dark Lady.esp
   IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
 LB Dragon Princess.esp
   IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
+LB Dwemer Fury Heavy Set.esp
+  IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
 LB_EnemiesEssplode!.esp
   TAG: {{BASH: Relev}}
+LB GoldLeopardRobe.esp
+  IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
 LB_GroveMatronStaff.esp
 LB Jarl Clothes.esp
   IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
@@ -9145,6 +9148,8 @@ LB Necromance Robe.esp
 LB Pantie & Boots.esp
   IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
 LB Jewelry.esp
+  IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
+LB RobeExperiencedMagician.esp
   IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
 LB Santa Babe.esp
   IFNOT VAR(LB) REQ: "http://modgames.net/load/252-1-0-11011 Lady Body".
@@ -13016,32 +13021,32 @@ BBLuxurySuiteExt.esp
   IFNOT VAR(BBLS) && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
     IFNOT VAR(BBLS) && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
       IFNOT VAR(BBLS) && IF VAR(ES) ERROR: BBLuxurySuite.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
-  IF CHECKSUM("BBLuxurySuiteExt.esp", E11BCEE0) && IF VAR(EN) DIRTY: 24 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("BBLuxurySuiteExt.esp", E11BCEE0) && IF VAR(RU) DIRTY: 24 ITM, 3 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("BBLuxurySuiteExt.esp", E11BCEE0) && IF VAR(ES) DIRTY: 24 ITM, 3 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IF VAR(EN) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
+    IF VAR(RU) SAY: Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.
+      IF VAR(ES) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
 BBLSapachii.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 BBLSHousecarlsmovein.esp
   IFNOT VAR(BBLS) && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
     IFNOT VAR(BBLS) && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
       IFNOT VAR(BBLS) && IF VAR(ES) ERROR: BBLuxurySuite.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
-  IF CHECKSUM("BBLSHousecarlsmovein.esp", 1D59D907) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("BBLSHousecarlsmovein.esp", 1D59D907) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("BBLSHousecarlsmovein.esp", 1D59D907) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IF VAR(EN) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
+    IF VAR(RU) SAY: Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.
+      IF VAR(ES) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
 BBLSspouse.esp
   IFNOT VAR(BBLS) && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
     IFNOT VAR(BBLS) && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
       IFNOT VAR(BBLS) && IF VAR(ES) ERROR: BBLuxurySuite.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
-  IF CHECKSUM("BBLSspouse.esp", FD08E557) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("BBLSspouse.esp", FD08E557) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("BBLSspouse.esp", FD08E557) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IF VAR(EN) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
+    IF VAR(RU) SAY: Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.
+      IF VAR(ES) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
 BBLSVisitors.esp
   IFNOT VAR(BBLS) && IF VAR(EN) ERROR: BBLuxurySuite.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
     IFNOT VAR(BBLS) && IF VAR(RU) ERROR: BBLuxurySuite.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
       IFNOT VAR(BBLS) && IF VAR(ES) ERROR: BBLuxurySuite.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin "http://skyrim.nexusmods.com/mods/11427 Bathing Beauties / Beefcakes Luxury Suite".
-  IF CHECKSUM("BBLSVisitors.esp", D208AA75) && IF VAR(EN) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
-    IF CHECKSUM("BBLSVisitors.esp", D208AA75) && IF VAR(RU) DIRTY: 14 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
-      IF CHECKSUM("BBLSVisitors.esp", D208AA75) && IF VAR(ES) DIRTY: 14 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+  IF VAR(EN) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
+    IF VAR(RU) SAY: Не очищать. "Грязные" правки оставлены специально и требуются для функционирования мода.
+      IF VAR(ES) SAY: Do not clean. "Dirty" edits are intentional and required for the mod to function.
 BBLSMotseerOutfits.esp
   IF VERSION("TES5", "1.6.89", <) REQ: Skyrim 1.6.89+
 BBLSmusic.esp
@@ -21924,6 +21929,7 @@ REGEX: ClimatesOfTamriel-(Vanilla)?Nights-(Lvl|Level)-[12345678]\.esp
 ClimatesOfTamriel-WinterEdition.esp
   IF CHECKSUM("ClimatesOfTamriel-WinterEdition.esp", 74DF3C5) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
 prod80_CoT_patch.esp
+prod80_CoT_patch_FogEdition.esp
 IFNOT FILE("rcrnShaders.esp") && IFNOT FILE("rcrnPlus.esp") MOD: ELFXEnhancer.esp
 // ^ Loaded after CoT as it is more specialized.
 Unique Region Names - Dragonborn COT Patch.esp
@@ -29842,6 +29848,10 @@ WATER Plants.esp
   IF CHECKSUM("WATER Plants.esp", 8B011980) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("WATER Plants.esp", 8B011980) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("WATER Plants.esp", 8B011980) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+WATER DG.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
 WATER DB.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC)
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC)
