@@ -642,10 +642,6 @@ GuardedHouseStormcloak.esm
 HBE.esm
 hdtHighHeel.esm
 HelmetToggleMasterFile.esm
-HentaiPregnancy.esm
-  IFNOT ACTIVE("SexLab.esm") && IF VAR(EN) ERROR: SexLab.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
-    IFNOT ACTIVE("SexLab.esm") && IF VAR(RU) ERROR: SexLab.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
-      IFNOT ACTIVE("SexLab.esm") && IF VAR(ES) ERROR: SexLab.esm no se encuentra presente o activado. Skyrim fallara si intentas usar este mod sin el.
 hideout.esm
   IF VAR(EN) && IFNOT CHECKSUM("hideout.esm", F1703639) WARN: Original file was released before the Creation Kit (07 Feb. 2012) a compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch").
     IF VAR(RU) && IFNOT CHECKSUM("hideout.esm", F1703639) WARN: Оригинальный файл был выпущен перед выходом Creation Kit (07 фев. 2012) и будет некорректно работать с Скайрим 1.8 и выше. Совместимый патч, исправленный и очищенный с помощью Tes5Edit, может быть найден "http://skyrim.nexusmods.com/mods/26230 здесь". Если вы используете русифицированную-исправленную версию, то вам не о чем беспокоиться, в противном случае рекомендуется скачать её с указанной по ссылке страницы.
@@ -1000,6 +996,10 @@ SexLab.esm
     IFNOT FILE("meshes\actors\character\animations\SexLab\FNIS_SexLab_List.txt") && IF VAR(RU) ERROR: FNIS_SexLab_List.txt не установлен. Анимации мода не будут добавлены в список FNIS и не будут работать в игре. Перед установкой через Wrye Bash Bain вам необходимо выбрать опцию "Не пропускать ничего" для архива этого мода на вкладке 'Установщики'.
       IFNOT FILE("meshes\actors\character\animations\SexLab\FNIS_SexLab_List.txt") && IF VAR(ES) ERROR: FNIS_SexLab_List.txt is not installed. Animations of mod wont be added in the FNIS list and wont be work in game. Before install through Wrye Bash Bain you should choise 'Override Skips' option for archive of this mod in the 'Installers' tab.
 SexLabAroused.esm
+  IFNOT ACTIVE("SexLab.esm") && IF VAR(EN) ERROR: SexLab.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
+    IFNOT ACTIVE("SexLab.esm") && IF VAR(RU) ERROR: SexLab.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
+      IFNOT ACTIVE("SexLab.esm") && IF VAR(ES) ERROR: SexLab.esm no se encuentra presente o activado. Skyrim fallara si intentas usar este mod sin el.
+HentaiPregnancy.esm
   IFNOT ACTIVE("SexLab.esm") && IF VAR(EN) ERROR: SexLab.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("SexLab.esm") && IF VAR(RU) ERROR: SexLab.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("SexLab.esm") && IF VAR(ES) ERROR: SexLab.esm no se encuentra presente o activado. Skyrim fallara si intentas usar este mod sin el.
@@ -7530,6 +7530,7 @@ BloodWitchArmor.esp
 bluearchmage.esp
 blueglasst.esp
 BlueJeans.esp
+BlueLionArmor.esp
 blueswordcrafter.esp
 BlutKult_Dwarven_Axes.esp
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -7621,6 +7622,7 @@ ENDGROUP: Items B
 
 BEGINGROUP: Items C
 
+c19girl002.esp
 Caius Sword.esp
 Calmdefir.esp
 calyps-animal-ears.esp
@@ -8193,6 +8195,7 @@ Doom Heavy Set.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE"
 Doomshard Bow.esp
 REGEX: d0nutz's armory - Iron (Axes|Daggers|Maces)?\.esp
+DorothyRobes.esp
 Double Axes Standalone.esp
 REGEX: Dovahkiin Mercenary Armor and Weapons (CBBE|UNP)?\.esp
   IF VAR(EN) && IFNOT CHECKSUM("Dovahkiin Mercenary Armor and Weapons CBBE.esp", C376FC4) && IFNOT CHECKSUM("Dovahkiin Mercenary Armor and Weapons UNP.esp", C376FC4) WARN: Contains unexpected (or out of order) records. A compatibility patch fixed and cleaned with TES5Edit can be obtained here. ("http://skyrim.nexusmods.com/mods/26230 Compatibility Patch")
@@ -8935,6 +8938,7 @@ highimpactarrows.esp
 Highlander Katana.esp
 highric Armor.esp
 Highric.esp
+REGEX: HIS(EmmyOutfit|SorakageFarmor|valleAmor|XingXing)\.esp
 HistArmor3.esp
 HmmWhatToWear.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
@@ -9192,15 +9196,7 @@ Jack of Blades' Armour.esp
   IF CHECKSUM("Jack of Blades' Armour.esp", 8DD4B708) && IF VAR(EN) DIRTY: 5 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Jack of Blades' Armour.esp", 8DD4B708) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Jack of Blades' Armour.esp", 8DD4B708) && IF VAR(ES) DIRTY: 5 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-JackshAyaneNArmor.esp
-JackshBabyDoll.esp
-JackshBSJinArmor.esp
-JackshCelineArmor.esp
-JackshClaireArmor.esp
-JackshKasumiArmor.esp
-JackshKasumiNinjaArmor.esp
-JackshKasumiArmor3.esp
-jackshSecretary.esp
+REGEX: Jacksh(AyaneN|BabyDoll|BSJin|Celine|Claire|Kasumi|KasumiNinja|Kasumi|Secretary|Zephie)(Armor)?\d?\.esp
 jammersslavegear.esp
 Janka_Captain.esp
 Janka_Lupina.esp
@@ -9507,6 +9503,7 @@ Lineage 2 Acceossory.esp
 Lineage 2 Weapons.esp
 LingerieSetCBBE3_2ByNausicaa.esp
 lingling_gg.esp
+lingsla.esp
 LinguistPack.esp
 linglingsclothes.esp
 Lion Heart Halberd.esp
@@ -10005,6 +10002,7 @@ OdemsSakabato.esp
   IF CHECKSUM("OdemsSakabato.esp", 2A48FCF) && IF VAR(EN) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("OdemsSakabato.esp", 2A48FCF) && IF VAR(RU) DIRTY: 4 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("OdemsSakabato.esp", 2A48FCF) && IF VAR(ES) DIRTY: 4 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+OdysseyBYW.esp
 OlafsGear.esp
 OldKnightShield.esp
   TAG: {{BASH: Relev}}
@@ -27697,6 +27695,7 @@ REGEX: Better Followers - Specialized( - Not E)?\.esp
 
 // companions a
 AdaliaFollower.esp
+  IF FILE("R1Cots-Refait.esp") INC: R1Cots-Refait.esp
 AdditionalNPCFollwerVoices.esp
 REGEX: aela1.3b?(alt)?(nowarpaint)?\.esp
 Aela v2.esp
