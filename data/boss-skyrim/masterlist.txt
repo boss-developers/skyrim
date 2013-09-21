@@ -3175,6 +3175,11 @@ Clanking Armor.esp
 IFNOT VAR(SoS) MOD: ClimatesOfTamriel-Sound.esp
   IF CHECKSUM("ClimatesOfTamriel-Sound.esp", 47AF2A0B) WARN: This plugin has improperly numbered FormIDs and may have some corruption because it was made with an older version (4.2 or 4.3.x) of TESVSnip.  A fixed version has been sent to the author.  Please look for an update.
 CookingSound.esp
+DaggerSounds4Daggers.esp
+DaggerSounds4Daggers-dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
 DFG's Blade & Dagger Sheathe Sounds.esp
 DragonHitSoundFix.esp
 DragonHitSoundFix - RAS.esp
@@ -7238,6 +7243,7 @@ BEGINGROUP: Items #
   IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
+148_11007_dagger_ma.esp
 18 Black Katanas.esp
 18 Black® Katanas HD ML.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, 18 Black Katanas.esp.
@@ -7567,6 +7573,7 @@ Assassins Crossbow.esp
 Assassins Daggers.esp
 aassassinscraftables.esp
 AssassinsCreedArmor.esp
+AssassinsDagger.esp
 Atlantean Sword.esp
 AtlanteanDragonSlayer.esp
 REGEX: AttTWeapons.?\d\.esp
@@ -8132,6 +8139,7 @@ Crane.esp
 CrazyVaclavsArrows.esp
 crimson dragon armor.esp
 crimsondaedricarmourwip.esp
+CriticalDaggers.esp
 Crossbows_Basic_Collection_DE.esp
   IF CHECKSUM("Crossbows_Basic_Collection_DE.esp", C15ADBB3) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Crossbows_Basic_Collection_DE.esp", C15ADBB3) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -8498,6 +8506,7 @@ Dragonborn Armory E3.esp
     IF CHECKSUM("Dragonborn Armory E3.esp", 52EC060A) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Dragonborn Armory E3.esp", 52EC060A) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Dragonborn Armory Steel.esp
+DragonDagger.esp
 DragonfireCrossbow.esp
   IF CHECKSUM("DragonfireCrossbow.esp", 5596EEF2) && IF VAR(EN) DIRTY: 8 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("DragonfireCrossbow.esp", 5596EEF2) && IF VAR(RU) DIRTY: 8 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -9389,6 +9398,7 @@ Invisible_Helm.esp
     IF CHECKSUM("Invisible_Helm.esp", 3EE48471) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("Invisible_Helm.esp", 3EE48471) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 InvisibleArmorSets.esp
+InvisibleIronDagger.esp
 InvisRing.esp
 IorvethLightArmor_v_1_3.esp
 iorvethlightarmor_v_1_5_DV.esp
@@ -9544,6 +9554,7 @@ KURESE Gloria conversion.esp
   IF VAR(EN) && IF FILE("DIMclothes1.esp") WARN: Redundant. Included in "DIMONIZED UNP clothing resources".
     IF VAR(RU) && IF FILE("DIMclothes1.esp") WARN: Избыточно. Уже включено в "DIMONIZED UNP clothing resources".
 KWTelescope.esp
+KWValdrsLuckyDaggerRedone.esp
 ENDGROUP: Items K
 
 BEGINGROUP: Items L
@@ -10826,6 +10837,7 @@ Space Wiking's The Elementals.esp
   IF CHECKSUM("Space Wiking's The Elementals.esp", 707FDF2E) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Space Wiking's The Elementals.esp", 707FDF2E) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Space Wiking's The Elementals.esp", 707FDF2E) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+SPARXiccdaggers.esp
 Spawn Body.esp
 SpawnAxe.esp
 spawnshield.esp
@@ -14559,6 +14571,7 @@ Daedra in Conjurer Dungeons.esp
       IF CHECKSUM("Daedra in Conjurer Dungeons.esp", EE210836) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 DaedricHideout.esp
 daelusdagger.esp
+Daggercross_Alley.esp
 Dalls_New_Hjerim.esp
 Dalls_New_Vlinderl_Hall.esp
   IF CHECKSUM("Dalls_New_Vlinderl_Hall.esp", 2B75FA2F) && IF VAR(EN) DIRTY: 0 ITM, 2 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
