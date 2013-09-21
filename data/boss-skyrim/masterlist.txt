@@ -4828,6 +4828,7 @@ Food and Ingredient Overhaul.esp
 FixFollowerBow.esp
 FixFollowerBow_12Arrows.esp
 FollowerDaedricBow12.esp
+followerdeathnotice.esp
 FollowerDwarvenBow12.esp
 FollowerEbonyBow12.esp
 FollowerElvenBow12.esp
@@ -7477,6 +7478,7 @@ armor_eisen.esp
 Armor_Tera_HmF_L18.esp
 armoraddon_dragongod.esp
 ArmorAllClothes.esp
+armordraugrfmods ~saqk.esp
 armored armwraps and footwraps.esp
 Armored Bikini - UNPB BBP.esp
 Armored Circlets.esp
@@ -8592,6 +8594,7 @@ DwarvenArmorWeapons.esp
 DwarvenArmorUpgrade.esp
  TAG: {{BASH: Relev}}
 Dwarven Condenser.esp
+dwarvencrossbowfollower.esp
 DwarvenHeroGear.esp
 Dwarven War Cross Bow.esp
   IF CHECKSUM("Dwarven War Cross Bow.esp", 8D6DD2FB) && IF VAR(EN) DIRTY: 6 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -23844,6 +23847,11 @@ spellpack2.esp
 spellpack3.esp
 spellpack4.esp
   //packs are part of forbidden magic
+Follower Recall.esp
+Follower Recall - Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
 Force Grip Mastery.esp
 ForcePush.esp
 ForswornFaolanSummon.esp
@@ -27717,6 +27725,9 @@ Feralfade.esp
 followers alpha9.esp
 followers keep up.esp
 foxpet-petfox.esp
+Follower Pack I.esp
+Follower Pack II.esp
+Follower Pack III.esp
 follower pack orcs.esp
   IF CHECKSUM("follower pack orcs.esp", F226DDFB) && IF VAR(EN) DIRTY: 14 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("follower pack orcs.esp", F226DDFB) && IF VAR(RU) DIRTY: 14 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -28069,9 +28080,14 @@ REGEX: Better Followers - Specialized( - Not E)?\.esp
 00anne.esp
 00Clara.esp
 00jenny.esp
+2Elitefollowers.esp
+2khajiitfollowers.esp
 3BretonGirls1.esp
+3WerewolfFollower.esp
+4 new followers - khajiits [Mittgang] v1.1.esp
 
 // companions a
+aaashadowdogfollower.esp
 AdaliaFollower.esp
   IF FILE("R1Cots-Refait.esp") INC: R1Cots-Refait.esp
 AdditionalNPCFollwerVoices.esp
@@ -28083,8 +28099,16 @@ Aela Wears Wolf Armor Alt.esp
 aela2.esp
 Aela_Plus.esp
 AelaAndLydia.esp
+ah_anolie vampire follower.esp
 AH_Hakar vampire.esp
+ahdg_igneus follower.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+ahearn follower.esp
+AlanordreFollower2.esp
 Alessio Moretti.esp
+AlinaFollower.esp
 angi.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -28121,11 +28145,13 @@ Alicia.esp
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallara si intentas usar este mod sin el.
 All Housecarls Are Hunks.esp
 Alma.esp
+AlvhildeFollower.esp
 AlvhildeLycan.esp
   IF CHECKSUM("AlvhildeLycan.esp", BE4CD149) REQ: "http://skyrim.nexusmods.com/mods/13722 The Eyes of Beauty".
   IF CHECKSUM("AlvhildeLycan.esp", BE4CD149) || IF CHECKSUM("AlvhildeLycan.esp", 4A47C015) && IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IF CHECKSUM("AlvhildeLycan.esp", BE4CD149) || IF CHECKSUM("AlvhildeLycan.esp", 4A47C015) && IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IF CHECKSUM("AlvhildeLycan.esp", BE4CD149) || IF CHECKSUM("AlvhildeLycan.esp", 4A47C015) && IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+Amame_follower.esp
 Amanda.esp
 AmazonianKhajiitAlpha.esp
 AMBSE_Combined.esp
@@ -28140,10 +28166,12 @@ Angelika.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+Angelina Follower.esp
 Angelina Jolie.esp
   REQ: "http://skyrim.nexusmods.com/mods/2666 CBBE female body".
 Angelina Jolie UNP.esp
   REQ: "http://skyrim.nexusmods.com/mods/6709 DIMONIZED UNP female body".
+AnimalFollower.esp
 Annael.esp
 Annekke.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -28164,6 +28192,8 @@ aom_barbarianfollower.esp
 REGEX: aranea1.?\.esp
 Agrenor Replacer.esp
 A Simple Marriage Mod.esp
+ApachiiHairMarriageFollowersFacelifts.esp
+AragornFollower.esp
 DA01Aranea.esp
   IFNOT VAR(EOB) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/13722 TheEyesOfBeauty.esp" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(EOB) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/13722 TheEyesOfBeauty.esp" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
@@ -28175,6 +28205,7 @@ DA01Aranea.esp
     IF CHECKSUM("DA01Aranea.esp", AE596700) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("DA01Aranea.esp", AE596700) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Aranya.esp
+Argan the Follower.esp
 argoniansmore.esp
 ArgorthaFollowerDremora.esp
 Arro.esp
@@ -28193,6 +28224,8 @@ Atari.esp
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda)
 Atvir.esp
+Auleric_Nord_Mage_Follower.esp
+AviFollower.esp
 AWC_ArnulfWarzenSchleggerCompanion.esp
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
 SIUFOAWCPatch.esp
@@ -28240,6 +28273,7 @@ Balimund.esp
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Barbarian Companions.esp
+BarlourArcherFollower.esp
 Barsukov.esp
   IF CHECKSUM("Barsukov.esp", F191D03B) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Barsukov.esp", F191D03B) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -28254,6 +28288,7 @@ better fences.esp
   IF CHECKSUM("better fences.esp", 1E04AAA7) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("better fences.esp", 1E04AAA7) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("better fences.esp", 1E04AAA7) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+BFollowerAlicia.esp
 Bijin Housecarls.esp
 Bijin Warmaidens UNP One esp.esp
 Blaze Of Eventide.esp
@@ -28286,6 +28321,9 @@ BrelynaMaryon.esp
     IF CHECKSUM("BrelynaMaryon.esp", 0A18148F) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("BrelynaMaryon.esp", 0A18148F) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Brothers.esp
+BrynhildrFollower.esp
+BTRH_Followers_ALL.esp
+Butterfly fairy Follower.esp
 REGEX: BVLT - (Argonian|Ashen|Dark Elf|High Elf|Human|Khajiit|Wood Elf)?\.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -28330,6 +28368,7 @@ ChantelleV2.esp
 ChickenFollower.esp
 Child Adoption.esp
 ChildFollower.esp
+Child Follower 2.esp
 Cicero.esp
   REQ: "http://skyrim.nexusmods.com/mods/3421 Nude Male with Roberts New Vegas male"
 CinderFrost.esp
@@ -28413,11 +28452,21 @@ Delphine.esp
       IF CHECKSUM("Delphine.esp", F91A519E) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 DelphineMarryn.esp
 Demon Horse.esp
+Devani follower.esp
+DexenaFollower.esp
 REGEX: DFH_.+\.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 Divada.esp
+dlc1 follower for unholy ~saqk.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+dlc1 follower vega ~saqk.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
 DogCompanions.esp
 DogsRevamped.esp
 REGEX: Dova's Angels - (Iona|Jordis|Lydia|Mjoll|Saadia|Sylgja|Uthgerd)?\ - V(4|5)?\.esp
@@ -28531,8 +28580,10 @@ ExtraBlades.esp
   IF CHECKSUM("ExtraBlades.esp", 8F9B3B9C) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("ExtraBlades.esp", 8F9B3B9C) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("ExtraBlades.esp", 8F9B3B9C) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guía "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aquí".
+Ezio Follower.esp
 
 // companions f
+FaceliftMarriageFollowers.esp
 REGEX: SimplyFaendal(NoArmor|Specialized)?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -28541,6 +28592,8 @@ REGEX: UniqueFaendal(Specialized)?\.esp
   IF VAR(EN) SAY: Use only one UniqueFaendal esp.
     IF VAR(RU) SAY: Используйте только один UniqueFaendal esp.
       IF VAR(ES) SAY: Utilizar solo un UniqueFaendal esp.
+FamousFollowerDaenerys.esp
+Fantastic Followers.esp
 FaseleTheCompanion.esp
   IF CHECKSUM("FaseleTheCompanion.esp", F3D542DB) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("FaseleTheCompanion.esp", F3D542DB) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -28553,10 +28606,12 @@ FelixConstantine.esp
   REQ: "http://skyrim.nexusmods.com/mods/1971 Smooth Faces for Ladies and Gents"
   REQ: "http://skyrim.nexusmods.com/mods/3424 Pretty Eyes"
 fenrir-follower.esp
+Fergie Follower.esp
 Fezzik the Giant.esp
   IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) || IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) || IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("Fezzik the Giant.esp", 3D97A0E0) || IF CHECKSUM("Fezzik the Giant.esp", 9ED962E7) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
+ff_fantasyfollowers.esp
 FFBosmer.esp
 FFDogs.esp
   IF Checksum ("FFDogs.esp", 907CBDCD) WARN: Broken as per "http://skyrim.nexusmods.com/mods/30297 author's notes"
@@ -28606,10 +28661,43 @@ FFNords.esp
 Final Fantasy 7.esp
 FionaValentine.esp
 FOL_Anduniel.esp
+Follower Fantasia.esp
+Follower - Glash.esp
+follower - keiran ~saqk.esp
+follower - kostbera.esp
+follower - valkyria ~saqk.esp
+Follower ArwynRevised.esp
+follower carmine - vampire hunter ~saqk.esp
+follower dar'hausin.esp
+follower deathscale.esp
+Follower Fantasia.esp
+follower gothel.esp
+Follower Michelle.esp
+follower ortraug.esp
+follower oveena.esp
+follower pack 1.esp
+follower qa'raazi.esp
+follower ra'girr.esp
+follower veeva.esp
+follower wisp.esp
+followeraderen.esp
+FollowerArwynCBBE.esp
+followerazzan.esp
 FollowerBerserker.esp
   IF CHECKSUM("FollowerBerserker.esp", 5A8CEE25) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("FollowerBerserker.esp", 5A8CEE25) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("FollowerBerserker.esp", 5A8CEE25) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+FollowerElanin.esp
+FollowerFacelifts.esp
+FollowerFaceliftsDawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+FollowerFaceliftsHearthfire.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
+FollowerMichelleCBBE.esp
 FollowerSaber.esp
   IF CHECKSUM("FollowerSaber.esp", 515D1F46) && IF VAR(EN) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("FollowerSaber.esp", 515D1F46) && IF VAR(RU) DIRTY: 4 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -28625,6 +28713,7 @@ REGEX: FTBS_.+\.esp
 
 // companions g
 GameofThrones-Followers.esp
+GarrikFollower.esp
 Gli Beindae.esp
   IF VAR(EN) WARN: This file contains <x> deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит <x> удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
@@ -28636,6 +28725,8 @@ Grandies_Companion_by_kill.esp
   IF CHECKSUM("Grandies_Companion_by_kill.esp", F1E5D380) || IF CHECKSUM("Grandies_Companion_by_kill.esp", 03490D91) || IF CHECKSUM("Grandies_Companion_by_kill.esp", B59E33FE) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("Grandies_Companion_by_kill.esp", F1E5D380) || IF CHECKSUM("Grandies_Companion_by_kill.esp", 03490D91) || IF CHECKSUM("Grandies_Companion_by_kill.esp", B59E33FE) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("Grandies_Companion_by_kill.esp", F1E5D380) || IF CHECKSUM("Grandies_Companion_by_kill.esp", 03490D91) || IF CHECKSUM("Grandies_Companion_by_kill.esp", B59E33FE) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
+gretchenlowellfollower.esp
+Greybeardfollower.esp
 gurilmage.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
@@ -28716,6 +28807,7 @@ HousecarlWhiterun Sexy Lydia v0.5.esp
   IF CHECKSUM("HousecarlWhiterun Sexy Lydia v0.5.esp", 7C29388F) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     IF CHECKSUM("HousecarlWhiterun Sexy Lydia v0.5.esp", 7C29388F) && IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF CHECKSUM("HousecarlWhiterun Sexy Lydia v0.5.esp", 7C29388F) && IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
+Husky Followers.esp
 Hvergelmir's Redesigned Housecarls - HRH.esp
 
 // companions i
@@ -28956,6 +29048,7 @@ Lydia.esp
   //IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
     //IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       //IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
+lydia overhaul for skyrim ~saqk.esp
 Lydia_CombatDual.esp
 Lydia_CombatRanger.esp
   IF FILE("Lydia_CombatDual.esp") INC: Lydia_CombatDual.esp
@@ -29245,6 +29338,7 @@ orccompanion.esp
 OrientalHouseCarlReplacer.esp
 
 // companions p
+payne frostfall ~saqk.esp
 PGJeaneleBreton Follower.esp
 Pluto.esp
   IF CHECKSUM("Pluto.esp", 93C03B35) && IF VAR(EN) WARN: This file contains unexpected (or out of order) records and should be removed.
@@ -29289,6 +29383,7 @@ Sackman_Follower.esp
 Sako Proudmane.esp
 Salit.esp
 sapphiremarriage.esp
+saqk_cara - follower [companion].esp
 SaraliFollower.esp
   IF CHECKSUM("SaraliFollower.esp", A280FCC8) && IF VAR(EN) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("SaraliFollower.esp", A280FCC8) && IF VAR(RU) DIRTY: 6 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -29525,6 +29620,7 @@ Uthgerd von Wölfe.esp
 
 // companions v
 Vampgirl.esp
+veronika for skyrim ~saqk.esp
 
 // companions w
 WalksInShadows.esp
@@ -31375,6 +31471,8 @@ DiversePriests_ConsistentOlderPeoplePatch.esp
     IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(RU) ERROR: SPTConsistentOlderPeople.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("SPTConsistentOlderPeople.esp") && IF VAR(ES) ERROR: SPTConsistentOlderPeople.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
 DragonCombatOverhaul - Requiem Patch.esp
+FollowerCompatibility.esp
+  //reported order-independent; meshes special followers with follower systems
 GDFoodCompatability.esp
 GeneralStores-SkyMoMod.esp
 GeneralStores(CCS-DG).esp
