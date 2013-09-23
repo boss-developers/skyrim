@@ -2515,6 +2515,10 @@ Clothing & Clutter Fixes.esp
 SMPC.esp
   IFNOT VAR(USKP) REQ: Unofficial Skyrim Patch.esp
   //summer 2013: this is a rename of USKP_addon, now suggested to load after the normal slate of unofficials, not just after USKP -LD
+SMPC HF Safes eng.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
 Weapons & Armor Fixes_Dawnguard.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -3532,7 +3536,8 @@ REGEX: Del_ConditionalCombatMusic( - DnDP| - Most Epic| - H| - FMOR Non-Replace|
 FixCombatMusic.esp
 morrowind_mm_theme.esp
 REGEX: PersonalizedMusic.*\.esp
-REGEX: PM_.+Music_(NoVanilla_)?v.+\.esp
+REGEX: PM_.+Music_(NoVanilla_)?.+v.+\.esp
+Player Home Tavern Music.esp
 skyrimsoundtrackexpansion.esp
   IF CHECKSUM("skyrimsoundtrackexpansion.esp", 06FA5890) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("skyrimsoundtrackexpansion.esp", 06FA5890) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -5848,7 +5853,6 @@ ENDGROUP: Base N
 
 BEGINGROUP: Base O
 
-REGEX: Oblivion Gates v3.*\.esp
 REGEX: Oblivious Horses.*\.esp
   IF VAR(EN) SAY: Use only one Oblivious Horses esp.
     IF VAR(RU) SAY: Используйте только один Oblivious Horses esp.
@@ -6004,6 +6008,7 @@ REGEX: Radiant and Unique Potions (and )?Poisons.*\.esp
   IF FILE("Radiant and Unique Potions Poisons and BOOZE.esp") && IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(EN) SAY: Uninstall Unique BOOZE Bottles.
     IF FILE("Radiant and Unique Potions Poisons and BOOZE.esp") && IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(RU) SAY: Деинсталируйте Unique BOOZE Bottles.
       IF FILE("Radiant and Unique Potions Poisons and BOOZE.esp") && IF REGEX("Unique BOOZE Bottles.*\.esp") && IF VAR(ES) SAY: Desinstala Unique BOOZE Bottles.
+RE_RealEstate.esp
 real crossbow smithing.esp
 Real Days.esp
 real glaciers.esp
@@ -6125,6 +6130,7 @@ RingOfDragonborn.esp
 RiftenHQtexture-Part1.esp
 RiftenHQtexture-Part2.esp
 RiftenSmelter.esp
+Riverwood Guest Chest v1.1a.esp
 Riverwood Smelter.esp
 riverwood addons.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, riverwood flora.esp.
@@ -16766,6 +16772,10 @@ Overlook Tower - MAINv1.9b.esp
     IF VAR(RU) WARN: Этот файл содержит 3 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 3 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859sTES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
 overlord.esp
+owenholiday-hearthfire-windstadmanor_fortify.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
 owninggoldenglowestate.esp
 ENDGROUP: Quests O
 
@@ -16794,9 +16804,11 @@ Player House.esp
   IF VAR(EN) WARN: This file contains 6 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 6 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 6 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859sTES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
+playerguildbuilding.esp
 PlayerMansion.esp
 _pocketcraftshop.esp
 Portal.esp
+Prefect House.esp
 Princess Breezehome Extension.esp
 PrisonUpdate.esp
   IFNOT ACTIVE("Prison.esm") && IF VAR(EN) ERROR: Prison.esm is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -16851,6 +16863,7 @@ proudspiregarden.esp
       IF CHECKSUM("proudspiregarden.esp", 1E2D0B39) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Proudspire Manor - Dragonborn Edition.esp
 proudspire manor armory.esp
+proudspire manor armory3.esp
 Proudspire Manor Refurbished.esp
   IF CHECKSUM("Proudspire Manor Refurbished.esp", CDE3CA7C) && IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
     IF CHECKSUM("Proudspire Manor Refurbished.esp", CDE3CA7C) && IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
@@ -16972,6 +16985,7 @@ Rashiik.esp
 ravenbeakbarrow.esp
 RavenNest.esp
 RayeksEnd.esp
+rayeksendanddungeon.esp
 razorshade.esp
 ReachHome.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, Ranger's Valley Lodge.esp.
@@ -17002,6 +17016,7 @@ Reaper's Landscape - The Dead Forest.esp
   IF VAR(EN) WARN: This file contains 5 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 5 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 5 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859sTES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
+RefugeHauteBrume.esp
 RefurbishedBreezehome-2-0.esp
   IF CHECKSUM("RefurbishedBreezehome-2-0.esp", 33227B6) && IF VAR(EN) DIRTY: 8 ITM, 69 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("RefurbishedBreezehome-2-0.esp", 33227B6) && IF VAR(RU) DIRTY: 8 ITM, 69 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -17039,6 +17054,7 @@ Ridgeview House.esp
   IF VAR(EN) WARN: This file contains 3 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 3 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 3 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859sTES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
+rift.esp
 Riften Bivouac.esp
 Riften Hideout.esp
 Riften Small.esp
@@ -17047,6 +17063,7 @@ riftenshack.esp
 riften_back_entrance.esp
 RiftenBetterDocks.esp
 Riften Riverside Home.esp
+RiftStormcloaks.esp
 RiftSValleyHHouse.esp
 RiftwealdPlayerHome-0.7.esp
 RingoftheDamnedWolf.esp
@@ -17126,6 +17143,7 @@ RiverwoodRepose.esp
 riverwoodmine.esp	  
 RiverWoodShack.esp
 riverwoodpicnicarea.esp
+RiverwoodTower.esp
 robbersroost.esp
 ROEBETA.esp
   IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE".
@@ -17261,6 +17279,16 @@ SCA - Skyrim Character Archetypes (Beta).esp
 scbbnoman.esp
 Schmidts Tunnel.esp
 Tunnel Book.esp
+ScholarsSolace.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 scholomance.esp
 Scout Addon for ATIC.esp
 Quest_SeaOfGhosts.esp
@@ -17303,6 +17331,10 @@ Sentinel Falls.esp
 Seri'sAtelier Dubious Inn.esp
 REGEX: SBT Smal\d\.esp
 Sevenkeys.esp
+SeverinHouseRemodelV3.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 Shack.esp
   IF CHECKSUM("shack.esp", E0E3CF38) && IF VAR(EN) DIRTY: 54 ITM, 7 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("shack.esp", E0E3CF38) && IF VAR(RU) DIRTY: 54 ITM, 7 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -17371,6 +17403,7 @@ ShezrieUTFalkreath.esp
 ShezrieUTNightgateInn.esp
 ShezrieUTWinterhold.esp
 ShipHome.esp
+showersininns.esp
 Shrine Of Kharjo.esp
   /* Version 1.5 (CRC: 1F0D9E37) */
   // TES5Edit 3.0.30: 8 ITM, 3 UDR, 0 deleted NavMeshes.
@@ -17397,6 +17430,7 @@ silverfish.esp
   IF CHECKSUM("silverfish.esp", 9E33B059) && IF VAR(EN) DIRTY: 103 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("silverfish.esp", 9E33B059) && IF VAR(RU) DIRTY: 103 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("silverfish.esp", 9E33B059) && IF VAR(ES) DIRTY: 103 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+simple house4.esp
 simplebreezehome.esp
 SimpleVariedStart.esp
 Simply Improved Breezehome.esp
@@ -17407,6 +17441,13 @@ Simply Improved Breezehome.esp
     IF VAR(RU) WARN: Этот файл содержит 1 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 1 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859sTES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
 Sincar Barrens.esp
+Sjel Blad Castle.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 SK_Berserk.esp
   IF CHECKSUM("SK_Berserk.esp", C30C6667) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("SK_Berserk.esp", C30C6667) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -17414,6 +17455,7 @@ SK_Berserk.esp
 SkoomaShip.esp
 skooma cabin.esp
 SKY.esp
+Sky Residence.esp
 skyforge retreat.esp
 SkyforgeDead1.esp
   IF CHECKSUM("SkyforgeDead1.esp", 57644FB9) && IF VAR(EN) DIRTY: 6 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -17622,6 +17664,7 @@ SovngardeQuest.esp
       IF CHECKSUM("SovngardeQuest.esp", D50921F7) && IF VAR(ES) DIRTY: 16 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 SpouseLife.esp
 SpouseStoreMod.esp
+springwatch 1.0.esp
 SPSPB.esp
 SSG_SecundasWatch.esp
 SSHjerimMod.esp
@@ -17642,6 +17685,7 @@ Star-NorthernFrostBrewery.esp
   IF VAR(EN) WARN: This file contains 9 deleted NavMesh record(s) that TES5Edit cannot repair automatically and it may cause problems with your game. NavMesh deletions should be reported to the mod author. A guide to repairing NavMesh deletions with "http://skyrim.nexusmods.com/mods/25859 TES5Edit" is located "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html here".
     IF VAR(RU) WARN: Этот файл содержит 9 удаленных NavMesh-записей, которые не могут быть исправлены в TES5Edit, что может вызывать проблемы в игре. Инструкция по восстановлению этих записей, с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit", может быть найдена "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html здесь".
       IF VAR(ES) WARN: Este archivo contiene 9 entradas NavMesh borradas que TES5Edit no puede reparar automaticamente y podrian causar problemas con tu juego. NavMesh borrados deben ser reportados al autor del mod. Una guía para repararlos con "http://skyrim.nexusmods.com/mods/25859sTES5Edit" se puede encontrar "http://www.iguanadons.net/Skyrim-Fixing-Navmesh-Deletion-Using-TES5Edit-511.html aquí".
+Starter tent.esp
 SteepledHat's Riverwood Home.esp
 SteezMyster's Dungeon.esp
   IF CHECKSUM("SteezMyster's Dungeon.esp", FDD3C5FD) && IF VAR(EN) DIRTY: 13 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -21112,6 +21156,10 @@ RangerNightingale.esp
     IF FILE("BowAssassin.esp") IF VAR(RU) WARN: Используйте любой, или BowAssassin.esp или RangerNightingale.esp, не оба.
       IF FILE("BowAssassin.esp") IF VAR(ES) WARN: Usar BowAssassin.esp o RangerNightingale.esp, no ambos.
 Raptor Talon Argonians.esp
+Rayg_NoBYOHAttacks.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
 ReadIt.esp
 Real 1st Person View alpha 03c.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, Real 1st Person View.esp.
@@ -22458,6 +22506,7 @@ Riverwood Enhanced - NO NPC.esp
       IF FILE("Riverwood Enhanced.esp") || IF FILE("Riverwood Enhanced - Detailed Cities.esp") && IF VAR(ES) WARN: Utilizar solo un Riverwood Enhanced *.esp.
 riverwood gates.esp
 Riverwood R9D.esp
+Riverwood Reborn.esp
 RiverwoodEnhancedPlugin.esp
   IF FILE("Lanterns Of Skyrim - All In One - Main.esm") SAY: Use the "http://skyrim.nexusmods.com/mods/ Lanterns of Skyrim and Towns and Villages Enhanced patch" instead to have Lanterns of Skyrim work properly with Towns and Villages Enhanced - Riverwood.
   IF FILE("LoS and RE patch.esp") ERROR: Remove. LoS and RE patch.esp is designed as a replacement for RiverwoodEnhancedPlugin.esp, not an add-on.
@@ -22473,6 +22522,7 @@ seadragonoasis.esp
   IF CHECKSUM("seadragonoasis.esp", B28EEC06) && IF VAR(EN) DIRTY: 296 ITM, 3 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("seadragonoasis.esp", B28EEC06) && IF VAR(RU) DIRTY: 296 ITM, 3 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("seadragonoasis.esp", B28EEC06) && IF VAR(ES) DIRTY: 296 ITM, 3 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+shorsstoneinn.esp
 Shortcuts.esp
 Solitude A City Of Trade.esp
   IF FILE("Solitude A City Of Trade.esm") INC: Solitude A City Of Trade.esm
@@ -22688,8 +22738,7 @@ Oblivion Gates.esp
   IF CHECKSUM("Oblivion Gates.esp", EEBBFF41) || IF CHECKSUM("Oblivion Gates.esp", ED42650C) && IF VAR(EN) DIRTY: 82 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Oblivion Gates.esp", EEBBFF41) || IF CHECKSUM("Oblivion Gates.esp", ED42650C) && IF VAR(RU) DIRTY: 82 ITM, 1 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Oblivion Gates.esp", EEBBFF41) || IF CHECKSUM("Oblivion Gates.esp", ED42650C) && IF VAR(ES) DIRTY: 82 ITM, 1 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-Oblivion Gates v3 - Skyrim + Dawnguard DLC.esp
-Oblivion Gates v3 without Markers - Skyrim + Dawnguard DLC.esp
+REGEX: Oblivion Gates v3.*\.esp
 SummerSkyrim.esp
   IF CHECKSUM("SummerSkyrim.esp", C5BF6C9D) && IF VAR(EN) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("SummerSkyrim.esp", C5BF6C9D) && IF VAR(RU) DIRTY: 0 ITM, 1 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -24616,6 +24665,7 @@ spelllumen.esp
 SpellMassForce.esp
 SpellMasterOfTheTimeAndSpace.esp
 spellphantomform.esp
+SpellTome - Escape.esp
 spelltomeconjureetherealhorse.esp
 Spells and Incantations.esp
 Spells by Chaszyrr.esp
@@ -29800,6 +29850,10 @@ Rayya Housecarl Makeover GRW.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+RayyaMakeOver.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC)
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Это может вызвать падения игры при загрузке без требуемого им файла Hearthfires (Official Bethesda DLC)
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda)
 RC_Cara_v1.esp
 ria1.esp
 Ria v2.esp
