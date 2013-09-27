@@ -1845,6 +1845,10 @@ Headtracking Fix - Skyrim.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp.
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
       IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
+Headtracking Fix - Dawnguard.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
 HelmetStackFix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp.
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
@@ -3880,6 +3884,7 @@ REGEX: Arrowsmith\w{0,2}\.esp
   IF VAR(EN) && IF FILE("Arrowsmith.esp") && IF VAR(CCO) ERROR: Delete. Already included in Complete Crafting Overhaul.
     IF VAR(RU) && IF FILE("Arrowsmith.esp") && IF VAR(CCO) ERROR: Удалите. Уже включен в мод Complete Crafting Overhaul.
       IF VAR(ES) && IF FILE("Arrowsmith.esp") && IF VAR(CCO) ERROR: Borrar. Ya esta incluido en Complete Crafting Overhaul.
+arrowsmith-german.esp
 arrowsmith-dawnguard.esp
   IF FILE("Arrowsmith.esp") INC: Arrowsmith.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
@@ -5104,6 +5109,10 @@ Hearthfires Helper.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
+hearthfires_blacksmithmaterials.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
 Hecatic.esp
 helganstartinggear.esp
 hellayracedesc.esp
@@ -5876,6 +5885,8 @@ Omega Death.esp
   IF CHECKSUM("Omega Death.esp", AF7B99C2) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Omega Death.esp", AF7B99C2) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Omega Death.esp", AF7B99C2) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+Open Empty Containers.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 ORM-Arvak.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC)
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC)
@@ -8947,6 +8958,7 @@ EvolvingBoundWeapons.esp
     IF CHECKSUM("EvolvingBoundWeapons.esp", 475D55F6) && IF VAR(RU) DIRTY: 5 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("EvolvingBoundWeapons.esp", 475D55F6) && IF VAR(ES) DIRTY: 5 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 ExiledBladesArmor.esp
+ExoticBow.esp
 exparrow.esp
   IF CHECKSUM("exparrow.esp", DE5FA17B) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("exparrow.esp", DE5FA17B) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -9261,7 +9273,6 @@ HartherzEnglish.esp
   IF CHECKSUM("HartherzEnglish.esp", D1207154) && IF VAR(EN) DIRTY: 1 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("HartherzEnglish.esp", D1207154) && IF VAR(RU) DIRTY: 1 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("HartherzEnglish.esp", D1207154) && IF VAR(ES) DIRTY: 1 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
-hearthfires_blacksmithmaterials.esp
 HeartOfThunder.esp
   IF CHECKSUM("HeartOfThunder.esp", 2CA96833) && IF VAR(EN) DIRTY: 37 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("HeartOfThunder.esp", 2CA96833) && IF VAR(RU) DIRTY: 37 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -10627,6 +10638,7 @@ BEGINGROUP: Items Q
 QSMChaos.esp
 qsmspacemarinearmor.esp
 qsmweaponpack.esp
+Quarterstaff.esp
 Quests-Timing Book.esp
 ENDGROUP: Items Q
 
@@ -11331,6 +11343,7 @@ The Ring of Night-Eye.esp
 TheDarkFollowerArmor.esp
 TheViciousHeart.esp
 Lorecraft - ViciousWeaps.esp
+thisissparta.esp
 Throwing Knives.esp
 Tifa.ff7.byHimmelsky.esp
 Tifa.ff7.Orignalcloth by Himmelsky.esp
@@ -20080,6 +20093,7 @@ Distant DetailHF.esp
   IF CHECKSUM("Distant DetailHF.esp", 7AE9614F) && IF VAR(EN) DIRTY: 694 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Distant DetailHF.esp", 7AE9614F) && IF VAR(RU) DIRTY: 694 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Distant DetailHF.esp", 7AE9614F) && IF VAR(ES) DIRTY: 694 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+DistinctHoldGuards.esp
 DiversePriests.esp
 DiversePriests_BringOutYourDeadPatch.esp
   IFNOT ACTIVE("DiversePriests.esp") && IF VAR(EN) ERROR: DiversePriests.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
@@ -21840,6 +21854,7 @@ Skyrim Dark.esp
   // TAG: {{BASH: Names, Invent}}
 Skyrim Smithing Components Rebalanced Full Version.esp
 Skyrim Trade Guild.esp
+SkyTEST-Settings.esp
 REGEX: SkyTEST-RealPredators(\&Animals)?\.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
@@ -24936,6 +24951,7 @@ RunesImproved.esp
 // spells s
 REGEX: SC_Modular Magic - .+\.esp
 ShockFrostFamiliars.esp
+ShrinkRay.esp
 Skyrim Spells Restored.esp
 SkyrimForBattleMagic.esp
 SMARTS.esp
@@ -26772,6 +26788,7 @@ Archery Perk Mods Toned Down.esp
       IF CHECKSUM("Archery Perk Mods Toned Down.esp", 964625C0) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 ArcheryPowerBalance.esp
 AllowVampireLordAction.esp
+archeryperks.esp
 ArmorsmithAndWeaponsmithV1.0.esp
 ArmorsmithAndWeaponsmithV1.1.esp
 assassin pack.esp
@@ -27880,6 +27897,7 @@ GiantChild.esp
   IF VAR(EN) SAY: Obsolete. Update to latest version, GiantChild.esm.
     IF VAR(RU) SAY: Устарело. Обновите до последней версии, GiantChild.esm.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión, GiantChild.esm.
+Greybeard Playable.esp
 GreybeardRace.esp
 Half Orc Race.esp
   IFNOT VAR(RaceComp) && IF VAR(EN) ERROR: RaceCompatibility.esm is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/24168 RaceCompatibility".
@@ -30189,6 +30207,7 @@ Rowena Frostmoor.esp
 
 // companions s
 Saadia-Dovas_Angels-TCG.esp
+sabre_cat_friend.esp
 Sackman_Follower.esp
 Sako Proudmane.esp
 Salit.esp
@@ -30879,6 +30898,9 @@ Guardian HeadQuarters.esp
   // Must load after AmazingFollowerTweaks.esp
 zzz_Jenassa_MAKEOVER_by83Willow.esp
   // Must load after AmazingFollowerTweaks.esp
+Subjugation.esp
+  //A spell as a whole follower system, but recommended to have other follower systems alongside. Unsure of placement wrt AFT- LD
+
 
   // seems to be about the only place where the dialog override works for all khajiit...
 mjhKhajiitSpeak.esp
