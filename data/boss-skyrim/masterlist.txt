@@ -1669,8 +1669,6 @@ Conjuration Fix.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
       IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
 correctif ombres.esp
-CP_GourdIngredient.esp
-  //would normally go in base c, but given a reported bunch of wild edits, a user suggests to place above uskp until fixed -LD
 CriticalChargeFix.esp
   IF VAR(EN) && IF VAR(USKP) ERROR: Delete. Already included in Unofficial Skyrim Patch.esp.
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
@@ -4488,6 +4486,8 @@ CP Apple Trees.esp
   IF CHECKSUM("CP Apple Trees.esp", C4E6FAF8) && IF VAR(EN) DIRTY: 2 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("CP Apple Trees.esp", C4E6FAF8) && IF VAR(RU) DIRTY: 2 ITM, 1 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("CP Apple Trees.esp", C4E6FAF8) && IF VAR(ES) DIRTY: 2 ITM, 1 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+CP_GourdIngredient.esp
+  //travelling gourd moved to Base per Sharlikran advice- LD
 cplesourcelight.esp
 CrabMeatShitaraba.esp
 Craft, Temper, Smelt.esp
@@ -15134,6 +15134,7 @@ Candle Pond Ranch.esp
       IF CHECKSUM("Candle Pond Ranch.esp", 8B643328) && IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
   IF FILE("Candle Pond Ranch Default Mannequin.esp") INC: Candle Pond Ranch Default Mannequin.esp
 caos tools- ninjaweaps.esp
+capes.esp
 cascade_house.esp
 Castle Brennenburgh.esp
   IF CHECKSUM("Castle Brennenburgh.esp", A1786E09) && IF VAR(EN) DIRTY: 25 ITM, 9 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -21701,6 +21702,14 @@ Mikaelarps disenchantable artifacts.esp
 MiningFaster.esp
 MiningMore.esp
 MISELF_Atromancy.esp
+mjhCulturalDiversity - Khajiit Clothes.esp
+mjhCulturalDiversity - Khajiit Clothes Wet and Cold.esp
+mjhCulturalDiversity - Khajiit Armor.esp
+mjhCulturalDiversity - Kharjo.esp
+mjhCulturalDiversity - Argonian Armor.esp
+mjhCulturalDiversity - Argonian Dock Workers.esp
+mjhCulturalDiversity - Dunmer Clothes and Armor.esp
+mjhCulturalDiversity - Aranea Ienith.esp
 mjhReducedGoldRewards.esp
 mjhSkyForgeWolfArmor.esp
 mjoll reduced dialogue.esp
@@ -29889,6 +29898,7 @@ better fences.esp
   IF CHECKSUM("better fences.esp", 1E04AAA7) && IF VAR(EN) DIRTY: 2 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("better fences.esp", 1E04AAA7) && IF VAR(RU) DIRTY: 2 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("better fences.esp", 1E04AAA7) && IF VAR(ES) DIRTY: 2 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+better mage followers.esp
 BFollowerAlicia.esp
 Bijin Housecarls.esp
 Bijin Warmaidens UNP One esp.esp
@@ -29897,6 +29907,7 @@ BloodMerchant.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+BobbyBonesCompanion.esp
 Borgakh2.esp
 BorgakhnewEN.esp
 REGEX: Braithwen Fernleaf( Archer| Auburn| Auburn Auto)?\.esp
@@ -29979,6 +29990,7 @@ CGKarena.esp
   // not all versions need the hair esm
 Chadeaux.esp
 ChantelleV2.esp
+ChickenCompanion.esp
 ChickenFollower.esp
 Child Adoption.esp
 ChildFollower.esp
@@ -29989,6 +30001,7 @@ CinderFrost.esp
   IFNOT VAR(ApachiiHair) && IF VAR(EN) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT VAR(ApachiiHair) && IF VAR(RU) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT VAR(ApachiiHair) && IF VAR(ES) ERROR: "http://skyrim.nexusmods.com/mods/10168 ApachiiHair.esm" no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+Civil War Followers.esp
 Claire.esp
 ClaudiaVampireCompanion.esp
 CleanBalimund.esp
@@ -29998,6 +30011,24 @@ CleanBalimund.esp
 Clyde.esp
 CK's Companions.esp
 Collegio People.esp
+companion Dawnstar.esp
+Companion Falkreath.esp
+Companion Greybeards.esp
+Companion Markarth.esp
+Companion Morthal.esp
+Companion Orcish stronghold.esp
+Companion Riften.esp
+Companion Solitude.esp
+Companion Sylgja.esp
+Companion Whiterun.esp
+Companion Windhelm.esp
+Companion Winterhold.esp
+companion_DragonAge.esp
+Companion_Milla.esp
+Companion_Monica.esp
+CompanionKhalDrogo.esp
+Companions Dark Brotherhood.esp
+Companions MakeOver.esp
 CompanionsAriseFinal.esp
   IF CHECKSUM("CompanionsAriseFinal.esp", 49701951) && IF VAR(EN) DIRTY: 17 ITM, 16 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("CompanionsAriseFinal.esp", 49701951) && IF VAR(RU) DIRTY: 17 ITM, 16 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
@@ -30006,6 +30037,7 @@ CompanionsAriseFinal.esp
     IF VAR(RU) SAY: Этот мод скорее всего конфликтует с другими модами на изменение компаньонов
       IF VAR(ES) SAY: This mod will most likely conflict with other Companions altering mods.
 Companionsguildrevamp.esp
+CompanionSonja.esp
 CM - Niia v1-1.esp
 CMBeautifulCompanions.esp
 CMBoethiahSacrifice.esp
@@ -30101,6 +30133,9 @@ REGEX: Dova's Angels - (Iona|Jordis|Lydia|Mjoll|Saadia|Sylgja|Uthgerd)?\ - V(4|5
     IF VAR(RU) WARN: Этот файл содержит неверные записи. Рекомендуется удалить.
       IF VAR(ES) WARN: Este archivo contiene entradas fuera de orden y debe ser removido.
 Dovabear.esp
+DovahkiinCompanion_Puny.esp
+DovahkiinCompanion_Mediocre.esp
+DovahkiinCompanion_Tank.esp
 Dragonn.esp
 Dragoon.esp
   IF CHECKSUM("Dragoon.esp", B683CACB) && IF VAR(EN) DIRTY: 0 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -30130,8 +30165,10 @@ Dryad Saria.esp
   IF CHECKSUM("Dryad Saria.esp", 3141F2BA) && IF VAR(EN) DIRTY: 3 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Dryad Saria.esp", 3141F2BA) && IF VAR(RU) DIRTY: 3 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Dryad Saria.esp", 3141F2BA) && IF VAR(ES) DIRTY: 3 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+dspiderfollow.esp
 dunDarklightIllia.esp
 DwarfsRaceFollowers.esp
+DwemerDroidCompanion.esp
 
 // companions e
 EACalypso.esp
@@ -30226,6 +30263,7 @@ REGEX: UniqueFaendal(Specialized)?\.esp
   IF VAR(EN) SAY: Use only one UniqueFaendal esp.
     IF VAR(RU) SAY: Используйте только один UniqueFaendal esp.
       IF VAR(ES) SAY: Utilizar solo un UniqueFaendal esp.
+FalmerCompanion.esp
 familypetfix.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
@@ -30300,6 +30338,8 @@ FFNords.esp
       IF CHECKSUM("FFNords.esp", 32CDDEAF) && IF VAR(ES) DIRTY: 6 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 Final Fantasy 7.esp
 FionaValentine.esp
+FishCompanion.esp
+fiveashcompanion01.esp
 FOL_Anduniel.esp
 Follower Fantasia.esp
 Follower - Glash.esp
@@ -30337,6 +30377,7 @@ FollowerFaceliftsHearthfire.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
+FollowerMagicEdit.esp
 FollowerMichelleCBBE.esp
 FollowerSaber.esp
   IF CHECKSUM("FollowerSaber.esp", 515D1F46) && IF VAR(EN) DIRTY: 4 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -31812,6 +31853,8 @@ Guardian HeadQuarters.esp
   // Must load after AmazingFollowerTweaks.esp
 zzz_Jenassa_MAKEOVER_by83Willow.esp
   // Must load after AmazingFollowerTweaks.esp
+anyonefollows2.esp
+  //author reco to load post AFT
 Subjugation.esp
   //A spell as a whole follower system, but recommended to have other follower systems alongside. Unsure of placement wrt AFT- LD
 followerssovngarde_immortal_version_1_0.esp
@@ -31857,6 +31900,7 @@ mjhKhajiitSpeakMod - Hoth.esp
   IFNOT ACTIVE("HothFollower.esp") && IF VAR(EN) ERROR: HothFollower.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("HothFollower.esp") && IF VAR(RU) ERROR: HothFollower.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Even Better Quest Objectives
       IFNOT ACTIVE("HothFollower.esp") && IF VAR(ES) ERROR: HothFollower.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+mjhKhajiitSpeakMod - Inconsequential NPCs.esp
 mjhKhajiitSpeakMod - Localized Thieves Guild Jobs.esp
   IFNOT ACTIVE("LocalizedGuildJobs.esp") && IF VAR(EN) ERROR: LocalizedGuildJobs.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("LocalizedGuildJobs.esp") && IF VAR(RU) ERROR: LocalizedGuildJobs.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Even Better Quest Objectives
@@ -31870,6 +31914,7 @@ mjhKhajiitSpeakMod - Realistic Needs And Diseases.esp
   IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(EN) ERROR: RealisticNeedsandDiseases.esp is not present or not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(RU) ERROR: RealisticNeedsandDiseases.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Even Better Quest Objectives
       IFNOT ACTIVE("RealisticNeedsandDiseases.esp") && IF VAR(ES) ERROR: RealisticNeedsandDiseases.esp no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+mjhKhajiitSpeakMod - RND.esp
 mjhKhajiitSpeakMod - The Choice Is Yours.esp
   IFNOT ACTIVE("TheChoiceIsYours.esp") && IF VAR(EN) ERROR: TheChoiceIsYours.esp is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("TheChoiceIsYours.esp") && IF VAR(RU) ERROR: TheChoiceIsYours.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Even Better Quest Objectives
