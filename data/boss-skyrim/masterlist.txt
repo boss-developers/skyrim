@@ -5325,7 +5325,9 @@ ImmersiveBountyHunting.esp
     IF CHECKSUM("ImmersiveBountyHunting.esp", D89BC15F) && IF VAR(RU) DIRTY: 17 ITM, 2 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("ImmersiveBountyHunting.esp", D89BC15F) && IF VAR(ES) DIRTY: 17 ITM, 2 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
 ImmersiveSpells.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 ImmersiveSpells-NoDlcDawnDragComp.esp
+  IFNOT FILE("SKSE") REQ: "http://skse.silverlock.org SKSE"
 Improved Container Names.esp
   // TAG: {{BASH: Names}}
 ImprovedCraftableLockpicks.esp
@@ -15929,6 +15931,7 @@ ENDGROUP: Quests E
 
 BEGINGROUP: Quests F
 
+FactionalFollowers.esp
 Falconroost.esp
   IF FILE("WhiteFallsHouse.esp") INC:  WhiteFallsHouse.esp
 Falkreath_Overlook_Farmhouse.esp
@@ -16063,6 +16066,7 @@ FM - Windstad Library.esp
   IF CHECKSUM("FM - Windstad Library.esp", 420D0514) && IF VAR(EN) DIRTY: 12 ITM, 0 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("FM - Windstad Library.esp", 420D0514) && IF VAR(RU) DIRTY: 12 ITM, 0 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("FM - Windstad Library.esp", 420D0514) && IF VAR(ES) DIRTY: 12 ITM, 0 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+FollowingMercer.esp
 Forest camp.esp
 Forfeorannaheim.esp
   IF CHECKSUM("Forfeorannaheim.esp", 59266CBF) && IF VAR(EN) DIRTY: 51 ITM, 31 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -19722,6 +19726,7 @@ lighterdragonitems.esp
 lighterdragonloot.esp
 lightdragonpreistmasks.esp
 lighterdragonscalesandbones.esp
+lighterpotions.esp
 lightertools.esp
 Lighter Tools.esp
   IF CHECKSUM("Lighter Tools.esp", 6DD49F50) && IF VAR(EN) SAY: Obsolete. Update to latest version.
@@ -29310,6 +29315,10 @@ femcalder.esp
 Feralfade.esp
 followers alpha9.esp
 followers keep up.esp
+followers keep up (dawnguard).esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
 foxpet-petfox.esp
 Follower Pack I.esp
 Follower Pack II.esp
@@ -31730,10 +31739,30 @@ IFNOT FILE("UFO - Ultimate Follower Overhaul.esp") MOD: EMViljaInSolstheimAddOn.
   IFNOT FILE("EMCompViljaSkyrim.esp") && IF VAR(EN) ERROR: EMCompViljaSkyrim.esp is not present or is not active. Skyrim will CTD when loading if using this file without "http://skyrim.nexusmods.com/mods/26393 EMCompViljaSkyrim"
     IFNOT FILE("EMCompViljaSkyrim.esp") && IF VAR(RU) ERROR: EMCompViljaSkyrim.esp отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без "http://skyrim.nexusmods.com/mods/26393 EMCompViljaSkyrim"
 Follower Trap Safety.esp
+follower trespassing dialogue fix.esp
+FollowerLivePackage.esp
+  //a follower system, not yet sure of placement -LD
+Followers_StealthKills.esp
+FollowersEnhanced.esp
+FollowersStayClose.esp
+FollowersTraining.esp
 FriendlyFireTolerance99not4.esp
 REGEX: FollowMeNicely(AndHugMeMyLove)?(Dammit-)?(LetUsChat|AllOptionsOn)?(LessRepetitiveChatter)?\.esp
 REGEX: FollowMeNicelyDammit-(ShutUpAndFight|RunLittleRabbitRun|LetsUsChat)?\.esp
 Get Out of my Bedroom Original.esp
+highlevelfollowers.esp
+highlevelfollowers-dg.esp
+  IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
+    IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
+      IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
+highlevelfollowers-hf.esp
+  IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if this file is active without Hearthfires (Official Bethesda DLC).
+    IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
+      IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
+highlevelfollowers-db.esp
+  IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
+    IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
+      IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
 HugMe.esp
   IF VAR(UFO) INC: UFO - Ultimate Follower Overhaul.esp
   IF VAR(EN) && IFNOT REGEX("moveit(LWT)?\.esp") REQ: moveit.esp or moveitLWT.esp
