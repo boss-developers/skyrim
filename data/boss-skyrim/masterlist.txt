@@ -96,6 +96,12 @@ IF ACTIVE("Unofficial Dawnguard Patch.esp") SET: UDGP
 IF ACTIVE("Unofficial Hearthfire Patch.esp") SET: UHFP
 IF ACTIVE("Unofficial Dragonborn Patch.esp") SET: UDBP
 IF ACTIVE("Unofficial High Resolution Patch.esp") SET: UHRP
+// Unofficial Beta Patch variables
+IF ACTIVE("Unofficial Skyrim Patch.esp") && IF CHECKSUM("Unofficial Skyrim Patch.esp", D7C5F1F8) SET: USKPBeta
+IF ACTIVE("Unofficial Dawnguard Patch.esp") && IF CHECKSUM("Unofficial Dawnguard Patch.esp", 6DC3F268) SET: UDGPBeta
+IF ACTIVE("Unofficial Hearthfire Patch.esp") && IF CHECKSUM("Unofficial Hearthfire Patch.esp", 219119C7) SET: UHFPBeta
+IF ACTIVE("Unofficial Dragonborn Patch.esp") && IF CHECKSUM("Unofficial Dragonborn Patch.esp", 1C95936B) SET: UDBPBeta
+
 //
 // Sounds of Skyrim
 IF REGEX("SoS - (The Dungeons|The Wilds|Civilization)?\.esp") SET: SoS
@@ -161,6 +167,8 @@ Update.esm
   IF CHECKSUM("Update.esm", 7F464083) && IF VAR(EN) DIRTY: 73 ITM, 1 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Update.esm", 7F464083) && IF VAR(RU) DIRTY: 73 ITM, 1 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Update.esm", 7F464083) && IF VAR(ES) DIRTY: 73 ITM, 1 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
+// Unofficial Patches that are false flagged
+IF VAR(USKPBeta) MOD: Unofficial Skyrim Patch.esp
 Dawnguard.esm
   // TES5Edit 3.0.30: 619 ITM, 82 UDR, 57 deleted NavMeshes (CRC: BD72CCF3)
   IF CHECKSUM("Dawnguard.esm", BD72CCF3) && IF VAR(EN) DIRTY: 619 ITM, 82 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
@@ -168,18 +176,24 @@ Dawnguard.esm
       IF CHECKSUM("Dawnguard.esm", BD72CCF3) && IF VAR(ES) DIRTY: 619 ITM, 82 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF VERSION("TES5", "1.7.7", <) REQ: Skyrim 1.7.7+
   TAG: {{BASH: Delev, Relev}}
+// Unofficial Patches that are false flagged
+IF VAR(UDGPBeta) MOD: Unofficial Dawnguard Patch.esp
 Hearthfires.esm
   // TES5Edit 3.0.30: 184 ITM, 11 UDR, 5 deleted NavMeshes (CRC: AF82CE6A)
   IF CHECKSUM("Hearthfires.esm", AF82CE6A) && IF VAR(EN) DIRTY: 184 ITM, 11 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Hearthfires.esm", AF82CE6A) && IF VAR(RU) DIRTY: 184 ITM, 11 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Hearthfires.esm", AF82CE6A) && IF VAR(ES) DIRTY: 184 ITM, 11 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF VERSION("TES5", "1.7.7", <) REQ: Skyrim 1.7.7+
+// Unofficial Patches that are false flagged
+IF VAR(UHFPBeta) MOD: Unofficial Hearthfire Patch.esp
 Dragonborn.esm
   // TES5Edit 3.0.30: 61 ITM, 8 UDR, 1 deleted NavMesh (CRC: A9F83BFF)
   IF CHECKSUM("Dragonborn.esm", A9F83BFF) && IF VAR(EN) DIRTY: 61 ITM, 8 UDR records. Needs "http://skyrim.nexusmods.com/mods/25859 TES5Edit" cleaning. A cleaning guide is available "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit here".
     IF CHECKSUM("Dragonborn.esm", A9F83BFF) && IF VAR(RU) DIRTY: 61 ITM, 8 UDR записей. Необходима очистка с помощью "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Инструкция по очистке доступна "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit здесь".
       IF CHECKSUM("Dragonborn.esm", A9F83BFF) && IF VAR(ES) DIRTY: 61 ITM, 8 UDR entradas. Necesita ser limpiado con "http://skyrim.nexusmods.com/mods/25859 TES5Edit". Puedes encontra una guia "http://www.creationkit.com/TES5Edit_Cleaning_Guide_-_TES5Edit aqui".
   IF VERSION("TES5", "1.8.151", <) REQ: Skyrim 1.8.151+
+// Unofficial Patches that are false flagged
+IF VAR(UDBPBeta) MOD: Unofficial Dragonborn Patch.esp
 
 ENDGROUP: Official ESMs
 
@@ -2317,8 +2331,9 @@ YngolFix.esp
     IF VAR(RU) && IF VAR(USKP) ERROR: Удалите. Уже включено в Unofficial Skyrim Patch.esp.
       IF VAR(ES) && IF VAR(USKP) ERROR: Borrar. Esta incluido en Unofficial Skyrim Patch.esp.
 
-// Unoffical Patches
-Unofficial Skyrim Patch.esp
+// Unofficial Patches
+// Unofficial Skyrim Patch that is not false flagged
+IFNOT VAR(USKPBeta) MOD: Unofficial Skyrim Patch.esp
   TAG: {{BASH: Delev, Relev}}
   IF VERSION("TES5", "1.9.29", <) REQ: Skyrim 1.9.29+
   IF VAR(EN) && IF VAR(Dawnguard) && IFNOT FILE("Unofficial Dawnguard Patch.esp") SAY: It is highly recommended that you also use the "http://skyrim.nexusmods.com/mods/23491 Unofficial Dawnguard Patch".
@@ -2494,18 +2509,21 @@ USKP Dawnguard vampire face & eye fix.esp
   IF VAR(EN) && IF VAR(UDGP) ERROR: Delete. Already included in Unofficial Dawnguard Patch.esp
     IF VAR(RU) && IF VAR(UDGP) ERROR: Удалите. Уже включено в Unofficial Dawnguard Patch.esp
       IF VAR(ES) && IF VAR(UDGP) ERROR: Borrar. Esta incluido en Unofficial Dawnguard Patch.esp
-Unofficial Dawnguard Patch.esp
+// Unofficial Dawnguard Patch that is not false flagged
+IFNOT VAR(UDGPBeta) MOD: Unofficial Dawnguard Patch.esp
   IFNOT VAR(Dawnguard) && IF VAR(EN) ERROR: Dawnguard.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dawnguard (Official Bethesda DLC).
     IFNOT VAR(Dawnguard) && IF VAR(RU) ERROR: Dawnguard.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dawnguard (Official Bethesda DLC).
       IFNOT VAR(Dawnguard) && IF VAR(ES) ERROR: Dawnguard.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dawnguard (DLC Oficial de Betheseda).
   IF VERSION("TES5", "1.9.29", <) REQ: Skyrim 1.9.29+
   TAG: {{BASH: Delev, Relev}}
-Unofficial Hearthfire Patch.esp
+// Unofficial Hearthfire Patch that is not false flagged
+IFNOT VAR(UHFPBeta) MOD: Unofficial Hearthfire Patch.esp
   IFNOT VAR(Hearthfire) && IF VAR(EN) ERROR: Hearthfires.esm is not present or is not active. Skyrim will CTD when loading if using this file without Hearthfires (Official Bethesda DLC).
     IFNOT VAR(Hearthfire) && IF VAR(RU) ERROR: Hearthfires.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Hearthfires (Official Bethesda DLC).
       IFNOT VAR(Hearthfire) && IF VAR(ES) ERROR: Hearthfires.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Hearthfires (DLC Oficial de Betheseda).
   IF VERSION("TES5", "1.9.29", <) REQ: Skyrim 1.9.29+
-Unofficial Dragonborn Patch.esp
+// Unofficial Dragonborn Patch that is not false flagged
+IFNOT VAR(UDBPBeta) MOD: Unofficial Dragonborn Patch.esp
   IFNOT VAR(Dragonborn) && IF VAR(EN) ERROR: Dragonborn.esm is not present or is not active. Skyrim will CTD when loading if using this file without Dragonborn (Official Bethesda DLC).
     IFNOT VAR(Dragonborn) && IF VAR(RU) ERROR: Dragonborn.esm отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без Dragonborn (Official Bethesda DLC).
       IFNOT VAR(Dragonborn) && IF VAR(ES) ERROR: Dragonborn.esm no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin Dragonborn (DLC Oficial de Betheseda).
