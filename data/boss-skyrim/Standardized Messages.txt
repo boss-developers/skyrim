@@ -44,6 +44,14 @@ Note: Standardized messages offer the following benefits:
   IFNOT ACTIVE("plugin") && IF VAR(EN) ERROR: <Plugin name> is not present or is not active. Skyrim will CTD when loading if using this file without it.
     IFNOT ACTIVE("plugin") && IF VAR(RU) ERROR: <Plugin name> отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.
       IFNOT ACTIVE("plugin") && IF VAR(ES) ERROR: <Plugin name> no se encuentra presente o activado. Skyrim fallará si intentas usar este mod sin él.
+	  
+// REGEX replacer for -Standard Dependency-
+Find what:
+(  IFNOT ACTIVE\(".+\.es[pm]"\) )(ERROR: )(.+\.es[pm])( is not present or is not active. Skyrim will CTD when loading if using this file without it.)
+
+Replace with:
+\1&& IF VAR\(EN\) \2\3\4\n  \1&& IF VAR\(RU\) \2\3 отсутствует или не активен. Скайрим будет вылетать при загрузке, если использовать этот файл без него.\n    \1&& IF VAR\(ES\) \2\3 no se encuentra presente o activado. Skyrim fallara si intentas usar este mod sin el.
+
 //
 // -Skyrim Version Dependency-
 //
@@ -119,6 +127,16 @@ Replace with:
     IF VAR(RU) SAY: Устарело. Обновите до последней версии.
       IF VAR(ES) SAY: Obsoleto. Actualizar a la última versión.
 // If a download link to the latest version is on hand, make the last two words a link.
+//
+//  regex replacer for next example messages:
+  WARN: Obsolete. Update to Riftrun_HF_v_2_0.esp at "http://skyrim.nexusmods.com/mods/43593 Shawks Corner".
+  
+Find what:
+  (WARN: )(Obsolete. Update to )(.+\.es[pm])( at )(.+)
+  
+Replace with:
+  IF VAR\(EN\) \1\2\3\4\5\n    IF VAR\(RU\) \1Устарело. Обновите до \3 на \5\n      IF VAR\(ES\) \1Obsoleto. Actualizar a la \3 en \5
+  
 //
 // -Corrupted Files-
 //
